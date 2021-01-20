@@ -7,5 +7,5 @@ Release script contains multiple stages:
 * dependency_check
 * dependency_update
 
-<span style="color:blue">some *blue* text</span>.
+aad <span style="color:blue">some *blue* text</span>.da adad
 ## Cleanup
