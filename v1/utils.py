@@ -9,6 +9,7 @@ import logging
 import subprocess
 import time
 import traceback
+from types import SimpleNamespace
 from typing import List
 
 
@@ -103,7 +104,15 @@ def init_logger(log_file):
 def get_json_file(path):
     if os.path.isfile(path):
         with open(path, 'r') as file:
-            return json.loads(file.read())
+            return json.loads(file.read(), object_hook=lambda d: SimpleNamespace(**d))
+    else:
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+
+
+def get_json_file_cls(path, c):
+    if os.path.isfile(path):
+        with open(path, 'r') as file:
+            return json.loads(file.read(), object_hook=lambda d: c(**d))
     else:
         raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
 
@@ -155,6 +164,7 @@ def Wait(t):
 
 
 def Command(command: List):
+    myprint("Command: " + ' '.join(command))
     ds = subprocess.Popen(command, stdout=subprocess.PIPE,
                           stderr=subprocess.STDOUT)
     myprint(ds.stderr, 13)
@@ -167,6 +177,7 @@ def Command(command: List):
 
 
 def CommandOutput(command: str):
+    myprint("Command: "+command)
     res = subprocess.run(command, shell=True, stdout=subprocess.PIPE).stdout
     return res.decode("utf-8") if isinstance(res, bytes) else res
 
