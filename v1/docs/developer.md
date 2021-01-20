@@ -7,8 +7,5 @@ Release script contains multiple stages:
 * dependency_check
 * dependency_update
 
-```html
 <span style="color:blue">some *blue* text</span>.
-
-```
 ## Cleanup
