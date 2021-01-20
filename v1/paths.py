@@ -19,7 +19,7 @@ generatedDataFolderPath = os.path.abspath(
 
 reposFolder = os.path.join(generatedDataFolderPath, '..', '..', '..', 'repos')
 
-repoListDataPath = os.path.join(generatedDataFolderPath, 'repoList.json')
+repoListDataPath = os.path.join(rootPath, 'inputData', 'repoList.json')
 
 # Resources
 resourcesPath = os.path.abspath(
