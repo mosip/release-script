@@ -14,7 +14,9 @@ _* All the stages mentioned above are in execution sequence_
 
 ## Cleanup
 
-Cleans the checked out repos and generated data during execution
+* Deletes the checked out repos 
+* Deletes generated data during execution
+* Deletes the maven local repo jar related to mosip
 
 Command: `python3 main.py cleanup`
 

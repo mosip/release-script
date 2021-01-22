@@ -14,7 +14,7 @@ from actions.commit import Commit
 from actions.push import Push
 from actions.build import Build
 from actions.branchVerification import BranchVerification
-from actions.cleanup import Cleanup
+from actions.clean import Clean
 from actions.dependency import Dependency
 from actions.checkout import Checkout
 from utils import init_logger, myprint
@@ -32,9 +32,9 @@ def main():
 
     init_logger(logPath)
     try:
-        if args.action == 'cleanup' or args.action == 'all':
-            myprint("Action: cleanup", 1)
-            Cleanup()
+        if args.action == 'clean' or args.action == 'all':
+            myprint("Action: clean", 1)
+            Clean()
 
         if args.action == 'verify_branch' or args.action == 'all':
             myprint("Action: verify branch (check if branch exists or not)", 1)
