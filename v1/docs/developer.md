@@ -6,6 +6,9 @@ Release script contains multiple stages:
 * checkout
 * dependency_check
 * dependency_update
+* build
+* commit
+* push
 
 _* All the stages mentioned above are in execution sequence_
 
@@ -31,6 +34,9 @@ It will checkout all repositories provided in repoList.json which contains the t
 
 Command: `python3 main.py checkout`
 
+Requires:
+* verify_branch
+
 Output: _generatedData/checkout.json_
 
 ## Dependency check
@@ -38,6 +44,9 @@ Output: _generatedData/checkout.json_
 Check if the repository poms contains any outdated MOSIP dependency.
 
 Command: `python3 main.py dependency_check`
+
+Requires:
+* checkout
 
 Output: 
 * _generatedData/dependencyCheck.json_
@@ -51,6 +60,35 @@ Updates the outdated dependencies with the release name
 
 Command: `python3 main.py dependency_update`
 
+Requires:
+* checkout
+
 Output: 
 * _generatedData/dependencyUpdate.json_
 
+## Build
+
+Build the repo
+
+Command: `python3 main.py build`
+
+Requires:
+* checkout
+
+## Commit
+
+Commit the changes with a commit message
+
+Command: `python3 main.py commit`
+
+Requires:
+* checkout
+
+## Push
+
+Push the changes to remote repository
+
+Command: `python3 main.py push`
+
+Requires:
+* checkout

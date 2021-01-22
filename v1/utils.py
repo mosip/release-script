@@ -9,7 +9,6 @@ import logging
 import subprocess
 import time
 import traceback
-from types import SimpleNamespace
 from typing import List
 
 
@@ -161,11 +160,11 @@ def Pprint(s):
 
 
 def Wait(t):
-    myprint("Waiting for "+Pprint(t)+" seconds")
+    myprint("Waiting for " + Pprint(t) + " seconds")
     time.sleep(t)
 
 
-def Command(command: List):
+def Command(command: List, ignore_exit_code=False):
     myprint("Command: " + ' '.join(command))
     ds = subprocess.Popen(command, stdout=subprocess.PIPE,
                           stderr=subprocess.STDOUT)
@@ -180,18 +179,26 @@ def Command(command: List):
     rc = ds.returncode
 
     if rc == 0:
-        myprint("Command return code: " + str(rc), 13)
+        myprint("Command return code: " + str(rc), 11)
+    elif ignore_exit_code:
+        myprint("Command failed with return code: " + str(rc) + ". Continuing as ignore_exit_code is true", 11)
     else:
         myprint("Command failed with return code: " + str(rc), 13)
-        raise RuntimeError("Command failed with return code: " + str(rc)+". For more details check above logs")
+        raise RuntimeError("Command failed with return code: " + str(rc) + ". For more details check above logs")
     return rc
 
 
 def CommandOutput(command: str):
-    myprint("Command: "+command)
+    myprint("Command: " + command)
     res = subprocess.run(command, shell=True, stdout=subprocess.PIPE).stdout
     return res.decode("utf-8") if isinstance(res, bytes) else res
 
 
 def getRepoNameFromUrl(repo: str):
     return os.path.splitext(os.path.basename(repo))[0]
+
+
+def getGitDirAndWorkTree(repo_path):
+    git_dir = '--git-dir=' + repo_path + '/.git'
+    git_work_tree = '--work-tree=' + repo_path
+    return git_dir, git_work_tree

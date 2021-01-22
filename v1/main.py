@@ -1,9 +1,6 @@
 import argparse
 import sys
 import traceback
-
-from actions.commit import Commit
-from actions.push import Push
 from paths import envPath, logPath
 from dotenv import load_dotenv
 load_dotenv()
@@ -13,6 +10,8 @@ load_dotenv(verbose=True)
 
 load_dotenv(dotenv_path=envPath)
 
+from actions.commit import Commit
+from actions.push import Push
 from actions.build import Build
 from actions.branchVerification import BranchVerification
 from actions.cleanup import Cleanup
