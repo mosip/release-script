@@ -17,7 +17,11 @@
   "https://github.com/mosip/pre-registration.git"
 ]
 ```
-* Run script: `python3 main.py all`
+* Run script: `Forpython3 main.py all`
+```text
+For non-release: python3 main.py all
+For release: python3 main.py all --release
+```
 
 ## How to customize
 You can find more info on customization and migration stages in [developer docs](./docs/developer.md)

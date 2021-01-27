@@ -77,6 +77,15 @@ Command: `python3 main.py build`
 Requires:
 * checkout
 
+## Trigger update
+
+Update the release repo of the push trigger
+
+Command: `python3 main.py trigger_update --release`
+
+Requires:
+* checkout
+
 ## Commit
 
 Commit the changes with a commit message
