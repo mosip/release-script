@@ -3,6 +3,7 @@ import errno
 import json
 import hashlib
 import os
+import re
 import shutil
 import pprint
 import logging
@@ -132,6 +133,17 @@ def get_file_extension(file):
     return extension
 
 
+def readFileAsString(file):
+    with open(file, 'r') as file:
+        return file.read()
+
+
+def writeFileFromString(path, data):
+    f = open(path, "w")
+    f.write(data)
+    f.close()
+
+
 def keyExists(key, d):
     if key in d.keys():
         return True
@@ -202,3 +214,9 @@ def getGitDirAndWorkTree(repo_path):
     git_dir = '--git-dir=' + repo_path + '/.git'
     git_work_tree = '--work-tree=' + repo_path
     return git_dir, git_work_tree
+
+
+def match(reg, st):
+    regex = r".*(%s).*" % re.escape(reg)
+    m = re.match(regex, st, re.DOTALL)
+    return True if m else False

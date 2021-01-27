@@ -26,13 +26,12 @@ class Dependency:
             is_outdated = is_outdated if is_outdated else self.versionCheck(repo)
 
             repo.set_is_pom_outdated(is_outdated)
-
             output_detailed.append(repo.__dict__)
-            write_json_file(depCheckDetailedResult, output)
 
             repo.set_pom_info([])
             output.append(repo.__dict__)
-            write_json_file(depCheckResult, output)
+        write_json_file(depCheckDetailedResult, output)
+        write_json_file(depCheckResult, output)
 
     def propertiesCheck(self, repo):
         myprint('Checking pom properties for repo: ' + repo.repo, 2)

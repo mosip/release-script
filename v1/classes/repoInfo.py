@@ -6,7 +6,7 @@ from utils import getRepoNameFromUrl
 class RepoInfo:
 
     def __init__(self, _repo, _branch, _repo_path=None, _repo_short=None, _branch_found=None,
-                 _pom_info=None, _pom_stats=None, _is_pom_outdated=None, _parent_poms=[], _pom_version=[]):
+                 _pom_info=None, _pom_stats=None, _is_pom_outdated=None, _parent_poms=[], _pom_version=[], _trigger_info=[]):
         self._repo = _repo
         self._repo_short = getRepoNameFromUrl(_repo)
         self._branch = _branch
@@ -17,6 +17,7 @@ class RepoInfo:
         self._is_pom_outdated = _is_pom_outdated
         self._parent_poms = []
         self._pom_version = []
+        self._trigger_info = _trigger_info
 
     @property
     def repo(self):
@@ -64,6 +65,10 @@ class RepoInfo:
 
     def set_pom_version(self, v):
         self._pom_version = v
+        return self
+
+    def set_trigger_info(self, v):
+        self._trigger_info = v
         return self
 
     def toJSON(self, sort=False, indent=4):
