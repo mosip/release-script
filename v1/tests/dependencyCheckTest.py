@@ -1,7 +1,7 @@
 import unittest
 
 from actions.common import getPropertiesFromPom, isMosipDep, updatePropertiesInPom, checkIfParentPom, \
-    getVersionsFromPom, updateVersionsInPom
+    getVersionsFromPom, updateVersionsInPom, getDependenciesFromPom
 from actions.dependency import Dependency
 from paths import testPomPath, logPath, testNewPomPath, testParentPomPath
 from utils import init_logger, myprint
@@ -28,3 +28,8 @@ class MyTestCase(unittest.TestCase):
 
     def testUpdateVersionsInPom(self):
         myprint(updateVersionsInPom(testParentPomPath, '1.1.5', testNewPomPath))
+
+    def testGetDependenciesFromPom(self):
+        deps = getDependenciesFromPom(testParentPomPath)
+        for d in deps:
+            myprint(d.__dict__)

@@ -39,6 +39,14 @@ class RepoInfo:
     def branch_found(self):
         return self._branch_found
 
+    @property
+    def pom_stats(self):
+        return self._pom_stats
+
+    @property
+    def pom_info(self):
+        return self._pom_info
+
     def set_branch_found(self, v):
         self._branch_found = v
         return self

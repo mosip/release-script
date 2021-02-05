@@ -1,24 +1,25 @@
 # Developer docs
 
 Release script contains multiple stages:
-* cleanup
+* clean
 * verify_branch
 * checkout
 * dependency_check
 * dependency_update
 * build
+* trigger_update
 * commit
 * push
 
 _* All the stages mentioned above are in execution sequence_
 
-## Cleanup
+## Clean
 
 * Deletes the checked out repos 
 * Deletes generated data during execution
 * Deletes the maven local repo jar related to mosip
 
-Command: `python3 main.py cleanup`
+Command: `python3 main.py clean`
 
 ## Verify branch
 

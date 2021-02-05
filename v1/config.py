@@ -15,6 +15,11 @@ json_indent = 4
 
 # MOSIP dependency keywords
 mosip_dep_match_regex = [
+    r'.*mosip.*'
+]
+
+# MOSIP property keywords
+mosip_property_match_regex = [
     r'kernel.*',
     r'.*mosip.*'
 ]

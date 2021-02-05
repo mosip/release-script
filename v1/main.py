@@ -24,7 +24,7 @@ from utils import init_logger, myprint
 
 def args_parse():
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', help='cleanup|verify_branch|checkout|dependency_check|dependency_update|build|'
+    parser.add_argument('action', help='clean|verify_branch|checkout|dependency_check|dependency_update|build|'
                                        'trigger_update|commit|push|all')
     parser.add_argument("--release", help="Update trigger with release url", action="store_true")
     args = parser.parse_args()
@@ -54,7 +54,7 @@ def main():
 
         if args.action == 'dependency_update' or args.action == 'all':
             myprint("Action: dependency update (update the dependency with release name)", 1)
-            Dependency().depUpdate()
+            Dependency().pomUpdate()
 
         if args.action == 'build' or args.action == 'all':
             myprint("Action: build", 1)

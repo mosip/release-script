@@ -1,5 +1,12 @@
 # Release script v1
 
+## Objectives
+* Verifies the repo to be release contains the respective release branch
+* Verifies whether the branch contains any old dependency
+* Remove need of manually updating pom version that may cause human error
+* Checks whether the modules in repo are building successfully
+* Updates the release url
+
 ## Requirements
 * Linux (tested on Ubuntu > 18)
 * Python version >= 3.6.9
