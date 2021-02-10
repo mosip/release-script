@@ -9,7 +9,7 @@
 
 ## Requirements
 * Linux (tested on Ubuntu > 18)
-* Python version >= 3.6.9
+* Python version >= 3.9
 * Java = {MOSIP Java version}
 * Apache Maven > 3.6.0
 

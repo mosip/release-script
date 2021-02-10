@@ -1,5 +1,4 @@
 import re
-from _elementtree import Element
 from pathlib import Path
 from typing import List
 from xml.dom import Node
@@ -9,7 +8,7 @@ import xml.etree.ElementTree as eT
 
 from classes.pomDependency import PomDependency
 from classes.pomVersion import PomVersion
-from utils import myprint
+from utils import myprint, writeFileFromString
 import config as conf
 
 
@@ -26,12 +25,12 @@ def getCombined(file):
     tree = xmlToTree(file)
     namespace = getNamespace(tree.getroot())
     for node in tree.findall(namespace + 'properties'):
-        for props in node.getchildren():
+        for props in list(node):
             pom_properties.append(PomProperty(props.tag.replace(namespace, ''), props.text))
 
     for node in tree.findall(namespace + 'dependencies'):
         # {groupId, artifactId, version}
-        for deps in node.getchildren():
+        for deps in list(node):
             pom_dependencies.append(getDependency(deps))
 
     pom_version = getVersionsFromPom(file)
@@ -50,7 +49,7 @@ def updateVersions(input_file, version, output_file=None):
                        'module_new_version': version})
         node.text = version
     for node in tree.findall(namespace + 'parent'):
-        for props in node.getchildren():
+        for props in list(node):
             pom_property_name = getElementName(props)
             if getElementName(props) == 'version':
                 myprint('parent ' + pom_property_name + ': ' + props.text + ' -> ' + version)
@@ -69,7 +68,7 @@ def updateProperty(input_file, name, version, output_file=None):
     tree = xmlToTree(input_file)
     namespace = getNamespace(tree.getroot())
     for node in tree.findall(namespace + 'properties'):
-        for pom_property in node.getchildren():
+        for pom_property in list(node):
             pom_property_name = getElementName(pom_property)
             if name == pom_property_name:
                 if pom_property.text != version:
@@ -89,11 +88,11 @@ def updateDependency(input_file, group, artifact, version, output_file=None):
     tree = xmlToTree(input_file)
     namespace = getNamespace(tree.getroot())
     for node in tree.findall(namespace + 'dependencies'):
-        for deps in node.getchildren():
+        for deps in list(node):
             dep = getDependency(deps)
             if group == dep.group_id and artifact == dep.artifact_id:
                 if dep.version != version:
-                    for element in deps.getchildren():
+                    for element in list(deps):
                         tag = element.tag.replace(getNamespace(element), '')
                         if tag == 'version':
                             myprint(dep.artifact_id + ': ' + dep.version + ' -> ' + version)
@@ -116,7 +115,7 @@ def getVersionsFromPom(file) -> PomVersion:
         myprint('child version: ' + node.text)
         module_version = node.text
     for node in tree.findall(namespace + 'parent'):
-        for props in node.getchildren():
+        for props in list(node):
             if getElementName(props) == 'version':
                 myprint('parent version: ' + props.text)
                 parent_version = props.text
@@ -128,7 +127,7 @@ def getDependency(element_obj: Node) -> PomDependency:
     artifact_id = None
     version = None
     if element_obj is not None:
-        for element in element_obj.getchildren():
+        for element in list(element_obj):
             tag = element.tag.replace(getNamespace(element), '')
             if tag == 'groupId':
                 group_id = element.text
@@ -188,10 +187,13 @@ def checkIfParentPom(file):
 
 
 def xmlToTree(file):
-    tree = eT.parse(file)
+    parser = eT.XMLParser(target=eT.TreeBuilder(insert_comments=True))
+    tree = eT.parse(file, parser=parser)
     eT.register_namespace('', namespaceUrl(tree.getroot()))
     return tree
 
 
 def treeToXml(tree, file):
-    tree.write(file)
+    xlm_string = eT.tostring(tree.getroot(), encoding='unicode', method='xml')
+    xlm_string = '\n'.join((conf.pom_xml_header, xlm_string))
+    writeFileFromString(file, xlm_string)

@@ -23,3 +23,5 @@ mosip_property_match_regex = [
     r'kernel.*',
     r'.*mosip.*'
 ]
+
+pom_xml_header = '<?xml version="1.0" encoding="UTF-8"?>'
