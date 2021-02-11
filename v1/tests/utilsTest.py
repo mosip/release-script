@@ -1,6 +1,7 @@
 import unittest
 
-from paths import logPath
+from common import checkIfParentPom
+from paths import logPath, testParentPomPath, testPomPath, testDiffParentPomPath
 from utils import Command, init_logger, myprint, match
 import config as conf
 init_logger(logPath)
@@ -27,3 +28,8 @@ class MyTestCase(unittest.TestCase):
                '</properties> <activation> <activeByDefault>false</activeByDefault> </activation> </profile> ' \
                '</profiles> </settings>" > $GITHUB_WORKSPACE/settings.xml '
         myprint(match(conf.release_repo_identifier, data))
+
+    def testCheckIfParentPom(self):
+        myprint(checkIfParentPom(testParentPomPath))
+        myprint(checkIfParentPom(testPomPath))
+        myprint(checkIfParentPom(testDiffParentPomPath))

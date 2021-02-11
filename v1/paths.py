@@ -43,6 +43,9 @@ testNewPomPath = os.path.abspath(
 testParentPomPath = os.path.abspath(
     os.path.join(resourcesPath, 'testParentPom.xml')
 )
+testDiffParentPomPath = os.path.abspath(
+    os.path.join(resourcesPath, 'testDiffParentPom.xml')
+)
 # Action's result path
 verifyBranchResult = os.path.join(generatedDataFolderPath, 'branchVerification.json')
 checkoutResult = os.path.join(generatedDataFolderPath, 'checkout.json')

@@ -28,7 +28,7 @@ class Dependency:
             myprint('Checking repo ' + repo.repo, 2)
             pom_stats = []
             pom_info = []
-            paths = getAllPoms(repo)
+            paths = getAllPoms(repo.repo_path)
             for p in paths:
                 myprint('Checking pom ' + p, 3)
                 mosip_deps = []
@@ -52,7 +52,7 @@ class Dependency:
                     if isMosipDep(deps.group_id):
                         mosip_deps.append(deps.__dict__)
                         dep_version = self.getDepVersion(deps, pom_properties)
-                        if dep_version != conf.release_name:
+                        if dep_version is not None and dep_version != conf.release_name:
                             myprint('Dependency ' + deps.artifact_id + ' is outdated, current version ' + dep_version,
                                     11)
                             is_outdated = True
@@ -91,7 +91,7 @@ class Dependency:
         for repo in self.repos:
             myprint('Checking repo ' + repo.repo, 2)
             pom_info = []
-            paths = getAllPoms(repo)
+            paths = getAllPoms(repo.repo_path)
             for p in paths:
                 info = []
                 myprint('Checking pom ' + p, 3)
@@ -100,19 +100,20 @@ class Dependency:
                 if pom_version.parent is not None:
                     if pom_version.parent != conf.release_name:
                         myprint(
-                            'Updating pom parent version, old parent version ' + pom_version.module + ', '
+                            'Updating pom parent version, old parent version ' + pom_version.parent + ', '
                                                                                                       'new parent '
                                                                                                       'version ' +
                             conf.release_name
                             , 11)
                         updateVersions(p, conf.release_name)
-                if pom_version.module != conf.release_name:
-                    myprint(
-                        'Updating pom module version, old module version ' + pom_version.module + ', new module '
-                                                                                                  'version ' +
-                        conf.release_name,
-                        11)
-                    updateVersions(p, conf.release_name)
+                if pom_version.module is not None:
+                    if pom_version.module != conf.release_name:
+                        myprint(
+                            'Updating pom module version, old module version ' + pom_version.module + ', new module '
+                                                                                                      'version ' +
+                            conf.release_name,
+                            11)
+                        updateVersions(p, conf.release_name)
 
                 myprint('Checking dependencies')
                 for deps in pom_dependencies:
@@ -127,23 +128,25 @@ class Dependency:
         write_json_file(depUpdateResult, output)
 
     def getDepVersion(self, dep: PomDependency, properties: List[PomProperty]):
-        if '${' in dep.version.strip():
-            prop_name = re.sub('[${}]', '', dep.version)
-            for prop in properties:
-                if prop.name == prop_name:
-                    return prop.version
-            raise RuntimeError(
-                "Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version)
-        else:
-            return dep.version
+        if dep.version is not None:
+            if '${' in dep.version.strip():
+                prop_name = re.sub('[${}]', '', dep.version)
+                for prop in properties:
+                    if prop.name == prop_name:
+                        return prop.version
+                myprint(
+                    "Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version + "."
+                    "It might be taking the property from parent")
+        return dep.version
 
     def updateDepVersion(self, path, dep: PomDependency, properties: List[PomProperty]):
-        if '${' in dep.version.strip():
-            prop_name = re.sub('[${}]', '', dep.version)
-            for prop in properties:
-                if prop.name == prop_name:
-                    return updateProperty(path, prop_name, conf.release_name)
-            raise RuntimeError(
-                "Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version)
-        else:
-            return updateDependency(path, dep.group_id, dep.artifact_id, conf.release_name)
+        if dep.version is not None:
+            if '${' in dep.version.strip():
+                prop_name = re.sub('[${}]', '', dep.version)
+                for prop in properties:
+                    if prop.name == prop_name:
+                        return updateProperty(path, prop_name, conf.release_name)
+                myprint("Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version+"."
+                        "It might be taking the property from parent")
+            else:
+                return updateDependency(path, dep.group_id, dep.artifact_id, conf.release_name)

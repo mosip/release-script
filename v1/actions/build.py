@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 from actions.common import getAllPoms, checkIfParentPom
@@ -16,24 +17,32 @@ class Build:
         for repo in self.repos:
             myprint('Preparing to build repo: ' + repo.repo, 2)
             myprint('Finding parent pom', 3)
-            parent_poms, all_poms = self.findPoms(repo)
+            parent_poms, all_poms = [], []
+            if 'pom.xml' in os.listdir(repo.repo_path):
+                myprint('pom.xml found in root')
+                parent_poms, all_poms = self.findPoms(repo.repo_path)
+            else:
+                for dir in os.listdir(repo.repo_path):
+                    parent_poms, all_poms = self.findPoms(dir)
+
             if len(parent_poms) == 0:
                 myprint('No Parent pom found')
                 for pom in all_poms:
                     self.mvnInstall(pom)
             else:
                 for pom in parent_poms:
-                    myprint('Building parent pom '+pom)
+                    myprint('Building parent pom ' + pom)
                     self.mvnInstall(pom)
 
-    def findPoms(self, repo):
+    def findPoms(self, dir):
         parent_poms = []
-        poms = getAllPoms(repo)
+        poms = getAllPoms(dir)
         for pom in poms:
             is_parent = checkIfParentPom(pom)
             if is_parent:
                 myprint('Parent pom found: '+pom)
                 parent_poms.append(pom)
+                break
         return parent_poms, poms
 
     def mvnInstall(self, pom):

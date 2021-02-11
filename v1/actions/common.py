@@ -13,9 +13,9 @@ from utils import myprint, writeFileFromString
 import config as conf
 
 
-def getAllPoms(repo):
+def getAllPoms(dir):
     pth = []
-    for path in Path(repo.repo_path).rglob('pom.xml'):
+    for path in Path(dir).rglob('pom.xml'):
         pth.append(str(path.resolve()))
     return pth
 
@@ -195,9 +195,10 @@ def isMosipDep(dep):
 def checkIfParentPom(file):
     tree = eT.parse(file)
     namespace = getNamespace(tree.getroot())
-    for node in tree.findall(namespace + 'artifactId'):
-        m = re.match(r'.*parent', node.text)
-        return True if m else False
+    for node in tree.findall(namespace + 'modules'):
+        if len(list(node)) > 0:
+            return True
+    return False
 
 
 def xmlToTree(file):
