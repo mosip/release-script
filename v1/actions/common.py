@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from types import FunctionType
 from typing import List
 from xml.dom import Node
 
@@ -42,27 +41,29 @@ def getCombined(file):
     return pom_version, pom_properties, pom_dependencies
 
 
-def updateVersions(input_file, version, output_file=None):
+def updateVersions(input_file, version, output_file=None, prod_run=False):
     output = []
     tree = xmlToTree(input_file)
     namespace = getNamespace(tree.getroot())
     eT.register_namespace('', namespaceUrl(tree.getroot()))
-    for node in tree.findall(namespace + 'version'):
-        if not isXmlComment(node):
-            pom_property_name = getElementName(node)
-            myprint('child ' + pom_property_name + ': ' + node.text + ' -> ' + version)
-            output.append({'module_previous_version': node.text,
-                           'module_new_version': version})
-            node.text = version
-    for node in tree.findall(namespace + 'parent'):
-        if not isXmlComment(node):
-            for props in list(node):
-                if not isXmlComment(props):
-                    pom_property_name = getElementName(props)
-                    if getElementName(props) == 'version':
-                        myprint('parent ' + pom_property_name + ': ' + props.text + ' -> ' + version)
-                        output.append({'parent_previous_version': props.text, 'parent_new_version': version})
-                        props.text = version
+
+    if prod_run:
+        for node in tree.findall(namespace + 'version'):
+            if not isXmlComment(node):
+                pom_property_name = getElementName(node)
+                myprint('child ' + pom_property_name + ': ' + node.text + ' -> ' + version)
+                output.append({'module_previous_version': node.text,
+                               'module_new_version': version})
+                node.text = version
+        for node in tree.findall(namespace + 'parent'):
+            if not isXmlComment(node):
+                for props in list(node):
+                    if not isXmlComment(props):
+                        pom_property_name = getElementName(props)
+                        if getElementName(props) == 'version':
+                            myprint('parent ' + pom_property_name + ': ' + props.text + ' -> ' + version)
+                            output.append({'parent_previous_version': props.text, 'parent_new_version': version})
+                            props.text = version
 
     if output_file is not None:
         treeToXml(tree, output_file)
@@ -71,21 +72,22 @@ def updateVersions(input_file, version, output_file=None):
     return output
 
 
-def updateProperty(input_file, name, version, output_file=None):
+def updateProperty(input_file, name, version, output_file=None, prod_run=False):
     output = []
     tree = xmlToTree(input_file)
     namespace = getNamespace(tree.getroot())
-    for node in tree.findall(namespace + 'properties'):
-        if not isXmlComment(node):
-            for pom_property in list(node):
-                if not isXmlComment(pom_property):
-                    pom_property_name = getElementName(pom_property)
-                    if name == pom_property_name:
-                        if pom_property.text != version:
-                            myprint(pom_property_name + ': ' + pom_property.text + ' -> ' + version)
-                            output.append({'property': pom_property_name, 'previous_version': pom_property.text,
-                                           'new_version': version})
-                            pom_property.text = version
+    if prod_run:
+        for node in tree.findall(namespace + 'properties'):
+            if not isXmlComment(node):
+                for pom_property in list(node):
+                    if not isXmlComment(pom_property):
+                        pom_property_name = getElementName(pom_property)
+                        if name == pom_property_name:
+                            if pom_property.text != version:
+                                myprint(pom_property_name + ': ' + pom_property.text + ' -> ' + version)
+                                output.append({'property': pom_property_name, 'previous_version': pom_property.text,
+                                               'new_version': version})
+                                pom_property.text = version
     if output_file is not None:
         treeToXml(tree, output_file)
     else:
@@ -93,22 +95,23 @@ def updateProperty(input_file, name, version, output_file=None):
     return output
 
 
-def updateDependency(input_file, group, artifact, version, output_file=None):
+def updateDependency(input_file, group, artifact, version, output_file=None, prod_run=False):
     output = []
     tree = xmlToTree(input_file)
     namespace = getNamespace(tree.getroot())
-    for node in tree.findall(namespace + 'dependencies'):
-        for deps in list(node):
-            dep = getDependency(deps)
-            if group == dep.group_id and artifact == dep.artifact_id:
-                if dep.version != version:
-                    for element in list(deps):
-                        tag = element.tag.replace(getNamespace(element), '')
-                        if tag == 'version':
-                            myprint(dep.artifact_id + ': ' + dep.version + ' -> ' + version)
-                            output.append({'dependency': dep.group_id+":"+dep.artifact_id, 'previous_version': dep.version,
-                                           'new_version': version})
-                            element.text = version
+    if prod_run:
+        for node in tree.findall(namespace + 'dependencies'):
+            for deps in list(node):
+                dep = getDependency(deps)
+                if group == dep.group_id and artifact == dep.artifact_id:
+                    if dep.version != version:
+                        for element in list(deps):
+                            tag = element.tag.replace(getNamespace(element), '')
+                            if tag == 'version':
+                                myprint(dep.artifact_id + ': ' + dep.version + ' -> ' + version)
+                                output.append({'dependency': dep.group_id+":"+dep.artifact_id, 'previous_version': dep.version,
+                                               'new_version': version})
+                                element.text = version
     if output_file is not None:
         treeToXml(tree, output_file)
     else:

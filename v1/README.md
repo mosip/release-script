@@ -24,10 +24,16 @@
   "https://github.com/mosip/pre-registration.git"
 ]
 ```
-* Run script: `Forpython3 main.py all`
+* Run script:
 ```text
-For non-release: python3 main.py all
-For release: python3 main.py all --release
+$python can be python3, python3.9, py etc
+
+For dry run: $python main.py all
+For non-release: $python main.py all --prod
+For release: $python main.py all --release --prod
+
+--prod: it will make version updates to te pom.xml files
+--release: will update the push trigger and release url
 ```
 
 ## How to customize

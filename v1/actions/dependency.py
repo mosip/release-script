@@ -17,7 +17,8 @@ import config as conf
 
 class Dependency:
 
-    def __init__(self):
+    def __init__(self, prod_run=False):
+        self.prod_run = prod_run
         self.repos: List[RepoInfo] = get_json_file_cls(checkoutResult, RepoInfo)
 
     def pomCheck(self):
@@ -105,7 +106,7 @@ class Dependency:
                                                                                                       'version ' +
                             conf.release_name
                             , 11)
-                        updateVersions(p, conf.release_name)
+                        updateVersions(p, conf.release_name, None, self.prod_run)
                 if pom_version.module is not None:
                     if pom_version.module != conf.release_name:
                         myprint(
@@ -113,7 +114,7 @@ class Dependency:
                                                                                                       'version ' +
                             conf.release_name,
                             11)
-                        updateVersions(p, conf.release_name)
+                        updateVersions(p, conf.release_name, None, self.prod_run)
 
                 myprint('Checking dependencies')
                 for deps in pom_dependencies:
@@ -149,4 +150,4 @@ class Dependency:
                 myprint("Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version+"."
                         "It might be taking the property from parent")
             else:
-                return updateDependency(path, dep.group_id, dep.artifact_id, conf.release_name)
+                return updateDependency(path, dep.group_id, dep.artifact_id, conf.release_name, None, self.prod_run)
