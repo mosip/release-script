@@ -57,9 +57,9 @@ def main():
             myprint("Action: dependency update (update the dependency with release name)", 1)
             Dependency(args.prod).pomUpdate()
 
-        # if args.action == 'build' or args.action == 'all':
-        #     myprint("Action: build", 1)
-        #     Build().build()
+        if args.action == 'build' or args.action == 'all':
+            myprint("Action: build", 1)
+            Build().build()
 
         if (args.action == 'trigger_update' or args.action == 'all') and args.release:
             myprint("Action: trigger update", 1)
