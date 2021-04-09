@@ -19,6 +19,7 @@ class Dependency:
 
     def __init__(self, prod_run=False):
         self.prod_run = prod_run
+        myprint("Production run is " + str(prod_run))
         self.repos: List[RepoInfo] = get_json_file_cls(checkoutResult, RepoInfo)
 
     def pomCheck(self):
@@ -146,7 +147,7 @@ class Dependency:
                 prop_name = re.sub('[${}]', '', dep.version)
                 for prop in properties:
                     if prop.name == prop_name:
-                        return updateProperty(path, prop_name, conf.release_name)
+                        return updateProperty(path, prop_name, conf.release_name, None, self.prod_run)
                 myprint("Version not found for dependency: " + dep.group_id + ":" + dep.artifact_id + ":" + dep.version+"."
                         "It might be taking the property from parent")
             else:
