@@ -27,6 +27,7 @@ def args_parse():
     parser.add_argument('action', help='clean|verify_branch|checkout|dependency_check|dependency_update|build|'
                                        'trigger_update|commit|push|all')
     parser.add_argument("--prod", help="", action="store_true")
+    parser.add_argument("--build", help="", action="store_true")
     parser.add_argument("--release", help="Update trigger with release url", action="store_true")
     args = parser.parse_args()
     return args, parser
@@ -57,7 +58,7 @@ def main():
             myprint("Action: dependency update (update the dependency with release name)", 1)
             Dependency(args.prod).pomUpdate()
 
-        if (args.action == 'build' or args.action == 'all') and args.prod:
+        if (args.action == 'build' or args.action == 'all') and args.build:
             myprint("Action: build", 1)
             Build().build()
 
