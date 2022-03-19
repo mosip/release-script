@@ -1,21 +1,28 @@
 # MOSIP Release Preparation
 
-Below mentioned are the steps taken in an order For MOSIP release:
+## Overview
+Use this guide to release specific MOSIP version.
 
-1. Check if all the [pre-requisites](docs/pre-requisites.md) are there to start for the release.
-1. Create release-branch from the release-candidate branch and name it as:
+## Pre-requisites
+* All the pre-requisites are mentioned in [pre-requisites guide](docs/pre-requisites.md).
+* Make sure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-strategies.md).
+## Steps
+1. Create release-branch from the release-candidate branch and name it as below:
     ```
     release-<release-version>
     eg: release-1.2.0
     ```
+1. After the release-branch is created from release-candidate branch make sure all the changes are merged to develop branch also.
 1. Execute the `release_changes` mannual github action from release branch for release preparation.
 1. Review and merge the pull request created by release bot from release-branch. While reviewing keep note of the below mentioned points:
     * It should contain the latest POM version changes throughout all the POM's.
     * Change in artifacts publish URL from `OSSRH_SNAPSHOT_URL` to `RELEASE_URL`.
     * It should remove the `-DskipTests` references from all the triggers so that tests are not skipped while building and release and analysis.
-    * If PR contains changes in Dockerfile for changing `libs-snapshot-local` reference to `libs-release-local` .
-1. Once PR is merged wait for the sucessfull completion of actions. If not sucessfull resolve the issue and make it sucessfull.
-1. After successful action run go to Nexus Repository Manager and release the artifacts to maven central as per [nexus_staging_guide](nexus/nexux_staging.md)
-1. After successfull release of artifacts to Maven Central for all the repositories move the images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](vidivi/README.md)
-1. After the imges are moved to `mosipid` initiate [signing](image-sign/README.md) of all the docker images.
-1. Release check shall be performed as [here](docs/release-check.md)
+    * If PR contains changes in Dockerfile for changing `libs-snapshot-local` reference to `libs-release-local`.
+        * If this instance is found in the Dockerfile, update the same to `artifactory-ref-impl` repo owner so that it can be handled in the artifactory docker image as well
+1. Once PR is merged, wait for the sucessfull completion of actions. If not sucessfull resolve the issue and make it sucessfull.
+1. After successful action run, go to Nexus Repository Manager and release the artifacts to maven central as per [nexus_staging_guide](nexus/nexux-staging.md).
+1. After successfull release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](docker/README.md)
+1. After the imges are moved to `mosipid` initiate [signing](Signing/README.md) of all the docker images.
+1. Update the `master` branch of all the Modular repositories as per [master update strategy](strategies/master-updates.md).
+1. Release check shall be performed as per [Release checks](docs/release-check.md)
