@@ -22,7 +22,7 @@ Use this guide to release specific MOSIP version.
         * If this instance is found in the Dockerfile, update the same to `artifactory-ref-impl` repo owner so that it can be handled in the artifactory docker image as well
 1. Once PR is merged, wait for the sucessfull completion of actions. If not sucessfull resolve the issue and make it sucessfull.
 1. After successful action run, go to Nexus Repository Manager and release the artifacts to maven central as per [nexus_staging_guide](nexus/nexux-staging.md).
-1. After successfull release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](docker/README.md)
+1. After successfull release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](vidivi/README.md)
 1. After the imges are moved to `mosipid` initiate [signing](Signing/README.md) of all the docker images.
 1. Update the `master` branch of all the Modular repositories as per [master update strategy](strategies/master-updates.md).
-1. Release check shall be performed as per [Release checks](docs/release-check.md)
+1. Release check shall be performed as per [Release checks](docs/release-check.md).
