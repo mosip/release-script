@@ -38,8 +38,8 @@ def main():
                     tag = item
             if image_name == '':
                 continue            
-            (src_repo, src_image_name) = strip_tag(image_name)
-            promote(src_repo,src_image_name,tag,config['docker']['destination_organization'],remote_client,client)
+            (src_repo, src_image_name, src_image_version) = strip_tag(image_name)
+            promote(src_repo,src_image_name,src_image_version,tag,config['docker']['destination_organization'],remote_client,client)
 
 
 def load_config():
@@ -49,14 +49,20 @@ def load_config():
 
 
 def strip_tag(image_name):
+    image_version=""
     stripped_list = image_name.split('/')
     repository = stripped_list[0]
     image = stripped_list[1]
-    return (repository,image)
+    stripped_tag_list = image.split(':')
+    if len(stripped_tag_list)==2:
+        image = stripped_tag_list[0]
+        image_version = stripped_tag_list[1]
+    return (repository,image,image_version)
 
-def promote(src_repo, src_image_name,tag,dst_repo, remote_client, local_client):
+
+def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_client, local_client):
     src_repository=src_repo+"/"+src_image_name
-    src_tag = tag
+    src_tag = tag if src_image_version=="" else src_image_version
     src_image=src_repository+":"+src_tag
     force=True
     dst_repository=dst_repo+"/"+src_image_name
