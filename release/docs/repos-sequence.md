@@ -41,4 +41,3 @@
 | 33 | mosip-automation-tests | No | No |
 | 34 | abis-testing-kit | not sure | not sure |
 | 35 | documentation | No | No |
-
