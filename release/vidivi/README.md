@@ -17,6 +17,8 @@
 * Install `docker` using `pip3`
 ```
 sudo pip3 install docker
+sudo pip3 install pyYaml
+sudo pip3 install requests
 ```
 
 ## Use
@@ -26,19 +28,23 @@ sudo pip3 install docker
     * `destination_organisation` : destination dockerhub organisation.
     * `registry_url` : destination docker registry URL. By default set to the dockerhub Url.
     * `filename` : filename for the list of docker images to be moved. 
- * Update the docker images list in the [images.txt](images.txt) file. Below are the guidelines for the same:
-    * the image name and image tag will be tab separated. eg.
-    ```
-    <source-organisation>/<docker-image-name>           <source tag>
-    mosipdev/kernel-auth-service												1.2.0
-    ```
-    * If source and destination tag are different set image list as:
-    ```
-    <source-organisation>/<docker-image-name>:<source tag>    <destination-tag>
-    mosipdev/kernel-auth-service:release-1.2.0                1.2.0
-    ```
-    Note: `source tag` and `destination tag` should be tab separated.
-  * Run `vidivi.py` to move the docker images.
+* Update the docker images list in the [images.txt](images.txt) file. Below are the guidelines for the same:
+   * the image name and image tag will be tab separated. eg.
+   ```
+   <source-organisation>/<docker-image-name>           <source tag>
+   mosipdev/kernel-auth-service												1.2.0
+   ```
+   * If source and destination tag are different set image list as:
+   ```
+   <source-organisation>/<docker-image-name>:<source tag>    <destination-tag>
+   mosipdev/kernel-auth-service:release-1.2.0                1.2.0
+   ```
+   Note: `source tag` and `destination tag` should be tab separated.
+* Run `vidivi.py` to check the existence of docker images from the source organization.
   ```
-  sudo python3 vidivi.py
+  sudo python3 vidivi.py check
+  ```
+* Run `vidivi.py` to move the docker images.
+  ```
+  sudo python3 vidivi.py push
   ```
