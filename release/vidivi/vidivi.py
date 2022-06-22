@@ -9,6 +9,7 @@ import requests
 import string
 import re
 import logging
+import os
 from datetime import datetime
 
 config = {}
@@ -92,15 +93,23 @@ def getDockerHash(repo, tag):
     return ''
 
 
+def chkDockerAccExistence(acc_name):
+    accUrl = 'https://hub.docker.com/v2/users/' + acc_name
+    req = requests.get(url=accUrl)
+    if int(req.status_code) == 404:
+        print_log("Docker account with Name " + acc_name + " does not exists", 'error')
+        return False
+    return True
+
+
 def main():
     client = dock.from_env()
-    remote_client = dock.APIClient(base_url='unix:///var/run/docker.sock', version='auto')
     registry_url = "https://index.docker.io/v1/"
-    remote_client.login(username=config['docker']['username'], password=config['docker']['token'],
-                        registry=config['docker']['registry_url'])
     # create log file with format date-time.log
+    if not os.path.exists('./logs/'):
+        os.makedirs('./logs/')
     logFile = "vidivi-" + datetime.now().strftime("%d-%m-%Y-%H:%M:%S") + ".log"
-    logging.basicConfig(filename=logFile, level=logging.DEBUG, filemode='a',
+    logging.basicConfig(filename='logs/' + logFile, level=logging.DEBUG, filemode='a',
                         format=' %(asctime)s  %(levelname)s  %(message)s ',
                         datefmt='%d-%b-%y %H:%M:%S')
     print_log('LOGFILE CREATED : ' + logFile, 'info')
@@ -160,6 +169,10 @@ def main():
 
     # check the existence of destImg+tag
     print_log("", 'info')
+    print_log('*' * 20 + " Check existence of Destination Docker Account " + '*' * 63, 'info')
+    if not chkDockerAccExistence(config['docker']['destination_organization']):
+        exit(1)
+    print_log("", 'info')
     print_log('*' * 20 + " Check existence of Destination Images " + '*' * 63, 'info')
     for image in images:
         imgName = image[0][: image[0].find(":")]
@@ -174,25 +187,30 @@ def main():
             destImgNotExist.append([destImgName + ":" + destImgTag])
             continue
 
-        srcImgHash = getDockerHash(imgName, image[0][image[0].find(":") + 1:])
-        destImgHash = getDockerHash(destImgName, destImgTag)
-        if srcImgHash != destImgHash:
+        # compare only when performing hash operation
+        if sys.argv[1] == "hash":
+            srcImgHash = getDockerHash(imgName, image[0][image[0].find(":") + 1:])
+            destImgHash = getDockerHash(destImgName, destImgTag)
+
+            if srcImgHash != destImgHash:
+                print_log("", 'info')
+                print_log("Source Image = \"" + image[0] + "\" IMAGE_ID :" + str(srcImgHash), 'info')
+                print_log(
+                    "Destination Image = \"" + destImgName + ":" + destImgTag + "\" IMAGE_ID :" + str(destImgHash),
+                    'info')
+                print_log("does not have same HASH ID ", 'info')
+                srcDestNotSameHash.append(
+                    {"srcImg": image[0], "srcImgHash": srcImgHash, "destImg": destImgName + ":" + destImgTag,
+                     "destImgHash": destImgHash})
+                continue
+
             print_log("", 'info')
             print_log("Source Image = \"" + image[0] + "\" IMAGE_ID :" + str(srcImgHash), 'info')
-            print_log("Destination Image = \"" + destImgName + ":" + destImgTag + "\" IMAGE_ID :" + str(destImgHash),
-                      'info')
-            print_log("does not have same HASH ID ", 'info')
-            srcDestNotSameHash.append(
+            print_log("Destination Image = \"" + destImgName + ":" + destImgTag + "\"IMAGE_ID : " + destImgHash, 'info')
+            print_log("does have same HASH ID ", 'info')
+            srcDestSameHash.append(
                 {"srcImg": image[0], "srcImgHash": srcImgHash, "destImg": destImgName + ":" + destImgTag,
                  "destImgHash": destImgHash})
-            continue
-
-        print_log("", 'info')
-        print_log("Source Image = \"" + image[0] + "\" IMAGE_ID :" + str(srcImgHash), 'info')
-        print_log("Destination Image = \"" + destImgName + ":" + destImgTag + "\"IMAGE_ID : " + destImgHash, 'info')
-        print_log("does have same HASH ID ", 'info')
-        srcDestSameHash.append({"srcImg": image[0], "srcImgHash": srcImgHash, "destImg": destImgName + ":" + destImgTag,
-                                "destImgHash": destImgHash})
 
     print_log("", 'info')
     print_log('*' * 20 + " HASH Operation Results " + '*' * 70, 'info')
@@ -214,6 +232,9 @@ def main():
 
     print_log("", 'info')
     print_log('*' * 20 + " Start Image Transfer operation " + '*' * 71, 'info')
+    remote_client = dock.APIClient(base_url='unix:///var/run/docker.sock', version='auto')
+    remote_client.login(username=config['docker']['username'], password=config['docker']['token'],
+                        registry=config['docker']['registry_url'])
     for image in images:
         # start image transfer operation for src_repo/src_image_name:tag
         srcImgRepo = image[0][: image[0].find("/")]
@@ -260,7 +281,7 @@ def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_c
     push_status = remote_client.push(repository=dst_repository, tag=dst_tag, stream=True, decode=True)
     status_update(push_status)
     print_log("", 'info')
-    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_latest +" ] ", 'info')
+    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_latest + " ] ", 'info')
     remote_client.tag(image=src_image, repository=dst_repository, tag='latest', force=force)
     latest_push = remote_client.push(repository=dst_repository, tag='latest', stream=True, decode=True)
     status_update(latest_push)
@@ -293,5 +314,10 @@ if __name__ == "__main__":
     if sys.argv[1] != "check" and sys.argv[1] != "push" and sys.argv[1] != "hash":
         print_log("INVALID operation provided; EXITING;", 'error')
         exit(1)
+
     load_config()
+
+    if not config['docker']['destination_organization']:
+        print_log("Destination Organization name not provided in config.yml; EXITING;", 'error')
+        exit(1)
     main()
