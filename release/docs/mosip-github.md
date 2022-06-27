@@ -1,4 +1,7 @@
-# Check the existence of a specific branch from all GitHub repositories of a GitHub account
+# Github Utilities
+* Find below all the necesary github utils for repositories monitoring and control.
+
+## Check the existence of a specific branch from all GitHub repositories of a GitHub account
 
 * Install `gh` package. Follow the instruction from [here](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt).
 * Login with your account token.
@@ -23,6 +26,6 @@
   $ for i in $repoList; do echo $i; git ls-remote --heads git@github.com:$i.git 1.2.0.2; done
   ```
 
-# References
+## References
 
 * [cli.github.com](https://cli.github.com/)
