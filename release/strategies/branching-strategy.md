@@ -27,6 +27,7 @@
 * In MOSIP we tag the branches normally for pre-release or complete release or release with specific required funtionality.
 * Release branches are tagged only after all the artifacts are released to Maven Central and images are pushed to the `mosipdev` dockerhub organisaton.
 * Also the branches needed to be locked after release and before release so that no unnecesary commit can be merged.
+* Always add the release notes link in the tag description.
 
 ## Overall Branching strategy
 * Branching strategy at MOSIP can be explained by this [pic](../docs/branching.png)
