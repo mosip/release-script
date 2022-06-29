@@ -16,6 +16,12 @@
     eg.
     https://repo1.maven.org/maven2/io/mosip/commons/1.2.0/
     ```
+    OR
+    * Use the check_artifacts.sh script to check the existance of released artifactory in maven central.
+    * List all the group names related to repos in the `artifact.sh` script.
+    * Execute the `check_artifacts.sh` to check if the provided version is present for all the group names mentioned in [artifact.txt](./artifact.txt).
+    * Result of the check operation is stored in [result.txt](./result.txt)
+
 * All the docker images are pushed to `mosipid` dockerhub organisation.
     * Tag to be checked will be <release_version>
     * Use [vidivi script](../vidivi/README.md) in the check mode to check the existence.
