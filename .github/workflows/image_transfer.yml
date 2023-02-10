@@ -1,0 +1,39 @@
+name:  manual workflow to transfer images
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Username to trigger the workflow'
+        required: true
+        default: 'rakshitharakshu'
+        type: string
+      token:
+        description: 'Provide token to run the workflow'
+        required: true
+        default: 'Rakshitha@123'
+        type: string
+      destination_organization:
+        description: 'Provide the destination image'
+        required: true
+        default: "rakshitharakshu"
+        type: string
+
+jobs:
+  image_transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: update config.yml
+        run: |
+          echo "PWD: $( pwd )"
+          echo "LS : $( ls ) "
+          sed -i "s/username:.*/username: ${{ github.event.inputs.username }}/g" config.yml
+          sed -i "s/token:.*/token: ${{ github.event.inputs.token }}/g" config.yml
+          sed -i "s/destination_organization.*/destination_organization: ${{ github.event.inputs.destination_organization }}/g" config.yml
+      - name: push images
+        run: |
+          sudo pip install python-pip
+          sudo pip install docker
+          sudo python3 vidivi.py push
