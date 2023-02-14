@@ -26,3 +26,14 @@ Use this guide to release specific MOSIP version.
 1. After the imges are moved to `mosipid` initiate [signing](Signing/README.md) of all the docker images.
 1. Update the `master` branch of all the Modular repositories as per [master update strategy](strategies/master-updates.md).
 1. Release check shall be performed as per [Release checks](docs/release-check.md).
+
+## GitHub manual workflow to transfer images
+Steps to run transfer images from one docker hub account to another.
+* Update the docker images list in the images.txt file and commit it.
+* Go to Actions, in all workflows we have a manual workflow named `manual workflow to transfer images.* Select that manual workflow to transfer images, and then click on Run workflow.
+* while running manual workflow it will ask for workflow inputs as below .
+  1. branch: select specific branch
+  1. username: username of the destination dockerhub account
+  1. token: password/token of the destination dockerhub account.
+  1. destination_organisation: destination dockerhub organisation.
+* Next click on `run workflow`.
