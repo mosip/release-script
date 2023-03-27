@@ -8,7 +8,7 @@ git fetch --all
 git checkout <branch to release>
 git pull origin
 git checkout master
-git pull master
+git pull origin master
 git reset --hard origin/<branch to release>
 git push -f origin master
 ```
