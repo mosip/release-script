@@ -25,6 +25,8 @@ Use this guide to release specific MOSIP version.
 1. After successfull release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](vidivi/README.md)
 1. After the imges are moved to `mosipid` initiate [signing](Signing/README.md) of all the docker images.
 1. Update the `master` branch of all the Modular repositories as per [master update strategy](strategies/master-updates.md).
+1. Tag all the repos release branch.
+1. Change the branching rules to lock the branch for any further changes until next planned release.
 1. Release check shall be performed as per [Release checks](docs/release-check.md).
 
 ## GitHub manual workflow to transfer images
