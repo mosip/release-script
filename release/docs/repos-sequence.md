@@ -33,6 +33,7 @@
 | 25 | mosip-ref-impl | Yes | Yes |
 | 26 | mosip-mock-services | Yes | Yes |
 | 27 | artifactory-ref-impl | Yes | Yes |
+| * | postgres-init | Yes | No |
 | 28 | mosip-config | No | No |
 | 29 | reporting | No | No |
 | 30 | release-script | No | No |
