@@ -35,7 +35,19 @@ def print_log(msg, loglevel):
 
 def chkImagesList(images):
     # set src image and dest image with tag
-    images_list = [[i for i in image if i != ''] for image in images if image != '']
+    filtered_images = [[i for i in image if i != ''] for image in images if image != '']
+    images_list=[]
+    for image in filtered_images:
+        for i in image:
+            if len(image)<2:
+                j=i.split("\t")
+                images_list.append([img for img in j if img != ''])
+            else:
+                if image not in images_list:
+                    images_list.append(image)
+                    continue
+
+    print("image_list = ",[i for i in images_list])
     images = []
     tagsNotAvailable = []
     for image in images_list:
