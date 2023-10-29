@@ -3,9 +3,13 @@ exec 3>&1 4>&2
 trap 'exec 2>&4 1>&3' 0 1 2 3
 exec > >(tee -a log.out) 2>&1
 
-# Define repository URLs
-EXISTING_REPO_URL="https://github.com/ckm007/commons.git"
-NEW_REPO_URL="https://github.com/ckm007/commons-new.git"
+# Load properties from repo.properties
+if [ -f "repo.properties" ]; then
+    source "repo.properties"
+else
+    echo "Error: repo.properties file not found."
+    exit 1
+fi
 
 # Specify the list of files and folders to preserve
 FILES_TO_MOVE=(
