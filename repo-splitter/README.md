@@ -25,3 +25,6 @@
 * Make sure you have permissions to clone and push to the repositories specified in EXISTING_REPO_URL and NEW_REPO_URL.
 * Regularly review and update the repo.properties file to reflect any changes in the repository URLs or the list of files and folders to preserve.
 * Test the script on a non-critical repository or create a copy for testing before using it on a production repository.
+
+##Troubleshoot
+* Make sure to generate a personal access token from github ,if you are planning to run the script on a system which does not have your github credentials already cached.It is recommended to revoke the token after using it.
