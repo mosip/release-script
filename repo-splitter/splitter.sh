@@ -22,7 +22,8 @@ if [ -d "$REPO_NAME" ]; then
         rm -rf "$REPO_NAME"
         git clone "$EXISTING_REPO_URL"
     elif [[ "$ANSWER" == "n" ]]; then
-        echo "Proceeding with the existing directory."
+        echo "Repo already exists in this diretory. Please perform the operation from a new directory."
+        exit 1
     else
         echo "Invalid choice. Exiting."
         exit 1
