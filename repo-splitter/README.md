@@ -14,7 +14,7 @@
    NEW_REPO_URL=https://github.com/username/new-repo.git
    FILES_TO_MOVE=".github db_scripts .gitignore pom.xml README.md LICENSE"
 1. Run the script:
-   ```./repository-split.sh```
+   ```./splitter.sh``` or ``` bash splitter.sh```
 ## Configuration Details
 * EXISTING_REPO_URL: This should be the URL of the Git repository you want to split. Make sure you have the necessary permissions to clone it.
 * NEW_REPO_URL: Specify the URL for the new Git repository that will be created. Ensure that this repository is created and accessible.
