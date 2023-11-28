@@ -5,7 +5,7 @@ Use this guide to release specific MOSIP version.
 
 ## Pre-requisites
 * All the pre-requisites are mentioned in [pre-requisites guide](docs/pre-requisites.md).
-* Make sure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-strategies.md).
+* Make sure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](strategies/branching-strategies.md).
 ## Steps
 1. Create release-branch from the release-candidate branch and name it as below:
     ```
