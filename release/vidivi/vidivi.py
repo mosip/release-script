@@ -73,13 +73,16 @@ def chkImagesList(images):
 
 
 def chkImageExistence(image, tag, registry_url):
-    url = registry_url + "repositories/" + image + "/tags/" + tag
+    if '@sha256:' in image:
+        image_name, image_digest = image.split('@sha256:')
+        url = registry_url + "repositories/" + image_name + "/manifests/" + "sha256:" + image_digest
+    else:
+        url = registry_url + "repositories/" + image + "/tags/" + tag
     print("url= " + url)
     r = requests.get(url=url)
     # If image not found exit the script
-    # print(type(r.status_code))
     if int(r.status_code) == 404:
-        print_log("Image \"" + image + ":" + tag + "\" does not exists", 'error')
+        print_log("Image \"" + image + ":" + tag + "\" does not exist", 'error')
         return False
     return True
 
@@ -283,9 +286,20 @@ def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_c
     dst_tag = tag
     dst_image = dst_repository + ":" + dst_tag
     dst_latest = dst_repository + ":" + "latest"
+    if '@sha256:' in dst_image:
+        #src_image = re.sub(r'@sha256','',src_image)
+        dst_image = re.sub(r'@sha256','',dst_image)
+        dst_repository = re.sub(r'@sha256','',dst_repository)
     print_log("", 'info')
+    src_tag=':'+src_tag
+    if '@sha256:' in src_image:
+        #src_image = re.sub(r'@sha256','',src_image)
+        src_repository = re.sub(r'@sha256','',src_repository)
+        src_tag='@sha256'+src_tag
     print_log("[ PULL ----------------------> " + src_image + " ] ", 'info')
-    pull_status = remote_client.pull(repository=src_repository, tag=src_tag, stream=True, decode=True)
+    print("src_repository : ",src_repository,'src_tag',src_tag, 'src_image : ',src_image )
+    print('dst_repository : ',dst_repository, 'dst_tag : ', dst_tag)
+    pull_status = remote_client.pull(repository=src_repository+src_tag, stream=True, decode=True)
     status_update(pull_status)
     remote_client.tag(image=src_image, repository=dst_repository, tag=dst_tag, force=force)
     print_log("", 'info')
