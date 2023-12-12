@@ -13,16 +13,24 @@ Use this guide to release specific MOSIP version.
     eg: release-1.2.0
     ```
 1. After the release-branch is created from release-candidate branch make sure all the changes are merged to develop branch also.
-1. Execute the `release_changes` mannual github action from release branch for release preparation.
+1. Execute the `Release/pre-Release Preparation` GitHub Action from **release-script** repository.
+1. while running manual workflow it will ask for workflow inputs as below
+   * Branch: It should be release-1.2.0.1 from **release-script** repository.
+   * Repo URL ( EX. mosip/< repo name > ): Name of the owner of the repository and repository name.
+   * Repo Branch: It should be release-branch.
+   * tag to update: Release tag should be provided.
+   * tag to be replaced: It should be SNAPSHOT version from release-branch pom.xml file.
+   * base branch for PR: It should be release-branch.
+   * Next click on `run workflow`.
 1. Review and merge the pull request created by release bot from release-branch. While reviewing keep note of the below mentioned points:
     * It should contain the latest POM version changes throughout all the POM's.
     * Change in artifacts publish URL from `OSSRH_SNAPSHOT_URL` to `RELEASE_URL`.
     * It should remove the `-DskipTests` references from all the triggers so that tests are not skipped while building and release and analysis.
     * If PR contains changes in Dockerfile for changing `libs-snapshot-local` reference to `libs-release-local`.
         * If this instance is found in the Dockerfile, update the same to `artifactory-ref-impl` repo owner so that it can be handled in the artifactory docker image as well
-1. Once PR is merged, wait for the sucessfull completion of actions. If not sucessfull resolve the issue and make it sucessfull.
+1. Once PR is merged, wait for the sucessful completion of actions. If not sucessful resolve the issue and make it sucessful.
 1. After successful action run, go to Nexus Repository Manager and release the artifacts to maven central as per [nexus_staging_guide](nexus/nexux-staging.md).
-1. After successfull release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](vidivi/README.md)
+1. After successful release of artifacts to Maven Central for all the repositories move the docker images from  `mosipdev` organisation created as part of release to `mosipid` organisation using [push scripts guide](vidivi/README.md)
 1. After the imges are moved to `mosipid` initiate [signing](Signing/README.md) of all the docker images.
 1. Update the `master` branch of all the Modular repositories as per [master update strategy](strategies/master-updates.md).
 1. Tag all the repos release branch.
@@ -31,12 +39,12 @@ Use this guide to release specific MOSIP version.
 
 ## GitHub manual workflow to transfer images
 Steps to run transfer images from one docker hub account to another.
-* Update the docker images list in the images.txt file and commit it.
-* Go to Actions, in all workflows we have a manual workflow named `manual workflow to transfer images.
-* Select that manual workflow to transfer images, and then click on Run workflow.
+* Update the docker images list in the [images.txt](https://github.com/mosip/release-script/blob/release-1.2.0.1/release/vidivi/images.txt) file.
+* Execute the `Manual workflow to transfer image` GitHub Action from **release-script** repopository.
 * while running manual workflow it will ask for workflow inputs as below .
-  1. branch: select specific branch
-  1. username: username of the destination dockerhub account
-  1. token: password/token of the destination dockerhub account.
-  1. destination_organisation: destination dockerhub organisation.
-* Next click on `run workflow`.
+  * branch: select specific branch
+  * provide docker hub username: username of the destination dockerhub account
+  * provide docker hub token: password/token of the destination dockerhub account.
+  * provide docker hub destination org: destination dockerhub organisation.
+  * Next click on `run workflow`.
+* Cross verify in hub.docker Image are transferred or not.
