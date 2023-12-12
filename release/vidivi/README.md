@@ -22,52 +22,16 @@
 * mosipint: images which are verified by QA team. These mainly are the stable performing docker images from the previous sprint.
 * mosipid: images released after qa testing.
 
-## Pre-requisites
-* Install `Python3`. Refer [Python3 Installation guide](https://realpython.com/installing-python/) for OS specific steps.
-* Install `docker` using `pip3`
-```
-sudo pip3 install docker
-sudo pip3 install pyYaml
-sudo pip3 install requests
-sudo pip3 install logging
-sudo pip3 install datetime
-```
+## GitHub manual workflow to transfer images
+Steps to run transfer images from one docker hub account to another.
+* Update the docker images list in the [images.txt](https://github.com/mosip/release-script/blob/release-1.2.0.1/release/vidivi/images.txt) file.
+* Execute the `Manual workflow to transfer image` GitHub Action from **release-script** repo.
+* while running manual workflow it will ask for workflow inputs as below .
+  * `branch`: select specific branch
+  * `provide docker hub username`: username of the destination dockerhub account
+  * `provide docker hub token`: password/token of the destination dockerhub account.
+  * `provide docker hub destination org`: destination dockerhub organisation.
+  * Next click on `run workflow`.
 
-## Use
-* Set the below mentioned parameters in [config](config.yml).
-    * `username` : username of the destination dockerhub account.
-    * `token` : password/token of the destination dockerhub account.
-    * `destination_organisation` : destination dockerhub organisation.
-    * `registry_url` : destination docker registry URL. By default set to the dockerhub Url.
-    * `filename` : filename for the list of docker images to be moved. 
-* Update the docker images list in the [images.txt](images.txt) file. Below are the guidelines for the same:
-   * the image name and image tag will be `spaces` separated or colon `:`. eg.
-   ```
-   <source-organisation>/<docker-image-name>:<source tag>
-   mosipdev/kernel-auth-service:1.2.0
-   ```
-   ```
-   <source-organisation>/<docker-image-name>               <source tag>
-   mosipdev/kernel-auth-service                            1.2.0
-   ```
-   * If source and destination tag are different set image list as:
-   ```
-   <source-organisation>/<docker-image-name>:<source tag>    <destination-tag>
-   mosipdev/kernel-auth-service:release-1.2.0                1.2.0
-   ```
-   Note: `source tag` and `destination tag` should be spaces separated.
-
-* The script will also create a log file with format `vidiv-datetime.log` in current directory.
-* Run `vidivi.py` to check the existence of docker images from the source organization.
-  ```
-  sudo python3 vidivi.py check
-  ```
-* Run `vidivi.py` to check the existence of docker images from the source and destination organization. 
-  Also, will compare the docker image HASH ID between source and destination organization if destination organization exists.
-  ```
-  sudo python3 vidivi.py hash
-  ```
-* Run `vidivi.py` to move the docker images.
-  ```
-  sudo python3 vidivi.py push
-  ```
+**Note**: `source tag` and `destination tag` should be **spaces** separated.
+* Cross verify in hub.docker Image are transferred or not.
