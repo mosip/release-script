@@ -1,0 +1,30 @@
+name:  workflow for mosip github releases
+
+on:
+  workflow_dispatch:
+    inputs:
+      TOKEN:
+        description: 'provide docker hub token'
+        required: false
+        default: ''
+        type: string
+jobs:
+  chk_token:
+    runs-on: ubuntu-latest
+    outputs:
+      TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
+    steps:
+      - name: Check if input TOKEN is empty
+        if: -n "${{  inputs.TOKEN == ''  }}"
+        id: ORG_TOKEN
+        run: |
+           echo "TOKEN=TOKEN" >> $GITHUB_OUTPUT
+      - name: Print Secret Name
+        run: |
+          echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
+  workflow-tag:
+    needs: chk_token
+    uses: mosip/kattu/.github/workflows/tag.yaml@master
+    secrets:
+      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
