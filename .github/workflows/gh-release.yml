@@ -1,4 +1,4 @@
-name:  Manual workflow to tag
+name:  workflow for mosip github releases
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
           echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
   workflow-tag:
     needs: chk_token
-    uses: shubham17998/kattu/.github/workflows/testrelease.yaml@master
+    uses: shubham17998/kattu/.github/workflows/tag.yaml@master
     secrets:
       TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
