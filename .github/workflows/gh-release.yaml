@@ -18,7 +18,7 @@ jobs:
         if: -n "${{  inputs.TOKEN == ''  }}"
         id: ORG_TOKEN
         run: |
-           echo "TOKEN=TOKEN" >> $GITHUB_OUTPUT
+           echo "TOKEN=ACTION_PAT" >> $GITHUB_OUTPUT
       - name: Print Secret Name
         run: |
           echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
@@ -26,5 +26,5 @@ jobs:
     needs: chk_token
     uses: mosip/kattu/.github/workflows/tag.yaml@master
     secrets:
-      ACTION_PAT: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
+      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
