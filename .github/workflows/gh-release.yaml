@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       TOKEN:
-        description: 'provide docker hub token'
+        description: 'provide github personal access token'
         required: false
         default: ''
         type: string
@@ -18,7 +18,7 @@ jobs:
         if: -n "${{  inputs.TOKEN == ''  }}"
         id: ORG_TOKEN
         run: |
-           echo "TOKEN=TOKEN" >> $GITHUB_OUTPUT
+           echo "TOKEN=ACTION_PAT" >> $GITHUB_OUTPUT
       - name: Print Secret Name
         run: |
           echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
