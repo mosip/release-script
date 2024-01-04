@@ -15,9 +15,9 @@ on:
 #      SNAPSHOT_TAG:
 #        description: 'tag to be replaced'
 #        required: true
-      BASE:
-        description: 'base branch for PR'
-        required: true
+ #     BASE:
+ #       description: 'base branch for PR'
+ #       required: true
 jobs:
   maven-post-release-preparation:
     uses: Prafulrakhade/kattu/.github/workflows/post-release-changes.yml@master
@@ -26,7 +26,7 @@ jobs:
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
 #      RELEASE_TAG: ${{ inputs.RELEASE_TAG }}
 #      SNAPSHOT_TAG: ${{ inputs.SNAPSHOT_TAG }}
-      BASE: ${{ inputs.BASE }}
+#      BASE: ${{ inputs.BASE }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
