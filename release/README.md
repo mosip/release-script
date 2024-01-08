@@ -14,7 +14,7 @@ Use this guide to release specific MOSIP version.
     ```
 1. After the release-branch is created from release-candidate branch make sure all the changes are merged to develop branch also.
 1. Execute the `Release/pre-Release Preparation` GitHub Action from **release-script** repository.
-1. while running manual workflow it will ask for workflow inputs as below
+1. While running manual workflow it will ask for workflow inputs as below
    * Branch: It should be release-1.2.0.1 from **release-script** repository.
    * Repo URL ( EX. mosip/< repo name > ): Name of the owner of the repository and repository name.
    * Repo Branch: It should be release-branch.
@@ -48,3 +48,12 @@ Steps to run transfer images from one docker hub account to another.
   * provide docker hub destination org: destination dockerhub organisation.
   * Next click on `run workflow`.
 * Cross verify in hub.docker Image are transferred or not.
+
+# MOSIP Post Release Preparation
+1. Execute the `Post-Release Preparation` to replace the "RELEASE_URL" to "SNAPSHOT_URL" GitHub Action from **release-script** repository.
+2. while running manual workflow it will ask for workflow inputs as below
+    * Branch: It should be release-1.2.0.1 from **release-script** repository.
+    * Repo URL ( EX. mosip/< repo name > ): Name of the owner of the repository and repository name.
+    * Repo Branch: It should be release-branch.
+    * base branch for PR: It should be release-branch.
+    * Next click on `run workflow`.

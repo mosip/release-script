@@ -1,4 +1,4 @@
-name: Post release Preparation.
+name: Post-Release Preparation.
 
 on:
   workflow_dispatch:
@@ -9,23 +9,15 @@ on:
       REPO_BRANCH:
         description: 'Repo Branch'
         required: true
-#      RELEASE_TAG:
-#        description: 'tag to update'
-#        required: true
-#      SNAPSHOT_TAG:
-#        description: 'tag to be replaced'
-#        required: true
       BASE:
         description: 'base branch for PR'
         required: true
 jobs:
   maven-post-release-preparation:
-    uses: Prafulrakhade/kattu/.github/workflows/post-release-changes.yml@master
+    uses: mosip/kattu/.github/workflows/post-release-changes.yml@master
     with:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
-#      RELEASE_TAG: ${{ inputs.RELEASE_TAG }}
-#      SNAPSHOT_TAG: ${{ inputs.SNAPSHOT_TAG }}
       BASE: ${{ inputs.BASE }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
