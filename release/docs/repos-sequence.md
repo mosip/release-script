@@ -16,7 +16,7 @@
 | 8      | mosip-mock-services         | Yes | Yes |
 | 9      | audit-manager               | Yes | Yes |
 | 10     | keymanager                  | Yes | Yes |
-| 11     | khazana                     | Yes | No |
+| 11     | khazana                     | Yes | No  |
 | 12     | packet-manager              | Yes | Yes |
 | 13     | admin-services              | Yes | Yes |
 | 14     | id-repository               | Yes | Yes |
@@ -52,6 +52,6 @@
 | 44     | k8s-infra                   | No  | No  |
 | 45     | demosdk                     | Yes | No  |
 | 46     | mosip-performance-tests-mt  | No  | No  |
-| 47     | abis-testing-kit            | not sure | not sure |
-| 48     | release-script              | No | No   |
-| 49     | documentation               | No | No |
+| 47     | release-script              | No  | No  |
+| 48     | documentation               | No  | No  |
+| 49     | abis-testing-kit            | not sure | not sure |
