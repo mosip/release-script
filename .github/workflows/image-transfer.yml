@@ -5,7 +5,7 @@ on:
     inputs:
       USERNAME:
         description: 'provide docker hub username'
-        required: false
+        required: true
         default: ''
         type: string
       TOKEN:
@@ -43,6 +43,20 @@ jobs:
           echo "ORGANIZATION NAME :  ${{ inputs.DESTINATION_ORGANIZATION }} "
           echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
           echo "USERNAME : ${{ steps.ORG_TOKEN.outputs.USERNAME }}"
+        run: |       
+          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipqa ]]; then
+            echo "TOKEN=QA_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
+          fi
+          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipint ]]; then
+            echo "TOKEN=INT_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
+          fi
+          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipid ]]; then
+            echo "TOKEN=ID_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT          
+          fi
+      - name: Print Secret Name
+        run: |
+          echo "ORGANZATION NAME :  ${{ inputs.DESTINATION_ORGANIZATION }} "
+          echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
 
   Image-transfer:
     needs: chk_token
@@ -53,3 +67,7 @@ jobs:
       USERNAME: "${{ secrets[needs.chk_token.outputs.USERNAME] || inputs.USERNAME }}"
       TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
+      USERNAME: ${{ inputs.USERNAME }}
+    secrets:
+      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
