@@ -1,0 +1,24 @@
+name: Post-Release Preparation.
+
+on:
+  workflow_dispatch:
+    inputs:
+      REPO_URL:
+        description: 'Repo URL ( EX. mosip/< repo name > )'
+        required: true
+      REPO_BRANCH:
+        description: 'Repo Branch'
+        required: true
+      BASE:
+        description: 'base branch for PR'
+        required: true
+jobs:
+  maven-post-release-preparation:
+    uses: mosip/kattu/.github/workflows/post-release-changes.yml@master
+    with:
+      REPO_URL: ${{ inputs.REPO_URL }}
+      REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
+      BASE: ${{ inputs.BASE }}
+    secrets:
+      ACTION_PAT: ${{ secrets.ACTION_PAT }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}

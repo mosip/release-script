@@ -24,10 +24,25 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
+      USERNAME: ${{ steps.ORG_TOKEN.outputs.USERNAME }}
     steps:
       - name: Check if input TOKEN is empty
         if: ${{  inputs.TOKEN == ''  }}
         id: ORG_TOKEN
+        run: |
+          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipqa ]]; then
+            echo "TOKEN=QA_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
+            echo "USERNAME=DOCKER_USERNAME" >> $GITHUB_OUTPUT
+          fi
+          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipint ]]; then
+            echo "TOKEN=INT_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
+            echo "USERNAME=DOCKER_USERNAME" >> $GITHUB_OUTPUT
+          fi
+      - name: Print Secret Name
+        run: |
+          echo "ORGANIZATION NAME :  ${{ inputs.DESTINATION_ORGANIZATION }} "
+          echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
+          echo "USERNAME : ${{ steps.ORG_TOKEN.outputs.USERNAME }}"
         run: |       
           if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipqa ]]; then
             echo "TOKEN=QA_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
@@ -48,6 +63,10 @@ jobs:
     uses: mosip/kattu/.github/workflows/image-transfer.yml@master
     with:
       DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
+    secrets:
+      USERNAME: "${{ secrets[needs.chk_token.outputs.USERNAME] || inputs.USERNAME }}"
+      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
       USERNAME: ${{ inputs.USERNAME }}
     secrets:
       TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
