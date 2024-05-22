@@ -1,4 +1,5 @@
-import subprocess
+#import subprocess
+import docker as dock
 import csv
 import yaml
 import sys
@@ -11,20 +12,6 @@ import re
 import logging
 import os
 from datetime import datetime
-
-# Function to install Docker module
-def install_docker_module():
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "docker"])
-    except subprocess.CalledProcessError:
-        print("Error: Failed to install the Docker module.")
-        sys.exit(1)
-
-# Install Docker module
-install_docker_module()
-
-# Now import the Docker module
-import docker as dock
 
 config = {}
 
