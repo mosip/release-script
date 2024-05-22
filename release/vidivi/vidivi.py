@@ -1,4 +1,4 @@
-import docker
+import docker as dock
 import csv
 import yaml
 import sys
