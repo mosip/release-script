@@ -137,7 +137,7 @@ def main():
     # create log file with format date-time.log
     if not os.path.exists('./logs/'):
         os.makedirs('./logs/')
-    logFile = "vidivi-" + datetime.now().strftime("%d-%m-%Y-%H:%M:%S") + ".log"
+    logFile = "vidivi.log"
     logging.basicConfig(filename='logs/' + logFile, level=logging.DEBUG, filemode='a',
                         format=' %(asctime)s  %(levelname)s  %(message)s ',
                         datefmt='%d-%b-%y %H:%M:%S')
