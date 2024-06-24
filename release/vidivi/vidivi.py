@@ -157,20 +157,6 @@ def main():
         print_log("Tag not provided for the images list below: \n\t" + str(tagsNotAvailable) + "", 'error')
         exit(1)
 
-    # print the destination image hash before push     
-    print_log("", 'info')
-    print_log('*' * 50, 'info')
-    print_log('*' * 20 + " Print the destination image hash before push " + '*' * 20, 'info')
-    print_log('*' * 50, 'info')
-    for image in images:
-        imgName = image[0][: image[0].find(":")]
-        destImgName = config['docker']['destination_organization'] + "/" + (imgName.split('/')[-1])
-        destImgTag = image[1]
-        destImgHash = getDockerHash(destImgName, destImgTag)
-        print_log("", 'info')
-        print_log("=" * 4 + " Destination Image Hash Before Push = \"" + destImgName + ":" + destImgTag + "\" IMAGE_ID : " + destImgHash, 'info')
-        print_log("", 'info')
-
     # check the existence of srcImage+tag
     print_log("", 'info')
     print_log('*' * 20 + " Check existence of Source Images " + '*' * 67, 'info')
