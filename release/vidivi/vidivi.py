@@ -86,12 +86,12 @@ def chkImagesList(images):
     return images, tagsNotAvailable
 
 
-def chkImageExistence(image, tag, registry_url):
+def chkImageExistence(image, tag, imageExitUrl):
     if '@sha256:' in image:
         image_name, image_digest = image.split('@sha256:')
-        url = registry_url + "repositories/" + image_name + "/manifests/" + "sha256:" + image_digest
+        url = imageExitUrl + "repositories/" + image_name + "/manifests/" + "sha256:" + image_digest
     else:
-        url = registry_url + "repositories/" + image + "/tags/" + tag
+        url = imageExitUrl + "repositories/" + image + "/tags/" + tag
     print("url= " + url)
     r = requests.get(url=url)
     # If image not found exit the script
@@ -133,7 +133,8 @@ def chkDockerAccExistence(acc_name):
 
 def main():
     client = dock.from_env()
-    registry_url = "https://index.docker.io/v1/"
+    registry_url = config['docker']['registry_url']
+    imageExitUrl = config['docker']['imageExitUrl']
     # create log file with format date-time.log
     if not os.path.exists('./logs/'):
         os.makedirs('./logs/')
@@ -168,11 +169,10 @@ def main():
     for image in images:
         srcImgName = image[0][: image[0].find(":")]
         srcImgtag = image[0][image[0].find(":") + 1:]
-        srcregistryUrl = "https://registry.hub.docker.com/v2/"
         print_log("", 'info')
         print_log("src = \"" + srcImgName + "\" tag = \"" + srcImgtag + "\"", 'info')
         # call function to check existence of source images
-        if not chkImageExistence(srcImgName, srcImgtag, srcregistryUrl):
+        if not chkImageExistence(srcImgName, srcImgtag, imageExitUrl):
             srcImgNotExist.append([srcImgName + ":" + srcImgtag])
         # check if source and destination images are same
         destImgName = config['docker']['destination_organization'] + "/" + (srcImgName.split('/')[-1])
@@ -214,7 +214,7 @@ def main():
         print_log("Destination Image = \"" + destImgName + "\" Destination Image tag = \"" + str(destImgTag) + "\" IMAGE_ID : " + destImgHash, 'info')
 
         # call function to check existence of destination images
-        if not chkImageExistence(destImgName, destImgTag, registry_url):
+        if not chkImageExistence(destImgName, destImgTag, imageExitUrl):
             destImgNotExist.append([destImgName + ":" + destImgTag])
             continue
 
