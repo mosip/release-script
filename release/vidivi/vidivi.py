@@ -87,13 +87,35 @@ def chkImagesList(images):
 
 
 def chkImageExistence(image, tag, imageExitUrl):
-    if '@sha256:' in image:
-        image_name, image_digest = image.split('@sha256:')
-        url = imageExitUrl + "repositories/" + image_name + "/manifests/" + "sha256:" + image_digest
+    headers = {}
+    # Get the repository name
+    if '@sha256' in image:
+        image_name, image_digest = image.split('@sha256')
+    else:
+        image_name = image
+    # Get the auth token
+    url = 'https://auth.docker.io/token?service=registry.docker.io&scope=repository:' + image_name + ':pull'
+    token_req = requests.get(url=url, headers={"Content-Type": "text"})
+    if token_req.status_code == 200:
+        token = token_req.json()['token']
+        headers = {
+            "Authorization": "Bearer " + token
+        }
+    else:
+        print_log("Failed to get auth token", 'error')
+        return False
+    
+    if '@sha256' in image:
+        image_name, image_digest = image.split('@sha256')
+        url = imageExitUrl + image_name + "/manifests/" + "sha256:" + tag
     else:
         url = imageExitUrl + "repositories/" + image + "/tags/" + tag
+    
     print("url= " + url)
-    r = requests.get(url=url)
+    if 'sha256:' in url:
+        r = requests.get(url=url, headers=headers)
+    else:
+        r = requests.get(url=url)
     # If image not found exit the script
     if int(r.status_code) == 404:
         print_log("Image \"" + image + ":" + tag + "\" does not exist", 'error')
