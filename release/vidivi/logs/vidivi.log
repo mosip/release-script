@@ -1,84 +1,136 @@
- 05-Jul-24 14:16:09  INFO  LOGFILE CREATED : vidivi.log 
- 05-Jul-24 14:16:09  INFO   
- 05-Jul-24 14:16:09  INFO  ******************** Check Images List ************************************************************************************ 
- 05-Jul-24 14:16:09  INFO   
- 05-Jul-24 14:16:09  INFO  IMAGES= [['mosipdev/inji-verify:release-0.9.x', '0.9.0']] 
- 05-Jul-24 14:16:09  INFO   
- 05-Jul-24 14:16:09  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 05-Jul-24 14:16:09  INFO   
- 05-Jul-24 14:16:09  INFO  src = "mosipdev/inji-verify" tag = "release-0.9.x" 
- 05-Jul-24 14:16:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Jul-24 14:16:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify:pull HTTP/1.1" 200 None 
- 05-Jul-24 14:16:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Jul-24 14:16:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify/tags/release-0.9.x HTTP/1.1" 200 768 
- 05-Jul-24 14:16:10  INFO   
- 05-Jul-24 14:16:10  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 05-Jul-24 14:16:10  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 05-Jul-24 14:16:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
- 05-Jul-24 14:16:10  INFO   
- 05-Jul-24 14:16:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 05-Jul-24 14:16:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Jul-24 14:16:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-verify:pull HTTP/1.1" 200 None 
- 05-Jul-24 14:16:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 05-Jul-24 14:16:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/inji-verify/manifests/0.9.0 HTTP/1.1" 404 99 
- 05-Jul-24 14:16:11  INFO   
- 05-Jul-24 14:16:11  INFO  [ mosipid/inji-verify ]  
- 05-Jul-24 14:16:11  INFO  Destination Image = "mosipid/inji-verify" Destination Image tag = "0.9.0" IMAGE_ID :  
- 05-Jul-24 14:16:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Jul-24 14:16:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-verify:pull HTTP/1.1" 200 None 
- 05-Jul-24 14:16:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Jul-24 14:16:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/inji-verify/tags/0.9.0 HTTP/1.1" 404 126 
- 05-Jul-24 14:16:11  ERROR  Image "mosipid/inji-verify:0.9.0" does not exist 
- 05-Jul-24 14:16:11  INFO   
- 05-Jul-24 14:16:11  INFO  ******************** HASH Operation Results ********************************************************************** 
- 05-Jul-24 14:16:11  INFO   
- 05-Jul-24 14:16:11  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/inji-verify:0.9.0']] 
- 05-Jul-24 14:16:11  INFO   
- 05-Jul-24 14:16:11  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 05-Jul-24 14:16:11  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 05-Jul-24 14:16:11  DEBUG  Found file at path: /root/.docker/config.json 
- 05-Jul-24 14:16:11  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 05-Jul-24 14:16:11  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 05-Jul-24 14:16:11  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 05-Jul-24 14:16:11  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Jul-24 14:16:11  DEBUG  No entry found 
- 05-Jul-24 14:16:12  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 05-Jul-24 14:16:12  INFO   
- 05-Jul-24 14:16:12  INFO  ********** [ mosipid/inji-verify:0.9.0 ] **************************************************** 
- 05-Jul-24 14:16:12  INFO   
- 05-Jul-24 14:16:12  INFO  [ PULL ----------------------> mosipdev/inji-verify:release-0.9.x ]  
- 05-Jul-24 14:16:12  DEBUG  Looking for auth config 
- 05-Jul-24 14:16:12  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Jul-24 14:16:12  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Jul-24 14:16:12  DEBUG  Found auth config 
- 05-Jul-24 14:16:13  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.9.x&fromImage=mosipdev%2Finji-verify HTTP/1.1" 200 None 
- 05-Jul-24 14:16:18  INFO  Status: Downloaded newer image for mosipdev/inji-verify:release-0.9.x 
- 05-Jul-24 14:16:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify:release-0.9.x/tag?tag=0.9.0&repo=mosipid%2Finji-verify&force=1 HTTP/1.1" 201 0 
- 05-Jul-24 14:16:18  INFO   
- 05-Jul-24 14:16:18  INFO  [ PUSH -----> mosipdev/inji-verify:release-0.9.x	------> mosipid/inji-verify:0.9.0 ]  
- 05-Jul-24 14:16:18  DEBUG  Looking for auth config 
- 05-Jul-24 14:16:18  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Jul-24 14:16:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Jul-24 14:16:18  DEBUG  Found auth config 
- 05-Jul-24 14:16:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-verify/push?tag=0.9.0 HTTP/1.1" 200 None 
- 05-Jul-24 14:16:25  INFO  0.9.0: digest: sha256:6bc98346e6dea410bbd492587473d5580b181063ad3ac7055eb4809f972608f1 size: 2818 
- 05-Jul-24 14:16:25  INFO   
- 05-Jul-24 14:16:25  INFO  [ PUSH -----> mosipdev/inji-verify:release-0.9.x	------> mosipid/inji-verify:latest ]  
- 05-Jul-24 14:16:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify:release-0.9.x/tag?tag=latest&repo=mosipid%2Finji-verify&force=1 HTTP/1.1" 201 0 
- 05-Jul-24 14:16:25  DEBUG  Looking for auth config 
- 05-Jul-24 14:16:25  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Jul-24 14:16:25  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Jul-24 14:16:25  DEBUG  Found auth config 
- 05-Jul-24 14:16:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-verify/push?tag=latest HTTP/1.1" 200 None 
- 05-Jul-24 14:16:27  INFO  latest: digest: sha256:6bc98346e6dea410bbd492587473d5580b181063ad3ac7055eb4809f972608f1 size: 2818 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-verify%3Arelease-0.9.x%22%5D%7D HTTP/1.1" 200 441 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6505eaad3390739adb3b3b72b344ebb4225c2d20f1ee9a4ceded6dfb36a9027/json HTTP/1.1" 200 None 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-verify:release-0.9.x?force=False&noprune=False HTTP/1.1" 200 160 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-verify%3A0.9.0%22%5D%7D HTTP/1.1" 200 432 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6505eaad3390739adb3b3b72b344ebb4225c2d20f1ee9a4ceded6dfb36a9027/json HTTP/1.1" 200 None 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-verify:0.9.0?force=False&noprune=False HTTP/1.1" 200 43 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-verify%3Alatest%22%5D%7D HTTP/1.1" 200 433 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6505eaad3390739adb3b3b72b344ebb4225c2d20f1ee9a4ceded6dfb36a9027/json HTTP/1.1" 200 None 
- 05-Jul-24 14:16:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-verify:latest?force=False&noprune=False HTTP/1.1" 200 1269 
- 05-Jul-24 14:16:27  INFO  Completed mosipdev/inji-verify:release-0.9.x	------> mosipid/inji-verify:0.9.0 
+ 08-Jul-24 08:00:08  INFO  LOGFILE CREATED : vidivi.log 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  ******************** Check Images List ************************************************************************************ 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  IMAGES= [['mosipdev/mock-abis:develop', 'develop'], ['mosipdev/mock-mv:develop', 'develop']] 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  src = "mosipdev/mock-abis" tag = "develop" 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-abis:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Jul-24 08:00:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-abis/tags/develop HTTP/1.1" 200 814 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  src = "mosipdev/mock-mv" tag = "develop" 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-mv:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Jul-24 08:00:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-mv/tags/develop HTTP/1.1" 200 814 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 08-Jul-24 08:00:08  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 08-Jul-24 08:00:08  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 08-Jul-24 08:00:08  INFO   
+ 08-Jul-24 08:00:08  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/mock-abis:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:08  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Jul-24 08:00:09  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/mock-abis/manifests/develop HTTP/1.1" 200 2832 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  [ mosipdev2/mock-abis ]  
+ 08-Jul-24 08:00:09  INFO  Destination Image = "mosipdev2/mock-abis" Destination Image tag = "develop" IMAGE_ID : "sha256:e3307a8b4e08319a69aab04067a76c5e0120081f87fa079d612816715e09a195" 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/mock-abis:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Jul-24 08:00:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/mock-abis/tags/develop HTTP/1.1" 200 823 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/mock-mv:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Jul-24 08:00:09  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/mock-mv/manifests/develop HTTP/1.1" 200 2832 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  [ mosipdev2/mock-mv ]  
+ 08-Jul-24 08:00:09  INFO  Destination Image = "mosipdev2/mock-mv" Destination Image tag = "develop" IMAGE_ID : "sha256:d0a681aecb7cdf38edf9aa23ae3c569be85f220c9af103bd80795fffcb8db207" 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Jul-24 08:00:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/mock-mv:pull HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Jul-24 08:00:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/mock-mv/tags/develop HTTP/1.1" 200 823 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 08-Jul-24 08:00:09  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 08-Jul-24 08:00:09  DEBUG  Found file at path: /root/.docker/config.json 
+ 08-Jul-24 08:00:09  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 08-Jul-24 08:00:09  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 08-Jul-24 08:00:09  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 08-Jul-24 08:00:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:09  DEBUG  No entry found 
+ 08-Jul-24 08:00:09  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  ********** [ mosipdev2/mock-abis:develop ] **************************************************** 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  [ PULL ----------------------> mosipdev/mock-abis:develop ]  
+ 08-Jul-24 08:00:09  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:09  DEBUG  Found auth config 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  ********** [ mosipdev2/mock-mv:develop ] **************************************************** 
+ 08-Jul-24 08:00:09  INFO   
+ 08-Jul-24 08:00:09  INFO  [ PULL ----------------------> mosipdev/mock-mv:develop ]  
+ 08-Jul-24 08:00:09  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:09  DEBUG  Found auth config 
+ 08-Jul-24 08:00:10  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fmock-abis HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:10  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fmock-mv HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:19  INFO  Status: Downloaded newer image for mosipdev/mock-mv:develop 
+ 08-Jul-24 08:00:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-mv:develop/tag?tag=develop&repo=mosipdev2%2Fmock-mv&force=1 HTTP/1.1" 201 0 
+ 08-Jul-24 08:00:19  INFO   
+ 08-Jul-24 08:00:19  INFO  [ PUSH -----> mosipdev/mock-mv:develop	------> mosipdev2/mock-mv:develop ]  
+ 08-Jul-24 08:00:19  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:19  DEBUG  Found auth config 
+ 08-Jul-24 08:00:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/mock-mv/push?tag=develop HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:20  INFO  Status: Downloaded newer image for mosipdev/mock-abis:develop 
+ 08-Jul-24 08:00:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-abis:develop/tag?tag=develop&repo=mosipdev2%2Fmock-abis&force=1 HTTP/1.1" 201 0 
+ 08-Jul-24 08:00:20  INFO   
+ 08-Jul-24 08:00:20  INFO  [ PUSH -----> mosipdev/mock-abis:develop	------> mosipdev2/mock-abis:develop ]  
+ 08-Jul-24 08:00:20  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:20  DEBUG  Found auth config 
+ 08-Jul-24 08:00:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/mock-abis/push?tag=develop HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:22  INFO  develop: digest: sha256:905a480262190711db60cac9af61df7df9ca1752b49b48638bf887cd31cd3070 size: 2832 
+ 08-Jul-24 08:00:22  INFO   
+ 08-Jul-24 08:00:22  INFO  [ PUSH -----> mosipdev/mock-mv:develop	------> mosipdev2/mock-mv:latest ]  
+ 08-Jul-24 08:00:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-mv:develop/tag?tag=latest&repo=mosipdev2%2Fmock-mv&force=1 HTTP/1.1" 201 0 
+ 08-Jul-24 08:00:22  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:22  DEBUG  Found auth config 
+ 08-Jul-24 08:00:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/mock-mv/push?tag=latest HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:23  INFO  develop: digest: sha256:252c0f846624db24d875a4921af22fafe31295aa3522847f90dd8b3b68677c9b size: 2832 
+ 08-Jul-24 08:00:23  INFO   
+ 08-Jul-24 08:00:23  INFO  [ PUSH -----> mosipdev/mock-abis:develop	------> mosipdev2/mock-abis:latest ]  
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-abis:develop/tag?tag=latest&repo=mosipdev2%2Fmock-abis&force=1 HTTP/1.1" 201 0 
+ 08-Jul-24 08:00:23  DEBUG  Looking for auth config 
+ 08-Jul-24 08:00:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Jul-24 08:00:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Jul-24 08:00:23  DEBUG  Found auth config 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/mock-abis/push?tag=latest HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:23  INFO  latest: digest: sha256:905a480262190711db60cac9af61df7df9ca1752b49b48638bf887cd31cd3070 size: 2832 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmock-mv%3Adevelop%22%5D%7D HTTP/1.1" 200 366 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ad189a64939193895e90f34f6597740da3b1a338e9bd0e9c5600e16eabefb2b6/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mock-mv:develop?force=False&noprune=False HTTP/1.1" 200 146 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fmock-mv%3Adevelop%22%5D%7D HTTP/1.1" 200 367 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ad189a64939193895e90f34f6597740da3b1a338e9bd0e9c5600e16eabefb2b6/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/mock-mv:develop?force=False&noprune=False HTTP/1.1" 200 43 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fmock-mv%3Alatest%22%5D%7D HTTP/1.1" 200 366 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ad189a64939193895e90f34f6597740da3b1a338e9bd0e9c5600e16eabefb2b6/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/mock-mv:latest?force=False&noprune=False HTTP/1.1" 200 835 
+ 08-Jul-24 08:00:23  INFO  Completed mosipdev/mock-mv:develop	------> mosipdev2/mock-mv:develop 
+ 08-Jul-24 08:00:24  INFO  latest: digest: sha256:252c0f846624db24d875a4921af22fafe31295aa3522847f90dd8b3b68677c9b size: 2832 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmock-abis%3Adevelop%22%5D%7D HTTP/1.1" 200 368 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ca1b1574351d8aa7bec29d41454780fe73f596624d5528675bc90550b80dca77/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mock-abis:develop?force=False&noprune=False HTTP/1.1" 200 150 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fmock-abis%3Adevelop%22%5D%7D HTTP/1.1" 200 369 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ca1b1574351d8aa7bec29d41454780fe73f596624d5528675bc90550b80dca77/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/mock-abis:develop?force=False&noprune=False HTTP/1.1" 200 45 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fmock-abis%3Alatest%22%5D%7D HTTP/1.1" 200 368 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ca1b1574351d8aa7bec29d41454780fe73f596624d5528675bc90550b80dca77/json HTTP/1.1" 200 None 
+ 08-Jul-24 08:00:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/mock-abis:latest?force=False&noprune=False HTTP/1.1" 200 1269 
+ 08-Jul-24 08:00:24  INFO  Completed mosipdev/mock-abis:develop	------> mosipdev2/mock-abis:develop 
