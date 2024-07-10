@@ -1,81 +1,85 @@
- 10-Jul-24 08:32:57  INFO  LOGFILE CREATED : vidivi.log 
- 10-Jul-24 08:32:57  INFO   
- 10-Jul-24 08:32:57  INFO  ******************** Check Images List ************************************************************************************ 
- 10-Jul-24 08:32:57  INFO   
- 10-Jul-24 08:32:57  INFO  IMAGES= [['mosipdev/resident-service:develop-java21', 'develop-java21']] 
- 10-Jul-24 08:32:57  INFO   
- 10-Jul-24 08:32:57  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 10-Jul-24 08:32:57  INFO   
- 10-Jul-24 08:32:57  INFO  src = "mosipdev/resident-service" tag = "develop-java21" 
- 10-Jul-24 08:32:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Jul-24 08:32:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/resident-service:pull HTTP/1.1" 200 None 
- 10-Jul-24 08:32:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Jul-24 08:32:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/resident-service/tags/develop-java21 HTTP/1.1" 200 818 
- 10-Jul-24 08:32:57  INFO   
- 10-Jul-24 08:32:57  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 10-Jul-24 08:32:57  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 10-Jul-24 08:32:58  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 10-Jul-24 08:32:58  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
- 10-Jul-24 08:32:58  INFO   
- 10-Jul-24 08:32:58  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 10-Jul-24 08:32:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Jul-24 08:32:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/resident-service:pull HTTP/1.1" 200 None 
- 10-Jul-24 08:32:58  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 10-Jul-24 08:32:59  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/resident-service/manifests/develop-java21 HTTP/1.1" 200 2416 
- 10-Jul-24 08:32:59  INFO   
- 10-Jul-24 08:32:59  INFO  [ mosipdev2/resident-service ]  
- 10-Jul-24 08:32:59  INFO  Destination Image = "mosipdev2/resident-service" Destination Image tag = "develop-java21" IMAGE_ID : "sha256:671ef8d123838d37c089d1697d3ef0e43bd7a6547b285c84d2d053a941e87935" 
- 10-Jul-24 08:32:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Jul-24 08:32:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/resident-service:pull HTTP/1.1" 200 None 
- 10-Jul-24 08:32:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Jul-24 08:32:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/resident-service/tags/develop-java21 HTTP/1.1" 200 830 
- 10-Jul-24 08:32:59  INFO   
- 10-Jul-24 08:32:59  INFO  ******************** HASH Operation Results ********************************************************************** 
- 10-Jul-24 08:32:59  INFO   
- 10-Jul-24 08:32:59  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 10-Jul-24 08:32:59  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 10-Jul-24 08:32:59  DEBUG  Found file at path: /root/.docker/config.json 
- 10-Jul-24 08:32:59  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 10-Jul-24 08:32:59  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 10-Jul-24 08:32:59  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 10-Jul-24 08:32:59  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Jul-24 08:32:59  DEBUG  No entry found 
- 10-Jul-24 08:32:59  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 10-Jul-24 08:32:59  INFO   
- 10-Jul-24 08:32:59  INFO  ********** [ mosipdev2/resident-service:develop-java21 ] **************************************************** 
- 10-Jul-24 08:32:59  INFO   
- 10-Jul-24 08:32:59  INFO  [ PULL ----------------------> mosipdev/resident-service:develop-java21 ]  
- 10-Jul-24 08:32:59  DEBUG  Looking for auth config 
- 10-Jul-24 08:32:59  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Jul-24 08:32:59  DEBUG  Found 'https://index.docker.io/v1/' 
- 10-Jul-24 08:32:59  DEBUG  Found auth config 
- 10-Jul-24 08:32:59  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop-java21&fromImage=mosipdev%2Fresident-service HTTP/1.1" 200 None 
- 10-Jul-24 08:33:13  INFO  Status: Downloaded newer image for mosipdev/resident-service:develop-java21 
- 10-Jul-24 08:33:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:develop-java21/tag?tag=develop-java21&repo=mosipdev2%2Fresident-service&force=1 HTTP/1.1" 201 0 
- 10-Jul-24 08:33:13  INFO   
- 10-Jul-24 08:33:13  INFO  [ PUSH -----> mosipdev/resident-service:develop-java21	------> mosipdev2/resident-service:develop-java21 ]  
- 10-Jul-24 08:33:13  DEBUG  Looking for auth config 
- 10-Jul-24 08:33:13  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Jul-24 08:33:13  DEBUG  Found 'https://index.docker.io/v1/' 
- 10-Jul-24 08:33:13  DEBUG  Found auth config 
- 10-Jul-24 08:33:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service/push?tag=develop-java21 HTTP/1.1" 200 None 
- 10-Jul-24 08:33:14  INFO  develop-java21: digest: sha256:4d9de613bcf1dec24c200669bbb6389754cae5a8fe91b906c7a4ec6efd041e9d size: 2416 
- 10-Jul-24 08:33:14  INFO   
- 10-Jul-24 08:33:14  INFO  [ PUSH -----> mosipdev/resident-service:develop-java21	------> mosipdev2/resident-service:latest ]  
- 10-Jul-24 08:33:14  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:develop-java21/tag?tag=latest&repo=mosipdev2%2Fresident-service&force=1 HTTP/1.1" 201 0 
- 10-Jul-24 08:33:14  DEBUG  Looking for auth config 
- 10-Jul-24 08:33:14  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Jul-24 08:33:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 10-Jul-24 08:33:14  DEBUG  Found auth config 
- 10-Jul-24 08:33:14  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service/push?tag=latest HTTP/1.1" 200 None 
- 10-Jul-24 08:33:15  INFO  latest: digest: sha256:4d9de613bcf1dec24c200669bbb6389754cae5a8fe91b906c7a4ec6efd041e9d size: 2416 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fresident-service%3Adevelop-java21%22%5D%7D HTTP/1.1" 200 382 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/sha256:90a6d06c3223ef1a307f7d74c8118695b16eb2e7ad8a85fa66a3eb29c6fdebcb/json HTTP/1.1" 200 None 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/resident-service:develop-java21?force=False&noprune=False HTTP/1.1" 200 171 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fresident-service%3Adevelop-java21%22%5D%7D HTTP/1.1" 200 383 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/sha256:90a6d06c3223ef1a307f7d74c8118695b16eb2e7ad8a85fa66a3eb29c6fdebcb/json HTTP/1.1" 200 None 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/resident-service:develop-java21?force=False&noprune=False HTTP/1.1" 200 59 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fresident-service%3Alatest%22%5D%7D HTTP/1.1" 200 375 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "GET /v1.45/images/sha256:90a6d06c3223ef1a307f7d74c8118695b16eb2e7ad8a85fa66a3eb29c6fdebcb/json HTTP/1.1" 200 None 
- 10-Jul-24 08:33:15  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/resident-service:latest?force=False&noprune=False HTTP/1.1" 200 1111 
- 10-Jul-24 08:33:15  INFO  Completed mosipdev/resident-service:develop-java21	------> mosipdev2/resident-service:develop-java21 
+ 10-Jul-24 12:24:01  INFO  LOGFILE CREATED : vidivi.log 
+ 10-Jul-24 12:24:01  INFO   
+ 10-Jul-24 12:24:01  INFO  ******************** Check Images List ************************************************************************************ 
+ 10-Jul-24 12:24:01  INFO   
+ 10-Jul-24 12:24:01  INFO  IMAGES= [['mosipdev/kernel-salt-generator:develop', 'develop']] 
+ 10-Jul-24 12:24:01  INFO   
+ 10-Jul-24 12:24:01  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 10-Jul-24 12:24:01  INFO   
+ 10-Jul-24 12:24:01  INFO  src = "mosipdev/kernel-salt-generator" tag = "develop" 
+ 10-Jul-24 12:24:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Jul-24 12:24:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Jul-24 12:24:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-salt-generator/tags/develop HTTP/1.1" 200 813 
+ 10-Jul-24 12:24:02  INFO   
+ 10-Jul-24 12:24:02  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 10-Jul-24 12:24:02  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 10-Jul-24 12:24:02  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 10-Jul-24 12:24:02  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 10-Jul-24 12:24:02  INFO   
+ 10-Jul-24 12:24:02  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 10-Jul-24 12:24:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Jul-24 12:24:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:02  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 10-Jul-24 12:24:02  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/develop HTTP/1.1" 401 174 
+ 10-Jul-24 12:24:03  INFO   
+ 10-Jul-24 12:24:03  INFO  [ mosipdev2/kernel-salt-generator ]  
+ 10-Jul-24 12:24:03  INFO  Destination Image = "mosipdev2/kernel-salt-generator" Destination Image tag = "develop" IMAGE_ID :  
+ 10-Jul-24 12:24:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Jul-24 12:24:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Jul-24 12:24:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-salt-generator/tags/develop HTTP/1.1" 404 135 
+ 10-Jul-24 12:24:03  ERROR  Image "mosipdev2/kernel-salt-generator:develop" does not exist 
+ 10-Jul-24 12:24:03  INFO   
+ 10-Jul-24 12:24:03  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 10-Jul-24 12:24:03  INFO   
+ 10-Jul-24 12:24:03  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/kernel-salt-generator:develop']] 
+ 10-Jul-24 12:24:03  INFO   
+ 10-Jul-24 12:24:03  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 10-Jul-24 12:24:03  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 10-Jul-24 12:24:03  DEBUG  Found file at path: /root/.docker/config.json 
+ 10-Jul-24 12:24:03  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 10-Jul-24 12:24:03  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 10-Jul-24 12:24:03  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 10-Jul-24 12:24:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Jul-24 12:24:03  DEBUG  No entry found 
+ 10-Jul-24 12:24:04  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 10-Jul-24 12:24:04  INFO   
+ 10-Jul-24 12:24:04  INFO  ********** [ mosipdev2/kernel-salt-generator:develop ] **************************************************** 
+ 10-Jul-24 12:24:04  INFO   
+ 10-Jul-24 12:24:04  INFO  [ PULL ----------------------> mosipdev/kernel-salt-generator:develop ]  
+ 10-Jul-24 12:24:04  DEBUG  Looking for auth config 
+ 10-Jul-24 12:24:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Jul-24 12:24:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 10-Jul-24 12:24:04  DEBUG  Found auth config 
+ 10-Jul-24 12:24:05  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:11  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator:develop 
+ 10-Jul-24 12:24:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:develop/tag?tag=develop&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 10-Jul-24 12:24:11  INFO   
+ 10-Jul-24 12:24:11  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:develop	------> mosipdev2/kernel-salt-generator:develop ]  
+ 10-Jul-24 12:24:11  DEBUG  Looking for auth config 
+ 10-Jul-24 12:24:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Jul-24 12:24:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 10-Jul-24 12:24:11  DEBUG  Found auth config 
+ 10-Jul-24 12:24:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=develop HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:16  INFO  develop: digest: sha256:06c117a2116840d605781de2f77e213f07c9726a21b918e69566643cf3169985 size: 2414 
+ 10-Jul-24 12:24:16  INFO   
+ 10-Jul-24 12:24:16  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:develop	------> mosipdev2/kernel-salt-generator:latest ]  
+ 10-Jul-24 12:24:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:develop/tag?tag=latest&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 10-Jul-24 12:24:16  DEBUG  Looking for auth config 
+ 10-Jul-24 12:24:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Jul-24 12:24:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 10-Jul-24 12:24:16  DEBUG  Found auth config 
+ 10-Jul-24 12:24:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=latest HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:18  INFO  latest: digest: sha256:06c117a2116840d605781de2f77e213f07c9726a21b918e69566643cf3169985 size: 2414 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-salt-generator%3Adevelop%22%5D%7D HTTP/1.1" 200 380 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:abd0348f0a5ce38375ad067cca08671bf1d957ec5f9ad5b531566a2a0ad3bc40/json HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-salt-generator:develop?force=False&noprune=False HTTP/1.1" 200 174 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Adevelop%22%5D%7D HTTP/1.1" 200 381 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:abd0348f0a5ce38375ad067cca08671bf1d957ec5f9ad5b531566a2a0ad3bc40/json HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:develop?force=False&noprune=False HTTP/1.1" 200 57 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 380 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:abd0348f0a5ce38375ad067cca08671bf1d957ec5f9ad5b531566a2a0ad3bc40/json HTTP/1.1" 200 None 
+ 10-Jul-24 12:24:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 1035 
+ 10-Jul-24 12:24:18  INFO  Completed mosipdev/kernel-salt-generator:develop	------> mosipdev2/kernel-salt-generator:develop 
