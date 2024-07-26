@@ -1,81 +1,81 @@
- 25-Jul-24 13:49:04  INFO  LOGFILE CREATED : vidivi.log 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** Check Images List ************************************************************************************ 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  IMAGES= [['mosipdev/apitest-mimoto:release-0.13.x', '0.13.x']] 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  src = "mosipdev/apitest-mimoto" tag = "release-0.13.x" 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Jul-24 13:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Jul-24 13:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-mimoto/tags/release-0.13.x HTTP/1.1" 200 820 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 25-Jul-24 13:49:04  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 25-Jul-24 13:49:04  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Jul-24 13:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Jul-24 13:49:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-mimoto/manifests/0.13.x HTTP/1.1" 200 3264 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  [ mosipqa/apitest-mimoto ]  
- 25-Jul-24 13:49:04  INFO  Destination Image = "mosipqa/apitest-mimoto" Destination Image tag = "0.13.x" IMAGE_ID : "sha256:a3336667d6a6b33df8713b9346ed4a5e805aed99be6a76836bcb331a6d5f4927" 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Jul-24 13:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 25-Jul-24 13:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Jul-24 13:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-mimoto/tags/0.13.x HTTP/1.1" 200 813 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** HASH Operation Results ********************************************************************** 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 25-Jul-24 13:49:04  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 25-Jul-24 13:49:04  DEBUG  Found file at path: /root/.docker/config.json 
- 25-Jul-24 13:49:04  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 25-Jul-24 13:49:04  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 25-Jul-24 13:49:04  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 25-Jul-24 13:49:04  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Jul-24 13:49:04  DEBUG  No entry found 
- 25-Jul-24 13:49:04  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  ********** [ mosipqa/apitest-mimoto:0.13.x ] **************************************************** 
- 25-Jul-24 13:49:04  INFO   
- 25-Jul-24 13:49:04  INFO  [ PULL ----------------------> mosipdev/apitest-mimoto:release-0.13.x ]  
- 25-Jul-24 13:49:04  DEBUG  Looking for auth config 
- 25-Jul-24 13:49:04  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Jul-24 13:49:04  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Jul-24 13:49:04  DEBUG  Found auth config 
- 25-Jul-24 13:49:05  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.13.x&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
- 25-Jul-24 13:49:30  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto:release-0.13.x 
- 25-Jul-24 13:49:30  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.13.x/tag?tag=0.13.x&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 25-Jul-24 13:49:30  INFO   
- 25-Jul-24 13:49:30  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.13.x	------> mosipqa/apitest-mimoto:0.13.x ]  
- 25-Jul-24 13:49:30  DEBUG  Looking for auth config 
- 25-Jul-24 13:49:30  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Jul-24 13:49:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Jul-24 13:49:30  DEBUG  Found auth config 
- 25-Jul-24 13:49:30  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-mimoto/push?tag=0.13.x HTTP/1.1" 200 None 
- 25-Jul-24 13:49:31  INFO  0.13.x: digest: sha256:9fe7547f81bf51b93ffb0835dc6c484df580739a380ea94d57faffa1edd28dd7 size: 3264 
- 25-Jul-24 13:49:31  INFO   
- 25-Jul-24 13:49:31  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.13.x	------> mosipqa/apitest-mimoto:latest ]  
- 25-Jul-24 13:49:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.13.x/tag?tag=latest&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 25-Jul-24 13:49:31  DEBUG  Looking for auth config 
- 25-Jul-24 13:49:31  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Jul-24 13:49:31  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Jul-24 13:49:31  DEBUG  Found auth config 
- 25-Jul-24 13:49:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-mimoto/push?tag=latest HTTP/1.1" 200 None 
- 25-Jul-24 13:49:32  INFO  latest: digest: sha256:9fe7547f81bf51b93ffb0835dc6c484df580739a380ea94d57faffa1edd28dd7 size: 3264 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-mimoto%3Arelease-0.13.x%22%5D%7D HTTP/1.1" 200 381 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78fb3d6a933f44b41bcd666d33baabe112fd7e0aec04b2ddaa217d37a31f03ba/json HTTP/1.1" 200 None 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-mimoto:release-0.13.x?force=False&noprune=False HTTP/1.1" 200 167 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-mimoto%3A0.13.x%22%5D%7D HTTP/1.1" 200 372 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78fb3d6a933f44b41bcd666d33baabe112fd7e0aec04b2ddaa217d37a31f03ba/json HTTP/1.1" 200 None 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-mimoto:0.13.x?force=False&noprune=False HTTP/1.1" 200 47 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-mimoto%3Alatest%22%5D%7D HTTP/1.1" 200 372 
- 25-Jul-24 13:49:32  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78fb3d6a933f44b41bcd666d33baabe112fd7e0aec04b2ddaa217d37a31f03ba/json HTTP/1.1" 200 None 
- 25-Jul-24 13:49:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-mimoto:latest?force=False&noprune=False HTTP/1.1" 200 1447 
- 25-Jul-24 13:49:33  INFO  Completed mosipdev/apitest-mimoto:release-0.13.x	------> mosipqa/apitest-mimoto:0.13.x 
+ 26-Jul-24 09:17:22  INFO  LOGFILE CREATED : vidivi.log 
+ 26-Jul-24 09:17:22  INFO   
+ 26-Jul-24 09:17:22  INFO  ******************** Check Images List ************************************************************************************ 
+ 26-Jul-24 09:17:22  INFO   
+ 26-Jul-24 09:17:22  INFO  IMAGES= [['mosipdev/artifactory-server:release-1.2.0.x', '1.2.0.x']] 
+ 26-Jul-24 09:17:22  INFO   
+ 26-Jul-24 09:17:22  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 26-Jul-24 09:17:22  INFO   
+ 26-Jul-24 09:17:22  INFO  src = "mosipdev/artifactory-server" tag = "release-1.2.0.x" 
+ 26-Jul-24 09:17:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Jul-24 09:17:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 26-Jul-24 09:17:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Jul-24 09:17:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.2.0.x HTTP/1.1" 200 774 
+ 26-Jul-24 09:17:22  INFO   
+ 26-Jul-24 09:17:22  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 26-Jul-24 09:17:22  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 26-Jul-24 09:17:23  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 26-Jul-24 09:17:23  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 26-Jul-24 09:17:23  INFO   
+ 26-Jul-24 09:17:23  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 26-Jul-24 09:17:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Jul-24 09:17:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 26-Jul-24 09:17:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 26-Jul-24 09:17:23  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/artifactory-server/manifests/1.2.0.x HTTP/1.1" 200 8269 
+ 26-Jul-24 09:17:23  INFO   
+ 26-Jul-24 09:17:23  INFO  [ mosipqa/artifactory-server ]  
+ 26-Jul-24 09:17:23  INFO  Destination Image = "mosipqa/artifactory-server" Destination Image tag = "1.2.0.x" IMAGE_ID : "sha256:45d2861c32fe84d3e1568e39712e2badeb5d537d5f24fa6f587d6836f0a3cbca" 
+ 26-Jul-24 09:17:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Jul-24 09:17:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 26-Jul-24 09:17:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Jul-24 09:17:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/artifactory-server/tags/1.2.0.x HTTP/1.1" 200 817 
+ 26-Jul-24 09:17:23  INFO   
+ 26-Jul-24 09:17:23  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 26-Jul-24 09:17:23  INFO   
+ 26-Jul-24 09:17:23  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 26-Jul-24 09:17:23  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 26-Jul-24 09:17:23  DEBUG  Found file at path: /root/.docker/config.json 
+ 26-Jul-24 09:17:23  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 26-Jul-24 09:17:23  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 26-Jul-24 09:17:23  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 26-Jul-24 09:17:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Jul-24 09:17:23  DEBUG  No entry found 
+ 26-Jul-24 09:17:24  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 26-Jul-24 09:17:24  INFO   
+ 26-Jul-24 09:17:24  INFO  ********** [ mosipqa/artifactory-server:1.2.0.x ] **************************************************** 
+ 26-Jul-24 09:17:24  INFO   
+ 26-Jul-24 09:17:24  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.2.0.x ]  
+ 26-Jul-24 09:17:24  DEBUG  Looking for auth config 
+ 26-Jul-24 09:17:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Jul-24 09:17:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Jul-24 09:17:24  DEBUG  Found auth config 
+ 26-Jul-24 09:17:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.0.x&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:02  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.2.0.x 
+ 26-Jul-24 09:18:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x/tag?tag=1.2.0.x&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 26-Jul-24 09:18:02  INFO   
+ 26-Jul-24 09:18:02  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.2.0.x	------> mosipqa/artifactory-server:1.2.0.x ]  
+ 26-Jul-24 09:18:02  DEBUG  Looking for auth config 
+ 26-Jul-24 09:18:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Jul-24 09:18:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Jul-24 09:18:02  DEBUG  Found auth config 
+ 26-Jul-24 09:18:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=1.2.0.x HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:11  INFO  1.2.0.x: digest: sha256:5c46936967ff16e6035e85b83ab6f0b23d39041bd3f5b2e027e0c15ac67d2b3b size: 8269 
+ 26-Jul-24 09:18:11  INFO   
+ 26-Jul-24 09:18:11  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.2.0.x	------> mosipqa/artifactory-server:latest ]  
+ 26-Jul-24 09:18:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x/tag?tag=latest&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 26-Jul-24 09:18:11  DEBUG  Looking for auth config 
+ 26-Jul-24 09:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Jul-24 09:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Jul-24 09:18:11  DEBUG  Found auth config 
+ 26-Jul-24 09:18:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:13  INFO  latest: digest: sha256:5c46936967ff16e6035e85b83ab6f0b23d39041bd3f5b2e027e0c15ac67d2b3b size: 8269 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.2.0.x%22%5D%7D HTTP/1.1" 200 451 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0d6d55664224be5fe9a3b725708cfe0b837e9285228814eca8ed24ac1a21a7d7/json HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3A1.2.0.x%22%5D%7D HTTP/1.1" 200 442 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0d6d55664224be5fe9a3b725708cfe0b837e9285228814eca8ed24ac1a21a7d7/json HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:1.2.0.x?force=False&noprune=False HTTP/1.1" 200 52 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
+ 26-Jul-24 09:18:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0d6d55664224be5fe9a3b725708cfe0b837e9285228814eca8ed24ac1a21a7d7/json HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:14  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 26-Jul-24 09:18:14  INFO  Completed mosipdev/artifactory-server:release-1.2.0.x	------> mosipqa/artifactory-server:1.2.0.x 
