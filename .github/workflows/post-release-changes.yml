@@ -6,12 +6,15 @@ on:
       REPO_URL:
         description: 'Repo URL (EX. mosip/<repo name>)'
         required: true
+        type: string
       REPO_BRANCH:
         description: 'Repo Branch'
         required: true
+        type: string
       BASE:
         description: 'base branch for PR'
         required: true
+        type: string
       UPDATE_RELEASE_URL:
         description: 'Set to true to update Maven publish URL to RELEASE_URL'
         required: false
@@ -22,6 +25,19 @@ on:
         required: false
         type: boolean
         default: false
+      UPDATE_POM_VERSION:
+        description: 'Set to true to update POM versions'
+        required: false
+        type: boolean
+        default: false
+      FROM_VERSION:
+        description: 'Version to be replaced in POMs'
+        required: false
+        type: string
+      TO_VERSION:
+        description: 'Version to update to in POMs'
+        required: false
+        type: string
 
 jobs:
   maven-post-release-preparation:
@@ -32,6 +48,9 @@ jobs:
       BASE: ${{ inputs.BASE }}
       UPDATE_RELEASE_URL: ${{ inputs.UPDATE_RELEASE_URL }}
       UPDATE_SNAPSHOT_URL: ${{ inputs.UPDATE_SNAPSHOT_URL }}
+      UPDATE_POM_VERSION: ${{ inputs.UPDATE_POM_VERSION }}
+      FROM_VERSION: ${{ inputs.FROM_VERSION }}
+      TO_VERSION: ${{ inputs.TO_VERSION }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
