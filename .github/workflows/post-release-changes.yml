@@ -1,10 +1,10 @@
-name: Post-Release Preparation.
+name: Post-Release Preparation
 
 on:
   workflow_dispatch:
     inputs:
       REPO_URL:
-        description: 'Repo URL ( EX. mosip/< repo name > )'
+        description: 'Repo URL (EX. mosip/<repo name>)'
         required: true
       REPO_BRANCH:
         description: 'Repo Branch'
@@ -12,13 +12,26 @@ on:
       BASE:
         description: 'base branch for PR'
         required: true
+      UPDATE_RELEASE_URL:
+        description: 'Set to true to update Maven publish URL to RELEASE_URL'
+        required: false
+        type: boolean
+        default: false
+      UPDATE_SNAPSHOT_URL:
+        description: 'Set to true to update Maven publish URL to OSSRH_SNAPSHOT_URL'
+        required: false
+        type: boolean
+        default: false
+
 jobs:
   maven-post-release-preparation:
-    uses: mosip/kattu/.github/workflows/post-release-changes.yml@master
+    uses: mosip/Prafulrakhade/.github/workflows/post-release-changes.yml@master
     with:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
       BASE: ${{ inputs.BASE }}
+      UPDATE_RELEASE_URL: ${{ inputs.UPDATE_RELEASE_URL }}
+      UPDATE_SNAPSHOT_URL: ${{ inputs.UPDATE_SNAPSHOT_URL }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
