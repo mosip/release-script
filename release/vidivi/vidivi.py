@@ -1,9 +1,9 @@
-import docker as dock
+import subprocess
 import csv
 import yaml
 import sys
 import json
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import concurrent
 import requests
 import string
@@ -11,6 +11,20 @@ import re
 import logging
 import os
 from datetime import datetime
+
+# Function to install Docker module
+def install_docker_module():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "docker"])
+    except subprocess.CalledProcessError:
+        print("Error: Failed to install the Docker module.")
+        sys.exit(1)
+
+# Install Docker module
+install_docker_module()
+
+# Now import the Docker module
+import docker as dock
 
 config = {}
 
@@ -27,7 +41,7 @@ def print_log(msg, loglevel):
     if loglevel == 'error':
         logging.error(msg)
     if loglevel == 'critical':
-        logging.critcal(msg)
+        logging.critical(msg)
     if loglevel == 'warning':
         logging.warning(msg)
     return
@@ -72,14 +86,36 @@ def chkImagesList(images):
     return images, tagsNotAvailable
 
 
-def chkImageExistence(image, tag, registry_url):
-    if '@sha256:' in image:
-        image_name, image_digest = image.split('@sha256:')
-        url = registry_url + "repositories/" + image_name + "/manifests/" + "sha256:" + image_digest
+def chkImageExistence(image, tag, imageExitUrl):
+    headers = {}
+    # Get the repository name
+    if '@sha256' in image:
+        image_name, image_digest = image.split('@sha256')
     else:
-        url = registry_url + "repositories/" + image + "/tags/" + tag
+        image_name = image
+    # Get the auth token
+    url = 'https://auth.docker.io/token?service=registry.docker.io&scope=repository:' + image_name + ':pull'
+    token_req = requests.get(url=url, headers={"Content-Type": "text"})
+    if token_req.status_code == 200:
+        token = token_req.json()['token']
+        headers = {
+            "Authorization": "Bearer " + token
+        }
+    else:
+        print_log("Failed to get auth token", 'error')
+        return False
+    
+    if '@sha256' in image:
+        image_name, image_digest = image.split('@sha256')
+        url = imageExitUrl + image_name + "/manifests/" + "sha256:" + tag
+    else:
+        url = imageExitUrl + "repositories/" + image + "/tags/" + tag
+    
     print("url= " + url)
-    r = requests.get(url=url)
+    if 'sha256:' in url:
+        r = requests.get(url=url, headers=headers)
+    else:
+        r = requests.get(url=url)
     # If image not found exit the script
     if int(r.status_code) == 404:
         print_log("Image \"" + image + ":" + tag + "\" does not exist", 'error')
@@ -119,12 +155,13 @@ def chkDockerAccExistence(acc_name):
 
 def main():
     client = dock.from_env()
-    registry_url = "https://index.docker.io/v1/"
+    registry_url = config['docker']['registry_url']
+    imageExitUrl = config['docker']['imageExitUrl']
     # create log file with format date-time.log
     if not os.path.exists('./logs/'):
         os.makedirs('./logs/')
-    logFile = "vidivi-" + datetime.now().strftime("%d-%m-%Y-%H:%M:%S") + ".log"
-    logging.basicConfig(filename='logs/' + logFile, level=logging.DEBUG, filemode='a',
+    logFile = "vidivi.log"
+    logging.basicConfig(filename='logs/' + logFile, level=logging.DEBUG, filemode='w',
                         format=' %(asctime)s  %(levelname)s  %(message)s ',
                         datefmt='%d-%b-%y %H:%M:%S')
     print_log('LOGFILE CREATED : ' + logFile, 'info')
@@ -157,7 +194,7 @@ def main():
         print_log("", 'info')
         print_log("src = \"" + srcImgName + "\" tag = \"" + srcImgtag + "\"", 'info')
         # call function to check existence of source images
-        if not chkImageExistence(srcImgName, srcImgtag, registry_url):
+        if not chkImageExistence(srcImgName, srcImgtag, imageExitUrl):
             srcImgNotExist.append([srcImgName + ":" + srcImgtag])
         # check if source and destination images are same
         destImgName = config['docker']['destination_organization'] + "/" + (srcImgName.split('/')[-1])
@@ -193,12 +230,13 @@ def main():
         imgName = image[0][: image[0].find(":")]
         destImgName = config['docker']['destination_organization'] + "/" + (imgName.split('/')[-1])
         destImgTag = image[1]
+        destImgHash = getDockerHash(destImgName, destImgTag)
         print_log("", 'info')
         print_log("[ " + destImgName + " ] ", 'info')
-        print_log("Destination Image = \"" + destImgName + "\" Destination Image tag = \"" + str(destImgTag) + "\"",
-                  'info')
+        print_log("Destination Image = \"" + destImgName + "\" Destination Image tag = \"" + str(destImgTag) + "\" IMAGE_ID : " + destImgHash, 'info')
+
         # call function to check existence of destination images
-        if not chkImageExistence(destImgName, destImgTag, registry_url):
+        if not chkImageExistence(destImgName, destImgTag, imageExitUrl):
             destImgNotExist.append([destImgName + ":" + destImgTag])
             continue
 
@@ -250,17 +288,31 @@ def main():
     remote_client = dock.APIClient(base_url='unix:///var/run/docker.sock', version='auto')
     remote_client.login(username=config['docker']['username'], password=config['docker']['token'],
                         registry=config['docker']['registry_url'])
-    for image in images:
-        # start image transfer operation for src_repo/src_image_name:tag
-        srcImgRepo = image[0][: image[0].find("/")]
-        srcImgName = image[0][image[0].find("/") + 1:image[0].find(":")]
-        srcImgtag = image[0][image[0].find(":") + 1:]
-        destImgtag = image[1]
-        print_log("", 'info')
-        print_log(10 * "*" + " [ " + config['docker']['destination_organization'] + "/" + srcImgName + ":" + destImgtag + " ] " + "*" * 52, 'info')
-        promote(srcImgRepo, srcImgName, srcImgtag, destImgtag, config['docker']['destination_organization'],
-                remote_client, client)
-
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        for image in images:
+            srcImgRepo = image[0][: image[0].find("/")]
+            srcImgName = image[0][image[0].find("/") + 1:image[0].find(":")]
+            srcImgtag = image[0][image[0].find(":") + 1:]
+            destImgtag = image[1]
+            print_log("", 'info')
+            print_log(10 * "*" + " [ " + config['docker']['destination_organization'] + "/" + srcImgName + ":" + destImgtag + " ] " + "*" * 52, 'info')
+            try:
+                future = executor.submit(promote, srcImgRepo, srcImgName, srcImgtag, destImgtag, config['docker']['destination_organization'], remote_client, client)
+                futures.append(future)
+            except Exception as e:
+                print_log(f"Error submitting task to executor: {str(e)}", 'error')
+                executor.shutdown(wait=False)
+                exit(1)
+    
+        for future in futures:    
+            try:
+                result = future.result()
+            except Exception as e:
+                print_log(f"Error occurred in thread: {str(e)}", 'error')
+                executor.shutdown(wait=False)
+                exit(1)
+                       
 
 def load_config():
     global config
@@ -275,7 +327,6 @@ def strip_tag(image_name):
     image = stripped_list[1]
     image_version = image_name[1]
     return repository, image, image_version
-
 
 def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_client, local_client):
     src_repository = src_repo + "/" + src_image_name
@@ -318,6 +369,7 @@ def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_c
             local_client.images.remove(img)
     print_log("Completed " + src_image + "\t------> " + dst_image, 'info')
 
+   
 
 def status_update(output):
     status = ''
