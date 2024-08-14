@@ -1,81 +1,81 @@
- 14-Aug-24 05:43:42  INFO  LOGFILE CREATED : vidivi.log 
- 14-Aug-24 05:43:42  INFO   
- 14-Aug-24 05:43:42  INFO  ******************** Check Images List ************************************************************************************ 
- 14-Aug-24 05:43:42  INFO   
- 14-Aug-24 05:43:42  INFO  IMAGES= [['mosipdev/biosdk-server:release-1.3.x', '1.3.x']] 
- 14-Aug-24 05:43:42  INFO   
- 14-Aug-24 05:43:42  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 14-Aug-24 05:43:42  INFO   
- 14-Aug-24 05:43:42  INFO  src = "mosipdev/biosdk-server" tag = "release-1.3.x" 
- 14-Aug-24 05:43:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Aug-24 05:43:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/biosdk-server:pull HTTP/1.1" 200 None 
- 14-Aug-24 05:43:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Aug-24 05:43:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/biosdk-server/tags/release-1.3.x HTTP/1.1" 200 770 
- 14-Aug-24 05:43:43  INFO   
- 14-Aug-24 05:43:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 14-Aug-24 05:43:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 14-Aug-24 05:43:43  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 14-Aug-24 05:43:43  INFO   
- 14-Aug-24 05:43:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Aug-24 05:43:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/biosdk-server:pull HTTP/1.1" 200 None 
- 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 14-Aug-24 05:43:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/biosdk-server/manifests/1.3.x HTTP/1.1" 200 1792 
- 14-Aug-24 05:43:44  INFO   
- 14-Aug-24 05:43:44  INFO  [ mosipqa/biosdk-server ]  
- 14-Aug-24 05:43:44  INFO  Destination Image = "mosipqa/biosdk-server" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:828209efaac4da6838a4c7e41753af0eda6c7db35b540a5492e17779dfb9746a" 
- 14-Aug-24 05:43:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Aug-24 05:43:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/biosdk-server:pull HTTP/1.1" 200 None 
- 14-Aug-24 05:43:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Aug-24 05:43:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/biosdk-server/tags/1.3.x HTTP/1.1" 200 810 
- 14-Aug-24 05:43:44  INFO   
- 14-Aug-24 05:43:44  INFO  ******************** HASH Operation Results ********************************************************************** 
- 14-Aug-24 05:43:44  INFO   
- 14-Aug-24 05:43:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 14-Aug-24 05:43:44  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 14-Aug-24 05:43:44  DEBUG  Found file at path: /root/.docker/config.json 
- 14-Aug-24 05:43:44  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 14-Aug-24 05:43:44  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 14-Aug-24 05:43:44  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 14-Aug-24 05:43:44  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Aug-24 05:43:44  DEBUG  No entry found 
- 14-Aug-24 05:43:45  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 14-Aug-24 05:43:45  INFO   
- 14-Aug-24 05:43:45  INFO  ********** [ mosipqa/biosdk-server:1.3.x ] **************************************************** 
- 14-Aug-24 05:43:45  INFO   
- 14-Aug-24 05:43:45  INFO  [ PULL ----------------------> mosipdev/biosdk-server:release-1.3.x ]  
- 14-Aug-24 05:43:45  DEBUG  Looking for auth config 
- 14-Aug-24 05:43:45  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Aug-24 05:43:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Aug-24 05:43:45  DEBUG  Found auth config 
- 14-Aug-24 05:43:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fbiosdk-server HTTP/1.1" 200 None 
- 14-Aug-24 05:43:58  INFO  Status: Downloaded newer image for mosipdev/biosdk-server:release-1.3.x 
- 14-Aug-24 05:43:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/biosdk-server:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fbiosdk-server&force=1 HTTP/1.1" 201 0 
- 14-Aug-24 05:43:58  INFO   
- 14-Aug-24 05:43:58  INFO  [ PUSH -----> mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:1.3.x ]  
- 14-Aug-24 05:43:58  DEBUG  Looking for auth config 
- 14-Aug-24 05:43:58  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Aug-24 05:43:58  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Aug-24 05:43:58  DEBUG  Found auth config 
- 14-Aug-24 05:43:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/biosdk-server/push?tag=1.3.x HTTP/1.1" 200 None 
- 14-Aug-24 05:44:03  INFO  1.3.x: digest: sha256:52236c4c43bde44077a47eb2a4b24bebd95bbf00d6d894751f0ca06c770a0290 size: 1792 
- 14-Aug-24 05:44:03  INFO   
- 14-Aug-24 05:44:03  INFO  [ PUSH -----> mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:latest ]  
- 14-Aug-24 05:44:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/biosdk-server:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fbiosdk-server&force=1 HTTP/1.1" 201 0 
- 14-Aug-24 05:44:03  DEBUG  Looking for auth config 
- 14-Aug-24 05:44:03  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Aug-24 05:44:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Aug-24 05:44:03  DEBUG  Found auth config 
- 14-Aug-24 05:44:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/biosdk-server/push?tag=latest HTTP/1.1" 200 None 
- 14-Aug-24 05:44:05  INFO  latest: digest: sha256:52236c4c43bde44077a47eb2a4b24bebd95bbf00d6d894751f0ca06c770a0290 size: 1792 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fbiosdk-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 466 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/biosdk-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 164 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fbiosdk-server%3A1.3.x%22%5D%7D HTTP/1.1" 200 457 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/biosdk-server:1.3.x?force=False&noprune=False HTTP/1.1" 200 45 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fbiosdk-server%3Alatest%22%5D%7D HTTP/1.1" 200 458 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
- 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/biosdk-server:latest?force=False&noprune=False HTTP/1.1" 200 843 
- 14-Aug-24 05:44:05  INFO  Completed mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:1.3.x 
+ 14-Aug-24 06:55:03  INFO  LOGFILE CREATED : vidivi.log 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** Check Images List ************************************************************************************ 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  IMAGES= [['mosipdev/mosip-artemis-keycloak:MOSIP-32336', 'MOSIP-32336']] 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  src = "mosipdev/mosip-artemis-keycloak" tag = "MOSIP-32336" 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 06:55:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mosip-artemis-keycloak:pull HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Aug-24 06:55:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mosip-artemis-keycloak/tags/MOSIP-32336 HTTP/1.1" 200 816 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 14-Aug-24 06:55:03  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 14-Aug-24 06:55:03  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 06:55:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-artemis-keycloak:pull HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 14-Aug-24 06:55:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mosip-artemis-keycloak/manifests/MOSIP-32336 HTTP/1.1" 200 1375 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  [ mosipqa/mosip-artemis-keycloak ]  
+ 14-Aug-24 06:55:03  INFO  Destination Image = "mosipqa/mosip-artemis-keycloak" Destination Image tag = "MOSIP-32336" IMAGE_ID : "sha256:7b0b505e32203023e946eb717240791ad95e86631a618a3cbc6409b32de3ebf7" 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 06:55:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-artemis-keycloak:pull HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Aug-24 06:55:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mosip-artemis-keycloak/tags/MOSIP-32336 HTTP/1.1" 200 818 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 14-Aug-24 06:55:03  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 14-Aug-24 06:55:03  DEBUG  Found file at path: /root/.docker/config.json 
+ 14-Aug-24 06:55:03  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 14-Aug-24 06:55:03  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 14-Aug-24 06:55:03  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 14-Aug-24 06:55:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 06:55:03  DEBUG  No entry found 
+ 14-Aug-24 06:55:03  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  ********** [ mosipqa/mosip-artemis-keycloak:MOSIP-32336 ] **************************************************** 
+ 14-Aug-24 06:55:03  INFO   
+ 14-Aug-24 06:55:03  INFO  [ PULL ----------------------> mosipdev/mosip-artemis-keycloak:MOSIP-32336 ]  
+ 14-Aug-24 06:55:03  DEBUG  Looking for auth config 
+ 14-Aug-24 06:55:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 06:55:03  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 06:55:03  DEBUG  Found auth config 
+ 14-Aug-24 06:55:04  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-32336&fromImage=mosipdev%2Fmosip-artemis-keycloak HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:19  INFO  Status: Downloaded newer image for mosipdev/mosip-artemis-keycloak:MOSIP-32336 
+ 14-Aug-24 06:55:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-artemis-keycloak:MOSIP-32336/tag?tag=MOSIP-32336&repo=mosipqa%2Fmosip-artemis-keycloak&force=1 HTTP/1.1" 201 0 
+ 14-Aug-24 06:55:20  INFO   
+ 14-Aug-24 06:55:20  INFO  [ PUSH -----> mosipdev/mosip-artemis-keycloak:MOSIP-32336	------> mosipqa/mosip-artemis-keycloak:MOSIP-32336 ]  
+ 14-Aug-24 06:55:20  DEBUG  Looking for auth config 
+ 14-Aug-24 06:55:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 06:55:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 06:55:20  DEBUG  Found auth config 
+ 14-Aug-24 06:55:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-artemis-keycloak/push?tag=MOSIP-32336 HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:22  INFO  MOSIP-32336: digest: sha256:e6944b02f7d14a8b1fbbf99338d6f9e493d1c56e1b7c56dd7c4844266891e020 size: 1375 
+ 14-Aug-24 06:55:22  INFO   
+ 14-Aug-24 06:55:22  INFO  [ PUSH -----> mosipdev/mosip-artemis-keycloak:MOSIP-32336	------> mosipqa/mosip-artemis-keycloak:latest ]  
+ 14-Aug-24 06:55:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-artemis-keycloak:MOSIP-32336/tag?tag=latest&repo=mosipqa%2Fmosip-artemis-keycloak&force=1 HTTP/1.1" 201 0 
+ 14-Aug-24 06:55:22  DEBUG  Looking for auth config 
+ 14-Aug-24 06:55:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 06:55:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 06:55:22  DEBUG  Found auth config 
+ 14-Aug-24 06:55:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-artemis-keycloak/push?tag=latest HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:23  INFO  latest: digest: sha256:e6944b02f7d14a8b1fbbf99338d6f9e493d1c56e1b7c56dd7c4844266891e020 size: 1375 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmosip-artemis-keycloak%3AMOSIP-32336%22%5D%7D HTTP/1.1" 200 993 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5b1036644ff68365c4802fb60f66d2a457d271bfbe531a7dd282227b996c9fc7/json HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mosip-artemis-keycloak:MOSIP-32336?force=False&noprune=False HTTP/1.1" 200 180 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-artemis-keycloak%3AMOSIP-32336%22%5D%7D HTTP/1.1" 200 992 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5b1036644ff68365c4802fb60f66d2a457d271bfbe531a7dd282227b996c9fc7/json HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-artemis-keycloak:MOSIP-32336?force=False&noprune=False HTTP/1.1" 200 60 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-artemis-keycloak%3Alatest%22%5D%7D HTTP/1.1" 200 987 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5b1036644ff68365c4802fb60f66d2a457d271bfbe531a7dd282227b996c9fc7/json HTTP/1.1" 200 None 
+ 14-Aug-24 06:55:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-artemis-keycloak:latest?force=False&noprune=False HTTP/1.1" 200 689 
+ 14-Aug-24 06:55:23  INFO  Completed mosipdev/mosip-artemis-keycloak:MOSIP-32336	------> mosipqa/mosip-artemis-keycloak:MOSIP-32336 
