@@ -1,81 +1,81 @@
- 13-Aug-24 10:48:07  INFO  LOGFILE CREATED : vidivi.log 
- 13-Aug-24 10:48:07  INFO   
- 13-Aug-24 10:48:07  INFO  ******************** Check Images List ************************************************************************************ 
- 13-Aug-24 10:48:07  INFO   
- 13-Aug-24 10:48:07  INFO  IMAGES= [['mosipdev/pmp-ui:release-1.2.0.1', '1.2.0.1']] 
- 13-Aug-24 10:48:07  INFO   
- 13-Aug-24 10:48:07  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 13-Aug-24 10:48:07  INFO   
- 13-Aug-24 10:48:07  INFO  src = "mosipdev/pmp-ui" tag = "release-1.2.0.1" 
- 13-Aug-24 10:48:07  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-24 10:48:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-ui:pull HTTP/1.1" 200 None 
- 13-Aug-24 10:48:07  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-24 10:48:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-ui/tags/release-1.2.0.1 HTTP/1.1" 200 820 
- 13-Aug-24 10:48:08  INFO   
- 13-Aug-24 10:48:08  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 13-Aug-24 10:48:08  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 13-Aug-24 10:48:08  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 13-Aug-24 10:48:08  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 13-Aug-24 10:48:08  INFO   
- 13-Aug-24 10:48:08  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 13-Aug-24 10:48:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-24 10:48:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-ui:pull HTTP/1.1" 200 None 
- 13-Aug-24 10:48:08  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 13-Aug-24 10:48:09  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/pmp-ui/manifests/1.2.0.1 HTTP/1.1" 200 3239 
- 13-Aug-24 10:48:09  INFO   
- 13-Aug-24 10:48:09  INFO  [ mosipqa/pmp-ui ]  
- 13-Aug-24 10:48:09  INFO  Destination Image = "mosipqa/pmp-ui" Destination Image tag = "1.2.0.1" IMAGE_ID : "sha256:08d916750af2bf18fc51dd6ed3510d47bd4d06099de02c45cd3720717e16b6dc" 
- 13-Aug-24 10:48:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-24 10:48:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-ui:pull HTTP/1.1" 200 None 
- 13-Aug-24 10:48:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-24 10:48:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/pmp-ui/tags/1.2.0.1 HTTP/1.1" 200 812 
- 13-Aug-24 10:48:09  INFO   
- 13-Aug-24 10:48:09  INFO  ******************** HASH Operation Results ********************************************************************** 
- 13-Aug-24 10:48:09  INFO   
- 13-Aug-24 10:48:09  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 13-Aug-24 10:48:09  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 13-Aug-24 10:48:09  DEBUG  Found file at path: /root/.docker/config.json 
- 13-Aug-24 10:48:09  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 13-Aug-24 10:48:09  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 13-Aug-24 10:48:09  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 13-Aug-24 10:48:09  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-24 10:48:09  DEBUG  No entry found 
- 13-Aug-24 10:48:10  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 13-Aug-24 10:48:10  INFO   
- 13-Aug-24 10:48:10  INFO  ********** [ mosipqa/pmp-ui:1.2.0.1 ] **************************************************** 
- 13-Aug-24 10:48:10  INFO   
- 13-Aug-24 10:48:10  INFO  [ PULL ----------------------> mosipdev/pmp-ui:release-1.2.0.1 ]  
- 13-Aug-24 10:48:10  DEBUG  Looking for auth config 
- 13-Aug-24 10:48:10  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-24 10:48:10  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-24 10:48:10  DEBUG  Found auth config 
- 13-Aug-24 10:48:11  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.0.1&fromImage=mosipdev%2Fpmp-ui HTTP/1.1" 200 None 
- 13-Aug-24 10:48:16  INFO  Status: Downloaded newer image for mosipdev/pmp-ui:release-1.2.0.1 
- 13-Aug-24 10:48:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-ui:release-1.2.0.1/tag?tag=1.2.0.1&repo=mosipqa%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
- 13-Aug-24 10:48:16  INFO   
- 13-Aug-24 10:48:16  INFO  [ PUSH -----> mosipdev/pmp-ui:release-1.2.0.1	------> mosipqa/pmp-ui:1.2.0.1 ]  
- 13-Aug-24 10:48:16  DEBUG  Looking for auth config 
- 13-Aug-24 10:48:16  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-24 10:48:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-24 10:48:16  DEBUG  Found auth config 
- 13-Aug-24 10:48:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-ui/push?tag=1.2.0.1 HTTP/1.1" 200 None 
- 13-Aug-24 10:48:21  INFO  1.2.0.1: digest: sha256:206b1819a77ed63e476412d99b1598a3f51dae91a9c2a0264fc5eedc06bcd4b4 size: 3239 
- 13-Aug-24 10:48:21  INFO   
- 13-Aug-24 10:48:21  INFO  [ PUSH -----> mosipdev/pmp-ui:release-1.2.0.1	------> mosipqa/pmp-ui:latest ]  
- 13-Aug-24 10:48:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-ui:release-1.2.0.1/tag?tag=latest&repo=mosipqa%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
- 13-Aug-24 10:48:21  DEBUG  Looking for auth config 
- 13-Aug-24 10:48:21  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-24 10:48:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-24 10:48:21  DEBUG  Found auth config 
- 13-Aug-24 10:48:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-ui/push?tag=latest HTTP/1.1" 200 None 
- 13-Aug-24 10:48:23  INFO  latest: digest: sha256:206b1819a77ed63e476412d99b1598a3f51dae91a9c2a0264fc5eedc06bcd4b4 size: 3239 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmp-ui%3Arelease-1.2.0.1%22%5D%7D HTTP/1.1" 200 438 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8343f8f06591dee8544eab7d8d528a7d1a9ee1598d6775b92c1fc7e6ada4a670/json HTTP/1.1" 200 None 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmp-ui:release-1.2.0.1?force=False&noprune=False HTTP/1.1" 200 152 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-ui%3A1.2.0.1%22%5D%7D HTTP/1.1" 200 429 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8343f8f06591dee8544eab7d8d528a7d1a9ee1598d6775b92c1fc7e6ada4a670/json HTTP/1.1" 200 None 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-ui:1.2.0.1?force=False&noprune=False HTTP/1.1" 200 40 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-ui%3Alatest%22%5D%7D HTTP/1.1" 200 428 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8343f8f06591dee8544eab7d8d528a7d1a9ee1598d6775b92c1fc7e6ada4a670/json HTTP/1.1" 200 None 
- 13-Aug-24 10:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-ui:latest?force=False&noprune=False HTTP/1.1" 200 1431 
- 13-Aug-24 10:48:23  INFO  Completed mosipdev/pmp-ui:release-1.2.0.1	------> mosipqa/pmp-ui:1.2.0.1 
+ 14-Aug-24 05:43:42  INFO  LOGFILE CREATED : vidivi.log 
+ 14-Aug-24 05:43:42  INFO   
+ 14-Aug-24 05:43:42  INFO  ******************** Check Images List ************************************************************************************ 
+ 14-Aug-24 05:43:42  INFO   
+ 14-Aug-24 05:43:42  INFO  IMAGES= [['mosipdev/biosdk-server:release-1.3.x', '1.3.x']] 
+ 14-Aug-24 05:43:42  INFO   
+ 14-Aug-24 05:43:42  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 14-Aug-24 05:43:42  INFO   
+ 14-Aug-24 05:43:42  INFO  src = "mosipdev/biosdk-server" tag = "release-1.3.x" 
+ 14-Aug-24 05:43:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 05:43:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/biosdk-server:pull HTTP/1.1" 200 None 
+ 14-Aug-24 05:43:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Aug-24 05:43:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/biosdk-server/tags/release-1.3.x HTTP/1.1" 200 770 
+ 14-Aug-24 05:43:43  INFO   
+ 14-Aug-24 05:43:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 14-Aug-24 05:43:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 14-Aug-24 05:43:43  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 14-Aug-24 05:43:43  INFO   
+ 14-Aug-24 05:43:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 05:43:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/biosdk-server:pull HTTP/1.1" 200 None 
+ 14-Aug-24 05:43:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 14-Aug-24 05:43:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/biosdk-server/manifests/1.3.x HTTP/1.1" 200 1792 
+ 14-Aug-24 05:43:44  INFO   
+ 14-Aug-24 05:43:44  INFO  [ mosipqa/biosdk-server ]  
+ 14-Aug-24 05:43:44  INFO  Destination Image = "mosipqa/biosdk-server" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:828209efaac4da6838a4c7e41753af0eda6c7db35b540a5492e17779dfb9746a" 
+ 14-Aug-24 05:43:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Aug-24 05:43:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/biosdk-server:pull HTTP/1.1" 200 None 
+ 14-Aug-24 05:43:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Aug-24 05:43:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/biosdk-server/tags/1.3.x HTTP/1.1" 200 810 
+ 14-Aug-24 05:43:44  INFO   
+ 14-Aug-24 05:43:44  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 14-Aug-24 05:43:44  INFO   
+ 14-Aug-24 05:43:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 14-Aug-24 05:43:44  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 14-Aug-24 05:43:44  DEBUG  Found file at path: /root/.docker/config.json 
+ 14-Aug-24 05:43:44  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 14-Aug-24 05:43:44  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 14-Aug-24 05:43:44  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 14-Aug-24 05:43:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 05:43:44  DEBUG  No entry found 
+ 14-Aug-24 05:43:45  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 14-Aug-24 05:43:45  INFO   
+ 14-Aug-24 05:43:45  INFO  ********** [ mosipqa/biosdk-server:1.3.x ] **************************************************** 
+ 14-Aug-24 05:43:45  INFO   
+ 14-Aug-24 05:43:45  INFO  [ PULL ----------------------> mosipdev/biosdk-server:release-1.3.x ]  
+ 14-Aug-24 05:43:45  DEBUG  Looking for auth config 
+ 14-Aug-24 05:43:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 05:43:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 05:43:45  DEBUG  Found auth config 
+ 14-Aug-24 05:43:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fbiosdk-server HTTP/1.1" 200 None 
+ 14-Aug-24 05:43:58  INFO  Status: Downloaded newer image for mosipdev/biosdk-server:release-1.3.x 
+ 14-Aug-24 05:43:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/biosdk-server:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fbiosdk-server&force=1 HTTP/1.1" 201 0 
+ 14-Aug-24 05:43:58  INFO   
+ 14-Aug-24 05:43:58  INFO  [ PUSH -----> mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:1.3.x ]  
+ 14-Aug-24 05:43:58  DEBUG  Looking for auth config 
+ 14-Aug-24 05:43:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 05:43:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 05:43:58  DEBUG  Found auth config 
+ 14-Aug-24 05:43:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/biosdk-server/push?tag=1.3.x HTTP/1.1" 200 None 
+ 14-Aug-24 05:44:03  INFO  1.3.x: digest: sha256:52236c4c43bde44077a47eb2a4b24bebd95bbf00d6d894751f0ca06c770a0290 size: 1792 
+ 14-Aug-24 05:44:03  INFO   
+ 14-Aug-24 05:44:03  INFO  [ PUSH -----> mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:latest ]  
+ 14-Aug-24 05:44:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/biosdk-server:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fbiosdk-server&force=1 HTTP/1.1" 201 0 
+ 14-Aug-24 05:44:03  DEBUG  Looking for auth config 
+ 14-Aug-24 05:44:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Aug-24 05:44:03  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Aug-24 05:44:03  DEBUG  Found auth config 
+ 14-Aug-24 05:44:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/biosdk-server/push?tag=latest HTTP/1.1" 200 None 
+ 14-Aug-24 05:44:05  INFO  latest: digest: sha256:52236c4c43bde44077a47eb2a4b24bebd95bbf00d6d894751f0ca06c770a0290 size: 1792 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fbiosdk-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 466 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/biosdk-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 164 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fbiosdk-server%3A1.3.x%22%5D%7D HTTP/1.1" 200 457 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/biosdk-server:1.3.x?force=False&noprune=False HTTP/1.1" 200 45 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fbiosdk-server%3Alatest%22%5D%7D HTTP/1.1" 200 458 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fc4af240d33838f13405fbad7178330921b0199f266a3f3f698817efae4953f/json HTTP/1.1" 200 None 
+ 14-Aug-24 05:44:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/biosdk-server:latest?force=False&noprune=False HTTP/1.1" 200 843 
+ 14-Aug-24 05:44:05  INFO  Completed mosipdev/biosdk-server:release-1.3.x	------> mosipqa/biosdk-server:1.3.x 
