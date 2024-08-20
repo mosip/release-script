@@ -1,81 +1,191 @@
- 19-Aug-24 12:17:04  INFO  LOGFILE CREATED : vidivi.log 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  ******************** Check Images List ************************************************************************************ 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  IMAGES= [['mosipdev/oidc-ui:develop', 'develop']] 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  src = "mosipdev/oidc-ui" tag = "develop" 
- 19-Aug-24 12:17:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Aug-24 12:17:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
- 19-Aug-24 12:17:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 19-Aug-24 12:17:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/develop HTTP/1.1" 200 814 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 19-Aug-24 12:17:04  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 19-Aug-24 12:17:04  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 19-Aug-24 12:17:04  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 19-Aug-24 12:17:04  INFO   
- 19-Aug-24 12:17:04  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 19-Aug-24 12:17:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Aug-24 12:17:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
- 19-Aug-24 12:17:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 19-Aug-24 12:17:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/oidc-ui/manifests/develop HTTP/1.1" 200 3864 
- 19-Aug-24 12:17:05  INFO   
- 19-Aug-24 12:17:05  INFO  [ mosipqa/oidc-ui ]  
- 19-Aug-24 12:17:05  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "develop" IMAGE_ID : "sha256:f54af6d13de9937043a4fe354dc577e4e6a533c43934cc1b3e34d4658c700de1" 
- 19-Aug-24 12:17:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Aug-24 12:17:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
- 19-Aug-24 12:17:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 19-Aug-24 12:17:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/oidc-ui/tags/develop HTTP/1.1" 200 814 
- 19-Aug-24 12:17:05  INFO   
- 19-Aug-24 12:17:05  INFO  ******************** HASH Operation Results ********************************************************************** 
- 19-Aug-24 12:17:05  INFO   
- 19-Aug-24 12:17:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 19-Aug-24 12:17:05  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 19-Aug-24 12:17:05  DEBUG  Found file at path: /root/.docker/config.json 
- 19-Aug-24 12:17:05  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 19-Aug-24 12:17:05  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 19-Aug-24 12:17:05  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 19-Aug-24 12:17:05  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Aug-24 12:17:05  DEBUG  No entry found 
- 19-Aug-24 12:17:05  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 19-Aug-24 12:17:05  INFO   
- 19-Aug-24 12:17:05  INFO  ********** [ mosipqa/oidc-ui:develop ] **************************************************** 
- 19-Aug-24 12:17:05  INFO   
- 19-Aug-24 12:17:05  INFO  [ PULL ----------------------> mosipdev/oidc-ui:develop ]  
- 19-Aug-24 12:17:05  DEBUG  Looking for auth config 
- 19-Aug-24 12:17:05  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Aug-24 12:17:05  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Aug-24 12:17:05  DEBUG  Found auth config 
- 19-Aug-24 12:17:06  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
- 19-Aug-24 12:17:26  INFO  Status: Downloaded newer image for mosipdev/oidc-ui:develop 
- 19-Aug-24 12:17:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=develop&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
- 19-Aug-24 12:17:26  INFO   
- 19-Aug-24 12:17:26  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop ]  
- 19-Aug-24 12:17:26  DEBUG  Looking for auth config 
- 19-Aug-24 12:17:26  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Aug-24 12:17:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Aug-24 12:17:26  DEBUG  Found auth config 
- 19-Aug-24 12:17:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=develop HTTP/1.1" 200 None 
- 19-Aug-24 12:17:32  INFO  develop: digest: sha256:6c4b12ddf6dd4410c0e76061708ec3a31d3a93405c4fd6e64fb3820f9f2f16a7 size: 3864 
- 19-Aug-24 12:17:32  INFO   
- 19-Aug-24 12:17:32  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:latest ]  
- 19-Aug-24 12:17:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=latest&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
- 19-Aug-24 12:17:32  DEBUG  Looking for auth config 
- 19-Aug-24 12:17:32  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Aug-24 12:17:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Aug-24 12:17:32  DEBUG  Found auth config 
- 19-Aug-24 12:17:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=latest HTTP/1.1" 200 None 
- 19-Aug-24 12:17:33  INFO  latest: digest: sha256:6c4b12ddf6dd4410c0e76061708ec3a31d3a93405c4fd6e64fb3820f9f2f16a7 size: 3864 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 431 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fc908a647280560fbd08cde69e67c644b9c2b2b2973ceb3a8c61628e73502e18/json HTTP/1.1" 200 None 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 146 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 430 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fc908a647280560fbd08cde69e67c644b9c2b2b2973ceb3a8c61628e73502e18/json HTTP/1.1" 200 None 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 41 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Alatest%22%5D%7D HTTP/1.1" 200 429 
- 19-Aug-24 12:17:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fc908a647280560fbd08cde69e67c644b9c2b2b2973ceb3a8c61628e73502e18/json HTTP/1.1" 200 None 
- 19-Aug-24 12:17:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:latest?force=False&noprune=False HTTP/1.1" 200 1691 
- 19-Aug-24 12:17:34  INFO  Completed mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop 
+ 20-Aug-24 05:43:05  INFO  LOGFILE CREATED : vidivi.log 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  ******************** Check Images List ************************************************************************************ 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  IMAGES= [['mosipdev/pmp-reactjs-ui:develop', 'develop'], ['mosipdev/partner-management-service:develop-pmp-revamp', 'develop-pmp-revamp'], ['mosipdev/policy-management-service:develop-pmp-revamp', 'develop-pmp-revamp']] 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  src = "mosipdev/pmp-reactjs-ui" tag = "develop" 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-reactjs-ui/tags/develop HTTP/1.1" 200 812 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  src = "mosipdev/partner-management-service" tag = "develop-pmp-revamp" 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-management-service/tags/develop-pmp-revamp HTTP/1.1" 200 825 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  src = "mosipdev/policy-management-service" tag = "develop-pmp-revamp" 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/policy-management-service/tags/develop-pmp-revamp HTTP/1.1" 200 825 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 20-Aug-24 05:43:05  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 20-Aug-24 05:43:05  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/pmp-reactjs-ui/manifests/develop HTTP/1.1" 200 3860 
+ 20-Aug-24 05:43:05  INFO   
+ 20-Aug-24 05:43:05  INFO  [ mosipqa/pmp-reactjs-ui ]  
+ 20-Aug-24 05:43:05  INFO  Destination Image = "mosipqa/pmp-reactjs-ui" Destination Image tag = "develop" IMAGE_ID : "sha256:fd6696873ea322fe6f16f42d526e484d9ca4fda2ca80e307e8790c8bef4fae26" 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/pmp-reactjs-ui/tags/develop HTTP/1.1" 200 811 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/partner-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/partner-management-service/manifests/develop-pmp-revamp HTTP/1.1" 200 2638 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  [ mosipqa/partner-management-service ]  
+ 20-Aug-24 05:43:06  INFO  Destination Image = "mosipqa/partner-management-service" Destination Image tag = "develop-pmp-revamp" IMAGE_ID : "sha256:976e9a96987545f05a64b24be89220df52e04e75eb16bb50db5f740dcd051e6c" 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/partner-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/partner-management-service/tags/develop-pmp-revamp HTTP/1.1" 200 823 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/policy-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/policy-management-service/manifests/develop-pmp-revamp HTTP/1.1" 200 2638 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  [ mosipqa/policy-management-service ]  
+ 20-Aug-24 05:43:06  INFO  Destination Image = "mosipqa/policy-management-service" Destination Image tag = "develop-pmp-revamp" IMAGE_ID : "sha256:b53645b2fb929f57fd3bf8c649debf61344672c42bd607f2dcabeef974ccc3aa" 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Aug-24 05:43:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/policy-management-service:pull HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Aug-24 05:43:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/policy-management-service/tags/develop-pmp-revamp HTTP/1.1" 200 824 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 20-Aug-24 05:43:06  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 20-Aug-24 05:43:06  DEBUG  Found file at path: /root/.docker/config.json 
+ 20-Aug-24 05:43:06  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 20-Aug-24 05:43:06  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 20-Aug-24 05:43:06  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:06  DEBUG  No entry found 
+ 20-Aug-24 05:43:06  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  ********** [ mosipqa/pmp-reactjs-ui:develop ] **************************************************** 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  [ PULL ----------------------> mosipdev/pmp-reactjs-ui:develop ]  
+ 20-Aug-24 05:43:06  INFO  ********** [ mosipqa/partner-management-service:develop-pmp-revamp ] **************************************************** 
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:06  DEBUG  Found auth config 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  [ PULL ----------------------> mosipdev/partner-management-service:develop-pmp-revamp ]  
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:06  DEBUG  Found auth config 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  ********** [ mosipqa/policy-management-service:develop-pmp-revamp ] **************************************************** 
+ 20-Aug-24 05:43:06  INFO   
+ 20-Aug-24 05:43:06  INFO  [ PULL ----------------------> mosipdev/policy-management-service:develop-pmp-revamp ]  
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:06  DEBUG  Found auth config 
+ 20-Aug-24 05:43:07  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop-pmp-revamp&fromImage=mosipdev%2Fpolicy-management-service HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:07  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop-pmp-revamp&fromImage=mosipdev%2Fpartner-management-service HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:07  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fpmp-reactjs-ui HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:17  INFO  Status: Downloaded newer image for mosipdev/pmp-reactjs-ui:develop 
+ 20-Aug-24 05:43:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-reactjs-ui:develop/tag?tag=develop&repo=mosipqa%2Fpmp-reactjs-ui&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:17  INFO   
+ 20-Aug-24 05:43:17  INFO  [ PUSH -----> mosipdev/pmp-reactjs-ui:develop	------> mosipqa/pmp-reactjs-ui:develop ]  
+ 20-Aug-24 05:43:17  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:17  DEBUG  Found auth config 
+ 20-Aug-24 05:43:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-reactjs-ui/push?tag=develop HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:20  INFO  develop: digest: sha256:4ed767bbac0ea9aec2c2c1437fc57503d151dde476ca3c9526bd877c2f19788c size: 3862 
+ 20-Aug-24 05:43:20  INFO   
+ 20-Aug-24 05:43:20  INFO  [ PUSH -----> mosipdev/pmp-reactjs-ui:develop	------> mosipqa/pmp-reactjs-ui:latest ]  
+ 20-Aug-24 05:43:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-reactjs-ui:develop/tag?tag=latest&repo=mosipqa%2Fpmp-reactjs-ui&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:20  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:20  DEBUG  Found auth config 
+ 20-Aug-24 05:43:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-reactjs-ui/push?tag=latest HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:21  INFO  latest: digest: sha256:4ed767bbac0ea9aec2c2c1437fc57503d151dde476ca3c9526bd877c2f19788c size: 3862 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmp-reactjs-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 438 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a872b87ed48b0d22366aa02fda6823cfb767aaa0bb54489fe84de954c37a644/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmp-reactjs-ui:develop?force=False&noprune=False HTTP/1.1" 200 160 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-reactjs-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 437 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a872b87ed48b0d22366aa02fda6823cfb767aaa0bb54489fe84de954c37a644/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-reactjs-ui:develop?force=False&noprune=False HTTP/1.1" 200 48 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-reactjs-ui%3Alatest%22%5D%7D HTTP/1.1" 200 436 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a872b87ed48b0d22366aa02fda6823cfb767aaa0bb54489fe84de954c37a644/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-reactjs-ui:latest?force=False&noprune=False HTTP/1.1" 200 1705 
+ 20-Aug-24 05:43:21  INFO  Completed mosipdev/pmp-reactjs-ui:develop	------> mosipqa/pmp-reactjs-ui:develop 
+ 20-Aug-24 05:43:27  INFO  Status: Downloaded newer image for mosipdev/partner-management-service:develop-pmp-revamp 
+ 20-Aug-24 05:43:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:develop-pmp-revamp/tag?tag=develop-pmp-revamp&repo=mosipqa%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:27  INFO   
+ 20-Aug-24 05:43:27  INFO  [ PUSH -----> mosipdev/partner-management-service:develop-pmp-revamp	------> mosipqa/partner-management-service:develop-pmp-revamp ]  
+ 20-Aug-24 05:43:27  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:27  DEBUG  Found auth config 
+ 20-Aug-24 05:43:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/partner-management-service/push?tag=develop-pmp-revamp HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:27  INFO  Status: Downloaded newer image for mosipdev/policy-management-service:develop-pmp-revamp 
+ 20-Aug-24 05:43:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:develop-pmp-revamp/tag?tag=develop-pmp-revamp&repo=mosipqa%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:27  INFO   
+ 20-Aug-24 05:43:27  INFO  [ PUSH -----> mosipdev/policy-management-service:develop-pmp-revamp	------> mosipqa/policy-management-service:develop-pmp-revamp ]  
+ 20-Aug-24 05:43:27  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:27  DEBUG  Found auth config 
+ 20-Aug-24 05:43:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/policy-management-service/push?tag=develop-pmp-revamp HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:28  INFO  develop-pmp-revamp: digest: sha256:b8b346a4ce97d25c04dd85f53e8394849fcf06716fbafd9518ce7d36cba8bd65 size: 2638 
+ 20-Aug-24 05:43:28  INFO   
+ 20-Aug-24 05:43:28  INFO  [ PUSH -----> mosipdev/partner-management-service:develop-pmp-revamp	------> mosipqa/partner-management-service:latest ]  
+ 20-Aug-24 05:43:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:develop-pmp-revamp/tag?tag=latest&repo=mosipqa%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:28  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:28  DEBUG  Found auth config 
+ 20-Aug-24 05:43:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/partner-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  INFO  develop-pmp-revamp: digest: sha256:38541ef80252a77683688a322c9a395e11d67bf7182e3bfccf78ca9f50fdf7d2 size: 2638 
+ 20-Aug-24 05:43:29  INFO   
+ 20-Aug-24 05:43:29  INFO  [ PUSH -----> mosipdev/policy-management-service:develop-pmp-revamp	------> mosipqa/policy-management-service:latest ]  
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:develop-pmp-revamp/tag?tag=latest&repo=mosipqa%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 20-Aug-24 05:43:29  DEBUG  Looking for auth config 
+ 20-Aug-24 05:43:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Aug-24 05:43:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Aug-24 05:43:29  DEBUG  Found auth config 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/policy-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  INFO  latest: digest: sha256:b8b346a4ce97d25c04dd85f53e8394849fcf06716fbafd9518ce7d36cba8bd65 size: 2638 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpartner-management-service%3Adevelop-pmp-revamp%22%5D%7D HTTP/1.1" 200 396 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b61efd958f4540d625fcc2759ebcb0363614da004a3b1bc5eb23fdd9ad34fd1e/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/partner-management-service:develop-pmp-revamp?force=False&noprune=False HTTP/1.1" 200 195 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpartner-management-service%3Adevelop-pmp-revamp%22%5D%7D HTTP/1.1" 200 395 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b61efd958f4540d625fcc2759ebcb0363614da004a3b1bc5eb23fdd9ad34fd1e/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/partner-management-service:develop-pmp-revamp?force=False&noprune=False HTTP/1.1" 200 71 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpartner-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 383 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b61efd958f4540d625fcc2759ebcb0363614da004a3b1bc5eb23fdd9ad34fd1e/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/partner-management-service:latest?force=False&noprune=False HTTP/1.1" 200 611 
+ 20-Aug-24 05:43:29  INFO  Completed mosipdev/partner-management-service:develop-pmp-revamp	------> mosipqa/partner-management-service:develop-pmp-revamp 
+ 20-Aug-24 05:43:29  INFO  latest: digest: sha256:38541ef80252a77683688a322c9a395e11d67bf7182e3bfccf78ca9f50fdf7d2 size: 2638 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpolicy-management-service%3Adevelop-pmp-revamp%22%5D%7D HTTP/1.1" 200 395 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:046b9f4fd47decf2baebd616ee74f726f5df8c4c3ccc6c373e4292f30de61639/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/policy-management-service:develop-pmp-revamp?force=False&noprune=False HTTP/1.1" 200 193 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpolicy-management-service%3Adevelop-pmp-revamp%22%5D%7D HTTP/1.1" 200 394 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:046b9f4fd47decf2baebd616ee74f726f5df8c4c3ccc6c373e4292f30de61639/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/policy-management-service:develop-pmp-revamp?force=False&noprune=False HTTP/1.1" 200 70 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpolicy-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 20-Aug-24 05:43:29  DEBUG  http://localhost:None "GET /v1.45/images/sha256:046b9f4fd47decf2baebd616ee74f726f5df8c4c3ccc6c373e4292f30de61639/json HTTP/1.1" 200 None 
+ 20-Aug-24 05:43:30  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/policy-management-service:latest?force=False&noprune=False HTTP/1.1" 200 1211 
+ 20-Aug-24 05:43:30  INFO  Completed mosipdev/policy-management-service:develop-pmp-revamp	------> mosipqa/policy-management-service:develop-pmp-revamp 
