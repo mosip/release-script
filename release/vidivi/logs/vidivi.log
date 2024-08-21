@@ -1,81 +1,81 @@
- 21-Aug-24 07:26:08  INFO  LOGFILE CREATED : vidivi.log 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  ******************** Check Images List ************************************************************************************ 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  IMAGES= [['mosipdev/oidc-ui:develop', 'develop']] 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  src = "mosipdev/oidc-ui" tag = "develop" 
- 21-Aug-24 07:26:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-24 07:26:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
- 21-Aug-24 07:26:08  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 21-Aug-24 07:26:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/develop HTTP/1.1" 200 764 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 21-Aug-24 07:26:08  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 21-Aug-24 07:26:08  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 21-Aug-24 07:26:08  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 21-Aug-24 07:26:08  INFO   
- 21-Aug-24 07:26:08  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 21-Aug-24 07:26:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-24 07:26:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
- 21-Aug-24 07:26:09  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 21-Aug-24 07:26:09  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/oidc-ui/manifests/develop HTTP/1.1" 200 3864 
- 21-Aug-24 07:26:09  INFO   
- 21-Aug-24 07:26:09  INFO  [ mosipqa/oidc-ui ]  
- 21-Aug-24 07:26:09  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "develop" IMAGE_ID : "sha256:6c4b12ddf6dd4410c0e76061708ec3a31d3a93405c4fd6e64fb3820f9f2f16a7" 
- 21-Aug-24 07:26:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-24 07:26:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
- 21-Aug-24 07:26:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 21-Aug-24 07:26:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/oidc-ui/tags/develop HTTP/1.1" 200 814 
- 21-Aug-24 07:26:09  INFO   
- 21-Aug-24 07:26:09  INFO  ******************** HASH Operation Results ********************************************************************** 
- 21-Aug-24 07:26:09  INFO   
- 21-Aug-24 07:26:09  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 21-Aug-24 07:26:09  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 21-Aug-24 07:26:09  DEBUG  Found file at path: /root/.docker/config.json 
- 21-Aug-24 07:26:09  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 21-Aug-24 07:26:09  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 21-Aug-24 07:26:09  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 21-Aug-24 07:26:09  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-24 07:26:09  DEBUG  No entry found 
- 21-Aug-24 07:26:10  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 21-Aug-24 07:26:10  INFO   
- 21-Aug-24 07:26:10  INFO  ********** [ mosipqa/oidc-ui:develop ] **************************************************** 
- 21-Aug-24 07:26:10  INFO   
- 21-Aug-24 07:26:10  INFO  [ PULL ----------------------> mosipdev/oidc-ui:develop ]  
- 21-Aug-24 07:26:10  DEBUG  Looking for auth config 
- 21-Aug-24 07:26:10  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-24 07:26:10  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-24 07:26:10  DEBUG  Found auth config 
- 21-Aug-24 07:26:10  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
- 21-Aug-24 07:26:32  INFO  Status: Downloaded newer image for mosipdev/oidc-ui:develop 
- 21-Aug-24 07:26:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=develop&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
- 21-Aug-24 07:26:32  INFO   
- 21-Aug-24 07:26:32  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop ]  
- 21-Aug-24 07:26:32  DEBUG  Looking for auth config 
- 21-Aug-24 07:26:32  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-24 07:26:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-24 07:26:32  DEBUG  Found auth config 
- 21-Aug-24 07:26:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=develop HTTP/1.1" 200 None 
- 21-Aug-24 07:26:36  INFO  develop: digest: sha256:535b41577ab1c04e99abbdc345f8001654097f5837975f60ae45eb127e1b18fa size: 3864 
- 21-Aug-24 07:26:36  INFO   
- 21-Aug-24 07:26:36  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:latest ]  
- 21-Aug-24 07:26:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=latest&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
- 21-Aug-24 07:26:36  DEBUG  Looking for auth config 
- 21-Aug-24 07:26:36  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-24 07:26:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-24 07:26:36  DEBUG  Found auth config 
- 21-Aug-24 07:26:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=latest HTTP/1.1" 200 None 
- 21-Aug-24 07:26:37  INFO  latest: digest: sha256:535b41577ab1c04e99abbdc345f8001654097f5837975f60ae45eb127e1b18fa size: 3864 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 431 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfc44d99bf8fbbb43f0018d2b971dc5dad7ef2e299760b9023c3a2bf18022e65/json HTTP/1.1" 200 None 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 146 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 430 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfc44d99bf8fbbb43f0018d2b971dc5dad7ef2e299760b9023c3a2bf18022e65/json HTTP/1.1" 200 None 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 41 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Alatest%22%5D%7D HTTP/1.1" 200 429 
- 21-Aug-24 07:26:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfc44d99bf8fbbb43f0018d2b971dc5dad7ef2e299760b9023c3a2bf18022e65/json HTTP/1.1" 200 None 
- 21-Aug-24 07:26:38  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:latest?force=False&noprune=False HTTP/1.1" 200 1691 
- 21-Aug-24 07:26:38  INFO  Completed mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop 
+ 21-Aug-24 09:46:22  INFO  LOGFILE CREATED : vidivi.log 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** Check Images List ************************************************************************************ 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  IMAGES= [['mosipdev/oidc-ui:develop', 'develop']] 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  src = "mosipdev/oidc-ui" tag = "develop" 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-24 09:46:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-24 09:46:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/develop HTTP/1.1" 200 814 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 21-Aug-24 09:46:22  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 21-Aug-24 09:46:22  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-24 09:46:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-24 09:46:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/oidc-ui/manifests/develop HTTP/1.1" 200 3864 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  [ mosipqa/oidc-ui ]  
+ 21-Aug-24 09:46:22  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "develop" IMAGE_ID : "sha256:0dee900e929c32097075453ac8f05c8b9eb353af9624a20c7a40557d74aa8df7" 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-24 09:46:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-24 09:46:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/oidc-ui/tags/develop HTTP/1.1" 200 761 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 21-Aug-24 09:46:22  INFO   
+ 21-Aug-24 09:46:22  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 21-Aug-24 09:46:22  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 21-Aug-24 09:46:22  DEBUG  Found file at path: /root/.docker/config.json 
+ 21-Aug-24 09:46:22  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 21-Aug-24 09:46:22  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 21-Aug-24 09:46:22  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 21-Aug-24 09:46:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-24 09:46:22  DEBUG  No entry found 
+ 21-Aug-24 09:46:23  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 21-Aug-24 09:46:23  INFO   
+ 21-Aug-24 09:46:23  INFO  ********** [ mosipqa/oidc-ui:develop ] **************************************************** 
+ 21-Aug-24 09:46:23  INFO   
+ 21-Aug-24 09:46:23  INFO  [ PULL ----------------------> mosipdev/oidc-ui:develop ]  
+ 21-Aug-24 09:46:23  DEBUG  Looking for auth config 
+ 21-Aug-24 09:46:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-24 09:46:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-24 09:46:23  DEBUG  Found auth config 
+ 21-Aug-24 09:46:23  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:43  INFO  Status: Downloaded newer image for mosipdev/oidc-ui:develop 
+ 21-Aug-24 09:46:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=develop&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 21-Aug-24 09:46:43  INFO   
+ 21-Aug-24 09:46:43  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop ]  
+ 21-Aug-24 09:46:43  DEBUG  Looking for auth config 
+ 21-Aug-24 09:46:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-24 09:46:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-24 09:46:43  DEBUG  Found auth config 
+ 21-Aug-24 09:46:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=develop HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:44  INFO  develop: digest: sha256:0dee900e929c32097075453ac8f05c8b9eb353af9624a20c7a40557d74aa8df7 size: 3864 
+ 21-Aug-24 09:46:44  INFO   
+ 21-Aug-24 09:46:44  INFO  [ PUSH -----> mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:latest ]  
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/oidc-ui:develop/tag?tag=latest&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 21-Aug-24 09:46:44  DEBUG  Looking for auth config 
+ 21-Aug-24 09:46:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-24 09:46:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-24 09:46:44  DEBUG  Found auth config 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/oidc-ui/push?tag=latest HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:44  INFO  latest: digest: sha256:0dee900e929c32097075453ac8f05c8b9eb353af9624a20c7a40557d74aa8df7 size: 3864 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 431 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:79f3eb7d89bff13304e5698dc4b0b4ab87376ec9b2543e14d5d9b84de3ff3029/json HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 146 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Adevelop%22%5D%7D HTTP/1.1" 200 430 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:79f3eb7d89bff13304e5698dc4b0b4ab87376ec9b2543e14d5d9b84de3ff3029/json HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:develop?force=False&noprune=False HTTP/1.1" 200 41 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Foidc-ui%3Alatest%22%5D%7D HTTP/1.1" 200 429 
+ 21-Aug-24 09:46:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:79f3eb7d89bff13304e5698dc4b0b4ab87376ec9b2543e14d5d9b84de3ff3029/json HTTP/1.1" 200 None 
+ 21-Aug-24 09:46:46  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/oidc-ui:latest?force=False&noprune=False HTTP/1.1" 200 1691 
+ 21-Aug-24 09:46:46  INFO  Completed mosipdev/oidc-ui:develop	------> mosipqa/oidc-ui:develop 
