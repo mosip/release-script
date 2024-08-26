@@ -18,15 +18,19 @@ on:
       BASE:
         description: 'base branch for PR'
         required: true
+      CHART_VERSION:
+        description: 'Helm Chart version to compare'
+        required: true 
 jobs:
   maven-release-preparation:
-    uses: mosip/kattu/.github/workflows/release-changes.yml@master
+    uses: mosip/Rakshithb1/.github/workflows/release-changes.yml@MOSIP-35261
     with:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
       RELEASE_TAG: ${{ inputs.RELEASE_TAG }}
       SNAPSHOT_TAG: ${{ inputs.SNAPSHOT_TAG }}
       BASE: ${{ inputs.BASE }}
+      CHART_VERSION: ${{ inputs.CHART_VERSION }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
