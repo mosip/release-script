@@ -1,81 +1,85 @@
- 26-Aug-24 09:12:20  INFO  LOGFILE CREATED : vidivi.log 
- 26-Aug-24 09:12:20  INFO   
- 26-Aug-24 09:12:20  INFO  ******************** Check Images List ************************************************************************************ 
- 26-Aug-24 09:12:20  INFO   
- 26-Aug-24 09:12:20  INFO  IMAGES= [['mosipdev/data-share-service:release-1.3.x', '1.3.x']] 
- 26-Aug-24 09:12:20  INFO   
- 26-Aug-24 09:12:20  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 26-Aug-24 09:12:20  INFO   
- 26-Aug-24 09:12:20  INFO  src = "mosipdev/data-share-service" tag = "release-1.3.x" 
- 26-Aug-24 09:12:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Aug-24 09:12:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/data-share-service:pull HTTP/1.1" 200 None 
- 26-Aug-24 09:12:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 26-Aug-24 09:12:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/data-share-service/tags/release-1.3.x HTTP/1.1" 200 819 
- 26-Aug-24 09:12:20  INFO   
- 26-Aug-24 09:12:20  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 26-Aug-24 09:12:20  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 26-Aug-24 09:12:21  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 26-Aug-24 09:12:21  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 26-Aug-24 09:12:21  INFO   
- 26-Aug-24 09:12:21  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 26-Aug-24 09:12:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Aug-24 09:12:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/data-share-service:pull HTTP/1.1" 200 None 
- 26-Aug-24 09:12:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 26-Aug-24 09:12:21  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/data-share-service/manifests/1.3.x HTTP/1.1" 200 2417 
- 26-Aug-24 09:12:21  INFO   
- 26-Aug-24 09:12:21  INFO  [ mosipqa/data-share-service ]  
- 26-Aug-24 09:12:21  INFO  Destination Image = "mosipqa/data-share-service" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:65726fec3418a4641888213f7604da318b84333e9378d2032408857add23ae94" 
- 26-Aug-24 09:12:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Aug-24 09:12:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/data-share-service:pull HTTP/1.1" 200 None 
- 26-Aug-24 09:12:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 26-Aug-24 09:12:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/data-share-service/tags/1.3.x HTTP/1.1" 200 809 
- 26-Aug-24 09:12:22  INFO   
- 26-Aug-24 09:12:22  INFO  ******************** HASH Operation Results ********************************************************************** 
- 26-Aug-24 09:12:22  INFO   
- 26-Aug-24 09:12:22  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 26-Aug-24 09:12:22  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 26-Aug-24 09:12:22  DEBUG  Found file at path: /root/.docker/config.json 
- 26-Aug-24 09:12:22  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 26-Aug-24 09:12:22  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 26-Aug-24 09:12:22  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 26-Aug-24 09:12:22  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Aug-24 09:12:22  DEBUG  No entry found 
- 26-Aug-24 09:12:23  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 26-Aug-24 09:12:23  INFO   
- 26-Aug-24 09:12:23  INFO  ********** [ mosipqa/data-share-service:1.3.x ] **************************************************** 
- 26-Aug-24 09:12:23  INFO   
- 26-Aug-24 09:12:23  INFO  [ PULL ----------------------> mosipdev/data-share-service:release-1.3.x ]  
- 26-Aug-24 09:12:23  DEBUG  Looking for auth config 
- 26-Aug-24 09:12:23  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Aug-24 09:12:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Aug-24 09:12:23  DEBUG  Found auth config 
- 26-Aug-24 09:12:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fdata-share-service HTTP/1.1" 200 None 
- 26-Aug-24 09:12:34  INFO  Status: Downloaded newer image for mosipdev/data-share-service:release-1.3.x 
- 26-Aug-24 09:12:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-share-service:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fdata-share-service&force=1 HTTP/1.1" 201 0 
- 26-Aug-24 09:12:34  INFO   
- 26-Aug-24 09:12:34  INFO  [ PUSH -----> mosipdev/data-share-service:release-1.3.x	------> mosipqa/data-share-service:1.3.x ]  
- 26-Aug-24 09:12:34  DEBUG  Looking for auth config 
- 26-Aug-24 09:12:34  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Aug-24 09:12:34  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Aug-24 09:12:34  DEBUG  Found auth config 
- 26-Aug-24 09:12:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/data-share-service/push?tag=1.3.x HTTP/1.1" 200 None 
- 26-Aug-24 09:12:38  INFO  1.3.x: digest: sha256:bf9c57dccd45da6d3b882939142cc74c49f47c6d90ccb34c9a698d1f7c07acb9 size: 2417 
- 26-Aug-24 09:12:38  INFO   
- 26-Aug-24 09:12:38  INFO  [ PUSH -----> mosipdev/data-share-service:release-1.3.x	------> mosipqa/data-share-service:latest ]  
- 26-Aug-24 09:12:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-share-service:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fdata-share-service&force=1 HTTP/1.1" 201 0 
- 26-Aug-24 09:12:38  DEBUG  Looking for auth config 
- 26-Aug-24 09:12:38  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Aug-24 09:12:38  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Aug-24 09:12:38  DEBUG  Found auth config 
- 26-Aug-24 09:12:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/data-share-service/push?tag=latest HTTP/1.1" 200 None 
- 26-Aug-24 09:12:40  INFO  latest: digest: sha256:bf9c57dccd45da6d3b882939142cc74c49f47c6d90ccb34c9a698d1f7c07acb9 size: 2417 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fdata-share-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 383 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/data-share-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 174 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdata-share-service%3A1.3.x%22%5D%7D HTTP/1.1" 200 374 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/data-share-service:1.3.x?force=False&noprune=False HTTP/1.1" 200 50 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdata-share-service%3Alatest%22%5D%7D HTTP/1.1" 200 375 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 26-Aug-24 09:12:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/data-share-service:latest?force=False&noprune=False HTTP/1.1" 200 1025 
- 26-Aug-24 09:12:40  INFO  Completed mosipdev/data-share-service:release-1.3.x	------> mosipqa/data-share-service:1.3.x 
+ 26-Aug-24 10:11:23  INFO  LOGFILE CREATED : vidivi.log 
+ 26-Aug-24 10:11:23  INFO   
+ 26-Aug-24 10:11:23  INFO  ******************** Check Images List ************************************************************************************ 
+ 26-Aug-24 10:11:23  INFO   
+ 26-Aug-24 10:11:23  INFO  IMAGES= [['mosipdev/kernel-keymanager-service:release-1.2.0.x', 'sprint28']] 
+ 26-Aug-24 10:11:23  INFO   
+ 26-Aug-24 10:11:23  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 26-Aug-24 10:11:23  INFO   
+ 26-Aug-24 10:11:23  INFO  src = "mosipdev/kernel-keymanager-service" tag = "release-1.2.0.x" 
+ 26-Aug-24 10:11:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Aug-24 10:11:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Aug-24 10:11:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-keymanager-service/tags/release-1.2.0.x HTTP/1.1" 200 821 
+ 26-Aug-24 10:11:23  INFO   
+ 26-Aug-24 10:11:23  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 26-Aug-24 10:11:23  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 26-Aug-24 10:11:24  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 26-Aug-24 10:11:24  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
+ 26-Aug-24 10:11:24  INFO   
+ 26-Aug-24 10:11:24  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 26-Aug-24 10:11:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Aug-24 10:11:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:24  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 26-Aug-24 10:11:24  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-keymanager-service/manifests/sprint28 HTTP/1.1" 404 102 
+ 26-Aug-24 10:11:24  INFO   
+ 26-Aug-24 10:11:24  INFO  [ mosipqa/kernel-keymanager-service ]  
+ 26-Aug-24 10:11:24  INFO  Destination Image = "mosipqa/kernel-keymanager-service" Destination Image tag = "sprint28" IMAGE_ID :  
+ 26-Aug-24 10:11:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Aug-24 10:11:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Aug-24 10:11:25  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-keymanager-service/tags/sprint28 HTTP/1.1" 404 146 
+ 26-Aug-24 10:11:25  ERROR  Image "mosipqa/kernel-keymanager-service:sprint28" does not exist 
+ 26-Aug-24 10:11:25  INFO   
+ 26-Aug-24 10:11:25  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 26-Aug-24 10:11:25  INFO   
+ 26-Aug-24 10:11:25  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/kernel-keymanager-service:sprint28']] 
+ 26-Aug-24 10:11:25  INFO   
+ 26-Aug-24 10:11:25  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 26-Aug-24 10:11:25  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 26-Aug-24 10:11:25  DEBUG  Found file at path: /root/.docker/config.json 
+ 26-Aug-24 10:11:25  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 26-Aug-24 10:11:25  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 26-Aug-24 10:11:25  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 26-Aug-24 10:11:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Aug-24 10:11:25  DEBUG  No entry found 
+ 26-Aug-24 10:11:26  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 26-Aug-24 10:11:26  INFO   
+ 26-Aug-24 10:11:26  INFO  ********** [ mosipqa/kernel-keymanager-service:sprint28 ] **************************************************** 
+ 26-Aug-24 10:11:26  INFO   
+ 26-Aug-24 10:11:26  INFO  [ PULL ----------------------> mosipdev/kernel-keymanager-service:release-1.2.0.x ]  
+ 26-Aug-24 10:11:26  DEBUG  Looking for auth config 
+ 26-Aug-24 10:11:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Aug-24 10:11:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Aug-24 10:11:26  DEBUG  Found auth config 
+ 26-Aug-24 10:11:27  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.0.x&fromImage=mosipdev%2Fkernel-keymanager-service HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:43  INFO  Status: Downloaded newer image for mosipdev/kernel-keymanager-service:release-1.2.0.x 
+ 26-Aug-24 10:11:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.0.x/tag?tag=sprint28&repo=mosipqa%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 26-Aug-24 10:11:43  INFO   
+ 26-Aug-24 10:11:43  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.2.0.x	------> mosipqa/kernel-keymanager-service:sprint28 ]  
+ 26-Aug-24 10:11:43  DEBUG  Looking for auth config 
+ 26-Aug-24 10:11:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Aug-24 10:11:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Aug-24 10:11:43  DEBUG  Found auth config 
+ 26-Aug-24 10:11:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-keymanager-service/push?tag=sprint28 HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:49  INFO  sprint28: digest: sha256:c73716b331a1498947ee8aafce7faee665958e8fd812aa910f3adf924cad361a size: 3680 
+ 26-Aug-24 10:11:49  INFO   
+ 26-Aug-24 10:11:49  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.2.0.x	------> mosipqa/kernel-keymanager-service:latest ]  
+ 26-Aug-24 10:11:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.0.x/tag?tag=latest&repo=mosipqa%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 26-Aug-24 10:11:49  DEBUG  Looking for auth config 
+ 26-Aug-24 10:11:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Aug-24 10:11:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Aug-24 10:11:49  DEBUG  Found auth config 
+ 26-Aug-24 10:11:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-keymanager-service/push?tag=latest HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:51  INFO  latest: digest: sha256:c73716b331a1498947ee8aafce7faee665958e8fd812aa910f3adf924cad361a size: 3680 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-keymanager-service%3Arelease-1.2.0.x%22%5D%7D HTTP/1.1" 200 392 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:eb4657313300c1ef97fc478032e77146160bdf7188d4a96d02008cae8136b5e2/json HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.0.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-keymanager-service%3Asprint28%22%5D%7D HTTP/1.1" 200 384 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:eb4657313300c1ef97fc478032e77146160bdf7188d4a96d02008cae8136b5e2/json HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-keymanager-service:sprint28?force=False&noprune=False HTTP/1.1" 200 60 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-keymanager-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 26-Aug-24 10:11:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:eb4657313300c1ef97fc478032e77146160bdf7188d4a96d02008cae8136b5e2/json HTTP/1.1" 200 None 
+ 26-Aug-24 10:11:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-keymanager-service:latest?force=False&noprune=False HTTP/1.1" 200 1641 
+ 26-Aug-24 10:11:52  INFO  Completed mosipdev/kernel-keymanager-service:release-1.2.0.x	------> mosipqa/kernel-keymanager-service:sprint28 
