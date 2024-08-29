@@ -1,85 +1,85 @@
- 29-Aug-24 12:50:26  INFO  LOGFILE CREATED : vidivi.log 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** Check Images List ************************************************************************************ 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  IMAGES= [['mosipdev/apitest-mimoto:release-0.14.x', '0.14.x']] 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  src = "mosipdev/apitest-mimoto" tag = "release-0.14.x" 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:50:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 12:50:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-mimoto/tags/release-0.14.x HTTP/1.1" 200 773 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 29-Aug-24 12:50:26  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 29-Aug-24 12:50:26  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:50:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 29-Aug-24 12:50:26  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-mimoto/manifests/0.14.x HTTP/1.1" 404 100 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  [ mosipqa/apitest-mimoto ]  
- 29-Aug-24 12:50:26  INFO  Destination Image = "mosipqa/apitest-mimoto" Destination Image tag = "0.14.x" IMAGE_ID :  
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:50:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:50:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 12:50:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-mimoto/tags/0.14.x HTTP/1.1" 404 131 
- 29-Aug-24 12:50:26  ERROR  Image "mosipqa/apitest-mimoto:0.14.x" does not exist 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** HASH Operation Results ********************************************************************** 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/apitest-mimoto:0.14.x']] 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 29-Aug-24 12:50:26  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 29-Aug-24 12:50:26  DEBUG  Found file at path: /root/.docker/config.json 
- 29-Aug-24 12:50:26  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 29-Aug-24 12:50:26  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 29-Aug-24 12:50:26  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 29-Aug-24 12:50:26  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:50:26  DEBUG  No entry found 
- 29-Aug-24 12:50:26  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  ********** [ mosipqa/apitest-mimoto:0.14.x ] **************************************************** 
- 29-Aug-24 12:50:26  INFO   
- 29-Aug-24 12:50:26  INFO  [ PULL ----------------------> mosipdev/apitest-mimoto:release-0.14.x ]  
- 29-Aug-24 12:50:26  DEBUG  Looking for auth config 
- 29-Aug-24 12:50:26  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:50:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:50:26  DEBUG  Found auth config 
- 29-Aug-24 12:50:27  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.14.x&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
- 29-Aug-24 12:50:52  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto:release-0.14.x 
- 29-Aug-24 12:50:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x/tag?tag=0.14.x&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 12:50:52  INFO   
- 29-Aug-24 12:50:52  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.14.x	------> mosipqa/apitest-mimoto:0.14.x ]  
- 29-Aug-24 12:50:52  DEBUG  Looking for auth config 
- 29-Aug-24 12:50:52  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:50:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:50:52  DEBUG  Found auth config 
- 29-Aug-24 12:50:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-mimoto/push?tag=0.14.x HTTP/1.1" 200 None 
- 29-Aug-24 12:50:53  INFO  0.14.x: digest: sha256:f0111cdc211b11e110c7f2a6a9070b34acbea3b9c2413b61f416c6c929eb8d9d size: 3471 
- 29-Aug-24 12:50:53  INFO   
- 29-Aug-24 12:50:53  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.14.x	------> mosipqa/apitest-mimoto:latest ]  
- 29-Aug-24 12:50:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x/tag?tag=latest&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 12:50:53  DEBUG  Looking for auth config 
- 29-Aug-24 12:50:53  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:50:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:50:53  DEBUG  Found auth config 
- 29-Aug-24 12:50:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-mimoto/push?tag=latest HTTP/1.1" 200 None 
- 29-Aug-24 12:50:54  INFO  latest: digest: sha256:f0111cdc211b11e110c7f2a6a9070b34acbea3b9c2413b61f416c6c929eb8d9d size: 3471 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-mimoto%3Arelease-0.14.x%22%5D%7D HTTP/1.1" 200 381 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ffda2e4a0ac055c5afec958076816d721afa857442df219d42ce3f0dbba35382/json HTTP/1.1" 200 None 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x?force=False&noprune=False HTTP/1.1" 200 167 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-mimoto%3A0.14.x%22%5D%7D HTTP/1.1" 200 372 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ffda2e4a0ac055c5afec958076816d721afa857442df219d42ce3f0dbba35382/json HTTP/1.1" 200 None 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-mimoto:0.14.x?force=False&noprune=False HTTP/1.1" 200 47 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-mimoto%3Alatest%22%5D%7D HTTP/1.1" 200 372 
- 29-Aug-24 12:50:54  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ffda2e4a0ac055c5afec958076816d721afa857442df219d42ce3f0dbba35382/json HTTP/1.1" 200 None 
- 29-Aug-24 12:50:55  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-mimoto:latest?force=False&noprune=False HTTP/1.1" 200 1533 
- 29-Aug-24 12:50:55  INFO  Completed mosipdev/apitest-mimoto:release-0.14.x	------> mosipqa/apitest-mimoto:0.14.x 
+ 29-Aug-24 12:55:36  INFO  LOGFILE CREATED : vidivi.log 
+ 29-Aug-24 12:55:36  INFO   
+ 29-Aug-24 12:55:36  INFO  ******************** Check Images List ************************************************************************************ 
+ 29-Aug-24 12:55:36  INFO   
+ 29-Aug-24 12:55:36  INFO  IMAGES= [['mosipdev/kernel-salt-generator:release-1.3.x', 'release-1.3.x']] 
+ 29-Aug-24 12:55:36  INFO   
+ 29-Aug-24 12:55:36  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 29-Aug-24 12:55:36  INFO   
+ 29-Aug-24 12:55:36  INFO  src = "mosipdev/kernel-salt-generator" tag = "release-1.3.x" 
+ 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 12:55:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 12:55:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 200 769 
+ 29-Aug-24 12:55:36  INFO   
+ 29-Aug-24 12:55:36  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 29-Aug-24 12:55:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 29-Aug-24 12:55:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 29-Aug-24 12:55:37  INFO   
+ 29-Aug-24 12:55:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 12:55:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 12:55:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 12:55:37  INFO   
+ 29-Aug-24 12:55:37  INFO  [ mosipdev2/kernel-salt-generator ]  
+ 29-Aug-24 12:55:37  INFO  Destination Image = "mosipdev2/kernel-salt-generator" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 12:55:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 12:55:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 404 154 
+ 29-Aug-24 12:55:38  ERROR  Image "mosipdev2/kernel-salt-generator:release-1.3.x" does not exist 
+ 29-Aug-24 12:55:38  INFO   
+ 29-Aug-24 12:55:38  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 29-Aug-24 12:55:38  INFO   
+ 29-Aug-24 12:55:38  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/kernel-salt-generator:release-1.3.x']] 
+ 29-Aug-24 12:55:38  INFO   
+ 29-Aug-24 12:55:38  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 29-Aug-24 12:55:38  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 29-Aug-24 12:55:38  DEBUG  Found file at path: /root/.docker/config.json 
+ 29-Aug-24 12:55:38  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 29-Aug-24 12:55:38  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 29-Aug-24 12:55:38  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 29-Aug-24 12:55:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 12:55:38  DEBUG  No entry found 
+ 29-Aug-24 12:55:38  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 29-Aug-24 12:55:38  INFO   
+ 29-Aug-24 12:55:38  INFO  ********** [ mosipdev2/kernel-salt-generator:release-1.3.x ] **************************************************** 
+ 29-Aug-24 12:55:38  INFO   
+ 29-Aug-24 12:55:38  INFO  [ PULL ----------------------> mosipdev/kernel-salt-generator:release-1.3.x ]  
+ 29-Aug-24 12:55:38  DEBUG  Looking for auth config 
+ 29-Aug-24 12:55:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 12:55:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 12:55:38  DEBUG  Found auth config 
+ 29-Aug-24 12:55:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:45  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator:release-1.3.x 
+ 29-Aug-24 12:55:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 12:55:45  INFO   
+ 29-Aug-24 12:55:45  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:release-1.3.x ]  
+ 29-Aug-24 12:55:45  DEBUG  Looking for auth config 
+ 29-Aug-24 12:55:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 12:55:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 12:55:45  DEBUG  Found auth config 
+ 29-Aug-24 12:55:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:52  INFO  release-1.3.x: digest: sha256:c4822e49b2b5f37bd6de2fc6baeecc60422b3635c1f0ec5c2771b32830230556 size: 2415 
+ 29-Aug-24 12:55:52  INFO   
+ 29-Aug-24 12:55:52  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:latest ]  
+ 29-Aug-24 12:55:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 12:55:52  DEBUG  Looking for auth config 
+ 29-Aug-24 12:55:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 12:55:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 12:55:52  DEBUG  Found auth config 
+ 29-Aug-24 12:55:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:53  INFO  latest: digest: sha256:c4822e49b2b5f37bd6de2fc6baeecc60422b3635c1f0ec5c2771b32830230556 size: 2415 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 386 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 180 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 387 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 63 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 380 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
+ 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 1035 
+ 29-Aug-24 12:55:53  INFO  Completed mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:release-1.3.x 
