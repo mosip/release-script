@@ -1,85 +1,813 @@
- 29-Aug-24 12:55:36  INFO  LOGFILE CREATED : vidivi.log 
- 29-Aug-24 12:55:36  INFO   
- 29-Aug-24 12:55:36  INFO  ******************** Check Images List ************************************************************************************ 
- 29-Aug-24 12:55:36  INFO   
- 29-Aug-24 12:55:36  INFO  IMAGES= [['mosipdev/kernel-salt-generator:release-1.3.x', 'release-1.3.x']] 
- 29-Aug-24 12:55:36  INFO   
- 29-Aug-24 12:55:36  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 29-Aug-24 12:55:36  INFO   
- 29-Aug-24 12:55:36  INFO  src = "mosipdev/kernel-salt-generator" tag = "release-1.3.x" 
- 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:55:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 12:55:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 200 769 
- 29-Aug-24 12:55:36  INFO   
- 29-Aug-24 12:55:36  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 29-Aug-24 12:55:36  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 29-Aug-24 12:55:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 29-Aug-24 12:55:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
- 29-Aug-24 12:55:37  INFO   
- 29-Aug-24 12:55:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:55:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 29-Aug-24 12:55:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/release-1.3.x HTTP/1.1" 404 107 
- 29-Aug-24 12:55:37  INFO   
- 29-Aug-24 12:55:37  INFO  [ mosipdev2/kernel-salt-generator ]  
- 29-Aug-24 12:55:37  INFO  Destination Image = "mosipdev2/kernel-salt-generator" Destination Image tag = "release-1.3.x" IMAGE_ID :  
- 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 12:55:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
- 29-Aug-24 12:55:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 12:55:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 404 154 
- 29-Aug-24 12:55:38  ERROR  Image "mosipdev2/kernel-salt-generator:release-1.3.x" does not exist 
- 29-Aug-24 12:55:38  INFO   
- 29-Aug-24 12:55:38  INFO  ******************** HASH Operation Results ********************************************************************** 
- 29-Aug-24 12:55:38  INFO   
- 29-Aug-24 12:55:38  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/kernel-salt-generator:release-1.3.x']] 
- 29-Aug-24 12:55:38  INFO   
- 29-Aug-24 12:55:38  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 29-Aug-24 12:55:38  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 29-Aug-24 12:55:38  DEBUG  Found file at path: /root/.docker/config.json 
- 29-Aug-24 12:55:38  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 29-Aug-24 12:55:38  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 29-Aug-24 12:55:38  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 29-Aug-24 12:55:38  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:55:38  DEBUG  No entry found 
- 29-Aug-24 12:55:38  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 29-Aug-24 12:55:38  INFO   
- 29-Aug-24 12:55:38  INFO  ********** [ mosipdev2/kernel-salt-generator:release-1.3.x ] **************************************************** 
- 29-Aug-24 12:55:38  INFO   
- 29-Aug-24 12:55:38  INFO  [ PULL ----------------------> mosipdev/kernel-salt-generator:release-1.3.x ]  
- 29-Aug-24 12:55:38  DEBUG  Looking for auth config 
- 29-Aug-24 12:55:38  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:55:38  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:55:38  DEBUG  Found auth config 
- 29-Aug-24 12:55:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
- 29-Aug-24 12:55:45  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator:release-1.3.x 
- 29-Aug-24 12:55:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 12:55:45  INFO   
- 29-Aug-24 12:55:45  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:release-1.3.x ]  
- 29-Aug-24 12:55:45  DEBUG  Looking for auth config 
- 29-Aug-24 12:55:45  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:55:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:55:45  DEBUG  Found auth config 
- 29-Aug-24 12:55:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 29-Aug-24 12:55:52  INFO  release-1.3.x: digest: sha256:c4822e49b2b5f37bd6de2fc6baeecc60422b3635c1f0ec5c2771b32830230556 size: 2415 
- 29-Aug-24 12:55:52  INFO   
- 29-Aug-24 12:55:52  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:latest ]  
- 29-Aug-24 12:55:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 12:55:52  DEBUG  Looking for auth config 
- 29-Aug-24 12:55:52  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 12:55:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 12:55:52  DEBUG  Found auth config 
- 29-Aug-24 12:55:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-salt-generator/push?tag=latest HTTP/1.1" 200 None 
- 29-Aug-24 12:55:53  INFO  latest: digest: sha256:c4822e49b2b5f37bd6de2fc6baeecc60422b3635c1f0ec5c2771b32830230556 size: 2415 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 386 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 180 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 387 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 63 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 380 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9b79f73a0847f348e5d35a0882d23d142768ad51e0469e0d47d8792ee024b4ee/json HTTP/1.1" 200 None 
- 29-Aug-24 12:55:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 1035 
- 29-Aug-24 12:55:53  INFO  Completed mosipdev/kernel-salt-generator:release-1.3.x	------> mosipdev2/kernel-salt-generator:release-1.3.x 
+ 29-Aug-24 13:15:13  INFO  LOGFILE CREATED : vidivi.log 
+ 29-Aug-24 13:15:13  INFO   
+ 29-Aug-24 13:15:13  INFO  ******************** Check Images List ************************************************************************************ 
+ 29-Aug-24 13:15:13  INFO   
+ 29-Aug-24 13:15:13  INFO  IMAGES= [['mosipdev/registration-processor-common-camel-bridge:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-1:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-2:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-3:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-4:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-5:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-6:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-7:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-notification-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-dmz-packet-server:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-reprocessor:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-registration-status-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-registration-transaction-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-workflow-manager-service:release-1.3.x', 'release-1.3.x']] 
+ 29-Aug-24 13:15:13  INFO   
+ 29-Aug-24 13:15:13  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 29-Aug-24 13:15:13  INFO   
+ 29-Aug-24 13:15:13  INFO  src = "mosipdev/registration-processor-common-camel-bridge" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-common-camel-bridge:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:13  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:13  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-common-camel-bridge/tags/release-1.3.x HTTP/1.1" 200 819 
+ 29-Aug-24 13:15:13  INFO   
+ 29-Aug-24 13:15:13  INFO  src = "mosipdev/registration-processor-stage-group-1" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-1:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:13  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-1/tags/release-1.3.x HTTP/1.1" 200 818 
+ 29-Aug-24 13:15:14  INFO   
+ 29-Aug-24 13:15:14  INFO  src = "mosipdev/registration-processor-stage-group-2" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-2:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-2/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:14  INFO   
+ 29-Aug-24 13:15:14  INFO  src = "mosipdev/registration-processor-stage-group-3" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-3:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-3/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:15  INFO   
+ 29-Aug-24 13:15:15  INFO  src = "mosipdev/registration-processor-stage-group-4" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-4:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-4/tags/release-1.3.x HTTP/1.1" 200 817 
+ 29-Aug-24 13:15:15  INFO   
+ 29-Aug-24 13:15:15  INFO  src = "mosipdev/registration-processor-stage-group-5" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-5:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-5/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:16  INFO   
+ 29-Aug-24 13:15:16  INFO  src = "mosipdev/registration-processor-stage-group-6" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-6:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-6/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:16  INFO   
+ 29-Aug-24 13:15:16  INFO  src = "mosipdev/registration-processor-stage-group-7" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-7:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-7/tags/release-1.3.x HTTP/1.1" 200 818 
+ 29-Aug-24 13:15:17  INFO   
+ 29-Aug-24 13:15:17  INFO  src = "mosipdev/registration-processor-notification-service" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-notification-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-notification-service/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:17  INFO   
+ 29-Aug-24 13:15:17  INFO  src = "mosipdev/registration-processor-dmz-packet-server" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-dmz-packet-server:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:18  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-dmz-packet-server/tags/release-1.3.x HTTP/1.1" 200 817 
+ 29-Aug-24 13:15:18  INFO   
+ 29-Aug-24 13:15:18  INFO  src = "mosipdev/registration-processor-reprocessor" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-reprocessor:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:18  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-reprocessor/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:18  INFO   
+ 29-Aug-24 13:15:18  INFO  src = "mosipdev/registration-processor-registration-status-service" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-registration-status-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:19  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:19  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-registration-status-service/tags/release-1.3.x HTTP/1.1" 200 819 
+ 29-Aug-24 13:15:19  INFO   
+ 29-Aug-24 13:15:19  INFO  src = "mosipdev/registration-processor-registration-transaction-service" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-registration-transaction-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:19  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:19  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-registration-transaction-service/tags/release-1.3.x HTTP/1.1" 200 819 
+ 29-Aug-24 13:15:19  INFO   
+ 29-Aug-24 13:15:19  INFO  src = "mosipdev/registration-processor-workflow-manager-service" tag = "release-1.3.x" 
+ 29-Aug-24 13:15:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-workflow-manager-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-workflow-manager-service/tags/release-1.3.x HTTP/1.1" 200 820 
+ 29-Aug-24 13:15:20  INFO   
+ 29-Aug-24 13:15:20  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 29-Aug-24 13:15:20  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 29-Aug-24 13:15:20  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 29-Aug-24 13:15:20  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 29-Aug-24 13:15:20  INFO   
+ 29-Aug-24 13:15:20  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 29-Aug-24 13:15:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-common-camel-bridge:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:21  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-common-camel-bridge/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:21  INFO   
+ 29-Aug-24 13:15:21  INFO  [ mosipdev2/registration-processor-common-camel-bridge ]  
+ 29-Aug-24 13:15:21  INFO  Destination Image = "mosipdev2/registration-processor-common-camel-bridge" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-common-camel-bridge:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-common-camel-bridge/tags/release-1.3.x HTTP/1.1" 404 175 
+ 29-Aug-24 13:15:21  ERROR  Image "mosipdev2/registration-processor-common-camel-bridge:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-1:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-1/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:22  INFO   
+ 29-Aug-24 13:15:22  INFO  [ mosipdev2/registration-processor-stage-group-1 ]  
+ 29-Aug-24 13:15:22  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-1" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-1:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-1/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:22  ERROR  Image "mosipdev2/registration-processor-stage-group-1:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-2:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:23  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-2/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:23  INFO   
+ 29-Aug-24 13:15:23  INFO  [ mosipdev2/registration-processor-stage-group-2 ]  
+ 29-Aug-24 13:15:23  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-2" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-2:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-2/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:23  ERROR  Image "mosipdev2/registration-processor-stage-group-2:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-3:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:24  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:24  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-3/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:24  INFO   
+ 29-Aug-24 13:15:24  INFO  [ mosipdev2/registration-processor-stage-group-3 ]  
+ 29-Aug-24 13:15:24  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-3" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-3:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:24  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:24  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-3/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:24  ERROR  Image "mosipdev2/registration-processor-stage-group-3:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-4:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:25  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:25  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-4/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:25  INFO   
+ 29-Aug-24 13:15:25  INFO  [ mosipdev2/registration-processor-stage-group-4 ]  
+ 29-Aug-24 13:15:25  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-4" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-4:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-4/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:26  ERROR  Image "mosipdev2/registration-processor-stage-group-4:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-5:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:26  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:26  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-5/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:26  INFO   
+ 29-Aug-24 13:15:26  INFO  [ mosipdev2/registration-processor-stage-group-5 ]  
+ 29-Aug-24 13:15:26  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-5" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-5:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-5/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:27  ERROR  Image "mosipdev2/registration-processor-stage-group-5:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-6:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:27  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-6/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:27  INFO   
+ 29-Aug-24 13:15:27  INFO  [ mosipdev2/registration-processor-stage-group-6 ]  
+ 29-Aug-24 13:15:27  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-6" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-6:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-6/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:28  ERROR  Image "mosipdev2/registration-processor-stage-group-6:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-7:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-stage-group-7/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:28  INFO   
+ 29-Aug-24 13:15:28  INFO  [ mosipdev2/registration-processor-stage-group-7 ]  
+ 29-Aug-24 13:15:28  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-7" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-stage-group-7:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:29  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-stage-group-7/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 13:15:29  ERROR  Image "mosipdev2/registration-processor-stage-group-7:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-notification-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:29  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:29  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-notification-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:29  INFO   
+ 29-Aug-24 13:15:29  INFO  [ mosipdev2/registration-processor-notification-service ]  
+ 29-Aug-24 13:15:29  INFO  Destination Image = "mosipdev2/registration-processor-notification-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-notification-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:29  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:30  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-notification-service/tags/release-1.3.x HTTP/1.1" 404 176 
+ 29-Aug-24 13:15:30  ERROR  Image "mosipdev2/registration-processor-notification-service:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-dmz-packet-server:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:30  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:30  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-dmz-packet-server/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:30  INFO   
+ 29-Aug-24 13:15:30  INFO  [ mosipdev2/registration-processor-dmz-packet-server ]  
+ 29-Aug-24 13:15:30  INFO  Destination Image = "mosipdev2/registration-processor-dmz-packet-server" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-dmz-packet-server:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:30  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:31  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-dmz-packet-server/tags/release-1.3.x HTTP/1.1" 404 173 
+ 29-Aug-24 13:15:31  ERROR  Image "mosipdev2/registration-processor-dmz-packet-server:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-reprocessor:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:31  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:31  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-reprocessor/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:31  INFO   
+ 29-Aug-24 13:15:31  INFO  [ mosipdev2/registration-processor-reprocessor ]  
+ 29-Aug-24 13:15:31  INFO  Destination Image = "mosipdev2/registration-processor-reprocessor" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-reprocessor:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:31  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-reprocessor/tags/release-1.3.x HTTP/1.1" 404 167 
+ 29-Aug-24 13:15:32  ERROR  Image "mosipdev2/registration-processor-reprocessor:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-registration-status-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:32  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:32  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-registration-status-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:32  INFO   
+ 29-Aug-24 13:15:32  INFO  [ mosipdev2/registration-processor-registration-status-service ]  
+ 29-Aug-24 13:15:32  INFO  Destination Image = "mosipdev2/registration-processor-registration-status-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-registration-status-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:32  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:33  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-registration-status-service/tags/release-1.3.x HTTP/1.1" 404 183 
+ 29-Aug-24 13:15:33  ERROR  Image "mosipdev2/registration-processor-registration-status-service:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:33  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-registration-transaction-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:33  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:33  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-registration-transaction-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:33  INFO   
+ 29-Aug-24 13:15:33  INFO  [ mosipdev2/registration-processor-registration-transaction-service ]  
+ 29-Aug-24 13:15:33  INFO  Destination Image = "mosipdev2/registration-processor-registration-transaction-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:33  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-registration-transaction-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:33  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:34  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-registration-transaction-service/tags/release-1.3.x HTTP/1.1" 404 188 
+ 29-Aug-24 13:15:34  ERROR  Image "mosipdev2/registration-processor-registration-transaction-service:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:34  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:34  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-workflow-manager-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:34  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 13:15:34  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-workflow-manager-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 13:15:34  INFO   
+ 29-Aug-24 13:15:34  INFO  [ mosipdev2/registration-processor-workflow-manager-service ]  
+ 29-Aug-24 13:15:34  INFO  Destination Image = "mosipdev2/registration-processor-workflow-manager-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 13:15:34  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 13:15:34  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-workflow-manager-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:34  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 13:15:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-workflow-manager-service/tags/release-1.3.x HTTP/1.1" 404 180 
+ 29-Aug-24 13:15:35  ERROR  Image "mosipdev2/registration-processor-workflow-manager-service:release-1.3.x" does not exist 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/registration-processor-common-camel-bridge:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-1:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-2:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-3:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-4:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-5:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-6:release-1.3.x'], ['mosipdev2/registration-processor-stage-group-7:release-1.3.x'], ['mosipdev2/registration-processor-notification-service:release-1.3.x'], ['mosipdev2/registration-processor-dmz-packet-server:release-1.3.x'], ['mosipdev2/registration-processor-reprocessor:release-1.3.x'], ['mosipdev2/registration-processor-registration-status-service:release-1.3.x'], ['mosipdev2/registration-processor-registration-transaction-service:release-1.3.x'], ['mosipdev2/registration-processor-workflow-manager-service:release-1.3.x']] 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 29-Aug-24 13:15:35  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 29-Aug-24 13:15:35  DEBUG  Found file at path: /root/.docker/config.json 
+ 29-Aug-24 13:15:35  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 29-Aug-24 13:15:35  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 29-Aug-24 13:15:35  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  No entry found 
+ 29-Aug-24 13:15:35  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-common-camel-bridge:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-common-camel-bridge:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-1:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-1:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-2:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-3:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-2:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-4:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-3:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-5:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-4:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-5:release-1.3.x ]  
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth config 
+ 29-Aug-24 13:15:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-6:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-stage-group-7:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-notification-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-dmz-packet-server:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-reprocessor:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-registration-status-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  DEBUG  Found auth config 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-registration-transaction-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:35  INFO   
+ 29-Aug-24 13:15:35  INFO  ********** [ mosipdev2/registration-processor-workflow-manager-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-common-camel-bridge HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-3 HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-1 HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-4 HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-5 HTTP/1.1" 200 None 
+ 29-Aug-24 13:15:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-2 HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:10  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-1:release-1.3.x 
+ 29-Aug-24 13:16:10  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-1:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-1&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:10  INFO   
+ 29-Aug-24 13:16:10  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-1:release-1.3.x	------> mosipdev2/registration-processor-stage-group-1:release-1.3.x ]  
+ 29-Aug-24 13:16:10  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:10  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:10  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:10  DEBUG  Found auth config 
+ 29-Aug-24 13:16:10  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-1/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:11  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-3:release-1.3.x 
+ 29-Aug-24 13:16:11  INFO  Status: Downloaded newer image for mosipdev/registration-processor-common-camel-bridge:release-1.3.x 
+ 29-Aug-24 13:16:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-3:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-3&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:11  INFO   
+ 29-Aug-24 13:16:11  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-3:release-1.3.x	------> mosipdev2/registration-processor-stage-group-3:release-1.3.x ]  
+ 29-Aug-24 13:16:11  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:11  DEBUG  Found auth config 
+ 29-Aug-24 13:16:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-3/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-common-camel-bridge:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-common-camel-bridge&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:11  INFO   
+ 29-Aug-24 13:16:11  INFO  [ PUSH -----> mosipdev/registration-processor-common-camel-bridge:release-1.3.x	------> mosipdev2/registration-processor-common-camel-bridge:release-1.3.x ]  
+ 29-Aug-24 13:16:11  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:11  DEBUG  Found auth config 
+ 29-Aug-24 13:16:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-common-camel-bridge/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:17  INFO  release-1.3.x: digest: sha256:a5bc86d6c1b4c4a29cecb84c5f5f9055f122f2e585a360b50a76dc9a14c2d022 size: 2417 
+ 29-Aug-24 13:16:17  INFO   
+ 29-Aug-24 13:16:17  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-1:release-1.3.x	------> mosipdev2/registration-processor-stage-group-1:latest ]  
+ 29-Aug-24 13:16:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-1:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-1&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:18  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:18  DEBUG  Found auth config 
+ 29-Aug-24 13:16:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-1/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:21  INFO  release-1.3.x: digest: sha256:b3e5ef77957ebddead20ff9e0038d376f35a4d60af7afa4b2d38e933ae78208a size: 2417 
+ 29-Aug-24 13:16:21  INFO   
+ 29-Aug-24 13:16:21  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-3:release-1.3.x	------> mosipdev2/registration-processor-stage-group-3:latest ]  
+ 29-Aug-24 13:16:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-3:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-3&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:21  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:21  DEBUG  Found auth config 
+ 29-Aug-24 13:16:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-3/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:22  INFO  latest: digest: sha256:a5bc86d6c1b4c4a29cecb84c5f5f9055f122f2e585a360b50a76dc9a14c2d022 size: 2417 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-1%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 401 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:71f4bc480da53e2f90d7bf598a34d0bd0989b411543142cf002ce2f36f1a3e87/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-1:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-1%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:71f4bc480da53e2f90d7bf598a34d0bd0989b411543142cf002ce2f36f1a3e87/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-1:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-1%3Alatest%22%5D%7D HTTP/1.1" 200 395 
+ 29-Aug-24 13:16:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:71f4bc480da53e2f90d7bf598a34d0bd0989b411543142cf002ce2f36f1a3e87/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-1:latest?force=False&noprune=False HTTP/1.1" 200 721 
+ 29-Aug-24 13:16:23  INFO  Completed mosipdev/registration-processor-stage-group-1:release-1.3.x	------> mosipdev2/registration-processor-stage-group-1:release-1.3.x 
+ 29-Aug-24 13:16:23  INFO   
+ 29-Aug-24 13:16:23  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-6:release-1.3.x ]  
+ 29-Aug-24 13:16:23  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:23  DEBUG  Found auth config 
+ 29-Aug-24 13:16:23  INFO  latest: digest: sha256:b3e5ef77957ebddead20ff9e0038d376f35a4d60af7afa4b2d38e933ae78208a size: 2417 
+ 29-Aug-24 13:16:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-3%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 401 
+ 29-Aug-24 13:16:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a061080c2e95fb40f73607f886c1bd09d66d7a78c64094980a60364bbceb9db0/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-3:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:16:25  INFO  release-1.3.x: digest: sha256:4097be8ba8bec226546638d1c2d6b547462665ae6bed0f27e3ca612ed79d3cab size: 2630 
+ 29-Aug-24 13:16:25  INFO   
+ 29-Aug-24 13:16:25  INFO  [ PUSH -----> mosipdev/registration-processor-common-camel-bridge:release-1.3.x	------> mosipdev2/registration-processor-common-camel-bridge:latest ]  
+ 29-Aug-24 13:16:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-3%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a061080c2e95fb40f73607f886c1bd09d66d7a78c64094980a60364bbceb9db0/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-6 HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-common-camel-bridge:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-common-camel-bridge&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:26  DEBUG  Found auth config 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-common-camel-bridge/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-3:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:16:26  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-2:release-1.3.x 
+ 29-Aug-24 13:16:26  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-5:release-1.3.x 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-3%3Alatest%22%5D%7D HTTP/1.1" 200 395 
+ 29-Aug-24 13:16:26  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-4:release-1.3.x 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a061080c2e95fb40f73607f886c1bd09d66d7a78c64094980a60364bbceb9db0/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-2:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-2&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:26  INFO   
+ 29-Aug-24 13:16:26  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-2:release-1.3.x	------> mosipdev2/registration-processor-stage-group-2:release-1.3.x ]  
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:26  DEBUG  Found auth config 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-2/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-5:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-5&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:26  INFO   
+ 29-Aug-24 13:16:26  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-5:release-1.3.x	------> mosipdev2/registration-processor-stage-group-5:release-1.3.x ]  
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:26  DEBUG  Found auth config 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-5/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-4:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-4&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:26  INFO   
+ 29-Aug-24 13:16:26  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-4:release-1.3.x	------> mosipdev2/registration-processor-stage-group-4:release-1.3.x ]  
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:26  DEBUG  Found auth config 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-4/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-3:latest?force=False&noprune=False HTTP/1.1" 200 721 
+ 29-Aug-24 13:16:26  INFO  Completed mosipdev/registration-processor-stage-group-3:release-1.3.x	------> mosipdev2/registration-processor-stage-group-3:release-1.3.x 
+ 29-Aug-24 13:16:26  INFO   
+ 29-Aug-24 13:16:26  INFO  [ PULL ----------------------> mosipdev/registration-processor-stage-group-7:release-1.3.x ]  
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:26  DEBUG  Found auth config 
+ 29-Aug-24 13:16:27  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-stage-group-7 HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:27  INFO  latest: digest: sha256:4097be8ba8bec226546638d1c2d6b547462665ae6bed0f27e3ca612ed79d3cab size: 2630 
+ 29-Aug-24 13:16:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-common-camel-bridge%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 461 
+ 29-Aug-24 13:16:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b9a1b9b59090d5194053fa5697fb0a7968df5ffe46d5958343e9f8a6678f275/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-common-camel-bridge:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 222 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-common-camel-bridge%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 462 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b9a1b9b59090d5194053fa5697fb0a7968df5ffe46d5958343e9f8a6678f275/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-common-camel-bridge:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 84 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-common-camel-bridge%3Alatest%22%5D%7D HTTP/1.1" 200 455 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b9a1b9b59090d5194053fa5697fb0a7968df5ffe46d5958343e9f8a6678f275/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-common-camel-bridge:latest?force=False&noprune=False HTTP/1.1" 200 819 
+ 29-Aug-24 13:16:28  INFO  Completed mosipdev/registration-processor-common-camel-bridge:release-1.3.x	------> mosipdev2/registration-processor-common-camel-bridge:release-1.3.x 
+ 29-Aug-24 13:16:28  INFO   
+ 29-Aug-24 13:16:28  INFO  [ PULL ----------------------> mosipdev/registration-processor-notification-service:release-1.3.x ]  
+ 29-Aug-24 13:16:28  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:28  DEBUG  Found auth config 
+ 29-Aug-24 13:16:29  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-notification-service HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:31  INFO  release-1.3.x: digest: sha256:32fce368678f3ccaf3ca0a7b594f0614c61b5f94b383469d93c6b09f8df1b524 size: 1583 
+ 29-Aug-24 13:16:31  INFO   
+ 29-Aug-24 13:16:31  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-2:release-1.3.x	------> mosipdev2/registration-processor-stage-group-2:latest ]  
+ 29-Aug-24 13:16:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-2:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-2&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:31  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:31  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:31  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:31  DEBUG  Found auth config 
+ 29-Aug-24 13:16:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-2/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:32  INFO  release-1.3.x: digest: sha256:9fb622c6fe675e2eadc5cd75b6331b7f43c0a502ce0cf9e2a567870b62b1e061 size: 1583 
+ 29-Aug-24 13:16:32  INFO   
+ 29-Aug-24 13:16:32  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-5:release-1.3.x	------> mosipdev2/registration-processor-stage-group-5:latest ]  
+ 29-Aug-24 13:16:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-5:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-5&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:32  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:32  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:32  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:32  DEBUG  Found auth config 
+ 29-Aug-24 13:16:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-5/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:33  INFO  latest: digest: sha256:32fce368678f3ccaf3ca0a7b594f0614c61b5f94b383469d93c6b09f8df1b524 size: 1583 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-2%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 490 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b087f8291deca0e3dc0b3deb735fdfaceb33cdbb92ef568c0b06a3d6fd2ca115/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-2:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-2%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 491 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b087f8291deca0e3dc0b3deb735fdfaceb33cdbb92ef568c0b06a3d6fd2ca115/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-2:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-2%3Alatest%22%5D%7D HTTP/1.1" 200 484 
+ 29-Aug-24 13:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b087f8291deca0e3dc0b3deb735fdfaceb33cdbb92ef568c0b06a3d6fd2ca115/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-2:latest?force=False&noprune=False HTTP/1.1" 200 635 
+ 29-Aug-24 13:16:34  INFO  Completed mosipdev/registration-processor-stage-group-2:release-1.3.x	------> mosipdev2/registration-processor-stage-group-2:release-1.3.x 
+ 29-Aug-24 13:16:34  INFO   
+ 29-Aug-24 13:16:34  INFO  [ PULL ----------------------> mosipdev/registration-processor-dmz-packet-server:release-1.3.x ]  
+ 29-Aug-24 13:16:34  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:34  DEBUG  Found auth config 
+ 29-Aug-24 13:16:34  INFO  latest: digest: sha256:9fb622c6fe675e2eadc5cd75b6331b7f43c0a502ce0cf9e2a567870b62b1e061 size: 1583 
+ 29-Aug-24 13:16:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-5%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 490 
+ 29-Aug-24 13:16:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:433813780689ffaff7c3f0ba0ad4e2abdac5f95794da3adba2b2a6995395e160/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-5:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:16:39  INFO  release-1.3.x: digest: sha256:9044d462f85ce3484ddb6049cf54d38dc03288b994b56e63fc023521e1c4cc06 size: 1583 
+ 29-Aug-24 13:16:39  INFO   
+ 29-Aug-24 13:16:39  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-4:release-1.3.x	------> mosipdev2/registration-processor-stage-group-4:latest ]  
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-5%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 491 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:433813780689ffaff7c3f0ba0ad4e2abdac5f95794da3adba2b2a6995395e160/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-5:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-4:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-4&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:39  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:39  DEBUG  Found auth config 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-5%3Alatest%22%5D%7D HTTP/1.1" 200 484 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:433813780689ffaff7c3f0ba0ad4e2abdac5f95794da3adba2b2a6995395e160/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-4/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:40  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-dmz-packet-server HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-5:latest?force=False&noprune=False HTTP/1.1" 200 549 
+ 29-Aug-24 13:16:40  INFO  Completed mosipdev/registration-processor-stage-group-5:release-1.3.x	------> mosipdev2/registration-processor-stage-group-5:release-1.3.x 
+ 29-Aug-24 13:16:40  INFO   
+ 29-Aug-24 13:16:40  INFO  [ PULL ----------------------> mosipdev/registration-processor-reprocessor:release-1.3.x ]  
+ 29-Aug-24 13:16:40  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:40  DEBUG  Found auth config 
+ 29-Aug-24 13:16:41  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-reprocessor HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:41  INFO  latest: digest: sha256:9044d462f85ce3484ddb6049cf54d38dc03288b994b56e63fc023521e1c4cc06 size: 1583 
+ 29-Aug-24 13:16:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-4%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 490 
+ 29-Aug-24 13:16:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:46b126347178e2e295c8b79b29c4765744f16cfacdb741bafa8213a7e0ac1b31/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-4:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-4%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 491 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "GET /v1.45/images/sha256:46b126347178e2e295c8b79b29c4765744f16cfacdb741bafa8213a7e0ac1b31/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-4:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-4%3Alatest%22%5D%7D HTTP/1.1" 200 484 
+ 29-Aug-24 13:16:42  DEBUG  http://localhost:None "GET /v1.45/images/sha256:46b126347178e2e295c8b79b29c4765744f16cfacdb741bafa8213a7e0ac1b31/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-4:latest?force=False&noprune=False HTTP/1.1" 200 807 
+ 29-Aug-24 13:16:45  INFO  Completed mosipdev/registration-processor-stage-group-4:release-1.3.x	------> mosipdev2/registration-processor-stage-group-4:release-1.3.x 
+ 29-Aug-24 13:16:45  INFO   
+ 29-Aug-24 13:16:45  INFO  [ PULL ----------------------> mosipdev/registration-processor-registration-status-service:release-1.3.x ]  
+ 29-Aug-24 13:16:45  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:45  DEBUG  Found auth config 
+ 29-Aug-24 13:16:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-registration-status-service HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:53  INFO  Status: Downloaded newer image for mosipdev/registration-processor-dmz-packet-server:release-1.3.x 
+ 29-Aug-24 13:16:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-dmz-packet-server:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-dmz-packet-server&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:53  INFO   
+ 29-Aug-24 13:16:53  INFO  [ PUSH -----> mosipdev/registration-processor-dmz-packet-server:release-1.3.x	------> mosipdev2/registration-processor-dmz-packet-server:release-1.3.x ]  
+ 29-Aug-24 13:16:53  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:53  DEBUG  Found auth config 
+ 29-Aug-24 13:16:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-dmz-packet-server/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:56  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-7:release-1.3.x 
+ 29-Aug-24 13:16:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-7:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-7&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:56  INFO   
+ 29-Aug-24 13:16:56  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-7:release-1.3.x	------> mosipdev2/registration-processor-stage-group-7:release-1.3.x ]  
+ 29-Aug-24 13:16:56  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:56  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:56  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:56  DEBUG  Found auth config 
+ 29-Aug-24 13:16:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-7/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:58  INFO  Status: Downloaded newer image for mosipdev/registration-processor-notification-service:release-1.3.x 
+ 29-Aug-24 13:16:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-notification-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-notification-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:58  INFO   
+ 29-Aug-24 13:16:58  INFO  [ PUSH -----> mosipdev/registration-processor-notification-service:release-1.3.x	------> mosipdev2/registration-processor-notification-service:release-1.3.x ]  
+ 29-Aug-24 13:16:58  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:58  DEBUG  Found auth config 
+ 29-Aug-24 13:16:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-notification-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:16:58  INFO  Status: Downloaded newer image for mosipdev/registration-processor-stage-group-6:release-1.3.x 
+ 29-Aug-24 13:16:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-6:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-stage-group-6&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:16:58  INFO   
+ 29-Aug-24 13:16:58  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-6:release-1.3.x	------> mosipdev2/registration-processor-stage-group-6:release-1.3.x ]  
+ 29-Aug-24 13:16:58  DEBUG  Looking for auth config 
+ 29-Aug-24 13:16:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:16:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:16:58  DEBUG  Found auth config 
+ 29-Aug-24 13:16:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-6/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:00  INFO  release-1.3.x: digest: sha256:7ff27b1b87f2d13e068a252bb14910053e42629e76a3f3d53322535af54d1467 size: 2192 
+ 29-Aug-24 13:17:00  INFO   
+ 29-Aug-24 13:17:00  INFO  [ PUSH -----> mosipdev/registration-processor-dmz-packet-server:release-1.3.x	------> mosipdev2/registration-processor-dmz-packet-server:latest ]  
+ 29-Aug-24 13:17:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-dmz-packet-server:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-dmz-packet-server&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:00  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:00  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:00  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:00  DEBUG  Found auth config 
+ 29-Aug-24 13:17:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-dmz-packet-server/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:01  INFO  Status: Downloaded newer image for mosipdev/registration-processor-reprocessor:release-1.3.x 
+ 29-Aug-24 13:17:01  INFO  Status: Downloaded newer image for mosipdev/registration-processor-registration-status-service:release-1.3.x 
+ 29-Aug-24 13:17:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-reprocessor:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-reprocessor&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:01  INFO   
+ 29-Aug-24 13:17:01  INFO  [ PUSH -----> mosipdev/registration-processor-reprocessor:release-1.3.x	------> mosipdev2/registration-processor-reprocessor:release-1.3.x ]  
+ 29-Aug-24 13:17:01  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:01  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:01  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:01  DEBUG  Found auth config 
+ 29-Aug-24 13:17:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-registration-status-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-registration-status-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:01  INFO   
+ 29-Aug-24 13:17:01  INFO  [ PUSH -----> mosipdev/registration-processor-registration-status-service:release-1.3.x	------> mosipdev2/registration-processor-registration-status-service:release-1.3.x ]  
+ 29-Aug-24 13:17:01  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-reprocessor/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:01  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:01  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:01  DEBUG  Found auth config 
+ 29-Aug-24 13:17:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-registration-status-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:04  INFO  release-1.3.x: digest: sha256:a3c00a63673753e65c6b1ac41d1f2c6264d3ecda5624f2315cfcf2f654c8f33f size: 2417 
+ 29-Aug-24 13:17:04  INFO   
+ 29-Aug-24 13:17:04  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-7:release-1.3.x	------> mosipdev2/registration-processor-stage-group-7:latest ]  
+ 29-Aug-24 13:17:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-7:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-7&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:04  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:04  DEBUG  Found auth config 
+ 29-Aug-24 13:17:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-7/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:06  INFO  release-1.3.x: digest: sha256:9859546a4b9ef06c15dd4894bf2569ec7ab907e7822ade7115e7dffd91ffae1b size: 2417 
+ 29-Aug-24 13:17:06  INFO   
+ 29-Aug-24 13:17:06  INFO  [ PUSH -----> mosipdev/registration-processor-notification-service:release-1.3.x	------> mosipdev2/registration-processor-notification-service:latest ]  
+ 29-Aug-24 13:17:06  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-notification-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-notification-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:06  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:06  DEBUG  Found auth config 
+ 29-Aug-24 13:17:06  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-notification-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:08  INFO  latest: digest: sha256:7ff27b1b87f2d13e068a252bb14910053e42629e76a3f3d53322535af54d1467 size: 2192 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-dmz-packet-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 470 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a580ded7330fd1889dbc52482d268ba8e0d4c29d799643d3f608b6d2c7a414d4/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-dmz-packet-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 218 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-dmz-packet-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 471 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a580ded7330fd1889dbc52482d268ba8e0d4c29d799643d3f608b6d2c7a414d4/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-dmz-packet-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 82 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-dmz-packet-server%3Alatest%22%5D%7D HTTP/1.1" 200 464 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a580ded7330fd1889dbc52482d268ba8e0d4c29d799643d3f608b6d2c7a414d4/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:08  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-dmz-packet-server:latest?force=False&noprune=False HTTP/1.1" 200 1073 
+ 29-Aug-24 13:17:08  INFO  Completed mosipdev/registration-processor-dmz-packet-server:release-1.3.x	------> mosipdev2/registration-processor-dmz-packet-server:release-1.3.x 
+ 29-Aug-24 13:17:08  INFO   
+ 29-Aug-24 13:17:08  INFO  [ PULL ----------------------> mosipdev/registration-processor-registration-transaction-service:release-1.3.x ]  
+ 29-Aug-24 13:17:08  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:08  DEBUG  Found auth config 
+ 29-Aug-24 13:17:09  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-registration-transaction-service HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:09  INFO  release-1.3.x: digest: sha256:fdeec6d5a02bf76836bdd3a2938ca7299b3b0f2a1c1c3afca6e0f569d042c6c6 size: 2417 
+ 29-Aug-24 13:17:09  INFO   
+ 29-Aug-24 13:17:09  INFO  [ PUSH -----> mosipdev/registration-processor-stage-group-6:release-1.3.x	------> mosipdev2/registration-processor-stage-group-6:latest ]  
+ 29-Aug-24 13:17:09  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-stage-group-6:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-stage-group-6&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:09  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:09  DEBUG  Found auth config 
+ 29-Aug-24 13:17:09  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-stage-group-6/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:13  INFO  release-1.3.x: digest: sha256:ee4d260a2f5abc61a3eec07576f7b347a69ae7d9fd89b122190fd24eba279809 size: 2417 
+ 29-Aug-24 13:17:13  INFO   
+ 29-Aug-24 13:17:13  INFO  [ PUSH -----> mosipdev/registration-processor-registration-status-service:release-1.3.x	------> mosipdev2/registration-processor-registration-status-service:latest ]  
+ 29-Aug-24 13:17:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-registration-status-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-registration-status-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:13  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:13  DEBUG  Found auth config 
+ 29-Aug-24 13:17:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-registration-status-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:15  INFO  latest: digest: sha256:a3c00a63673753e65c6b1ac41d1f2c6264d3ecda5624f2315cfcf2f654c8f33f size: 2417 
+ 29-Aug-24 13:17:15  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-7%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 401 
+ 29-Aug-24 13:17:15  DEBUG  http://localhost:None "GET /v1.45/images/sha256:825bdda83759c0e7219bf2d05f898c60531bfeb7eaa8e6de74810379c777f200/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  INFO  latest: digest: sha256:fdeec6d5a02bf76836bdd3a2938ca7299b3b0f2a1c1c3afca6e0f569d042c6c6 size: 2417 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-7:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:17:16  INFO  latest: digest: sha256:9859546a4b9ef06c15dd4894bf2569ec7ab907e7822ade7115e7dffd91ffae1b size: 2417 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-stage-group-6%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 401 
+ 29-Aug-24 13:17:16  INFO  release-1.3.x: digest: sha256:f3aef26c0af34d9b4a8e86dba1e517750ec74b4c7ae4c78c48173839ba43d159 size: 2417 
+ 29-Aug-24 13:17:16  INFO   
+ 29-Aug-24 13:17:16  INFO  [ PUSH -----> mosipdev/registration-processor-reprocessor:release-1.3.x	------> mosipdev2/registration-processor-reprocessor:latest ]  
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-notification-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 408 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:809a70a4c5368f44c4d85640823166a2c9f801691d5bbf851cdcf61f270a8385/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-reprocessor:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-reprocessor&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:16  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:16  DEBUG  Found auth config 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-reprocessor/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c87f01dd5301ce00155b58df5370c976076ce776b4f7933b62806d53b5f2bb36/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-stage-group-6:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-7%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-notification-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 224 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:825bdda83759c0e7219bf2d05f898c60531bfeb7eaa8e6de74810379c777f200/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-6%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:809a70a4c5368f44c4d85640823166a2c9f801691d5bbf851cdcf61f270a8385/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-7:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-6:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-7%3Alatest%22%5D%7D HTTP/1.1" 200 395 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-notification-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 409 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c87f01dd5301ce00155b58df5370c976076ce776b4f7933b62806d53b5f2bb36/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:825bdda83759c0e7219bf2d05f898c60531bfeb7eaa8e6de74810379c777f200/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-stage-group-6%3Alatest%22%5D%7D HTTP/1.1" 200 395 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:809a70a4c5368f44c4d85640823166a2c9f801691d5bbf851cdcf61f270a8385/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-notification-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 85 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-notification-service%3Alatest%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c87f01dd5301ce00155b58df5370c976076ce776b4f7933b62806d53b5f2bb36/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-7:latest?force=False&noprune=False HTTP/1.1" 200 721 
+ 29-Aug-24 13:17:16  INFO  latest: digest: sha256:ee4d260a2f5abc61a3eec07576f7b347a69ae7d9fd89b122190fd24eba279809 size: 2417 
+ 29-Aug-24 13:17:16  INFO  Completed mosipdev/registration-processor-stage-group-7:release-1.3.x	------> mosipdev2/registration-processor-stage-group-7:release-1.3.x 
+ 29-Aug-24 13:17:16  INFO   
+ 29-Aug-24 13:17:16  INFO  [ PULL ----------------------> mosipdev/registration-processor-workflow-manager-service:release-1.3.x ]  
+ 29-Aug-24 13:17:16  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:16  DEBUG  Found auth config 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-stage-group-6:latest?force=False&noprune=False HTTP/1.1" 200 721 
+ 29-Aug-24 13:17:16  INFO  Completed mosipdev/registration-processor-stage-group-6:release-1.3.x	------> mosipdev2/registration-processor-stage-group-6:release-1.3.x 
+ 29-Aug-24 13:17:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-registration-status-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 415 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-notification-service:latest?force=False&noprune=False HTTP/1.1" 200 735 
+ 29-Aug-24 13:17:17  INFO  Completed mosipdev/registration-processor-notification-service:release-1.3.x	------> mosipdev2/registration-processor-notification-service:release-1.3.x 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e0240ce054b6ebf8e595a39296c0f0cd12516261a6a12f5227da729760512fa/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-registration-status-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 238 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-registration-status-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 416 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e0240ce054b6ebf8e595a39296c0f0cd12516261a6a12f5227da729760512fa/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-registration-status-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 92 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-registration-status-service%3Alatest%22%5D%7D HTTP/1.1" 200 409 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e0240ce054b6ebf8e595a39296c0f0cd12516261a6a12f5227da729760512fa/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-registration-status-service:latest?force=False&noprune=False HTTP/1.1" 200 749 
+ 29-Aug-24 13:17:17  INFO  Completed mosipdev/registration-processor-registration-status-service:release-1.3.x	------> mosipdev2/registration-processor-registration-status-service:release-1.3.x 
+ 29-Aug-24 13:17:17  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-workflow-manager-service HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:18  INFO  latest: digest: sha256:f3aef26c0af34d9b4a8e86dba1e517750ec74b4c7ae4c78c48173839ba43d159 size: 2417 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-reprocessor%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 399 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:55d2fec11982a62992dd3490249672879a7e79cf7eef8ca3bb457d830a809fb9/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-reprocessor:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 206 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-reprocessor%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 400 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:55d2fec11982a62992dd3490249672879a7e79cf7eef8ca3bb457d830a809fb9/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-reprocessor:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 76 
+ 29-Aug-24 13:17:18  INFO  Status: Downloaded newer image for mosipdev/registration-processor-registration-transaction-service:release-1.3.x 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-registration-transaction-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-registration-transaction-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:18  INFO   
+ 29-Aug-24 13:17:18  INFO  [ PUSH -----> mosipdev/registration-processor-registration-transaction-service:release-1.3.x	------> mosipdev2/registration-processor-registration-transaction-service:release-1.3.x ]  
+ 29-Aug-24 13:17:18  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:18  DEBUG  Found auth config 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-reprocessor%3Alatest%22%5D%7D HTTP/1.1" 200 393 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-registration-transaction-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:55d2fec11982a62992dd3490249672879a7e79cf7eef8ca3bb457d830a809fb9/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-reprocessor:latest?force=False&noprune=False HTTP/1.1" 200 717 
+ 29-Aug-24 13:17:18  INFO  Completed mosipdev/registration-processor-reprocessor:release-1.3.x	------> mosipdev2/registration-processor-reprocessor:release-1.3.x 
+ 29-Aug-24 13:17:24  INFO  release-1.3.x: digest: sha256:3dffae5e60b5246ac23a27b1f81a33ee5425073c5e5a8a15c9f499169f4459ab size: 2417 
+ 29-Aug-24 13:17:24  INFO   
+ 29-Aug-24 13:17:24  INFO  [ PUSH -----> mosipdev/registration-processor-registration-transaction-service:release-1.3.x	------> mosipdev2/registration-processor-registration-transaction-service:latest ]  
+ 29-Aug-24 13:17:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-registration-transaction-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-registration-transaction-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:25  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:25  DEBUG  Found auth config 
+ 29-Aug-24 13:17:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-registration-transaction-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:26  INFO  latest: digest: sha256:3dffae5e60b5246ac23a27b1f81a33ee5425073c5e5a8a15c9f499169f4459ab size: 2417 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-registration-transaction-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 420 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7ef6406faaf7dc72bbde12b97c059cf2c456ecac80573e6532008de1d677325d/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-registration-transaction-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 248 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-registration-transaction-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 421 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7ef6406faaf7dc72bbde12b97c059cf2c456ecac80573e6532008de1d677325d/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-registration-transaction-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 97 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-registration-transaction-service%3Alatest%22%5D%7D HTTP/1.1" 200 414 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7ef6406faaf7dc72bbde12b97c059cf2c456ecac80573e6532008de1d677325d/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-registration-transaction-service:latest?force=False&noprune=False HTTP/1.1" 200 759 
+ 29-Aug-24 13:17:26  INFO  Completed mosipdev/registration-processor-registration-transaction-service:release-1.3.x	------> mosipdev2/registration-processor-registration-transaction-service:release-1.3.x 
+ 29-Aug-24 13:17:28  INFO  Status: Downloaded newer image for mosipdev/registration-processor-workflow-manager-service:release-1.3.x 
+ 29-Aug-24 13:17:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-workflow-manager-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-workflow-manager-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:28  INFO   
+ 29-Aug-24 13:17:28  INFO  [ PUSH -----> mosipdev/registration-processor-workflow-manager-service:release-1.3.x	------> mosipdev2/registration-processor-workflow-manager-service:release-1.3.x ]  
+ 29-Aug-24 13:17:28  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:28  DEBUG  Found auth config 
+ 29-Aug-24 13:17:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-workflow-manager-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:34  INFO  release-1.3.x: digest: sha256:472aac4d18e47d74781f12db92bf6447940b5972bb3305e05bccd2bd47f5225b size: 2417 
+ 29-Aug-24 13:17:34  INFO   
+ 29-Aug-24 13:17:34  INFO  [ PUSH -----> mosipdev/registration-processor-workflow-manager-service:release-1.3.x	------> mosipdev2/registration-processor-workflow-manager-service:latest ]  
+ 29-Aug-24 13:17:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-workflow-manager-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-workflow-manager-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 13:17:34  DEBUG  Looking for auth config 
+ 29-Aug-24 13:17:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 13:17:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 13:17:34  DEBUG  Found auth config 
+ 29-Aug-24 13:17:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-workflow-manager-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:35  INFO  latest: digest: sha256:472aac4d18e47d74781f12db92bf6447940b5972bb3305e05bccd2bd47f5225b size: 2417 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-workflow-manager-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 412 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1364962804575b53d6724038eb2cd54985e7bd544ebf8fdc1823fddb313ac81c/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-workflow-manager-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 232 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-workflow-manager-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 413 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1364962804575b53d6724038eb2cd54985e7bd544ebf8fdc1823fddb313ac81c/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-workflow-manager-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 89 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-workflow-manager-service%3Alatest%22%5D%7D HTTP/1.1" 200 406 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1364962804575b53d6724038eb2cd54985e7bd544ebf8fdc1823fddb313ac81c/json HTTP/1.1" 200 None 
+ 29-Aug-24 13:17:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-workflow-manager-service:latest?force=False&noprune=False HTTP/1.1" 200 1087 
+ 29-Aug-24 13:17:35  INFO  Completed mosipdev/registration-processor-workflow-manager-service:release-1.3.x	------> mosipdev2/registration-processor-workflow-manager-service:release-1.3.x 
