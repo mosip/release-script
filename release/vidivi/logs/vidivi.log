@@ -1,85 +1,253 @@
- 29-Aug-24 11:15:36  INFO  LOGFILE CREATED : vidivi.log 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  ******************** Check Images List ************************************************************************************ 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  IMAGES= [['mosipdev/data-share-service:release-1.3.x', 'release-1.3.x']] 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  src = "mosipdev/data-share-service" tag = "release-1.3.x" 
- 29-Aug-24 11:15:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 11:15:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/data-share-service:pull HTTP/1.1" 200 None 
- 29-Aug-24 11:15:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 11:15:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/data-share-service/tags/release-1.3.x HTTP/1.1" 200 819 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 29-Aug-24 11:15:36  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 29-Aug-24 11:15:36  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 29-Aug-24 11:15:36  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
- 29-Aug-24 11:15:36  INFO   
- 29-Aug-24 11:15:36  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 29-Aug-24 11:15:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 11:15:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/data-share-service:pull HTTP/1.1" 200 None 
- 29-Aug-24 11:15:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 29-Aug-24 11:15:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/data-share-service/manifests/release-1.3.x HTTP/1.1" 404 107 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  [ mosipdev2/data-share-service ]  
- 29-Aug-24 11:15:37  INFO  Destination Image = "mosipdev2/data-share-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
- 29-Aug-24 11:15:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-Aug-24 11:15:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/data-share-service:pull HTTP/1.1" 200 None 
- 29-Aug-24 11:15:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-Aug-24 11:15:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/data-share-service/tags/release-1.3.x HTTP/1.1" 404 151 
- 29-Aug-24 11:15:37  ERROR  Image "mosipdev2/data-share-service:release-1.3.x" does not exist 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  ******************** HASH Operation Results ********************************************************************** 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/data-share-service:release-1.3.x']] 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 29-Aug-24 11:15:37  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 29-Aug-24 11:15:37  DEBUG  Found file at path: /root/.docker/config.json 
- 29-Aug-24 11:15:37  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 29-Aug-24 11:15:37  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 29-Aug-24 11:15:37  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 29-Aug-24 11:15:37  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 11:15:37  DEBUG  No entry found 
- 29-Aug-24 11:15:37  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  ********** [ mosipdev2/data-share-service:release-1.3.x ] **************************************************** 
- 29-Aug-24 11:15:37  INFO   
- 29-Aug-24 11:15:37  INFO  [ PULL ----------------------> mosipdev/data-share-service:release-1.3.x ]  
- 29-Aug-24 11:15:37  DEBUG  Looking for auth config 
- 29-Aug-24 11:15:37  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 11:15:37  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 11:15:37  DEBUG  Found auth config 
- 29-Aug-24 11:15:38  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fdata-share-service HTTP/1.1" 200 None 
- 29-Aug-24 11:15:47  INFO  Status: Downloaded newer image for mosipdev/data-share-service:release-1.3.x 
- 29-Aug-24 11:15:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-share-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fdata-share-service&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 11:15:47  INFO   
- 29-Aug-24 11:15:47  INFO  [ PUSH -----> mosipdev/data-share-service:release-1.3.x	------> mosipdev2/data-share-service:release-1.3.x ]  
- 29-Aug-24 11:15:47  DEBUG  Looking for auth config 
- 29-Aug-24 11:15:47  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 11:15:47  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 11:15:47  DEBUG  Found auth config 
- 29-Aug-24 11:15:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/data-share-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 29-Aug-24 11:15:49  INFO  release-1.3.x: digest: sha256:bf9c57dccd45da6d3b882939142cc74c49f47c6d90ccb34c9a698d1f7c07acb9 size: 2417 
- 29-Aug-24 11:15:49  INFO   
- 29-Aug-24 11:15:49  INFO  [ PUSH -----> mosipdev/data-share-service:release-1.3.x	------> mosipdev2/data-share-service:latest ]  
- 29-Aug-24 11:15:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-share-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fdata-share-service&force=1 HTTP/1.1" 201 0 
- 29-Aug-24 11:15:49  DEBUG  Looking for auth config 
- 29-Aug-24 11:15:49  DEBUG  Looking for auth entry for 'docker.io' 
- 29-Aug-24 11:15:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-Aug-24 11:15:49  DEBUG  Found auth config 
- 29-Aug-24 11:15:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/data-share-service/push?tag=latest HTTP/1.1" 200 None 
- 29-Aug-24 11:15:50  INFO  latest: digest: sha256:bf9c57dccd45da6d3b882939142cc74c49f47c6d90ccb34c9a698d1f7c07acb9 size: 2417 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fdata-share-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 383 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/data-share-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 174 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fdata-share-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 384 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/data-share-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 60 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fdata-share-service%3Alatest%22%5D%7D HTTP/1.1" 200 377 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d3b2449ad1a1c0dec2078977b9b59c9daea66867998b8de4e21a590962557d90/json HTTP/1.1" 200 None 
- 29-Aug-24 11:15:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/data-share-service:latest?force=False&noprune=False HTTP/1.1" 200 1029 
- 29-Aug-24 11:15:50  INFO  Completed mosipdev/data-share-service:release-1.3.x	------> mosipdev2/data-share-service:release-1.3.x 
+ 29-Aug-24 11:28:57  INFO  LOGFILE CREATED : vidivi.log 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  ******************** Check Images List ************************************************************************************ 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  IMAGES= [['mosipdev/pre-registration-application-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/pre-registration-batchjob:release-1.3.x', 'release-1.3.x'], ['mosipdev/pre-registration-booking-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/pre-registration-datasync-service:release-1.3.x', 'release-1.3.x']] 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  src = "mosipdev/pre-registration-application-service" tag = "release-1.3.x" 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-application-service/tags/release-1.3.x HTTP/1.1" 200 816 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  src = "mosipdev/pre-registration-batchjob" tag = "release-1.3.x" 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-batchjob/tags/release-1.3.x HTTP/1.1" 200 819 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  src = "mosipdev/pre-registration-booking-service" tag = "release-1.3.x" 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-booking-service/tags/release-1.3.x HTTP/1.1" 200 819 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  src = "mosipdev/pre-registration-datasync-service" tag = "release-1.3.x" 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-datasync-service/tags/release-1.3.x HTTP/1.1" 200 814 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 29-Aug-24 11:28:57  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/pre-registration-application-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 11:28:57  INFO   
+ 29-Aug-24 11:28:57  INFO  [ mosipdev2/pre-registration-application-service ]  
+ 29-Aug-24 11:28:57  INFO  Destination Image = "mosipdev2/pre-registration-application-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/pre-registration-application-service/tags/release-1.3.x HTTP/1.1" 404 169 
+ 29-Aug-24 11:28:57  ERROR  Image "mosipdev2/pre-registration-application-service:release-1.3.x" does not exist 
+ 29-Aug-24 11:28:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/pre-registration-batchjob/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ mosipdev2/pre-registration-batchjob ]  
+ 29-Aug-24 11:28:58  INFO  Destination Image = "mosipdev2/pre-registration-batchjob" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/pre-registration-batchjob/tags/release-1.3.x HTTP/1.1" 404 158 
+ 29-Aug-24 11:28:58  ERROR  Image "mosipdev2/pre-registration-batchjob:release-1.3.x" does not exist 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/pre-registration-booking-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ mosipdev2/pre-registration-booking-service ]  
+ 29-Aug-24 11:28:58  INFO  Destination Image = "mosipdev2/pre-registration-booking-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/pre-registration-booking-service/tags/release-1.3.x HTTP/1.1" 404 165 
+ 29-Aug-24 11:28:58  ERROR  Image "mosipdev2/pre-registration-booking-service:release-1.3.x" does not exist 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/pre-registration-datasync-service/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ mosipdev2/pre-registration-datasync-service ]  
+ 29-Aug-24 11:28:58  INFO  Destination Image = "mosipdev2/pre-registration-datasync-service" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 29-Aug-24 11:28:58  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 29-Aug-24 11:28:58  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/pre-registration-datasync-service/tags/release-1.3.x HTTP/1.1" 404 166 
+ 29-Aug-24 11:28:58  ERROR  Image "mosipdev2/pre-registration-datasync-service:release-1.3.x" does not exist 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/pre-registration-application-service:release-1.3.x'], ['mosipdev2/pre-registration-batchjob:release-1.3.x'], ['mosipdev2/pre-registration-booking-service:release-1.3.x'], ['mosipdev2/pre-registration-datasync-service:release-1.3.x']] 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 29-Aug-24 11:28:58  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 29-Aug-24 11:28:58  DEBUG  Found file at path: /root/.docker/config.json 
+ 29-Aug-24 11:28:58  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 29-Aug-24 11:28:58  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:28:58  DEBUG  No entry found 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ********** [ mosipdev2/pre-registration-application-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ PULL ----------------------> mosipdev/pre-registration-application-service:release-1.3.x ]  
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth config 
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:28:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:28:58  DEBUG  Found auth config 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ********** [ mosipdev2/pre-registration-batchjob:release-1.3.x ] **************************************************** 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ PULL ----------------------> mosipdev/pre-registration-batchjob:release-1.3.x ]  
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth config 
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:28:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:28:58  DEBUG  Found auth config 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ********** [ mosipdev2/pre-registration-booking-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ PULL ----------------------> mosipdev/pre-registration-booking-service:release-1.3.x ]  
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth config 
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:28:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:28:58  DEBUG  Found auth config 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  ********** [ mosipdev2/pre-registration-datasync-service:release-1.3.x ] **************************************************** 
+ 29-Aug-24 11:28:58  INFO   
+ 29-Aug-24 11:28:58  INFO  [ PULL ----------------------> mosipdev/pre-registration-datasync-service:release-1.3.x ]  
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth config 
+ 29-Aug-24 11:28:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:28:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:28:58  DEBUG  Found auth config 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpre-registration-batchjob HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpre-registration-application-service HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpre-registration-datasync-service HTTP/1.1" 200 None 
+ 29-Aug-24 11:28:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpre-registration-booking-service HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:17  INFO  Status: Downloaded newer image for mosipdev/pre-registration-booking-service:release-1.3.x 
+ 29-Aug-24 11:29:17  INFO  Status: Downloaded newer image for mosipdev/pre-registration-batchjob:release-1.3.x 
+ 29-Aug-24 11:29:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fpre-registration-booking-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:17  INFO   
+ 29-Aug-24 11:29:17  INFO  [ PUSH -----> mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipdev2/pre-registration-booking-service:release-1.3.x ]  
+ 29-Aug-24 11:29:17  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:17  DEBUG  Found auth config 
+ 29-Aug-24 11:29:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-booking-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-batchjob:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fpre-registration-batchjob&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:17  INFO   
+ 29-Aug-24 11:29:17  INFO  [ PUSH -----> mosipdev/pre-registration-batchjob:release-1.3.x	------> mosipdev2/pre-registration-batchjob:release-1.3.x ]  
+ 29-Aug-24 11:29:17  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:17  DEBUG  Found auth config 
+ 29-Aug-24 11:29:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-batchjob/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:18  INFO  Status: Downloaded newer image for mosipdev/pre-registration-application-service:release-1.3.x 
+ 29-Aug-24 11:29:18  INFO  Status: Downloaded newer image for mosipdev/pre-registration-datasync-service:release-1.3.x 
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-application-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fpre-registration-application-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:18  INFO   
+ 29-Aug-24 11:29:18  INFO  [ PUSH -----> mosipdev/pre-registration-application-service:release-1.3.x	------> mosipdev2/pre-registration-application-service:release-1.3.x ]  
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:18  DEBUG  Found auth config 
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-application-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-datasync-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fpre-registration-datasync-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:18  INFO   
+ 29-Aug-24 11:29:18  INFO  [ PUSH -----> mosipdev/pre-registration-datasync-service:release-1.3.x	------> mosipdev2/pre-registration-datasync-service:release-1.3.x ]  
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:18  DEBUG  Found auth config 
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-datasync-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:18  INFO  release-1.3.x: digest: sha256:06748534a9e02eb8dc46d3513ade937386cab26163c85c2959d398ef5cd61f0e size: 2415 
+ 29-Aug-24 11:29:18  INFO   
+ 29-Aug-24 11:29:18  INFO  [ PUSH -----> mosipdev/pre-registration-batchjob:release-1.3.x	------> mosipdev2/pre-registration-batchjob:latest ]  
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-batchjob:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fpre-registration-batchjob&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:18  DEBUG  Found auth config 
+ 29-Aug-24 11:29:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-batchjob/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  INFO  release-1.3.x: digest: sha256:222e2165e8208f824d2cb2f1dc7a2f5a8303b70d67fda57a768c97f8eaf213b1 size: 2415 
+ 29-Aug-24 11:29:19  INFO   
+ 29-Aug-24 11:29:19  INFO  [ PUSH -----> mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipdev2/pre-registration-booking-service:latest ]  
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fpre-registration-booking-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:19  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:19  DEBUG  Found auth config 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-booking-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  INFO  latest: digest: sha256:06748534a9e02eb8dc46d3513ade937386cab26163c85c2959d398ef5cd61f0e size: 2415 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpre-registration-batchjob%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 390 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:995f08fa31ac9e45a0533f4347c2aa8acbcf89303d2a848b6f817ce8f8533532/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pre-registration-batchjob:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 188 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-batchjob%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 391 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:995f08fa31ac9e45a0533f4347c2aa8acbcf89303d2a848b6f817ce8f8533532/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-batchjob:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 67 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-batchjob%3Alatest%22%5D%7D HTTP/1.1" 200 384 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:995f08fa31ac9e45a0533f4347c2aa8acbcf89303d2a848b6f817ce8f8533532/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-batchjob:latest?force=False&noprune=False HTTP/1.1" 200 699 
+ 29-Aug-24 11:29:19  INFO  Completed mosipdev/pre-registration-batchjob:release-1.3.x	------> mosipdev2/pre-registration-batchjob:release-1.3.x 
+ 29-Aug-24 11:29:19  INFO  release-1.3.x: digest: sha256:470b41768ed177ae23840671c19aeb96aafd378857aed68fe12b3a45fff7f272 size: 2417 
+ 29-Aug-24 11:29:19  INFO   
+ 29-Aug-24 11:29:19  INFO  [ PUSH -----> mosipdev/pre-registration-application-service:release-1.3.x	------> mosipdev2/pre-registration-application-service:latest ]  
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-application-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fpre-registration-application-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:19  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:19  DEBUG  Found auth config 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-application-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  INFO  latest: digest: sha256:222e2165e8208f824d2cb2f1dc7a2f5a8303b70d67fda57a768c97f8eaf213b1 size: 2415 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpre-registration-booking-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 397 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bd772758ec8a2a85d51cbdcb73a8088011c66b5ec9a50483dc19088834811029/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 202 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-booking-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 398 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bd772758ec8a2a85d51cbdcb73a8088011c66b5ec9a50483dc19088834811029/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-booking-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 74 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-booking-service%3Alatest%22%5D%7D HTTP/1.1" 200 391 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bd772758ec8a2a85d51cbdcb73a8088011c66b5ec9a50483dc19088834811029/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-booking-service:latest?force=False&noprune=False HTTP/1.1" 200 713 
+ 29-Aug-24 11:29:19  INFO  Completed mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipdev2/pre-registration-booking-service:release-1.3.x 
+ 29-Aug-24 11:29:19  INFO  latest: digest: sha256:470b41768ed177ae23840671c19aeb96aafd378857aed68fe12b3a45fff7f272 size: 2417 
+ 29-Aug-24 11:29:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpre-registration-application-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 401 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b365511af9e4b62ee2d6fcaa6f42af676870d487eccacfc565eda64bf09a73e1/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pre-registration-application-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 210 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-application-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b365511af9e4b62ee2d6fcaa6f42af676870d487eccacfc565eda64bf09a73e1/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-application-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 78 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-application-service%3Alatest%22%5D%7D HTTP/1.1" 200 395 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b365511af9e4b62ee2d6fcaa6f42af676870d487eccacfc565eda64bf09a73e1/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-application-service:latest?force=False&noprune=False HTTP/1.1" 200 721 
+ 29-Aug-24 11:29:20  INFO  Completed mosipdev/pre-registration-application-service:release-1.3.x	------> mosipdev2/pre-registration-application-service:release-1.3.x 
+ 29-Aug-24 11:29:20  INFO  release-1.3.x: digest: sha256:8a02362ad0142409346618d4b796cdd3086ef504cf92fbb0a4795be4781c3faf size: 2417 
+ 29-Aug-24 11:29:20  INFO   
+ 29-Aug-24 11:29:20  INFO  [ PUSH -----> mosipdev/pre-registration-datasync-service:release-1.3.x	------> mosipdev2/pre-registration-datasync-service:latest ]  
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-datasync-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fpre-registration-datasync-service&force=1 HTTP/1.1" 201 0 
+ 29-Aug-24 11:29:20  DEBUG  Looking for auth config 
+ 29-Aug-24 11:29:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 29-Aug-24 11:29:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 29-Aug-24 11:29:20  DEBUG  Found auth config 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/pre-registration-datasync-service/push?tag=latest HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  INFO  latest: digest: sha256:8a02362ad0142409346618d4b796cdd3086ef504cf92fbb0a4795be4781c3faf size: 2417 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpre-registration-datasync-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 398 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8a32fcc3d1155e6221068e0a181b4ea5db0ae21effb27400d1d709fa46d5da5c/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pre-registration-datasync-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 204 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-datasync-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 399 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8a32fcc3d1155e6221068e0a181b4ea5db0ae21effb27400d1d709fa46d5da5c/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-datasync-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 75 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fpre-registration-datasync-service%3Alatest%22%5D%7D HTTP/1.1" 200 392 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:8a32fcc3d1155e6221068e0a181b4ea5db0ae21effb27400d1d709fa46d5da5c/json HTTP/1.1" 200 None 
+ 29-Aug-24 11:29:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/pre-registration-datasync-service:latest?force=False&noprune=False HTTP/1.1" 200 1059 
+ 29-Aug-24 11:29:20  INFO  Completed mosipdev/pre-registration-datasync-service:release-1.3.x	------> mosipdev2/pre-registration-datasync-service:release-1.3.x 
