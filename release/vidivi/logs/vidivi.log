@@ -1,81 +1,364 @@
- 30-Aug-24 09:06:18  INFO  LOGFILE CREATED : vidivi.log 
- 30-Aug-24 09:06:18  INFO   
- 30-Aug-24 09:06:18  INFO  ******************** Check Images List ************************************************************************************ 
- 30-Aug-24 09:06:18  INFO   
- 30-Aug-24 09:06:18  INFO  IMAGES= [['mosipdev/resident-ui:release-0.9.x', '0.9.x']] 
- 30-Aug-24 09:06:18  INFO   
- 30-Aug-24 09:06:18  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 30-Aug-24 09:06:18  INFO   
- 30-Aug-24 09:06:18  INFO  src = "mosipdev/resident-ui" tag = "release-0.9.x" 
- 30-Aug-24 09:06:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Aug-24 09:06:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/resident-ui:pull HTTP/1.1" 200 None 
- 30-Aug-24 09:06:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Aug-24 09:06:18  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/resident-ui/tags/release-0.9.x HTTP/1.1" 200 818 
- 30-Aug-24 09:06:18  INFO   
- 30-Aug-24 09:06:18  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 30-Aug-24 09:06:18  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 30-Aug-24 09:06:19  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 30-Aug-24 09:06:19  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 30-Aug-24 09:06:19  INFO   
- 30-Aug-24 09:06:19  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 30-Aug-24 09:06:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Aug-24 09:06:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-ui:pull HTTP/1.1" 200 None 
- 30-Aug-24 09:06:19  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 30-Aug-24 09:06:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/resident-ui/manifests/0.9.x HTTP/1.1" 200 3031 
- 30-Aug-24 09:06:19  INFO   
- 30-Aug-24 09:06:19  INFO  [ mosipqa/resident-ui ]  
- 30-Aug-24 09:06:19  INFO  Destination Image = "mosipqa/resident-ui" Destination Image tag = "0.9.x" IMAGE_ID : "sha256:5fedfa431d404a97464160a31dde0a2852be06c13fa1ba70127c47e7dc32ddfd" 
- 30-Aug-24 09:06:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Aug-24 09:06:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-ui:pull HTTP/1.1" 200 None 
- 30-Aug-24 09:06:19  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Aug-24 09:06:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/resident-ui/tags/0.9.x HTTP/1.1" 200 809 
- 30-Aug-24 09:06:20  INFO   
- 30-Aug-24 09:06:20  INFO  ******************** HASH Operation Results ********************************************************************** 
- 30-Aug-24 09:06:20  INFO   
- 30-Aug-24 09:06:20  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 30-Aug-24 09:06:20  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 30-Aug-24 09:06:20  DEBUG  Found file at path: /root/.docker/config.json 
- 30-Aug-24 09:06:20  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 30-Aug-24 09:06:20  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 30-Aug-24 09:06:20  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 30-Aug-24 09:06:20  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Aug-24 09:06:20  DEBUG  No entry found 
- 30-Aug-24 09:06:21  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 30-Aug-24 09:06:21  INFO   
- 30-Aug-24 09:06:21  INFO  ********** [ mosipqa/resident-ui:0.9.x ] **************************************************** 
- 30-Aug-24 09:06:21  INFO   
- 30-Aug-24 09:06:21  INFO  [ PULL ----------------------> mosipdev/resident-ui:release-0.9.x ]  
- 30-Aug-24 09:06:21  DEBUG  Looking for auth config 
- 30-Aug-24 09:06:21  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Aug-24 09:06:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Aug-24 09:06:21  DEBUG  Found auth config 
- 30-Aug-24 09:06:22  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.9.x&fromImage=mosipdev%2Fresident-ui HTTP/1.1" 200 None 
- 30-Aug-24 09:06:26  INFO  Status: Downloaded newer image for mosipdev/resident-ui:release-0.9.x 
- 30-Aug-24 09:06:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-ui:release-0.9.x/tag?tag=0.9.x&repo=mosipqa%2Fresident-ui&force=1 HTTP/1.1" 201 0 
- 30-Aug-24 09:06:26  INFO   
- 30-Aug-24 09:06:26  INFO  [ PUSH -----> mosipdev/resident-ui:release-0.9.x	------> mosipqa/resident-ui:0.9.x ]  
- 30-Aug-24 09:06:26  DEBUG  Looking for auth config 
- 30-Aug-24 09:06:26  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Aug-24 09:06:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Aug-24 09:06:26  DEBUG  Found auth config 
- 30-Aug-24 09:06:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-ui/push?tag=0.9.x HTTP/1.1" 200 None 
- 30-Aug-24 09:06:31  INFO  0.9.x: digest: sha256:d9e911f797dcc859aeea69a791615b8059b4a8a8455df45659316dc34254e203 size: 3031 
- 30-Aug-24 09:06:31  INFO   
- 30-Aug-24 09:06:31  INFO  [ PUSH -----> mosipdev/resident-ui:release-0.9.x	------> mosipqa/resident-ui:latest ]  
- 30-Aug-24 09:06:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-ui:release-0.9.x/tag?tag=latest&repo=mosipqa%2Fresident-ui&force=1 HTTP/1.1" 201 0 
- 30-Aug-24 09:06:31  DEBUG  Looking for auth config 
- 30-Aug-24 09:06:31  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Aug-24 09:06:31  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Aug-24 09:06:31  DEBUG  Found auth config 
- 30-Aug-24 09:06:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-ui/push?tag=latest HTTP/1.1" 200 None 
- 30-Aug-24 09:06:33  INFO  latest: digest: sha256:d9e911f797dcc859aeea69a791615b8059b4a8a8455df45659316dc34254e203 size: 3031 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fresident-ui%3Arelease-0.9.x%22%5D%7D HTTP/1.1" 200 441 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6c7a05ce39c341f661e416c2acd0de0223ff212be7ecde4b193c2a82e2279f91/json HTTP/1.1" 200 None 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/resident-ui:release-0.9.x?force=False&noprune=False HTTP/1.1" 200 160 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-ui%3A0.9.x%22%5D%7D HTTP/1.1" 200 432 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6c7a05ce39c341f661e416c2acd0de0223ff212be7ecde4b193c2a82e2279f91/json HTTP/1.1" 200 None 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-ui:0.9.x?force=False&noprune=False HTTP/1.1" 200 43 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-ui%3Alatest%22%5D%7D HTTP/1.1" 200 433 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6c7a05ce39c341f661e416c2acd0de0223ff212be7ecde4b193c2a82e2279f91/json HTTP/1.1" 200 None 
- 30-Aug-24 09:06:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-ui:latest?force=False&noprune=False HTTP/1.1" 200 1355 
- 30-Aug-24 09:06:33  INFO  Completed mosipdev/resident-ui:release-0.9.x	------> mosipqa/resident-ui:0.9.x 
+ 30-Aug-24 13:18:09  INFO  LOGFILE CREATED : vidivi.log 
+ 30-Aug-24 13:18:09  INFO   
+ 30-Aug-24 13:18:09  INFO  ******************** Check Images List ************************************************************************************ 
+ 30-Aug-24 13:18:09  INFO   
+ 30-Aug-24 13:18:09  INFO  IMAGES= [['mosipdev/kernel-keymanager-service:release-1.2.1.x', '1.2.1.0'], ['mosipdev/keys-generator:release-1.2.1.x', '1.2.1.0'], ['mosipdev/keys-migrator:release-1.2.1.x', '1.2.1.0'], ['mosipdev/partner-management-service:release-1.3.x', '1.3.0-dp.1'], ['mosipdev/policy-management-service:release-1.3.x', '1.3.0-dp.1'], ['mosipdev/apitest-pms:release-1.3.x', '1.3.0-dp.1']] 
+ 30-Aug-24 13:18:09  INFO   
+ 30-Aug-24 13:18:09  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 30-Aug-24 13:18:09  INFO   
+ 30-Aug-24 13:18:09  INFO  src = "mosipdev/kernel-keymanager-service" tag = "release-1.2.1.x" 
+ 30-Aug-24 13:18:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-keymanager-service/tags/release-1.2.1.x HTTP/1.1" 200 821 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  src = "mosipdev/keys-generator" tag = "release-1.2.1.x" 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/keys-generator/tags/release-1.2.1.x HTTP/1.1" 200 818 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  src = "mosipdev/keys-migrator" tag = "release-1.2.1.x" 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/keys-migrator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/keys-migrator/tags/release-1.2.1.x HTTP/1.1" 200 819 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  src = "mosipdev/partner-management-service" tag = "release-1.3.x" 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-management-service/tags/release-1.3.x HTTP/1.1" 200 820 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  src = "mosipdev/policy-management-service" tag = "release-1.3.x" 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/policy-management-service/tags/release-1.3.x HTTP/1.1" 200 820 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  src = "mosipdev/apitest-pms" tag = "release-1.3.x" 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-pms:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-pms/tags/release-1.3.x HTTP/1.1" 200 819 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-keymanager-service/manifests/1.2.1.0 HTTP/1.1" 404 101 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  [ mosipid/kernel-keymanager-service ]  
+ 30-Aug-24 13:18:10  INFO  Destination Image = "mosipid/kernel-keymanager-service" Destination Image tag = "1.2.1.0" IMAGE_ID :  
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-keymanager-service/tags/1.2.1.0 HTTP/1.1" 404 144 
+ 30-Aug-24 13:18:10  ERROR  Image "mosipid/kernel-keymanager-service:1.2.1.0" does not exist 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/keys-generator/manifests/1.2.1.0 HTTP/1.1" 404 101 
+ 30-Aug-24 13:18:10  INFO   
+ 30-Aug-24 13:18:10  INFO  [ mosipid/keys-generator ]  
+ 30-Aug-24 13:18:10  INFO  Destination Image = "mosipid/keys-generator" Destination Image tag = "1.2.1.0" IMAGE_ID :  
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/keys-generator/tags/1.2.1.0 HTTP/1.1" 404 133 
+ 30-Aug-24 13:18:11  ERROR  Image "mosipid/keys-generator:1.2.1.0" does not exist 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/keys-migrator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/keys-migrator/manifests/1.2.1.0 HTTP/1.1" 404 101 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ mosipid/keys-migrator ]  
+ 30-Aug-24 13:18:11  INFO  Destination Image = "mosipid/keys-migrator" Destination Image tag = "1.2.1.0" IMAGE_ID :  
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/keys-migrator:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/keys-migrator/tags/1.2.1.0 HTTP/1.1" 404 132 
+ 30-Aug-24 13:18:11  ERROR  Image "mosipid/keys-migrator:1.2.1.0" does not exist 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/partner-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/partner-management-service/manifests/1.3.0-dp.1 HTTP/1.1" 404 104 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ mosipid/partner-management-service ]  
+ 30-Aug-24 13:18:11  INFO  Destination Image = "mosipid/partner-management-service" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/partner-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/partner-management-service/tags/1.3.0-dp.1 HTTP/1.1" 404 151 
+ 30-Aug-24 13:18:11  ERROR  Image "mosipid/partner-management-service:1.3.0-dp.1" does not exist 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/policy-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/policy-management-service/manifests/1.3.0-dp.1 HTTP/1.1" 404 104 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ mosipid/policy-management-service ]  
+ 30-Aug-24 13:18:11  INFO  Destination Image = "mosipid/policy-management-service" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/policy-management-service:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/policy-management-service/tags/1.3.0-dp.1 HTTP/1.1" 404 150 
+ 30-Aug-24 13:18:11  ERROR  Image "mosipid/policy-management-service:1.3.0-dp.1" does not exist 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-pms:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-pms/manifests/1.3.0-dp.1 HTTP/1.1" 401 162 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ mosipid/apitest-pms ]  
+ 30-Aug-24 13:18:11  INFO  Destination Image = "mosipid/apitest-pms" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Aug-24 13:18:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-pms:pull HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Aug-24 13:18:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-pms/tags/1.3.0-dp.1 HTTP/1.1" 404 126 
+ 30-Aug-24 13:18:11  ERROR  Image "mosipid/apitest-pms:1.3.0-dp.1" does not exist 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/kernel-keymanager-service:1.2.1.0'], ['mosipid/keys-generator:1.2.1.0'], ['mosipid/keys-migrator:1.2.1.0'], ['mosipid/partner-management-service:1.3.0-dp.1'], ['mosipid/policy-management-service:1.3.0-dp.1'], ['mosipid/apitest-pms:1.3.0-dp.1']] 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 30-Aug-24 13:18:11  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 30-Aug-24 13:18:11  DEBUG  Found file at path: /root/.docker/config.json 
+ 30-Aug-24 13:18:11  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 30-Aug-24 13:18:11  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 30-Aug-24 13:18:11  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  No entry found 
+ 30-Aug-24 13:18:11  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/kernel-keymanager-service:1.2.1.0 ] **************************************************** 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/kernel-keymanager-service:release-1.2.1.x ]  
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/keys-generator:1.2.1.0 ] **************************************************** 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/keys-generator:release-1.2.1.x ]  
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/keys-migrator:1.2.1.0 ] **************************************************** 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/keys-migrator:release-1.2.1.x ]  
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/partner-management-service:1.3.0-dp.1 ] **************************************************** 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/partner-management-service:release-1.3.x ]  
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/policy-management-service:1.3.0-dp.1 ] **************************************************** 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/policy-management-service:release-1.3.x ]  
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  ********** [ mosipid/apitest-pms:1.3.0-dp.1 ] **************************************************** 
+ 30-Aug-24 13:18:11  INFO   
+ 30-Aug-24 13:18:11  INFO  [ PULL ----------------------> mosipdev/apitest-pms:release-1.3.x ]  
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:11  DEBUG  Found auth config 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-pms HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpartner-management-service HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpolicy-management-service HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev%2Fkeys-generator HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev%2Fkernel-keymanager-service HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev%2Fkeys-migrator HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:41  INFO  Status: Downloaded newer image for mosipdev/policy-management-service:release-1.3.x 
+ 30-Aug-24 13:18:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:41  INFO   
+ 30-Aug-24 13:18:41  INFO  [ PUSH -----> mosipdev/policy-management-service:release-1.3.x	------> mosipid/policy-management-service:1.3.0-dp.1 ]  
+ 30-Aug-24 13:18:41  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:41  DEBUG  Found auth config 
+ 30-Aug-24 13:18:41  INFO  Status: Downloaded newer image for mosipdev/partner-management-service:release-1.3.x 
+ 30-Aug-24 13:18:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/policy-management-service/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:41  INFO   
+ 30-Aug-24 13:18:41  INFO  [ PUSH -----> mosipdev/partner-management-service:release-1.3.x	------> mosipid/partner-management-service:1.3.0-dp.1 ]  
+ 30-Aug-24 13:18:41  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:41  DEBUG  Found auth config 
+ 30-Aug-24 13:18:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/partner-management-service/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:42  INFO  1.3.0-dp.1: digest: sha256:e133b30a924c451a865ff0428a60ca856ff46b69b0983aa1000af62b9fa95df0 size: 2638 
+ 30-Aug-24 13:18:42  INFO   
+ 30-Aug-24 13:18:42  INFO  [ PUSH -----> mosipdev/policy-management-service:release-1.3.x	------> mosipid/policy-management-service:latest ]  
+ 30-Aug-24 13:18:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:42  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:42  DEBUG  Found auth config 
+ 30-Aug-24 13:18:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/policy-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:42  INFO  1.3.0-dp.1: digest: sha256:f267e1c48f640f6b5da0fa584bb1c854518ca08c1fc13bb0371b95cb8517ad53 size: 2638 
+ 30-Aug-24 13:18:42  INFO   
+ 30-Aug-24 13:18:42  INFO  [ PUSH -----> mosipdev/partner-management-service:release-1.3.x	------> mosipid/partner-management-service:latest ]  
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:43  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:43  DEBUG  Found auth config 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/partner-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:43  INFO  latest: digest: sha256:e133b30a924c451a865ff0428a60ca856ff46b69b0983aa1000af62b9fa95df0 size: 2638 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpolicy-management-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 390 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2cf4e171b11bd611de48f2262422a635c919c14ad41e22fde3ac416d907d844f/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/policy-management-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 188 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpolicy-management-service%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 386 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2cf4e171b11bd611de48f2262422a635c919c14ad41e22fde3ac416d907d844f/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/policy-management-service:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 62 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpolicy-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2cf4e171b11bd611de48f2262422a635c919c14ad41e22fde3ac416d907d844f/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/policy-management-service:latest?force=False&noprune=False HTTP/1.1" 200 609 
+ 30-Aug-24 13:18:43  INFO  Completed mosipdev/policy-management-service:release-1.3.x	------> mosipid/policy-management-service:1.3.0-dp.1 
+ 30-Aug-24 13:18:43  INFO  latest: digest: sha256:f267e1c48f640f6b5da0fa584bb1c854518ca08c1fc13bb0371b95cb8517ad53 size: 2638 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpartner-management-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 391 
+ 30-Aug-24 13:18:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:73e6d0fc7bcd80cc6a415656e7970ee915ff25b06ff08da50dfad62abc1ce198/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/partner-management-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpartner-management-service%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 387 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:73e6d0fc7bcd80cc6a415656e7970ee915ff25b06ff08da50dfad62abc1ce198/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/partner-management-service:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 63 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpartner-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 383 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:73e6d0fc7bcd80cc6a415656e7970ee915ff25b06ff08da50dfad62abc1ce198/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  INFO  Status: Downloaded newer image for mosipdev/keys-generator:release-1.2.1.x 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keys-generator:release-1.2.1.x/tag?tag=1.2.1.0&repo=mosipid%2Fkeys-generator&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:45  INFO   
+ 30-Aug-24 13:18:45  INFO  [ PUSH -----> mosipdev/keys-generator:release-1.2.1.x	------> mosipid/keys-generator:1.2.1.0 ]  
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:45  DEBUG  Found auth config 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/keys-generator/push?tag=1.2.1.0 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  INFO  Status: Downloaded newer image for mosipdev/kernel-keymanager-service:release-1.2.1.x 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.1.x/tag?tag=1.2.1.0&repo=mosipid%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:45  INFO   
+ 30-Aug-24 13:18:45  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.2.1.x	------> mosipid/kernel-keymanager-service:1.2.1.0 ]  
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:45  DEBUG  Found auth config 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-keymanager-service/push?tag=1.2.1.0 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  INFO  Status: Downloaded newer image for mosipdev/keys-migrator:release-1.2.1.x 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keys-migrator:release-1.2.1.x/tag?tag=1.2.1.0&repo=mosipid%2Fkeys-migrator&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:45  INFO   
+ 30-Aug-24 13:18:45  INFO  [ PUSH -----> mosipdev/keys-migrator:release-1.2.1.x	------> mosipid/keys-migrator:1.2.1.0 ]  
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:45  DEBUG  Found auth config 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/keys-migrator/push?tag=1.2.1.0 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/partner-management-service:latest?force=False&noprune=False HTTP/1.1" 200 611 
+ 30-Aug-24 13:18:45  INFO  Completed mosipdev/partner-management-service:release-1.3.x	------> mosipid/partner-management-service:1.3.0-dp.1 
+ 30-Aug-24 13:18:46  INFO  1.2.1.0: digest: sha256:177877f06ad35b576567554ed4811aa3b52739e1f4ce78788a18b23bd1c141a1 size: 2841 
+ 30-Aug-24 13:18:46  INFO   
+ 30-Aug-24 13:18:46  INFO  [ PUSH -----> mosipdev/keys-generator:release-1.2.1.x	------> mosipid/keys-generator:latest ]  
+ 30-Aug-24 13:18:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keys-generator:release-1.2.1.x/tag?tag=latest&repo=mosipid%2Fkeys-generator&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:46  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:46  DEBUG  Found auth config 
+ 30-Aug-24 13:18:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/keys-generator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  INFO  latest: digest: sha256:177877f06ad35b576567554ed4811aa3b52739e1f4ce78788a18b23bd1c141a1 size: 2841 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkeys-generator%3Arelease-1.2.1.x%22%5D%7D HTTP/1.1" 200 381 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e153ce5924a04d898071c2beb1cf0e92b8e77830027a6990a223e0f67979b84/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/keys-generator:release-1.2.1.x?force=False&noprune=False HTTP/1.1" 200 168 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkeys-generator%3A1.2.1.0%22%5D%7D HTTP/1.1" 200 372 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e153ce5924a04d898071c2beb1cf0e92b8e77830027a6990a223e0f67979b84/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/keys-generator:1.2.1.0?force=False&noprune=False HTTP/1.1" 200 48 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkeys-generator%3Alatest%22%5D%7D HTTP/1.1" 200 371 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0e153ce5924a04d898071c2beb1cf0e92b8e77830027a6990a223e0f67979b84/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/keys-generator:latest?force=False&noprune=False HTTP/1.1" 200 673 
+ 30-Aug-24 13:18:47  INFO  Completed mosipdev/keys-generator:release-1.2.1.x	------> mosipid/keys-generator:1.2.1.0 
+ 30-Aug-24 13:18:47  INFO  1.2.1.0: digest: sha256:f8efecddd4cccdb60c094bfb7b54c212271848168a569644b8e3b307d4b5acaf size: 3680 
+ 30-Aug-24 13:18:47  INFO   
+ 30-Aug-24 13:18:47  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.2.1.x	------> mosipid/kernel-keymanager-service:latest ]  
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.1.x/tag?tag=latest&repo=mosipid%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:47  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:47  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:47  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:47  DEBUG  Found auth config 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-keymanager-service/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  INFO  1.2.1.0: digest: sha256:1077261ac9ff1392584e7d658b0027e27bcd298f2e4ccdb42db54d1cc5308e63 size: 2840 
+ 30-Aug-24 13:18:47  INFO   
+ 30-Aug-24 13:18:47  INFO  [ PUSH -----> mosipdev/keys-migrator:release-1.2.1.x	------> mosipid/keys-migrator:latest ]  
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keys-migrator:release-1.2.1.x/tag?tag=latest&repo=mosipid%2Fkeys-migrator&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:47  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:47  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:47  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:47  DEBUG  Found auth config 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/keys-migrator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  INFO  latest: digest: sha256:f8efecddd4cccdb60c094bfb7b54c212271848168a569644b8e3b307d4b5acaf size: 3680 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-keymanager-service%3Arelease-1.2.1.x%22%5D%7D HTTP/1.1" 200 392 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:baac1238f738786388e5d926ed0e1fa25bd90c8ead38c398fe028b1f65b246fc/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-keymanager-service:release-1.2.1.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-keymanager-service%3A1.2.1.0%22%5D%7D HTTP/1.1" 200 383 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:baac1238f738786388e5d926ed0e1fa25bd90c8ead38c398fe028b1f65b246fc/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-keymanager-service:1.2.1.0?force=False&noprune=False HTTP/1.1" 200 59 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-keymanager-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 30-Aug-24 13:18:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:baac1238f738786388e5d926ed0e1fa25bd90c8ead38c398fe028b1f65b246fc/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-keymanager-service:latest?force=False&noprune=False HTTP/1.1" 200 1039 
+ 30-Aug-24 13:18:48  INFO  Completed mosipdev/kernel-keymanager-service:release-1.2.1.x	------> mosipid/kernel-keymanager-service:1.2.1.0 
+ 30-Aug-24 13:18:48  INFO  latest: digest: sha256:1077261ac9ff1392584e7d658b0027e27bcd298f2e4ccdb42db54d1cc5308e63 size: 2840 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkeys-migrator%3Arelease-1.2.1.x%22%5D%7D HTTP/1.1" 200 380 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:959ad4debc1705ed958d083b11ba449c943ba5017c7c8bc4c7b875eb540e46eb/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/keys-migrator:release-1.2.1.x?force=False&noprune=False HTTP/1.1" 200 166 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkeys-migrator%3A1.2.1.0%22%5D%7D HTTP/1.1" 200 371 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:959ad4debc1705ed958d083b11ba449c943ba5017c7c8bc4c7b875eb540e46eb/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/keys-migrator:1.2.1.0?force=False&noprune=False HTTP/1.1" 200 47 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkeys-migrator%3Alatest%22%5D%7D HTTP/1.1" 200 370 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:959ad4debc1705ed958d083b11ba449c943ba5017c7c8bc4c7b875eb540e46eb/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/keys-migrator:latest?force=False&noprune=False HTTP/1.1" 200 671 
+ 30-Aug-24 13:18:48  INFO  Completed mosipdev/keys-migrator:release-1.2.1.x	------> mosipid/keys-migrator:1.2.1.0 
+ 30-Aug-24 13:18:51  INFO  Status: Downloaded newer image for mosipdev/apitest-pms:release-1.3.x 
+ 30-Aug-24 13:18:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-pms:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:51  INFO   
+ 30-Aug-24 13:18:51  INFO  [ PUSH -----> mosipdev/apitest-pms:release-1.3.x	------> mosipid/apitest-pms:1.3.0-dp.1 ]  
+ 30-Aug-24 13:18:51  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:51  DEBUG  Found auth config 
+ 30-Aug-24 13:18:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-pms/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:53  INFO  1.3.0-dp.1: digest: sha256:00dfe055a219577425a4fefdd7fb6c0d81bbd4277f7f2590a0bf73a14951eb56 size: 2636 
+ 30-Aug-24 13:18:53  INFO   
+ 30-Aug-24 13:18:53  INFO  [ PUSH -----> mosipdev/apitest-pms:release-1.3.x	------> mosipid/apitest-pms:latest ]  
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-pms:release-1.3.x/tag?tag=latest&repo=mosipid%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
+ 30-Aug-24 13:18:53  DEBUG  Looking for auth config 
+ 30-Aug-24 13:18:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Aug-24 13:18:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Aug-24 13:18:53  DEBUG  Found auth config 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-pms/push?tag=latest HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:53  INFO  latest: digest: sha256:00dfe055a219577425a4fefdd7fb6c0d81bbd4277f7f2590a0bf73a14951eb56 size: 2636 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-pms%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 377 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f41dcdd25d82118ff6c606c4265649965f1262f05787a1f69649e9cb85931f94/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-pms:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 160 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-pms%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 373 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f41dcdd25d82118ff6c606c4265649965f1262f05787a1f69649e9cb85931f94/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-pms:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 48 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-pms%3Alatest%22%5D%7D HTTP/1.1" 200 369 
+ 30-Aug-24 13:18:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f41dcdd25d82118ff6c606c4265649965f1262f05787a1f69649e9cb85931f94/json HTTP/1.1" 200 None 
+ 30-Aug-24 13:18:54  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-pms:latest?force=False&noprune=False HTTP/1.1" 200 1183 
+ 30-Aug-24 13:18:54  INFO  Completed mosipdev/apitest-pms:release-1.3.x	------> mosipid/apitest-pms:1.3.0-dp.1 
