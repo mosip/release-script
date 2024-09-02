@@ -1,81 +1,252 @@
- 02-Sep-24 13:05:52  INFO  LOGFILE CREATED : vidivi.log 
- 02-Sep-24 13:05:52  INFO   
- 02-Sep-24 13:05:52  INFO  ******************** Check Images List ************************************************************************************ 
- 02-Sep-24 13:05:52  INFO   
- 02-Sep-24 13:05:52  INFO  IMAGES= [['mosipdev/inji-verify:release-0.10.x', '0.10.x']] 
- 02-Sep-24 13:05:52  INFO   
- 02-Sep-24 13:05:52  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 02-Sep-24 13:05:52  INFO   
- 02-Sep-24 13:05:52  INFO  src = "mosipdev/inji-verify" tag = "release-0.10.x" 
- 02-Sep-24 13:05:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-24 13:05:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify:pull HTTP/1.1" 200 None 
- 02-Sep-24 13:05:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Sep-24 13:05:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify/tags/release-0.10.x HTTP/1.1" 200 769 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 02-Sep-24 13:05:53  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 02-Sep-24 13:05:53  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 02-Sep-24 13:05:53  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 02-Sep-24 13:05:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-24 13:05:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify:pull HTTP/1.1" 200 None 
- 02-Sep-24 13:05:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 02-Sep-24 13:05:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-verify/manifests/0.10.x HTTP/1.1" 200 2818 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  [ mosipqa/inji-verify ]  
- 02-Sep-24 13:05:53  INFO  Destination Image = "mosipqa/inji-verify" Destination Image tag = "0.10.x" IMAGE_ID : "sha256:4359edeba3777ec5e8eb0d9108c6bf0c83f6a035bf92ead18d9148e2d5d20993" 
- 02-Sep-24 13:05:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-24 13:05:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify:pull HTTP/1.1" 200 None 
- 02-Sep-24 13:05:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Sep-24 13:05:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-verify/tags/0.10.x HTTP/1.1" 200 808 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  ******************** HASH Operation Results ********************************************************************** 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 02-Sep-24 13:05:53  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 02-Sep-24 13:05:53  DEBUG  Found file at path: /root/.docker/config.json 
- 02-Sep-24 13:05:53  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 02-Sep-24 13:05:53  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 02-Sep-24 13:05:53  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 02-Sep-24 13:05:53  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-24 13:05:53  DEBUG  No entry found 
- 02-Sep-24 13:05:53  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  ********** [ mosipqa/inji-verify:0.10.x ] **************************************************** 
- 02-Sep-24 13:05:53  INFO   
- 02-Sep-24 13:05:53  INFO  [ PULL ----------------------> mosipdev/inji-verify:release-0.10.x ]  
- 02-Sep-24 13:05:53  DEBUG  Looking for auth config 
- 02-Sep-24 13:05:53  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-24 13:05:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-24 13:05:53  DEBUG  Found auth config 
- 02-Sep-24 13:05:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.10.x&fromImage=mosipdev%2Finji-verify HTTP/1.1" 200 None 
- 02-Sep-24 13:05:58  INFO  Status: Downloaded newer image for mosipdev/inji-verify:release-0.10.x 
- 02-Sep-24 13:05:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify:release-0.10.x/tag?tag=0.10.x&repo=mosipqa%2Finji-verify&force=1 HTTP/1.1" 201 0 
- 02-Sep-24 13:05:58  INFO   
- 02-Sep-24 13:05:58  INFO  [ PUSH -----> mosipdev/inji-verify:release-0.10.x	------> mosipqa/inji-verify:0.10.x ]  
- 02-Sep-24 13:05:58  DEBUG  Looking for auth config 
- 02-Sep-24 13:05:58  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-24 13:05:58  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-24 13:05:58  DEBUG  Found auth config 
- 02-Sep-24 13:05:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify/push?tag=0.10.x HTTP/1.1" 200 None 
- 02-Sep-24 13:06:00  INFO  0.10.x: digest: sha256:0e9ec69c8e4520f868cb85011298bfa1ee7028f6e424aed13f06631674731d27 size: 2818 
- 02-Sep-24 13:06:00  INFO   
- 02-Sep-24 13:06:00  INFO  [ PUSH -----> mosipdev/inji-verify:release-0.10.x	------> mosipqa/inji-verify:latest ]  
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify:release-0.10.x/tag?tag=latest&repo=mosipqa%2Finji-verify&force=1 HTTP/1.1" 201 0 
- 02-Sep-24 13:06:00  DEBUG  Looking for auth config 
- 02-Sep-24 13:06:00  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-24 13:06:00  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-24 13:06:00  DEBUG  Found auth config 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify/push?tag=latest HTTP/1.1" 200 None 
- 02-Sep-24 13:06:00  INFO  latest: digest: sha256:0e9ec69c8e4520f868cb85011298bfa1ee7028f6e424aed13f06631674731d27 size: 2818 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-verify%3Arelease-0.10.x%22%5D%7D HTTP/1.1" 200 442 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ce465244bceea47aee26eb989e2ca1ee0ee5f0d3e15859dbb88748d1273088bb/json HTTP/1.1" 200 None 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-verify:release-0.10.x?force=False&noprune=False HTTP/1.1" 200 161 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify%3A0.10.x%22%5D%7D HTTP/1.1" 200 433 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ce465244bceea47aee26eb989e2ca1ee0ee5f0d3e15859dbb88748d1273088bb/json HTTP/1.1" 200 None 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify:0.10.x?force=False&noprune=False HTTP/1.1" 200 44 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify%3Alatest%22%5D%7D HTTP/1.1" 200 433 
- 02-Sep-24 13:06:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ce465244bceea47aee26eb989e2ca1ee0ee5f0d3e15859dbb88748d1273088bb/json HTTP/1.1" 200 None 
- 02-Sep-24 13:06:01  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify:latest?force=False&noprune=False HTTP/1.1" 200 1269 
- 02-Sep-24 13:06:01  INFO  Completed mosipdev/inji-verify:release-0.10.x	------> mosipqa/inji-verify:0.10.x 
+ 02-Sep-24 17:44:37  INFO  LOGFILE CREATED : vidivi.log 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  ******************** Check Images List ************************************************************************************ 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  IMAGES= [['mosipdev/pmp-ui:release-1.3.x', '1.3.0-dp.1'], ['mosipdev/pmptest:release-1.3.x', '1.3.0-dp.1'], ['mosipdev/pmp-reactjs-ui:release-1.3.x', '1.3.0-dp.1'], ['mosipdev/artifactory-server:release-1.2.0.x', '1.2.0.3']] 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  src = "mosipdev/pmp-ui" tag = "release-1.3.x" 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-ui/tags/release-1.3.x HTTP/1.1" 200 768 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  src = "mosipdev/pmptest" tag = "release-1.3.x" 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmptest:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmptest/tags/release-1.3.x HTTP/1.1" 200 770 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  src = "mosipdev/pmp-reactjs-ui" tag = "release-1.3.x" 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-reactjs-ui/tags/release-1.3.x HTTP/1.1" 200 768 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  src = "mosipdev/artifactory-server" tag = "release-1.2.0.x" 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.2.0.x HTTP/1.1" 200 774 
+ 02-Sep-24 17:44:37  INFO   
+ 02-Sep-24 17:44:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 02-Sep-24 17:44:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 02-Sep-24 17:44:38  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pmp-ui/manifests/1.3.0-dp.1 HTTP/1.1" 404 104 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  [ mosipid/pmp-ui ]  
+ 02-Sep-24 17:44:38  INFO  Destination Image = "mosipid/pmp-ui" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pmp-ui/tags/1.3.0-dp.1 HTTP/1.1" 404 131 
+ 02-Sep-24 17:44:38  ERROR  Image "mosipid/pmp-ui:1.3.0-dp.1" does not exist 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmptest:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pmptest/manifests/1.3.0-dp.1 HTTP/1.1" 404 104 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  [ mosipid/pmptest ]  
+ 02-Sep-24 17:44:38  INFO  Destination Image = "mosipid/pmptest" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmptest:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pmptest/tags/1.3.0-dp.1 HTTP/1.1" 404 132 
+ 02-Sep-24 17:44:38  ERROR  Image "mosipid/pmptest:1.3.0-dp.1" does not exist 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pmp-reactjs-ui/manifests/1.3.0-dp.1 HTTP/1.1" 401 165 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  [ mosipid/pmp-reactjs-ui ]  
+ 02-Sep-24 17:44:38  INFO  Destination Image = "mosipid/pmp-reactjs-ui" Destination Image tag = "1.3.0-dp.1" IMAGE_ID :  
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-reactjs-ui:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pmp-reactjs-ui/tags/1.3.0-dp.1 HTTP/1.1" 404 129 
+ 02-Sep-24 17:44:38  ERROR  Image "mosipid/pmp-reactjs-ui:1.3.0-dp.1" does not exist 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/artifactory-server:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/artifactory-server/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  [ mosipid/artifactory-server ]  
+ 02-Sep-24 17:44:38  INFO  Destination Image = "mosipid/artifactory-server" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Sep-24 17:44:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/artifactory-server:pull HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Sep-24 17:44:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/artifactory-server/tags/1.2.0.3 HTTP/1.1" 404 137 
+ 02-Sep-24 17:44:38  ERROR  Image "mosipid/artifactory-server:1.2.0.3" does not exist 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/pmp-ui:1.3.0-dp.1'], ['mosipid/pmptest:1.3.0-dp.1'], ['mosipid/pmp-reactjs-ui:1.3.0-dp.1'], ['mosipid/artifactory-server:1.2.0.3']] 
+ 02-Sep-24 17:44:38  INFO   
+ 02-Sep-24 17:44:38  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 02-Sep-24 17:44:38  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 02-Sep-24 17:44:38  DEBUG  Found file at path: /root/.docker/config.json 
+ 02-Sep-24 17:44:38  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 02-Sep-24 17:44:38  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 02-Sep-24 17:44:38  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 02-Sep-24 17:44:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:44:38  DEBUG  No entry found 
+ 02-Sep-24 17:44:39  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  ********** [ mosipid/pmp-ui:1.3.0-dp.1 ] **************************************************** 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  [ PULL ----------------------> mosipdev/pmp-ui:release-1.3.x ]  
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth config 
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:44:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:44:39  DEBUG  Found auth config 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  ********** [ mosipid/pmptest:1.3.0-dp.1 ] **************************************************** 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  ********** [ mosipid/pmp-reactjs-ui:1.3.0-dp.1 ] **************************************************** 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  [ PULL ----------------------> mosipdev/pmp-reactjs-ui:release-1.3.x ]  
+ 02-Sep-24 17:44:39  INFO  [ PULL ----------------------> mosipdev/pmptest:release-1.3.x ]  
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth config 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth config 
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:44:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:44:39  DEBUG  Found auth config 
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:44:39  INFO  ********** [ mosipid/artifactory-server:1.2.0.3 ] **************************************************** 
+ 02-Sep-24 17:44:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:44:39  DEBUG  Found auth config 
+ 02-Sep-24 17:44:39  INFO   
+ 02-Sep-24 17:44:39  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.2.0.x ]  
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth config 
+ 02-Sep-24 17:44:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:44:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:44:39  DEBUG  Found auth config 
+ 02-Sep-24 17:44:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpmp-ui HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.0.x&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpmptest HTTP/1.1" 200 None 
+ 02-Sep-24 17:44:39  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpmp-reactjs-ui HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:02  INFO  Status: Downloaded newer image for mosipdev/pmp-ui:release-1.3.x 
+ 02-Sep-24 17:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-ui:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:02  INFO   
+ 02-Sep-24 17:45:02  INFO  [ PUSH -----> mosipdev/pmp-ui:release-1.3.x	------> mosipid/pmp-ui:1.3.0-dp.1 ]  
+ 02-Sep-24 17:45:02  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:02  DEBUG  Found auth config 
+ 02-Sep-24 17:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmp-ui/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:02  INFO  Status: Downloaded newer image for mosipdev/pmp-reactjs-ui:release-1.3.x 
+ 02-Sep-24 17:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-reactjs-ui:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fpmp-reactjs-ui&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:02  INFO   
+ 02-Sep-24 17:45:02  INFO  [ PUSH -----> mosipdev/pmp-reactjs-ui:release-1.3.x	------> mosipid/pmp-reactjs-ui:1.3.0-dp.1 ]  
+ 02-Sep-24 17:45:02  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:02  DEBUG  Found auth config 
+ 02-Sep-24 17:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmp-reactjs-ui/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:04  INFO  1.3.0-dp.1: digest: sha256:e291c0df649c7685c8c67545c1a1a7cc2827bc2d2a4700b7275663e19643886a size: 3239 
+ 02-Sep-24 17:45:04  INFO   
+ 02-Sep-24 17:45:04  INFO  [ PUSH -----> mosipdev/pmp-ui:release-1.3.x	------> mosipid/pmp-ui:latest ]  
+ 02-Sep-24 17:45:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-ui:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:04  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:04  DEBUG  Found auth config 
+ 02-Sep-24 17:45:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmp-ui/push?tag=latest HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:05  INFO  latest: digest: sha256:e291c0df649c7685c8c67545c1a1a7cc2827bc2d2a4700b7275663e19643886a size: 3239 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmp-ui%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 436 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0065c4822b8ea241d5dd63369c95fce0e7f2813fc8b335d520a658d30e069c8f/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmp-ui:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 150 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmp-ui%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 432 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0065c4822b8ea241d5dd63369c95fce0e7f2813fc8b335d520a658d30e069c8f/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmp-ui:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 43 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmp-ui%3Alatest%22%5D%7D HTTP/1.1" 200 428 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0065c4822b8ea241d5dd63369c95fce0e7f2813fc8b335d520a658d30e069c8f/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmp-ui:latest?force=False&noprune=False HTTP/1.1" 200 829 
+ 02-Sep-24 17:45:05  INFO  Completed mosipdev/pmp-ui:release-1.3.x	------> mosipid/pmp-ui:1.3.0-dp.1 
+ 02-Sep-24 17:45:05  INFO  1.3.0-dp.1: digest: sha256:e10691d122a1bc0881a7b71ba8afa2b666bbfbbc45dcf02738508a1ca9c9e5f9 size: 3860 
+ 02-Sep-24 17:45:05  INFO   
+ 02-Sep-24 17:45:05  INFO  [ PUSH -----> mosipdev/pmp-reactjs-ui:release-1.3.x	------> mosipid/pmp-reactjs-ui:latest ]  
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-reactjs-ui:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpmp-reactjs-ui&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:05  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:05  DEBUG  Found auth config 
+ 02-Sep-24 17:45:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmp-reactjs-ui/push?tag=latest HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:06  INFO  latest: digest: sha256:e10691d122a1bc0881a7b71ba8afa2b666bbfbbc45dcf02738508a1ca9c9e5f9 size: 3860 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmp-reactjs-ui%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 444 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:322e9650ae6342db1739483bc1a543a409918299d28f14a5646f1f85ba7bede4/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmp-reactjs-ui:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 166 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmp-reactjs-ui%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 440 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:322e9650ae6342db1739483bc1a543a409918299d28f14a5646f1f85ba7bede4/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmp-reactjs-ui:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 51 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmp-reactjs-ui%3Alatest%22%5D%7D HTTP/1.1" 200 436 
+ 02-Sep-24 17:45:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:322e9650ae6342db1739483bc1a543a409918299d28f14a5646f1f85ba7bede4/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmp-reactjs-ui:latest?force=False&noprune=False HTTP/1.1" 200 1705 
+ 02-Sep-24 17:45:07  INFO  Completed mosipdev/pmp-reactjs-ui:release-1.3.x	------> mosipid/pmp-reactjs-ui:1.3.0-dp.1 
+ 02-Sep-24 17:45:29  INFO  Status: Downloaded newer image for mosipdev/pmptest:release-1.3.x 
+ 02-Sep-24 17:45:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmptest:release-1.3.x/tag?tag=1.3.0-dp.1&repo=mosipid%2Fpmptest&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:29  INFO   
+ 02-Sep-24 17:45:29  INFO  [ PUSH -----> mosipdev/pmptest:release-1.3.x	------> mosipid/pmptest:1.3.0-dp.1 ]  
+ 02-Sep-24 17:45:29  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:29  DEBUG  Found auth config 
+ 02-Sep-24 17:45:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmptest/push?tag=1.3.0-dp.1 HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:31  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.2.0.x 
+ 02-Sep-24 17:45:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x/tag?tag=1.2.0.3&repo=mosipid%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:31  INFO   
+ 02-Sep-24 17:45:31  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.2.0.x	------> mosipid/artifactory-server:1.2.0.3 ]  
+ 02-Sep-24 17:45:31  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:31  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:31  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:31  DEBUG  Found auth config 
+ 02-Sep-24 17:45:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/artifactory-server/push?tag=1.2.0.3 HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:33  INFO  1.3.0-dp.1: digest: sha256:db00c5d408a016ba1223585118ed15ce2fa15b8a4e34cbc8a4632f0aa671c896 size: 6371 
+ 02-Sep-24 17:45:33  INFO   
+ 02-Sep-24 17:45:33  INFO  [ PUSH -----> mosipdev/pmptest:release-1.3.x	------> mosipid/pmptest:latest ]  
+ 02-Sep-24 17:45:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmptest:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpmptest&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:33  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:33  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:33  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:33  DEBUG  Found auth config 
+ 02-Sep-24 17:45:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pmptest/push?tag=latest HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:34  INFO  latest: digest: sha256:db00c5d408a016ba1223585118ed15ce2fa15b8a4e34cbc8a4632f0aa671c896 size: 6371 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmptest%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 484 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4eb4b795518e90e3d2ea93deea200e83b8a3a419f5be3816f0af22c4b7eff800/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmptest:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 152 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmptest%3A1.3.0-dp.1%22%5D%7D HTTP/1.1" 200 480 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4eb4b795518e90e3d2ea93deea200e83b8a3a419f5be3816f0af22c4b7eff800/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmptest:1.3.0-dp.1?force=False&noprune=False HTTP/1.1" 200 44 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpmptest%3Alatest%22%5D%7D HTTP/1.1" 200 476 
+ 02-Sep-24 17:45:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4eb4b795518e90e3d2ea93deea200e83b8a3a419f5be3816f0af22c4b7eff800/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pmptest:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:35  INFO  Completed mosipdev/pmptest:release-1.3.x	------> mosipid/pmptest:1.3.0-dp.1 
+ 02-Sep-24 17:45:35  INFO  1.2.0.3: digest: sha256:c6728b6a22aea2a6ddbb49ea179c3070c6c68bcd7b6552d63d4fbbf686916a16 size: 8269 
+ 02-Sep-24 17:45:35  INFO   
+ 02-Sep-24 17:45:35  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.2.0.x	------> mosipid/artifactory-server:latest ]  
+ 02-Sep-24 17:45:35  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x/tag?tag=latest&repo=mosipid%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 02-Sep-24 17:45:35  DEBUG  Looking for auth config 
+ 02-Sep-24 17:45:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Sep-24 17:45:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Sep-24 17:45:35  DEBUG  Found auth config 
+ 02-Sep-24 17:45:35  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:36  INFO  latest: digest: sha256:c6728b6a22aea2a6ddbb49ea179c3070c6c68bcd7b6552d63d4fbbf686916a16 size: 8269 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.2.0.x%22%5D%7D HTTP/1.1" 200 451 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/sha256:89b4b5692e647e11c41b5b519b0e881d3322e8ba80929768e2ce6761575c87d3/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.2.0.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fartifactory-server%3A1.2.0.3%22%5D%7D HTTP/1.1" 200 442 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/sha256:89b4b5692e647e11c41b5b519b0e881d3322e8ba80929768e2ce6761575c87d3/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/artifactory-server:1.2.0.3?force=False&noprune=False HTTP/1.1" 200 52 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
+ 02-Sep-24 17:45:36  DEBUG  http://localhost:None "GET /v1.45/images/sha256:89b4b5692e647e11c41b5b519b0e881d3322e8ba80929768e2ce6761575c87d3/json HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 02-Sep-24 17:45:37  INFO  Completed mosipdev/artifactory-server:release-1.2.0.x	------> mosipid/artifactory-server:1.2.0.3 
