@@ -1,0 +1,35 @@
+name: Helm-release Preparation.
+
+on:
+  workflow_dispatch:
+    inputs:
+      REPO_URL:
+        description: 'Repo URL ( EX. mosip/< repo name > )'
+        required: true
+      REPO_BRANCH:
+        description: 'Repo Branch'
+        required: true
+      CHART_VERSION:
+        description: 'Version to update in Chart.yaml files'
+        required: true
+      IMAGE_TAG:
+        description: 'Tag to update in values.yaml'
+        required: true
+      BASE:
+        description: 'base branch for PR'
+        required: true
+      COMMIT_MESSAGE:
+        description: 'commit message'
+        required: true   
+jobs:
+  helm-release-preparation:
+    uses: mosip/kattu/.github/workflows/helm-release.yaml@master
+    with:
+      REPO_URL: ${{ inputs.REPO_URL }}
+      REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
+      CHART_VERSION: ${{ inputs.CHART_VERSION }}
+      IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
+      BASE: ${{ inputs.BASE }}
+      COMMIT_MESSAGE: ${{ inputs.COMMIT_MESSAGE }}
+    secrets:
+      ACTION_PAT: ${{ secrets.ACTION_PAT }}
