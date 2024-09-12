@@ -12,21 +12,9 @@ on:
       CHART_VERSION:
         description: 'Version to update in Chart.yaml files'
         required: true
-      OLD_TAG:
-        description: 'Old tag to replace in values.yaml (e.g., tag: develop)'
+      IMAGE_TAG:
+        description: 'Tag to update in values.yaml'
         required: true
-        default: 'tag: develop'
-      NEW_TAG:
-        description: 'New tag to replace in values.yaml (e.g., tag: 1.0.0)'
-        required: true
-        default: 'tag: 1.0.0'  
-      OLD_IMAGE:
-        description: 'Old Docker image to replace (e.g., mosipqa/)'
-        required: false
-        type: string
-      NEW_IMAGE:
-        description: 'New Docker image to replace with (e.g., mosipid/)'
-        required: false
       BASE:
         description: 'base branch for PR'
         required: true
@@ -40,10 +28,7 @@ jobs:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
       CHART_VERSION: ${{ inputs.CHART_VERSION }}
-      OLD_TAG: ${{ inputs.OLD_TAG }}
-      NEW_TAG: ${{ inputs.NEW_TAG }}
-      OLD_IMAGE: ${{ inputs.OLD_IMAGE }}
-      NEW_IMAGE: ${{ inputs.NEW_IMAGE }}
+      IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
       BASE: ${{ inputs.BASE }}
       COMMIT_MESSAGE: ${{ inputs.COMMIT_MESSAGE }}
     secrets:
