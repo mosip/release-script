@@ -1,81 +1,85 @@
- 19-Sep-24 05:30:33  INFO  LOGFILE CREATED : vidivi.log 
- 19-Sep-24 05:30:33  INFO   
- 19-Sep-24 05:30:33  INFO  ******************** Check Images List ************************************************************************************ 
- 19-Sep-24 05:30:33  INFO   
- 19-Sep-24 05:30:33  INFO  IMAGES= [['mosipdev2/kernel-auditmanager-service:develop', 'develop']] 
- 19-Sep-24 05:30:33  INFO   
- 19-Sep-24 05:30:33  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 19-Sep-24 05:30:33  INFO   
- 19-Sep-24 05:30:33  INFO  src = "mosipdev2/kernel-auditmanager-service" tag = "develop" 
- 19-Sep-24 05:30:33  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Sep-24 05:30:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
- 19-Sep-24 05:30:33  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 19-Sep-24 05:30:34  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-auditmanager-service/tags/develop HTTP/1.1" 200 823 
- 19-Sep-24 05:30:34  INFO   
- 19-Sep-24 05:30:34  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 19-Sep-24 05:30:34  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 19-Sep-24 05:30:34  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 19-Sep-24 05:30:34  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 295 
- 19-Sep-24 05:30:34  INFO   
- 19-Sep-24 05:30:34  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 19-Sep-24 05:30:34  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Sep-24 05:30:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
- 19-Sep-24 05:30:35  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 19-Sep-24 05:30:35  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-auditmanager-service/manifests/develop HTTP/1.1" 200 1995 
- 19-Sep-24 05:30:35  INFO   
- 19-Sep-24 05:30:35  INFO  [ mosipqa/kernel-auditmanager-service ]  
- 19-Sep-24 05:30:35  INFO  Destination Image = "mosipqa/kernel-auditmanager-service" Destination Image tag = "develop" IMAGE_ID : "sha256:6ebd53b92f5eb5f340dc2e3bc1d28d7f5fea6723c674e5467d0393d4a6d08d5e" 
- 19-Sep-24 05:30:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 19-Sep-24 05:30:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
- 19-Sep-24 05:30:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 19-Sep-24 05:30:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-auditmanager-service/tags/develop HTTP/1.1" 200 806 
- 19-Sep-24 05:30:36  INFO   
- 19-Sep-24 05:30:36  INFO  ******************** HASH Operation Results ********************************************************************** 
- 19-Sep-24 05:30:36  INFO   
- 19-Sep-24 05:30:36  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 19-Sep-24 05:30:36  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 19-Sep-24 05:30:36  DEBUG  Found file at path: /root/.docker/config.json 
- 19-Sep-24 05:30:36  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 19-Sep-24 05:30:36  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 19-Sep-24 05:30:36  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 19-Sep-24 05:30:36  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Sep-24 05:30:36  DEBUG  No entry found 
- 19-Sep-24 05:30:36  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 19-Sep-24 05:30:36  INFO   
- 19-Sep-24 05:30:36  INFO  ********** [ mosipqa/kernel-auditmanager-service:develop ] **************************************************** 
- 19-Sep-24 05:30:36  INFO   
- 19-Sep-24 05:30:36  INFO  [ PULL ----------------------> mosipdev2/kernel-auditmanager-service:develop ]  
- 19-Sep-24 05:30:36  DEBUG  Looking for auth config 
- 19-Sep-24 05:30:36  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Sep-24 05:30:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Sep-24 05:30:36  DEBUG  Found auth config 
- 19-Sep-24 05:30:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fkernel-auditmanager-service HTTP/1.1" 200 None 
- 19-Sep-24 05:30:42  INFO  Status: Downloaded newer image for mosipdev2/kernel-auditmanager-service:develop 
- 19-Sep-24 05:30:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-auditmanager-service:develop/tag?tag=develop&repo=mosipqa%2Fkernel-auditmanager-service&force=1 HTTP/1.1" 201 0 
- 19-Sep-24 05:30:42  INFO   
- 19-Sep-24 05:30:42  INFO  [ PUSH -----> mosipdev2/kernel-auditmanager-service:develop	------> mosipqa/kernel-auditmanager-service:develop ]  
- 19-Sep-24 05:30:42  DEBUG  Looking for auth config 
- 19-Sep-24 05:30:42  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Sep-24 05:30:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Sep-24 05:30:42  DEBUG  Found auth config 
- 19-Sep-24 05:30:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-auditmanager-service/push?tag=develop HTTP/1.1" 200 None 
- 19-Sep-24 05:30:46  INFO  develop: digest: sha256:bbe9db599fe99401a0b0746b9309d032e205b03b38498b205dd6789bac41c138 size: 1996 
- 19-Sep-24 05:30:46  INFO   
- 19-Sep-24 05:30:46  INFO  [ PUSH -----> mosipdev2/kernel-auditmanager-service:develop	------> mosipqa/kernel-auditmanager-service:latest ]  
- 19-Sep-24 05:30:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-auditmanager-service:develop/tag?tag=latest&repo=mosipqa%2Fkernel-auditmanager-service&force=1 HTTP/1.1" 201 0 
- 19-Sep-24 05:30:46  DEBUG  Looking for auth config 
- 19-Sep-24 05:30:46  DEBUG  Looking for auth entry for 'docker.io' 
- 19-Sep-24 05:30:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 19-Sep-24 05:30:46  DEBUG  Found auth config 
- 19-Sep-24 05:30:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-auditmanager-service/push?tag=latest HTTP/1.1" 200 None 
- 19-Sep-24 05:30:47  INFO  latest: digest: sha256:bbe9db599fe99401a0b0746b9309d032e205b03b38498b205dd6789bac41c138 size: 1996 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-auditmanager-service%3Adevelop%22%5D%7D HTTP/1.1" 200 387 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:34a9d9c13bab6daf5cda21d495991c4a532066e39c335cec4476f64fde6d4a4e/json HTTP/1.1" 200 None 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-auditmanager-service:develop?force=False&noprune=False HTTP/1.1" 200 188 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-auditmanager-service%3Adevelop%22%5D%7D HTTP/1.1" 200 385 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:34a9d9c13bab6daf5cda21d495991c4a532066e39c335cec4476f64fde6d4a4e/json HTTP/1.1" 200 None 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-auditmanager-service:develop?force=False&noprune=False HTTP/1.1" 200 61 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-auditmanager-service%3Alatest%22%5D%7D HTTP/1.1" 200 384 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:34a9d9c13bab6daf5cda21d495991c4a532066e39c335cec4476f64fde6d4a4e/json HTTP/1.1" 200 None 
- 19-Sep-24 05:30:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-auditmanager-service:latest?force=False&noprune=False HTTP/1.1" 200 957 
- 19-Sep-24 05:30:47  INFO  Completed mosipdev2/kernel-auditmanager-service:develop	------> mosipqa/kernel-auditmanager-service:develop 
+ 19-Sep-24 13:07:06  INFO  LOGFILE CREATED : vidivi.log 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  ******************** Check Images List ************************************************************************************ 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  IMAGES= [['mosipdev/registration-client:release-1.3.x', 'release-1.3.x']] 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  src = "mosipdev/registration-client" tag = "release-1.3.x" 
+ 19-Sep-24 13:07:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 19-Sep-24 13:07:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-client:pull HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 19-Sep-24 13:07:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-client/tags/release-1.3.x HTTP/1.1" 200 821 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 19-Sep-24 13:07:06  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 19-Sep-24 13:07:06  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 19-Sep-24 13:07:06  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 297 
+ 19-Sep-24 13:07:06  INFO   
+ 19-Sep-24 13:07:06  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 19-Sep-24 13:07:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 19-Sep-24 13:07:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-client:pull HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:07  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 19-Sep-24 13:07:07  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-client/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  [ mosipdev2/registration-client ]  
+ 19-Sep-24 13:07:07  INFO  Destination Image = "mosipdev2/registration-client" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 19-Sep-24 13:07:07  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 19-Sep-24 13:07:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-client:pull HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:07  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 19-Sep-24 13:07:07  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-client/tags/release-1.3.x HTTP/1.1" 404 152 
+ 19-Sep-24 13:07:07  ERROR  Image "mosipdev2/registration-client:release-1.3.x" does not exist 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/registration-client:release-1.3.x']] 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 19-Sep-24 13:07:07  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 19-Sep-24 13:07:07  DEBUG  Found file at path: /root/.docker/config.json 
+ 19-Sep-24 13:07:07  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 19-Sep-24 13:07:07  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 19-Sep-24 13:07:07  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 19-Sep-24 13:07:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 19-Sep-24 13:07:07  DEBUG  No entry found 
+ 19-Sep-24 13:07:07  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  ********** [ mosipdev2/registration-client:release-1.3.x ] **************************************************** 
+ 19-Sep-24 13:07:07  INFO   
+ 19-Sep-24 13:07:07  INFO  [ PULL ----------------------> mosipdev/registration-client:release-1.3.x ]  
+ 19-Sep-24 13:07:07  DEBUG  Looking for auth config 
+ 19-Sep-24 13:07:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 19-Sep-24 13:07:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 19-Sep-24 13:07:07  DEBUG  Found auth config 
+ 19-Sep-24 13:07:08  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-client HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:30  INFO  Status: Downloaded newer image for mosipdev/registration-client:release-1.3.x 
+ 19-Sep-24 13:07:30  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-client&force=1 HTTP/1.1" 201 0 
+ 19-Sep-24 13:07:30  INFO   
+ 19-Sep-24 13:07:30  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:release-1.3.x ]  
+ 19-Sep-24 13:07:30  DEBUG  Looking for auth config 
+ 19-Sep-24 13:07:30  DEBUG  Looking for auth entry for 'docker.io' 
+ 19-Sep-24 13:07:30  DEBUG  Found 'https://index.docker.io/v1/' 
+ 19-Sep-24 13:07:30  DEBUG  Found auth config 
+ 19-Sep-24 13:07:30  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-client/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:34  INFO  release-1.3.x: digest: sha256:14ed12e1a1e99fd5e93400a57459abdd7fbbbec7c62cbafb17004cb9b3610c1d size: 2005 
+ 19-Sep-24 13:07:34  INFO   
+ 19-Sep-24 13:07:34  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:latest ]  
+ 19-Sep-24 13:07:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-client&force=1 HTTP/1.1" 201 0 
+ 19-Sep-24 13:07:34  DEBUG  Looking for auth config 
+ 19-Sep-24 13:07:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 19-Sep-24 13:07:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 19-Sep-24 13:07:34  DEBUG  Found auth config 
+ 19-Sep-24 13:07:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-client/push?tag=latest HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:35  INFO  latest: digest: sha256:14ed12e1a1e99fd5e93400a57459abdd7fbbbec7c62cbafb17004cb9b3610c1d size: 2005 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0675da5b04943664600e0c6455cf0c901c87195fff6f7c6c0f4dad14e4e5410a/json HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 474 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0675da5b04943664600e0c6455cf0c901c87195fff6f7c6c0f4dad14e4e5410a/json HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 61 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-client%3Alatest%22%5D%7D HTTP/1.1" 200 467 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0675da5b04943664600e0c6455cf0c901c87195fff6f7c6c0f4dad14e4e5410a/json HTTP/1.1" 200 None 
+ 19-Sep-24 13:07:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-client:latest?force=False&noprune=False HTTP/1.1" 200 945 
+ 19-Sep-24 13:07:35  INFO  Completed mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:release-1.3.x 
