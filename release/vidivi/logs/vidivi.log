@@ -1,85 +1,140 @@
- 03-Oct-24 05:36:11  INFO  LOGFILE CREATED : vidivi.log 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  ******************** Check Images List ************************************************************************************ 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  IMAGES= [['mosipdev/apitest-mimoto:release-0.14.x', '0.14.x']] 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  src = "mosipdev/apitest-mimoto" tag = "release-0.14.x" 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Oct-24 05:36:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Oct-24 05:36:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-mimoto/tags/release-0.14.x HTTP/1.1" 200 820 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 03-Oct-24 05:36:11  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 03-Oct-24 05:36:11  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Oct-24 05:36:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 03-Oct-24 05:36:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-mimoto/manifests/0.14.x HTTP/1.1" 401 167 
- 03-Oct-24 05:36:11  INFO   
- 03-Oct-24 05:36:11  INFO  [ mosipdev2/apitest-mimoto ]  
- 03-Oct-24 05:36:11  INFO  Destination Image = "mosipdev2/apitest-mimoto" Destination Image tag = "0.14.x" IMAGE_ID :  
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Oct-24 05:36:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 03-Oct-24 05:36:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Oct-24 05:36:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-mimoto/tags/0.14.x HTTP/1.1" 404 127 
- 03-Oct-24 05:36:12  ERROR  Image "mosipdev2/apitest-mimoto:0.14.x" does not exist 
- 03-Oct-24 05:36:12  INFO   
- 03-Oct-24 05:36:12  INFO  ******************** HASH Operation Results ********************************************************************** 
- 03-Oct-24 05:36:12  INFO   
- 03-Oct-24 05:36:12  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/apitest-mimoto:0.14.x']] 
- 03-Oct-24 05:36:12  INFO   
- 03-Oct-24 05:36:12  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 03-Oct-24 05:36:12  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
- 03-Oct-24 05:36:12  DEBUG  Found file at path: /root/.docker/config.json 
- 03-Oct-24 05:36:12  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
- 03-Oct-24 05:36:12  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
- 03-Oct-24 05:36:12  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 03-Oct-24 05:36:12  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Oct-24 05:36:12  DEBUG  No entry found 
- 03-Oct-24 05:36:12  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 03-Oct-24 05:36:12  INFO   
- 03-Oct-24 05:36:12  INFO  ********** [ mosipdev2/apitest-mimoto:0.14.x ] **************************************************** 
- 03-Oct-24 05:36:12  INFO   
- 03-Oct-24 05:36:12  INFO  [ PULL ----------------------> mosipdev/apitest-mimoto:release-0.14.x ]  
- 03-Oct-24 05:36:12  DEBUG  Looking for auth config 
- 03-Oct-24 05:36:12  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Oct-24 05:36:12  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Oct-24 05:36:12  DEBUG  Found auth config 
- 03-Oct-24 05:36:12  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.14.x&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
- 03-Oct-24 05:36:36  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto:release-0.14.x 
- 03-Oct-24 05:36:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x/tag?tag=0.14.x&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 03-Oct-24 05:36:36  INFO   
- 03-Oct-24 05:36:36  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.14.x	------> mosipdev2/apitest-mimoto:0.14.x ]  
- 03-Oct-24 05:36:36  DEBUG  Looking for auth config 
- 03-Oct-24 05:36:36  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Oct-24 05:36:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Oct-24 05:36:36  DEBUG  Found auth config 
- 03-Oct-24 05:36:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-mimoto/push?tag=0.14.x HTTP/1.1" 200 None 
- 03-Oct-24 05:36:38  INFO  0.14.x: digest: sha256:9758026b1e6578952a0ceef1574b28cb17f0685df4e4d510a3dbe1e35fe79ed6 size: 3471 
- 03-Oct-24 05:36:38  INFO   
- 03-Oct-24 05:36:38  INFO  [ PUSH -----> mosipdev/apitest-mimoto:release-0.14.x	------> mosipdev2/apitest-mimoto:latest ]  
- 03-Oct-24 05:36:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x/tag?tag=latest&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 03-Oct-24 05:36:38  DEBUG  Looking for auth config 
- 03-Oct-24 05:36:38  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Oct-24 05:36:38  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Oct-24 05:36:38  DEBUG  Found auth config 
- 03-Oct-24 05:36:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-mimoto/push?tag=latest HTTP/1.1" 200 None 
- 03-Oct-24 05:36:39  INFO  latest: digest: sha256:9758026b1e6578952a0ceef1574b28cb17f0685df4e4d510a3dbe1e35fe79ed6 size: 3471 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-mimoto%3Arelease-0.14.x%22%5D%7D HTTP/1.1" 200 381 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0caea300a7a4f403d1325aa724a94e6547286fb607e9b73837ef217098df5f42/json HTTP/1.1" 200 None 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-mimoto:release-0.14.x?force=False&noprune=False HTTP/1.1" 200 167 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-mimoto%3A0.14.x%22%5D%7D HTTP/1.1" 200 374 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0caea300a7a4f403d1325aa724a94e6547286fb607e9b73837ef217098df5f42/json HTTP/1.1" 200 None 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-mimoto:0.14.x?force=False&noprune=False HTTP/1.1" 200 49 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-mimoto%3Alatest%22%5D%7D HTTP/1.1" 200 374 
- 03-Oct-24 05:36:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0caea300a7a4f403d1325aa724a94e6547286fb607e9b73837ef217098df5f42/json HTTP/1.1" 200 None 
- 03-Oct-24 05:36:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-mimoto:latest?force=False&noprune=False HTTP/1.1" 200 1537 
- 03-Oct-24 05:36:40  INFO  Completed mosipdev/apitest-mimoto:release-0.14.x	------> mosipdev2/apitest-mimoto:0.14.x 
+ 03-Oct-24 08:45:36  INFO  LOGFILE CREATED : vidivi.log 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  ******************** Check Images List ************************************************************************************ 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  IMAGES= [['mosipdev/artifactory-server:release-0.9.1-INJI', '0.9.1-INJI'], ['mosipdev/inji-certify:release-0.9.x', '0.9.1']] 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  src = "mosipdev/artifactory-server" tag = "release-0.9.1-INJI" 
+ 03-Oct-24 08:45:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Oct-24 08:45:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-0.9.1-INJI HTTP/1.1" 200 776 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  src = "mosipdev/inji-certify" tag = "release-0.9.x" 
+ 03-Oct-24 08:45:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Oct-24 08:45:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify/tags/release-0.9.x HTTP/1.1" 200 770 
+ 03-Oct-24 08:45:36  INFO   
+ 03-Oct-24 08:45:36  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 03-Oct-24 08:45:36  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 03-Oct-24 08:45:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/artifactory-server:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/artifactory-server/manifests/0.9.1-INJI HTTP/1.1" 404 104 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  [ mosipid/artifactory-server ]  
+ 03-Oct-24 08:45:37  INFO  Destination Image = "mosipid/artifactory-server" Destination Image tag = "0.9.1-INJI" IMAGE_ID :  
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/artifactory-server:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Oct-24 08:45:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/artifactory-server/tags/0.9.1-INJI HTTP/1.1" 404 143 
+ 03-Oct-24 08:45:37  ERROR  Image "mosipid/artifactory-server:0.9.1-INJI" does not exist 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-certify:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/inji-certify/manifests/0.9.1 HTTP/1.1" 404 99 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  [ mosipid/inji-certify ]  
+ 03-Oct-24 08:45:37  INFO  Destination Image = "mosipid/inji-certify" Destination Image tag = "0.9.1" IMAGE_ID :  
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Oct-24 08:45:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-certify:pull HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Oct-24 08:45:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/inji-certify/tags/0.9.1 HTTP/1.1" 404 127 
+ 03-Oct-24 08:45:37  ERROR  Image "mosipid/inji-certify:0.9.1" does not exist 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/artifactory-server:0.9.1-INJI'], ['mosipid/inji-certify:0.9.1']] 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 03-Oct-24 08:45:37  DEBUG  Trying paths: ['/root/.docker/config.json', '/root/.dockercfg'] 
+ 03-Oct-24 08:45:37  DEBUG  Found file at path: /root/.docker/config.json 
+ 03-Oct-24 08:45:37  DEBUG  Couldn't find auth-related section ; attempting to interpret as auth-only file 
+ 03-Oct-24 08:45:37  DEBUG  Auth data for auths is absent. Client might be using a credentials store instead. 
+ 03-Oct-24 08:45:37  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 03-Oct-24 08:45:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:45:37  DEBUG  No entry found 
+ 03-Oct-24 08:45:37  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  ********** [ mosipid/artifactory-server:0.9.1-INJI ] **************************************************** 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-0.9.1-INJI ]  
+ 03-Oct-24 08:45:37  DEBUG  Looking for auth config 
+ 03-Oct-24 08:45:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:45:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:45:37  DEBUG  Found auth config 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  ********** [ mosipid/inji-certify:0.9.1 ] **************************************************** 
+ 03-Oct-24 08:45:37  INFO   
+ 03-Oct-24 08:45:37  INFO  [ PULL ----------------------> mosipdev/inji-certify:release-0.9.x ]  
+ 03-Oct-24 08:45:37  DEBUG  Looking for auth config 
+ 03-Oct-24 08:45:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:45:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:45:37  DEBUG  Found auth config 
+ 03-Oct-24 08:45:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.9.x&fromImage=mosipdev%2Finji-certify HTTP/1.1" 200 None 
+ 03-Oct-24 08:45:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.9.1-INJI&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:04  INFO  Status: Downloaded newer image for mosipdev/inji-certify:release-0.9.x 
+ 03-Oct-24 08:46:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.9.x/tag?tag=0.9.1&repo=mosipid%2Finji-certify&force=1 HTTP/1.1" 201 0 
+ 03-Oct-24 08:46:04  INFO   
+ 03-Oct-24 08:46:04  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.9.x	------> mosipid/inji-certify:0.9.1 ]  
+ 03-Oct-24 08:46:04  DEBUG  Looking for auth config 
+ 03-Oct-24 08:46:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:46:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:46:04  DEBUG  Found auth config 
+ 03-Oct-24 08:46:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-certify/push?tag=0.9.1 HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:06  INFO  0.9.1: digest: sha256:19414dd05e9e30fc552d244f3a5ecc39a726361b1076d19b66b424f9bba201ee size: 3041 
+ 03-Oct-24 08:46:06  INFO   
+ 03-Oct-24 08:46:06  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.9.x	------> mosipid/inji-certify:latest ]  
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.9.x/tag?tag=latest&repo=mosipid%2Finji-certify&force=1 HTTP/1.1" 201 0 
+ 03-Oct-24 08:46:06  DEBUG  Looking for auth config 
+ 03-Oct-24 08:46:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:46:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:46:06  DEBUG  Found auth config 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-certify/push?tag=latest HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:06  INFO  latest: digest: sha256:19414dd05e9e30fc552d244f3a5ecc39a726361b1076d19b66b424f9bba201ee size: 3041 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-certify%3Arelease-0.9.x%22%5D%7D HTTP/1.1" 200 465 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2150e41034977f77dddaf14ea7d11bf197ac7ecb16d66172090d619f4d316699/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-certify:release-0.9.x?force=False&noprune=False HTTP/1.1" 200 162 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-certify%3A0.9.1%22%5D%7D HTTP/1.1" 200 456 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2150e41034977f77dddaf14ea7d11bf197ac7ecb16d66172090d619f4d316699/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-certify:0.9.1?force=False&noprune=False HTTP/1.1" 200 44 
+ 03-Oct-24 08:46:07  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-certify%3Alatest%22%5D%7D HTTP/1.1" 200 457 
+ 03-Oct-24 08:46:07  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2150e41034977f77dddaf14ea7d11bf197ac7ecb16d66172090d619f4d316699/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-certify:latest?force=False&noprune=False HTTP/1.1" 200 1357 
+ 03-Oct-24 08:46:07  INFO  Completed mosipdev/inji-certify:release-0.9.x	------> mosipid/inji-certify:0.9.1 
+ 03-Oct-24 08:46:18  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-0.9.1-INJI 
+ 03-Oct-24 08:46:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-0.9.1-INJI/tag?tag=0.9.1-INJI&repo=mosipid%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 03-Oct-24 08:46:18  INFO   
+ 03-Oct-24 08:46:18  INFO  [ PUSH -----> mosipdev/artifactory-server:release-0.9.1-INJI	------> mosipid/artifactory-server:0.9.1-INJI ]  
+ 03-Oct-24 08:46:18  DEBUG  Looking for auth config 
+ 03-Oct-24 08:46:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:46:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:46:18  DEBUG  Found auth config 
+ 03-Oct-24 08:46:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/artifactory-server/push?tag=0.9.1-INJI HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:22  INFO  0.9.1-INJI: digest: sha256:03178361ec0dd1f164a5a6e5a0ea1f8a5c6229d00d8b77d7ea633faf6018aee8 size: 9106 
+ 03-Oct-24 08:46:22  INFO   
+ 03-Oct-24 08:46:22  INFO  [ PUSH -----> mosipdev/artifactory-server:release-0.9.1-INJI	------> mosipid/artifactory-server:latest ]  
+ 03-Oct-24 08:46:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-0.9.1-INJI/tag?tag=latest&repo=mosipid%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 03-Oct-24 08:46:22  DEBUG  Looking for auth config 
+ 03-Oct-24 08:46:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Oct-24 08:46:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Oct-24 08:46:22  DEBUG  Found auth config 
+ 03-Oct-24 08:46:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:23  INFO  latest: digest: sha256:03178361ec0dd1f164a5a6e5a0ea1f8a5c6229d00d8b77d7ea633faf6018aee8 size: 9106 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-0.9.1-INJI%22%5D%7D HTTP/1.1" 200 454 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfb19b29efb6a4703f586f7497adfaa0ead101d94a81009f37aea09afbfaeef6/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-0.9.1-INJI?force=False&noprune=False HTTP/1.1" 200 179 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fartifactory-server%3A0.9.1-INJI%22%5D%7D HTTP/1.1" 200 445 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfb19b29efb6a4703f586f7497adfaa0ead101d94a81009f37aea09afbfaeef6/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/artifactory-server:0.9.1-INJI?force=False&noprune=False HTTP/1.1" 200 55 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:bfb19b29efb6a4703f586f7497adfaa0ead101d94a81009f37aea09afbfaeef6/json HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 03-Oct-24 08:46:23  INFO  Completed mosipdev/artifactory-server:release-0.9.1-INJI	------> mosipid/artifactory-server:0.9.1-INJI 
