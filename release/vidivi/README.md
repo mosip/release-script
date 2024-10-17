@@ -23,15 +23,15 @@
 * mosipid: images released after qa testing.
 
 ## GitHub manual workflow to transfer images
-Steps to run transfer images from one docker hub account to another.
-* Update the docker images list in the [images.txt](https://github.com/mosip/release-script/blob/release-1.2.0.1/release/vidivi/images.txt) file.
-* Execute the `Manual workflow to transfer image` GitHub Action from **release-script** repo.
-* while running manual workflow it will ask for workflow inputs as below .
-  * `branch`: select specific branch
+Steps to transfer Docker images from one Docker Hub account to another.
+* Update the list of Docker images in the [images.txt](vidivi/images.txt) file.
+* Execute the [Manual workflow to transfer image](https://github.com/mosip/release-script/actions/workflows/image-transfer.yml) GitHub Action from **release-script** repo.
+* While running the manual workflow, provide the following inputs:
+  * `branch`: select the specific branch
   * `provide docker hub username`: username of the destination dockerhub account
   * `provide docker hub token`: password/token of the destination dockerhub account.
   * `provide docker hub destination org`: destination dockerhub organisation.
   * Next click on `run workflow`.
 
 **Note**: `source tag` and `destination tag` should be **spaces** separated.
-* Cross verify in hub.docker Image are transferred or not.
+* verify that a Docker image has been updated with a [tag](https://hub.docker.com/) ( e.g., mosipid/< image name >:< version > )
