@@ -2,8 +2,7 @@
 
 ## Purpose
 
-This workflow automates the process of creating GitHub releases by applying tags to your repositories through the GitHub API. It allows for the generation of both regular releases and pre-releases.It takes inputs dynamically from a CSV file.
-The workflow can be triggered based on your specific release criteria.
+This workflow automates creating GitHub releases by applying tags to your repositories through the GitHub API. It supports both regular and pre-releases, with dynamic input taken from a CSV file. The workflow can be triggered based on specific release criteria.
 
 ## Inputs
 * Execute [workflow for mosip github release](https://github.com/mosip/release-script/actions/workflows/gh-release.yaml) workflow with following inputs:
@@ -20,7 +19,7 @@ The workflow can be triggered based on your specific release criteria.
 
 ## Secrets
 
-This workflow requires the following secrets to be set in your GitHub repository:
+This workflow requires the following secrets to be configured in your GitHub repository:
 - `SLACK_WEBHOOK_URL` (required): The Slack webhook URL for sending notifications about the workflow's progress and outcome.
 - `TOKEN` (required): The token required for authenticating and authorizing the release operation.
 

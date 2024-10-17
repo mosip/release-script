@@ -5,17 +5,17 @@ Use this guide to release specific MOSIP version.
 
 ## Pre-requisites
 * All the pre-requisites are mentioned in [pre-requisites guide](docs/pre-requisites.md).
-* Make sure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-rule.md).
+* Ensure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-rule.md).
 ## Steps
-1. Create `release-branch` from the release-candidate branch and name it as below:
+1. Create `release-branch` from the release-candidate branch and name it as follows:
     ```
     release-<release-version>
     eg: release-1.3.x
     ```
-1. The `pom.xml` files should be updated with the release version of SNAPSHOT in the release branch ( Ex. release-1.3.x ).
+1. Ensure that the `pom.xml` files should be updated with the release version of SNAPSHOT in the release branch ( Ex. release-1.3.x ).
     * If not, please coordinate with the developer to ensure it is updated.
 1. Ensure that the `db_upgrade` and `db_rollback` scripts are updated with the latest release version.
-    * If not, please coordinate with the developer to ensure it is updated.
+    * If not, coordinate with the developer to make the necessary updates.
 1. Execute the ```Release/Pre-release Preparation``` by running the [Action](https://github.com/mosip/release-script/actions/workflows/release-changes.yml).
     * Below inputs for `Release/Pre-release Preparation`
       1. Repo URL ( e.g., mosip/< repo name > )
@@ -24,7 +24,7 @@ Use this guide to release specific MOSIP version.
       1. tag to be replaced ( replace SNAPSHOT version Ex. 1.3.0-SNAPSHOT )
       1. base branch for PR ( e.g., release-1.3.x )
       1. Next click on ```run workflow```
-1. Review and merge the pull request created by release bot from `releas-branch` to the respective release repository. While reviewing the Pull Request keep note of the below points:
+1. Review and merge the pull request created by release bot from `releas-branch` to the respective release repository. While reviewing, ensure the following:
     * Ensure that the latest POM version updates are reflected across all POM files.
     * Ensure that there are no SNAPSHOT versions in the Pull Request or the respective release branch.
     * It should remove the `-DskipTests` references from all the triggers so that tests are not skipped while building and release and analysis.
@@ -52,10 +52,10 @@ Use this guide to release specific MOSIP version.
 
 # MOSIP Post Release Process
 1. Execute the [Post-Release Preparation](https://github.com/mosip/release-script/actions/workflows/post-release-changes.yml) workflow to replace the "RELEASE_URL" with "OSSRH_SNAPSHOT_URL" to the release branch.
-1. while running manual workflow it will ask for workflow inputs as below
+1. while running manual workflow, it will ask for the following inputs as below:
     * Repo URL ( EX. mosip/< repo name > ): Name of the owner of the repository and repository name.
-    * Repo Branch: It should be release-branch.
-    * base branch for PR: It should be release-branch.
+    * Repo Branch: It should be the release-branch.
+    * base branch for PR: It should be the release-branch.
     * Next click on `run workflow`.
 1. Ensure to update the Helm `Chart.yaml` and `install.sh` files to reflect the release version with the `-develop` suffix ( Ex. 1.3.0-develop ).
 1. Review and merge the pull request created by release bot from `releas-branch` to the respective release repository.
@@ -67,8 +67,8 @@ Use this guide to release specific MOSIP version.
 1. Avoid merging release code into the `master branch` developer-preview-release.
 
 # GitHub manual workflow to images transfer
-* Please refer to Image transfer [here](vidivi/README.md)
+* Please refer to Image transfer from [here](vidivi/README.md)
 
 # Tagging of Repos Workflow
-* Please refer to the Tagging of Repos from [here](gh_release/README.md)
+* Please refer to the Tagging of Repos link to [here](gh_release/README.md)
 * 
