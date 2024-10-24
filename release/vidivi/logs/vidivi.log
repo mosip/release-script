@@ -1,81 +1,85 @@
- 24-Oct-24 11:25:43  INFO  LOGFILE CREATED : vidivi.log 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  ******************** Check Images List ************************************************************************************ 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  IMAGES= [['mosipdev2/apitest-idrepo:develop', 'develop']] 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  src = "mosipdev2/apitest-idrepo" tag = "develop" 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 24-Oct-24 11:25:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-idrepo:pull HTTP/11" 200 None 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 24-Oct-24 11:25:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-idrepo/tags/develop HTTP/11" 200 823 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 24-Oct-24 11:25:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 24-Oct-24 11:25:43  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 24-Oct-24 11:25:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-idrepo:pull HTTP/11" 200 None 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 24-Oct-24 11:25:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-idrepo/manifests/develop HTTP/11" 200 3471 
- 24-Oct-24 11:25:43  INFO   
- 24-Oct-24 11:25:43  INFO  [ mosipqa/apitest-idrepo ]  
- 24-Oct-24 11:25:43  INFO  Destination Image = "mosipqa/apitest-idrepo" Destination Image tag = "develop" IMAGE_ID : "sha256:bd5b896806e85c45b9ee85967a99ca0a62661da62b0ee131451844ff25c40899" 
- 24-Oct-24 11:25:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 24-Oct-24 11:25:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-idrepo:pull HTTP/11" 200 None 
- 24-Oct-24 11:25:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 24-Oct-24 11:25:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-idrepo/tags/develop HTTP/11" 200 814 
- 24-Oct-24 11:25:44  INFO   
- 24-Oct-24 11:25:44  INFO  ******************** HASH Operation Results ********************************************************************** 
- 24-Oct-24 11:25:44  INFO   
- 24-Oct-24 11:25:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 24-Oct-24 11:25:44  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 24-Oct-24 11:25:44  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 24-Oct-24 11:25:44  DEBUG  Found 'auths' section 
- 24-Oct-24 11:25:44  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 24-Oct-24 11:25:44  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 24-Oct-24 11:25:44  DEBUG  Looking for auth entry for 'docker.io' 
- 24-Oct-24 11:25:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 24-Oct-24 11:25:44  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 24-Oct-24 11:25:44  INFO   
- 24-Oct-24 11:25:44  INFO  ********** [ mosipqa/apitest-idrepo:develop ] **************************************************** 
- 24-Oct-24 11:25:44  INFO   
- 24-Oct-24 11:25:44  INFO  [ PULL ----------------------> mosipdev2/apitest-idrepo:develop ]  
- 24-Oct-24 11:25:44  DEBUG  Looking for auth config 
- 24-Oct-24 11:25:44  DEBUG  Looking for auth entry for 'docker.io' 
- 24-Oct-24 11:25:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 24-Oct-24 11:25:44  DEBUG  Found auth config 
- 24-Oct-24 11:25:45  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fapitest-idrepo HTTP/11" 200 None 
- 24-Oct-24 11:26:08  INFO  Status: Downloaded newer image for mosipdev2/apitest-idrepo:develop 
- 24-Oct-24 11:26:08  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-idrepo:develop/tag?tag=develop&repo=mosipqa%2Fapitest-idrepo&force=1 HTTP/11" 201 0 
- 24-Oct-24 11:26:08  INFO   
- 24-Oct-24 11:26:08  INFO  [ PUSH -----> mosipdev2/apitest-idrepo:develop	------> mosipqa/apitest-idrepo:develop ]  
- 24-Oct-24 11:26:08  DEBUG  Looking for auth config 
- 24-Oct-24 11:26:08  DEBUG  Looking for auth entry for 'docker.io' 
- 24-Oct-24 11:26:08  DEBUG  Found 'https://index.docker.io/v1/' 
- 24-Oct-24 11:26:08  DEBUG  Found auth config 
- 24-Oct-24 11:26:08  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-idrepo/push?tag=develop HTTP/11" 200 None 
- 24-Oct-24 11:26:12  INFO  develop: digest: sha256:6153d4bc62285531617fe647cc5aabade9fe694abdeb56163a3628f9dc2e352d size: 2418 
- 24-Oct-24 11:26:12  INFO   
- 24-Oct-24 11:26:12  INFO  [ PUSH -----> mosipdev2/apitest-idrepo:develop	------> mosipqa/apitest-idrepo:latest ]  
- 24-Oct-24 11:26:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-idrepo:develop/tag?tag=latest&repo=mosipqa%2Fapitest-idrepo&force=1 HTTP/11" 201 0 
- 24-Oct-24 11:26:12  DEBUG  Looking for auth config 
- 24-Oct-24 11:26:12  DEBUG  Looking for auth entry for 'docker.io' 
- 24-Oct-24 11:26:12  DEBUG  Found 'https://index.docker.io/v1/' 
- 24-Oct-24 11:26:12  DEBUG  Found auth config 
- 24-Oct-24 11:26:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-idrepo/push?tag=latest HTTP/11" 200 None 
- 24-Oct-24 11:26:13  INFO  latest: digest: sha256:6153d4bc62285531617fe647cc5aabade9fe694abdeb56163a3628f9dc2e352d size: 2418 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-idrepo%3Adevelop%22%5D%7D HTTP/11" 200 463 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:83d9106e3c6adedb4c515d1eaff87976ffa71585b3fe0393e0b5ae77d15334f6/json HTTP/11" 200 None 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-idrepo:develop?force=False&noprune=False HTTP/11" 200 162 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-idrepo%3Adevelop%22%5D%7D HTTP/11" 200 461 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:83d9106e3c6adedb4c515d1eaff87976ffa71585b3fe0393e0b5ae77d15334f6/json HTTP/11" 200 None 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-idrepo:develop?force=False&noprune=False HTTP/11" 200 48 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-idrepo%3Alatest%22%5D%7D HTTP/11" 200 460 
- 24-Oct-24 11:26:13  DEBUG  http://localhost:None "GET /v1.45/images/sha256:83d9106e3c6adedb4c515d1eaff87976ffa71585b3fe0393e0b5ae77d15334f6/json HTTP/11" 200 None 
- 24-Oct-24 11:26:14  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-idrepo:latest?force=False&noprune=False HTTP/11" 200 1103 
- 24-Oct-24 11:26:14  INFO  Completed mosipdev2/apitest-idrepo:develop	------> mosipqa/apitest-idrepo:develop 
+ 24-Oct-24 12:06:14  INFO  LOGFILE CREATED : vidivi.log 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  ******************** Check Images List ************************************************************************************ 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  IMAGES= [['mosipdev/apitest-prereg:release-1.3.x', 'release-1.3.x']] 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  src = "mosipdev/apitest-prereg" tag = "release-1.3.x" 
+ 24-Oct-24 12:06:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 24-Oct-24 12:06:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-prereg:pull HTTP/11" 200 None 
+ 24-Oct-24 12:06:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 24-Oct-24 12:06:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-prereg/tags/release-1.3.x HTTP/11" 200 819 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 24-Oct-24 12:06:14  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 24-Oct-24 12:06:14  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
+ 24-Oct-24 12:06:14  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
+ 24-Oct-24 12:06:14  INFO   
+ 24-Oct-24 12:06:14  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 24-Oct-24 12:06:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 24-Oct-24 12:06:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-prereg:pull HTTP/11" 200 None 
+ 24-Oct-24 12:06:15  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 24-Oct-24 12:06:15  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-prereg/manifests/release-1.3.x HTTP/11" 401 167 
+ 24-Oct-24 12:06:15  INFO   
+ 24-Oct-24 12:06:15  INFO  [ mosipdev2/apitest-prereg ]  
+ 24-Oct-24 12:06:15  INFO  Destination Image = "mosipdev2/apitest-prereg" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 24-Oct-24 12:06:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 24-Oct-24 12:06:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-prereg:pull HTTP/11" 200 None 
+ 24-Oct-24 12:06:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 24-Oct-24 12:06:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-prereg/tags/release-1.3.x HTTP/11" 404 134 
+ 24-Oct-24 12:06:15  ERROR  Image "mosipdev2/apitest-prereg:release-1.3.x" does not exist 
+ 24-Oct-24 12:06:15  INFO   
+ 24-Oct-24 12:06:15  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 24-Oct-24 12:06:15  INFO   
+ 24-Oct-24 12:06:15  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/apitest-prereg:release-1.3.x']] 
+ 24-Oct-24 12:06:15  INFO   
+ 24-Oct-24 12:06:15  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 24-Oct-24 12:06:15  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 24-Oct-24 12:06:15  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 24-Oct-24 12:06:15  DEBUG  Found 'auths' section 
+ 24-Oct-24 12:06:15  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 24-Oct-24 12:06:15  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 24-Oct-24 12:06:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 24-Oct-24 12:06:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 24-Oct-24 12:06:16  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 24-Oct-24 12:06:16  INFO   
+ 24-Oct-24 12:06:16  INFO  ********** [ mosipdev2/apitest-prereg:release-1.3.x ] **************************************************** 
+ 24-Oct-24 12:06:16  INFO   
+ 24-Oct-24 12:06:16  INFO  [ PULL ----------------------> mosipdev/apitest-prereg:release-1.3.x ]  
+ 24-Oct-24 12:06:16  DEBUG  Looking for auth config 
+ 24-Oct-24 12:06:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 24-Oct-24 12:06:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 24-Oct-24 12:06:16  DEBUG  Found auth config 
+ 24-Oct-24 12:06:17  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-prereg HTTP/11" 200 None 
+ 24-Oct-24 12:06:51  INFO  Status: Downloaded newer image for mosipdev/apitest-prereg:release-1.3.x 
+ 24-Oct-24 12:06:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-prereg:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fapitest-prereg&force=1 HTTP/11" 201 0 
+ 24-Oct-24 12:06:51  INFO   
+ 24-Oct-24 12:06:51  INFO  [ PUSH -----> mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:release-1.3.x ]  
+ 24-Oct-24 12:06:51  DEBUG  Looking for auth config 
+ 24-Oct-24 12:06:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 24-Oct-24 12:06:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 24-Oct-24 12:06:51  DEBUG  Found auth config 
+ 24-Oct-24 12:06:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-prereg/push?tag=release-1.3.x HTTP/11" 200 None 
+ 24-Oct-24 12:06:56  INFO  release-1.3.x: digest: sha256:461eb91b4a2567236fe15073ac8b1becb5d0ffd2e9673d2e27cce736deabb3a8 size: 1582 
+ 24-Oct-24 12:06:56  INFO   
+ 24-Oct-24 12:06:56  INFO  [ PUSH -----> mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:latest ]  
+ 24-Oct-24 12:06:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-prereg:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fapitest-prereg&force=1 HTTP/11" 201 0 
+ 24-Oct-24 12:06:56  DEBUG  Looking for auth config 
+ 24-Oct-24 12:06:56  DEBUG  Looking for auth entry for 'docker.io' 
+ 24-Oct-24 12:06:56  DEBUG  Found 'https://index.docker.io/v1/' 
+ 24-Oct-24 12:06:56  DEBUG  Found auth config 
+ 24-Oct-24 12:06:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-prereg/push?tag=latest HTTP/11" 200 None 
+ 24-Oct-24 12:06:58  INFO  latest: digest: sha256:461eb91b4a2567236fe15073ac8b1becb5d0ffd2e9673d2e27cce736deabb3a8 size: 1582 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-prereg%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 468 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c40e9fb216543d370c2afb3f840756ae9b049356c456486e6d58656bfda5ca46/json HTTP/11" 200 None 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-prereg:release-1.3.x?force=False&noprune=False HTTP/11" 200 166 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-prereg%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 469 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c40e9fb216543d370c2afb3f840756ae9b049356c456486e6d58656bfda5ca46/json HTTP/11" 200 None 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-prereg:release-1.3.x?force=False&noprune=False HTTP/11" 200 56 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-prereg%3Alatest%22%5D%7D HTTP/11" 200 462 
+ 24-Oct-24 12:06:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c40e9fb216543d370c2afb3f840756ae9b049356c456486e6d58656bfda5ca46/json HTTP/11" 200 None 
+ 24-Oct-24 12:06:59  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-prereg:latest?force=False&noprune=False HTTP/11" 200 763 
+ 24-Oct-24 12:06:59  INFO  Completed mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:release-1.3.x 
