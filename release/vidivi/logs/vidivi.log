@@ -1,81 +1,85 @@
- 07-Nov-24 05:59:27  INFO  LOGFILE CREATED : vidivi.log 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  ******************** Check Images List ************************************************************************************ 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  IMAGES= [['mosipdev/mimoto:develop', 'develop']] 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  src = "mosipdev/mimoto" tag = "develop" 
- 07-Nov-24 05:59:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Nov-24 05:59:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/11" 200 None 
- 07-Nov-24 05:59:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Nov-24 05:59:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mimoto/tags/develop HTTP/11" 200 814 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 07-Nov-24 05:59:27  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 07-Nov-24 05:59:27  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 07-Nov-24 05:59:27  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 07-Nov-24 05:59:27  INFO   
- 07-Nov-24 05:59:27  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 07-Nov-24 05:59:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Nov-24 05:59:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/11" 200 None 
- 07-Nov-24 05:59:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 07-Nov-24 05:59:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mimoto/manifests/develop HTTP/11" 200 2211 
- 07-Nov-24 05:59:28  INFO   
- 07-Nov-24 05:59:28  INFO  [ mosipqa/mimoto ]  
- 07-Nov-24 05:59:28  INFO  Destination Image = "mosipqa/mimoto" Destination Image tag = "develop" IMAGE_ID : "sha256:2b4f3f34ba1808a7446b7712b21ad468c6e70cc5315256dda1e9d6096fc3ae68" 
- 07-Nov-24 05:59:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Nov-24 05:59:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/11" 200 None 
- 07-Nov-24 05:59:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Nov-24 05:59:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mimoto/tags/develop HTTP/11" 200 808 
- 07-Nov-24 05:59:28  INFO   
- 07-Nov-24 05:59:28  INFO  ******************** HASH Operation Results ********************************************************************** 
- 07-Nov-24 05:59:28  INFO   
- 07-Nov-24 05:59:28  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 07-Nov-24 05:59:28  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 07-Nov-24 05:59:28  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 07-Nov-24 05:59:28  DEBUG  Found 'auths' section 
- 07-Nov-24 05:59:28  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 07-Nov-24 05:59:28  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 07-Nov-24 05:59:28  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Nov-24 05:59:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Nov-24 05:59:28  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 07-Nov-24 05:59:28  INFO   
- 07-Nov-24 05:59:28  INFO  ********** [ mosipqa/mimoto:develop ] **************************************************** 
- 07-Nov-24 05:59:28  INFO   
- 07-Nov-24 05:59:28  INFO  [ PULL ----------------------> mosipdev/mimoto:develop ]  
- 07-Nov-24 05:59:28  DEBUG  Looking for auth config 
- 07-Nov-24 05:59:28  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Nov-24 05:59:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Nov-24 05:59:28  DEBUG  Found auth config 
- 07-Nov-24 05:59:29  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fmimoto HTTP/11" 200 None 
- 07-Nov-24 05:59:41  INFO  Status: Downloaded newer image for mosipdev/mimoto:develop 
- 07-Nov-24 05:59:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:develop/tag?tag=develop&repo=mosipqa%2Fmimoto&force=1 HTTP/11" 201 0 
- 07-Nov-24 05:59:41  INFO   
- 07-Nov-24 05:59:41  INFO  [ PUSH -----> mosipdev/mimoto:develop	------> mosipqa/mimoto:develop ]  
- 07-Nov-24 05:59:41  DEBUG  Looking for auth config 
- 07-Nov-24 05:59:41  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Nov-24 05:59:41  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Nov-24 05:59:41  DEBUG  Found auth config 
- 07-Nov-24 05:59:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=develop HTTP/11" 200 None 
- 07-Nov-24 05:59:43  INFO  develop: digest: sha256:8f4b5731de36c1735eb5ff365fdb1dcc033f207d5233b409466c2ffb87b0a202 size: 2211 
- 07-Nov-24 05:59:43  INFO   
- 07-Nov-24 05:59:43  INFO  [ PUSH -----> mosipdev/mimoto:develop	------> mosipqa/mimoto:latest ]  
- 07-Nov-24 05:59:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:develop/tag?tag=latest&repo=mosipqa%2Fmimoto&force=1 HTTP/11" 201 0 
- 07-Nov-24 05:59:43  DEBUG  Looking for auth config 
- 07-Nov-24 05:59:43  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Nov-24 05:59:43  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Nov-24 05:59:43  DEBUG  Found auth config 
- 07-Nov-24 05:59:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=latest HTTP/11" 200 None 
- 07-Nov-24 05:59:44  INFO  latest: digest: sha256:8f4b5731de36c1735eb5ff365fdb1dcc033f207d5233b409466c2ffb87b0a202 size: 2211 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmimoto%3Adevelop%22%5D%7D HTTP/11" 200 365 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:450eb904f67b10de88ba30202a0432c3b89db95cb02342c16643db97076343dd/json HTTP/11" 200 None 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mimoto:develop?force=False&noprune=False HTTP/11" 200 144 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3Adevelop%22%5D%7D HTTP/11" 200 364 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:450eb904f67b10de88ba30202a0432c3b89db95cb02342c16643db97076343dd/json HTTP/11" 200 None 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:develop?force=False&noprune=False HTTP/11" 200 40 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3Alatest%22%5D%7D HTTP/11" 200 363 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:450eb904f67b10de88ba30202a0432c3b89db95cb02342c16643db97076343dd/json HTTP/11" 200 None 
- 07-Nov-24 05:59:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:latest?force=False&noprune=False HTTP/11" 200 915 
- 07-Nov-24 05:59:44  INFO  Completed mosipdev/mimoto:develop	------> mosipqa/mimoto:develop 
+ 07-Nov-24 08:13:52  INFO  LOGFILE CREATED : vidivi.log 
+ 07-Nov-24 08:13:52  INFO   
+ 07-Nov-24 08:13:52  INFO  ******************** Check Images List ************************************************************************************ 
+ 07-Nov-24 08:13:52  INFO   
+ 07-Nov-24 08:13:52  INFO  IMAGES= [['mosipdev2/uitest-admin:release-1.3.x', '1.3.x']] 
+ 07-Nov-24 08:13:52  INFO   
+ 07-Nov-24 08:13:52  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 07-Nov-24 08:13:52  INFO   
+ 07-Nov-24 08:13:52  INFO  src = "mosipdev2/uitest-admin" tag = "release-1.3.x" 
+ 07-Nov-24 08:13:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 07-Nov-24 08:13:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-admin:pull HTTP/11" 200 None 
+ 07-Nov-24 08:13:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 07-Nov-24 08:13:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-admin/tags/release-1.3.x HTTP/11" 200 829 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 07-Nov-24 08:13:53  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 07-Nov-24 08:13:53  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 07-Nov-24 08:13:53  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 07-Nov-24 08:13:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 07-Nov-24 08:13:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-admin:pull HTTP/11" 200 None 
+ 07-Nov-24 08:13:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 07-Nov-24 08:13:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/uitest-admin/manifests/1.3.x HTTP/11" 404 99 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  [ mosipqa/uitest-admin ]  
+ 07-Nov-24 08:13:53  INFO  Destination Image = "mosipqa/uitest-admin" Destination Image tag = "1.3.x" IMAGE_ID :  
+ 07-Nov-24 08:13:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 07-Nov-24 08:13:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-admin:pull HTTP/11" 200 None 
+ 07-Nov-24 08:13:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 07-Nov-24 08:13:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/uitest-admin/tags/1.3.x HTTP/11" 404 127 
+ 07-Nov-24 08:13:53  ERROR  Image "mosipqa/uitest-admin:1.3.x" does not exist 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/uitest-admin:1.3.x']] 
+ 07-Nov-24 08:13:53  INFO   
+ 07-Nov-24 08:13:53  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 07-Nov-24 08:13:53  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 07-Nov-24 08:13:53  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 07-Nov-24 08:13:53  DEBUG  Found 'auths' section 
+ 07-Nov-24 08:13:53  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 07-Nov-24 08:13:53  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 07-Nov-24 08:13:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 07-Nov-24 08:13:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 07-Nov-24 08:13:54  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 07-Nov-24 08:13:54  INFO   
+ 07-Nov-24 08:13:54  INFO  ********** [ mosipqa/uitest-admin:1.3.x ] **************************************************** 
+ 07-Nov-24 08:13:54  INFO   
+ 07-Nov-24 08:13:54  INFO  [ PULL ----------------------> mosipdev2/uitest-admin:release-1.3.x ]  
+ 07-Nov-24 08:13:54  DEBUG  Looking for auth config 
+ 07-Nov-24 08:13:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 07-Nov-24 08:13:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 07-Nov-24 08:13:54  DEBUG  Found auth config 
+ 07-Nov-24 08:13:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fuitest-admin HTTP/11" 200 None 
+ 07-Nov-24 08:14:19  INFO  Status: Downloaded newer image for mosipdev2/uitest-admin:release-1.3.x 
+ 07-Nov-24 08:14:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/uitest-admin:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fuitest-admin&force=1 HTTP/11" 201 0 
+ 07-Nov-24 08:14:19  INFO   
+ 07-Nov-24 08:14:19  INFO  [ PUSH -----> mosipdev2/uitest-admin:release-1.3.x	------> mosipqa/uitest-admin:1.3.x ]  
+ 07-Nov-24 08:14:19  DEBUG  Looking for auth config 
+ 07-Nov-24 08:14:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 07-Nov-24 08:14:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 07-Nov-24 08:14:19  DEBUG  Found auth config 
+ 07-Nov-24 08:14:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/uitest-admin/push?tag=1.3.x HTTP/11" 200 None 
+ 07-Nov-24 08:14:23  INFO  1.3.x: digest: sha256:f32b7e8d3b00e5b899a5e9989425ddd3b7b1ea4c3e7b158119d509910a0f05ab size: 2420 
+ 07-Nov-24 08:14:23  INFO   
+ 07-Nov-24 08:14:23  INFO  [ PUSH -----> mosipdev2/uitest-admin:release-1.3.x	------> mosipqa/uitest-admin:latest ]  
+ 07-Nov-24 08:14:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/uitest-admin:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fuitest-admin&force=1 HTTP/11" 201 0 
+ 07-Nov-24 08:14:23  DEBUG  Looking for auth config 
+ 07-Nov-24 08:14:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 07-Nov-24 08:14:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 07-Nov-24 08:14:23  DEBUG  Found auth config 
+ 07-Nov-24 08:14:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/uitest-admin/push?tag=latest HTTP/11" 200 None 
+ 07-Nov-24 08:14:24  INFO  latest: digest: sha256:f32b7e8d3b00e5b899a5e9989425ddd3b7b1ea4c3e7b158119d509910a0f05ab size: 2420 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fuitest-admin%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 379 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ca87359d2d5e7826627f50a04169fb63ae97fec3c130caa31f79ade6b571fd5/json HTTP/11" 200 None 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/uitest-admin:release-1.3.x?force=False&noprune=False HTTP/11" 200 164 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fuitest-admin%3A1.3.x%22%5D%7D HTTP/11" 200 369 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ca87359d2d5e7826627f50a04169fb63ae97fec3c130caa31f79ade6b571fd5/json HTTP/11" 200 None 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/uitest-admin:1.3.x?force=False&noprune=False HTTP/11" 200 44 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fuitest-admin%3Alatest%22%5D%7D HTTP/11" 200 370 
+ 07-Nov-24 08:14:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ca87359d2d5e7826627f50a04169fb63ae97fec3c130caa31f79ade6b571fd5/json HTTP/11" 200 None 
+ 07-Nov-24 08:14:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/uitest-admin:latest?force=False&noprune=False HTTP/11" 200 1099 
+ 07-Nov-24 08:14:25  INFO  Completed mosipdev2/uitest-admin:release-1.3.x	------> mosipqa/uitest-admin:1.3.x 
