@@ -1,81 +1,81 @@
- 14-Nov-24 06:39:23  INFO  LOGFILE CREATED : vidivi.log 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** Check Images List ************************************************************************************ 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  IMAGES= [['mosipdev2/kernel-bio-converter:release-1.3.x', '1.3.x']] 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  src = "mosipdev2/kernel-bio-converter" tag = "release-1.3.x" 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Nov-24 06:39:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-bio-converter:pull HTTP/11" 200 None 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Nov-24 06:39:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-bio-converter/tags/release-1.3.x HTTP/11" 200 828 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 14-Nov-24 06:39:23  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 14-Nov-24 06:39:23  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Nov-24 06:39:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-bio-converter:pull HTTP/11" 200 None 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 14-Nov-24 06:39:23  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-bio-converter/manifests/1.3.x HTTP/11" 200 1793 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  [ mosipqa/kernel-bio-converter ]  
- 14-Nov-24 06:39:23  INFO  Destination Image = "mosipqa/kernel-bio-converter" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:475a58c90621837380303643bff1ce2a9c7ada553404ce21f7b61bc97c810c6f" 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Nov-24 06:39:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-bio-converter:pull HTTP/11" 200 None 
- 14-Nov-24 06:39:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Nov-24 06:39:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-bio-converter/tags/1.3.x HTTP/11" 200 812 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** HASH Operation Results ********************************************************************** 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 14-Nov-24 06:39:23  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 14-Nov-24 06:39:23  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 14-Nov-24 06:39:23  DEBUG  Found 'auths' section 
- 14-Nov-24 06:39:23  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 14-Nov-24 06:39:23  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 14-Nov-24 06:39:23  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Nov-24 06:39:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Nov-24 06:39:23  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  ********** [ mosipqa/kernel-bio-converter:1.3.x ] **************************************************** 
- 14-Nov-24 06:39:23  INFO   
- 14-Nov-24 06:39:23  INFO  [ PULL ----------------------> mosipdev2/kernel-bio-converter:release-1.3.x ]  
- 14-Nov-24 06:39:23  DEBUG  Looking for auth config 
- 14-Nov-24 06:39:23  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Nov-24 06:39:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Nov-24 06:39:23  DEBUG  Found auth config 
- 14-Nov-24 06:39:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fkernel-bio-converter HTTP/11" 200 None 
- 14-Nov-24 06:39:42  INFO  Status: Downloaded newer image for mosipdev2/kernel-bio-converter:release-1.3.x 
- 14-Nov-24 06:39:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-bio-converter:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fkernel-bio-converter&force=1 HTTP/11" 201 0 
- 14-Nov-24 06:39:42  INFO   
- 14-Nov-24 06:39:42  INFO  [ PUSH -----> mosipdev2/kernel-bio-converter:release-1.3.x	------> mosipqa/kernel-bio-converter:1.3.x ]  
- 14-Nov-24 06:39:42  DEBUG  Looking for auth config 
- 14-Nov-24 06:39:42  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Nov-24 06:39:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Nov-24 06:39:42  DEBUG  Found auth config 
- 14-Nov-24 06:39:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-bio-converter/push?tag=1.3.x HTTP/11" 200 None 
- 14-Nov-24 06:39:43  INFO  1.3.x: digest: sha256:b40fd73bab0a553fc536a8c8e2dac3ea2cc5cddde15d8fa014317e70903ee08c size: 1793 
- 14-Nov-24 06:39:43  INFO   
- 14-Nov-24 06:39:43  INFO  [ PUSH -----> mosipdev2/kernel-bio-converter:release-1.3.x	------> mosipqa/kernel-bio-converter:latest ]  
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-bio-converter:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fkernel-bio-converter&force=1 HTTP/11" 201 0 
- 14-Nov-24 06:39:43  DEBUG  Looking for auth config 
- 14-Nov-24 06:39:43  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Nov-24 06:39:43  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Nov-24 06:39:43  DEBUG  Found auth config 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-bio-converter/push?tag=latest HTTP/11" 200 None 
- 14-Nov-24 06:39:43  INFO  latest: digest: sha256:b40fd73bab0a553fc536a8c8e2dac3ea2cc5cddde15d8fa014317e70903ee08c size: 1793 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-bio-converter%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 475 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d10832c3320c915e637a1a4ae3eff00d238ee56d9c29d6bfa196e2ca1e7436e9/json HTTP/11" 200 None 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-bio-converter:release-1.3.x?force=False&noprune=False HTTP/11" 200 180 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-bio-converter%3A1.3.x%22%5D%7D HTTP/11" 200 465 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d10832c3320c915e637a1a4ae3eff00d238ee56d9c29d6bfa196e2ca1e7436e9/json HTTP/11" 200 None 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-bio-converter:1.3.x?force=False&noprune=False HTTP/11" 200 52 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-bio-converter%3Alatest%22%5D%7D HTTP/11" 200 466 
- 14-Nov-24 06:39:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d10832c3320c915e637a1a4ae3eff00d238ee56d9c29d6bfa196e2ca1e7436e9/json HTTP/11" 200 None 
- 14-Nov-24 06:39:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-bio-converter:latest?force=False&noprune=False HTTP/11" 200 857 
- 14-Nov-24 06:39:44  INFO  Completed mosipdev2/kernel-bio-converter:release-1.3.x	------> mosipqa/kernel-bio-converter:1.3.x 
+ 14-Nov-24 07:55:55  INFO  LOGFILE CREATED : vidivi.log 
+ 14-Nov-24 07:55:55  INFO   
+ 14-Nov-24 07:55:55  INFO  ******************** Check Images List ************************************************************************************ 
+ 14-Nov-24 07:55:55  INFO   
+ 14-Nov-24 07:55:55  INFO  IMAGES= [['mosipdev/artifactory-server:release-1.3.x', '1.3.x']] 
+ 14-Nov-24 07:55:55  INFO   
+ 14-Nov-24 07:55:55  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 14-Nov-24 07:55:55  INFO   
+ 14-Nov-24 07:55:55  INFO  src = "mosipdev/artifactory-server" tag = "release-1.3.x" 
+ 14-Nov-24 07:55:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Nov-24 07:55:55  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/11" 200 None 
+ 14-Nov-24 07:55:55  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Nov-24 07:55:55  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.3.x HTTP/11" 200 822 
+ 14-Nov-24 07:55:55  INFO   
+ 14-Nov-24 07:55:55  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 14-Nov-24 07:55:55  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 14-Nov-24 07:55:56  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 14-Nov-24 07:55:56  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 14-Nov-24 07:55:56  INFO   
+ 14-Nov-24 07:55:56  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 14-Nov-24 07:55:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Nov-24 07:55:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/11" 200 None 
+ 14-Nov-24 07:55:56  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 14-Nov-24 07:55:56  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/artifactory-server/manifests/1.3.x HTTP/11" 200 8689 
+ 14-Nov-24 07:55:56  INFO   
+ 14-Nov-24 07:55:56  INFO  [ mosipqa/artifactory-server ]  
+ 14-Nov-24 07:55:56  INFO  Destination Image = "mosipqa/artifactory-server" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:604f0bc3a3ba966ab10c09e5e22e2f29b3f327256a81eb0067960005b6c75077" 
+ 14-Nov-24 07:55:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Nov-24 07:55:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/11" 200 None 
+ 14-Nov-24 07:55:56  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Nov-24 07:55:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/artifactory-server/tags/1.3.x HTTP/11" 200 812 
+ 14-Nov-24 07:55:57  INFO   
+ 14-Nov-24 07:55:57  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 14-Nov-24 07:55:57  INFO   
+ 14-Nov-24 07:55:57  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 14-Nov-24 07:55:57  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 14-Nov-24 07:55:57  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 14-Nov-24 07:55:57  DEBUG  Found 'auths' section 
+ 14-Nov-24 07:55:57  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 14-Nov-24 07:55:57  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 14-Nov-24 07:55:57  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Nov-24 07:55:57  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Nov-24 07:55:58  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 14-Nov-24 07:55:58  INFO   
+ 14-Nov-24 07:55:58  INFO  ********** [ mosipqa/artifactory-server:1.3.x ] **************************************************** 
+ 14-Nov-24 07:55:58  INFO   
+ 14-Nov-24 07:55:58  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.3.x ]  
+ 14-Nov-24 07:55:58  DEBUG  Looking for auth config 
+ 14-Nov-24 07:55:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Nov-24 07:55:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Nov-24 07:55:58  DEBUG  Found auth config 
+ 14-Nov-24 07:55:59  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fartifactory-server HTTP/11" 200 None 
+ 14-Nov-24 07:56:43  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.3.x 
+ 14-Nov-24 07:56:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fartifactory-server&force=1 HTTP/11" 201 0 
+ 14-Nov-24 07:56:43  INFO   
+ 14-Nov-24 07:56:43  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipqa/artifactory-server:1.3.x ]  
+ 14-Nov-24 07:56:43  DEBUG  Looking for auth config 
+ 14-Nov-24 07:56:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Nov-24 07:56:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Nov-24 07:56:43  DEBUG  Found auth config 
+ 14-Nov-24 07:56:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=1.3.x HTTP/11" 200 None 
+ 14-Nov-24 07:56:58  INFO  1.3.x: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
+ 14-Nov-24 07:56:58  INFO   
+ 14-Nov-24 07:56:58  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipqa/artifactory-server:latest ]  
+ 14-Nov-24 07:56:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fartifactory-server&force=1 HTTP/11" 201 0 
+ 14-Nov-24 07:56:58  DEBUG  Looking for auth config 
+ 14-Nov-24 07:56:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Nov-24 07:56:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Nov-24 07:56:58  DEBUG  Found auth config 
+ 14-Nov-24 07:56:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=latest HTTP/11" 200 None 
+ 14-Nov-24 07:57:01  INFO  latest: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 449 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 174 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3A1.3.x%22%5D%7D HTTP/11" 200 440 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:1.3.x?force=False&noprune=False HTTP/11" 200 50 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3Alatest%22%5D%7D HTTP/11" 200 441 
+ 14-Nov-24 07:57:01  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
+ 14-Nov-24 07:57:02  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:latest?force=False&noprune=False HTTP/11" 200 None 
+ 14-Nov-24 07:57:02  INFO  Completed mosipdev/artifactory-server:release-1.3.x	------> mosipqa/artifactory-server:1.3.x 
