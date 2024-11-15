@@ -9,9 +9,10 @@ on:
       REPO_BRANCH:
         description: 'Repo Branch'
         required: true
-      CHART_VERSION:
-        description: 'Version to update in Chart.yaml files'
+      VERSION_PAIR:
+        description: 'Versions for Chart.yaml and install.sh files, format: CHART_VERSION,INSTALL_CHART_VERSION'
         required: true
+        type: string
       IMAGE_TAG:
         description: 'Tag to update in values.yaml'
         required: true
@@ -23,7 +24,7 @@ on:
         required: true   
 jobs:
   helm-release-preparation:
-    uses: mosip/kattu/.github/workflows/helm-release.yaml@master
+    uses: Prafulrakhade/kattu/.github/workflows/helm-release.yaml@master
     with:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
@@ -31,5 +32,6 @@ jobs:
       IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
       BASE: ${{ inputs.BASE }}
       COMMIT_MESSAGE: ${{ inputs.COMMIT_MESSAGE }}
+      VERSION_PAIR: ${{ inputs.VERSION_PAIR }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
