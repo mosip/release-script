@@ -1,81 +1,85 @@
- 15-Nov-24 10:44:51  INFO  LOGFILE CREATED : vidivi.log 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  ******************** Check Images List ************************************************************************************ 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  IMAGES= [['mosipdev/artifactory-server:release-1.3.x', 'release-1.3.x']] 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  src = "mosipdev/artifactory-server" tag = "release-1.3.x" 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 10:44:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/11" 200 None 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Nov-24 10:44:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.3.x HTTP/11" 200 822 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 15-Nov-24 10:44:51  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
- 15-Nov-24 10:44:51  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 10:44:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/11" 200 None 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Nov-24 10:44:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/artifactory-server/manifests/release-1.3.x HTTP/11" 200 8689 
- 15-Nov-24 10:44:51  INFO   
- 15-Nov-24 10:44:51  INFO  [ mosipdev2/artifactory-server ]  
- 15-Nov-24 10:44:51  INFO  Destination Image = "mosipdev2/artifactory-server" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:aceba9cec2aafed5cd28614d53dc7a601bc835909ef0a0dcda3fc88e35355b87" 
- 15-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 10:44:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/11" 200 None 
- 15-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Nov-24 10:44:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/artifactory-server/tags/release-1.3.x HTTP/11" 200 831 
- 15-Nov-24 10:44:52  INFO   
- 15-Nov-24 10:44:52  INFO  ******************** HASH Operation Results ********************************************************************** 
- 15-Nov-24 10:44:52  INFO   
- 15-Nov-24 10:44:52  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 15-Nov-24 10:44:52  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 15-Nov-24 10:44:52  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 15-Nov-24 10:44:52  DEBUG  Found 'auths' section 
- 15-Nov-24 10:44:52  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 15-Nov-24 10:44:52  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 15-Nov-24 10:44:52  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 10:44:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 10:44:52  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 15-Nov-24 10:44:52  INFO   
- 15-Nov-24 10:44:52  INFO  ********** [ mosipdev2/artifactory-server:release-1.3.x ] **************************************************** 
- 15-Nov-24 10:44:52  INFO   
- 15-Nov-24 10:44:52  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.3.x ]  
- 15-Nov-24 10:44:52  DEBUG  Looking for auth config 
- 15-Nov-24 10:44:52  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 10:44:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 10:44:52  DEBUG  Found auth config 
- 15-Nov-24 10:44:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fartifactory-server HTTP/11" 200 None 
- 15-Nov-24 10:45:35  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.3.x 
- 15-Nov-24 10:45:35  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/11" 201 0 
- 15-Nov-24 10:45:35  INFO   
- 15-Nov-24 10:45:35  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x ]  
- 15-Nov-24 10:45:35  DEBUG  Looking for auth config 
- 15-Nov-24 10:45:35  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 10:45:35  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 10:45:35  DEBUG  Found auth config 
- 15-Nov-24 10:45:35  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=release-1.3.x HTTP/11" 200 None 
- 15-Nov-24 10:45:39  INFO  release-1.3.x: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
- 15-Nov-24 10:45:39  INFO   
- 15-Nov-24 10:45:39  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:latest ]  
- 15-Nov-24 10:45:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/11" 201 0 
- 15-Nov-24 10:45:39  DEBUG  Looking for auth config 
- 15-Nov-24 10:45:39  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 10:45:39  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 10:45:39  DEBUG  Found auth config 
- 15-Nov-24 10:45:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=latest HTTP/11" 200 None 
- 15-Nov-24 10:45:40  INFO  latest: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 449 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 174 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 450 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 60 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Alatest%22%5D%7D HTTP/11" 200 443 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 15-Nov-24 10:45:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:latest?force=False&noprune=False HTTP/11" 200 None 
- 15-Nov-24 10:45:40  INFO  Completed mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x 
+ 15-Nov-24 11:38:49  INFO  LOGFILE CREATED : vidivi.log 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** Check Images List ************************************************************************************ 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  IMAGES= [['mosipdev/registration-processor-landing-zone:release-1.3.x', 'release-1.3.x']] 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  src = "mosipdev/registration-processor-landing-zone" tag = "release-1.3.x" 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-landing-zone:pull HTTP/11" 200 None 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 15-Nov-24 11:38:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-landing-zone/tags/release-1.3.x HTTP/11" 200 770 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 15-Nov-24 11:38:49  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
+ 15-Nov-24 11:38:49  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-landing-zone:pull HTTP/11" 200 None 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 15-Nov-24 11:38:49  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-landing-zone/manifests/release-1.3.x HTTP/11" 404 107 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  [ mosipdev2/registration-processor-landing-zone ]  
+ 15-Nov-24 11:38:49  INFO  Destination Image = "mosipdev2/registration-processor-landing-zone" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-landing-zone:pull HTTP/11" 200 None 
+ 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 15-Nov-24 11:38:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-landing-zone/tags/release-1.3.x HTTP/11" 404 168 
+ 15-Nov-24 11:38:49  ERROR  Image "mosipdev2/registration-processor-landing-zone:release-1.3.x" does not exist 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/registration-processor-landing-zone:release-1.3.x']] 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 15-Nov-24 11:38:49  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 15-Nov-24 11:38:49  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 15-Nov-24 11:38:49  DEBUG  Found 'auths' section 
+ 15-Nov-24 11:38:49  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 15-Nov-24 11:38:49  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 15-Nov-24 11:38:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Nov-24 11:38:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Nov-24 11:38:49  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  ********** [ mosipdev2/registration-processor-landing-zone:release-1.3.x ] **************************************************** 
+ 15-Nov-24 11:38:49  INFO   
+ 15-Nov-24 11:38:49  INFO  [ PULL ----------------------> mosipdev/registration-processor-landing-zone:release-1.3.x ]  
+ 15-Nov-24 11:38:49  DEBUG  Looking for auth config 
+ 15-Nov-24 11:38:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Nov-24 11:38:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Nov-24 11:38:49  DEBUG  Found auth config 
+ 15-Nov-24 11:38:49  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-landing-zone HTTP/11" 200 None 
+ 15-Nov-24 11:39:02  INFO  Status: Downloaded newer image for mosipdev/registration-processor-landing-zone:release-1.3.x 
+ 15-Nov-24 11:39:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-landing-zone&force=1 HTTP/11" 201 0 
+ 15-Nov-24 11:39:02  INFO   
+ 15-Nov-24 11:39:02  INFO  [ PUSH -----> mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:release-1.3.x ]  
+ 15-Nov-24 11:39:02  DEBUG  Looking for auth config 
+ 15-Nov-24 11:39:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Nov-24 11:39:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Nov-24 11:39:02  DEBUG  Found auth config 
+ 15-Nov-24 11:39:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-landing-zone/push?tag=release-1.3.x HTTP/11" 200 None 
+ 15-Nov-24 11:39:04  INFO  release-1.3.x: digest: sha256:859e15818853eb84657af1bb47c63d79ec64dfc033b35f09d42b9172621ce940 size: 2418 
+ 15-Nov-24 11:39:04  INFO   
+ 15-Nov-24 11:39:04  INFO  [ PUSH -----> mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:latest ]  
+ 15-Nov-24 11:39:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-landing-zone&force=1 HTTP/11" 201 0 
+ 15-Nov-24 11:39:04  DEBUG  Looking for auth config 
+ 15-Nov-24 11:39:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Nov-24 11:39:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Nov-24 11:39:04  DEBUG  Found auth config 
+ 15-Nov-24 11:39:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-landing-zone/push?tag=latest HTTP/11" 200 None 
+ 15-Nov-24 11:39:05  INFO  latest: digest: sha256:859e15818853eb84657af1bb47c63d79ec64dfc033b35f09d42b9172621ce940 size: 2418 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-landing-zone%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 400 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x?force=False&noprune=False HTTP/11" 200 208 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-landing-zone%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 401 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-landing-zone:release-1.3.x?force=False&noprune=False HTTP/11" 200 77 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-landing-zone%3Alatest%22%5D%7D HTTP/11" 200 394 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
+ 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-landing-zone:latest?force=False&noprune=False HTTP/11" 200 1063 
+ 15-Nov-24 11:39:05  INFO  Completed mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:release-1.3.x 
