@@ -18,6 +18,9 @@ on:
       BASE:
         description: 'base branch for PR'
         required: true
+      COMMIT_MESSAGE:
+        description: 'commit message'
+        required: true
 jobs:
   maven-release-preparation:
     uses: mosip/kattu/.github/workflows/release-changes.yml@master
@@ -27,6 +30,7 @@ jobs:
       RELEASE_TAG: ${{ inputs.RELEASE_TAG }}
       SNAPSHOT_TAG: ${{ inputs.SNAPSHOT_TAG }}
       BASE: ${{ inputs.BASE }}
+      COMMIT_MESSAGE: ${{ inputs.COMMIT_MESSAGE }}
     secrets:
       ACTION_PAT: ${{ secrets.ACTION_PAT }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MOSIP_WEBHOOK_URL }}
