@@ -1,85 +1,136 @@
- 15-Nov-24 11:38:49  INFO  LOGFILE CREATED : vidivi.log 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** Check Images List ************************************************************************************ 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  IMAGES= [['mosipdev/registration-processor-landing-zone:release-1.3.x', 'release-1.3.x']] 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  src = "mosipdev/registration-processor-landing-zone" tag = "release-1.3.x" 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-landing-zone:pull HTTP/11" 200 None 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Nov-24 11:38:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-landing-zone/tags/release-1.3.x HTTP/11" 200 770 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 15-Nov-24 11:38:49  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
- 15-Nov-24 11:38:49  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-landing-zone:pull HTTP/11" 200 None 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Nov-24 11:38:49  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-processor-landing-zone/manifests/release-1.3.x HTTP/11" 404 107 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  [ mosipdev2/registration-processor-landing-zone ]  
- 15-Nov-24 11:38:49  INFO  Destination Image = "mosipdev2/registration-processor-landing-zone" Destination Image tag = "release-1.3.x" IMAGE_ID :  
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Nov-24 11:38:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-processor-landing-zone:pull HTTP/11" 200 None 
- 15-Nov-24 11:38:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Nov-24 11:38:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-processor-landing-zone/tags/release-1.3.x HTTP/11" 404 168 
- 15-Nov-24 11:38:49  ERROR  Image "mosipdev2/registration-processor-landing-zone:release-1.3.x" does not exist 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** HASH Operation Results ********************************************************************** 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/registration-processor-landing-zone:release-1.3.x']] 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 15-Nov-24 11:38:49  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 15-Nov-24 11:38:49  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 15-Nov-24 11:38:49  DEBUG  Found 'auths' section 
- 15-Nov-24 11:38:49  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 15-Nov-24 11:38:49  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 15-Nov-24 11:38:49  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 11:38:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 11:38:49  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  ********** [ mosipdev2/registration-processor-landing-zone:release-1.3.x ] **************************************************** 
- 15-Nov-24 11:38:49  INFO   
- 15-Nov-24 11:38:49  INFO  [ PULL ----------------------> mosipdev/registration-processor-landing-zone:release-1.3.x ]  
- 15-Nov-24 11:38:49  DEBUG  Looking for auth config 
- 15-Nov-24 11:38:49  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 11:38:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 11:38:49  DEBUG  Found auth config 
- 15-Nov-24 11:38:49  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-landing-zone HTTP/11" 200 None 
- 15-Nov-24 11:39:02  INFO  Status: Downloaded newer image for mosipdev/registration-processor-landing-zone:release-1.3.x 
- 15-Nov-24 11:39:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-processor-landing-zone&force=1 HTTP/11" 201 0 
- 15-Nov-24 11:39:02  INFO   
- 15-Nov-24 11:39:02  INFO  [ PUSH -----> mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:release-1.3.x ]  
- 15-Nov-24 11:39:02  DEBUG  Looking for auth config 
- 15-Nov-24 11:39:02  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 11:39:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 11:39:02  DEBUG  Found auth config 
- 15-Nov-24 11:39:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-landing-zone/push?tag=release-1.3.x HTTP/11" 200 None 
- 15-Nov-24 11:39:04  INFO  release-1.3.x: digest: sha256:859e15818853eb84657af1bb47c63d79ec64dfc033b35f09d42b9172621ce940 size: 2418 
- 15-Nov-24 11:39:04  INFO   
- 15-Nov-24 11:39:04  INFO  [ PUSH -----> mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:latest ]  
- 15-Nov-24 11:39:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-processor-landing-zone&force=1 HTTP/11" 201 0 
- 15-Nov-24 11:39:04  DEBUG  Looking for auth config 
- 15-Nov-24 11:39:04  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Nov-24 11:39:04  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Nov-24 11:39:04  DEBUG  Found auth config 
- 15-Nov-24 11:39:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-processor-landing-zone/push?tag=latest HTTP/11" 200 None 
- 15-Nov-24 11:39:05  INFO  latest: digest: sha256:859e15818853eb84657af1bb47c63d79ec64dfc033b35f09d42b9172621ce940 size: 2418 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-landing-zone%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 400 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-landing-zone:release-1.3.x?force=False&noprune=False HTTP/11" 200 208 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-landing-zone%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 401 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-landing-zone:release-1.3.x?force=False&noprune=False HTTP/11" 200 77 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-processor-landing-zone%3Alatest%22%5D%7D HTTP/11" 200 394 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:22c16c4c1dba0c37511d88c02ef9f7ec9a5f17b2fe4aea7eae3ae2740e39b6a8/json HTTP/11" 200 None 
- 15-Nov-24 11:39:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-processor-landing-zone:latest?force=False&noprune=False HTTP/11" 200 1063 
- 15-Nov-24 11:39:05  INFO  Completed mosipdev/registration-processor-landing-zone:release-1.3.x	------> mosipdev2/registration-processor-landing-zone:release-1.3.x 
+ 18-Nov-24 10:44:51  INFO  LOGFILE CREATED : vidivi.log 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  ******************** Check Images List ************************************************************************************ 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  IMAGES= [['mosipdev/compliance-toolkit-service:release-1.4.0', '1.4.0'], ['mosipdev/compliance-toolkit-ui:release-1.4.0', '1.4.0']] 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  src = "mosipdev/compliance-toolkit-service" tag = "release-1.4.0" 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-service:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Nov-24 10:44:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-service/tags/release-1.4.0 HTTP/11" 200 770 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  src = "mosipdev/compliance-toolkit-ui" tag = "release-1.4.0" 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-ui:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Nov-24 10:44:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-ui/tags/release-1.4.0 HTTP/11" 200 818 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 18-Nov-24 10:44:51  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 18-Nov-24 10:44:51  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 18-Nov-24 10:44:51  INFO   
+ 18-Nov-24 10:44:51  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-service:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 18-Nov-24 10:44:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-service/manifests/1.4.0 HTTP/11" 200 2847 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  [ mosipqa/compliance-toolkit-service ]  
+ 18-Nov-24 10:44:52  INFO  Destination Image = "mosipqa/compliance-toolkit-service" Destination Image tag = "1.4.0" IMAGE_ID : "sha256:9a1c5d525ece49b35b83fcb19c9e9173b2bd846a454e59cb38764d4367e28e08" 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-service:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Nov-24 10:44:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-service/tags/1.4.0 HTTP/11" 200 816 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 18-Nov-24 10:44:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-ui/manifests/1.4.0 HTTP/11" 200 2822 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  [ mosipqa/compliance-toolkit-ui ]  
+ 18-Nov-24 10:44:52  INFO  Destination Image = "mosipqa/compliance-toolkit-ui" Destination Image tag = "1.4.0" IMAGE_ID : "sha256:1ae20ec4b234cd67a32fc20358d4329bf63541075edff66050ebb803f545b54c" 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Nov-24 10:44:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/11" 200 None 
+ 18-Nov-24 10:44:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Nov-24 10:44:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-ui/tags/1.4.0 HTTP/11" 200 809 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 18-Nov-24 10:44:52  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 18-Nov-24 10:44:52  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 18-Nov-24 10:44:52  DEBUG  Found 'auths' section 
+ 18-Nov-24 10:44:52  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 18-Nov-24 10:44:52  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 18-Nov-24 10:44:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:44:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:44:52  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  ********** [ mosipqa/compliance-toolkit-service:1.4.0 ] **************************************************** 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  [ PULL ----------------------> mosipdev/compliance-toolkit-service:release-1.4.0 ]  
+ 18-Nov-24 10:44:52  DEBUG  Looking for auth config 
+ 18-Nov-24 10:44:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:44:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:44:52  DEBUG  Found auth config 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  ********** [ mosipqa/compliance-toolkit-ui:1.4.0 ] **************************************************** 
+ 18-Nov-24 10:44:52  INFO   
+ 18-Nov-24 10:44:52  INFO  [ PULL ----------------------> mosipdev/compliance-toolkit-ui:release-1.4.0 ]  
+ 18-Nov-24 10:44:52  DEBUG  Looking for auth config 
+ 18-Nov-24 10:44:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:44:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:44:52  DEBUG  Found auth config 
+ 18-Nov-24 10:44:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.4.0&fromImage=mosipdev%2Fcompliance-toolkit-service HTTP/11" 200 None 
+ 18-Nov-24 10:44:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.4.0&fromImage=mosipdev%2Fcompliance-toolkit-ui HTTP/11" 200 None 
+ 18-Nov-24 10:45:03  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-ui:release-1.4.0 
+ 18-Nov-24 10:45:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=1.4.0&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/11" 201 0 
+ 18-Nov-24 10:45:03  INFO   
+ 18-Nov-24 10:45:03  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:1.4.0 ]  
+ 18-Nov-24 10:45:03  DEBUG  Looking for auth config 
+ 18-Nov-24 10:45:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:45:03  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:45:03  DEBUG  Found auth config 
+ 18-Nov-24 10:45:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-ui/push?tag=1.4.0 HTTP/11" 200 None 
+ 18-Nov-24 10:45:05  INFO  1.4.0: digest: sha256:7277a604ee3b4dc4ecc03a4adb28d72ef8d44d6574edaced9e3bfc13cc885cd7 size: 2822 
+ 18-Nov-24 10:45:05  INFO   
+ 18-Nov-24 10:45:05  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:latest ]  
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=latest&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/11" 201 0 
+ 18-Nov-24 10:45:05  DEBUG  Looking for auth config 
+ 18-Nov-24 10:45:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:45:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:45:05  DEBUG  Found auth config 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-ui/push?tag=latest HTTP/11" 200 None 
+ 18-Nov-24 10:45:05  INFO  latest: digest: sha256:7277a604ee3b4dc4ecc03a4adb28d72ef8d44d6574edaced9e3bfc13cc885cd7 size: 2822 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcompliance-toolkit-ui%3Arelease-1.4.0%22%5D%7D HTTP/11" 200 451 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:cd613237cb9e1464b5163e4f35c14e3983e0f1b52bffff1d8e88cd2b3d382326/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0?force=False&noprune=False HTTP/11" 200 180 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-ui%3A1.4.0%22%5D%7D HTTP/11" 200 442 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:cd613237cb9e1464b5163e4f35c14e3983e0f1b52bffff1d8e88cd2b3d382326/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-ui:1.4.0?force=False&noprune=False HTTP/11" 200 53 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-ui%3Alatest%22%5D%7D HTTP/11" 200 443 
+ 18-Nov-24 10:45:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:cd613237cb9e1464b5163e4f35c14e3983e0f1b52bffff1d8e88cd2b3d382326/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-ui:latest?force=False&noprune=False HTTP/11" 200 1289 
+ 18-Nov-24 10:45:06  INFO  Completed mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:1.4.0 
+ 18-Nov-24 10:45:16  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-service:release-1.4.0 
+ 18-Nov-24 10:45:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-service:release-1.4.0/tag?tag=1.4.0&repo=mosipqa%2Fcompliance-toolkit-service&force=1 HTTP/11" 201 0 
+ 18-Nov-24 10:45:16  INFO   
+ 18-Nov-24 10:45:16  INFO  [ PUSH -----> mosipdev/compliance-toolkit-service:release-1.4.0	------> mosipqa/compliance-toolkit-service:1.4.0 ]  
+ 18-Nov-24 10:45:16  DEBUG  Looking for auth config 
+ 18-Nov-24 10:45:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:45:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:45:16  DEBUG  Found auth config 
+ 18-Nov-24 10:45:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-service/push?tag=1.4.0 HTTP/11" 200 None 
+ 18-Nov-24 10:45:17  INFO  1.4.0: digest: sha256:168b7370844ef95d0d6cfd7ed5df4c0cbae43e2c0440fe77db99eee2e0a554d7 size: 2847 
+ 18-Nov-24 10:45:17  INFO   
+ 18-Nov-24 10:45:17  INFO  [ PUSH -----> mosipdev/compliance-toolkit-service:release-1.4.0	------> mosipqa/compliance-toolkit-service:latest ]  
+ 18-Nov-24 10:45:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-service:release-1.4.0/tag?tag=latest&repo=mosipqa%2Fcompliance-toolkit-service&force=1 HTTP/11" 201 0 
+ 18-Nov-24 10:45:17  DEBUG  Looking for auth config 
+ 18-Nov-24 10:45:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Nov-24 10:45:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Nov-24 10:45:17  DEBUG  Found auth config 
+ 18-Nov-24 10:45:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-service/push?tag=latest HTTP/11" 200 None 
+ 18-Nov-24 10:45:18  INFO  latest: digest: sha256:168b7370844ef95d0d6cfd7ed5df4c0cbae43e2c0440fe77db99eee2e0a554d7 size: 2847 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcompliance-toolkit-service%3Arelease-1.4.0%22%5D%7D HTTP/11" 200 392 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78efcc4a0f3bb27fe69da5f517a6c3d184e67e5ae8813eea16fd81fddc7c5452/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/compliance-toolkit-service:release-1.4.0?force=False&noprune=False HTTP/11" 200 190 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-service%3A1.4.0%22%5D%7D HTTP/11" 200 383 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78efcc4a0f3bb27fe69da5f517a6c3d184e67e5ae8813eea16fd81fddc7c5452/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-service:1.4.0?force=False&noprune=False HTTP/11" 200 58 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-service%3Alatest%22%5D%7D HTTP/11" 200 384 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:78efcc4a0f3bb27fe69da5f517a6c3d184e67e5ae8813eea16fd81fddc7c5452/json HTTP/11" 200 None 
+ 18-Nov-24 10:45:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-service:latest?force=False&noprune=False HTTP/11" 200 1299 
+ 18-Nov-24 10:45:18  INFO  Completed mosipdev/compliance-toolkit-service:release-1.4.0	------> mosipqa/compliance-toolkit-service:1.4.0 
