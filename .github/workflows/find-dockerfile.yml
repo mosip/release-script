@@ -27,71 +27,75 @@ jobs:
         run: |
           USERNAME=${{ github.event.inputs.username }}
           BRANCH=${{ github.event.inputs.branch }}
-          
+
           # Fetch repositories of the user (with pagination for larger numbers of repos)
           repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/users/$USERNAME/repos?per_page=100&page=1")
-          
+
           # Parse repository names and store them in a file
           echo "$repos" | jq -r '.[].full_name' > repos_list.txt
 
           # Initialize results file with a header
           echo "Dockerfile Check Results for $USERNAME on Branch $BRANCH" > results.txt
 
-          # Check for each repository if Dockerfile exists in any directory on the specified branch
+          # Check each repository for Dockerfile
           while IFS= read -r repo; do
             echo "Checking repository: $repo on branch: $BRANCH..."
-            page=1
-            dockerfile_found_in_repo=false
 
-            # Loop through paginated files (to check all directories and subdirectories)
+            # Variables to track if Dockerfile is found in this repo
+            dockerfile_found_in_repo=false
+            branch_found=false
+            page=1
+
+            # Loop through all the pages (if the repo has too many files)
             while : ; do
-              # Fetch the file tree recursively for the repository and branch
+              # Get tree of the repo at the specified branch
               response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
 
-              # Handle empty or null responses gracefully
-              if [ -z "$response" ]; then
-                echo "Error: Empty or null response from API for $repo on branch $BRANCH. Skipping this repository."
-                echo "$repo: Error - Empty response" >> results.txt
-                break  # Skip to next repository
-              fi
-
-              # Handle branch not found error in API response
+              # Check if the branch exists
               if echo "$response" | grep -q '"message": "Branch not found"'; then
-                echo "Branch $BRANCH NOT found in $repo. Skipping to next repository."
+                # Log branch not found and skip this repo
+                echo "Branch $BRANCH NOT found in $repo. Skipping this repository."
                 echo "$repo: Branch $BRANCH NOT found" >> results.txt
-                break  # Skip to next repository
+                branch_found=true
+                break
               fi
 
-              # Check if the response contains any files with "Dockerfile" in their path
-              file_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
-
-              if [[ -n "$file_paths" ]]; then
-                if [ "$dockerfile_found_in_repo" = false ]; then
-                  echo "Dockerfile(s) found in $repo at: $file_paths on branch: $BRANCH."
-                  echo "$repo: FOUND at $file_paths" >> results.txt
-                  dockerfile_found_in_repo=true
-                else
-                  # If multiple Dockerfiles are found, log their paths
-                  echo "Additional Dockerfile(s) found in $repo at: $file_paths on branch: $BRANCH."
-                  echo "$repo: FOUND at $file_paths" >> results.txt
-                fi
-              fi
-
-              # If no more files or directories are found, break out of the pagination loop
+              # If no files are found, break the loop
               if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
                 break
               fi
 
-              # Continue to the next page if Dockerfile not found
+              # Look for Dockerfile in the directories
+              dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
+
+              if [[ -n "$dockerfile_paths" ]]; then
+                # Loop through all found Dockerfile paths
+                for path in $dockerfile_paths; do
+                  if [ "$dockerfile_found_in_repo" = false ]; then
+                    # Log the first Dockerfile found in this repo
+                    echo "Dockerfile found in $repo at $path on branch: $BRANCH."
+                    echo "$repo: FOUND at $path" >> results.txt
+                    dockerfile_found_in_repo=true
+                  else
+                    # If a Dockerfile is found in a new directory, log it
+                    echo "Additional Dockerfile found in $repo at $path on branch: $BRANCH."
+                    echo "$repo: FOUND at $path" >> results.txt
+                  fi
+                done
+                # Exit pagination loop once a Dockerfile is found
+                break
+              fi
+
+              # Continue to the next page if Dockerfile is not found yet
               ((page++))
             done
 
-            # If no Dockerfile was found in the entire repo
-            if [ "$dockerfile_found_in_repo" = false ]; then
+            # If no Dockerfile was found and branch was found, log it
+            if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
               echo "Dockerfile NOT found in $repo on branch: $BRANCH."
               echo "$repo: NOT FOUND" >> results.txt
             fi
