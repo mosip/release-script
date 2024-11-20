@@ -52,7 +52,7 @@ jobs:
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
 
-              # Check if response is null or empty
+              # Handle empty or null responses gracefully
               if [ -z "$response" ]; then
                 echo "Error: Empty or null response from API for $repo on branch $BRANCH. Skipping this repository."
                 echo "$repo: Error - Empty response" >> results.txt
@@ -66,7 +66,7 @@ jobs:
                 break  # Skip to next repository
               fi
 
-              # Check if the response contains any files
+              # Check if the response contains any files with "Dockerfile" in their path
               file_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
 
               if [[ -n "$file_paths" ]]; then
