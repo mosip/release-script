@@ -13,6 +13,8 @@ on:
 jobs:
   get-repos:
     runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.get-repos.outputs.repos }}
 
     steps:
       - name: Install jq
@@ -33,9 +35,6 @@ jobs:
             repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
               -H "Accept: application/vnd.github.v3+json" \
               "https://api.github.com/users/$USERNAME/repos?per_page=100&page=$page")
-
-            # Debug: Print the raw JSON response
-            echo "Raw API Response: $repos"
 
             # Check if the response is a valid JSON array
             if echo "$repos" | jq empty; then
@@ -64,8 +63,9 @@ jobs:
             ((page++))
           done
 
-          # Output the list of repos to be used in the next steps (as a valid JSON array)
-          echo "repos=[\"$(echo $REPO_LIST | sed 's/ /", "/g')\"]" >> $GITHUB_ENV
+          # Output the list of repos as a string to be used by next job
+          echo "repos=$REPO_LIST" >> $GITHUB_ENV
+          echo "::set-output name=repos::$REPO_LIST"
 
   check-dockerfile:
     needs: get-repos
@@ -73,7 +73,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        repo: ${{ fromJson(env.repos) }}
+        repo: ${{ fromJson(needs.get-repos.outputs.repos) }}
 
     steps:
       - name: Check Dockerfile in repository
