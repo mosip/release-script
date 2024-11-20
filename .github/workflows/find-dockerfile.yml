@@ -19,6 +19,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
+
       - name: Get repositories for the GitHub user
         id: get-repos
         run: |
@@ -32,8 +33,10 @@ jobs:
             repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
               -H "Accept: application/vnd.github.v3+json" \
               "https://api.github.com/users/$USERNAME/repos?per_page=100&page=$page")
+
             # Debug: Print the raw JSON response
             echo "Raw API Response: $repos"
+
             # Check if the response is a valid JSON array
             if echo "$repos" | jq empty; then
               echo "Valid JSON response"
@@ -41,23 +44,36 @@ jobs:
               echo "Invalid JSON response or error in API request"
               exit 1
             fi
+
             # Parse repository names and collect them
             repos_page=$(echo "$repos" | jq -r '.[].full_name')
+
             if [[ -z "$repos_page" ]]; then
               break
             fi
-            REPO_LIST="$REPO_LIST $repos_page"
+
+            # Filter out any invalid repos (skip if empty or incorrectly formatted)
+            for repo in $repos_page; do
+              if [[ $repo =~ ^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$ ]]; then
+                REPO_LIST="$REPO_LIST $repo"
+              else
+                echo "Skipping invalid repo: $repo"
+              fi
+            done
+
             ((page++))
           done
-          # Output the list of repos to be used in the next steps
-          echo "repos=$REPO_LIST" >> $GITHUB_ENV
+
+          # Output the list of repos to be used in the next steps (as a valid JSON array)
+          echo "repos=[\"$(echo $REPO_LIST | sed 's/ /", "/g')\"]" >> $GITHUB_ENV
+
   check-dockerfile:
     needs: get-repos
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        repo: ${{ fromJson(needs.get-repos.outputs.repos) }}
+        repo: ${{ fromJson(env.repos) }}
 
     steps:
       - name: Check Dockerfile in repository
@@ -65,11 +81,14 @@ jobs:
           REPO=${{ matrix.repo }}
           USERNAME=${{ github.event.inputs.username }}
           BRANCH=${{ github.event.inputs.branch }}
+
           echo "Checking repository: $REPO on branch: $BRANCH..."
+
           # Variables to track if Dockerfile is found in this repo
           dockerfile_found_in_repo=false
           branch_found=false
           page=1
+
           # Loop through all the pages (if the repo has too many files)
           while : ; do
             # Get tree of the repo at the specified branch (limit to 3 levels of directories)
@@ -85,12 +104,15 @@ jobs:
               branch_found=true
               break
             fi
+
             # If no files are found, break the loop
             if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
               break
             fi
+
             # Look for Dockerfile in the main directory and its 2 subdirectories
             dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("^([^/]+/[^/]+)?/Dockerfile$")) | .path')
+
             if [[ -n "$dockerfile_paths" ]]; then
               for path in $dockerfile_paths; do
                 if [ "$dockerfile_found_in_repo" = false ]; then
@@ -106,13 +128,16 @@ jobs:
               done
               break
             fi
+
             # Continue to the next page if Dockerfile is not found yet
             ((page++))
           done
+
           # If no Dockerfile was found and branch was found, log it
           if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
             echo "Dockerfile NOT found in $REPO on branch: $BRANCH."
             echo "$REPO: NOT FOUND" >> results.txt
+
       # Upload results to GitHub artifact
       - name: Upload results
         uses: actions/upload-artifact@v3
