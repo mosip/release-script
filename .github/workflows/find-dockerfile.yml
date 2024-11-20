@@ -11,133 +11,79 @@ on:
         required: true
 
 jobs:
-  get-repos:
+  check-repos:
     runs-on: ubuntu-latest
-    outputs:
-      repos: ${{ steps.get-repos.outputs.repos }}
 
     steps:
+      # Install jq (for parsing JSON)
       - name: Install jq
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
-
+      # Fetch all repositories of the GitHub user
       - name: Get repositories for the GitHub user
         id: get-repos
         run: |
           USERNAME=${{ github.event.inputs.username }}
           BRANCH=${{ github.event.inputs.branch }}
-          
-          # Fetch all repositories with pagination (support for > 100 repos)
-          page=1
-          REPO_LIST=""
-          while : ; do
-            repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/users/$USERNAME/repos?per_page=100&page=$page")
-
-            # Check if the response is a valid JSON array
-            if echo "$repos" | jq empty; then
-              echo "Valid JSON response"
-            else
-              echo "Invalid JSON response or error in API request"
-              exit 1
-            fi
-
-            # Parse repository names and collect them
-            repos_page=$(echo "$repos" | jq -r '.[].full_name')
-
-            if [[ -z "$repos_page" ]]; then
-              break
-            fi
-
-            # Filter out any invalid repos (skip if empty or incorrectly formatted)
-            for repo in $repos_page; do
-              if [[ $repo =~ ^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$ ]]; then
-                REPO_LIST="$REPO_LIST $repo"
-              else
-                echo "Skipping invalid repo: $repo"
+          # Fetch repositories of the user (with pagination for larger numbers of repos)
+          repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/users/$USERNAME/repos?per_page=100&page=1")
+          # Parse repository names and store them in a file
+          echo "$repos" | jq -r '.[].full_name' > repos_list.txt
+          # Initialize results file with a header
+          echo "Dockerfile Check Results for $USERNAME on Branch $BRANCH" > results.txt
+          # Check each repository for Dockerfile
+          while IFS= read -r repo; do
+            echo "Checking repository: $repo on branch: $BRANCH..."
+            # Variables to track if Dockerfile is found in this repo
+            dockerfile_found_in_repo=false
+            branch_found=false
+            page=1
+            # Loop through all the pages (if the repo has too many files)
+            while : ; do
+              # Get tree of the repo at the specified branch (limit to 3 levels of directories)
+              response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
+                -H "Accept: application/vnd.github.v3+json" \
+                "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
+              # Check if the branch exists
+              if echo "$response" | grep -q '"message": "Branch not found"'; then
+                # Log branch not found and skip this repo
+                echo "Branch $BRANCH NOT found in $repo. Skipping this repository."
+                echo "$repo: Branch $BRANCH NOT found" >> results.txt
+                branch_found=true
+                break
               fi
+              # If no files are found, break the loop
+              if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
+                break
+              fi
+              # Look for Dockerfile in the main directory and its 2 subdirectories
+              dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("^([^/]+/[^/]+)?/Dockerfile$")) | .path')
+              if [[ -n "$dockerfile_paths" ]]; then
+                for path in $dockerfile_paths; do
+                  if [ "$dockerfile_found_in_repo" = false ]; then
+                    # Log the first Dockerfile found in this repo
+                    echo "Dockerfile found in $repo at $path on branch: $BRANCH."
+                    echo "$repo: FOUND at $path" >> results.txt
+                    dockerfile_found_in_repo=true
+                  else
+                    # If a Dockerfile is found in a new directory, log it
+                    echo "Additional Dockerfile found in $repo at $path on branch: $BRANCH."
+                    echo "$repo: FOUND at $path" >> results.txt
+                  fi
+                done
+                break
+              fi
+              ((page++))
             done
-
-            ((page++))
-          done
-
-          # Output the list of repos as a string to be used by next job
-          echo "repos=$REPO_LIST" >> $GITHUB_ENV
-          echo "::set-output name=repos::$REPO_LIST"
-
-  check-dockerfile:
-    needs: get-repos
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        repo: ${{ fromJson(needs.get-repos.outputs.repos) }}
-
-    steps:
-      - name: Check Dockerfile in repository
-        run: |
-          REPO=${{ matrix.repo }}
-          USERNAME=${{ github.event.inputs.username }}
-          BRANCH=${{ github.event.inputs.branch }}
-
-          echo "Checking repository: $REPO on branch: $BRANCH..."
-
-          # Variables to track if Dockerfile is found in this repo
-          dockerfile_found_in_repo=false
-          branch_found=false
-          page=1
-
-          # Loop through all the pages (if the repo has too many files)
-          while : ; do
-            # Get tree of the repo at the specified branch (limit to 3 levels of directories)
-            response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/repos/$REPO/git/trees/$BRANCH?recursive=1&page=$page")
-            
-            # Check if the branch exists
-            if echo "$response" | grep -q '"message": "Branch not found"'; then
-              # Log branch not found and skip this repo
-              echo "Branch $BRANCH NOT found in $REPO. Skipping this repository."
-              echo "$REPO: Branch $BRANCH NOT found" >> results.txt
-              branch_found=true
-              break
+            # If no Dockerfile was found and branch was found, log it
+            if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
+              echo "Dockerfile NOT found in $repo on branch: $BRANCH."
+              echo "$repo: NOT FOUND" >> results.txt
             fi
-
-            # If no files are found, break the loop
-            if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
-              break
-            fi
-
-            # Look for Dockerfile in the main directory and its 2 subdirectories
-            dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("^([^/]+/[^/]+)?/Dockerfile$")) | .path')
-
-            if [[ -n "$dockerfile_paths" ]]; then
-              for path in $dockerfile_paths; do
-                if [ "$dockerfile_found_in_repo" = false ]; then
-                  # Log the first Dockerfile found in this repo
-                  echo "Dockerfile found in $REPO at $path on branch: $BRANCH."
-                  echo "$REPO: FOUND at $path" >> results.txt
-                  dockerfile_found_in_repo=true
-                else
-                  # If a Dockerfile is found in a new directory, log it
-                  echo "Additional Dockerfile found in $REPO at $path on branch: $BRANCH."
-                  echo "$REPO: FOUND at $path" >> results.txt
-                fi
-              done
-              break
-            fi
-
-            # Continue to the next page if Dockerfile is not found yet
-            ((page++))
-          done
-
-          # If no Dockerfile was found and branch was found, log it
-          if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
-            echo "Dockerfile NOT found in $REPO on branch: $BRANCH."
-            echo "$REPO: NOT FOUND" >> results.txt
-
+          done < repos_list.txt
       # Upload results to GitHub artifact
       - name: Upload results
         uses: actions/upload-artifact@v3
