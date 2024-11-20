@@ -61,11 +61,12 @@ jobs:
                 echo "Dockerfile found in $repo at $path on branch: $BRANCH."
                 echo "$repo: FOUND at $path" >> results.txt
                 found=true
+                break 2  # Exit both the inner and outer while loops once Dockerfile is found
               done
 
               # If there is no Dockerfile found in this page, continue to the next page
               if [[ $found == true ]]; then
-                break
+                break  # Exit the pagination loop
               fi
 
               ((page++))
