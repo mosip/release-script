@@ -1,3 +1,4 @@
+# Updated Workflow
 name: Check Dockerfile in All Repositories of a GitHub User
 
 on:
@@ -8,101 +9,61 @@ on:
         required: true
       branch:
         description: 'Branch to check for Dockerfile'
-        required: true
+        required: false # Optional to allow checking default branch
 
 jobs:
   check-repos:
     runs-on: ubuntu-latest
 
     steps:
-      # Install jq (for parsing JSON)
       - name: Install jq
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
 
-      # Fetch all repositories of the GitHub user
       - name: Get repositories for the GitHub user
         id: get-repos
         run: |
           USERNAME=${{ github.event.inputs.username }}
           BRANCH=${{ github.event.inputs.branch }}
 
-          # Fetch repositories of the user (with pagination for larger numbers of repos)
           repos=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/users/$USERNAME/repos?per_page=100&page=1")
 
-          # Parse repository names and store them in a file
           echo "$repos" | jq -r '.[].full_name' > repos_list.txt
+          echo "Dockerfile Check Results" > results.txt
 
-          # Initialize results file with a header
-          echo "Dockerfile Check Results for $USERNAME on Branch $BRANCH" > results.txt
-
-          # Check each repository for Dockerfile
           while IFS= read -r repo; do
-            echo "Checking repository: $repo on branch: $BRANCH..."
+            echo "Checking $repo..."
 
-            # Variables to track if Dockerfile is found in this repo
-            dockerfile_found_in_repo=false
-            branch_found=false
-            page=1
+            response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/$repo")
 
-            # Loop through all the pages (if the repo has too many files)
-            while : ; do
-              # Get tree of the repo at the specified branch
-              response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
-                -H "Accept: application/vnd.github.v3+json" \
-                "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
+            default_branch=$(echo "$response" | jq -r '.default_branch')
+            branch_to_check=${BRANCH:-$default_branch}
 
-              # Check if the branch exists
-              if echo "$response" | grep -q '"message": "Branch not found"'; then
-                # Log branch not found and skip this repo
-                echo "Branch $BRANCH NOT found in $repo. Skipping this repository."
-                echo "$repo: Branch $BRANCH NOT found" >> results.txt
-                branch_found=true
-                break
-              fi
+            tree_response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/$repo/git/trees/$branch_to_check?recursive=1")
 
-              # If no files are found, break the loop
-              if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
-                break
-              fi
-
-              # Look for Dockerfile in the directories
-              dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
-
-              if [[ -n "$dockerfile_paths" ]]; then
-                # Loop through all found Dockerfile paths
-                for path in $dockerfile_paths; do
-                  if [ "$dockerfile_found_in_repo" = false ]; then
-                    # Log the first Dockerfile found in this repo
-                    echo "Dockerfile found in $repo at $path on branch: $BRANCH."
-                    echo "$repo: FOUND at $path" >> results.txt
-                    dockerfile_found_in_repo=true
-                  else
-                    # If a Dockerfile is found in a new directory, log it
-                    echo "Additional Dockerfile found in $repo at $path on branch: $BRANCH."
-                    echo "$repo: FOUND at $path" >> results.txt
-                  fi
-                done
-                # Exit pagination loop once a Dockerfile is found
-                break
-              fi
-
-              # Continue to the next page if Dockerfile is not found yet
-              ((page++))
-            done
-
-            # If no Dockerfile was found and branch was found, log it
-            if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
-              echo "Dockerfile NOT found in $repo on branch: $BRANCH."
-              echo "$repo: NOT FOUND" >> results.txt
+            if echo "$tree_response" | grep -q '"message": "Branch not found"'; then
+              echo "$repo: Branch $branch_to_check NOT found." >> results.txt
+              continue
             fi
 
+            dockerfile_paths=$(echo "$tree_response" | jq -r '.tree[] | select(.path | test("(?i)Dockerfile")) | .path')
+
+            if [[ -n "$dockerfile_paths" ]]; then
+              for path in $dockerfile_paths; do
+                echo "$repo: FOUND at $path" >> results.txt
+              done
+            else
+              echo "$repo: NOT FOUND" >> results.txt
+            fi
           done < repos_list.txt
 
-      # Upload results to GitHub artifact
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
