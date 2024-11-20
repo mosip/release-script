@@ -20,6 +20,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq
+          
       # Fetch all repositories of the GitHub user
       - name: Get repositories for the GitHub user
         id: get-repos
@@ -32,21 +33,26 @@ jobs:
             "https://api.github.com/users/$USERNAME/repos?per_page=100&page=1")
           # Parse repository names and store them in a file
           echo "$repos" | jq -r '.[].full_name' > repos_list.txt
+          
           # Initialize results file with a header
           echo "Dockerfile Check Results for $USERNAME on Branch $BRANCH" > results.txt
+          
           # Check each repository for Dockerfile
           while IFS= read -r repo; do
             echo "Checking repository: $repo on branch: $BRANCH..."
+            
             # Variables to track if Dockerfile is found in this repo
             dockerfile_found_in_repo=false
             branch_found=false
             page=1
+            
             # Loop through all the pages (if the repo has too many files)
             while : ; do
               # Get tree of the repo at the specified branch (limit to 3 levels of directories)
               response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
+              
               # Check if the branch exists
               if echo "$response" | grep -q '"message": "Branch not found"'; then
                 # Log branch not found and skip this repo
@@ -55,12 +61,14 @@ jobs:
                 branch_found=true
                 break
               fi
+              
               # If no files are found, break the loop
               if [[ $(echo "$response" | jq '.tree | length') -eq 0 ]]; then
                 break
               fi
-              # Look for Dockerfile in the main directory and its 2 subdirectories
-              dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("^([^/]+/[^/]+)?/Dockerfile$")) | .path')
+              
+              # Look for Dockerfile in the repo (this regex will match any path containing Dockerfile)
+              dockerfile_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile$")) | .path')
               if [[ -n "$dockerfile_paths" ]]; then
                 for path in $dockerfile_paths; do
                   if [ "$dockerfile_found_in_repo" = false ]; then
@@ -76,14 +84,17 @@ jobs:
                 done
                 break
               fi
+              
               ((page++))
             done
+            
             # If no Dockerfile was found and branch was found, log it
             if [[ $dockerfile_found_in_repo == false && $branch_found == false ]]; then
               echo "Dockerfile NOT found in $repo on branch: $BRANCH."
               echo "$repo: NOT FOUND" >> results.txt
             fi
           done < repos_list.txt
+          
       # Upload results to GitHub artifact
       - name: Upload results
         uses: actions/upload-artifact@v3
