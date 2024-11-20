@@ -32,18 +32,19 @@ jobs:
           response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/users/$USERNAME/repos?per_page=100&page=1")
-
+          
           # Check if the response is valid JSON
           echo "$response" | jq empty
           if [ $? -ne 0 ]; then
             echo "Warning: Invalid JSON response for user $USERNAME. Skipping this request."
-            continue  # Skip to next repository if invalid JSON
+            exit 1  # Exit the workflow if the response is not valid JSON
           fi
 
           # Check if the response contains repositories
-          if echo "$response" | jq -e '. | length == 0' > /dev/null; then
+          repo_count=$(echo "$response" | jq 'length')
+          if [ "$repo_count" -eq 0 ]; then
             echo "Warning: No repositories found for user $USERNAME. Skipping."
-            continue  # Skip to next repository if no repositories are found
+            exit 1  # Exit the workflow if no repositories are found
           fi
 
           # Parse repository names and store them in a file
