@@ -47,26 +47,26 @@ jobs:
 
             # Loop through paginated files (to check all directories and subdirectories)
             while : ; do
-              # Fetch the file tree recursively
+              # Fetch the file tree recursively for the repository and branch
               response=$(curl -s -H "Authorization: Bearer ${{ secrets.ACTION_PAT }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
 
-              # Check if the response is empty or null
+              # Check if response is null or empty
               if [ -z "$response" ]; then
-                echo "Error: Empty response from API for $repo on branch $BRANCH. Skipping."
+                echo "Error: Empty or null response from API for $repo on branch $BRANCH. Skipping this repository."
                 echo "$repo: Error - Empty response" >> results.txt
                 break  # Skip to next repository
               fi
 
-              # Handle branch not found
+              # Handle branch not found error in API response
               if echo "$response" | grep -q '"message": "Branch not found"'; then
-                echo "Branch $BRANCH NOT found in $repo. Skipping to next repo."
+                echo "Branch $BRANCH NOT found in $repo. Skipping to next repository."
                 echo "$repo: Branch $BRANCH NOT found" >> results.txt
                 break  # Skip to next repository
               fi
 
-              # Check for files in the repository and search for Dockerfile
+              # Check if the response contains any files
               file_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
 
               if [[ -n "$file_paths" ]]; then
@@ -75,7 +75,7 @@ jobs:
                   echo "$repo: FOUND at $file_paths" >> results.txt
                   dockerfile_found_in_repo=true
                 else
-                  # If more than one Dockerfile is found, log them
+                  # If multiple Dockerfiles are found, log their paths
                   echo "Additional Dockerfile(s) found in $repo at: $file_paths on branch: $BRANCH."
                   echo "$repo: FOUND at $file_paths" >> results.txt
                 fi
