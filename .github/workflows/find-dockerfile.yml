@@ -52,13 +52,14 @@ jobs:
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
 
-              # Check if the response is empty or null
+              # Check if the response is null (branch not found or no files)
               if [[ "$response" == "null" || -z "$response" ]]; then
-                echo "No content found in $repo on branch $BRANCH."
-                break
+                echo "Branch $BRANCH NOT found in $repo. Skipping to next repo."
+                echo "$repo: Branch $BRANCH NOT found" >> results.txt
+                break  # Skip to the next repository
               fi
 
-              # Check if the branch exists in the repo
+              # Check for branch not found in the response message
               if echo "$response" | grep -q '"message": "Branch not found"'; then
                 echo "Branch $BRANCH NOT found in $repo. Skipping to next repo."
                 echo "$repo: Branch $BRANCH NOT found" >> results.txt
