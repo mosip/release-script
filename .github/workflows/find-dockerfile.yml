@@ -52,24 +52,16 @@ jobs:
                 -H "Accept: application/vnd.github.v3+json" \
                 "https://api.github.com/repos/$repo/git/trees/$BRANCH?recursive=1&page=$page")
 
-              # Check if the response is null (branch not found or no files)
-              if [[ "$response" == "null" || -z "$response" ]]; then
-                echo "Branch $BRANCH NOT found in $repo. Skipping to next repo."
-                echo "$repo: Branch $BRANCH NOT found" >> results.txt
-                break  # Skip to the next repository
-              fi
-
-              # Check for branch not found in the response message
+              # Handle branch not found
               if echo "$response" | grep -q '"message": "Branch not found"'; then
                 echo "Branch $BRANCH NOT found in $repo. Skipping to next repo."
                 echo "$repo: Branch $BRANCH NOT found" >> results.txt
                 break  # Skip to the next repository
               fi
 
-              # Parse the tree of files and search for Dockerfile
+              # Check for files in the repository and search for Dockerfile
               file_paths=$(echo "$response" | jq -r '.tree[] | select(.path | test("Dockerfile")) | .path')
 
-              # If Dockerfile found in this repo, log the result
               if [[ -n "$file_paths" ]]; then
                 if [ "$dockerfile_found_in_repo" = false ]; then
                   echo "Dockerfile(s) found in $repo at: $file_paths on branch: $BRANCH."
