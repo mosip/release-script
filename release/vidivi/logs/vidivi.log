@@ -1,81 +1,196 @@
- 26-Nov-24 12:35:49  INFO  LOGFILE CREATED : vidivi.log 
- 26-Nov-24 12:35:49  INFO   
- 26-Nov-24 12:35:49  INFO  ******************** Check Images List ************************************************************************************ 
- 26-Nov-24 12:35:49  INFO   
- 26-Nov-24 12:35:49  INFO  IMAGES= [['mosipdev/artifactory-server:release-1.3.x', 'release-1.3.x']] 
- 26-Nov-24 12:35:49  INFO   
- 26-Nov-24 12:35:49  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 26-Nov-24 12:35:49  INFO   
- 26-Nov-24 12:35:49  INFO  src = "mosipdev/artifactory-server" tag = "release-1.3.x" 
- 26-Nov-24 12:35:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Nov-24 12:35:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/11" 200 None 
- 26-Nov-24 12:35:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 26-Nov-24 12:35:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.3.x HTTP/11" 200 820 
- 26-Nov-24 12:35:49  INFO   
- 26-Nov-24 12:35:49  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 26-Nov-24 12:35:49  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 26-Nov-24 12:35:49  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
- 26-Nov-24 12:35:50  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 26-Nov-24 12:35:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Nov-24 12:35:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/11" 200 None 
- 26-Nov-24 12:35:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 26-Nov-24 12:35:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/artifactory-server/manifests/release-1.3.x HTTP/11" 200 8689 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  [ mosipdev2/artifactory-server ]  
- 26-Nov-24 12:35:50  INFO  Destination Image = "mosipdev2/artifactory-server" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375" 
- 26-Nov-24 12:35:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Nov-24 12:35:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/11" 200 None 
- 26-Nov-24 12:35:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 26-Nov-24 12:35:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/artifactory-server/tags/release-1.3.x HTTP/11" 200 831 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  ******************** HASH Operation Results ********************************************************************** 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 26-Nov-24 12:35:50  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 26-Nov-24 12:35:50  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 26-Nov-24 12:35:50  DEBUG  Found 'auths' section 
- 26-Nov-24 12:35:50  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 26-Nov-24 12:35:50  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 26-Nov-24 12:35:50  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Nov-24 12:35:50  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Nov-24 12:35:50  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  ********** [ mosipdev2/artifactory-server:release-1.3.x ] **************************************************** 
- 26-Nov-24 12:35:50  INFO   
- 26-Nov-24 12:35:50  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.3.x ]  
- 26-Nov-24 12:35:50  DEBUG  Looking for auth config 
- 26-Nov-24 12:35:50  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Nov-24 12:35:50  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Nov-24 12:35:50  DEBUG  Found auth config 
- 26-Nov-24 12:35:50  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fartifactory-server HTTP/11" 200 None 
- 26-Nov-24 12:36:33  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.3.x 
- 26-Nov-24 12:36:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/11" 201 0 
- 26-Nov-24 12:36:33  INFO   
- 26-Nov-24 12:36:33  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x ]  
- 26-Nov-24 12:36:33  DEBUG  Looking for auth config 
- 26-Nov-24 12:36:33  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Nov-24 12:36:33  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Nov-24 12:36:33  DEBUG  Found auth config 
- 26-Nov-24 12:36:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=release-1.3.x HTTP/11" 200 None 
- 26-Nov-24 12:36:33  INFO  release-1.3.x: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
- 26-Nov-24 12:36:33  INFO   
- 26-Nov-24 12:36:33  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:latest ]  
- 26-Nov-24 12:36:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/11" 201 0 
- 26-Nov-24 12:36:33  DEBUG  Looking for auth config 
- 26-Nov-24 12:36:33  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Nov-24 12:36:33  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Nov-24 12:36:33  DEBUG  Found auth config 
- 26-Nov-24 12:36:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=latest HTTP/11" 200 None 
- 26-Nov-24 12:36:34  INFO  latest: digest: sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375 size: 8689 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 449 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 174 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 450 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 60 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Alatest%22%5D%7D HTTP/11" 200 443 
- 26-Nov-24 12:36:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:f13439d7bc4966a834667bce179d0f262ad31ce3771665f0e0931b54b922f34b/json HTTP/11" 200 None 
- 26-Nov-24 12:36:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:latest?force=False&noprune=False HTTP/11" 200 None 
- 26-Nov-24 12:36:35  INFO  Completed mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x 
+ 26-Nov-24 14:02:58  INFO  LOGFILE CREATED : vidivi.log 
+ 26-Nov-24 14:02:58  INFO   
+ 26-Nov-24 14:02:58  INFO  ******************** Check Images List ************************************************************************************ 
+ 26-Nov-24 14:02:58  INFO   
+ 26-Nov-24 14:02:58  INFO  IMAGES= [['mosipdev/mock-abis:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/mock-mv:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/kernel-bio-converter:release-1.3.x', '1.3.0-beta.1']] 
+ 26-Nov-24 14:02:58  INFO   
+ 26-Nov-24 14:02:58  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 26-Nov-24 14:02:58  INFO   
+ 26-Nov-24 14:02:58  INFO  src = "mosipdev/mock-abis" tag = "release-1.3.x" 
+ 26-Nov-24 14:02:58  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-abis:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-abis/tags/release-1.3.x HTTP/11" 200 770 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  src = "mosipdev/mock-mv" tag = "release-1.3.x" 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-mv:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-mv/tags/release-1.3.x HTTP/11" 200 769 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  src = "mosipdev/kernel-bio-converter" tag = "release-1.3.x" 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-bio-converter:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-bio-converter/tags/release-1.3.x HTTP/11" 200 770 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/11" 200 264 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/mock-abis:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/mock-abis/manifests/1.3.0-beta.1 HTTP/11" 404 106 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ mosipid/mock-abis ]  
+ 26-Nov-24 14:02:59  INFO  Destination Image = "mosipid/mock-abis" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/mock-abis:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/mock-abis/tags/1.3.0-beta.1 HTTP/11" 404 138 
+ 26-Nov-24 14:02:59  ERROR  Image "mosipid/mock-abis:1.3.0-beta.1" does not exist 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/mock-mv:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/mock-mv/manifests/1.3.0-beta.1 HTTP/11" 404 106 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ mosipid/mock-mv ]  
+ 26-Nov-24 14:02:59  INFO  Destination Image = "mosipid/mock-mv" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/mock-mv:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/mock-mv/tags/1.3.0-beta.1 HTTP/11" 404 136 
+ 26-Nov-24 14:02:59  ERROR  Image "mosipid/mock-mv:1.3.0-beta.1" does not exist 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-bio-converter:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-bio-converter/manifests/1.3.0-beta.1 HTTP/11" 404 106 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ mosipid/kernel-bio-converter ]  
+ 26-Nov-24 14:02:59  INFO  Destination Image = "mosipid/kernel-bio-converter" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-24 14:02:59  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-bio-converter:pull HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-24 14:02:59  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-bio-converter/tags/1.3.0-beta.1 HTTP/11" 404 149 
+ 26-Nov-24 14:02:59  ERROR  Image "mosipid/kernel-bio-converter:1.3.0-beta.1" does not exist 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/mock-abis:1.3.0-beta.1'], ['mosipid/mock-mv:1.3.0-beta.1'], ['mosipid/kernel-bio-converter:1.3.0-beta.1']] 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 26-Nov-24 14:02:59  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 26-Nov-24 14:02:59  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 26-Nov-24 14:02:59  DEBUG  Found 'auths' section 
+ 26-Nov-24 14:02:59  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 26-Nov-24 14:02:59  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:02:59  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:02:59  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  ********** [ mosipid/mock-abis:1.3.0-beta.1 ] **************************************************** 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ PULL ----------------------> mosipdev/mock-abis:release-1.3.x ]  
+ 26-Nov-24 14:02:59  INFO  ********** [ mosipid/mock-mv:1.3.0-beta.1 ] **************************************************** 
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth config 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ PULL ----------------------> mosipdev/mock-mv:release-1.3.x ]  
+ 26-Nov-24 14:02:59  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:02:59  INFO  ********** [ mosipid/kernel-bio-converter:1.3.0-beta.1 ] **************************************************** 
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth config 
+ 26-Nov-24 14:02:59  DEBUG  Found auth config 
+ 26-Nov-24 14:02:59  INFO   
+ 26-Nov-24 14:02:59  INFO  [ PULL ----------------------> mosipdev/kernel-bio-converter:release-1.3.x ]  
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth config 
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:02:59  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:02:59  DEBUG  Found auth config 
+ 26-Nov-24 14:02:59  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:02:59  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:02:59  DEBUG  Found auth config 
+ 26-Nov-24 14:02:59  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fmock-mv HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fmock-abis HTTP/11" 200 None 
+ 26-Nov-24 14:02:59  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-bio-converter HTTP/11" 200 None 
+ 26-Nov-24 14:03:16  INFO  Status: Downloaded newer image for mosipdev/mock-mv:release-1.3.x 
+ 26-Nov-24 14:03:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-mv:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fmock-mv&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:16  INFO   
+ 26-Nov-24 14:03:16  INFO  [ PUSH -----> mosipdev/mock-mv:release-1.3.x	------> mosipid/mock-mv:1.3.0-beta.1 ]  
+ 26-Nov-24 14:03:16  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:16  DEBUG  Found auth config 
+ 26-Nov-24 14:03:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/mock-mv/push?tag=1.3.0-beta.1 HTTP/11" 200 None 
+ 26-Nov-24 14:03:17  INFO  Status: Downloaded newer image for mosipdev/mock-abis:release-1.3.x 
+ 26-Nov-24 14:03:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-abis:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fmock-abis&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:17  INFO   
+ 26-Nov-24 14:03:17  INFO  [ PUSH -----> mosipdev/mock-abis:release-1.3.x	------> mosipid/mock-abis:1.3.0-beta.1 ]  
+ 26-Nov-24 14:03:17  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:17  DEBUG  Found auth config 
+ 26-Nov-24 14:03:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/mock-abis/push?tag=1.3.0-beta.1 HTTP/11" 200 None 
+ 26-Nov-24 14:03:18  INFO  1.3.0-beta.1: digest: sha256:eff225f0059d1f09064f7da4114949d677568d0b75915babee9f0f8c0e331e48 size: 2834 
+ 26-Nov-24 14:03:18  INFO   
+ 26-Nov-24 14:03:18  INFO  [ PUSH -----> mosipdev/mock-mv:release-1.3.x	------> mosipid/mock-mv:latest ]  
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-mv:release-1.3.x/tag?tag=latest&repo=mosipid%2Fmock-mv&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:18  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:18  DEBUG  Found auth config 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/mock-mv/push?tag=latest HTTP/11" 200 None 
+ 26-Nov-24 14:03:18  INFO  latest: digest: sha256:eff225f0059d1f09064f7da4114949d677568d0b75915babee9f0f8c0e331e48 size: 2834 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmock-mv%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 372 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5d99b650ace674f487a5ef0f0f869105e63d66295ccedc13d460924f24f4cca9/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mock-mv:release-1.3.x?force=False&noprune=False HTTP/11" 200 152 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fmock-mv%3A1.3.0-beta.1%22%5D%7D HTTP/11" 200 370 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5d99b650ace674f487a5ef0f0f869105e63d66295ccedc13d460924f24f4cca9/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/mock-mv:1.3.0-beta.1?force=False&noprune=False HTTP/11" 200 46 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fmock-mv%3Alatest%22%5D%7D HTTP/11" 200 364 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5d99b650ace674f487a5ef0f0f869105e63d66295ccedc13d460924f24f4cca9/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:18  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/mock-mv:latest?force=False&noprune=False HTTP/11" 200 831 
+ 26-Nov-24 14:03:18  INFO  Completed mosipdev/mock-mv:release-1.3.x	------> mosipid/mock-mv:1.3.0-beta.1 
+ 26-Nov-24 14:03:19  INFO  1.3.0-beta.1: digest: sha256:356593b1936d20d7a5386dbd58157f39092bcb8485b50bb03a337e9f88432eae size: 2834 
+ 26-Nov-24 14:03:19  INFO   
+ 26-Nov-24 14:03:19  INFO  [ PUSH -----> mosipdev/mock-abis:release-1.3.x	------> mosipid/mock-abis:latest ]  
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-abis:release-1.3.x/tag?tag=latest&repo=mosipid%2Fmock-abis&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:19  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:19  DEBUG  Found auth config 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/mock-abis/push?tag=latest HTTP/11" 200 None 
+ 26-Nov-24 14:03:19  INFO  latest: digest: sha256:356593b1936d20d7a5386dbd58157f39092bcb8485b50bb03a337e9f88432eae size: 2834 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmock-abis%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 374 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:69820257275a9c3c4c0dc337ba8a17b8204a5edb5d6876a32154989207b0760a/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mock-abis:release-1.3.x?force=False&noprune=False HTTP/11" 200 156 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fmock-abis%3A1.3.0-beta.1%22%5D%7D HTTP/11" 200 372 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:69820257275a9c3c4c0dc337ba8a17b8204a5edb5d6876a32154989207b0760a/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/mock-abis:1.3.0-beta.1?force=False&noprune=False HTTP/11" 200 48 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fmock-abis%3Alatest%22%5D%7D HTTP/11" 200 366 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:69820257275a9c3c4c0dc337ba8a17b8204a5edb5d6876a32154989207b0760a/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/mock-abis:latest?force=False&noprune=False HTTP/11" 200 1179 
+ 26-Nov-24 14:03:19  INFO  Completed mosipdev/mock-abis:release-1.3.x	------> mosipid/mock-abis:1.3.0-beta.1 
+ 26-Nov-24 14:03:26  INFO  Status: Downloaded newer image for mosipdev/kernel-bio-converter:release-1.3.x 
+ 26-Nov-24 14:03:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-bio-converter:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fkernel-bio-converter&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:26  INFO   
+ 26-Nov-24 14:03:26  INFO  [ PUSH -----> mosipdev/kernel-bio-converter:release-1.3.x	------> mosipid/kernel-bio-converter:1.3.0-beta.1 ]  
+ 26-Nov-24 14:03:26  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:26  DEBUG  Found auth config 
+ 26-Nov-24 14:03:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-bio-converter/push?tag=1.3.0-beta.1 HTTP/11" 200 None 
+ 26-Nov-24 14:03:27  INFO  1.3.0-beta.1: digest: sha256:8258073b1981417c552b828661a0d5b0789f12e6b7257abec3e8065a92365666 size: 1793 
+ 26-Nov-24 14:03:27  INFO   
+ 26-Nov-24 14:03:27  INFO  [ PUSH -----> mosipdev/kernel-bio-converter:release-1.3.x	------> mosipid/kernel-bio-converter:latest ]  
+ 26-Nov-24 14:03:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-bio-converter:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-bio-converter&force=1 HTTP/11" 201 0 
+ 26-Nov-24 14:03:27  DEBUG  Looking for auth config 
+ 26-Nov-24 14:03:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-24 14:03:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-24 14:03:27  DEBUG  Found auth config 
+ 26-Nov-24 14:03:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-bio-converter/push?tag=latest HTTP/11" 200 None 
+ 26-Nov-24 14:03:28  INFO  latest: digest: sha256:8258073b1981417c552b828661a0d5b0789f12e6b7257abec3e8065a92365666 size: 1793 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-bio-converter%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 474 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/sha256:197c76ce984c0479b5385fc5bc9d6c46e59f4187db48ce214fc695b40fee1acb/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-bio-converter:release-1.3.x?force=False&noprune=False HTTP/11" 200 178 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-bio-converter%3A1.3.0-beta.1%22%5D%7D HTTP/11" 200 472 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/sha256:197c76ce984c0479b5385fc5bc9d6c46e59f4187db48ce214fc695b40fee1acb/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-bio-converter:1.3.0-beta.1?force=False&noprune=False HTTP/11" 200 59 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-bio-converter%3Alatest%22%5D%7D HTTP/11" 200 466 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "GET /v1.45/images/sha256:197c76ce984c0479b5385fc5bc9d6c46e59f4187db48ce214fc695b40fee1acb/json HTTP/11" 200 None 
+ 26-Nov-24 14:03:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-bio-converter:latest?force=False&noprune=False HTTP/11" 200 857 
+ 26-Nov-24 14:03:28  INFO  Completed mosipdev/kernel-bio-converter:release-1.3.x	------> mosipid/kernel-bio-converter:1.3.0-beta.1 
