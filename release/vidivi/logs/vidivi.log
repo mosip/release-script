@@ -1,141 +1,85 @@
- 03-Dec-24 13:22:00  INFO  LOGFILE CREATED : vidivi.log 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  ******************** Check Images List ************************************************************************************ 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  IMAGES= [['mosipdev/data-archive:develop', 'develop'], ['mosipdev/mosip-opencrvs-mediator:develop', 'develop']] 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  src = "mosipdev/data-archive" tag = "develop" 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:00  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/data-archive:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:22:00  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/data-archive/tags/develop HTTP/11" 200 814 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  src = "mosipdev/mosip-opencrvs-mediator" tag = "develop" 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:00  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mosip-opencrvs-mediator:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:22:00  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mosip-opencrvs-mediator/tags/develop HTTP/11" 200 814 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 03-Dec-24 13:22:00  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 03-Dec-24 13:22:00  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 03-Dec-24 13:22:00  INFO   
- 03-Dec-24 13:22:00  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:00  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/data-archive:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:00  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 03-Dec-24 13:22:01  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/data-archive/manifests/develop HTTP/11" 401 163 
- 03-Dec-24 13:22:01  INFO   
- 03-Dec-24 13:22:01  INFO  [ mosipqa/data-archive ]  
- 03-Dec-24 13:22:01  INFO  Destination Image = "mosipqa/data-archive" Destination Image tag = "develop" IMAGE_ID :  
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/data-archive:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:22:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/data-archive/tags/develop HTTP/11" 404 124 
- 03-Dec-24 13:22:01  ERROR  Image "mosipqa/data-archive:develop" does not exist 
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-opencrvs-mediator:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 03-Dec-24 13:22:01  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mosip-opencrvs-mediator/manifests/develop HTTP/11" 401 174 
- 03-Dec-24 13:22:01  INFO   
- 03-Dec-24 13:22:01  INFO  [ mosipqa/mosip-opencrvs-mediator ]  
- 03-Dec-24 13:22:01  INFO  Destination Image = "mosipqa/mosip-opencrvs-mediator" Destination Image tag = "develop" IMAGE_ID :  
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:22:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-opencrvs-mediator:pull HTTP/11" 200 None 
- 03-Dec-24 13:22:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:22:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mosip-opencrvs-mediator/tags/develop HTTP/11" 404 135 
- 03-Dec-24 13:22:01  ERROR  Image "mosipqa/mosip-opencrvs-mediator:develop" does not exist 
- 03-Dec-24 13:22:01  INFO   
- 03-Dec-24 13:22:01  INFO  ******************** HASH Operation Results ********************************************************************** 
- 03-Dec-24 13:22:01  INFO   
- 03-Dec-24 13:22:01  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/data-archive:develop'], ['mosipqa/mosip-opencrvs-mediator:develop']] 
- 03-Dec-24 13:22:01  INFO   
- 03-Dec-24 13:22:01  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 03-Dec-24 13:22:01  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 03-Dec-24 13:22:01  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 03-Dec-24 13:22:01  DEBUG  Found 'auths' section 
- 03-Dec-24 13:22:01  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 03-Dec-24 13:22:01  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 03-Dec-24 13:22:01  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:01  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:02  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 03-Dec-24 13:22:02  INFO   
- 03-Dec-24 13:22:02  INFO  ********** [ mosipqa/data-archive:develop ] **************************************************** 
- 03-Dec-24 13:22:02  INFO   
- 03-Dec-24 13:22:02  INFO  [ PULL ----------------------> mosipdev/data-archive:develop ]  
- 03-Dec-24 13:22:02  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:02  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:02  DEBUG  Found auth config 
- 03-Dec-24 13:22:02  INFO   
- 03-Dec-24 13:22:02  INFO  ********** [ mosipqa/mosip-opencrvs-mediator:develop ] **************************************************** 
- 03-Dec-24 13:22:02  INFO   
- 03-Dec-24 13:22:02  INFO  [ PULL ----------------------> mosipdev/mosip-opencrvs-mediator:develop ]  
- 03-Dec-24 13:22:02  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:02  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:02  DEBUG  Found auth config 
- 03-Dec-24 13:22:02  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fmosip-opencrvs-mediator HTTP/11" 200 None 
- 03-Dec-24 13:22:02  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fdata-archive HTTP/11" 200 None 
- 03-Dec-24 13:22:18  INFO  Status: Downloaded newer image for mosipdev/mosip-opencrvs-mediator:develop 
- 03-Dec-24 13:22:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-opencrvs-mediator:develop/tag?tag=develop&repo=mosipqa%2Fmosip-opencrvs-mediator&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:22:18  INFO   
- 03-Dec-24 13:22:18  INFO  [ PUSH -----> mosipdev/mosip-opencrvs-mediator:develop	------> mosipqa/mosip-opencrvs-mediator:develop ]  
- 03-Dec-24 13:22:18  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:18  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:18  DEBUG  Found auth config 
- 03-Dec-24 13:22:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-opencrvs-mediator/push?tag=develop HTTP/11" 200 None 
- 03-Dec-24 13:22:21  INFO  develop: digest: sha256:73ff0732d9876860b37b3538b213c2103d899f497c21f42fe240ed06e5c2dfb0 size: 2419 
- 03-Dec-24 13:22:21  INFO   
- 03-Dec-24 13:22:21  INFO  [ PUSH -----> mosipdev/mosip-opencrvs-mediator:develop	------> mosipqa/mosip-opencrvs-mediator:latest ]  
- 03-Dec-24 13:22:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-opencrvs-mediator:develop/tag?tag=latest&repo=mosipqa%2Fmosip-opencrvs-mediator&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:22:21  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:21  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:21  DEBUG  Found auth config 
- 03-Dec-24 13:22:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-opencrvs-mediator/push?tag=latest HTTP/11" 200 None 
- 03-Dec-24 13:22:22  INFO  latest: digest: sha256:73ff0732d9876860b37b3538b213c2103d899f497c21f42fe240ed06e5c2dfb0 size: 2419 
- 03-Dec-24 13:22:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmosip-opencrvs-mediator%3Adevelop%22%5D%7D HTTP/11" 200 254 
- 03-Dec-24 13:22:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:af52fc4ddf9c40309e80c7d5f7b63854da2a083dabc688f1dcd94944f8d4c195/json HTTP/11" 200 None 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mosip-opencrvs-mediator:develop?force=False&noprune=False HTTP/11" 200 178 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-opencrvs-mediator%3Adevelop%22%5D%7D HTTP/11" 200 253 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:af52fc4ddf9c40309e80c7d5f7b63854da2a083dabc688f1dcd94944f8d4c195/json HTTP/11" 200 None 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-opencrvs-mediator:develop?force=False&noprune=False HTTP/11" 200 57 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-opencrvs-mediator%3Alatest%22%5D%7D HTTP/11" 200 252 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:af52fc4ddf9c40309e80c7d5f7b63854da2a083dabc688f1dcd94944f8d4c195/json HTTP/11" 200 None 
- 03-Dec-24 13:22:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-opencrvs-mediator:latest?force=False&noprune=False HTTP/11" 200 1121 
- 03-Dec-24 13:22:23  INFO  Completed mosipdev/mosip-opencrvs-mediator:develop	------> mosipqa/mosip-opencrvs-mediator:develop 
- 03-Dec-24 13:22:24  INFO  Status: Downloaded newer image for mosipdev/data-archive:develop 
- 03-Dec-24 13:22:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-archive:develop/tag?tag=develop&repo=mosipqa%2Fdata-archive&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:22:24  INFO   
- 03-Dec-24 13:22:24  INFO  [ PUSH -----> mosipdev/data-archive:develop	------> mosipqa/data-archive:develop ]  
- 03-Dec-24 13:22:24  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:24  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:24  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:24  DEBUG  Found auth config 
- 03-Dec-24 13:22:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/data-archive/push?tag=develop HTTP/11" 200 None 
- 03-Dec-24 13:22:29  INFO  develop: digest: sha256:5ebf13eea6fa86471198a6f1519c4736f75913938badf5316ed1ccfbe695be1e size: 4298 
- 03-Dec-24 13:22:29  INFO   
- 03-Dec-24 13:22:29  INFO  [ PUSH -----> mosipdev/data-archive:develop	------> mosipqa/data-archive:latest ]  
- 03-Dec-24 13:22:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/data-archive:develop/tag?tag=latest&repo=mosipqa%2Fdata-archive&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:22:29  DEBUG  Looking for auth config 
- 03-Dec-24 13:22:29  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:22:29  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:22:29  DEBUG  Found auth config 
- 03-Dec-24 13:22:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/data-archive/push?tag=latest HTTP/11" 200 None 
- 03-Dec-24 13:22:30  INFO  latest: digest: sha256:5ebf13eea6fa86471198a6f1519c4736f75913938badf5316ed1ccfbe695be1e size: 4298 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fdata-archive%3Adevelop%22%5D%7D HTTP/11" 200 371 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3bc4826ba3a5e1443e0aada0bd3d5c4fc73259aa455944e17d92dede7a397114/json HTTP/11" 200 None 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/data-archive:develop?force=False&noprune=False HTTP/11" 200 156 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdata-archive%3Adevelop%22%5D%7D HTTP/11" 200 370 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3bc4826ba3a5e1443e0aada0bd3d5c4fc73259aa455944e17d92dede7a397114/json HTTP/11" 200 None 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/data-archive:develop?force=False&noprune=False HTTP/11" 200 46 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdata-archive%3Alatest%22%5D%7D HTTP/11" 200 369 
- 03-Dec-24 13:22:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3bc4826ba3a5e1443e0aada0bd3d5c4fc73259aa455944e17d92dede7a397114/json HTTP/11" 200 None 
- 03-Dec-24 13:22:31  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/data-archive:latest?force=False&noprune=False HTTP/11" 200 1873 
- 03-Dec-24 13:22:31  INFO  Completed mosipdev/data-archive:develop	------> mosipqa/data-archive:develop 
+ 03-Dec-24 13:25:37  INFO  LOGFILE CREATED : vidivi.log 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** Check Images List ************************************************************************************ 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  IMAGES= [['mosipdev/softhsm-backup:develop', 'develop']] 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  src = "mosipdev/softhsm-backup" tag = "develop" 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Dec-24 13:25:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/softhsm-backup:pull HTTP/11" 200 None 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Dec-24 13:25:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/softhsm-backup/tags/develop HTTP/11" 200 764 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 03-Dec-24 13:25:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 03-Dec-24 13:25:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Dec-24 13:25:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/softhsm-backup:pull HTTP/11" 200 None 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 03-Dec-24 13:25:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/softhsm-backup/manifests/develop HTTP/11" 401 165 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  [ mosipqa/softhsm-backup ]  
+ 03-Dec-24 13:25:37  INFO  Destination Image = "mosipqa/softhsm-backup" Destination Image tag = "develop" IMAGE_ID :  
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Dec-24 13:25:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/softhsm-backup:pull HTTP/11" 200 None 
+ 03-Dec-24 13:25:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Dec-24 13:25:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/softhsm-backup/tags/develop HTTP/11" 404 126 
+ 03-Dec-24 13:25:37  ERROR  Image "mosipqa/softhsm-backup:develop" does not exist 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/softhsm-backup:develop']] 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 03-Dec-24 13:25:37  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 03-Dec-24 13:25:37  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 03-Dec-24 13:25:37  DEBUG  Found 'auths' section 
+ 03-Dec-24 13:25:37  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 03-Dec-24 13:25:37  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
+ 03-Dec-24 13:25:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Dec-24 13:25:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Dec-24 13:25:37  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  ********** [ mosipqa/softhsm-backup:develop ] **************************************************** 
+ 03-Dec-24 13:25:37  INFO   
+ 03-Dec-24 13:25:37  INFO  [ PULL ----------------------> mosipdev/softhsm-backup:develop ]  
+ 03-Dec-24 13:25:37  DEBUG  Looking for auth config 
+ 03-Dec-24 13:25:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Dec-24 13:25:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Dec-24 13:25:37  DEBUG  Found auth config 
+ 03-Dec-24 13:25:37  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fsofthsm-backup HTTP/11" 200 None 
+ 03-Dec-24 13:25:44  INFO  Status: Downloaded newer image for mosipdev/softhsm-backup:develop 
+ 03-Dec-24 13:25:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/softhsm-backup:develop/tag?tag=develop&repo=mosipqa%2Fsofthsm-backup&force=1 HTTP/11" 201 0 
+ 03-Dec-24 13:25:44  INFO   
+ 03-Dec-24 13:25:44  INFO  [ PUSH -----> mosipdev/softhsm-backup:develop	------> mosipqa/softhsm-backup:develop ]  
+ 03-Dec-24 13:25:44  DEBUG  Looking for auth config 
+ 03-Dec-24 13:25:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Dec-24 13:25:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Dec-24 13:25:44  DEBUG  Found auth config 
+ 03-Dec-24 13:25:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/softhsm-backup/push?tag=develop HTTP/11" 200 None 
+ 03-Dec-24 13:25:45  INFO  develop: digest: sha256:5f60fd3a17f9f886cdafc33a156c90ed3c515ce81eb6fe8a76233a29d99136f3 size: 2206 
+ 03-Dec-24 13:25:45  INFO   
+ 03-Dec-24 13:25:45  INFO  [ PUSH -----> mosipdev/softhsm-backup:develop	------> mosipqa/softhsm-backup:latest ]  
+ 03-Dec-24 13:25:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/softhsm-backup:develop/tag?tag=latest&repo=mosipqa%2Fsofthsm-backup&force=1 HTTP/11" 201 0 
+ 03-Dec-24 13:25:45  DEBUG  Looking for auth config 
+ 03-Dec-24 13:25:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Dec-24 13:25:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Dec-24 13:25:45  DEBUG  Found auth config 
+ 03-Dec-24 13:25:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/softhsm-backup/push?tag=latest HTTP/11" 200 None 
+ 03-Dec-24 13:25:46  INFO  latest: digest: sha256:5f60fd3a17f9f886cdafc33a156c90ed3c515ce81eb6fe8a76233a29d99136f3 size: 2206 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fsofthsm-backup%3Adevelop%22%5D%7D HTTP/11" 200 307 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/sha256:44834b7e28f99e9a50449ef355acded1aa50876ede64d9a73b768bc0b5fd6061/json HTTP/11" 200 None 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/softhsm-backup:develop?force=False&noprune=False HTTP/11" 200 160 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fsofthsm-backup%3Adevelop%22%5D%7D HTTP/11" 200 306 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/sha256:44834b7e28f99e9a50449ef355acded1aa50876ede64d9a73b768bc0b5fd6061/json HTTP/11" 200 None 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/softhsm-backup:develop?force=False&noprune=False HTTP/11" 200 48 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fsofthsm-backup%3Alatest%22%5D%7D HTTP/11" 200 305 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "GET /v1.45/images/sha256:44834b7e28f99e9a50449ef355acded1aa50876ede64d9a73b768bc0b5fd6061/json HTTP/11" 200 None 
+ 03-Dec-24 13:25:46  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/softhsm-backup:latest?force=False&noprune=False HTTP/11" 200 1017 
+ 03-Dec-24 13:25:46  INFO  Completed mosipdev/softhsm-backup:develop	------> mosipqa/softhsm-backup:develop 
