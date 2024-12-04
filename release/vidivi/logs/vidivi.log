@@ -1,81 +1,141 @@
- 03-Dec-24 13:44:46  INFO  LOGFILE CREATED : vidivi.log 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** Check Images List ************************************************************************************ 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  IMAGES= [['mosipdev/resident-service:develop', 'develop']] 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  src = "mosipdev/resident-service" tag = "develop" 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:44:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/resident-service:pull HTTP/11" 200 None 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:44:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/resident-service/tags/develop HTTP/11" 200 811 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 03-Dec-24 13:44:46  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/11" 308 0 
- 03-Dec-24 13:44:46  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/11" 200 343 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:44:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/resident-service:pull HTTP/11" 200 None 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 03-Dec-24 13:44:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/resident-service/manifests/develop HTTP/11" 200 2417 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  [ mosipdev2/resident-service ]  
- 03-Dec-24 13:44:46  INFO  Destination Image = "mosipdev2/resident-service" Destination Image tag = "develop" IMAGE_ID : "sha256:f9b5f777db8e4fa4f63c37ed38bfff879f7fcbde9f053f0f8720ee444224fbf6" 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 03-Dec-24 13:44:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/resident-service:pull HTTP/11" 200 None 
- 03-Dec-24 13:44:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 03-Dec-24 13:44:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/resident-service/tags/develop HTTP/11" 200 823 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** HASH Operation Results ********************************************************************** 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 03-Dec-24 13:44:46  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 03-Dec-24 13:44:46  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 03-Dec-24 13:44:46  DEBUG  Found 'auths' section 
- 03-Dec-24 13:44:46  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 03-Dec-24 13:44:46  DEBUG  http://localhost:None "GET /version HTTP/11" 200 824 
- 03-Dec-24 13:44:46  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:44:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:44:46  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  ********** [ mosipdev2/resident-service:develop ] **************************************************** 
- 03-Dec-24 13:44:46  INFO   
- 03-Dec-24 13:44:46  INFO  [ PULL ----------------------> mosipdev/resident-service:develop ]  
- 03-Dec-24 13:44:46  DEBUG  Looking for auth config 
- 03-Dec-24 13:44:46  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:44:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:44:46  DEBUG  Found auth config 
- 03-Dec-24 13:44:47  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fresident-service HTTP/11" 200 None 
- 03-Dec-24 13:45:02  INFO  Status: Downloaded newer image for mosipdev/resident-service:develop 
- 03-Dec-24 13:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:develop/tag?tag=develop&repo=mosipdev2%2Fresident-service&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:45:02  INFO   
- 03-Dec-24 13:45:02  INFO  [ PUSH -----> mosipdev/resident-service:develop	------> mosipdev2/resident-service:develop ]  
- 03-Dec-24 13:45:02  DEBUG  Looking for auth config 
- 03-Dec-24 13:45:02  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:45:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:45:02  DEBUG  Found auth config 
- 03-Dec-24 13:45:02  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service/push?tag=develop HTTP/11" 200 None 
- 03-Dec-24 13:45:03  INFO  develop: digest: sha256:af1fcd73df9eaf43b26d43fcc5f228f54e9cfdf74f62dd8525e7acdbb36373e0 size: 2418 
- 03-Dec-24 13:45:03  INFO   
- 03-Dec-24 13:45:03  INFO  [ PUSH -----> mosipdev/resident-service:develop	------> mosipdev2/resident-service:latest ]  
- 03-Dec-24 13:45:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:develop/tag?tag=latest&repo=mosipdev2%2Fresident-service&force=1 HTTP/11" 201 0 
- 03-Dec-24 13:45:03  DEBUG  Looking for auth config 
- 03-Dec-24 13:45:03  DEBUG  Looking for auth entry for 'docker.io' 
- 03-Dec-24 13:45:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 03-Dec-24 13:45:03  DEBUG  Found auth config 
- 03-Dec-24 13:45:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service/push?tag=latest HTTP/11" 200 None 
- 03-Dec-24 13:45:04  INFO  latest: digest: sha256:af1fcd73df9eaf43b26d43fcc5f228f54e9cfdf74f62dd8525e7acdbb36373e0 size: 2418 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fresident-service%3Adevelop%22%5D%7D HTTP/11" 200 375 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6dccb1cfd6ddec582645849b38418373eacfd3e7e4b0719d708bd9fb53d5e101/json HTTP/11" 200 None 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/resident-service:develop?force=False&noprune=False HTTP/11" 200 164 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fresident-service%3Adevelop%22%5D%7D HTTP/11" 200 376 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6dccb1cfd6ddec582645849b38418373eacfd3e7e4b0719d708bd9fb53d5e101/json HTTP/11" 200 None 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/resident-service:develop?force=False&noprune=False HTTP/11" 200 52 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fresident-service%3Alatest%22%5D%7D HTTP/11" 200 375 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6dccb1cfd6ddec582645849b38418373eacfd3e7e4b0719d708bd9fb53d5e101/json HTTP/11" 200 None 
- 03-Dec-24 13:45:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/resident-service:latest?force=False&noprune=False HTTP/11" 200 1025 
- 03-Dec-24 13:45:04  INFO  Completed mosipdev/resident-service:develop	------> mosipdev2/resident-service:develop 
+ 04-Dec-24 13:04:10  INFO  LOGFILE CREATED : vidivi.log 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  ******************** Check Images List ************************************************************************************ 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  IMAGES= [['mosipdev/databreachdetector:develop', 'develop'], ['mosipdev/certmanager:develop', 'develop']] 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  src = "mosipdev/databreachdetector" tag = "develop" 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/databreachdetector:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Dec-24 13:04:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/databreachdetector/tags/develop HTTP/11" 200 764 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  src = "mosipdev/certmanager" tag = "develop" 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/certmanager:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Dec-24 13:04:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/certmanager/tags/develop HTTP/11" 200 764 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 04-Dec-24 13:04:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 04-Dec-24 13:04:10  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/databreachdetector:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Dec-24 13:04:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/databreachdetector/manifests/develop HTTP/11" 401 169 
+ 04-Dec-24 13:04:10  INFO   
+ 04-Dec-24 13:04:10  INFO  [ mosipqa/databreachdetector ]  
+ 04-Dec-24 13:04:10  INFO  Destination Image = "mosipqa/databreachdetector" Destination Image tag = "develop" IMAGE_ID :  
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/databreachdetector:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Dec-24 13:04:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/databreachdetector/tags/develop HTTP/11" 404 130 
+ 04-Dec-24 13:04:11  ERROR  Image "mosipqa/databreachdetector:develop" does not exist 
+ 04-Dec-24 13:04:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/certmanager:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Dec-24 13:04:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/certmanager/manifests/develop HTTP/11" 401 162 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  [ mosipqa/certmanager ]  
+ 04-Dec-24 13:04:11  INFO  Destination Image = "mosipqa/certmanager" Destination Image tag = "develop" IMAGE_ID :  
+ 04-Dec-24 13:04:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-24 13:04:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/certmanager:pull HTTP/11" 200 None 
+ 04-Dec-24 13:04:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Dec-24 13:04:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/certmanager/tags/develop HTTP/11" 404 123 
+ 04-Dec-24 13:04:11  ERROR  Image "mosipqa/certmanager:develop" does not exist 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/databreachdetector:develop'], ['mosipqa/certmanager:develop']] 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 04-Dec-24 13:04:11  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 04-Dec-24 13:04:11  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 04-Dec-24 13:04:11  DEBUG  Found 'auths' section 
+ 04-Dec-24 13:04:11  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 04-Dec-24 13:04:11  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
+ 04-Dec-24 13:04:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:11  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  ********** [ mosipqa/databreachdetector:develop ] **************************************************** 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  [ PULL ----------------------> mosipdev/databreachdetector:develop ]  
+ 04-Dec-24 13:04:11  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:11  DEBUG  Found auth config 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  ********** [ mosipqa/certmanager:develop ] **************************************************** 
+ 04-Dec-24 13:04:11  INFO   
+ 04-Dec-24 13:04:11  INFO  [ PULL ----------------------> mosipdev/certmanager:develop ]  
+ 04-Dec-24 13:04:11  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:11  DEBUG  Found auth config 
+ 04-Dec-24 13:04:11  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fcertmanager HTTP/11" 200 None 
+ 04-Dec-24 13:04:11  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fdatabreachdetector HTTP/11" 200 None 
+ 04-Dec-24 13:04:32  INFO  Status: Downloaded newer image for mosipdev/certmanager:develop 
+ 04-Dec-24 13:04:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/certmanager:develop/tag?tag=develop&repo=mosipqa%2Fcertmanager&force=1 HTTP/11" 201 0 
+ 04-Dec-24 13:04:32  INFO   
+ 04-Dec-24 13:04:32  INFO  [ PUSH -----> mosipdev/certmanager:develop	------> mosipqa/certmanager:develop ]  
+ 04-Dec-24 13:04:32  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:32  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:32  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:32  DEBUG  Found auth config 
+ 04-Dec-24 13:04:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/certmanager/push?tag=develop HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  INFO  develop: digest: sha256:066838ae36a9691012f61ecb33703e733ab2cd8cba5b7eabdf5cc1a3aa9b7120 size: 3457 
+ 04-Dec-24 13:04:34  INFO   
+ 04-Dec-24 13:04:34  INFO  [ PUSH -----> mosipdev/certmanager:develop	------> mosipqa/certmanager:latest ]  
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/certmanager:develop/tag?tag=latest&repo=mosipqa%2Fcertmanager&force=1 HTTP/11" 201 0 
+ 04-Dec-24 13:04:34  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:34  DEBUG  Found auth config 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/certmanager/push?tag=latest HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  INFO  Status: Downloaded newer image for mosipdev/databreachdetector:develop 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/databreachdetector:develop/tag?tag=develop&repo=mosipqa%2Fdatabreachdetector&force=1 HTTP/11" 201 0 
+ 04-Dec-24 13:04:34  INFO   
+ 04-Dec-24 13:04:34  INFO  [ PUSH -----> mosipdev/databreachdetector:develop	------> mosipqa/databreachdetector:develop ]  
+ 04-Dec-24 13:04:34  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:34  DEBUG  Found auth config 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/databreachdetector/push?tag=develop HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  INFO  latest: digest: sha256:066838ae36a9691012f61ecb33703e733ab2cd8cba5b7eabdf5cc1a3aa9b7120 size: 3457 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcertmanager%3Adevelop%22%5D%7D HTTP/11" 200 371 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:35c59aa4810a36c337341ab8b8e46d30a2f377f6468048760f397e6fb3476376/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/certmanager:develop?force=False&noprune=False HTTP/11" 200 154 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcertmanager%3Adevelop%22%5D%7D HTTP/11" 200 370 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:35c59aa4810a36c337341ab8b8e46d30a2f377f6468048760f397e6fb3476376/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/certmanager:develop?force=False&noprune=False HTTP/11" 200 45 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcertmanager%3Alatest%22%5D%7D HTTP/11" 200 369 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:35c59aa4810a36c337341ab8b8e46d30a2f377f6468048760f397e6fb3476376/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/certmanager:latest?force=False&noprune=False HTTP/11" 200 667 
+ 04-Dec-24 13:04:34  INFO  Completed mosipdev/certmanager:develop	------> mosipqa/certmanager:develop 
+ 04-Dec-24 13:04:36  INFO  develop: digest: sha256:ea648dfddfc9fdbca629d1b954b79994a9cd2316a4fbe3fcae971c02fa087ae8 size: 3251 
+ 04-Dec-24 13:04:36  INFO   
+ 04-Dec-24 13:04:36  INFO  [ PUSH -----> mosipdev/databreachdetector:develop	------> mosipqa/databreachdetector:latest ]  
+ 04-Dec-24 13:04:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/databreachdetector:develop/tag?tag=latest&repo=mosipqa%2Fdatabreachdetector&force=1 HTTP/11" 201 0 
+ 04-Dec-24 13:04:36  DEBUG  Looking for auth config 
+ 04-Dec-24 13:04:36  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-24 13:04:36  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-24 13:04:36  DEBUG  Found auth config 
+ 04-Dec-24 13:04:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/databreachdetector/push?tag=latest HTTP/11" 200 None 
+ 04-Dec-24 13:04:37  INFO  latest: digest: sha256:ea648dfddfc9fdbca629d1b954b79994a9cd2316a4fbe3fcae971c02fa087ae8 size: 3251 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fdatabreachdetector%3Adevelop%22%5D%7D HTTP/11" 200 378 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:886b40b2a19da4990de6a7a442cdf335233be7a0211d1f7225dc49945ece5ba6/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/databreachdetector:develop?force=False&noprune=False HTTP/11" 200 168 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdatabreachdetector%3Adevelop%22%5D%7D HTTP/11" 200 377 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:886b40b2a19da4990de6a7a442cdf335233be7a0211d1f7225dc49945ece5ba6/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/databreachdetector:develop?force=False&noprune=False HTTP/11" 200 52 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdatabreachdetector%3Alatest%22%5D%7D HTTP/11" 200 376 
+ 04-Dec-24 13:04:37  DEBUG  http://localhost:None "GET /v1.45/images/sha256:886b40b2a19da4990de6a7a442cdf335233be7a0211d1f7225dc49945ece5ba6/json HTTP/11" 200 None 
+ 04-Dec-24 13:04:38  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/databreachdetector:latest?force=False&noprune=False HTTP/11" 200 1455 
+ 04-Dec-24 13:04:38  INFO  Completed mosipdev/databreachdetector:develop	------> mosipqa/databreachdetector:develop 
