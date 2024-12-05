@@ -1,85 +1,85 @@
- 05-Dec-24 13:11:44  INFO  LOGFILE CREATED : vidivi.log 
- 05-Dec-24 13:11:44  INFO   
- 05-Dec-24 13:11:44  INFO  ******************** Check Images List ************************************************************************************ 
- 05-Dec-24 13:11:44  INFO   
- 05-Dec-24 13:11:44  INFO  IMAGES= [['mosipdev/postgres-init:release-1.3.x', '1.3.x']] 
- 05-Dec-24 13:11:44  INFO   
- 05-Dec-24 13:11:44  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 05-Dec-24 13:11:44  INFO   
- 05-Dec-24 13:11:44  INFO  src = "mosipdev/postgres-init" tag = "release-1.3.x" 
- 05-Dec-24 13:11:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Dec-24 13:11:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/postgres-init:pull HTTP/11" 200 None 
- 05-Dec-24 13:11:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Dec-24 13:11:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/postgres-init/tags/release-1.3.x HTTP/11" 200 770 
- 05-Dec-24 13:11:44  INFO   
- 05-Dec-24 13:11:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 05-Dec-24 13:11:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 05-Dec-24 13:11:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 05-Dec-24 13:11:45  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 05-Dec-24 13:11:45  INFO   
- 05-Dec-24 13:11:45  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 05-Dec-24 13:11:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Dec-24 13:11:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/postgres-init:pull HTTP/11" 200 None 
- 05-Dec-24 13:11:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 05-Dec-24 13:11:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/postgres-init/manifests/1.3.x HTTP/11" 404 99 
- 05-Dec-24 13:11:45  INFO   
- 05-Dec-24 13:11:45  INFO  [ mosipqa/postgres-init ]  
- 05-Dec-24 13:11:45  INFO  Destination Image = "mosipqa/postgres-init" Destination Image tag = "1.3.x" IMAGE_ID :  
- 05-Dec-24 13:11:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Dec-24 13:11:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/postgres-init:pull HTTP/11" 200 None 
- 05-Dec-24 13:11:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Dec-24 13:11:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/postgres-init/tags/1.3.x HTTP/11" 404 128 
- 05-Dec-24 13:11:45  ERROR  Image "mosipqa/postgres-init:1.3.x" does not exist 
- 05-Dec-24 13:11:45  INFO   
- 05-Dec-24 13:11:45  INFO  ******************** HASH Operation Results ********************************************************************** 
- 05-Dec-24 13:11:45  INFO   
- 05-Dec-24 13:11:45  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/postgres-init:1.3.x']] 
- 05-Dec-24 13:11:45  INFO   
- 05-Dec-24 13:11:45  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 05-Dec-24 13:11:45  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 05-Dec-24 13:11:45  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 05-Dec-24 13:11:45  DEBUG  Found 'auths' section 
- 05-Dec-24 13:11:45  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 05-Dec-24 13:11:45  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
- 05-Dec-24 13:11:45  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Dec-24 13:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Dec-24 13:11:46  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 05-Dec-24 13:11:46  INFO   
- 05-Dec-24 13:11:46  INFO  ********** [ mosipqa/postgres-init:1.3.x ] **************************************************** 
- 05-Dec-24 13:11:46  INFO   
- 05-Dec-24 13:11:46  INFO  [ PULL ----------------------> mosipdev/postgres-init:release-1.3.x ]  
- 05-Dec-24 13:11:46  DEBUG  Looking for auth config 
- 05-Dec-24 13:11:46  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Dec-24 13:11:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Dec-24 13:11:46  DEBUG  Found auth config 
- 05-Dec-24 13:11:47  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpostgres-init HTTP/11" 200 None 
- 05-Dec-24 13:12:04  INFO  Status: Downloaded newer image for mosipdev/postgres-init:release-1.3.x 
- 05-Dec-24 13:12:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/postgres-init:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fpostgres-init&force=1 HTTP/11" 201 0 
- 05-Dec-24 13:12:04  INFO   
- 05-Dec-24 13:12:04  INFO  [ PUSH -----> mosipdev/postgres-init:release-1.3.x	------> mosipqa/postgres-init:1.3.x ]  
- 05-Dec-24 13:12:04  DEBUG  Looking for auth config 
- 05-Dec-24 13:12:04  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Dec-24 13:12:04  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Dec-24 13:12:04  DEBUG  Found auth config 
- 05-Dec-24 13:12:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/postgres-init/push?tag=1.3.x HTTP/11" 200 None 
- 05-Dec-24 13:12:14  INFO  1.3.x: digest: sha256:e65ab872132e451d1ccc18c66f31aab2d10bd9631ac804cad4a7903ff35f4468 size: 4504 
- 05-Dec-24 13:12:14  INFO   
- 05-Dec-24 13:12:14  INFO  [ PUSH -----> mosipdev/postgres-init:release-1.3.x	------> mosipqa/postgres-init:latest ]  
- 05-Dec-24 13:12:14  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/postgres-init:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fpostgres-init&force=1 HTTP/11" 201 0 
- 05-Dec-24 13:12:14  DEBUG  Looking for auth config 
- 05-Dec-24 13:12:14  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Dec-24 13:12:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Dec-24 13:12:14  DEBUG  Found auth config 
- 05-Dec-24 13:12:14  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/postgres-init/push?tag=latest HTTP/11" 200 None 
- 05-Dec-24 13:12:16  INFO  latest: digest: sha256:e65ab872132e451d1ccc18c66f31aab2d10bd9631ac804cad4a7903ff35f4468 size: 4504 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpostgres-init%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 378 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d10230b758d47f5cea7b1e874596c32d7fa727a80103c3b8f186e955313923c/json HTTP/11" 200 None 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/postgres-init:release-1.3.x?force=False&noprune=False HTTP/11" 200 164 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpostgres-init%3A1.3.x%22%5D%7D HTTP/11" 200 369 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d10230b758d47f5cea7b1e874596c32d7fa727a80103c3b8f186e955313923c/json HTTP/11" 200 None 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/postgres-init:1.3.x?force=False&noprune=False HTTP/11" 200 45 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpostgres-init%3Alatest%22%5D%7D HTTP/11" 200 370 
- 05-Dec-24 13:12:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d10230b758d47f5cea7b1e874596c32d7fa727a80103c3b8f186e955313923c/json HTTP/11" 200 None 
- 05-Dec-24 13:12:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/postgres-init:latest?force=False&noprune=False HTTP/11" 200 1961 
- 05-Dec-24 13:12:17  INFO  Completed mosipdev/postgres-init:release-1.3.x	------> mosipqa/postgres-init:1.3.x 
+ 05-Dec-24 15:00:03  INFO  LOGFILE CREATED : vidivi.log 
+ 05-Dec-24 15:00:03  INFO   
+ 05-Dec-24 15:00:03  INFO  ******************** Check Images List ************************************************************************************ 
+ 05-Dec-24 15:00:03  INFO   
+ 05-Dec-24 15:00:03  INFO  IMAGES= [['mosipdev/keycloak-init:release-1.3.x', '1.3.x']] 
+ 05-Dec-24 15:00:03  INFO   
+ 05-Dec-24 15:00:03  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 05-Dec-24 15:00:03  INFO   
+ 05-Dec-24 15:00:03  INFO  src = "mosipdev/keycloak-init" tag = "release-1.3.x" 
+ 05-Dec-24 15:00:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Dec-24 15:00:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/keycloak-init:pull HTTP/11" 200 None 
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Dec-24 15:00:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/keycloak-init/tags/release-1.3.x HTTP/11" 200 770 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 05-Dec-24 15:00:05  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 05-Dec-24 15:00:05  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Dec-24 15:00:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/keycloak-init:pull HTTP/11" 200 None 
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Dec-24 15:00:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/keycloak-init/manifests/1.3.x HTTP/11" 404 99 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  [ mosipqa/keycloak-init ]  
+ 05-Dec-24 15:00:05  INFO  Destination Image = "mosipqa/keycloak-init" Destination Image tag = "1.3.x" IMAGE_ID :  
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Dec-24 15:00:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/keycloak-init:pull HTTP/11" 200 None 
+ 05-Dec-24 15:00:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Dec-24 15:00:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/keycloak-init/tags/1.3.x HTTP/11" 404 128 
+ 05-Dec-24 15:00:05  ERROR  Image "mosipqa/keycloak-init:1.3.x" does not exist 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/keycloak-init:1.3.x']] 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 05-Dec-24 15:00:05  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 05-Dec-24 15:00:05  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 05-Dec-24 15:00:05  DEBUG  Found 'auths' section 
+ 05-Dec-24 15:00:05  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 05-Dec-24 15:00:05  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
+ 05-Dec-24 15:00:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Dec-24 15:00:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Dec-24 15:00:05  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  ********** [ mosipqa/keycloak-init:1.3.x ] **************************************************** 
+ 05-Dec-24 15:00:05  INFO   
+ 05-Dec-24 15:00:05  INFO  [ PULL ----------------------> mosipdev/keycloak-init:release-1.3.x ]  
+ 05-Dec-24 15:00:05  DEBUG  Looking for auth config 
+ 05-Dec-24 15:00:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Dec-24 15:00:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Dec-24 15:00:05  DEBUG  Found auth config 
+ 05-Dec-24 15:00:06  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkeycloak-init HTTP/11" 200 None 
+ 05-Dec-24 15:00:27  INFO  Status: Downloaded newer image for mosipdev/keycloak-init:release-1.3.x 
+ 05-Dec-24 15:00:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keycloak-init:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fkeycloak-init&force=1 HTTP/11" 201 0 
+ 05-Dec-24 15:00:27  INFO   
+ 05-Dec-24 15:00:27  INFO  [ PUSH -----> mosipdev/keycloak-init:release-1.3.x	------> mosipqa/keycloak-init:1.3.x ]  
+ 05-Dec-24 15:00:27  DEBUG  Looking for auth config 
+ 05-Dec-24 15:00:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Dec-24 15:00:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Dec-24 15:00:27  DEBUG  Found auth config 
+ 05-Dec-24 15:00:27  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/keycloak-init/push?tag=1.3.x HTTP/11" 200 None 
+ 05-Dec-24 15:00:29  INFO  1.3.x: digest: sha256:31f268446a84d73b5f3ec6b342c29f450f2ce05ca9dbcb22846008cc20ca515f size: 3258 
+ 05-Dec-24 15:00:29  INFO   
+ 05-Dec-24 15:00:29  INFO  [ PUSH -----> mosipdev/keycloak-init:release-1.3.x	------> mosipqa/keycloak-init:latest ]  
+ 05-Dec-24 15:00:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/keycloak-init:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fkeycloak-init&force=1 HTTP/11" 201 0 
+ 05-Dec-24 15:00:29  DEBUG  Looking for auth config 
+ 05-Dec-24 15:00:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Dec-24 15:00:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Dec-24 15:00:29  DEBUG  Found auth config 
+ 05-Dec-24 15:00:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/keycloak-init/push?tag=latest HTTP/11" 200 None 
+ 05-Dec-24 15:00:30  INFO  latest: digest: sha256:31f268446a84d73b5f3ec6b342c29f450f2ce05ca9dbcb22846008cc20ca515f size: 3258 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkeycloak-init%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 379 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1ce28b14b36deb2ad564365a02415f90aa4aac47d2211a2028b9a3623373b3b4/json HTTP/11" 200 None 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/keycloak-init:release-1.3.x?force=False&noprune=False HTTP/11" 200 164 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkeycloak-init%3A1.3.x%22%5D%7D HTTP/11" 200 370 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1ce28b14b36deb2ad564365a02415f90aa4aac47d2211a2028b9a3623373b3b4/json HTTP/11" 200 None 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/keycloak-init:1.3.x?force=False&noprune=False HTTP/11" 200 45 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkeycloak-init%3Alatest%22%5D%7D HTTP/11" 200 371 
+ 05-Dec-24 15:00:30  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1ce28b14b36deb2ad564365a02415f90aa4aac47d2211a2028b9a3623373b3b4/json HTTP/11" 200 None 
+ 05-Dec-24 15:00:31  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/keycloak-init:latest?force=False&noprune=False HTTP/11" 200 1445 
+ 05-Dec-24 15:00:31  INFO  Completed mosipdev/keycloak-init:release-1.3.x	------> mosipqa/keycloak-init:1.3.x 
