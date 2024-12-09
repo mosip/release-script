@@ -1,85 +1,85 @@
- 09-Dec-24 07:31:20  INFO  LOGFILE CREATED : vidivi.log 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** Check Images List ************************************************************************************ 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  IMAGES= [['mosipdev/mosip-file-server:release-1.3.x', '1.3.x']] 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  src = "mosipdev/mosip-file-server" tag = "release-1.3.x" 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Dec-24 07:31:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mosip-file-server:pull HTTP/11" 200 None 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Dec-24 07:31:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mosip-file-server/tags/release-1.3.x HTTP/11" 200 770 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 09-Dec-24 07:31:20  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 09-Dec-24 07:31:20  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Dec-24 07:31:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-file-server:pull HTTP/11" 200 None 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 09-Dec-24 07:31:20  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mosip-file-server/manifests/1.3.x HTTP/11" 404 99 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  [ mosipqa/mosip-file-server ]  
- 09-Dec-24 07:31:20  INFO  Destination Image = "mosipqa/mosip-file-server" Destination Image tag = "1.3.x" IMAGE_ID :  
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Dec-24 07:31:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mosip-file-server:pull HTTP/11" 200 None 
- 09-Dec-24 07:31:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Dec-24 07:31:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mosip-file-server/tags/1.3.x HTTP/11" 404 132 
- 09-Dec-24 07:31:20  ERROR  Image "mosipqa/mosip-file-server:1.3.x" does not exist 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** HASH Operation Results ********************************************************************** 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/mosip-file-server:1.3.x']] 
- 09-Dec-24 07:31:20  INFO   
- 09-Dec-24 07:31:20  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 09-Dec-24 07:31:20  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 09-Dec-24 07:31:20  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 09-Dec-24 07:31:20  DEBUG  Found 'auths' section 
- 09-Dec-24 07:31:20  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 09-Dec-24 07:31:20  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
- 09-Dec-24 07:31:20  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Dec-24 07:31:20  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Dec-24 07:31:21  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 09-Dec-24 07:31:21  INFO   
- 09-Dec-24 07:31:21  INFO  ********** [ mosipqa/mosip-file-server:1.3.x ] **************************************************** 
- 09-Dec-24 07:31:21  INFO   
- 09-Dec-24 07:31:21  INFO  [ PULL ----------------------> mosipdev/mosip-file-server:release-1.3.x ]  
- 09-Dec-24 07:31:21  DEBUG  Looking for auth config 
- 09-Dec-24 07:31:21  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Dec-24 07:31:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Dec-24 07:31:21  DEBUG  Found auth config 
- 09-Dec-24 07:31:21  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fmosip-file-server HTTP/11" 200 None 
- 09-Dec-24 07:31:44  INFO  Status: Downloaded newer image for mosipdev/mosip-file-server:release-1.3.x 
- 09-Dec-24 07:31:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-file-server:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fmosip-file-server&force=1 HTTP/11" 201 0 
- 09-Dec-24 07:31:44  INFO   
- 09-Dec-24 07:31:44  INFO  [ PUSH -----> mosipdev/mosip-file-server:release-1.3.x	------> mosipqa/mosip-file-server:1.3.x ]  
- 09-Dec-24 07:31:44  DEBUG  Looking for auth config 
- 09-Dec-24 07:31:44  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Dec-24 07:31:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Dec-24 07:31:44  DEBUG  Found auth config 
- 09-Dec-24 07:31:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-file-server/push?tag=1.3.x HTTP/11" 200 None 
- 09-Dec-24 07:31:48  INFO  1.3.x: digest: sha256:1ab3e9b496a29d5b02d55cfffc70137f06a68a393b7e679c29ed59eb03b83fb2 size: 4073 
- 09-Dec-24 07:31:48  INFO   
- 09-Dec-24 07:31:48  INFO  [ PUSH -----> mosipdev/mosip-file-server:release-1.3.x	------> mosipqa/mosip-file-server:latest ]  
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mosip-file-server:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fmosip-file-server&force=1 HTTP/11" 201 0 
- 09-Dec-24 07:31:48  DEBUG  Looking for auth config 
- 09-Dec-24 07:31:48  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Dec-24 07:31:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Dec-24 07:31:48  DEBUG  Found auth config 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mosip-file-server/push?tag=latest HTTP/11" 200 None 
- 09-Dec-24 07:31:48  INFO  latest: digest: sha256:1ab3e9b496a29d5b02d55cfffc70137f06a68a393b7e679c29ed59eb03b83fb2 size: 4073 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmosip-file-server%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 448 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6f9ff1e0660fa541a3cf2410b7d501923d93a5b33ebd9eeac6b9b3bfd701d4e5/json HTTP/11" 200 None 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mosip-file-server:release-1.3.x?force=False&noprune=False HTTP/11" 200 172 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-file-server%3A1.3.x%22%5D%7D HTTP/11" 200 439 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6f9ff1e0660fa541a3cf2410b7d501923d93a5b33ebd9eeac6b9b3bfd701d4e5/json HTTP/11" 200 None 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-file-server:1.3.x?force=False&noprune=False HTTP/11" 200 49 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmosip-file-server%3Alatest%22%5D%7D HTTP/11" 200 440 
- 09-Dec-24 07:31:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6f9ff1e0660fa541a3cf2410b7d501923d93a5b33ebd9eeac6b9b3bfd701d4e5/json HTTP/11" 200 None 
- 09-Dec-24 07:31:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mosip-file-server:latest?force=False&noprune=False HTTP/11" 200 1797 
- 09-Dec-24 07:31:50  INFO  Completed mosipdev/mosip-file-server:release-1.3.x	------> mosipqa/mosip-file-server:1.3.x 
+ 09-Dec-24 07:50:37  INFO  LOGFILE CREATED : vidivi.log 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** Check Images List ************************************************************************************ 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  IMAGES= [['mosipdev/resident-service:release-1.3.x', '1.3.x']] 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  src = "mosipdev/resident-service" tag = "release-1.3.x" 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Dec-24 07:50:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/resident-service:pull HTTP/11" 200 None 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Dec-24 07:50:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/resident-service/tags/release-1.3.x HTTP/11" 200 769 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 09-Dec-24 07:50:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 09-Dec-24 07:50:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Dec-24 07:50:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-service:pull HTTP/11" 200 None 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 09-Dec-24 07:50:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/resident-service/manifests/1.3.x HTTP/11" 404 99 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  [ mosipqa/resident-service ]  
+ 09-Dec-24 07:50:37  INFO  Destination Image = "mosipqa/resident-service" Destination Image tag = "1.3.x" IMAGE_ID :  
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Dec-24 07:50:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-service:pull HTTP/11" 200 None 
+ 09-Dec-24 07:50:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Dec-24 07:50:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/resident-service/tags/1.3.x HTTP/11" 404 131 
+ 09-Dec-24 07:50:37  ERROR  Image "mosipqa/resident-service:1.3.x" does not exist 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/resident-service:1.3.x']] 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 09-Dec-24 07:50:37  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 09-Dec-24 07:50:37  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 09-Dec-24 07:50:37  DEBUG  Found 'auths' section 
+ 09-Dec-24 07:50:37  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 09-Dec-24 07:50:37  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
+ 09-Dec-24 07:50:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Dec-24 07:50:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Dec-24 07:50:37  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  ********** [ mosipqa/resident-service:1.3.x ] **************************************************** 
+ 09-Dec-24 07:50:37  INFO   
+ 09-Dec-24 07:50:37  INFO  [ PULL ----------------------> mosipdev/resident-service:release-1.3.x ]  
+ 09-Dec-24 07:50:37  DEBUG  Looking for auth config 
+ 09-Dec-24 07:50:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Dec-24 07:50:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Dec-24 07:50:37  DEBUG  Found auth config 
+ 09-Dec-24 07:50:38  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fresident-service HTTP/11" 200 None 
+ 09-Dec-24 07:50:58  INFO  Status: Downloaded newer image for mosipdev/resident-service:release-1.3.x 
+ 09-Dec-24 07:50:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fresident-service&force=1 HTTP/11" 201 0 
+ 09-Dec-24 07:50:58  INFO   
+ 09-Dec-24 07:50:58  INFO  [ PUSH -----> mosipdev/resident-service:release-1.3.x	------> mosipqa/resident-service:1.3.x ]  
+ 09-Dec-24 07:50:58  DEBUG  Looking for auth config 
+ 09-Dec-24 07:50:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Dec-24 07:50:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Dec-24 07:50:58  DEBUG  Found auth config 
+ 09-Dec-24 07:50:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-service/push?tag=1.3.x HTTP/11" 200 None 
+ 09-Dec-24 07:50:59  INFO  1.3.x: digest: sha256:ffc3ec4068f3a93d74b7b10cb624e7aeda9a464e59d31168acee740465595b09 size: 2418 
+ 09-Dec-24 07:50:59  INFO   
+ 09-Dec-24 07:50:59  INFO  [ PUSH -----> mosipdev/resident-service:release-1.3.x	------> mosipqa/resident-service:latest ]  
+ 09-Dec-24 07:50:59  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fresident-service&force=1 HTTP/11" 201 0 
+ 09-Dec-24 07:50:59  DEBUG  Looking for auth config 
+ 09-Dec-24 07:50:59  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Dec-24 07:50:59  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Dec-24 07:50:59  DEBUG  Found auth config 
+ 09-Dec-24 07:50:59  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-service/push?tag=latest HTTP/11" 200 None 
+ 09-Dec-24 07:51:00  INFO  latest: digest: sha256:ffc3ec4068f3a93d74b7b10cb624e7aeda9a464e59d31168acee740465595b09 size: 2418 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fresident-service%3Arelease-1.3.x%22%5D%7D HTTP/11" 200 382 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fb31158871e29606ed4e34b0223dcb092e843ff3476ccee6600ba0a1896d45c1/json HTTP/11" 200 None 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/resident-service:release-1.3.x?force=False&noprune=False HTTP/11" 200 170 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-service%3A1.3.x%22%5D%7D HTTP/11" 200 373 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fb31158871e29606ed4e34b0223dcb092e843ff3476ccee6600ba0a1896d45c1/json HTTP/11" 200 None 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-service:1.3.x?force=False&noprune=False HTTP/11" 200 48 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-service%3Alatest%22%5D%7D HTTP/11" 200 374 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:fb31158871e29606ed4e34b0223dcb092e843ff3476ccee6600ba0a1896d45c1/json HTTP/11" 200 None 
+ 09-Dec-24 07:51:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-service:latest?force=False&noprune=False HTTP/11" 200 1021 
+ 09-Dec-24 07:51:00  INFO  Completed mosipdev/resident-service:release-1.3.x	------> mosipqa/resident-service:1.3.x 
