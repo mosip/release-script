@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       REPO_BRANCH:
-        description: 'Repo Branch'
+        description: 'Repo branch to update (e.g., release-1.3.x )'
         required: true
         type: string
       RELEASE_TAG:
@@ -16,7 +16,7 @@ on:
         required: true
         type: string
       SNAPSHOT_TAG:
-        description: 'Tag to be replace'
+        description: 'SNAPSHOT to be Replace'
         required: true
         type: string
       BASE:
@@ -24,12 +24,12 @@ on:
         required: true
         type: string
       COMMIT_MESSAGE:
-        description: 'Commit message'
+        description: 'Commit Message'
         required: true
         type: string
 jobs:
   maven-release-preparation:
-    uses: Prafulrakhade/kattu/.github/workflows/release-changes.yml@master
+    uses: mosip/kattu/.github/workflows/release-changes.yml@master
     with:
       REPO_URL: ${{ inputs.REPO_URL }}
       REPO_BRANCH: ${{ inputs.REPO_BRANCH }}
