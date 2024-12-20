@@ -1,81 +1,301 @@
- 20-Dec-24 08:02:20  INFO  LOGFILE CREATED : vidivi.log 
- 20-Dec-24 08:02:20  INFO   
- 20-Dec-24 08:02:20  INFO  ******************** Check Images List ************************************************************************************ 
- 20-Dec-24 08:02:20  INFO   
- 20-Dec-24 08:02:20  INFO  IMAGES= [['mosipdev/inji-certify:release-0.10.x', '0.10.x']] 
- 20-Dec-24 08:02:20  INFO   
- 20-Dec-24 08:02:20  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 20-Dec-24 08:02:20  INFO   
- 20-Dec-24 08:02:20  INFO  src = "mosipdev/inji-certify" tag = "release-0.10.x" 
- 20-Dec-24 08:02:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 20-Dec-24 08:02:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify:pull HTTP/11" 200 None 
- 20-Dec-24 08:02:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 20-Dec-24 08:02:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify/tags/release-0.10.x HTTP/11" 200 821 
- 20-Dec-24 08:02:20  INFO   
- 20-Dec-24 08:02:20  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 20-Dec-24 08:02:20  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 20-Dec-24 08:02:21  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
- 20-Dec-24 08:02:21  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
- 20-Dec-24 08:02:21  INFO   
- 20-Dec-24 08:02:21  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 20-Dec-24 08:02:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 20-Dec-24 08:02:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-certify:pull HTTP/11" 200 None 
- 20-Dec-24 08:02:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 20-Dec-24 08:02:21  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-certify/manifests/0.10.x HTTP/11" 200 3041 
- 20-Dec-24 08:02:21  INFO   
- 20-Dec-24 08:02:21  INFO  [ mosipqa/inji-certify ]  
- 20-Dec-24 08:02:21  INFO  Destination Image = "mosipqa/inji-certify" Destination Image tag = "0.10.x" IMAGE_ID : "sha256:6f7c74966246770921601e5db4e2a49a74dc85db1ca063ca6e1ece98080d63a8" 
- 20-Dec-24 08:02:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 20-Dec-24 08:02:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-certify:pull HTTP/11" 200 None 
- 20-Dec-24 08:02:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 20-Dec-24 08:02:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-certify/tags/0.10.x HTTP/11" 200 813 
- 20-Dec-24 08:02:22  INFO   
- 20-Dec-24 08:02:22  INFO  ******************** HASH Operation Results ********************************************************************** 
- 20-Dec-24 08:02:22  INFO   
- 20-Dec-24 08:02:22  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 20-Dec-24 08:02:22  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 20-Dec-24 08:02:22  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 20-Dec-24 08:02:22  DEBUG  Found 'auths' section 
- 20-Dec-24 08:02:22  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 20-Dec-24 08:02:22  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
- 20-Dec-24 08:02:22  DEBUG  Looking for auth entry for 'docker.io' 
- 20-Dec-24 08:02:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 20-Dec-24 08:02:22  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
- 20-Dec-24 08:02:22  INFO   
- 20-Dec-24 08:02:22  INFO  ********** [ mosipqa/inji-certify:0.10.x ] **************************************************** 
- 20-Dec-24 08:02:22  INFO   
- 20-Dec-24 08:02:22  INFO  [ PULL ----------------------> mosipdev/inji-certify:release-0.10.x ]  
- 20-Dec-24 08:02:22  DEBUG  Looking for auth config 
- 20-Dec-24 08:02:22  DEBUG  Looking for auth entry for 'docker.io' 
- 20-Dec-24 08:02:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 20-Dec-24 08:02:22  DEBUG  Found auth config 
- 20-Dec-24 08:02:23  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.10.x&fromImage=mosipdev%2Finji-certify HTTP/11" 200 None 
- 20-Dec-24 08:02:34  INFO  Status: Downloaded newer image for mosipdev/inji-certify:release-0.10.x 
- 20-Dec-24 08:02:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.10.x/tag?tag=0.10.x&repo=mosipqa%2Finji-certify&force=1 HTTP/11" 201 0 
- 20-Dec-24 08:02:34  INFO   
- 20-Dec-24 08:02:34  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.10.x	------> mosipqa/inji-certify:0.10.x ]  
- 20-Dec-24 08:02:34  DEBUG  Looking for auth config 
- 20-Dec-24 08:02:34  DEBUG  Looking for auth entry for 'docker.io' 
- 20-Dec-24 08:02:34  DEBUG  Found 'https://index.docker.io/v1/' 
- 20-Dec-24 08:02:34  DEBUG  Found auth config 
- 20-Dec-24 08:02:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-certify/push?tag=0.10.x HTTP/11" 200 None 
- 20-Dec-24 08:02:39  INFO  0.10.x: digest: sha256:42a9849ac07f2cab127468974a6492a803e825cacb2e509d09b6269167c3aa39 size: 3041 
- 20-Dec-24 08:02:39  INFO   
- 20-Dec-24 08:02:39  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.10.x	------> mosipqa/inji-certify:latest ]  
- 20-Dec-24 08:02:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.10.x/tag?tag=latest&repo=mosipqa%2Finji-certify&force=1 HTTP/11" 201 0 
- 20-Dec-24 08:02:39  DEBUG  Looking for auth config 
- 20-Dec-24 08:02:39  DEBUG  Looking for auth entry for 'docker.io' 
- 20-Dec-24 08:02:39  DEBUG  Found 'https://index.docker.io/v1/' 
- 20-Dec-24 08:02:39  DEBUG  Found auth config 
- 20-Dec-24 08:02:39  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-certify/push?tag=latest HTTP/11" 200 None 
- 20-Dec-24 08:02:41  INFO  latest: digest: sha256:42a9849ac07f2cab127468974a6492a803e825cacb2e509d09b6269167c3aa39 size: 3041 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-certify%3Arelease-0.10.x%22%5D%7D HTTP/11" 200 466 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20b7c45bff660cdbd707f6b0cc25778231ef30efbf6bd3ce9e8e8afda3c5736d/json HTTP/11" 200 None 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-certify:release-0.10.x?force=False&noprune=False HTTP/11" 200 163 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-certify%3A0.10.x%22%5D%7D HTTP/11" 200 457 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20b7c45bff660cdbd707f6b0cc25778231ef30efbf6bd3ce9e8e8afda3c5736d/json HTTP/11" 200 None 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-certify:0.10.x?force=False&noprune=False HTTP/11" 200 45 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-certify%3Alatest%22%5D%7D HTTP/11" 200 457 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20b7c45bff660cdbd707f6b0cc25778231ef30efbf6bd3ce9e8e8afda3c5736d/json HTTP/11" 200 None 
- 20-Dec-24 08:02:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-certify:latest?force=False&noprune=False HTTP/11" 200 1357 
- 20-Dec-24 08:02:41  INFO  Completed mosipdev/inji-certify:release-0.10.x	------> mosipqa/inji-certify:0.10.x 
+ 20-Dec-24 09:41:51  INFO  LOGFILE CREATED : vidivi.log 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  ******************** Check Images List ************************************************************************************ 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  IMAGES= [['mosipdev2/kernel-masterdata-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev2/kernel-syncdata-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev2/admin-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev2/hotlist-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev2/resident-service:release-1.2.1.x', '1.2.1.x']] 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  src = "mosipdev2/kernel-masterdata-service" tag = "release-1.2.1.x" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-masterdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-masterdata-service/tags/release-1.2.1.x HTTP/11" 200 829 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  src = "mosipdev2/kernel-syncdata-service" tag = "release-1.2.1.x" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-syncdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-syncdata-service/tags/release-1.2.1.x HTTP/11" 200 831 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  src = "mosipdev2/admin-service" tag = "release-1.2.1.x" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/admin-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/admin-service/tags/release-1.2.1.x HTTP/11" 200 830 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  src = "mosipdev2/hotlist-service" tag = "release-1.2.1.x" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/hotlist-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/hotlist-service/tags/release-1.2.1.x HTTP/11" 200 831 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  src = "mosipdev2/resident-service" tag = "release-1.2.1.x" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/resident-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/resident-service/tags/release-1.2.1.x HTTP/11" 200 831 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/11" 308 0 
+ 20-Dec-24 09:41:51  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/11" 200 341 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-masterdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-masterdata-service/manifests/1.2.1.x HTTP/11" 200 2845 
+ 20-Dec-24 09:41:51  INFO   
+ 20-Dec-24 09:41:51  INFO  [ mosipqa/kernel-masterdata-service ]  
+ 20-Dec-24 09:41:51  INFO  Destination Image = "mosipqa/kernel-masterdata-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:43085215b67cd62c6fef6a89e06aa41f603bd9ec03af34771c80c10134916559" 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-masterdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-masterdata-service/tags/1.2.1.x HTTP/11" 200 809 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-syncdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-syncdata-service/manifests/1.2.1.x HTTP/11" 200 2845 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ mosipqa/kernel-syncdata-service ]  
+ 20-Dec-24 09:41:52  INFO  Destination Image = "mosipqa/kernel-syncdata-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:343931b6361946f5c0df84c8e1b131c489fd3f8752eed3814876641e2a994808" 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-syncdata-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-syncdata-service/tags/1.2.1.x HTTP/11" 200 815 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/admin-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/admin-service/manifests/1.2.1.x HTTP/11" 200 2847 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ mosipqa/admin-service ]  
+ 20-Dec-24 09:41:52  INFO  Destination Image = "mosipqa/admin-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:192eb66b7cb1e49f6d1b8134dd35e8795984b2490eb1525b202e1ff3751c6962" 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/admin-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/admin-service/tags/1.2.1.x HTTP/11" 200 816 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/hotlist-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/hotlist-service/manifests/1.2.1.x HTTP/11" 200 2845 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ mosipqa/hotlist-service ]  
+ 20-Dec-24 09:41:52  INFO  Destination Image = "mosipqa/hotlist-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:7bcdc2b5b904bcfe1c75a09575bd6a5c63f43d974749211ac4e3d1ed42c86441" 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/hotlist-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/hotlist-service/tags/1.2.1.x HTTP/11" 200 814 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/resident-service/manifests/1.2.1.x HTTP/11" 200 2847 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ mosipqa/resident-service ]  
+ 20-Dec-24 09:41:52  INFO  Destination Image = "mosipqa/resident-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:f94586e72e0b6bab3984428dabffb16824e9a302785aac30321cf59834d09ac6" 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 20-Dec-24 09:41:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/resident-service:pull HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 20-Dec-24 09:41:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/resident-service/tags/1.2.1.x HTTP/11" 200 809 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 20-Dec-24 09:41:52  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 20-Dec-24 09:41:52  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 20-Dec-24 09:41:52  DEBUG  Found 'auths' section 
+ 20-Dec-24 09:41:52  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "GET /version HTTP/11" 200 822 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/11" 200 48 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ********** [ mosipqa/kernel-masterdata-service:1.2.1.x ] **************************************************** 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ PULL ----------------------> mosipdev2/kernel-masterdata-service:release-1.2.1.x ]  
+ 20-Dec-24 09:41:52  INFO  ********** [ mosipqa/kernel-syncdata-service:1.2.1.x ] **************************************************** 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth config 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  DEBUG  Found auth config 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ********** [ mosipqa/admin-service:1.2.1.x ] **************************************************** 
+ 20-Dec-24 09:41:52  INFO  [ PULL ----------------------> mosipdev2/kernel-syncdata-service:release-1.2.1.x ]  
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth config 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ PULL ----------------------> mosipdev2/admin-service:release-1.2.1.x ]  
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  DEBUG  Found auth config 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth config 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  DEBUG  Found auth config 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ********** [ mosipqa/hotlist-service:1.2.1.x ] **************************************************** 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ PULL ----------------------> mosipdev2/hotlist-service:release-1.2.1.x ]  
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth config 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  DEBUG  Found auth config 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  ********** [ mosipqa/resident-service:1.2.1.x ] **************************************************** 
+ 20-Dec-24 09:41:52  INFO   
+ 20-Dec-24 09:41:52  INFO  [ PULL ----------------------> mosipdev2/resident-service:release-1.2.1.x ]  
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth config 
+ 20-Dec-24 09:41:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:41:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:41:52  DEBUG  Found auth config 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev2%2Fkernel-syncdata-service HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev2%2Fresident-service HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev2%2Fadmin-service HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev2%2Fhotlist-service HTTP/11" 200 None 
+ 20-Dec-24 09:41:52  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.1.x&fromImage=mosipdev2%2Fkernel-masterdata-service HTTP/11" 200 None 
+ 20-Dec-24 09:42:18  INFO  Status: Downloaded newer image for mosipdev2/hotlist-service:release-1.2.1.x 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/hotlist-service:release-1.2.1.x/tag?tag=1.2.1.x&repo=mosipqa%2Fhotlist-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:18  INFO   
+ 20-Dec-24 09:42:18  INFO  [ PUSH -----> mosipdev2/hotlist-service:release-1.2.1.x	------> mosipqa/hotlist-service:1.2.1.x ]  
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:18  DEBUG  Found auth config 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/hotlist-service/push?tag=1.2.1.x HTTP/11" 200 None 
+ 20-Dec-24 09:42:18  INFO  Status: Downloaded newer image for mosipdev2/kernel-masterdata-service:release-1.2.1.x 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-masterdata-service:release-1.2.1.x/tag?tag=1.2.1.x&repo=mosipqa%2Fkernel-masterdata-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:18  INFO   
+ 20-Dec-24 09:42:18  INFO  [ PUSH -----> mosipdev2/kernel-masterdata-service:release-1.2.1.x	------> mosipqa/kernel-masterdata-service:1.2.1.x ]  
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:18  DEBUG  Found auth config 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-masterdata-service/push?tag=1.2.1.x HTTP/11" 200 None 
+ 20-Dec-24 09:42:18  INFO  Status: Downloaded newer image for mosipdev2/kernel-syncdata-service:release-1.2.1.x 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-syncdata-service:release-1.2.1.x/tag?tag=1.2.1.x&repo=mosipqa%2Fkernel-syncdata-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:18  INFO   
+ 20-Dec-24 09:42:18  INFO  [ PUSH -----> mosipdev2/kernel-syncdata-service:release-1.2.1.x	------> mosipqa/kernel-syncdata-service:1.2.1.x ]  
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:18  DEBUG  Found auth config 
+ 20-Dec-24 09:42:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-syncdata-service/push?tag=1.2.1.x HTTP/11" 200 None 
+ 20-Dec-24 09:42:19  INFO  1.2.1.x: digest: sha256:c159f862e6978aff4e913a8d1ee870a561d304b76d2d4b926a650f6f1570d90f size: 2845 
+ 20-Dec-24 09:42:19  INFO   
+ 20-Dec-24 09:42:19  INFO  [ PUSH -----> mosipdev2/hotlist-service:release-1.2.1.x	------> mosipqa/hotlist-service:latest ]  
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/hotlist-service:release-1.2.1.x/tag?tag=latest&repo=mosipqa%2Fhotlist-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:19  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:19  DEBUG  Found auth config 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/hotlist-service/push?tag=latest HTTP/11" 200 None 
+ 20-Dec-24 09:42:19  INFO  1.2.1.x: digest: sha256:46ec453e53d9954dfab591577c482bfab392d8da0352d353661076e5188e1a44 size: 2845 
+ 20-Dec-24 09:42:19  INFO   
+ 20-Dec-24 09:42:19  INFO  [ PUSH -----> mosipdev2/kernel-masterdata-service:release-1.2.1.x	------> mosipqa/kernel-masterdata-service:latest ]  
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-masterdata-service:release-1.2.1.x/tag?tag=latest&repo=mosipqa%2Fkernel-masterdata-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:19  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:19  DEBUG  Found auth config 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-masterdata-service/push?tag=latest HTTP/11" 200 None 
+ 20-Dec-24 09:42:19  INFO  latest: digest: sha256:c159f862e6978aff4e913a8d1ee870a561d304b76d2d4b926a650f6f1570d90f size: 2845 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fhotlist-service%3Arelease-1.2.1.x%22%5D%7D HTTP/11" 200 383 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03116cc1ed6658e41d2ab760061fa0fb7366be6b0569e0740c1f141ee7f8b08e/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/hotlist-service:release-1.2.1.x?force=False&noprune=False HTTP/11" 200 172 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fhotlist-service%3A1.2.1.x%22%5D%7D HTTP/11" 200 373 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03116cc1ed6658e41d2ab760061fa0fb7366be6b0569e0740c1f141ee7f8b08e/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/hotlist-service:1.2.1.x?force=False&noprune=False HTTP/11" 200 49 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fhotlist-service%3Alatest%22%5D%7D HTTP/11" 200 372 
+ 20-Dec-24 09:42:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03116cc1ed6658e41d2ab760061fa0fb7366be6b0569e0740c1f141ee7f8b08e/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/hotlist-service:latest?force=False&noprune=False HTTP/11" 200 675 
+ 20-Dec-24 09:42:20  INFO  Completed mosipdev2/hotlist-service:release-1.2.1.x	------> mosipqa/hotlist-service:1.2.1.x 
+ 20-Dec-24 09:42:20  INFO  1.2.1.x: digest: sha256:d94d9d01f61dc36996c59723985e656413a1b156c359940cb264129cf355c32c size: 2845 
+ 20-Dec-24 09:42:20  INFO   
+ 20-Dec-24 09:42:20  INFO  [ PUSH -----> mosipdev2/kernel-syncdata-service:release-1.2.1.x	------> mosipqa/kernel-syncdata-service:latest ]  
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-syncdata-service:release-1.2.1.x/tag?tag=latest&repo=mosipqa%2Fkernel-syncdata-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:20  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:20  DEBUG  Found auth config 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-syncdata-service/push?tag=latest HTTP/11" 200 None 
+ 20-Dec-24 09:42:20  INFO  latest: digest: sha256:46ec453e53d9954dfab591577c482bfab392d8da0352d353661076e5188e1a44 size: 2845 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-masterdata-service%3Arelease-1.2.1.x%22%5D%7D HTTP/11" 200 393 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7254d3f4492097513e2179c3cbb51f5c4def1c763cfef8261a3f535d6ba7cc6b/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-masterdata-service:release-1.2.1.x?force=False&noprune=False HTTP/11" 200 192 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-masterdata-service%3A1.2.1.x%22%5D%7D HTTP/11" 200 383 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7254d3f4492097513e2179c3cbb51f5c4def1c763cfef8261a3f535d6ba7cc6b/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-masterdata-service:1.2.1.x?force=False&noprune=False HTTP/11" 200 59 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-masterdata-service%3Alatest%22%5D%7D HTTP/11" 200 382 
+ 20-Dec-24 09:42:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7254d3f4492097513e2179c3cbb51f5c4def1c763cfef8261a3f535d6ba7cc6b/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:21  INFO  latest: digest: sha256:d94d9d01f61dc36996c59723985e656413a1b156c359940cb264129cf355c32c size: 2845 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-syncdata-service%3Arelease-1.2.1.x%22%5D%7D HTTP/11" 200 391 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03129cfb20c871fca5e498cb083b483620eaeee1e1215615a4639ea966b45070/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-syncdata-service:release-1.2.1.x?force=False&noprune=False HTTP/11" 200 188 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-masterdata-service:latest?force=False&noprune=False HTTP/11" 200 695 
+ 20-Dec-24 09:42:21  INFO  Completed mosipdev2/kernel-masterdata-service:release-1.2.1.x	------> mosipqa/kernel-masterdata-service:1.2.1.x 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-syncdata-service%3A1.2.1.x%22%5D%7D HTTP/11" 200 381 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03129cfb20c871fca5e498cb083b483620eaeee1e1215615a4639ea966b45070/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-syncdata-service:1.2.1.x?force=False&noprune=False HTTP/11" 200 57 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-syncdata-service%3Alatest%22%5D%7D HTTP/11" 200 380 
+ 20-Dec-24 09:42:21  INFO  Status: Downloaded newer image for mosipdev2/admin-service:release-1.2.1.x 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:03129cfb20c871fca5e498cb083b483620eaeee1e1215615a4639ea966b45070/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/admin-service:release-1.2.1.x/tag?tag=1.2.1.x&repo=mosipqa%2Fadmin-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:21  INFO   
+ 20-Dec-24 09:42:21  INFO  [ PUSH -----> mosipdev2/admin-service:release-1.2.1.x	------> mosipqa/admin-service:1.2.1.x ]  
+ 20-Dec-24 09:42:21  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:21  DEBUG  Found auth config 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/admin-service/push?tag=1.2.1.x HTTP/11" 200 None 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-syncdata-service:latest?force=False&noprune=False HTTP/11" 200 691 
+ 20-Dec-24 09:42:21  INFO  Completed mosipdev2/kernel-syncdata-service:release-1.2.1.x	------> mosipqa/kernel-syncdata-service:1.2.1.x 
+ 20-Dec-24 09:42:21  INFO  Status: Downloaded newer image for mosipdev2/resident-service:release-1.2.1.x 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service:release-1.2.1.x/tag?tag=1.2.1.x&repo=mosipqa%2Fresident-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:21  INFO   
+ 20-Dec-24 09:42:21  INFO  [ PUSH -----> mosipdev2/resident-service:release-1.2.1.x	------> mosipqa/resident-service:1.2.1.x ]  
+ 20-Dec-24 09:42:21  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:21  DEBUG  Found auth config 
+ 20-Dec-24 09:42:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-service/push?tag=1.2.1.x HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  INFO  1.2.1.x: digest: sha256:cd913dcb0cd975fda2ae6015d5d6c393f0dc90e1bc58fa4abbfec00dfbdf6755 size: 2847 
+ 20-Dec-24 09:42:23  INFO   
+ 20-Dec-24 09:42:23  INFO  [ PUSH -----> mosipdev2/admin-service:release-1.2.1.x	------> mosipqa/admin-service:latest ]  
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/admin-service:release-1.2.1.x/tag?tag=latest&repo=mosipqa%2Fadmin-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:23  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:23  DEBUG  Found auth config 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/admin-service/push?tag=latest HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  INFO  1.2.1.x: digest: sha256:ea7dbff1b6c86fd291bcd451ab13486e427fca77922c40f1c8ec4c9b64f1a638 size: 2847 
+ 20-Dec-24 09:42:23  INFO   
+ 20-Dec-24 09:42:23  INFO  [ PUSH -----> mosipdev2/resident-service:release-1.2.1.x	------> mosipqa/resident-service:latest ]  
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/resident-service:release-1.2.1.x/tag?tag=latest&repo=mosipqa%2Fresident-service&force=1 HTTP/11" 201 0 
+ 20-Dec-24 09:42:23  DEBUG  Looking for auth config 
+ 20-Dec-24 09:42:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 20-Dec-24 09:42:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 20-Dec-24 09:42:23  DEBUG  Found auth config 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/resident-service/push?tag=latest HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  INFO  latest: digest: sha256:cd913dcb0cd975fda2ae6015d5d6c393f0dc90e1bc58fa4abbfec00dfbdf6755 size: 2847 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fadmin-service%3Arelease-1.2.1.x%22%5D%7D HTTP/11" 200 382 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1cb63e656753ab9bda33ed43d4b7c5699a6fe3e9902abbe9c646230af1d9db8a/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/admin-service:release-1.2.1.x?force=False&noprune=False HTTP/11" 200 168 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fadmin-service%3A1.2.1.x%22%5D%7D HTTP/11" 200 372 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1cb63e656753ab9bda33ed43d4b7c5699a6fe3e9902abbe9c646230af1d9db8a/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/admin-service:1.2.1.x?force=False&noprune=False HTTP/11" 200 47 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fadmin-service%3Alatest%22%5D%7D HTTP/11" 200 371 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:1cb63e656753ab9bda33ed43d4b7c5699a6fe3e9902abbe9c646230af1d9db8a/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/admin-service:latest?force=False&noprune=False HTTP/11" 200 671 
+ 20-Dec-24 09:42:23  INFO  Completed mosipdev2/admin-service:release-1.2.1.x	------> mosipqa/admin-service:1.2.1.x 
+ 20-Dec-24 09:42:23  INFO  latest: digest: sha256:ea7dbff1b6c86fd291bcd451ab13486e427fca77922c40f1c8ec4c9b64f1a638 size: 2847 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fresident-service%3Arelease-1.2.1.x%22%5D%7D HTTP/11" 200 385 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5c68be8ab8c964804239b3026faadbb05be7bbd103ce14e8b32543ead9cea5ba/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/resident-service:release-1.2.1.x?force=False&noprune=False HTTP/11" 200 174 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-service%3A1.2.1.x%22%5D%7D HTTP/11" 200 375 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5c68be8ab8c964804239b3026faadbb05be7bbd103ce14e8b32543ead9cea5ba/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-service:1.2.1.x?force=False&noprune=False HTTP/11" 200 50 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fresident-service%3Alatest%22%5D%7D HTTP/11" 200 374 
+ 20-Dec-24 09:42:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5c68be8ab8c964804239b3026faadbb05be7bbd103ce14e8b32543ead9cea5ba/json HTTP/11" 200 None 
+ 20-Dec-24 09:42:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/resident-service:latest?force=False&noprune=False HTTP/11" 200 1279 
+ 20-Dec-24 09:42:24  INFO  Completed mosipdev2/resident-service:release-1.2.1.x	------> mosipqa/resident-service:1.2.1.x 
