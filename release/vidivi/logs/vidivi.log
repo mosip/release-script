@@ -1,81 +1,85 @@
- 09-Jan-25 12:08:43  INFO  LOGFILE CREATED : vidivi.log 
- 09-Jan-25 12:08:43  INFO   
- 09-Jan-25 12:08:43  INFO  ******************** Check Images List ************************************************************************************ 
- 09-Jan-25 12:08:43  INFO   
- 09-Jan-25 12:08:43  INFO  IMAGES= [['mosipdev/mimoto:release-0.15.x', '0.15.x']] 
- 09-Jan-25 12:08:43  INFO   
- 09-Jan-25 12:08:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 09-Jan-25 12:08:43  INFO   
- 09-Jan-25 12:08:43  INFO  src = "mosipdev/mimoto" tag = "release-0.15.x" 
- 09-Jan-25 12:08:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Jan-25 12:08:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/1.1" 200 None 
- 09-Jan-25 12:08:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Jan-25 12:08:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mimoto/tags/release-0.15.x HTTP/1.1" 200 771 
- 09-Jan-25 12:08:43  INFO   
- 09-Jan-25 12:08:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 09-Jan-25 12:08:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 09-Jan-25 12:08:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 09-Jan-25 12:08:44  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 09-Jan-25 12:08:44  INFO   
- 09-Jan-25 12:08:44  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 09-Jan-25 12:08:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Jan-25 12:08:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 09-Jan-25 12:08:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 09-Jan-25 12:08:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mimoto/manifests/0.15.x HTTP/1.1" 200 2211 
- 09-Jan-25 12:08:44  INFO   
- 09-Jan-25 12:08:44  INFO  [ mosipqa/mimoto ]  
- 09-Jan-25 12:08:44  INFO  Destination Image = "mosipqa/mimoto" Destination Image tag = "0.15.x" IMAGE_ID : "sha256:2e25d762dd0d93266a6213ae72df8bfbec51fd205994c5971b39cff1d69c1929" 
- 09-Jan-25 12:08:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Jan-25 12:08:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 09-Jan-25 12:08:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Jan-25 12:08:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mimoto/tags/0.15.x HTTP/1.1" 200 811 
- 09-Jan-25 12:08:44  INFO   
- 09-Jan-25 12:08:44  INFO  ******************** HASH Operation Results ********************************************************************** 
- 09-Jan-25 12:08:44  INFO   
- 09-Jan-25 12:08:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 09-Jan-25 12:08:44  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 09-Jan-25 12:08:44  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 09-Jan-25 12:08:44  DEBUG  Found 'auths' section 
- 09-Jan-25 12:08:44  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 09-Jan-25 12:08:45  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 09-Jan-25 12:08:45  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Jan-25 12:08:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Jan-25 12:08:45  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 09-Jan-25 12:08:45  INFO   
- 09-Jan-25 12:08:45  INFO  ********** [ mosipqa/mimoto:0.15.x ] **************************************************** 
- 09-Jan-25 12:08:45  INFO   
- 09-Jan-25 12:08:45  INFO  [ PULL ----------------------> mosipdev/mimoto:release-0.15.x ]  
- 09-Jan-25 12:08:45  DEBUG  Looking for auth config 
- 09-Jan-25 12:08:45  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Jan-25 12:08:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Jan-25 12:08:45  DEBUG  Found auth config 
- 09-Jan-25 12:08:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.15.x&fromImage=mosipdev%2Fmimoto HTTP/1.1" 200 None 
- 09-Jan-25 12:08:59  INFO  Status: Downloaded newer image for mosipdev/mimoto:release-0.15.x 
- 09-Jan-25 12:08:59  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:release-0.15.x/tag?tag=0.15.x&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 09-Jan-25 12:08:59  INFO   
- 09-Jan-25 12:08:59  INFO  [ PUSH -----> mosipdev/mimoto:release-0.15.x	------> mosipqa/mimoto:0.15.x ]  
- 09-Jan-25 12:08:59  DEBUG  Looking for auth config 
- 09-Jan-25 12:08:59  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Jan-25 12:08:59  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Jan-25 12:08:59  DEBUG  Found auth config 
- 09-Jan-25 12:08:59  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=0.15.x HTTP/1.1" 200 None 
- 09-Jan-25 12:09:03  INFO  0.15.x: digest: sha256:63d51442691c99a179a7ecf4c95b040927825088db3f2f7feb007836c3cef9ca size: 2211 
- 09-Jan-25 12:09:03  INFO   
- 09-Jan-25 12:09:03  INFO  [ PUSH -----> mosipdev/mimoto:release-0.15.x	------> mosipqa/mimoto:latest ]  
- 09-Jan-25 12:09:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:release-0.15.x/tag?tag=latest&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 09-Jan-25 12:09:03  DEBUG  Looking for auth config 
- 09-Jan-25 12:09:03  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Jan-25 12:09:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Jan-25 12:09:03  DEBUG  Found auth config 
- 09-Jan-25 12:09:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=latest HTTP/1.1" 200 None 
- 09-Jan-25 12:09:05  INFO  latest: digest: sha256:63d51442691c99a179a7ecf4c95b040927825088db3f2f7feb007836c3cef9ca size: 2211 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmimoto%3Arelease-0.15.x%22%5D%7D HTTP/1.1" 200 372 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6462a225b7bd01d5f13ccc131f1653e2726c705ce5b8dc88632b1430edc574b9/json HTTP/1.1" 200 None 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mimoto:release-0.15.x?force=False&noprune=False HTTP/1.1" 200 151 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3A0.15.x%22%5D%7D HTTP/1.1" 200 363 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6462a225b7bd01d5f13ccc131f1653e2726c705ce5b8dc88632b1430edc574b9/json HTTP/1.1" 200 None 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:0.15.x?force=False&noprune=False HTTP/1.1" 200 39 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3Alatest%22%5D%7D HTTP/1.1" 200 363 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6462a225b7bd01d5f13ccc131f1653e2726c705ce5b8dc88632b1430edc574b9/json HTTP/1.1" 200 None 
- 09-Jan-25 12:09:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:latest?force=False&noprune=False HTTP/1.1" 200 1001 
- 09-Jan-25 12:09:05  INFO  Completed mosipdev/mimoto:release-0.15.x	------> mosipqa/mimoto:0.15.x 
+ 13-Jan-25 06:47:43  INFO  LOGFILE CREATED : vidivi.log 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** Check Images List ************************************************************************************ 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  IMAGES= [['mosipdev/kernel-config-server:release-1.3.x', 'release-1.3.x']] 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  src = "mosipdev/kernel-config-server" tag = "release-1.3.x" 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Jan-25 06:47:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-config-server:pull HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Jan-25 06:47:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-config-server/tags/release-1.3.x HTTP/1.1" 200 819 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 13-Jan-25 06:47:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 13-Jan-25 06:47:43  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Jan-25 06:47:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-config-server:pull HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 13-Jan-25 06:47:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-config-server/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  [ mosipdev2/kernel-config-server ]  
+ 13-Jan-25 06:47:43  INFO  Destination Image = "mosipdev2/kernel-config-server" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Jan-25 06:47:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-config-server:pull HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Jan-25 06:47:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-config-server/tags/release-1.3.x HTTP/1.1" 404 153 
+ 13-Jan-25 06:47:43  ERROR  Image "mosipdev2/kernel-config-server:release-1.3.x" does not exist 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/kernel-config-server:release-1.3.x']] 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 13-Jan-25 06:47:43  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 13-Jan-25 06:47:43  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 13-Jan-25 06:47:43  DEBUG  Found 'auths' section 
+ 13-Jan-25 06:47:43  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 13-Jan-25 06:47:43  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 13-Jan-25 06:47:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Jan-25 06:47:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Jan-25 06:47:43  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  ********** [ mosipdev2/kernel-config-server:release-1.3.x ] **************************************************** 
+ 13-Jan-25 06:47:43  INFO   
+ 13-Jan-25 06:47:43  INFO  [ PULL ----------------------> mosipdev/kernel-config-server:release-1.3.x ]  
+ 13-Jan-25 06:47:43  DEBUG  Looking for auth config 
+ 13-Jan-25 06:47:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Jan-25 06:47:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Jan-25 06:47:43  DEBUG  Found auth config 
+ 13-Jan-25 06:47:43  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-config-server HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:49  INFO  Status: Downloaded newer image for mosipdev/kernel-config-server:release-1.3.x 
+ 13-Jan-25 06:47:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-config-server:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fkernel-config-server&force=1 HTTP/1.1" 201 0 
+ 13-Jan-25 06:47:49  INFO   
+ 13-Jan-25 06:47:49  INFO  [ PUSH -----> mosipdev/kernel-config-server:release-1.3.x	------> mosipdev2/kernel-config-server:release-1.3.x ]  
+ 13-Jan-25 06:47:49  DEBUG  Looking for auth config 
+ 13-Jan-25 06:47:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Jan-25 06:47:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Jan-25 06:47:49  DEBUG  Found auth config 
+ 13-Jan-25 06:47:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-config-server/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:51  INFO  release-1.3.x: digest: sha256:3009ea9b75e298f85e428ccf7a1d073fbae73c065d5bb8415e3bb94ef645e68b size: 2000 
+ 13-Jan-25 06:47:51  INFO   
+ 13-Jan-25 06:47:51  INFO  [ PUSH -----> mosipdev/kernel-config-server:release-1.3.x	------> mosipdev2/kernel-config-server:latest ]  
+ 13-Jan-25 06:47:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-config-server:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fkernel-config-server&force=1 HTTP/1.1" 201 0 
+ 13-Jan-25 06:47:51  DEBUG  Looking for auth config 
+ 13-Jan-25 06:47:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Jan-25 06:47:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Jan-25 06:47:51  DEBUG  Found auth config 
+ 13-Jan-25 06:47:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/kernel-config-server/push?tag=latest HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:52  INFO  latest: digest: sha256:3009ea9b75e298f85e428ccf7a1d073fbae73c065d5bb8415e3bb94ef645e68b size: 2000 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-config-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e440ab97d747d081a7b6b4220221f38d557d811383b55e32976a13f72fdc390e/json HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-config-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 178 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-config-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 474 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e440ab97d747d081a7b6b4220221f38d557d811383b55e32976a13f72fdc390e/json HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-config-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 62 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-config-server%3Alatest%22%5D%7D HTTP/1.1" 200 467 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e440ab97d747d081a7b6b4220221f38d557d811383b55e32976a13f72fdc390e/json HTTP/1.1" 200 None 
+ 13-Jan-25 06:47:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/kernel-config-server:latest?force=False&noprune=False HTTP/1.1" 200 947 
+ 13-Jan-25 06:47:52  INFO  Completed mosipdev/kernel-config-server:release-1.3.x	------> mosipdev2/kernel-config-server:release-1.3.x 
