@@ -1,81 +1,136 @@
- 30-Jan-25 04:15:16  INFO  LOGFILE CREATED : vidivi.log 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** Check Images List ************************************************************************************ 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  IMAGES= [['mosipdev/artifactory-server:release-1.3.x', 'release-1.3.x']] 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  src = "mosipdev/artifactory-server" tag = "release-1.3.x" 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jan-25 04:15:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Jan-25 04:15:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/release-1.3.x HTTP/1.1" 200 822 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 30-Jan-25 04:15:16  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 30-Jan-25 04:15:16  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jan-25 04:15:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/1.1" 200 None 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 30-Jan-25 04:15:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/artifactory-server/manifests/release-1.3.x HTTP/1.1" 200 8689 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  [ mosipdev2/artifactory-server ]  
- 30-Jan-25 04:15:16  INFO  Destination Image = "mosipdev2/artifactory-server" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:02630c5c8b1a0bf10a2cd1c0edd4f0a52c165599033888a78bc98ac4e5807375" 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jan-25 04:15:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/artifactory-server:pull HTTP/1.1" 200 None 
- 30-Jan-25 04:15:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Jan-25 04:15:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/artifactory-server/tags/release-1.3.x HTTP/1.1" 200 827 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** HASH Operation Results ********************************************************************** 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 30-Jan-25 04:15:16  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 30-Jan-25 04:15:16  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 30-Jan-25 04:15:16  DEBUG  Found 'auths' section 
- 30-Jan-25 04:15:16  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 30-Jan-25 04:15:16  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 30-Jan-25 04:15:16  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jan-25 04:15:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jan-25 04:15:16  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  ********** [ mosipdev2/artifactory-server:release-1.3.x ] **************************************************** 
- 30-Jan-25 04:15:16  INFO   
- 30-Jan-25 04:15:16  INFO  [ PULL ----------------------> mosipdev/artifactory-server:release-1.3.x ]  
- 30-Jan-25 04:15:16  DEBUG  Looking for auth config 
- 30-Jan-25 04:15:16  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jan-25 04:15:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jan-25 04:15:16  DEBUG  Found auth config 
- 30-Jan-25 04:15:17  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
- 30-Jan-25 04:15:52  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:release-1.3.x 
- 30-Jan-25 04:15:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
- 30-Jan-25 04:15:52  INFO   
- 30-Jan-25 04:15:52  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x ]  
- 30-Jan-25 04:15:52  DEBUG  Looking for auth config 
- 30-Jan-25 04:15:52  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jan-25 04:15:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jan-25 04:15:52  DEBUG  Found auth config 
- 30-Jan-25 04:15:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 30-Jan-25 04:15:56  INFO  release-1.3.x: digest: sha256:f056dd85af6a994971bc17c90cbb88a5c4d651e29ad22e86b93eefcecef2d117 size: 8689 
- 30-Jan-25 04:15:56  INFO   
- 30-Jan-25 04:15:56  INFO  [ PUSH -----> mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:latest ]  
- 30-Jan-25 04:15:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
- 30-Jan-25 04:15:56  DEBUG  Looking for auth config 
- 30-Jan-25 04:15:56  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jan-25 04:15:56  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jan-25 04:15:56  DEBUG  Found auth config 
- 30-Jan-25 04:15:56  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
- 30-Jan-25 04:15:58  INFO  latest: digest: sha256:f056dd85af6a994971bc17c90cbb88a5c4d651e29ad22e86b93eefcecef2d117 size: 8689 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 449 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20f499a479179f9652b6dd375c8df9836ec24b58acf696f8dedd417419941071/json HTTP/1.1" 200 None 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 174 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 450 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20f499a479179f9652b6dd375c8df9836ec24b58acf696f8dedd417419941071/json HTTP/1.1" 200 None 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 60 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 443 
- 30-Jan-25 04:15:58  DEBUG  http://localhost:None "GET /v1.45/images/sha256:20f499a479179f9652b6dd375c8df9836ec24b58acf696f8dedd417419941071/json HTTP/1.1" 200 None 
- 30-Jan-25 04:15:59  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
- 30-Jan-25 04:15:59  INFO  Completed mosipdev/artifactory-server:release-1.3.x	------> mosipdev2/artifactory-server:release-1.3.x 
+ 30-Jan-25 05:08:14  INFO  LOGFILE CREATED : vidivi.log 
+ 30-Jan-25 05:08:14  INFO   
+ 30-Jan-25 05:08:14  INFO  ******************** Check Images List ************************************************************************************ 
+ 30-Jan-25 05:08:14  INFO   
+ 30-Jan-25 05:08:14  INFO  IMAGES= [['mosipdev2/dsl-packetcreator:develop', 'develop'], ['mosipdev2/dsl-orchestrator:develop', 'develop']] 
+ 30-Jan-25 05:08:14  INFO   
+ 30-Jan-25 05:08:14  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 30-Jan-25 05:08:14  INFO   
+ 30-Jan-25 05:08:14  INFO  src = "mosipdev2/dsl-packetcreator" tag = "develop" 
+ 30-Jan-25 05:08:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jan-25 05:08:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-packetcreator/tags/develop HTTP/1.1" 200 822 
+ 30-Jan-25 05:08:15  INFO   
+ 30-Jan-25 05:08:15  INFO  src = "mosipdev2/dsl-orchestrator" tag = "develop" 
+ 30-Jan-25 05:08:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jan-25 05:08:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-orchestrator/tags/develop HTTP/1.1" 200 823 
+ 30-Jan-25 05:08:16  INFO   
+ 30-Jan-25 05:08:16  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 30-Jan-25 05:08:16  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 30-Jan-25 05:08:16  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 30-Jan-25 05:08:16  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 30-Jan-25 05:08:16  INFO   
+ 30-Jan-25 05:08:16  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 30-Jan-25 05:08:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jan-25 05:08:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/dsl-packetcreator/manifests/develop HTTP/1.1" 200 1792 
+ 30-Jan-25 05:08:16  INFO   
+ 30-Jan-25 05:08:16  INFO  [ mosipqa/dsl-packetcreator ]  
+ 30-Jan-25 05:08:16  INFO  Destination Image = "mosipqa/dsl-packetcreator" Destination Image tag = "develop" IMAGE_ID : "sha256:22caf02ac1b37d2b49fa612540fc9cf5bd4034301d138444b080e1303c1c283c" 
+ 30-Jan-25 05:08:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jan-25 05:08:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/dsl-packetcreator/tags/develop HTTP/1.1" 200 814 
+ 30-Jan-25 05:08:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:17  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jan-25 05:08:17  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/dsl-orchestrator/manifests/develop HTTP/1.1" 200 1790 
+ 30-Jan-25 05:08:17  INFO   
+ 30-Jan-25 05:08:17  INFO  [ mosipqa/dsl-orchestrator ]  
+ 30-Jan-25 05:08:17  INFO  Destination Image = "mosipqa/dsl-orchestrator" Destination Image tag = "develop" IMAGE_ID : "sha256:8b1863cf274cb8d5a6322ef0e153f46f1e554f8b6f35de2135f5b06c296c0770" 
+ 30-Jan-25 05:08:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jan-25 05:08:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jan-25 05:08:18  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/dsl-orchestrator/tags/develop HTTP/1.1" 200 814 
+ 30-Jan-25 05:08:18  INFO   
+ 30-Jan-25 05:08:18  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 30-Jan-25 05:08:18  INFO   
+ 30-Jan-25 05:08:18  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 30-Jan-25 05:08:18  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 30-Jan-25 05:08:18  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 30-Jan-25 05:08:18  DEBUG  Found 'auths' section 
+ 30-Jan-25 05:08:18  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 30-Jan-25 05:08:18  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 30-Jan-25 05:08:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:19  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 30-Jan-25 05:08:19  INFO   
+ 30-Jan-25 05:08:19  INFO  ********** [ mosipqa/dsl-packetcreator:develop ] **************************************************** 
+ 30-Jan-25 05:08:19  INFO   
+ 30-Jan-25 05:08:19  INFO  [ PULL ----------------------> mosipdev2/dsl-packetcreator:develop ]  
+ 30-Jan-25 05:08:19  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:19  INFO   
+ 30-Jan-25 05:08:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:19  INFO  ********** [ mosipqa/dsl-orchestrator:develop ] **************************************************** 
+ 30-Jan-25 05:08:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:19  DEBUG  Found auth config 
+ 30-Jan-25 05:08:19  INFO   
+ 30-Jan-25 05:08:19  INFO  [ PULL ----------------------> mosipdev2/dsl-orchestrator:develop ]  
+ 30-Jan-25 05:08:19  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:19  DEBUG  Found auth config 
+ 30-Jan-25 05:08:20  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fdsl-orchestrator HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:20  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fdsl-packetcreator HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:40  INFO  Status: Downloaded newer image for mosipdev2/dsl-orchestrator:develop 
+ 30-Jan-25 05:08:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/dsl-orchestrator:develop/tag?tag=develop&repo=mosipqa%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
+ 30-Jan-25 05:08:40  INFO   
+ 30-Jan-25 05:08:40  INFO  [ PUSH -----> mosipdev2/dsl-orchestrator:develop	------> mosipqa/dsl-orchestrator:develop ]  
+ 30-Jan-25 05:08:40  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:40  DEBUG  Found auth config 
+ 30-Jan-25 05:08:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/dsl-orchestrator/push?tag=develop HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:41  INFO  Status: Downloaded newer image for mosipdev2/dsl-packetcreator:develop 
+ 30-Jan-25 05:08:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/dsl-packetcreator:develop/tag?tag=develop&repo=mosipqa%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
+ 30-Jan-25 05:08:41  INFO   
+ 30-Jan-25 05:08:41  INFO  [ PUSH -----> mosipdev2/dsl-packetcreator:develop	------> mosipqa/dsl-packetcreator:develop ]  
+ 30-Jan-25 05:08:41  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:41  DEBUG  Found auth config 
+ 30-Jan-25 05:08:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/dsl-packetcreator/push?tag=develop HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:46  INFO  develop: digest: sha256:0412fa785c67a1c922210d69b80c29bc4354cf7a46a93d0f8416fc10b8d2d59e size: 1790 
+ 30-Jan-25 05:08:46  INFO   
+ 30-Jan-25 05:08:46  INFO  [ PUSH -----> mosipdev2/dsl-orchestrator:develop	------> mosipqa/dsl-orchestrator:latest ]  
+ 30-Jan-25 05:08:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/dsl-orchestrator:develop/tag?tag=latest&repo=mosipqa%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
+ 30-Jan-25 05:08:46  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:46  DEBUG  Found auth config 
+ 30-Jan-25 05:08:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/dsl-orchestrator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:48  INFO  develop: digest: sha256:b8a97a265def9c109f09889ddd47eb2f238bb7b7323ada74bbb1dec8860d98a8 size: 1792 
+ 30-Jan-25 05:08:48  INFO   
+ 30-Jan-25 05:08:48  INFO  [ PUSH -----> mosipdev2/dsl-packetcreator:develop	------> mosipqa/dsl-packetcreator:latest ]  
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/dsl-packetcreator:develop/tag?tag=latest&repo=mosipqa%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
+ 30-Jan-25 05:08:48  DEBUG  Looking for auth config 
+ 30-Jan-25 05:08:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jan-25 05:08:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jan-25 05:08:48  DEBUG  Found auth config 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/dsl-packetcreator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:48  INFO  latest: digest: sha256:0412fa785c67a1c922210d69b80c29bc4354cf7a46a93d0f8416fc10b8d2d59e size: 1790 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fdsl-orchestrator%3Adevelop%22%5D%7D HTTP/1.1" 200 465 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7389963e20ff2dae681ffb3c1880371e93b1fa333d61e682afe99111ef5a9b1/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/dsl-orchestrator:develop?force=False&noprune=False HTTP/1.1" 200 166 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdsl-orchestrator%3Adevelop%22%5D%7D HTTP/1.1" 200 463 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7389963e20ff2dae681ffb3c1880371e93b1fa333d61e682afe99111ef5a9b1/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/dsl-orchestrator:develop?force=False&noprune=False HTTP/1.1" 200 50 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdsl-orchestrator%3Alatest%22%5D%7D HTTP/1.1" 200 462 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7389963e20ff2dae681ffb3c1880371e93b1fa333d61e682afe99111ef5a9b1/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/dsl-orchestrator:latest?force=False&noprune=False HTTP/1.1" 200 677 
+ 30-Jan-25 05:08:48  INFO  Completed mosipdev2/dsl-orchestrator:develop	------> mosipqa/dsl-orchestrator:develop 
+ 30-Jan-25 05:08:50  INFO  latest: digest: sha256:b8a97a265def9c109f09889ddd47eb2f238bb7b7323ada74bbb1dec8860d98a8 size: 1792 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fdsl-packetcreator%3Adevelop%22%5D%7D HTTP/1.1" 200 466 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3ccf2903c76543901c256f35340ca6df6eaf6422251583611827d58c9532feff/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/dsl-packetcreator:develop?force=False&noprune=False HTTP/1.1" 200 168 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdsl-packetcreator%3Adevelop%22%5D%7D HTTP/1.1" 200 464 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3ccf2903c76543901c256f35340ca6df6eaf6422251583611827d58c9532feff/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/dsl-packetcreator:develop?force=False&noprune=False HTTP/1.1" 200 51 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fdsl-packetcreator%3Alatest%22%5D%7D HTTP/1.1" 200 463 
+ 30-Jan-25 05:08:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3ccf2903c76543901c256f35340ca6df6eaf6422251583611827d58c9532feff/json HTTP/1.1" 200 None 
+ 30-Jan-25 05:08:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/dsl-packetcreator:latest?force=False&noprune=False HTTP/1.1" 200 851 
+ 30-Jan-25 05:08:51  INFO  Completed mosipdev2/dsl-packetcreator:develop	------> mosipqa/dsl-packetcreator:develop 
