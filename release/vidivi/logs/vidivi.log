@@ -1,81 +1,252 @@
- 04-Feb-25 06:44:25  INFO  LOGFILE CREATED : vidivi.log 
- 04-Feb-25 06:44:25  INFO   
- 04-Feb-25 06:44:25  INFO  ******************** Check Images List ************************************************************************************ 
- 04-Feb-25 06:44:25  INFO   
- 04-Feb-25 06:44:25  INFO  IMAGES= [['mosipdev/mimoto:develop', 'develop']] 
- 04-Feb-25 06:44:25  INFO   
- 04-Feb-25 06:44:25  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 04-Feb-25 06:44:25  INFO   
- 04-Feb-25 06:44:25  INFO  src = "mosipdev/mimoto" tag = "develop" 
- 04-Feb-25 06:44:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Feb-25 06:44:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/1.1" 200 None 
- 04-Feb-25 06:44:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Feb-25 06:44:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mimoto/tags/develop HTTP/1.1" 200 812 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 04-Feb-25 06:44:26  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 04-Feb-25 06:44:26  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 04-Feb-25 06:44:26  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 04-Feb-25 06:44:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Feb-25 06:44:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 04-Feb-25 06:44:26  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Feb-25 06:44:26  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mimoto/manifests/develop HTTP/1.1" 200 2211 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  [ mosipqa/mimoto ]  
- 04-Feb-25 06:44:26  INFO  Destination Image = "mosipqa/mimoto" Destination Image tag = "develop" IMAGE_ID : "sha256:d6c9e0bc2297c7443b5e70c072af967578f8b6b101bd4acafd4ad50a8ba22678" 
- 04-Feb-25 06:44:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Feb-25 06:44:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 04-Feb-25 06:44:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Feb-25 06:44:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mimoto/tags/develop HTTP/1.1" 200 809 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  ******************** HASH Operation Results ********************************************************************** 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 04-Feb-25 06:44:26  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 04-Feb-25 06:44:26  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 04-Feb-25 06:44:26  DEBUG  Found 'auths' section 
- 04-Feb-25 06:44:26  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 04-Feb-25 06:44:26  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 04-Feb-25 06:44:26  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Feb-25 06:44:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Feb-25 06:44:26  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  ********** [ mosipqa/mimoto:develop ] **************************************************** 
- 04-Feb-25 06:44:26  INFO   
- 04-Feb-25 06:44:26  INFO  [ PULL ----------------------> mosipdev/mimoto:develop ]  
- 04-Feb-25 06:44:26  DEBUG  Looking for auth config 
- 04-Feb-25 06:44:26  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Feb-25 06:44:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Feb-25 06:44:26  DEBUG  Found auth config 
- 04-Feb-25 06:44:26  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev%2Fmimoto HTTP/1.1" 200 None 
- 04-Feb-25 06:44:38  INFO  Status: Downloaded newer image for mosipdev/mimoto:develop 
- 04-Feb-25 06:44:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:develop/tag?tag=develop&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 04-Feb-25 06:44:38  INFO   
- 04-Feb-25 06:44:38  INFO  [ PUSH -----> mosipdev/mimoto:develop	------> mosipqa/mimoto:develop ]  
- 04-Feb-25 06:44:38  DEBUG  Looking for auth config 
- 04-Feb-25 06:44:38  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Feb-25 06:44:38  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Feb-25 06:44:38  DEBUG  Found auth config 
- 04-Feb-25 06:44:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=develop HTTP/1.1" 200 None 
- 04-Feb-25 06:44:40  INFO  develop: digest: sha256:58b9a659f3356a30097f6d7799775926a2d52c95f7cdd4b5a93d184b680c51e1 size: 2211 
- 04-Feb-25 06:44:40  INFO   
- 04-Feb-25 06:44:40  INFO  [ PUSH -----> mosipdev/mimoto:develop	------> mosipqa/mimoto:latest ]  
- 04-Feb-25 06:44:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mimoto:develop/tag?tag=latest&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 04-Feb-25 06:44:40  DEBUG  Looking for auth config 
- 04-Feb-25 06:44:40  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Feb-25 06:44:40  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Feb-25 06:44:40  DEBUG  Found auth config 
- 04-Feb-25 06:44:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mimoto/push?tag=latest HTTP/1.1" 200 None 
- 04-Feb-25 06:44:41  INFO  latest: digest: sha256:58b9a659f3356a30097f6d7799775926a2d52c95f7cdd4b5a93d184b680c51e1 size: 2211 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmimoto%3Adevelop%22%5D%7D HTTP/1.1" 200 365 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c38faf35616fd92e646a7604fa3fe0e463dd8e9f4af2af29b041752f6c07ffa4/json HTTP/1.1" 200 None 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mimoto:develop?force=False&noprune=False HTTP/1.1" 200 144 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3Adevelop%22%5D%7D HTTP/1.1" 200 364 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c38faf35616fd92e646a7604fa3fe0e463dd8e9f4af2af29b041752f6c07ffa4/json HTTP/1.1" 200 None 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:develop?force=False&noprune=False HTTP/1.1" 200 40 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmimoto%3Alatest%22%5D%7D HTTP/1.1" 200 363 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c38faf35616fd92e646a7604fa3fe0e463dd8e9f4af2af29b041752f6c07ffa4/json HTTP/1.1" 200 None 
- 04-Feb-25 06:44:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mimoto:latest?force=False&noprune=False HTTP/1.1" 200 1001 
- 04-Feb-25 06:44:41  INFO  Completed mosipdev/mimoto:develop	------> mosipqa/mimoto:develop 
+ 04-Feb-25 09:32:20  INFO  LOGFILE CREATED : vidivi.log 
+ 04-Feb-25 09:32:20  INFO   
+ 04-Feb-25 09:32:20  INFO  ******************** Check Images List ************************************************************************************ 
+ 04-Feb-25 09:32:20  INFO   
+ 04-Feb-25 09:32:20  INFO  IMAGES= [['mosipdev/pmp-revamp-ui:release-1.2.2.x', '1.2.2.x'], ['mosipdev/partner-management-service:release-1.2.2.x', '1.2.2.x'], ['mosipdev/policy-management-service:release-1.2.2.x', '1.2.2.x'], ['mosipdev/kernel-keymanager-service:release-1.3.x', '1.3.x']] 
+ 04-Feb-25 09:32:20  INFO   
+ 04-Feb-25 09:32:20  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 04-Feb-25 09:32:20  INFO   
+ 04-Feb-25 09:32:20  INFO  src = "mosipdev/pmp-revamp-ui" tag = "release-1.2.2.x" 
+ 04-Feb-25 09:32:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-revamp-ui/tags/release-1.2.2.x HTTP/1.1" 200 820 
+ 04-Feb-25 09:32:21  INFO   
+ 04-Feb-25 09:32:21  INFO  src = "mosipdev/partner-management-service" tag = "release-1.2.2.x" 
+ 04-Feb-25 09:32:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-management-service/tags/release-1.2.2.x HTTP/1.1" 200 820 
+ 04-Feb-25 09:32:21  INFO   
+ 04-Feb-25 09:32:21  INFO  src = "mosipdev/policy-management-service" tag = "release-1.2.2.x" 
+ 04-Feb-25 09:32:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/policy-management-service/tags/release-1.2.2.x HTTP/1.1" 200 821 
+ 04-Feb-25 09:32:21  INFO   
+ 04-Feb-25 09:32:21  INFO  src = "mosipdev/kernel-keymanager-service" tag = "release-1.3.x" 
+ 04-Feb-25 09:32:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-keymanager-service/tags/release-1.3.x HTTP/1.1" 200 819 
+ 04-Feb-25 09:32:22  INFO   
+ 04-Feb-25 09:32:22  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 04-Feb-25 09:32:22  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 04-Feb-25 09:32:22  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 04-Feb-25 09:32:22  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 04-Feb-25 09:32:22  INFO   
+ 04-Feb-25 09:32:22  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 04-Feb-25 09:32:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Feb-25 09:32:23  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/pmp-revamp-ui/manifests/1.2.2.x HTTP/1.1" 404 101 
+ 04-Feb-25 09:32:23  INFO   
+ 04-Feb-25 09:32:23  INFO  [ mosipqa/pmp-revamp-ui ]  
+ 04-Feb-25 09:32:23  INFO  Destination Image = "mosipqa/pmp-revamp-ui" Destination Image tag = "1.2.2.x" IMAGE_ID :  
+ 04-Feb-25 09:32:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/pmp-revamp-ui/tags/1.2.2.x HTTP/1.1" 404 132 
+ 04-Feb-25 09:32:23  ERROR  Image "mosipqa/pmp-revamp-ui:1.2.2.x" does not exist 
+ 04-Feb-25 09:32:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Feb-25 09:32:24  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/partner-management-service/manifests/1.2.2.x HTTP/1.1" 404 101 
+ 04-Feb-25 09:32:24  INFO   
+ 04-Feb-25 09:32:24  INFO  [ mosipqa/partner-management-service ]  
+ 04-Feb-25 09:32:24  INFO  Destination Image = "mosipqa/partner-management-service" Destination Image tag = "1.2.2.x" IMAGE_ID :  
+ 04-Feb-25 09:32:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:24  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:24  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/partner-management-service/tags/1.2.2.x HTTP/1.1" 404 145 
+ 04-Feb-25 09:32:24  ERROR  Image "mosipqa/partner-management-service:1.2.2.x" does not exist 
+ 04-Feb-25 09:32:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:24  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Feb-25 09:32:25  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/policy-management-service/manifests/1.2.2.x HTTP/1.1" 404 101 
+ 04-Feb-25 09:32:25  INFO   
+ 04-Feb-25 09:32:25  INFO  [ mosipqa/policy-management-service ]  
+ 04-Feb-25 09:32:25  INFO  Destination Image = "mosipqa/policy-management-service" Destination Image tag = "1.2.2.x" IMAGE_ID :  
+ 04-Feb-25 09:32:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:25  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/policy-management-service/tags/1.2.2.x HTTP/1.1" 404 144 
+ 04-Feb-25 09:32:25  ERROR  Image "mosipqa/policy-management-service:1.2.2.x" does not exist 
+ 04-Feb-25 09:32:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:25  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Feb-25 09:32:26  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-keymanager-service/manifests/1.3.x HTTP/1.1" 200 2418 
+ 04-Feb-25 09:32:26  INFO   
+ 04-Feb-25 09:32:26  INFO  [ mosipqa/kernel-keymanager-service ]  
+ 04-Feb-25 09:32:26  INFO  Destination Image = "mosipqa/kernel-keymanager-service" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:b895aac33189dc663f1e8776a2e64ee19a5d0cba366c5152f897afa58a8fb919" 
+ 04-Feb-25 09:32:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Feb-25 09:32:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Feb-25 09:32:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-keymanager-service/tags/1.3.x HTTP/1.1" 200 812 
+ 04-Feb-25 09:32:26  INFO   
+ 04-Feb-25 09:32:26  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 04-Feb-25 09:32:26  INFO   
+ 04-Feb-25 09:32:26  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/pmp-revamp-ui:1.2.2.x'], ['mosipqa/partner-management-service:1.2.2.x'], ['mosipqa/policy-management-service:1.2.2.x']] 
+ 04-Feb-25 09:32:26  INFO   
+ 04-Feb-25 09:32:26  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 04-Feb-25 09:32:26  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 04-Feb-25 09:32:26  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 04-Feb-25 09:32:26  DEBUG  Found 'auths' section 
+ 04-Feb-25 09:32:26  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 04-Feb-25 09:32:26  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 04-Feb-25 09:32:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:27  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  ********** [ mosipqa/pmp-revamp-ui:1.2.2.x ] **************************************************** 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  [ PULL ----------------------> mosipdev/pmp-revamp-ui:release-1.2.2.x ]  
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:27  DEBUG  Found auth config 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  ********** [ mosipqa/partner-management-service:1.2.2.x ] **************************************************** 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  ********** [ mosipqa/policy-management-service:1.2.2.x ] **************************************************** 
+ 04-Feb-25 09:32:27  INFO  [ PULL ----------------------> mosipdev/partner-management-service:release-1.2.2.x ]  
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:27  DEBUG  Found auth config 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  [ PULL ----------------------> mosipdev/policy-management-service:release-1.2.2.x ]  
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:27  INFO  ********** [ mosipqa/kernel-keymanager-service:1.3.x ] **************************************************** 
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:27  DEBUG  Found auth config 
+ 04-Feb-25 09:32:27  INFO   
+ 04-Feb-25 09:32:27  INFO  [ PULL ----------------------> mosipdev/kernel-keymanager-service:release-1.3.x ]  
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:27  DEBUG  Found auth config 
+ 04-Feb-25 09:32:28  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.2.x&fromImage=mosipdev%2Fpolicy-management-service HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:28  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.2.x&fromImage=mosipdev%2Fpmp-revamp-ui HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:28  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.2.2.x&fromImage=mosipdev%2Fpartner-management-service HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:28  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-keymanager-service HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:41  INFO  Status: Downloaded newer image for mosipdev/pmp-revamp-ui:release-1.2.2.x 
+ 04-Feb-25 09:32:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-revamp-ui:release-1.2.2.x/tag?tag=1.2.2.x&repo=mosipqa%2Fpmp-revamp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:41  INFO   
+ 04-Feb-25 09:32:41  INFO  [ PUSH -----> mosipdev/pmp-revamp-ui:release-1.2.2.x	------> mosipqa/pmp-revamp-ui:1.2.2.x ]  
+ 04-Feb-25 09:32:41  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:41  DEBUG  Found auth config 
+ 04-Feb-25 09:32:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-revamp-ui/push?tag=1.2.2.x HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:46  INFO  Status: Downloaded newer image for mosipdev/kernel-keymanager-service:release-1.3.x 
+ 04-Feb-25 09:32:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:46  INFO   
+ 04-Feb-25 09:32:46  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.3.x	------> mosipqa/kernel-keymanager-service:1.3.x ]  
+ 04-Feb-25 09:32:46  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:46  DEBUG  Found auth config 
+ 04-Feb-25 09:32:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-keymanager-service/push?tag=1.3.x HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:48  INFO  1.2.2.x: digest: sha256:1f8c3ef7aa00fec56ce0302af3d5b903e48dafedc947d815870263663d000594 size: 3862 
+ 04-Feb-25 09:32:48  INFO   
+ 04-Feb-25 09:32:48  INFO  [ PUSH -----> mosipdev/pmp-revamp-ui:release-1.2.2.x	------> mosipqa/pmp-revamp-ui:latest ]  
+ 04-Feb-25 09:32:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pmp-revamp-ui:release-1.2.2.x/tag?tag=latest&repo=mosipqa%2Fpmp-revamp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:48  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:48  DEBUG  Found auth config 
+ 04-Feb-25 09:32:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/pmp-revamp-ui/push?tag=latest HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:52  INFO  Status: Downloaded newer image for mosipdev/policy-management-service:release-1.2.2.x 
+ 04-Feb-25 09:32:52  INFO  Status: Downloaded newer image for mosipdev/partner-management-service:release-1.2.2.x 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:release-1.2.2.x/tag?tag=1.2.2.x&repo=mosipqa%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:52  INFO   
+ 04-Feb-25 09:32:52  INFO  [ PUSH -----> mosipdev/policy-management-service:release-1.2.2.x	------> mosipqa/policy-management-service:1.2.2.x ]  
+ 04-Feb-25 09:32:52  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:52  DEBUG  Found auth config 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:release-1.2.2.x/tag?tag=1.2.2.x&repo=mosipqa%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:52  INFO   
+ 04-Feb-25 09:32:52  INFO  [ PUSH -----> mosipdev/partner-management-service:release-1.2.2.x	------> mosipqa/partner-management-service:1.2.2.x ]  
+ 04-Feb-25 09:32:52  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:52  DEBUG  Found auth config 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/partner-management-service/push?tag=1.2.2.x HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/policy-management-service/push?tag=1.2.2.x HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:52  INFO  latest: digest: sha256:1f8c3ef7aa00fec56ce0302af3d5b903e48dafedc947d815870263663d000594 size: 3862 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpmp-revamp-ui%3Arelease-1.2.2.x%22%5D%7D HTTP/1.1" 200 445 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:826fdbe40e1df9b513ab1ae8129329cb916b459742a1f3ac7faac3468ef9dc47/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pmp-revamp-ui:release-1.2.2.x?force=False&noprune=False HTTP/1.1" 200 166 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-revamp-ui%3A1.2.2.x%22%5D%7D HTTP/1.1" 200 436 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:826fdbe40e1df9b513ab1ae8129329cb916b459742a1f3ac7faac3468ef9dc47/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-revamp-ui:1.2.2.x?force=False&noprune=False HTTP/1.1" 200 47 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpmp-revamp-ui%3Alatest%22%5D%7D HTTP/1.1" 200 435 
+ 04-Feb-25 09:32:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:826fdbe40e1df9b513ab1ae8129329cb916b459742a1f3ac7faac3468ef9dc47/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/pmp-revamp-ui:latest?force=False&noprune=False HTTP/1.1" 200 1703 
+ 04-Feb-25 09:32:53  INFO  Completed mosipdev/pmp-revamp-ui:release-1.2.2.x	------> mosipqa/pmp-revamp-ui:1.2.2.x 
+ 04-Feb-25 09:32:53  INFO  1.3.x: digest: sha256:5300a4ade5d5fdd5593831f1b268ba052e26a82ed011671baa3c3fe8819d1476 size: 2418 
+ 04-Feb-25 09:32:53  INFO   
+ 04-Feb-25 09:32:53  INFO  [ PUSH -----> mosipdev/kernel-keymanager-service:release-1.3.x	------> mosipqa/kernel-keymanager-service:latest ]  
+ 04-Feb-25 09:32:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-keymanager-service:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:53  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:53  DEBUG  Found auth config 
+ 04-Feb-25 09:32:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/kernel-keymanager-service/push?tag=latest HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:57  INFO  1.2.2.x: digest: sha256:9ee7b4f70ddf5d215f4855f5bfb79a900947ea0a62b89d9fcda3fc17838092ad size: 2640 
+ 04-Feb-25 09:32:57  INFO   
+ 04-Feb-25 09:32:57  INFO  [ PUSH -----> mosipdev/policy-management-service:release-1.2.2.x	------> mosipqa/policy-management-service:latest ]  
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/policy-management-service:release-1.2.2.x/tag?tag=latest&repo=mosipqa%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:57  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:57  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:57  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:57  DEBUG  Found auth config 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/policy-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:57  INFO  latest: digest: sha256:5300a4ade5d5fdd5593831f1b268ba052e26a82ed011671baa3c3fe8819d1476 size: 2418 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-keymanager-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 478 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ec953eabc945efa6bac3b6661b5ea6093816527abd9c4c2029b09e6712ba2bd9/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-keymanager-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 188 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-keymanager-service%3A1.3.x%22%5D%7D HTTP/1.1" 200 469 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ec953eabc945efa6bac3b6661b5ea6093816527abd9c4c2029b09e6712ba2bd9/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-keymanager-service:1.3.x?force=False&noprune=False HTTP/1.1" 200 57 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-keymanager-service%3Alatest%22%5D%7D HTTP/1.1" 200 470 
+ 04-Feb-25 09:32:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ec953eabc945efa6bac3b6661b5ea6093816527abd9c4c2029b09e6712ba2bd9/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/kernel-keymanager-service:latest?force=False&noprune=False HTTP/1.1" 200 1125 
+ 04-Feb-25 09:32:58  INFO  Completed mosipdev/kernel-keymanager-service:release-1.3.x	------> mosipqa/kernel-keymanager-service:1.3.x 
+ 04-Feb-25 09:32:58  INFO  1.2.2.x: digest: sha256:7b1a51562090de6a2efdce3b43c656fc78b8047df0702344cd4ebcdf3fd4b6ff size: 2638 
+ 04-Feb-25 09:32:58  INFO   
+ 04-Feb-25 09:32:58  INFO  [ PUSH -----> mosipdev/partner-management-service:release-1.2.2.x	------> mosipqa/partner-management-service:latest ]  
+ 04-Feb-25 09:32:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/partner-management-service:release-1.2.2.x/tag?tag=latest&repo=mosipqa%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Feb-25 09:32:58  DEBUG  Looking for auth config 
+ 04-Feb-25 09:32:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Feb-25 09:32:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Feb-25 09:32:58  DEBUG  Found auth config 
+ 04-Feb-25 09:32:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/partner-management-service/push?tag=latest HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:59  INFO  latest: digest: sha256:9ee7b4f70ddf5d215f4855f5bfb79a900947ea0a62b89d9fcda3fc17838092ad size: 2640 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpolicy-management-service%3Arelease-1.2.2.x%22%5D%7D HTTP/1.1" 200 392 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/sha256:485dd001cd96d674899b2a536b5b206747722c905c3f96514ba9f6658f3c22b2/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/policy-management-service:release-1.2.2.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpolicy-management-service%3A1.2.2.x%22%5D%7D HTTP/1.1" 200 383 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/sha256:485dd001cd96d674899b2a536b5b206747722c905c3f96514ba9f6658f3c22b2/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/policy-management-service:1.2.2.x?force=False&noprune=False HTTP/1.1" 200 59 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpolicy-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "GET /v1.45/images/sha256:485dd001cd96d674899b2a536b5b206747722c905c3f96514ba9f6658f3c22b2/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:32:59  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/policy-management-service:latest?force=False&noprune=False HTTP/1.1" 200 609 
+ 04-Feb-25 09:32:59  INFO  Completed mosipdev/policy-management-service:release-1.2.2.x	------> mosipqa/policy-management-service:1.2.2.x 
+ 04-Feb-25 09:33:00  INFO  latest: digest: sha256:7b1a51562090de6a2efdce3b43c656fc78b8047df0702344cd4ebcdf3fd4b6ff size: 2638 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpartner-management-service%3Arelease-1.2.2.x%22%5D%7D HTTP/1.1" 200 393 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:813cda4c4b4aa7bd0792285b4298de8cac4a1cecf490fab2c0fb8b2e98de6d15/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/partner-management-service:release-1.2.2.x?force=False&noprune=False HTTP/1.1" 200 192 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpartner-management-service%3A1.2.2.x%22%5D%7D HTTP/1.1" 200 384 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:813cda4c4b4aa7bd0792285b4298de8cac4a1cecf490fab2c0fb8b2e98de6d15/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/partner-management-service:1.2.2.x?force=False&noprune=False HTTP/1.1" 200 60 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fpartner-management-service%3Alatest%22%5D%7D HTTP/1.1" 200 383 
+ 04-Feb-25 09:33:00  DEBUG  http://localhost:None "GET /v1.45/images/sha256:813cda4c4b4aa7bd0792285b4298de8cac4a1cecf490fab2c0fb8b2e98de6d15/json HTTP/1.1" 200 None 
+ 04-Feb-25 09:33:01  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/partner-management-service:latest?force=False&noprune=False HTTP/1.1" 200 1213 
+ 04-Feb-25 09:33:01  INFO  Completed mosipdev/partner-management-service:release-1.2.2.x	------> mosipqa/partner-management-service:1.2.2.x 
