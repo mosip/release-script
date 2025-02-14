@@ -1,84 +1,81 @@
- 14-Feb-25 10:31:02  INFO  LOGFILE CREATED : vidivi.log 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** Check Images List ************************************************************************************ 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  IMAGES= [['mosipdev/signup-service:release-1.1.x', '1.1.1']] 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  src = "mosipdev/signup-service" tag = "release-1.1.x" 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:31:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-service:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Feb-25 10:31:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-service/tags/release-1.1.x HTTP/1.1" 200 829 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 14-Feb-25 10:31:02  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:31:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/signup-service:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 14-Feb-25 10:31:02  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/signup-service/manifests/1.1.1 HTTP/1.1" 404 99 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  [ mosipid/signup-service ]  
- 14-Feb-25 10:31:02  INFO  Destination Image = "mosipid/signup-service" Destination Image tag = "1.1.1" IMAGE_ID :  
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:31:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/signup-service:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:31:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Feb-25 10:31:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/signup-service/tags/1.1.1 HTTP/1.1" 404 129 
- 14-Feb-25 10:31:02  ERROR  Image "mosipid/signup-service:1.1.1" does not exist 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** HASH Operation Results ********************************************************************** 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/signup-service:1.1.1']] 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 14-Feb-25 10:31:02  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 14-Feb-25 10:31:02  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 14-Feb-25 10:31:02  DEBUG  Found 'auths' section 
- 14-Feb-25 10:31:02  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 14-Feb-25 10:31:02  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 14-Feb-25 10:31:02  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:31:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:31:02  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  ********** [ mosipid/signup-service:1.1.1 ] **************************************************** 
- 14-Feb-25 10:31:02  INFO   
- 14-Feb-25 10:31:02  INFO  [ PULL ----------------------> mosipdev/signup-service:release-1.1.x ]  
- 14-Feb-25 10:31:02  DEBUG  Looking for auth config 
- 14-Feb-25 10:31:02  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:31:02  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:31:02  DEBUG  Found auth config 
- 14-Feb-25 10:31:03  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.1.x&fromImage=mosipdev%2Fsignup-service HTTP/1.1" 200 None 
- 14-Feb-25 10:31:18  INFO  Status: Downloaded newer image for mosipdev/signup-service:release-1.1.x 
- 14-Feb-25 10:31:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/signup-service:release-1.1.x/tag?tag=1.1.1&repo=mosipid%2Fsignup-service&force=1 HTTP/1.1" 201 0 
- 14-Feb-25 10:31:18  INFO   
- 14-Feb-25 10:31:18  INFO  [ PUSH -----> mosipdev/signup-service:release-1.1.x	------> mosipid/signup-service:1.1.1 ]  
- 14-Feb-25 10:31:18  DEBUG  Looking for auth config 
- 14-Feb-25 10:31:18  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:31:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:31:18  DEBUG  Found auth config 
- 14-Feb-25 10:31:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/signup-service/push?tag=1.1.1 HTTP/1.1" 200 None 
- 14-Feb-25 10:31:20  INFO  1.1.1: digest: sha256:28500b9ea84dd74dd1a63a2b89783ab821731d88470b1d867393e4adfa9f3807 size: 2635 
- 14-Feb-25 10:31:20  INFO   
- 14-Feb-25 10:31:20  INFO  [ PUSH -----> mosipdev/signup-service:release-1.1.x	------> mosipid/signup-service:latest ]  
- 14-Feb-25 10:31:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/signup-service:release-1.1.x/tag?tag=latest&repo=mosipid%2Fsignup-service&force=1 HTTP/1.1" 201 0 
- 14-Feb-25 10:31:20  DEBUG  Looking for auth config 
- 14-Feb-25 10:31:20  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:31:20  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:31:20  DEBUG  Found auth config 
- 14-Feb-25 10:31:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/signup-service/push?tag=latest HTTP/1.1" 200 None 
- 14-Feb-25 10:31:21  INFO  latest: digest: sha256:28500b9ea84dd74dd1a63a2b89783ab821731d88470b1d867393e4adfa9f3807 size: 2635 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fsignup-service%3Arelease-1.1.x%22%5D%7D HTTP/1.1" 200 379 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0ca90ff03ff731b3162d9bfcaadcd253e47656cbf22c4c4095a4474cfe60a92e/json HTTP/1.1" 200 None 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/signup-service:release-1.1.x?force=False&noprune=False HTTP/1.1" 200 166 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fsignup-service%3A1.1.1%22%5D%7D HTTP/1.1" 200 370 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0ca90ff03ff731b3162d9bfcaadcd253e47656cbf22c4c4095a4474cfe60a92e/json HTTP/1.1" 200 None 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/signup-service:1.1.1?force=False&noprune=False HTTP/1.1" 200 46 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fsignup-service%3Alatest%22%5D%7D HTTP/1.1" 200 371 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "GET /v1.45/images/sha256:0ca90ff03ff731b3162d9bfcaadcd253e47656cbf22c4c4095a4474cfe60a92e/json HTTP/1.1" 200 None 
- 14-Feb-25 10:31:21  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/signup-service:latest?force=False&noprune=False HTTP/1.1" 200 1189 
- 14-Feb-25 10:31:21  INFO  Completed mosipdev/signup-service:release-1.1.x	------> mosipid/signup-service:1.1.1 
+ 14-Feb-25 10:48:02  INFO  LOGFILE CREATED : vidivi.log 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  ******************** Check Images List ************************************************************************************ 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  IMAGES= [['mosipdev2/apitest-masterdata:release-1.3.x', '1.3.x']] 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  src = "mosipdev2/apitest-masterdata" tag = "release-1.3.x" 
+ 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 10:48:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Feb-25 10:48:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-masterdata/tags/release-1.3.x HTTP/1.1" 200 837 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 14-Feb-25 10:48:02  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 14-Feb-25 10:48:02  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 14-Feb-25 10:48:02  INFO   
+ 14-Feb-25 10:48:02  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 10:48:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 14-Feb-25 10:48:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-masterdata/manifests/1.3.x HTTP/1.1" 200 1582 
+ 14-Feb-25 10:48:03  INFO   
+ 14-Feb-25 10:48:03  INFO  [ mosipqa/apitest-masterdata ]  
+ 14-Feb-25 10:48:03  INFO  Destination Image = "mosipqa/apitest-masterdata" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:ea4fd28e6e01552ebbd2842875a257294e80fd83b1060bc3578a7636ce2fcb44" 
+ 14-Feb-25 10:48:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 10:48:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Feb-25 10:48:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-masterdata/tags/1.3.x HTTP/1.1" 200 809 
+ 14-Feb-25 10:48:03  INFO   
+ 14-Feb-25 10:48:03  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 14-Feb-25 10:48:03  INFO   
+ 14-Feb-25 10:48:03  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 14-Feb-25 10:48:03  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 14-Feb-25 10:48:03  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 14-Feb-25 10:48:03  DEBUG  Found 'auths' section 
+ 14-Feb-25 10:48:03  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 14-Feb-25 10:48:03  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 14-Feb-25 10:48:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 10:48:03  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 10:48:03  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 14-Feb-25 10:48:03  INFO   
+ 14-Feb-25 10:48:03  INFO  ********** [ mosipqa/apitest-masterdata:1.3.x ] **************************************************** 
+ 14-Feb-25 10:48:03  INFO   
+ 14-Feb-25 10:48:03  INFO  [ PULL ----------------------> mosipdev2/apitest-masterdata:release-1.3.x ]  
+ 14-Feb-25 10:48:03  DEBUG  Looking for auth config 
+ 14-Feb-25 10:48:03  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 10:48:03  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 10:48:03  DEBUG  Found auth config 
+ 14-Feb-25 10:48:03  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fapitest-masterdata HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:23  INFO  Status: Downloaded newer image for mosipdev2/apitest-masterdata:release-1.3.x 
+ 14-Feb-25 10:48:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
+ 14-Feb-25 10:48:24  INFO   
+ 14-Feb-25 10:48:24  INFO  [ PUSH -----> mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:1.3.x ]  
+ 14-Feb-25 10:48:24  DEBUG  Looking for auth config 
+ 14-Feb-25 10:48:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 10:48:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 10:48:24  DEBUG  Found auth config 
+ 14-Feb-25 10:48:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-masterdata/push?tag=1.3.x HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:26  INFO  1.3.x: digest: sha256:313397beec2d5596699ed96ed84e6da9016648eb096a6a1769a1921bf95d9f82 size: 1582 
+ 14-Feb-25 10:48:26  INFO   
+ 14-Feb-25 10:48:26  INFO  [ PUSH -----> mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:latest ]  
+ 14-Feb-25 10:48:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
+ 14-Feb-25 10:48:26  DEBUG  Looking for auth config 
+ 14-Feb-25 10:48:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 10:48:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 10:48:26  DEBUG  Found auth config 
+ 14-Feb-25 10:48:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-masterdata/push?tag=latest HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:27  INFO  latest: digest: sha256:313397beec2d5596699ed96ed84e6da9016648eb096a6a1769a1921bf95d9f82 size: 1582 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-masterdata%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-masterdata%3A1.3.x%22%5D%7D HTTP/1.1" 200 463 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-masterdata:1.3.x?force=False&noprune=False HTTP/1.1" 200 50 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-masterdata%3Alatest%22%5D%7D HTTP/1.1" 200 464 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
+ 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-masterdata:latest?force=False&noprune=False HTTP/1.1" 200 767 
+ 14-Feb-25 10:48:27  INFO  Completed mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:1.3.x 
