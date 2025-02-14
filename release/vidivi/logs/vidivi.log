@@ -1,81 +1,85 @@
- 14-Feb-25 10:48:02  INFO  LOGFILE CREATED : vidivi.log 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  ******************** Check Images List ************************************************************************************ 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  IMAGES= [['mosipdev2/apitest-masterdata:release-1.3.x', '1.3.x']] 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  src = "mosipdev2/apitest-masterdata" tag = "release-1.3.x" 
- 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:48:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-masterdata:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Feb-25 10:48:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-masterdata/tags/release-1.3.x HTTP/1.1" 200 837 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 14-Feb-25 10:48:02  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 14-Feb-25 10:48:02  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 14-Feb-25 10:48:02  INFO   
- 14-Feb-25 10:48:02  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:48:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-masterdata:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:48:02  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 14-Feb-25 10:48:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-masterdata/manifests/1.3.x HTTP/1.1" 200 1582 
- 14-Feb-25 10:48:03  INFO   
- 14-Feb-25 10:48:03  INFO  [ mosipqa/apitest-masterdata ]  
- 14-Feb-25 10:48:03  INFO  Destination Image = "mosipqa/apitest-masterdata" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:ea4fd28e6e01552ebbd2842875a257294e80fd83b1060bc3578a7636ce2fcb44" 
- 14-Feb-25 10:48:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 14-Feb-25 10:48:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-masterdata:pull HTTP/1.1" 200 None 
- 14-Feb-25 10:48:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 14-Feb-25 10:48:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-masterdata/tags/1.3.x HTTP/1.1" 200 809 
- 14-Feb-25 10:48:03  INFO   
- 14-Feb-25 10:48:03  INFO  ******************** HASH Operation Results ********************************************************************** 
- 14-Feb-25 10:48:03  INFO   
- 14-Feb-25 10:48:03  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 14-Feb-25 10:48:03  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 14-Feb-25 10:48:03  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 14-Feb-25 10:48:03  DEBUG  Found 'auths' section 
- 14-Feb-25 10:48:03  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 14-Feb-25 10:48:03  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 14-Feb-25 10:48:03  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:48:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:48:03  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 14-Feb-25 10:48:03  INFO   
- 14-Feb-25 10:48:03  INFO  ********** [ mosipqa/apitest-masterdata:1.3.x ] **************************************************** 
- 14-Feb-25 10:48:03  INFO   
- 14-Feb-25 10:48:03  INFO  [ PULL ----------------------> mosipdev2/apitest-masterdata:release-1.3.x ]  
- 14-Feb-25 10:48:03  DEBUG  Looking for auth config 
- 14-Feb-25 10:48:03  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:48:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:48:03  DEBUG  Found auth config 
- 14-Feb-25 10:48:03  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fapitest-masterdata HTTP/1.1" 200 None 
- 14-Feb-25 10:48:23  INFO  Status: Downloaded newer image for mosipdev2/apitest-masterdata:release-1.3.x 
- 14-Feb-25 10:48:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
- 14-Feb-25 10:48:24  INFO   
- 14-Feb-25 10:48:24  INFO  [ PUSH -----> mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:1.3.x ]  
- 14-Feb-25 10:48:24  DEBUG  Looking for auth config 
- 14-Feb-25 10:48:24  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:48:24  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:48:24  DEBUG  Found auth config 
- 14-Feb-25 10:48:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-masterdata/push?tag=1.3.x HTTP/1.1" 200 None 
- 14-Feb-25 10:48:26  INFO  1.3.x: digest: sha256:313397beec2d5596699ed96ed84e6da9016648eb096a6a1769a1921bf95d9f82 size: 1582 
- 14-Feb-25 10:48:26  INFO   
- 14-Feb-25 10:48:26  INFO  [ PUSH -----> mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:latest ]  
- 14-Feb-25 10:48:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
- 14-Feb-25 10:48:26  DEBUG  Looking for auth config 
- 14-Feb-25 10:48:26  DEBUG  Looking for auth entry for 'docker.io' 
- 14-Feb-25 10:48:26  DEBUG  Found 'https://index.docker.io/v1/' 
- 14-Feb-25 10:48:26  DEBUG  Found auth config 
- 14-Feb-25 10:48:26  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-masterdata/push?tag=latest HTTP/1.1" 200 None 
- 14-Feb-25 10:48:27  INFO  latest: digest: sha256:313397beec2d5596699ed96ed84e6da9016648eb096a6a1769a1921bf95d9f82 size: 1582 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-masterdata%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-masterdata:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-masterdata%3A1.3.x%22%5D%7D HTTP/1.1" 200 463 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-masterdata:1.3.x?force=False&noprune=False HTTP/1.1" 200 50 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-masterdata%3Alatest%22%5D%7D HTTP/1.1" 200 464 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7b85e0832a319402ae7e70e08e3229b5fe5bfd198b73dfd71f459eb334fca6d4/json HTTP/1.1" 200 None 
- 14-Feb-25 10:48:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-masterdata:latest?force=False&noprune=False HTTP/1.1" 200 767 
- 14-Feb-25 10:48:27  INFO  Completed mosipdev2/apitest-masterdata:release-1.3.x	------> mosipqa/apitest-masterdata:1.3.x 
+ 14-Feb-25 11:16:03  INFO  LOGFILE CREATED : vidivi.log 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  ******************** Check Images List ************************************************************************************ 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  IMAGES= [['mosipdev2/apitest-idrepo:release-1.3.x', '1.3.x']] 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  src = "mosipdev2/apitest-idrepo" tag = "release-1.3.x" 
+ 14-Feb-25 11:16:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 11:16:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Feb-25 11:16:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-idrepo/tags/release-1.3.x HTTP/1.1" 200 840 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 14-Feb-25 11:16:03  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 14-Feb-25 11:16:03  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 14-Feb-25 11:16:03  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 14-Feb-25 11:16:03  INFO   
+ 14-Feb-25 11:16:03  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 14-Feb-25 11:16:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 11:16:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 14-Feb-25 11:16:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-idrepo/manifests/1.3.x HTTP/1.1" 404 99 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  [ mosipqa/apitest-idrepo ]  
+ 14-Feb-25 11:16:04  INFO  Destination Image = "mosipqa/apitest-idrepo" Destination Image tag = "1.3.x" IMAGE_ID :  
+ 14-Feb-25 11:16:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 14-Feb-25 11:16:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 14-Feb-25 11:16:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-idrepo/tags/1.3.x HTTP/1.1" 404 129 
+ 14-Feb-25 11:16:04  ERROR  Image "mosipqa/apitest-idrepo:1.3.x" does not exist 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/apitest-idrepo:1.3.x']] 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 14-Feb-25 11:16:04  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 14-Feb-25 11:16:04  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 14-Feb-25 11:16:04  DEBUG  Found 'auths' section 
+ 14-Feb-25 11:16:04  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 14-Feb-25 11:16:04  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 14-Feb-25 11:16:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 11:16:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 11:16:04  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  ********** [ mosipqa/apitest-idrepo:1.3.x ] **************************************************** 
+ 14-Feb-25 11:16:04  INFO   
+ 14-Feb-25 11:16:04  INFO  [ PULL ----------------------> mosipdev2/apitest-idrepo:release-1.3.x ]  
+ 14-Feb-25 11:16:04  DEBUG  Looking for auth config 
+ 14-Feb-25 11:16:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 11:16:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 11:16:04  DEBUG  Found auth config 
+ 14-Feb-25 11:16:05  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fapitest-idrepo HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:28  INFO  Status: Downloaded newer image for mosipdev2/apitest-idrepo:release-1.3.x 
+ 14-Feb-25 11:16:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-idrepo:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fapitest-idrepo&force=1 HTTP/1.1" 201 0 
+ 14-Feb-25 11:16:28  INFO   
+ 14-Feb-25 11:16:28  INFO  [ PUSH -----> mosipdev2/apitest-idrepo:release-1.3.x	------> mosipqa/apitest-idrepo:1.3.x ]  
+ 14-Feb-25 11:16:28  DEBUG  Looking for auth config 
+ 14-Feb-25 11:16:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 11:16:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 11:16:28  DEBUG  Found auth config 
+ 14-Feb-25 11:16:28  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-idrepo/push?tag=1.3.x HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:32  INFO  1.3.x: digest: sha256:907f37d6241fa8d2c1469dbe8ae36eabc0c9aeb26bed3c6d2335a4ecde1e8bc7 size: 2418 
+ 14-Feb-25 11:16:32  INFO   
+ 14-Feb-25 11:16:32  INFO  [ PUSH -----> mosipdev2/apitest-idrepo:release-1.3.x	------> mosipqa/apitest-idrepo:latest ]  
+ 14-Feb-25 11:16:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-idrepo:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fapitest-idrepo&force=1 HTTP/1.1" 201 0 
+ 14-Feb-25 11:16:32  DEBUG  Looking for auth config 
+ 14-Feb-25 11:16:32  DEBUG  Looking for auth entry for 'docker.io' 
+ 14-Feb-25 11:16:32  DEBUG  Found 'https://index.docker.io/v1/' 
+ 14-Feb-25 11:16:32  DEBUG  Found auth config 
+ 14-Feb-25 11:16:32  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-idrepo/push?tag=latest HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:33  INFO  latest: digest: sha256:907f37d6241fa8d2c1469dbe8ae36eabc0c9aeb26bed3c6d2335a4ecde1e8bc7 size: 2418 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-idrepo%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 469 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6ab4021121c93e2e0220c8558e4d380ccac6e7c271388eacb2f9b78992271daa/json HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-idrepo:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 168 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-idrepo%3A1.3.x%22%5D%7D HTTP/1.1" 200 459 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6ab4021121c93e2e0220c8558e4d380ccac6e7c271388eacb2f9b78992271daa/json HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-idrepo:1.3.x?force=False&noprune=False HTTP/1.1" 200 46 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-idrepo%3Alatest%22%5D%7D HTTP/1.1" 200 460 
+ 14-Feb-25 11:16:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6ab4021121c93e2e0220c8558e4d380ccac6e7c271388eacb2f9b78992271daa/json HTTP/1.1" 200 None 
+ 14-Feb-25 11:16:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-idrepo:latest?force=False&noprune=False HTTP/1.1" 200 1103 
+ 14-Feb-25 11:16:34  INFO  Completed mosipdev2/apitest-idrepo:release-1.3.x	------> mosipqa/apitest-idrepo:1.3.x 
