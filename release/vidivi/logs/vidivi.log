@@ -1,84 +1,81 @@
- 17-Feb-25 12:38:40  INFO  LOGFILE CREATED : vidivi.log 
- 17-Feb-25 12:38:40  INFO   
- 17-Feb-25 12:38:40  INFO  ******************** Check Images List ************************************************************************************ 
- 17-Feb-25 12:38:40  INFO   
- 17-Feb-25 12:38:40  INFO  IMAGES= [['mosipdev/inji-certify:release-0.10.x', '0.10.x']] 
- 17-Feb-25 12:38:40  INFO   
- 17-Feb-25 12:38:40  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 17-Feb-25 12:38:40  INFO   
- 17-Feb-25 12:38:40  INFO  src = "mosipdev/inji-certify" tag = "release-0.10.x" 
- 17-Feb-25 12:38:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 17-Feb-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify:pull HTTP/1.1" 200 None 
- 17-Feb-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 17-Feb-25 12:38:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify/tags/release-0.10.x HTTP/1.1" 200 830 
- 17-Feb-25 12:38:41  INFO   
- 17-Feb-25 12:38:41  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 17-Feb-25 12:38:41  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 17-Feb-25 12:38:41  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
- 17-Feb-25 12:38:41  INFO   
- 17-Feb-25 12:38:41  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 17-Feb-25 12:38:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 17-Feb-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-certify:pull HTTP/1.1" 200 None 
- 17-Feb-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 17-Feb-25 12:38:42  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/inji-certify/manifests/0.10.x HTTP/1.1" 404 100 
- 17-Feb-25 12:38:42  INFO   
- 17-Feb-25 12:38:42  INFO  [ mosipid/inji-certify ]  
- 17-Feb-25 12:38:42  INFO  Destination Image = "mosipid/inji-certify" Destination Image tag = "0.10.x" IMAGE_ID :  
- 17-Feb-25 12:38:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 17-Feb-25 12:38:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/inji-certify:pull HTTP/1.1" 200 None 
- 17-Feb-25 12:38:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 17-Feb-25 12:38:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/inji-certify/tags/0.10.x HTTP/1.1" 404 129 
- 17-Feb-25 12:38:42  ERROR  Image "mosipid/inji-certify:0.10.x" does not exist 
- 17-Feb-25 12:38:42  INFO   
- 17-Feb-25 12:38:42  INFO  ******************** HASH Operation Results ********************************************************************** 
- 17-Feb-25 12:38:42  INFO   
- 17-Feb-25 12:38:42  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/inji-certify:0.10.x']] 
- 17-Feb-25 12:38:42  INFO   
- 17-Feb-25 12:38:42  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 17-Feb-25 12:38:42  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 17-Feb-25 12:38:42  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 17-Feb-25 12:38:42  DEBUG  Found 'auths' section 
- 17-Feb-25 12:38:42  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 17-Feb-25 12:38:42  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 17-Feb-25 12:38:42  DEBUG  Looking for auth entry for 'docker.io' 
- 17-Feb-25 12:38:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 17-Feb-25 12:38:43  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 17-Feb-25 12:38:43  INFO   
- 17-Feb-25 12:38:43  INFO  ********** [ mosipid/inji-certify:0.10.x ] **************************************************** 
- 17-Feb-25 12:38:43  INFO   
- 17-Feb-25 12:38:43  INFO  [ PULL ----------------------> mosipdev/inji-certify:release-0.10.x ]  
- 17-Feb-25 12:38:43  DEBUG  Looking for auth config 
- 17-Feb-25 12:38:43  DEBUG  Looking for auth entry for 'docker.io' 
- 17-Feb-25 12:38:43  DEBUG  Found 'https://index.docker.io/v1/' 
- 17-Feb-25 12:38:43  DEBUG  Found auth config 
- 17-Feb-25 12:38:43  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-0.10.x&fromImage=mosipdev%2Finji-certify HTTP/1.1" 200 None 
- 17-Feb-25 12:38:53  INFO  Status: Downloaded newer image for mosipdev/inji-certify:release-0.10.x 
- 17-Feb-25 12:38:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.10.x/tag?tag=0.10.x&repo=mosipid%2Finji-certify&force=1 HTTP/1.1" 201 0 
- 17-Feb-25 12:38:53  INFO   
- 17-Feb-25 12:38:53  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.10.x	------> mosipid/inji-certify:0.10.x ]  
- 17-Feb-25 12:38:53  DEBUG  Looking for auth config 
- 17-Feb-25 12:38:53  DEBUG  Looking for auth entry for 'docker.io' 
- 17-Feb-25 12:38:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 17-Feb-25 12:38:53  DEBUG  Found auth config 
- 17-Feb-25 12:38:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-certify/push?tag=0.10.x HTTP/1.1" 200 None 
- 17-Feb-25 12:39:01  INFO  0.10.x: digest: sha256:ed4a63c4b070abbacb690f2b99ade4096db693ff15934efc695b0b9cee06da4a size: 3041 
- 17-Feb-25 12:39:01  INFO   
- 17-Feb-25 12:39:01  INFO  [ PUSH -----> mosipdev/inji-certify:release-0.10.x	------> mosipid/inji-certify:latest ]  
- 17-Feb-25 12:39:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-certify:release-0.10.x/tag?tag=latest&repo=mosipid%2Finji-certify&force=1 HTTP/1.1" 201 0 
- 17-Feb-25 12:39:01  DEBUG  Looking for auth config 
- 17-Feb-25 12:39:01  DEBUG  Looking for auth entry for 'docker.io' 
- 17-Feb-25 12:39:01  DEBUG  Found 'https://index.docker.io/v1/' 
- 17-Feb-25 12:39:01  DEBUG  Found auth config 
- 17-Feb-25 12:39:01  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/inji-certify/push?tag=latest HTTP/1.1" 200 None 
- 17-Feb-25 12:39:03  INFO  latest: digest: sha256:ed4a63c4b070abbacb690f2b99ade4096db693ff15934efc695b0b9cee06da4a size: 3041 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-certify%3Arelease-0.10.x%22%5D%7D HTTP/1.1" 200 466 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d899d42f5e3162f2dfb4c1b92338de84cfcdcf6f183c7eeaf80e974394d83abc/json HTTP/1.1" 200 None 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-certify:release-0.10.x?force=False&noprune=False HTTP/1.1" 200 163 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-certify%3A0.10.x%22%5D%7D HTTP/1.1" 200 457 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d899d42f5e3162f2dfb4c1b92338de84cfcdcf6f183c7eeaf80e974394d83abc/json HTTP/1.1" 200 None 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-certify:0.10.x?force=False&noprune=False HTTP/1.1" 200 45 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Finji-certify%3Alatest%22%5D%7D HTTP/1.1" 200 457 
- 17-Feb-25 12:39:03  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d899d42f5e3162f2dfb4c1b92338de84cfcdcf6f183c7eeaf80e974394d83abc/json HTTP/1.1" 200 None 
- 17-Feb-25 12:39:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/inji-certify:latest?force=False&noprune=False HTTP/1.1" 200 1357 
- 17-Feb-25 12:39:04  INFO  Completed mosipdev/inji-certify:release-0.10.x	------> mosipid/inji-certify:0.10.x 
+ 18-Feb-25 06:35:38  INFO  LOGFILE CREATED : vidivi.log 
+ 18-Feb-25 06:35:38  INFO   
+ 18-Feb-25 06:35:38  INFO  ******************** Check Images List ************************************************************************************ 
+ 18-Feb-25 06:35:38  INFO   
+ 18-Feb-25 06:35:38  INFO  IMAGES= [['mosipdev/compliance-toolkit-ui:release-1.4.0', '1.4.0']] 
+ 18-Feb-25 06:35:38  INFO   
+ 18-Feb-25 06:35:38  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 18-Feb-25 06:35:38  INFO   
+ 18-Feb-25 06:35:38  INFO  src = "mosipdev/compliance-toolkit-ui" tag = "release-1.4.0" 
+ 18-Feb-25 06:35:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Feb-25 06:35:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Feb-25 06:35:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-ui/tags/release-1.4.0 HTTP/1.1" 200 827 
+ 18-Feb-25 06:35:38  INFO   
+ 18-Feb-25 06:35:38  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 18-Feb-25 06:35:38  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 18-Feb-25 06:35:39  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 18-Feb-25 06:35:39  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 18-Feb-25 06:35:39  INFO   
+ 18-Feb-25 06:35:39  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 18-Feb-25 06:35:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Feb-25 06:35:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 18-Feb-25 06:35:39  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-ui/manifests/1.4.0 HTTP/1.1" 200 2822 
+ 18-Feb-25 06:35:39  INFO   
+ 18-Feb-25 06:35:39  INFO  [ mosipqa/compliance-toolkit-ui ]  
+ 18-Feb-25 06:35:39  INFO  Destination Image = "mosipqa/compliance-toolkit-ui" Destination Image tag = "1.4.0" IMAGE_ID : "sha256:7277a604ee3b4dc4ecc03a4adb28d72ef8d44d6574edaced9e3bfc13cc885cd7" 
+ 18-Feb-25 06:35:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 18-Feb-25 06:35:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 18-Feb-25 06:35:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-ui/tags/1.4.0 HTTP/1.1" 200 806 
+ 18-Feb-25 06:35:40  INFO   
+ 18-Feb-25 06:35:40  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 18-Feb-25 06:35:40  INFO   
+ 18-Feb-25 06:35:40  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 18-Feb-25 06:35:40  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 18-Feb-25 06:35:40  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 18-Feb-25 06:35:40  DEBUG  Found 'auths' section 
+ 18-Feb-25 06:35:40  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 18-Feb-25 06:35:40  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 18-Feb-25 06:35:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Feb-25 06:35:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Feb-25 06:35:41  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 18-Feb-25 06:35:41  INFO   
+ 18-Feb-25 06:35:41  INFO  ********** [ mosipqa/compliance-toolkit-ui:1.4.0 ] **************************************************** 
+ 18-Feb-25 06:35:41  INFO   
+ 18-Feb-25 06:35:41  INFO  [ PULL ----------------------> mosipdev/compliance-toolkit-ui:release-1.4.0 ]  
+ 18-Feb-25 06:35:41  DEBUG  Looking for auth config 
+ 18-Feb-25 06:35:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Feb-25 06:35:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Feb-25 06:35:41  DEBUG  Found auth config 
+ 18-Feb-25 06:35:42  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.4.0&fromImage=mosipdev%2Fcompliance-toolkit-ui HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:46  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-ui:release-1.4.0 
+ 18-Feb-25 06:35:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=1.4.0&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
+ 18-Feb-25 06:35:46  INFO   
+ 18-Feb-25 06:35:46  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:1.4.0 ]  
+ 18-Feb-25 06:35:46  DEBUG  Looking for auth config 
+ 18-Feb-25 06:35:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Feb-25 06:35:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Feb-25 06:35:46  DEBUG  Found auth config 
+ 18-Feb-25 06:35:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-ui/push?tag=1.4.0 HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:54  INFO  1.4.0: digest: sha256:4123b886ad1284f125e9d69dd97703a3494913327350f6c761d4c2913e81ead6 size: 2822 
+ 18-Feb-25 06:35:54  INFO   
+ 18-Feb-25 06:35:54  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:latest ]  
+ 18-Feb-25 06:35:54  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=latest&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
+ 18-Feb-25 06:35:54  DEBUG  Looking for auth config 
+ 18-Feb-25 06:35:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 18-Feb-25 06:35:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 18-Feb-25 06:35:54  DEBUG  Found auth config 
+ 18-Feb-25 06:35:54  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/compliance-toolkit-ui/push?tag=latest HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:57  INFO  latest: digest: sha256:4123b886ad1284f125e9d69dd97703a3494913327350f6c761d4c2913e81ead6 size: 2822 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcompliance-toolkit-ui%3Arelease-1.4.0%22%5D%7D HTTP/1.1" 200 451 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:634b3cf08858ca37e7264fa214cf2f2ca91ddc1d4d388805c444693e84396f8f/json HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0?force=False&noprune=False HTTP/1.1" 200 180 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-ui%3A1.4.0%22%5D%7D HTTP/1.1" 200 442 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:634b3cf08858ca37e7264fa214cf2f2ca91ddc1d4d388805c444693e84396f8f/json HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-ui:1.4.0?force=False&noprune=False HTTP/1.1" 200 53 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-ui%3Alatest%22%5D%7D HTTP/1.1" 200 443 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:634b3cf08858ca37e7264fa214cf2f2ca91ddc1d4d388805c444693e84396f8f/json HTTP/1.1" 200 None 
+ 18-Feb-25 06:35:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/compliance-toolkit-ui:latest?force=False&noprune=False HTTP/1.1" 200 1289 
+ 18-Feb-25 06:35:57  INFO  Completed mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipqa/compliance-toolkit-ui:1.4.0 
