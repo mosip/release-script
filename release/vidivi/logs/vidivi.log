@@ -1,85 +1,84 @@
- 27-Feb-25 08:49:19  INFO  LOGFILE CREATED : vidivi.log 
- 27-Feb-25 08:49:19  INFO   
- 27-Feb-25 08:49:19  INFO  ******************** Check Images List ************************************************************************************ 
- 27-Feb-25 08:49:19  INFO   
- 27-Feb-25 08:49:19  INFO  IMAGES= [['mosipdev/apitest-resident:release-1.3.x', 'release-1.3.x']] 
- 27-Feb-25 08:49:19  INFO   
- 27-Feb-25 08:49:19  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 27-Feb-25 08:49:19  INFO   
- 27-Feb-25 08:49:19  INFO  src = "mosipdev/apitest-resident" tag = "release-1.3.x" 
- 27-Feb-25 08:49:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-Feb-25 08:49:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-resident:pull HTTP/1.1" 200 None 
- 27-Feb-25 08:49:19  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 27-Feb-25 08:49:19  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-resident/tags/release-1.3.x HTTP/1.1" 200 831 
- 27-Feb-25 08:49:19  INFO   
- 27-Feb-25 08:49:19  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 27-Feb-25 08:49:19  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 27-Feb-25 08:49:20  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 27-Feb-25 08:49:20  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 27-Feb-25 08:49:20  INFO   
- 27-Feb-25 08:49:20  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 27-Feb-25 08:49:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-Feb-25 08:49:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-resident:pull HTTP/1.1" 200 None 
- 27-Feb-25 08:49:20  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 27-Feb-25 08:49:20  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-resident/manifests/release-1.3.x HTTP/1.1" 404 107 
- 27-Feb-25 08:49:20  INFO   
- 27-Feb-25 08:49:20  INFO  [ mosipdev2/apitest-resident ]  
- 27-Feb-25 08:49:20  INFO  Destination Image = "mosipdev2/apitest-resident" Destination Image tag = "release-1.3.x" IMAGE_ID :  
- 27-Feb-25 08:49:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-Feb-25 08:49:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-resident:pull HTTP/1.1" 200 None 
- 27-Feb-25 08:49:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 27-Feb-25 08:49:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-resident/tags/release-1.3.x HTTP/1.1" 404 149 
- 27-Feb-25 08:49:21  ERROR  Image "mosipdev2/apitest-resident:release-1.3.x" does not exist 
- 27-Feb-25 08:49:21  INFO   
- 27-Feb-25 08:49:21  INFO  ******************** HASH Operation Results ********************************************************************** 
- 27-Feb-25 08:49:21  INFO   
- 27-Feb-25 08:49:21  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/apitest-resident:release-1.3.x']] 
- 27-Feb-25 08:49:21  INFO   
- 27-Feb-25 08:49:21  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 27-Feb-25 08:49:21  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 27-Feb-25 08:49:21  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 27-Feb-25 08:49:21  DEBUG  Found 'auths' section 
- 27-Feb-25 08:49:21  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 27-Feb-25 08:49:21  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 27-Feb-25 08:49:21  DEBUG  Looking for auth entry for 'docker.io' 
- 27-Feb-25 08:49:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-Feb-25 08:49:21  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 27-Feb-25 08:49:21  INFO   
- 27-Feb-25 08:49:21  INFO  ********** [ mosipdev2/apitest-resident:release-1.3.x ] **************************************************** 
- 27-Feb-25 08:49:21  INFO   
- 27-Feb-25 08:49:21  INFO  [ PULL ----------------------> mosipdev/apitest-resident:release-1.3.x ]  
- 27-Feb-25 08:49:21  DEBUG  Looking for auth config 
- 27-Feb-25 08:49:21  DEBUG  Looking for auth entry for 'docker.io' 
- 27-Feb-25 08:49:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-Feb-25 08:49:21  DEBUG  Found auth config 
- 27-Feb-25 08:49:22  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-resident HTTP/1.1" 200 None 
- 27-Feb-25 08:49:43  INFO  Status: Downloaded newer image for mosipdev/apitest-resident:release-1.3.x 
- 27-Feb-25 08:49:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-resident:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fapitest-resident&force=1 HTTP/1.1" 201 0 
- 27-Feb-25 08:49:45  INFO   
- 27-Feb-25 08:49:45  INFO  [ PUSH -----> mosipdev/apitest-resident:release-1.3.x	------> mosipdev2/apitest-resident:release-1.3.x ]  
- 27-Feb-25 08:49:45  DEBUG  Looking for auth config 
- 27-Feb-25 08:49:45  DEBUG  Looking for auth entry for 'docker.io' 
- 27-Feb-25 08:49:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-Feb-25 08:49:45  DEBUG  Found auth config 
- 27-Feb-25 08:49:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-resident/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 27-Feb-25 08:49:51  INFO  release-1.3.x: digest: sha256:fa7ec4181c78018e5ac8cdf148f59c905bb2973a6052c10673d8302aa9912d75 size: 2212 
- 27-Feb-25 08:49:51  INFO   
- 27-Feb-25 08:49:51  INFO  [ PUSH -----> mosipdev/apitest-resident:release-1.3.x	------> mosipdev2/apitest-resident:latest ]  
- 27-Feb-25 08:49:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-resident:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fapitest-resident&force=1 HTTP/1.1" 201 0 
- 27-Feb-25 08:49:51  DEBUG  Looking for auth config 
- 27-Feb-25 08:49:51  DEBUG  Looking for auth entry for 'docker.io' 
- 27-Feb-25 08:49:51  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-Feb-25 08:49:51  DEBUG  Found auth config 
- 27-Feb-25 08:49:51  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-resident/push?tag=latest HTTP/1.1" 200 None 
- 27-Feb-25 08:49:53  INFO  latest: digest: sha256:fa7ec4181c78018e5ac8cdf148f59c905bb2973a6052c10673d8302aa9912d75 size: 2212 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-resident%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 470 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9ad8266d47f9259c4085330e3c5fcb170ae0e014ff8faece1a4abe1d1a4c80c2/json HTTP/1.1" 200 None 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-resident:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 170 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-resident%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 471 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9ad8266d47f9259c4085330e3c5fcb170ae0e014ff8faece1a4abe1d1a4c80c2/json HTTP/1.1" 200 None 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-resident:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 58 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-resident%3Alatest%22%5D%7D HTTP/1.1" 200 464 
- 27-Feb-25 08:49:53  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9ad8266d47f9259c4085330e3c5fcb170ae0e014ff8faece1a4abe1d1a4c80c2/json HTTP/1.1" 200 None 
- 27-Feb-25 08:49:54  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-resident:latest?force=False&noprune=False HTTP/1.1" 200 1025 
- 27-Feb-25 08:49:54  INFO  Completed mosipdev/apitest-resident:release-1.3.x	------> mosipdev2/apitest-resident:release-1.3.x 
+ 27-Feb-25 11:48:05  INFO  LOGFILE CREATED : vidivi.log 
+ 27-Feb-25 11:48:05  INFO   
+ 27-Feb-25 11:48:05  INFO  ******************** Check Images List ************************************************************************************ 
+ 27-Feb-25 11:48:05  INFO   
+ 27-Feb-25 11:48:05  INFO  IMAGES= [['mosipdev/compliance-toolkit-ui:release-1.4.0', '1.4.2']] 
+ 27-Feb-25 11:48:05  INFO   
+ 27-Feb-25 11:48:05  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 27-Feb-25 11:48:05  INFO   
+ 27-Feb-25 11:48:05  INFO  src = "mosipdev/compliance-toolkit-ui" tag = "release-1.4.0" 
+ 27-Feb-25 11:48:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-Feb-25 11:48:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-Feb-25 11:48:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-ui/tags/release-1.4.0 HTTP/1.1" 200 827 
+ 27-Feb-25 11:48:06  INFO   
+ 27-Feb-25 11:48:06  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 27-Feb-25 11:48:06  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 27-Feb-25 11:48:06  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 27-Feb-25 11:48:06  INFO   
+ 27-Feb-25 11:48:06  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 27-Feb-25 11:48:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-Feb-25 11:48:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-Feb-25 11:48:07  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/compliance-toolkit-ui/manifests/1.4.2 HTTP/1.1" 404 99 
+ 27-Feb-25 11:48:07  INFO   
+ 27-Feb-25 11:48:07  INFO  [ mosipid/compliance-toolkit-ui ]  
+ 27-Feb-25 11:48:07  INFO  Destination Image = "mosipid/compliance-toolkit-ui" Destination Image tag = "1.4.2" IMAGE_ID :  
+ 27-Feb-25 11:48:07  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-Feb-25 11:48:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:07  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-Feb-25 11:48:07  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/compliance-toolkit-ui/tags/1.4.2 HTTP/1.1" 404 136 
+ 27-Feb-25 11:48:07  ERROR  Image "mosipid/compliance-toolkit-ui:1.4.2" does not exist 
+ 27-Feb-25 11:48:07  INFO   
+ 27-Feb-25 11:48:07  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 27-Feb-25 11:48:07  INFO   
+ 27-Feb-25 11:48:07  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/compliance-toolkit-ui:1.4.2']] 
+ 27-Feb-25 11:48:07  INFO   
+ 27-Feb-25 11:48:07  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 27-Feb-25 11:48:07  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 27-Feb-25 11:48:07  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 27-Feb-25 11:48:07  DEBUG  Found 'auths' section 
+ 27-Feb-25 11:48:07  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 27-Feb-25 11:48:07  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 27-Feb-25 11:48:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-Feb-25 11:48:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-Feb-25 11:48:08  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 27-Feb-25 11:48:08  INFO   
+ 27-Feb-25 11:48:08  INFO  ********** [ mosipid/compliance-toolkit-ui:1.4.2 ] **************************************************** 
+ 27-Feb-25 11:48:08  INFO   
+ 27-Feb-25 11:48:08  INFO  [ PULL ----------------------> mosipdev/compliance-toolkit-ui:release-1.4.0 ]  
+ 27-Feb-25 11:48:08  DEBUG  Looking for auth config 
+ 27-Feb-25 11:48:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-Feb-25 11:48:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-Feb-25 11:48:08  DEBUG  Found auth config 
+ 27-Feb-25 11:48:09  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.4.0&fromImage=mosipdev%2Fcompliance-toolkit-ui HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:13  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-ui:release-1.4.0 
+ 27-Feb-25 11:48:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=1.4.2&repo=mosipid%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
+ 27-Feb-25 11:48:13  INFO   
+ 27-Feb-25 11:48:13  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipid/compliance-toolkit-ui:1.4.2 ]  
+ 27-Feb-25 11:48:13  DEBUG  Looking for auth config 
+ 27-Feb-25 11:48:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-Feb-25 11:48:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-Feb-25 11:48:13  DEBUG  Found auth config 
+ 27-Feb-25 11:48:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/compliance-toolkit-ui/push?tag=1.4.2 HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:21  INFO  1.4.2: digest: sha256:b54ce2226f878c92392c907d5f4400b5f1795873ea1a537c7125f19a4b64328f size: 2822 
+ 27-Feb-25 11:48:21  INFO   
+ 27-Feb-25 11:48:21  INFO  [ PUSH -----> mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipid/compliance-toolkit-ui:latest ]  
+ 27-Feb-25 11:48:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0/tag?tag=latest&repo=mosipid%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
+ 27-Feb-25 11:48:21  DEBUG  Looking for auth config 
+ 27-Feb-25 11:48:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-Feb-25 11:48:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-Feb-25 11:48:21  DEBUG  Found auth config 
+ 27-Feb-25 11:48:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/compliance-toolkit-ui/push?tag=latest HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:23  INFO  latest: digest: sha256:b54ce2226f878c92392c907d5f4400b5f1795873ea1a537c7125f19a4b64328f size: 2822 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcompliance-toolkit-ui%3Arelease-1.4.0%22%5D%7D HTTP/1.1" 200 451 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a712a38d9dd4c7eb5ed70880d299c82febf6458fef92045ee21671e12f8f52d/json HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/compliance-toolkit-ui:release-1.4.0?force=False&noprune=False HTTP/1.1" 200 180 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcompliance-toolkit-ui%3A1.4.2%22%5D%7D HTTP/1.1" 200 442 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a712a38d9dd4c7eb5ed70880d299c82febf6458fef92045ee21671e12f8f52d/json HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/compliance-toolkit-ui:1.4.2?force=False&noprune=False HTTP/1.1" 200 53 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcompliance-toolkit-ui%3Alatest%22%5D%7D HTTP/1.1" 200 443 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:7a712a38d9dd4c7eb5ed70880d299c82febf6458fef92045ee21671e12f8f52d/json HTTP/1.1" 200 None 
+ 27-Feb-25 11:48:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/compliance-toolkit-ui:latest?force=False&noprune=False HTTP/1.1" 200 1289 
+ 27-Feb-25 11:48:23  INFO  Completed mosipdev/compliance-toolkit-ui:release-1.4.0	------> mosipid/compliance-toolkit-ui:1.4.2 
