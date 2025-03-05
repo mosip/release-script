@@ -1,81 +1,136 @@
- 05-Mar-25 10:28:39  INFO  LOGFILE CREATED : vidivi.log 
- 05-Mar-25 10:28:39  INFO   
- 05-Mar-25 10:28:39  INFO  ******************** Check Images List ************************************************************************************ 
- 05-Mar-25 10:28:39  INFO   
- 05-Mar-25 10:28:39  INFO  IMAGES= [['mosipdev/id-repository-identity-service:release-1.3.x', 'release-1.3.x']] 
- 05-Mar-25 10:28:39  INFO   
- 05-Mar-25 10:28:39  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 05-Mar-25 10:28:39  INFO   
- 05-Mar-25 10:28:39  INFO  src = "mosipdev/id-repository-identity-service" tag = "release-1.3.x" 
- 05-Mar-25 10:28:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Mar-25 10:28:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
- 05-Mar-25 10:28:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Mar-25 10:28:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-identity-service/tags/release-1.3.x HTTP/1.1" 200 827 
- 05-Mar-25 10:28:40  INFO   
- 05-Mar-25 10:28:40  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 05-Mar-25 10:28:40  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 05-Mar-25 10:28:40  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 05-Mar-25 10:28:40  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 05-Mar-25 10:28:40  INFO   
- 05-Mar-25 10:28:40  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 05-Mar-25 10:28:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Mar-25 10:28:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-identity-service:pull HTTP/1.1" 200 None 
- 05-Mar-25 10:28:40  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 05-Mar-25 10:28:41  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/id-repository-identity-service/manifests/release-1.3.x HTTP/1.1" 200 1789 
- 05-Mar-25 10:28:41  INFO   
- 05-Mar-25 10:28:41  INFO  [ mosipdev2/id-repository-identity-service ]  
- 05-Mar-25 10:28:41  INFO  Destination Image = "mosipdev2/id-repository-identity-service" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:7f84358d426418107116a1b76a3ed2e2e66c680f285680be48752ba145965402" 
- 05-Mar-25 10:28:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Mar-25 10:28:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-identity-service:pull HTTP/1.1" 200 None 
- 05-Mar-25 10:28:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Mar-25 10:28:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/id-repository-identity-service/tags/release-1.3.x HTTP/1.1" 200 838 
- 05-Mar-25 10:28:41  INFO   
- 05-Mar-25 10:28:41  INFO  ******************** HASH Operation Results ********************************************************************** 
- 05-Mar-25 10:28:41  INFO   
- 05-Mar-25 10:28:41  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 05-Mar-25 10:28:41  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 05-Mar-25 10:28:41  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 05-Mar-25 10:28:41  DEBUG  Found 'auths' section 
- 05-Mar-25 10:28:41  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 05-Mar-25 10:28:41  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 05-Mar-25 10:28:41  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Mar-25 10:28:41  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Mar-25 10:28:42  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 05-Mar-25 10:28:42  INFO   
- 05-Mar-25 10:28:42  INFO  ********** [ mosipdev2/id-repository-identity-service:release-1.3.x ] **************************************************** 
- 05-Mar-25 10:28:42  INFO   
- 05-Mar-25 10:28:42  INFO  [ PULL ----------------------> mosipdev/id-repository-identity-service:release-1.3.x ]  
- 05-Mar-25 10:28:42  DEBUG  Looking for auth config 
- 05-Mar-25 10:28:42  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Mar-25 10:28:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Mar-25 10:28:42  DEBUG  Found auth config 
- 05-Mar-25 10:28:43  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
- 05-Mar-25 10:28:58  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service:release-1.3.x 
- 05-Mar-25 10:28:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
- 05-Mar-25 10:28:58  INFO   
- 05-Mar-25 10:28:58  INFO  [ PUSH -----> mosipdev/id-repository-identity-service:release-1.3.x	------> mosipdev2/id-repository-identity-service:release-1.3.x ]  
- 05-Mar-25 10:28:58  DEBUG  Looking for auth config 
- 05-Mar-25 10:28:58  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Mar-25 10:28:58  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Mar-25 10:28:58  DEBUG  Found auth config 
- 05-Mar-25 10:28:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/id-repository-identity-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 05-Mar-25 10:29:03  INFO  release-1.3.x: digest: sha256:9b73a5469f22ac240e3e1bfb39072550a83d21753fa8dcb8dd43d7476766fa3f size: 1789 
- 05-Mar-25 10:29:03  INFO   
- 05-Mar-25 10:29:03  INFO  [ PUSH -----> mosipdev/id-repository-identity-service:release-1.3.x	------> mosipdev2/id-repository-identity-service:latest ]  
- 05-Mar-25 10:29:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
- 05-Mar-25 10:29:03  DEBUG  Looking for auth config 
- 05-Mar-25 10:29:03  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Mar-25 10:29:03  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Mar-25 10:29:03  DEBUG  Found auth config 
- 05-Mar-25 10:29:03  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/id-repository-identity-service/push?tag=latest HTTP/1.1" 200 None 
- 05-Mar-25 10:29:04  INFO  latest: digest: sha256:9b73a5469f22ac240e3e1bfb39072550a83d21753fa8dcb8dd43d7476766fa3f size: 1789 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fid-repository-identity-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 484 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a647e6f9e2a3234d7bf456e23b4213213845ed51a778b95c1b78861e63ef9259/json HTTP/1.1" 200 None 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 198 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fid-repository-identity-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 485 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a647e6f9e2a3234d7bf456e23b4213213845ed51a778b95c1b78861e63ef9259/json HTTP/1.1" 200 None 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/id-repository-identity-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 72 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fid-repository-identity-service%3Alatest%22%5D%7D HTTP/1.1" 200 478 
- 05-Mar-25 10:29:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a647e6f9e2a3234d7bf456e23b4213213845ed51a778b95c1b78861e63ef9259/json HTTP/1.1" 200 None 
- 05-Mar-25 10:29:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/id-repository-identity-service:latest?force=False&noprune=False HTTP/1.1" 200 881 
- 05-Mar-25 10:29:05  INFO  Completed mosipdev/id-repository-identity-service:release-1.3.x	------> mosipdev2/id-repository-identity-service:release-1.3.x 
+ 05-Mar-25 11:44:10  INFO  LOGFILE CREATED : vidivi.log 
+ 05-Mar-25 11:44:10  INFO   
+ 05-Mar-25 11:44:10  INFO  ******************** Check Images List ************************************************************************************ 
+ 05-Mar-25 11:44:10  INFO   
+ 05-Mar-25 11:44:10  INFO  IMAGES= [['mosipdev/inji-verify-ui:MOSIP-CONNECT-2025', 'MOSIP-CONNECT-2025'], ['mosipdev/inji-verify-service:MOSIP-CONNECT-2025', 'MOSIP-CONNECT-2025']] 
+ 05-Mar-25 11:44:10  INFO   
+ 05-Mar-25 11:44:10  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 05-Mar-25 11:44:10  INFO   
+ 05-Mar-25 11:44:10  INFO  src = "mosipdev/inji-verify-ui" tag = "MOSIP-CONNECT-2025" 
+ 05-Mar-25 11:44:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Mar-25 11:44:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify-ui/tags/MOSIP-CONNECT-2025 HTTP/1.1" 200 832 
+ 05-Mar-25 11:44:11  INFO   
+ 05-Mar-25 11:44:11  INFO  src = "mosipdev/inji-verify-service" tag = "MOSIP-CONNECT-2025" 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify-service:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Mar-25 11:44:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify-service/tags/MOSIP-CONNECT-2025 HTTP/1.1" 200 834 
+ 05-Mar-25 11:44:11  INFO   
+ 05-Mar-25 11:44:11  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 05-Mar-25 11:44:11  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 05-Mar-25 11:44:11  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 05-Mar-25 11:44:11  INFO   
+ 05-Mar-25 11:44:11  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Mar-25 11:44:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-verify-ui/manifests/MOSIP-CONNECT-2025 HTTP/1.1" 200 2818 
+ 05-Mar-25 11:44:12  INFO   
+ 05-Mar-25 11:44:12  INFO  [ mosipqa/inji-verify-ui ]  
+ 05-Mar-25 11:44:12  INFO  Destination Image = "mosipqa/inji-verify-ui" Destination Image tag = "MOSIP-CONNECT-2025" IMAGE_ID : "sha256:82b3bcc9f2e1f6bea3b4df77b5c4168765ed0ed10584632619e6ee4558692c8a" 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Mar-25 11:44:12  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-verify-ui/tags/MOSIP-CONNECT-2025 HTTP/1.1" 200 833 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-service:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Mar-25 11:44:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-verify-service/manifests/MOSIP-CONNECT-2025 HTTP/1.1" 200 1790 
+ 05-Mar-25 11:44:12  INFO   
+ 05-Mar-25 11:44:12  INFO  [ mosipqa/inji-verify-service ]  
+ 05-Mar-25 11:44:12  INFO  Destination Image = "mosipqa/inji-verify-service" Destination Image tag = "MOSIP-CONNECT-2025" IMAGE_ID : "sha256:5f1a57a2bae5aee92bc58405290efe9a6b1f306cf6e89fa203e3b51b48d78b9f" 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Mar-25 11:44:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-service:pull HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Mar-25 11:44:12  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-verify-service/tags/MOSIP-CONNECT-2025 HTTP/1.1" 200 835 
+ 05-Mar-25 11:44:12  INFO   
+ 05-Mar-25 11:44:12  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 05-Mar-25 11:44:12  INFO   
+ 05-Mar-25 11:44:12  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 05-Mar-25 11:44:12  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 05-Mar-25 11:44:12  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 05-Mar-25 11:44:12  DEBUG  Found 'auths' section 
+ 05-Mar-25 11:44:12  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 05-Mar-25 11:44:12  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 05-Mar-25 11:44:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:13  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 05-Mar-25 11:44:13  INFO   
+ 05-Mar-25 11:44:13  INFO  ********** [ mosipqa/inji-verify-ui:MOSIP-CONNECT-2025 ] **************************************************** 
+ 05-Mar-25 11:44:13  INFO   
+ 05-Mar-25 11:44:13  INFO  [ PULL ----------------------> mosipdev/inji-verify-ui:MOSIP-CONNECT-2025 ]  
+ 05-Mar-25 11:44:13  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:13  DEBUG  Found auth config 
+ 05-Mar-25 11:44:13  INFO   
+ 05-Mar-25 11:44:13  INFO  ********** [ mosipqa/inji-verify-service:MOSIP-CONNECT-2025 ] **************************************************** 
+ 05-Mar-25 11:44:13  INFO   
+ 05-Mar-25 11:44:13  INFO  [ PULL ----------------------> mosipdev/inji-verify-service:MOSIP-CONNECT-2025 ]  
+ 05-Mar-25 11:44:13  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:13  DEBUG  Found auth config 
+ 05-Mar-25 11:44:13  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-CONNECT-2025&fromImage=mosipdev%2Finji-verify-ui HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:13  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-CONNECT-2025&fromImage=mosipdev%2Finji-verify-service HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:19  INFO  Status: Downloaded newer image for mosipdev/inji-verify-ui:MOSIP-CONNECT-2025 
+ 05-Mar-25 11:44:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify-ui:MOSIP-CONNECT-2025/tag?tag=MOSIP-CONNECT-2025&repo=mosipqa%2Finji-verify-ui&force=1 HTTP/1.1" 201 0 
+ 05-Mar-25 11:44:19  INFO   
+ 05-Mar-25 11:44:19  INFO  [ PUSH -----> mosipdev/inji-verify-ui:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-ui:MOSIP-CONNECT-2025 ]  
+ 05-Mar-25 11:44:19  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:19  DEBUG  Found auth config 
+ 05-Mar-25 11:44:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify-ui/push?tag=MOSIP-CONNECT-2025 HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:21  INFO  Status: Downloaded newer image for mosipdev/inji-verify-service:MOSIP-CONNECT-2025 
+ 05-Mar-25 11:44:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify-service:MOSIP-CONNECT-2025/tag?tag=MOSIP-CONNECT-2025&repo=mosipqa%2Finji-verify-service&force=1 HTTP/1.1" 201 0 
+ 05-Mar-25 11:44:21  INFO   
+ 05-Mar-25 11:44:21  INFO  [ PUSH -----> mosipdev/inji-verify-service:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-service:MOSIP-CONNECT-2025 ]  
+ 05-Mar-25 11:44:21  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:21  DEBUG  Found auth config 
+ 05-Mar-25 11:44:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify-service/push?tag=MOSIP-CONNECT-2025 HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:23  INFO  MOSIP-CONNECT-2025: digest: sha256:1faa885aba46f69239eb33d4d279630976acba19d69e55f8789972dd71571de8 size: 2818 
+ 05-Mar-25 11:44:23  INFO   
+ 05-Mar-25 11:44:23  INFO  [ PUSH -----> mosipdev/inji-verify-ui:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-ui:latest ]  
+ 05-Mar-25 11:44:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify-ui:MOSIP-CONNECT-2025/tag?tag=latest&repo=mosipqa%2Finji-verify-ui&force=1 HTTP/1.1" 201 0 
+ 05-Mar-25 11:44:23  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:23  DEBUG  Found auth config 
+ 05-Mar-25 11:44:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify-ui/push?tag=latest HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:24  INFO  MOSIP-CONNECT-2025: digest: sha256:03ff9637aee5841f3a3e787bb406ea643ca1ca9e374bba3a0380985d2e8ebf9a size: 1790 
+ 05-Mar-25 11:44:24  INFO   
+ 05-Mar-25 11:44:24  INFO  [ PUSH -----> mosipdev/inji-verify-service:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-service:latest ]  
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/inji-verify-service:MOSIP-CONNECT-2025/tag?tag=latest&repo=mosipqa%2Finji-verify-service&force=1 HTTP/1.1" 201 0 
+ 05-Mar-25 11:44:24  DEBUG  Looking for auth config 
+ 05-Mar-25 11:44:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Mar-25 11:44:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Mar-25 11:44:24  DEBUG  Found auth config 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/inji-verify-service/push?tag=latest HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:24  INFO  latest: digest: sha256:1faa885aba46f69239eb33d4d279630976acba19d69e55f8789972dd71571de8 size: 2818 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-verify-ui%3AMOSIP-CONNECT-2025%22%5D%7D HTTP/1.1" 200 449 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:146ab1dcd4232f2b3630f9cdc75cfae94378475fb08a34221ce960a99470482f/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-verify-ui:MOSIP-CONNECT-2025?force=False&noprune=False HTTP/1.1" 200 171 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-ui%3AMOSIP-CONNECT-2025%22%5D%7D HTTP/1.1" 200 448 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:146ab1dcd4232f2b3630f9cdc75cfae94378475fb08a34221ce960a99470482f/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify-ui:MOSIP-CONNECT-2025?force=False&noprune=False HTTP/1.1" 200 59 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-ui%3Alatest%22%5D%7D HTTP/1.1" 200 436 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:146ab1dcd4232f2b3630f9cdc75cfae94378475fb08a34221ce960a99470482f/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify-ui:latest?force=False&noprune=False HTTP/1.1" 200 1275 
+ 05-Mar-25 11:44:24  INFO  Completed mosipdev/inji-verify-ui:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-ui:MOSIP-CONNECT-2025 
+ 05-Mar-25 11:44:25  INFO  latest: digest: sha256:03ff9637aee5841f3a3e787bb406ea643ca1ca9e374bba3a0380985d2e8ebf9a size: 1790 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Finji-verify-service%3AMOSIP-CONNECT-2025%22%5D%7D HTTP/1.1" 200 389 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ff2c2afdf0dd7069a9ee34b686e6b26b7cfe262ab0fe73962c0b4141043c0a5e/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/inji-verify-service:MOSIP-CONNECT-2025?force=False&noprune=False HTTP/1.1" 200 181 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-service%3AMOSIP-CONNECT-2025%22%5D%7D HTTP/1.1" 200 388 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ff2c2afdf0dd7069a9ee34b686e6b26b7cfe262ab0fe73962c0b4141043c0a5e/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify-service:MOSIP-CONNECT-2025?force=False&noprune=False HTTP/1.1" 200 64 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-service%3Alatest%22%5D%7D HTTP/1.1" 200 376 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ff2c2afdf0dd7069a9ee34b686e6b26b7cfe262ab0fe73962c0b4141043c0a5e/json HTTP/1.1" 200 None 
+ 05-Mar-25 11:44:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/inji-verify-service:latest?force=False&noprune=False HTTP/1.1" 200 855 
+ 05-Mar-25 11:44:25  INFO  Completed mosipdev/inji-verify-service:MOSIP-CONNECT-2025	------> mosipqa/inji-verify-service:MOSIP-CONNECT-2025 
