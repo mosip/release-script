@@ -1,84 +1,1316 @@
- 12-Mar-25 11:52:55  INFO  LOGFILE CREATED : vidivi.log 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  ******************** Check Images List ************************************************************************************ 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  IMAGES= [['mosipdev/registration-client:release-1.3.x', 'release-1.3.x']] 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  src = "mosipdev/registration-client" tag = "release-1.3.x" 
- 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 11:52:55  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Mar-25 11:52:55  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-client/tags/release-1.3.x HTTP/1.1" 200 830 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 12-Mar-25 11:52:55  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
- 12-Mar-25 11:52:55  INFO   
- 12-Mar-25 11:52:55  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 11:52:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 12-Mar-25 11:52:56  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/registration-client/manifests/release-1.3.x HTTP/1.1" 404 107 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  [ mosipid/registration-client ]  
- 12-Mar-25 11:52:56  INFO  Destination Image = "mosipid/registration-client" Destination Image tag = "release-1.3.x" IMAGE_ID :  
- 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 11:52:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Mar-25 11:52:56  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/registration-client/tags/release-1.3.x HTTP/1.1" 404 150 
- 12-Mar-25 11:52:56  ERROR  Image "mosipid/registration-client:release-1.3.x" does not exist 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  ******************** HASH Operation Results ********************************************************************** 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/registration-client:release-1.3.x']] 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 12-Mar-25 11:52:56  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 12-Mar-25 11:52:56  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 12-Mar-25 11:52:56  DEBUG  Found 'auths' section 
- 12-Mar-25 11:52:56  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 12-Mar-25 11:52:56  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 12-Mar-25 11:52:56  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 11:52:56  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 11:52:56  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  ********** [ mosipid/registration-client:release-1.3.x ] **************************************************** 
- 12-Mar-25 11:52:56  INFO   
- 12-Mar-25 11:52:56  INFO  [ PULL ----------------------> mosipdev/registration-client:release-1.3.x ]  
- 12-Mar-25 11:52:56  DEBUG  Looking for auth config 
- 12-Mar-25 11:52:56  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 11:52:56  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 11:52:56  DEBUG  Found auth config 
- 12-Mar-25 11:52:56  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-client HTTP/1.1" 200 None 
- 12-Mar-25 11:53:20  INFO  Status: Downloaded newer image for mosipdev/registration-client:release-1.3.x 
- 12-Mar-25 11:53:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=release-1.3.x&repo=mosipid%2Fregistration-client&force=1 HTTP/1.1" 201 0 
- 12-Mar-25 11:53:20  INFO   
- 12-Mar-25 11:53:20  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:release-1.3.x ]  
- 12-Mar-25 11:53:20  DEBUG  Looking for auth config 
- 12-Mar-25 11:53:20  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 11:53:20  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 11:53:20  DEBUG  Found auth config 
- 12-Mar-25 11:53:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-client/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 12-Mar-25 11:53:22  INFO  release-1.3.x: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
- 12-Mar-25 11:53:22  INFO   
- 12-Mar-25 11:53:22  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:latest ]  
- 12-Mar-25 11:53:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=latest&repo=mosipid%2Fregistration-client&force=1 HTTP/1.1" 201 0 
- 12-Mar-25 11:53:22  DEBUG  Looking for auth config 
- 12-Mar-25 11:53:22  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 11:53:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 11:53:22  DEBUG  Found auth config 
- 12-Mar-25 11:53:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-client/push?tag=latest HTTP/1.1" 200 None 
- 12-Mar-25 11:53:23  INFO  latest: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 472 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 59 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-client%3Alatest%22%5D%7D HTTP/1.1" 200 465 
- 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 11:53:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-client:latest?force=False&noprune=False HTTP/1.1" 200 941 
- 12-Mar-25 11:53:24  INFO  Completed mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:release-1.3.x 
+ 12-Mar-25 11:58:38  INFO  LOGFILE CREATED : vidivi.log 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  ******************** Check Images List ************************************************************************************ 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  IMAGES= [['mosipdev/registration-processor-external-integration-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/registration-processor-external-stage:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/pre-registration-booking-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-ridgenerator-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-notification-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-pridgenerator-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-idgenerator-service:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-salt-generator:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/kernel-config-server:release-1.3.x', '1.3.0-beta.2'], ['mosipdev/credential-request-generator:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/credential-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/id-repository-credentials-feeder:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/id-repository-identity-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/id-repository-salt-generator:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/id-repository-vid-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/apitest-idrepo:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/kernel-auditmanager-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/resident-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/apitest-resident:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/authentication-otp-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/authentication-internal-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/authentication-service:release-1.3.x', '1.3.0-beta.1'], ['mosipdev/apitest-auth:release-1.3.x', '1.3.0-beta.1']] 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  src = "mosipdev/registration-processor-external-integration-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-external-integration-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-external-integration-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  src = "mosipdev/registration-processor-external-stage" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-external-stage:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-external-stage/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  src = "mosipdev/pre-registration-booking-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-booking-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:38  INFO   
+ 12-Mar-25 11:58:38  INFO  src = "mosipdev/kernel-ridgenerator-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-ridgenerator-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:39  INFO   
+ 12-Mar-25 11:58:39  INFO  src = "mosipdev/kernel-notification-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-notification-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:39  INFO   
+ 12-Mar-25 11:58:39  INFO  src = "mosipdev/kernel-pridgenerator-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-pridgenerator-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:39  INFO   
+ 12-Mar-25 11:58:39  INFO  src = "mosipdev/kernel-idgenerator-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-idgenerator-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:39  INFO   
+ 12-Mar-25 11:58:39  INFO  src = "mosipdev/kernel-salt-generator" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:40  INFO   
+ 12-Mar-25 11:58:40  INFO  src = "mosipdev/kernel-config-server" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-config-server:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-config-server/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:40  INFO   
+ 12-Mar-25 11:58:40  INFO  src = "mosipdev/credential-request-generator" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-request-generator/tags/release-1.3.x HTTP/1.1" 200 827 
+ 12-Mar-25 11:58:40  INFO   
+ 12-Mar-25 11:58:40  INFO  src = "mosipdev/credential-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:40  INFO   
+ 12-Mar-25 11:58:40  INFO  src = "mosipdev/id-repository-credentials-feeder" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-credentials-feeder:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-credentials-feeder/tags/release-1.3.x HTTP/1.1" 200 833 
+ 12-Mar-25 11:58:41  INFO   
+ 12-Mar-25 11:58:41  INFO  src = "mosipdev/id-repository-identity-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-identity-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:41  INFO   
+ 12-Mar-25 11:58:41  INFO  src = "mosipdev/id-repository-salt-generator" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-salt-generator/tags/release-1.3.x HTTP/1.1" 200 826 
+ 12-Mar-25 11:58:41  INFO   
+ 12-Mar-25 11:58:41  INFO  src = "mosipdev/id-repository-vid-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-vid-service/tags/release-1.3.x HTTP/1.1" 200 826 
+ 12-Mar-25 11:58:41  INFO   
+ 12-Mar-25 11:58:41  INFO  src = "mosipdev/apitest-idrepo" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-idrepo/tags/release-1.3.x HTTP/1.1" 200 831 
+ 12-Mar-25 11:58:42  INFO   
+ 12-Mar-25 11:58:42  INFO  src = "mosipdev/kernel-auditmanager-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-auditmanager-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:42  INFO   
+ 12-Mar-25 11:58:42  INFO  src = "mosipdev/resident-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/resident-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/resident-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:42  INFO   
+ 12-Mar-25 11:58:42  INFO  src = "mosipdev/apitest-resident" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-resident:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-resident/tags/release-1.3.x HTTP/1.1" 200 831 
+ 12-Mar-25 11:58:42  INFO   
+ 12-Mar-25 11:58:42  INFO  src = "mosipdev/authentication-otp-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-otp-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-otp-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 12-Mar-25 11:58:43  INFO   
+ 12-Mar-25 11:58:43  INFO  src = "mosipdev/authentication-internal-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-internal-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-internal-service/tags/release-1.3.x HTTP/1.1" 200 827 
+ 12-Mar-25 11:58:43  INFO   
+ 12-Mar-25 11:58:43  INFO  src = "mosipdev/authentication-service" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-service/tags/release-1.3.x HTTP/1.1" 200 830 
+ 12-Mar-25 11:58:43  INFO   
+ 12-Mar-25 11:58:43  INFO  src = "mosipdev/apitest-auth" tag = "release-1.3.x" 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-auth:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-auth/tags/release-1.3.x HTTP/1.1" 200 829 
+ 12-Mar-25 11:58:43  INFO   
+ 12-Mar-25 11:58:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 12-Mar-25 11:58:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 12-Mar-25 11:58:43  INFO   
+ 12-Mar-25 11:58:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 12-Mar-25 11:58:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-processor-external-integration-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/registration-processor-external-integration-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:44  INFO   
+ 12-Mar-25 11:58:44  INFO  [ mosipid/registration-processor-external-integration-service ]  
+ 12-Mar-25 11:58:44  INFO  Destination Image = "mosipid/registration-processor-external-integration-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-processor-external-integration-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/registration-processor-external-integration-service/tags/1.3.0-beta.2 HTTP/1.1" 404 180 
+ 12-Mar-25 11:58:44  ERROR  Image "mosipid/registration-processor-external-integration-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-processor-external-stage:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/registration-processor-external-stage/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:44  INFO   
+ 12-Mar-25 11:58:44  INFO  [ mosipid/registration-processor-external-stage ]  
+ 12-Mar-25 11:58:44  INFO  Destination Image = "mosipid/registration-processor-external-stage" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-processor-external-stage:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/registration-processor-external-stage/tags/1.3.0-beta.2 HTTP/1.1" 404 166 
+ 12-Mar-25 11:58:44  ERROR  Image "mosipid/registration-processor-external-stage:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pre-registration-booking-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:45  INFO   
+ 12-Mar-25 11:58:45  INFO  [ mosipid/pre-registration-booking-service ]  
+ 12-Mar-25 11:58:45  INFO  Destination Image = "mosipid/pre-registration-booking-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-booking-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pre-registration-booking-service/tags/1.3.0-beta.2 HTTP/1.1" 404 161 
+ 12-Mar-25 11:58:45  ERROR  Image "mosipid/pre-registration-booking-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-ridgenerator-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:45  INFO   
+ 12-Mar-25 11:58:45  INFO  [ mosipid/kernel-ridgenerator-service ]  
+ 12-Mar-25 11:58:45  INFO  Destination Image = "mosipid/kernel-ridgenerator-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-ridgenerator-service/tags/1.3.0-beta.2 HTTP/1.1" 404 156 
+ 12-Mar-25 11:58:45  ERROR  Image "mosipid/kernel-ridgenerator-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-notification-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:45  INFO   
+ 12-Mar-25 11:58:45  INFO  [ mosipid/kernel-notification-service ]  
+ 12-Mar-25 11:58:45  INFO  Destination Image = "mosipid/kernel-notification-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-notification-service/tags/1.3.0-beta.2 HTTP/1.1" 404 156 
+ 12-Mar-25 11:58:46  ERROR  Image "mosipid/kernel-notification-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-pridgenerator-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:46  INFO   
+ 12-Mar-25 11:58:46  INFO  [ mosipid/kernel-pridgenerator-service ]  
+ 12-Mar-25 11:58:46  INFO  Destination Image = "mosipid/kernel-pridgenerator-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-pridgenerator-service/tags/1.3.0-beta.2 HTTP/1.1" 404 157 
+ 12-Mar-25 11:58:46  ERROR  Image "mosipid/kernel-pridgenerator-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-idgenerator-service/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:46  INFO   
+ 12-Mar-25 11:58:46  INFO  [ mosipid/kernel-idgenerator-service ]  
+ 12-Mar-25 11:58:46  INFO  Destination Image = "mosipid/kernel-idgenerator-service" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-idgenerator-service/tags/1.3.0-beta.2 HTTP/1.1" 404 155 
+ 12-Mar-25 11:58:46  ERROR  Image "mosipid/kernel-idgenerator-service:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-salt-generator/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:47  INFO   
+ 12-Mar-25 11:58:47  INFO  [ mosipid/kernel-salt-generator ]  
+ 12-Mar-25 11:58:47  INFO  Destination Image = "mosipid/kernel-salt-generator" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:47  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-salt-generator/tags/1.3.0-beta.2 HTTP/1.1" 404 150 
+ 12-Mar-25 11:58:47  ERROR  Image "mosipid/kernel-salt-generator:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-config-server:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-config-server/manifests/1.3.0-beta.2 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:47  INFO   
+ 12-Mar-25 11:58:47  INFO  [ mosipid/kernel-config-server ]  
+ 12-Mar-25 11:58:47  INFO  Destination Image = "mosipid/kernel-config-server" Destination Image tag = "1.3.0-beta.2" IMAGE_ID :  
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-config-server:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:47  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-config-server/tags/1.3.0-beta.2 HTTP/1.1" 404 149 
+ 12-Mar-25 11:58:47  ERROR  Image "mosipid/kernel-config-server:1.3.0-beta.2" does not exist 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/credential-request-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:47  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/credential-request-generator/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:48  INFO   
+ 12-Mar-25 11:58:48  INFO  [ mosipid/credential-request-generator ]  
+ 12-Mar-25 11:58:48  INFO  Destination Image = "mosipid/credential-request-generator" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/credential-request-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/credential-request-generator/tags/1.3.0-beta.1 HTTP/1.1" 404 157 
+ 12-Mar-25 11:58:48  ERROR  Image "mosipid/credential-request-generator:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/credential-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/credential-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:48  INFO   
+ 12-Mar-25 11:58:48  INFO  [ mosipid/credential-service ]  
+ 12-Mar-25 11:58:48  INFO  Destination Image = "mosipid/credential-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/credential-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/credential-service/tags/1.3.0-beta.1 HTTP/1.1" 404 147 
+ 12-Mar-25 11:58:48  ERROR  Image "mosipid/credential-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-credentials-feeder:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/id-repository-credentials-feeder/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:48  INFO   
+ 12-Mar-25 11:58:48  INFO  [ mosipid/id-repository-credentials-feeder ]  
+ 12-Mar-25 11:58:48  INFO  Destination Image = "mosipid/id-repository-credentials-feeder" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-credentials-feeder:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/id-repository-credentials-feeder/tags/1.3.0-beta.1 HTTP/1.1" 404 161 
+ 12-Mar-25 11:58:49  ERROR  Image "mosipid/id-repository-credentials-feeder:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/id-repository-identity-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:49  INFO   
+ 12-Mar-25 11:58:49  INFO  [ mosipid/id-repository-identity-service ]  
+ 12-Mar-25 11:58:49  INFO  Destination Image = "mosipid/id-repository-identity-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/id-repository-identity-service/tags/1.3.0-beta.1 HTTP/1.1" 404 159 
+ 12-Mar-25 11:58:49  ERROR  Image "mosipid/id-repository-identity-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/id-repository-salt-generator/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:49  INFO   
+ 12-Mar-25 11:58:49  INFO  [ mosipid/id-repository-salt-generator ]  
+ 12-Mar-25 11:58:49  INFO  Destination Image = "mosipid/id-repository-salt-generator" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/id-repository-salt-generator/tags/1.3.0-beta.1 HTTP/1.1" 404 157 
+ 12-Mar-25 11:58:49  ERROR  Image "mosipid/id-repository-salt-generator:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/id-repository-vid-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:50  INFO   
+ 12-Mar-25 11:58:50  INFO  [ mosipid/id-repository-vid-service ]  
+ 12-Mar-25 11:58:50  INFO  Destination Image = "mosipid/id-repository-vid-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/id-repository-vid-service/tags/1.3.0-beta.1 HTTP/1.1" 404 154 
+ 12-Mar-25 11:58:50  ERROR  Image "mosipid/id-repository-vid-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-idrepo/manifests/1.3.0-beta.1 HTTP/1.1" 401 165 
+ 12-Mar-25 11:58:50  INFO   
+ 12-Mar-25 11:58:50  INFO  [ mosipid/apitest-idrepo ]  
+ 12-Mar-25 11:58:50  INFO  Destination Image = "mosipid/apitest-idrepo" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-idrepo:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-idrepo/tags/1.3.0-beta.1 HTTP/1.1" 404 131 
+ 12-Mar-25 11:58:50  ERROR  Image "mosipid/apitest-idrepo:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-auditmanager-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:51  INFO   
+ 12-Mar-25 11:58:51  INFO  [ mosipid/kernel-auditmanager-service ]  
+ 12-Mar-25 11:58:51  INFO  Destination Image = "mosipid/kernel-auditmanager-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-auditmanager-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-auditmanager-service/tags/1.3.0-beta.1 HTTP/1.1" 404 156 
+ 12-Mar-25 11:58:51  ERROR  Image "mosipid/kernel-auditmanager-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/resident-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/resident-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:51  INFO   
+ 12-Mar-25 11:58:51  INFO  [ mosipid/resident-service ]  
+ 12-Mar-25 11:58:51  INFO  Destination Image = "mosipid/resident-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/resident-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/resident-service/tags/1.3.0-beta.1 HTTP/1.1" 404 145 
+ 12-Mar-25 11:58:51  ERROR  Image "mosipid/resident-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-resident:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-resident/manifests/1.3.0-beta.1 HTTP/1.1" 401 167 
+ 12-Mar-25 11:58:51  INFO   
+ 12-Mar-25 11:58:51  INFO  [ mosipid/apitest-resident ]  
+ 12-Mar-25 11:58:51  INFO  Destination Image = "mosipid/apitest-resident" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-resident:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-resident/tags/1.3.0-beta.1 HTTP/1.1" 404 133 
+ 12-Mar-25 11:58:52  ERROR  Image "mosipid/apitest-resident:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-otp-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/authentication-otp-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:52  INFO   
+ 12-Mar-25 11:58:52  INFO  [ mosipid/authentication-otp-service ]  
+ 12-Mar-25 11:58:52  INFO  Destination Image = "mosipid/authentication-otp-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-otp-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/authentication-otp-service/tags/1.3.0-beta.1 HTTP/1.1" 404 155 
+ 12-Mar-25 11:58:52  ERROR  Image "mosipid/authentication-otp-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-internal-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/authentication-internal-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:52  INFO   
+ 12-Mar-25 11:58:52  INFO  [ mosipid/authentication-internal-service ]  
+ 12-Mar-25 11:58:52  INFO  Destination Image = "mosipid/authentication-internal-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-internal-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/authentication-internal-service/tags/1.3.0-beta.1 HTTP/1.1" 404 160 
+ 12-Mar-25 11:58:52  ERROR  Image "mosipid/authentication-internal-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/authentication-service/manifests/1.3.0-beta.1 HTTP/1.1" 404 106 
+ 12-Mar-25 11:58:53  INFO   
+ 12-Mar-25 11:58:53  INFO  [ mosipid/authentication-service ]  
+ 12-Mar-25 11:58:53  INFO  Destination Image = "mosipid/authentication-service" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/authentication-service:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/authentication-service/tags/1.3.0-beta.1 HTTP/1.1" 404 151 
+ 12-Mar-25 11:58:53  ERROR  Image "mosipid/authentication-service:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-auth:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:58:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-auth/manifests/1.3.0-beta.1 HTTP/1.1" 401 163 
+ 12-Mar-25 11:58:53  INFO   
+ 12-Mar-25 11:58:53  INFO  [ mosipid/apitest-auth ]  
+ 12-Mar-25 11:58:53  INFO  Destination Image = "mosipid/apitest-auth" Destination Image tag = "1.3.0-beta.1" IMAGE_ID :  
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:58:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-auth:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:58:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-auth/tags/1.3.0-beta.1 HTTP/1.1" 404 129 
+ 12-Mar-25 11:58:53  ERROR  Image "mosipid/apitest-auth:1.3.0-beta.1" does not exist 
+ 12-Mar-25 11:58:53  INFO   
+ 12-Mar-25 11:58:53  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 12-Mar-25 11:58:53  INFO   
+ 12-Mar-25 11:58:53  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/registration-processor-external-integration-service:1.3.0-beta.2'], ['mosipid/registration-processor-external-stage:1.3.0-beta.2'], ['mosipid/pre-registration-booking-service:1.3.0-beta.2'], ['mosipid/kernel-ridgenerator-service:1.3.0-beta.2'], ['mosipid/kernel-notification-service:1.3.0-beta.2'], ['mosipid/kernel-pridgenerator-service:1.3.0-beta.2'], ['mosipid/kernel-idgenerator-service:1.3.0-beta.2'], ['mosipid/kernel-salt-generator:1.3.0-beta.2'], ['mosipid/kernel-config-server:1.3.0-beta.2'], ['mosipid/credential-request-generator:1.3.0-beta.1'], ['mosipid/credential-service:1.3.0-beta.1'], ['mosipid/id-repository-credentials-feeder:1.3.0-beta.1'], ['mosipid/id-repository-identity-service:1.3.0-beta.1'], ['mosipid/id-repository-salt-generator:1.3.0-beta.1'], ['mosipid/id-repository-vid-service:1.3.0-beta.1'], ['mosipid/apitest-idrepo:1.3.0-beta.1'], ['mosipid/kernel-auditmanager-service:1.3.0-beta.1'], ['mosipid/resident-service:1.3.0-beta.1'], ['mosipid/apitest-resident:1.3.0-beta.1'], ['mosipid/authentication-otp-service:1.3.0-beta.1'], ['mosipid/authentication-internal-service:1.3.0-beta.1'], ['mosipid/authentication-service:1.3.0-beta.1'], ['mosipid/apitest-auth:1.3.0-beta.1']] 
+ 12-Mar-25 11:58:53  INFO   
+ 12-Mar-25 11:58:53  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 12-Mar-25 11:58:53  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 12-Mar-25 11:58:53  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 12-Mar-25 11:58:53  DEBUG  Found 'auths' section 
+ 12-Mar-25 11:58:53  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 12-Mar-25 11:58:53  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 12-Mar-25 11:58:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/registration-processor-external-integration-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/registration-processor-external-integration-service:release-1.3.x ]  
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/registration-processor-external-stage:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/registration-processor-external-stage:release-1.3.x ]  
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/pre-registration-booking-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/pre-registration-booking-service:release-1.3.x ]  
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-ridgenerator-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/kernel-ridgenerator-service:release-1.3.x ]  
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-notification-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/kernel-notification-service:release-1.3.x ]  
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-pridgenerator-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  INFO  [ PULL ----------------------> mosipdev/kernel-pridgenerator-service:release-1.3.x ]  
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-idgenerator-service:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth config 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:58:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:58:54  DEBUG  Found auth config 
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-salt-generator:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-config-server:1.3.0-beta.2 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/credential-request-generator:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/credential-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/id-repository-credentials-feeder:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/id-repository-identity-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/id-repository-salt-generator:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/id-repository-vid-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/apitest-idrepo:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/kernel-auditmanager-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/resident-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/apitest-resident:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/authentication-otp-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/authentication-internal-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/authentication-service:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  INFO   
+ 12-Mar-25 11:58:54  INFO  ********** [ mosipid/apitest-auth:1.3.0-beta.1 ] **************************************************** 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-external-stage HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fpre-registration-booking-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-notification-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-ridgenerator-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-processor-external-integration-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:58:54  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-pridgenerator-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:11  INFO  Status: Downloaded newer image for mosipdev/registration-processor-external-integration-service:release-1.3.x 
+ 12-Mar-25 11:59:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-external-integration-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fregistration-processor-external-integration-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:11  INFO   
+ 12-Mar-25 11:59:11  INFO  [ PUSH -----> mosipdev/registration-processor-external-integration-service:release-1.3.x	------> mosipid/registration-processor-external-integration-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:11  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:11  DEBUG  Found auth config 
+ 12-Mar-25 11:59:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-processor-external-integration-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:11  INFO  Status: Downloaded newer image for mosipdev/kernel-notification-service:release-1.3.x 
+ 12-Mar-25 11:59:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-notification-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-notification-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:11  INFO   
+ 12-Mar-25 11:59:11  INFO  [ PUSH -----> mosipdev/kernel-notification-service:release-1.3.x	------> mosipid/kernel-notification-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:11  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:11  DEBUG  Found auth config 
+ 12-Mar-25 11:59:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-notification-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:12  INFO  Status: Downloaded newer image for mosipdev/kernel-ridgenerator-service:release-1.3.x 
+ 12-Mar-25 11:59:12  INFO  Status: Downloaded newer image for mosipdev/pre-registration-booking-service:release-1.3.x 
+ 12-Mar-25 11:59:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-ridgenerator-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-ridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:12  INFO   
+ 12-Mar-25 11:59:12  INFO  [ PUSH -----> mosipdev/kernel-ridgenerator-service:release-1.3.x	------> mosipid/kernel-ridgenerator-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:12  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:12  DEBUG  Found auth config 
+ 12-Mar-25 11:59:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fpre-registration-booking-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:12  INFO   
+ 12-Mar-25 11:59:12  INFO  [ PUSH -----> mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipid/pre-registration-booking-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:12  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:12  DEBUG  Found auth config 
+ 12-Mar-25 11:59:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-ridgenerator-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pre-registration-booking-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:15  INFO  1.3.0-beta.2: digest: sha256:fdde666d04965b48b698c6bb28e0a5a026119c21383ae037f48498e2a748f60d size: 2628 
+ 12-Mar-25 11:59:15  INFO   
+ 12-Mar-25 11:59:15  INFO  [ PUSH -----> mosipdev/registration-processor-external-integration-service:release-1.3.x	------> mosipid/registration-processor-external-integration-service:latest ]  
+ 12-Mar-25 11:59:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-external-integration-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fregistration-processor-external-integration-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:15  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:15  DEBUG  Found auth config 
+ 12-Mar-25 11:59:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-processor-external-integration-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:15  INFO  Status: Downloaded newer image for mosipdev/kernel-pridgenerator-service:release-1.3.x 
+ 12-Mar-25 11:59:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-pridgenerator-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-pridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:15  INFO   
+ 12-Mar-25 11:59:15  INFO  [ PUSH -----> mosipdev/kernel-pridgenerator-service:release-1.3.x	------> mosipid/kernel-pridgenerator-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:15  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:15  DEBUG  Found auth config 
+ 12-Mar-25 11:59:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-pridgenerator-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:16  INFO  Status: Downloaded newer image for mosipdev/registration-processor-external-stage:release-1.3.x 
+ 12-Mar-25 11:59:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-external-stage:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fregistration-processor-external-stage&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:17  INFO   
+ 12-Mar-25 11:59:17  INFO  [ PUSH -----> mosipdev/registration-processor-external-stage:release-1.3.x	------> mosipid/registration-processor-external-stage:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:17  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:17  DEBUG  Found auth config 
+ 12-Mar-25 11:59:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-processor-external-stage/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:17  INFO  1.3.0-beta.2: digest: sha256:cd9ae520d4ac622ab9ff942ca566d98a581fa395231af9c92d72c59466a3e4e3 size: 2416 
+ 12-Mar-25 11:59:17  INFO   
+ 12-Mar-25 11:59:17  INFO  [ PUSH -----> mosipdev/kernel-notification-service:release-1.3.x	------> mosipid/kernel-notification-service:latest ]  
+ 12-Mar-25 11:59:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-notification-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-notification-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:17  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:17  DEBUG  Found auth config 
+ 12-Mar-25 11:59:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-notification-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:18  INFO  1.3.0-beta.2: digest: sha256:e4772390ce96286f8fb98f68ae768c34d85591fe0894f7c850d1a2650351e465 size: 2416 
+ 12-Mar-25 11:59:18  INFO   
+ 12-Mar-25 11:59:18  INFO  [ PUSH -----> mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipid/pre-registration-booking-service:latest ]  
+ 12-Mar-25 11:59:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fpre-registration-booking-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:18  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:18  DEBUG  Found auth config 
+ 12-Mar-25 11:59:18  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/pre-registration-booking-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:19  INFO  latest: digest: sha256:fdde666d04965b48b698c6bb28e0a5a026119c21383ae037f48498e2a748f60d size: 2628 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-external-integration-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 416 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a79880e04411ee8bd4d24c2f979b0ebb378469fabdcc87fa054650c113993747/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-external-integration-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 240 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-processor-external-integration-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 414 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a79880e04411ee8bd4d24c2f979b0ebb378469fabdcc87fa054650c113993747/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-processor-external-integration-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 90 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-processor-external-integration-service%3Alatest%22%5D%7D HTTP/1.1" 200 408 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "GET /v1.45/images/sha256:a79880e04411ee8bd4d24c2f979b0ebb378469fabdcc87fa054650c113993747/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-processor-external-integration-service:latest?force=False&noprune=False HTTP/1.1" 200 833 
+ 12-Mar-25 11:59:19  INFO  Completed mosipdev/registration-processor-external-integration-service:release-1.3.x	------> mosipid/registration-processor-external-integration-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:19  INFO   
+ 12-Mar-25 11:59:19  INFO  [ PULL ----------------------> mosipdev/kernel-idgenerator-service:release-1.3.x ]  
+ 12-Mar-25 11:59:19  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:19  DEBUG  Found auth config 
+ 12-Mar-25 11:59:19  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-idgenerator-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:20  INFO  1.3.0-beta.2: digest: sha256:5cbfe13857236206817ae6b9dd39feaf700413c33f57e47f550e4e94a3573d1b size: 2416 
+ 12-Mar-25 11:59:20  INFO   
+ 12-Mar-25 11:59:20  INFO  [ PUSH -----> mosipdev/kernel-ridgenerator-service:release-1.3.x	------> mosipid/kernel-ridgenerator-service:latest ]  
+ 12-Mar-25 11:59:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-ridgenerator-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-ridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:20  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:20  DEBUG  Found auth config 
+ 12-Mar-25 11:59:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-ridgenerator-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:23  INFO  1.3.0-beta.2: digest: sha256:813f8475fc86866ad034b124b37bb5c3c62831de20581352771721a75e1dffa8 size: 2631 
+ 12-Mar-25 11:59:23  INFO   
+ 12-Mar-25 11:59:23  INFO  [ PUSH -----> mosipdev/kernel-pridgenerator-service:release-1.3.x	------> mosipid/kernel-pridgenerator-service:latest ]  
+ 12-Mar-25 11:59:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-pridgenerator-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-pridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:23  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:23  DEBUG  Found auth config 
+ 12-Mar-25 11:59:23  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-pridgenerator-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  INFO  latest: digest: sha256:cd9ae520d4ac622ab9ff942ca566d98a581fa395231af9c92d72c59466a3e4e3 size: 2416 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-notification-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 392 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b2f4fdb571ec71ad4a1a56e335dacc4894a09fd7a049a7e6de2f83146e1e1280/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-notification-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 192 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-notification-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 390 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b2f4fdb571ec71ad4a1a56e335dacc4894a09fd7a049a7e6de2f83146e1e1280/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-notification-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 66 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-notification-service%3Alatest%22%5D%7D HTTP/1.1" 200 384 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b2f4fdb571ec71ad4a1a56e335dacc4894a09fd7a049a7e6de2f83146e1e1280/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-notification-service:latest?force=False&noprune=False HTTP/1.1" 200 699 
+ 12-Mar-25 11:59:24  INFO  Completed mosipdev/kernel-notification-service:release-1.3.x	------> mosipid/kernel-notification-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:24  INFO   
+ 12-Mar-25 11:59:24  INFO  [ PULL ----------------------> mosipdev/kernel-salt-generator:release-1.3.x ]  
+ 12-Mar-25 11:59:24  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:24  DEBUG  Found auth config 
+ 12-Mar-25 11:59:24  INFO  latest: digest: sha256:e4772390ce96286f8fb98f68ae768c34d85591fe0894f7c850d1a2650351e465 size: 2416 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fpre-registration-booking-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 397 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:05b529d67e359f36aa51031e70dd3a6167ffb0968b40b5d99b50483ca8fbb7d9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/pre-registration-booking-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 202 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpre-registration-booking-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 395 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:05b529d67e359f36aa51031e70dd3a6167ffb0968b40b5d99b50483ca8fbb7d9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pre-registration-booking-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 71 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fpre-registration-booking-service%3Alatest%22%5D%7D HTTP/1.1" 200 389 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:05b529d67e359f36aa51031e70dd3a6167ffb0968b40b5d99b50483ca8fbb7d9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/pre-registration-booking-service:latest?force=False&noprune=False HTTP/1.1" 200 709 
+ 12-Mar-25 11:59:24  INFO  Completed mosipdev/pre-registration-booking-service:release-1.3.x	------> mosipid/pre-registration-booking-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:24  INFO   
+ 12-Mar-25 11:59:24  INFO  [ PULL ----------------------> mosipdev/kernel-config-server:release-1.3.x ]  
+ 12-Mar-25 11:59:24  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:24  DEBUG  Found auth config 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  INFO  1.3.0-beta.2: digest: sha256:0b61263134dfdc452c86aec2933cd594e9182ef75b3a7fc36ea5d8cc17369df9 size: 2631 
+ 12-Mar-25 11:59:25  INFO   
+ 12-Mar-25 11:59:25  INFO  [ PUSH -----> mosipdev/registration-processor-external-stage:release-1.3.x	------> mosipid/registration-processor-external-stage:latest ]  
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-processor-external-stage:release-1.3.x/tag?tag=latest&repo=mosipid%2Fregistration-processor-external-stage&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:25  DEBUG  Found auth config 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-processor-external-stage/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  INFO  latest: digest: sha256:5cbfe13857236206817ae6b9dd39feaf700413c33f57e47f550e4e94a3573d1b size: 2416 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-ridgenerator-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 392 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b81928014f2308ff9fc0d62591631e9be102145a2308f8bba8c0aa00b6525504/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-ridgenerator-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 192 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-ridgenerator-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 390 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b81928014f2308ff9fc0d62591631e9be102145a2308f8bba8c0aa00b6525504/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-ridgenerator-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 66 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-ridgenerator-service%3Alatest%22%5D%7D HTTP/1.1" 200 384 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b81928014f2308ff9fc0d62591631e9be102145a2308f8bba8c0aa00b6525504/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-ridgenerator-service:latest?force=False&noprune=False HTTP/1.1" 200 699 
+ 12-Mar-25 11:59:25  INFO  Completed mosipdev/kernel-ridgenerator-service:release-1.3.x	------> mosipid/kernel-ridgenerator-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:25  INFO   
+ 12-Mar-25 11:59:25  INFO  [ PULL ----------------------> mosipdev/credential-request-generator:release-1.3.x ]  
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:25  DEBUG  Found auth config 
+ 12-Mar-25 11:59:25  INFO  latest: digest: sha256:813f8475fc86866ad034b124b37bb5c3c62831de20581352771721a75e1dffa8 size: 2631 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-config-server HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-pridgenerator-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 393 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3da415129522764446990a193bef6db01a7fc0a3fb154f3f5167f8fcd12b08a1/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-pridgenerator-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 194 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-pridgenerator-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 391 
+ 12-Mar-25 11:59:25  INFO  Status: Downloaded newer image for mosipdev/kernel-idgenerator-service:release-1.3.x 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3da415129522764446990a193bef6db01a7fc0a3fb154f3f5167f8fcd12b08a1/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-pridgenerator-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 67 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-pridgenerator-service%3Alatest%22%5D%7D HTTP/1.1" 200 385 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-idgenerator-service:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-idgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:25  INFO   
+ 12-Mar-25 11:59:25  INFO  [ PUSH -----> mosipdev/kernel-idgenerator-service:release-1.3.x	------> mosipid/kernel-idgenerator-service:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:25  DEBUG  Found auth config 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3da415129522764446990a193bef6db01a7fc0a3fb154f3f5167f8fcd12b08a1/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-idgenerator-service/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:25  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fcredential-request-generator HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-pridgenerator-service:latest?force=False&noprune=False HTTP/1.1" 200 787 
+ 12-Mar-25 11:59:26  INFO  Completed mosipdev/kernel-pridgenerator-service:release-1.3.x	------> mosipid/kernel-pridgenerator-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:26  INFO   
+ 12-Mar-25 11:59:26  INFO  [ PULL ----------------------> mosipdev/credential-service:release-1.3.x ]  
+ 12-Mar-25 11:59:26  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:26  DEBUG  Found auth config 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fcredential-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:26  INFO  latest: digest: sha256:0b61263134dfdc452c86aec2933cd594e9182ef75b3a7fc36ea5d8cc17369df9 size: 2631 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-processor-external-stage%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 402 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e1c4f02bf5fbf75451f5b85276414330fc6c30fc3435f959feea676d351dbb3/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-processor-external-stage:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 212 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-processor-external-stage%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 400 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e1c4f02bf5fbf75451f5b85276414330fc6c30fc3435f959feea676d351dbb3/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-processor-external-stage:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 76 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-processor-external-stage%3Alatest%22%5D%7D HTTP/1.1" 200 394 
+ 12-Mar-25 11:59:26  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e1c4f02bf5fbf75451f5b85276414330fc6c30fc3435f959feea676d351dbb3/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:27  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-processor-external-stage:latest?force=False&noprune=False HTTP/1.1" 200 805 
+ 12-Mar-25 11:59:27  INFO  Completed mosipdev/registration-processor-external-stage:release-1.3.x	------> mosipid/registration-processor-external-stage:1.3.0-beta.2 
+ 12-Mar-25 11:59:27  INFO   
+ 12-Mar-25 11:59:27  INFO  [ PULL ----------------------> mosipdev/id-repository-credentials-feeder:release-1.3.x ]  
+ 12-Mar-25 11:59:27  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:27  DEBUG  Found auth config 
+ 12-Mar-25 11:59:28  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fid-repository-credentials-feeder HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:31  INFO  1.3.0-beta.2: digest: sha256:aa6513bd5d78ff15db35f92d7d8043ceb99f3196ebb5dfa82a751c3ab0b2b4f1 size: 2631 
+ 12-Mar-25 11:59:31  INFO   
+ 12-Mar-25 11:59:31  INFO  [ PUSH -----> mosipdev/kernel-idgenerator-service:release-1.3.x	------> mosipid/kernel-idgenerator-service:latest ]  
+ 12-Mar-25 11:59:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-idgenerator-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-idgenerator-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:31  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:31  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:31  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:31  DEBUG  Found auth config 
+ 12-Mar-25 11:59:31  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-idgenerator-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:33  INFO  latest: digest: sha256:aa6513bd5d78ff15db35f92d7d8043ceb99f3196ebb5dfa82a751c3ab0b2b4f1 size: 2631 
+ 12-Mar-25 11:59:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-idgenerator-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 391 
+ 12-Mar-25 11:59:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3a570ce831d4bee3ab1e1f3dbf29dd9176b116108b2cd5653596964319c17590/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:33  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-idgenerator-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 12-Mar-25 11:59:33  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-idgenerator-service%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 389 
+ 12-Mar-25 11:59:33  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3a570ce831d4bee3ab1e1f3dbf29dd9176b116108b2cd5653596964319c17590/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:34  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-idgenerator-service:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 65 
+ 12-Mar-25 11:59:34  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-idgenerator-service%3Alatest%22%5D%7D HTTP/1.1" 200 383 
+ 12-Mar-25 11:59:34  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3a570ce831d4bee3ab1e1f3dbf29dd9176b116108b2cd5653596964319c17590/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:35  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-idgenerator-service:latest?force=False&noprune=False HTTP/1.1" 200 783 
+ 12-Mar-25 11:59:35  INFO  Completed mosipdev/kernel-idgenerator-service:release-1.3.x	------> mosipid/kernel-idgenerator-service:1.3.0-beta.2 
+ 12-Mar-25 11:59:35  INFO   
+ 12-Mar-25 11:59:35  INFO  [ PULL ----------------------> mosipdev/id-repository-identity-service:release-1.3.x ]  
+ 12-Mar-25 11:59:35  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:35  DEBUG  Found auth config 
+ 12-Mar-25 11:59:36  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:37  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator:release-1.3.x 
+ 12-Mar-25 11:59:37  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:37  INFO   
+ 12-Mar-25 11:59:37  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipid/kernel-salt-generator:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:37  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:37  DEBUG  Found auth config 
+ 12-Mar-25 11:59:37  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-salt-generator/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:44  INFO  1.3.0-beta.2: digest: sha256:5772fb26e430cdf2d19ac2b0a440748748a519d78565712a21be97c744682098 size: 2416 
+ 12-Mar-25 11:59:44  INFO   
+ 12-Mar-25 11:59:44  INFO  [ PUSH -----> mosipdev/kernel-salt-generator:release-1.3.x	------> mosipid/kernel-salt-generator:latest ]  
+ 12-Mar-25 11:59:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:44  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:44  DEBUG  Found auth config 
+ 12-Mar-25 11:59:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-salt-generator/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:44  INFO  Status: Downloaded newer image for mosipdev/credential-request-generator:release-1.3.x 
+ 12-Mar-25 11:59:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/credential-request-generator:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:44  INFO   
+ 12-Mar-25 11:59:44  INFO  [ PUSH -----> mosipdev/credential-request-generator:release-1.3.x	------> mosipid/credential-request-generator:1.3.0-beta.1 ]  
+ 12-Mar-25 11:59:44  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:44  DEBUG  Found auth config 
+ 12-Mar-25 11:59:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/credential-request-generator/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:45  INFO  latest: digest: sha256:5772fb26e430cdf2d19ac2b0a440748748a519d78565712a21be97c744682098 size: 2416 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 386 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5e43afa6600616a4ab9a0edaaa16dac01351629850c98944c900a5a93912ad50/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 180 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-salt-generator%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 384 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5e43afa6600616a4ab9a0edaaa16dac01351629850c98944c900a5a93912ad50/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-salt-generator:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 60 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 378 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:5e43afa6600616a4ab9a0edaaa16dac01351629850c98944c900a5a93912ad50/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 687 
+ 12-Mar-25 11:59:45  INFO  Completed mosipdev/kernel-salt-generator:release-1.3.x	------> mosipid/kernel-salt-generator:1.3.0-beta.2 
+ 12-Mar-25 11:59:45  INFO   
+ 12-Mar-25 11:59:45  INFO  [ PULL ----------------------> mosipdev/id-repository-salt-generator:release-1.3.x ]  
+ 12-Mar-25 11:59:45  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:45  DEBUG  Found auth config 
+ 12-Mar-25 11:59:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fid-repository-salt-generator HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:49  INFO  1.3.0-beta.1: digest: sha256:f8db0ced7760c2adf0e8b5b1a2f70eab67c0cbe1da379013752b303027415c80 size: 2416 
+ 12-Mar-25 11:59:49  INFO   
+ 12-Mar-25 11:59:49  INFO  [ PUSH -----> mosipdev/credential-request-generator:release-1.3.x	------> mosipid/credential-request-generator:latest ]  
+ 12-Mar-25 11:59:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/credential-request-generator:release-1.3.x/tag?tag=latest&repo=mosipid%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:49  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:49  DEBUG  Found auth config 
+ 12-Mar-25 11:59:49  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/credential-request-generator/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:50  INFO  Status: Downloaded newer image for mosipdev/kernel-config-server:release-1.3.x 
+ 12-Mar-25 11:59:50  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-config-server:release-1.3.x/tag?tag=1.3.0-beta.2&repo=mosipid%2Fkernel-config-server&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:50  INFO   
+ 12-Mar-25 11:59:50  INFO  [ PUSH -----> mosipdev/kernel-config-server:release-1.3.x	------> mosipid/kernel-config-server:1.3.0-beta.2 ]  
+ 12-Mar-25 11:59:50  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:50  DEBUG  Found auth config 
+ 12-Mar-25 11:59:50  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-config-server/push?tag=1.3.0-beta.2 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:51  INFO  latest: digest: sha256:f8db0ced7760c2adf0e8b5b1a2f70eab67c0cbe1da379013752b303027415c80 size: 2416 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcredential-request-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 393 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:624c550ea5ca692d8e580e3fb7ce8ca4a157afec285fc71e8578825079429fc9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/credential-request-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 194 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcredential-request-generator%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 391 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:624c550ea5ca692d8e580e3fb7ce8ca4a157afec285fc71e8578825079429fc9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/credential-request-generator:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 67 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcredential-request-generator%3Alatest%22%5D%7D HTTP/1.1" 200 385 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "GET /v1.45/images/sha256:624c550ea5ca692d8e580e3fb7ce8ca4a157afec285fc71e8578825079429fc9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/credential-request-generator:latest?force=False&noprune=False HTTP/1.1" 200 701 
+ 12-Mar-25 11:59:51  INFO  Completed mosipdev/credential-request-generator:release-1.3.x	------> mosipid/credential-request-generator:1.3.0-beta.1 
+ 12-Mar-25 11:59:51  INFO   
+ 12-Mar-25 11:59:51  INFO  [ PULL ----------------------> mosipdev/id-repository-vid-service:release-1.3.x ]  
+ 12-Mar-25 11:59:51  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:51  DEBUG  Found auth config 
+ 12-Mar-25 11:59:51  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fid-repository-vid-service HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:55  INFO  1.3.0-beta.2: digest: sha256:c8fe04fb278afe7fa92b0bdd03a7fbbcb87065e72edb74103379916a59b14726 size: 2000 
+ 12-Mar-25 11:59:55  INFO   
+ 12-Mar-25 11:59:55  INFO  [ PUSH -----> mosipdev/kernel-config-server:release-1.3.x	------> mosipid/kernel-config-server:latest ]  
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-config-server:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-config-server&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:55  DEBUG  Found auth config 
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-config-server/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:55  INFO  Status: Downloaded newer image for mosipdev/id-repository-salt-generator:release-1.3.x 
+ 12-Mar-25 11:59:55  INFO  Status: Downloaded newer image for mosipdev/credential-service:release-1.3.x 
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-salt-generator:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fid-repository-salt-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:55  INFO   
+ 12-Mar-25 11:59:55  INFO  [ PUSH -----> mosipdev/id-repository-salt-generator:release-1.3.x	------> mosipid/id-repository-salt-generator:1.3.0-beta.1 ]  
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:55  DEBUG  Found auth config 
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/credential-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:59:55  INFO   
+ 12-Mar-25 11:59:55  INFO  [ PUSH -----> mosipdev/credential-service:release-1.3.x	------> mosipid/credential-service:1.3.0-beta.1 ]  
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:55  DEBUG  Found auth config 
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-salt-generator/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:55  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/credential-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:57  INFO  latest: digest: sha256:c8fe04fb278afe7fa92b0bdd03a7fbbcb87065e72edb74103379916a59b14726 size: 2000 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-config-server%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6fc8e62b3d09baba3fe01dd01aef87d89a49b1c6004f3bf0bc3abfc9fd1eeb9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-config-server:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 178 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-config-server%3A1.3.0-beta.2%22%5D%7D HTTP/1.1" 200 471 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6fc8e62b3d09baba3fe01dd01aef87d89a49b1c6004f3bf0bc3abfc9fd1eeb9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-config-server:1.3.0-beta.2?force=False&noprune=False HTTP/1.1" 200 59 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-config-server%3Alatest%22%5D%7D HTTP/1.1" 200 465 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:c6fc8e62b3d09baba3fe01dd01aef87d89a49b1c6004f3bf0bc3abfc9fd1eeb9/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:59:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-config-server:latest?force=False&noprune=False HTTP/1.1" 200 943 
+ 12-Mar-25 11:59:57  INFO  Completed mosipdev/kernel-config-server:release-1.3.x	------> mosipid/kernel-config-server:1.3.0-beta.2 
+ 12-Mar-25 11:59:57  INFO   
+ 12-Mar-25 11:59:57  INFO  [ PULL ----------------------> mosipdev/apitest-idrepo:release-1.3.x ]  
+ 12-Mar-25 11:59:57  DEBUG  Looking for auth config 
+ 12-Mar-25 11:59:57  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:59:57  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:59:57  DEBUG  Found auth config 
+ 12-Mar-25 11:59:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-idrepo HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:00  INFO  1.3.0-beta.1: digest: sha256:d3b23e0585e920b8b2a7c73558b4afe6cb2731f880ad799a42db2c225998ff3f size: 2416 
+ 12-Mar-25 12:00:00  INFO   
+ 12-Mar-25 12:00:00  INFO  [ PUSH -----> mosipdev/id-repository-salt-generator:release-1.3.x	------> mosipid/id-repository-salt-generator:latest ]  
+ 12-Mar-25 12:00:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-salt-generator:release-1.3.x/tag?tag=latest&repo=mosipid%2Fid-repository-salt-generator&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:00  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:00  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:00  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:00  DEBUG  Found auth config 
+ 12-Mar-25 12:00:00  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-salt-generator/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:04  INFO  1.3.0-beta.1: digest: sha256:eb2bcd2431d5d09389448ee6155225150dd613ce1bf409b1388c3b340dafdf2e size: 2418 
+ 12-Mar-25 12:00:04  INFO   
+ 12-Mar-25 12:00:04  INFO  [ PUSH -----> mosipdev/credential-service:release-1.3.x	------> mosipid/credential-service:latest ]  
+ 12-Mar-25 12:00:04  INFO  latest: digest: sha256:d3b23e0585e920b8b2a7c73558b4afe6cb2731f880ad799a42db2c225998ff3f size: 2416 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fid-repository-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 393 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/credential-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:04  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:04  DEBUG  Found auth config 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:630c39d9015e5ce6319df5054351d5b7014c62d3f3f85743485999cd314c2928/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/credential-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/id-repository-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 194 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-salt-generator%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 391 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:630c39d9015e5ce6319df5054351d5b7014c62d3f3f85743485999cd314c2928/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-salt-generator:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 67 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 385 
+ 12-Mar-25 12:00:04  DEBUG  http://localhost:None "GET /v1.45/images/sha256:630c39d9015e5ce6319df5054351d5b7014c62d3f3f85743485999cd314c2928/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 701 
+ 12-Mar-25 12:00:05  INFO  Completed mosipdev/id-repository-salt-generator:release-1.3.x	------> mosipid/id-repository-salt-generator:1.3.0-beta.1 
+ 12-Mar-25 12:00:05  INFO   
+ 12-Mar-25 12:00:05  INFO  [ PULL ----------------------> mosipdev/kernel-auditmanager-service:release-1.3.x ]  
+ 12-Mar-25 12:00:05  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:05  DEBUG  Found auth config 
+ 12-Mar-25 12:00:06  INFO  latest: digest: sha256:eb2bcd2431d5d09389448ee6155225150dd613ce1bf409b1388c3b340dafdf2e size: 2418 
+ 12-Mar-25 12:00:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcredential-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 383 
+ 12-Mar-25 12:00:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7b73d74174678afc6de648323877222683720a38b4dcdd645cceb8f519bfd8e/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/credential-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 174 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcredential-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 381 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7b73d74174678afc6de648323877222683720a38b4dcdd645cceb8f519bfd8e/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/credential-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 57 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fcredential-service%3Alatest%22%5D%7D HTTP/1.1" 200 375 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e7b73d74174678afc6de648323877222683720a38b4dcdd645cceb8f519bfd8e/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:07  INFO  Status: Downloaded newer image for mosipdev/id-repository-vid-service:release-1.3.x 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-vid-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:07  INFO   
+ 12-Mar-25 12:00:07  INFO  [ PUSH -----> mosipdev/id-repository-vid-service:release-1.3.x	------> mosipid/id-repository-vid-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:07  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:07  DEBUG  Found auth config 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-vid-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fkernel-auditmanager-service HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/credential-service:latest?force=False&noprune=False HTTP/1.1" 200 681 
+ 12-Mar-25 12:00:07  INFO  Completed mosipdev/credential-service:release-1.3.x	------> mosipid/credential-service:1.3.0-beta.1 
+ 12-Mar-25 12:00:07  INFO   
+ 12-Mar-25 12:00:07  INFO  [ PULL ----------------------> mosipdev/resident-service:release-1.3.x ]  
+ 12-Mar-25 12:00:07  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:07  DEBUG  Found auth config 
+ 12-Mar-25 12:00:08  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fresident-service HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:10  INFO  Status: Downloaded newer image for mosipdev/kernel-auditmanager-service:release-1.3.x 
+ 12-Mar-25 12:00:10  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-auditmanager-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fkernel-auditmanager-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:10  INFO   
+ 12-Mar-25 12:00:10  INFO  [ PUSH -----> mosipdev/kernel-auditmanager-service:release-1.3.x	------> mosipid/kernel-auditmanager-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:10  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:10  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:10  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:10  DEBUG  Found auth config 
+ 12-Mar-25 12:00:11  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-auditmanager-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:15  INFO  1.3.0-beta.1: digest: sha256:46f0f3fe2e5eb32eab6a49bab2fa934885ad95c6be33610730364491ea2dd7ce size: 2416 
+ 12-Mar-25 12:00:15  INFO   
+ 12-Mar-25 12:00:15  INFO  [ PUSH -----> mosipdev/id-repository-vid-service:release-1.3.x	------> mosipid/id-repository-vid-service:latest ]  
+ 12-Mar-25 12:00:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-vid-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:17  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:17  DEBUG  Found auth config 
+ 12-Mar-25 12:00:17  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-vid-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:19  INFO  Status: Downloaded newer image for mosipdev/id-repository-credentials-feeder:release-1.3.x 
+ 12-Mar-25 12:00:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-credentials-feeder:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fid-repository-credentials-feeder&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:19  INFO   
+ 12-Mar-25 12:00:19  INFO  [ PUSH -----> mosipdev/id-repository-credentials-feeder:release-1.3.x	------> mosipid/id-repository-credentials-feeder:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:19  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:19  DEBUG  Found auth config 
+ 12-Mar-25 12:00:19  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-credentials-feeder/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:20  INFO  latest: digest: sha256:46f0f3fe2e5eb32eab6a49bab2fa934885ad95c6be33610730364491ea2dd7ce size: 2416 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fid-repository-vid-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 390 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:762bdf80ee7cc78d0438d400aab402b1ea392b6b698ebeb34284e5e104618532/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/id-repository-vid-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 188 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-vid-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 388 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:762bdf80ee7cc78d0438d400aab402b1ea392b6b698ebeb34284e5e104618532/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-vid-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 64 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-vid-service%3Alatest%22%5D%7D HTTP/1.1" 200 382 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "GET /v1.45/images/sha256:762bdf80ee7cc78d0438d400aab402b1ea392b6b698ebeb34284e5e104618532/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-vid-service:latest?force=False&noprune=False HTTP/1.1" 200 695 
+ 12-Mar-25 12:00:20  INFO  Completed mosipdev/id-repository-vid-service:release-1.3.x	------> mosipid/id-repository-vid-service:1.3.0-beta.1 
+ 12-Mar-25 12:00:20  INFO   
+ 12-Mar-25 12:00:20  INFO  [ PULL ----------------------> mosipdev/apitest-resident:release-1.3.x ]  
+ 12-Mar-25 12:00:20  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:20  DEBUG  Found auth config 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-resident HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:20  INFO  1.3.0-beta.1: digest: sha256:f04b5727652edc98e2285ba83d9ea323ae819cae827145b4d1c29c76e9a10a8b size: 1997 
+ 12-Mar-25 12:00:20  INFO   
+ 12-Mar-25 12:00:20  INFO  [ PUSH -----> mosipdev/kernel-auditmanager-service:release-1.3.x	------> mosipid/kernel-auditmanager-service:latest ]  
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/kernel-auditmanager-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fkernel-auditmanager-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:20  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:20  DEBUG  Found auth config 
+ 12-Mar-25 12:00:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/kernel-auditmanager-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:22  INFO  latest: digest: sha256:f04b5727652edc98e2285ba83d9ea323ae819cae827145b4d1c29c76e9a10a8b size: 1997 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fkernel-auditmanager-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 392 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b6df97cda8e7683a7fc95fcc6a3911b41835a1b61084607d20fe12c338c00b8d/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/kernel-auditmanager-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 192 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-auditmanager-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 390 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b6df97cda8e7683a7fc95fcc6a3911b41835a1b61084607d20fe12c338c00b8d/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-auditmanager-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 66 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fkernel-auditmanager-service%3Alatest%22%5D%7D HTTP/1.1" 200 384 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b6df97cda8e7683a7fc95fcc6a3911b41835a1b61084607d20fe12c338c00b8d/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/kernel-auditmanager-service:latest?force=False&noprune=False HTTP/1.1" 200 527 
+ 12-Mar-25 12:00:22  INFO  Completed mosipdev/kernel-auditmanager-service:release-1.3.x	------> mosipid/kernel-auditmanager-service:1.3.0-beta.1 
+ 12-Mar-25 12:00:22  INFO   
+ 12-Mar-25 12:00:22  INFO  [ PULL ----------------------> mosipdev/authentication-otp-service:release-1.3.x ]  
+ 12-Mar-25 12:00:22  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:22  DEBUG  Found auth config 
+ 12-Mar-25 12:00:22  INFO  1.3.0-beta.1: digest: sha256:c0dc966fe9d4c69acadebd446f4b38c850f08b177c83d3c531b8693c856dfc5a size: 2845 
+ 12-Mar-25 12:00:22  INFO   
+ 12-Mar-25 12:00:22  INFO  [ PUSH -----> mosipdev/id-repository-credentials-feeder:release-1.3.x	------> mosipid/id-repository-credentials-feeder:latest ]  
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-credentials-feeder:release-1.3.x/tag?tag=latest&repo=mosipid%2Fid-repository-credentials-feeder&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:22  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:22  DEBUG  Found auth config 
+ 12-Mar-25 12:00:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-credentials-feeder/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fauthentication-otp-service HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:25  INFO  latest: digest: sha256:c0dc966fe9d4c69acadebd446f4b38c850f08b177c83d3c531b8693c856dfc5a size: 2845 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fid-repository-credentials-feeder%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 397 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ff54eb4ef8a9e77475d24cb2ca77c3ff479249d1a6f918b1fa20824183b34c6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/id-repository-credentials-feeder:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 202 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-credentials-feeder%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 395 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ff54eb4ef8a9e77475d24cb2ca77c3ff479249d1a6f918b1fa20824183b34c6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-credentials-feeder:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 71 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-credentials-feeder%3Alatest%22%5D%7D HTTP/1.1" 200 389 
+ 12-Mar-25 12:00:25  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2ff54eb4ef8a9e77475d24cb2ca77c3ff479249d1a6f918b1fa20824183b34c6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:28  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-credentials-feeder:latest?force=False&noprune=False HTTP/1.1" 200 1311 
+ 12-Mar-25 12:00:28  INFO  Completed mosipdev/id-repository-credentials-feeder:release-1.3.x	------> mosipid/id-repository-credentials-feeder:1.3.0-beta.1 
+ 12-Mar-25 12:00:28  INFO   
+ 12-Mar-25 12:00:28  INFO  [ PULL ----------------------> mosipdev/authentication-internal-service:release-1.3.x ]  
+ 12-Mar-25 12:00:28  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:28  DEBUG  Found auth config 
+ 12-Mar-25 12:00:31  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fauthentication-internal-service HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:33  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service:release-1.3.x 
+ 12-Mar-25 12:00:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:33  INFO   
+ 12-Mar-25 12:00:33  INFO  [ PUSH -----> mosipdev/id-repository-identity-service:release-1.3.x	------> mosipid/id-repository-identity-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:33  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:33  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:33  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:33  DEBUG  Found auth config 
+ 12-Mar-25 12:00:33  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-identity-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:40  INFO  1.3.0-beta.1: digest: sha256:5163641035cb855d6fbb951aa66a41963c0c3cf27d5d057107786c86de12e648 size: 1789 
+ 12-Mar-25 12:00:40  INFO   
+ 12-Mar-25 12:00:40  INFO  [ PUSH -----> mosipdev/id-repository-identity-service:release-1.3.x	------> mosipid/id-repository-identity-service:latest ]  
+ 12-Mar-25 12:00:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:41  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:41  DEBUG  Found auth config 
+ 12-Mar-25 12:00:41  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/id-repository-identity-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:42  INFO  latest: digest: sha256:5163641035cb855d6fbb951aa66a41963c0c3cf27d5d057107786c86de12e648 size: 1789 
+ 12-Mar-25 12:00:42  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fid-repository-identity-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 484 
+ 12-Mar-25 12:00:42  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b3b40df58135cf0fe71f52a27d0fe3f3d32f36da70590b22fd4bf4b536777da8/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/id-repository-identity-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 198 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-identity-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 482 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b3b40df58135cf0fe71f52a27d0fe3f3d32f36da70590b22fd4bf4b536777da8/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-identity-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 69 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fid-repository-identity-service%3Alatest%22%5D%7D HTTP/1.1" 200 476 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b3b40df58135cf0fe71f52a27d0fe3f3d32f36da70590b22fd4bf4b536777da8/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:43  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/id-repository-identity-service:latest?force=False&noprune=False HTTP/1.1" 200 705 
+ 12-Mar-25 12:00:43  INFO  Completed mosipdev/id-repository-identity-service:release-1.3.x	------> mosipid/id-repository-identity-service:1.3.0-beta.1 
+ 12-Mar-25 12:00:43  INFO   
+ 12-Mar-25 12:00:43  INFO  [ PULL ----------------------> mosipdev/authentication-service:release-1.3.x ]  
+ 12-Mar-25 12:00:43  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:43  DEBUG  Found auth config 
+ 12-Mar-25 12:00:46  INFO  Status: Downloaded newer image for mosipdev/resident-service:release-1.3.x 
+ 12-Mar-25 12:00:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fresident-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:46  INFO   
+ 12-Mar-25 12:00:46  INFO  [ PUSH -----> mosipdev/resident-service:release-1.3.x	------> mosipid/resident-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:46  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:46  DEBUG  Found auth config 
+ 12-Mar-25 12:00:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/resident-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:46  INFO  Status: Downloaded newer image for mosipdev/apitest-idrepo:release-1.3.x 
+ 12-Mar-25 12:00:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-idrepo:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fapitest-idrepo&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:46  INFO   
+ 12-Mar-25 12:00:46  INFO  [ PUSH -----> mosipdev/apitest-idrepo:release-1.3.x	------> mosipid/apitest-idrepo:1.3.0-beta.1 ]  
+ 12-Mar-25 12:00:46  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:46  DEBUG  Found auth config 
+ 12-Mar-25 12:00:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-idrepo/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:46  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fauthentication-service HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:52  INFO  1.3.0-beta.1: digest: sha256:0a8c714bd8e372b2028f434408efbb3d0c2182bde383fca8d46d747bfd49a869 size: 2418 
+ 12-Mar-25 12:00:52  INFO   
+ 12-Mar-25 12:00:52  INFO  [ PUSH -----> mosipdev/resident-service:release-1.3.x	------> mosipid/resident-service:latest ]  
+ 12-Mar-25 12:00:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/resident-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fresident-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:53  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:53  DEBUG  Found auth config 
+ 12-Mar-25 12:00:53  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/resident-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:57  INFO  latest: digest: sha256:0a8c714bd8e372b2028f434408efbb3d0c2182bde383fca8d46d747bfd49a869 size: 2418 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fresident-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 381 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:709a20b94333f3e018a26a8d7b255826215f0a7ad2283ff9f9cad8faa7f7438f/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/resident-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 170 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fresident-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 379 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:709a20b94333f3e018a26a8d7b255826215f0a7ad2283ff9f9cad8faa7f7438f/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/resident-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 55 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fresident-service%3Alatest%22%5D%7D HTTP/1.1" 200 373 
+ 12-Mar-25 12:00:57  DEBUG  http://localhost:None "GET /v1.45/images/sha256:709a20b94333f3e018a26a8d7b255826215f0a7ad2283ff9f9cad8faa7f7438f/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:58  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/resident-service:latest?force=False&noprune=False HTTP/1.1" 200 1107 
+ 12-Mar-25 12:00:58  INFO  Completed mosipdev/resident-service:release-1.3.x	------> mosipid/resident-service:1.3.0-beta.1 
+ 12-Mar-25 12:00:58  INFO   
+ 12-Mar-25 12:00:58  INFO  [ PULL ----------------------> mosipdev/apitest-auth:release-1.3.x ]  
+ 12-Mar-25 12:00:58  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:58  DEBUG  Found auth config 
+ 12-Mar-25 12:00:58  INFO  1.3.0-beta.1: digest: sha256:09c1a0bcfa655a46e76674fd1dff2ea18706cc245f55e08f4ccebde3da0782f7 size: 2418 
+ 12-Mar-25 12:00:58  INFO   
+ 12-Mar-25 12:00:58  INFO  [ PUSH -----> mosipdev/apitest-idrepo:release-1.3.x	------> mosipid/apitest-idrepo:latest ]  
+ 12-Mar-25 12:00:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-idrepo:release-1.3.x/tag?tag=latest&repo=mosipid%2Fapitest-idrepo&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:00:58  DEBUG  Looking for auth config 
+ 12-Mar-25 12:00:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:00:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:00:58  DEBUG  Found auth config 
+ 12-Mar-25 12:00:58  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-idrepo/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:58  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-auth HTTP/1.1" 200 None 
+ 12-Mar-25 12:00:59  INFO  latest: digest: sha256:09c1a0bcfa655a46e76674fd1dff2ea18706cc245f55e08f4ccebde3da0782f7 size: 2418 
+ 12-Mar-25 12:00:59  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-idrepo%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 468 
+ 12-Mar-25 12:00:59  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d69e96cd7adc10d04fe8a3ac5afe9128e22e29dd7f85ef84e75dd5e2ac6dae6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-idrepo:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 166 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-idrepo%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 466 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d69e96cd7adc10d04fe8a3ac5afe9128e22e29dd7f85ef84e75dd5e2ac6dae6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-idrepo:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 53 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-idrepo%3Alatest%22%5D%7D HTTP/1.1" 200 460 
+ 12-Mar-25 12:01:02  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9d69e96cd7adc10d04fe8a3ac5afe9128e22e29dd7f85ef84e75dd5e2ac6dae6/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:05  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-idrepo:latest?force=False&noprune=False HTTP/1.1" 200 931 
+ 12-Mar-25 12:01:05  INFO  Completed mosipdev/apitest-idrepo:release-1.3.x	------> mosipid/apitest-idrepo:1.3.0-beta.1 
+ 12-Mar-25 12:01:08  INFO  Status: Downloaded newer image for mosipdev/apitest-resident:release-1.3.x 
+ 12-Mar-25 12:01:08  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-resident:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fapitest-resident&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:08  INFO   
+ 12-Mar-25 12:01:08  INFO  [ PUSH -----> mosipdev/apitest-resident:release-1.3.x	------> mosipid/apitest-resident:1.3.0-beta.1 ]  
+ 12-Mar-25 12:01:08  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:08  DEBUG  Found auth config 
+ 12-Mar-25 12:01:08  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-resident/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:13  INFO  1.3.0-beta.1: digest: sha256:cac954d35999259a992258834914d99e46221e073d846860b09f1d08a05162a6 size: 2212 
+ 12-Mar-25 12:01:13  INFO   
+ 12-Mar-25 12:01:13  INFO  [ PUSH -----> mosipdev/apitest-resident:release-1.3.x	------> mosipid/apitest-resident:latest ]  
+ 12-Mar-25 12:01:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-resident:release-1.3.x/tag?tag=latest&repo=mosipid%2Fapitest-resident&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:13  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:13  DEBUG  Found auth config 
+ 12-Mar-25 12:01:13  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-resident/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:14  INFO  latest: digest: sha256:cac954d35999259a992258834914d99e46221e073d846860b09f1d08a05162a6 size: 2212 
+ 12-Mar-25 12:01:14  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-resident%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 470 
+ 12-Mar-25 12:01:14  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fe346a68449533d448d5d30bb38f81f8f4a627a2f31624d01ea91eee0e24743/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-resident:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 170 
+ 12-Mar-25 12:01:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-resident%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 468 
+ 12-Mar-25 12:01:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fe346a68449533d448d5d30bb38f81f8f4a627a2f31624d01ea91eee0e24743/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-resident:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 55 
+ 12-Mar-25 12:01:17  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-resident%3Alatest%22%5D%7D HTTP/1.1" 200 462 
+ 12-Mar-25 12:01:17  DEBUG  http://localhost:None "GET /v1.45/images/sha256:6fe346a68449533d448d5d30bb38f81f8f4a627a2f31624d01ea91eee0e24743/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:19  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-resident:latest?force=False&noprune=False HTTP/1.1" 200 849 
+ 12-Mar-25 12:01:19  INFO  Completed mosipdev/apitest-resident:release-1.3.x	------> mosipid/apitest-resident:1.3.0-beta.1 
+ 12-Mar-25 12:01:28  INFO  Status: Downloaded newer image for mosipdev/authentication-otp-service:release-1.3.x 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-otp-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fauthentication-otp-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:29  INFO   
+ 12-Mar-25 12:01:29  INFO  [ PUSH -----> mosipdev/authentication-otp-service:release-1.3.x	------> mosipid/authentication-otp-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:29  DEBUG  Found auth config 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-otp-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:29  INFO  Status: Downloaded newer image for mosipdev/authentication-internal-service:release-1.3.x 
+ 12-Mar-25 12:01:29  INFO  Status: Downloaded newer image for mosipdev/authentication-service:release-1.3.x 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-internal-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fauthentication-internal-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:29  INFO   
+ 12-Mar-25 12:01:29  INFO  [ PUSH -----> mosipdev/authentication-internal-service:release-1.3.x	------> mosipid/authentication-internal-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:29  DEBUG  Found auth config 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-internal-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-service:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fauthentication-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:29  INFO   
+ 12-Mar-25 12:01:29  INFO  [ PUSH -----> mosipdev/authentication-service:release-1.3.x	------> mosipid/authentication-service:1.3.0-beta.1 ]  
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:29  DEBUG  Found auth config 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-service/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:29  INFO  Status: Downloaded newer image for mosipdev/apitest-auth:release-1.3.x 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-auth:release-1.3.x/tag?tag=1.3.0-beta.1&repo=mosipid%2Fapitest-auth&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:29  INFO   
+ 12-Mar-25 12:01:29  INFO  [ PUSH -----> mosipdev/apitest-auth:release-1.3.x	------> mosipid/apitest-auth:1.3.0-beta.1 ]  
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:29  DEBUG  Found auth config 
+ 12-Mar-25 12:01:29  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-auth/push?tag=1.3.0-beta.1 HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:34  INFO  1.3.0-beta.1: digest: sha256:5355ac40031162a7ce6b693986aa5a566ae265b64942cece299dfdf276bcd0e1 size: 3462 
+ 12-Mar-25 12:01:34  INFO   
+ 12-Mar-25 12:01:34  INFO  [ PUSH -----> mosipdev/authentication-otp-service:release-1.3.x	------> mosipid/authentication-otp-service:latest ]  
+ 12-Mar-25 12:01:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-otp-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fauthentication-otp-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:34  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:34  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:34  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:34  DEBUG  Found auth config 
+ 12-Mar-25 12:01:34  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-otp-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:36  INFO  1.3.0-beta.1: digest: sha256:8ff9d80f5dd01034eed1a3d9ec8238e810c5abd60b34ba650048c3a9bb68341f size: 3462 
+ 12-Mar-25 12:01:36  INFO   
+ 12-Mar-25 12:01:36  INFO  [ PUSH -----> mosipdev/authentication-internal-service:release-1.3.x	------> mosipid/authentication-internal-service:latest ]  
+ 12-Mar-25 12:01:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-internal-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fauthentication-internal-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:36  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:36  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:36  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:36  DEBUG  Found auth config 
+ 12-Mar-25 12:01:36  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-internal-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:38  INFO  1.3.0-beta.1: digest: sha256:c756ca5025552e14395d774e53de181b35005fbc42a6e8458773925ab2cffdd1 size: 3462 
+ 12-Mar-25 12:01:38  INFO   
+ 12-Mar-25 12:01:38  INFO  [ PUSH -----> mosipdev/authentication-service:release-1.3.x	------> mosipid/authentication-service:latest ]  
+ 12-Mar-25 12:01:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/authentication-service:release-1.3.x/tag?tag=latest&repo=mosipid%2Fauthentication-service&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:38  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:38  DEBUG  Found auth config 
+ 12-Mar-25 12:01:38  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/authentication-service/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:39  INFO  latest: digest: sha256:5355ac40031162a7ce6b693986aa5a566ae265b64942cece299dfdf276bcd0e1 size: 3462 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fauthentication-otp-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 480 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e11f2af42ea434420cae391a992eb169a91c94a552e865d7886357fe2b39a369/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/authentication-otp-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 190 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-otp-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 478 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e11f2af42ea434420cae391a992eb169a91c94a552e865d7886357fe2b39a369/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-otp-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 65 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-otp-service%3Alatest%22%5D%7D HTTP/1.1" 200 472 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e11f2af42ea434420cae391a992eb169a91c94a552e865d7886357fe2b39a369/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:39  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-otp-service:latest?force=False&noprune=False HTTP/1.1" 200 1127 
+ 12-Mar-25 12:01:39  INFO  Completed mosipdev/authentication-otp-service:release-1.3.x	------> mosipid/authentication-otp-service:1.3.0-beta.1 
+ 12-Mar-25 12:01:39  INFO  latest: digest: sha256:8ff9d80f5dd01034eed1a3d9ec8238e810c5abd60b34ba650048c3a9bb68341f size: 3462 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fauthentication-internal-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 485 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:517c154cc64dbc0413fa3a4bce165154cba08831fbca3242a78a5631df939ada/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/authentication-internal-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 200 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-internal-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 483 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:517c154cc64dbc0413fa3a4bce165154cba08831fbca3242a78a5631df939ada/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-internal-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 70 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-internal-service%3Alatest%22%5D%7D HTTP/1.1" 200 477 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:517c154cc64dbc0413fa3a4bce165154cba08831fbca3242a78a5631df939ada/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-internal-service:latest?force=False&noprune=False HTTP/1.1" 200 1137 
+ 12-Mar-25 12:01:40  INFO  Completed mosipdev/authentication-internal-service:release-1.3.x	------> mosipid/authentication-internal-service:1.3.0-beta.1 
+ 12-Mar-25 12:01:40  INFO  1.3.0-beta.1: digest: sha256:4cd212450d71cd968d87b8a384496e3d96cb4045357f220329edf0a98465f52a size: 2418 
+ 12-Mar-25 12:01:40  INFO   
+ 12-Mar-25 12:01:40  INFO  [ PUSH -----> mosipdev/apitest-auth:release-1.3.x	------> mosipid/apitest-auth:latest ]  
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-auth:release-1.3.x/tag?tag=latest&repo=mosipid%2Fapitest-auth&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 12:01:40  DEBUG  Looking for auth config 
+ 12-Mar-25 12:01:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 12:01:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 12:01:40  DEBUG  Found auth config 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/apitest-auth/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  INFO  latest: digest: sha256:c756ca5025552e14395d774e53de181b35005fbc42a6e8458773925ab2cffdd1 size: 3462 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fauthentication-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 476 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:99808618a93b2449a2fca83a94322ec9a937ce1b7bdd316bf87c0dae5bc01e28/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/authentication-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 182 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-service%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 474 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:99808618a93b2449a2fca83a94322ec9a937ce1b7bdd316bf87c0dae5bc01e28/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-service:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 61 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fauthentication-service%3Alatest%22%5D%7D HTTP/1.1" 200 468 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "GET /v1.45/images/sha256:99808618a93b2449a2fca83a94322ec9a937ce1b7bdd316bf87c0dae5bc01e28/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:40  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/authentication-service:latest?force=False&noprune=False HTTP/1.1" 200 1549 
+ 12-Mar-25 12:01:40  INFO  Completed mosipdev/authentication-service:release-1.3.x	------> mosipid/authentication-service:1.3.0-beta.1 
+ 12-Mar-25 12:01:41  INFO  latest: digest: sha256:4cd212450d71cd968d87b8a384496e3d96cb4045357f220329edf0a98465f52a size: 2418 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-auth%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 466 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ecbf4d1d1548fd7595a0a317f7e92a68f3563b8ae94991f02ae8d420cbb05ebd/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-auth:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 162 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-auth%3A1.3.0-beta.1%22%5D%7D HTTP/1.1" 200 464 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ecbf4d1d1548fd7595a0a317f7e92a68f3563b8ae94991f02ae8d420cbb05ebd/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-auth:1.3.0-beta.1?force=False&noprune=False HTTP/1.1" 200 51 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fapitest-auth%3Alatest%22%5D%7D HTTP/1.1" 200 458 
+ 12-Mar-25 12:01:41  DEBUG  http://localhost:None "GET /v1.45/images/sha256:ecbf4d1d1548fd7595a0a317f7e92a68f3563b8ae94991f02ae8d420cbb05ebd/json HTTP/1.1" 200 None 
+ 12-Mar-25 12:01:42  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/apitest-auth:latest?force=False&noprune=False HTTP/1.1" 200 1099 
+ 12-Mar-25 12:01:42  INFO  Completed mosipdev/apitest-auth:release-1.3.x	------> mosipid/apitest-auth:1.3.0-beta.1 
