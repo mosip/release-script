@@ -1,81 +1,84 @@
- 12-Mar-25 05:21:48  INFO  LOGFILE CREATED : vidivi.log 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** Check Images List ************************************************************************************ 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  IMAGES= [['mosipdev/registration-client:release-1.3.x', 'release-1.3.x']] 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  src = "mosipdev/registration-client" tag = "release-1.3.x" 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 05:21:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Mar-25 05:21:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-client/tags/release-1.3.x HTTP/1.1" 200 830 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 12-Mar-25 05:21:48  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 12-Mar-25 05:21:48  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 05:21:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 12-Mar-25 05:21:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/registration-client/manifests/release-1.3.x HTTP/1.1" 200 2005 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  [ mosipdev2/registration-client ]  
- 12-Mar-25 05:21:48  INFO  Destination Image = "mosipdev2/registration-client" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:7b0e622ef3345ed80668061cf60bb515854d29efee5a775f09f5e50f96f2b09f" 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Mar-25 05:21:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/registration-client:pull HTTP/1.1" 200 None 
- 12-Mar-25 05:21:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Mar-25 05:21:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/registration-client/tags/release-1.3.x HTTP/1.1" 200 840 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** HASH Operation Results ********************************************************************** 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 12-Mar-25 05:21:48  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 12-Mar-25 05:21:48  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 12-Mar-25 05:21:48  DEBUG  Found 'auths' section 
- 12-Mar-25 05:21:48  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 12-Mar-25 05:21:48  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 12-Mar-25 05:21:48  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 05:21:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 05:21:48  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  ********** [ mosipdev2/registration-client:release-1.3.x ] **************************************************** 
- 12-Mar-25 05:21:48  INFO   
- 12-Mar-25 05:21:48  INFO  [ PULL ----------------------> mosipdev/registration-client:release-1.3.x ]  
- 12-Mar-25 05:21:48  DEBUG  Looking for auth config 
- 12-Mar-25 05:21:48  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 05:21:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 05:21:48  DEBUG  Found auth config 
- 12-Mar-25 05:21:48  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-client HTTP/1.1" 200 None 
- 12-Mar-25 05:22:12  INFO  Status: Downloaded newer image for mosipdev/registration-client:release-1.3.x 
- 12-Mar-25 05:22:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fregistration-client&force=1 HTTP/1.1" 201 0 
- 12-Mar-25 05:22:12  INFO   
- 12-Mar-25 05:22:12  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:release-1.3.x ]  
- 12-Mar-25 05:22:12  DEBUG  Looking for auth config 
- 12-Mar-25 05:22:12  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 05:22:12  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 05:22:12  DEBUG  Found auth config 
- 12-Mar-25 05:22:12  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-client/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 12-Mar-25 05:22:16  INFO  release-1.3.x: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
- 12-Mar-25 05:22:16  INFO   
- 12-Mar-25 05:22:16  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:latest ]  
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fregistration-client&force=1 HTTP/1.1" 201 0 
- 12-Mar-25 05:22:16  DEBUG  Looking for auth config 
- 12-Mar-25 05:22:16  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Mar-25 05:22:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Mar-25 05:22:16  DEBUG  Found auth config 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/registration-client/push?tag=latest HTTP/1.1" 200 None 
- 12-Mar-25 05:22:16  INFO  latest: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 474 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 61 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregistration-client%3Alatest%22%5D%7D HTTP/1.1" 200 467 
- 12-Mar-25 05:22:16  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
- 12-Mar-25 05:22:17  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/registration-client:latest?force=False&noprune=False HTTP/1.1" 200 945 
- 12-Mar-25 05:22:17  INFO  Completed mosipdev/registration-client:release-1.3.x	------> mosipdev2/registration-client:release-1.3.x 
+ 12-Mar-25 11:52:55  INFO  LOGFILE CREATED : vidivi.log 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  ******************** Check Images List ************************************************************************************ 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  IMAGES= [['mosipdev/registration-client:release-1.3.x', 'release-1.3.x']] 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  src = "mosipdev/registration-client" tag = "release-1.3.x" 
+ 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:52:55  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-client:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:52:55  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-client/tags/release-1.3.x HTTP/1.1" 200 830 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 12-Mar-25 11:52:55  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 12-Mar-25 11:52:55  INFO   
+ 12-Mar-25 11:52:55  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 12-Mar-25 11:52:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:52:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-client:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 12-Mar-25 11:52:56  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/registration-client/manifests/release-1.3.x HTTP/1.1" 404 107 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  [ mosipid/registration-client ]  
+ 12-Mar-25 11:52:56  INFO  Destination Image = "mosipid/registration-client" Destination Image tag = "release-1.3.x" IMAGE_ID :  
+ 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Mar-25 11:52:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/registration-client:pull HTTP/1.1" 200 None 
+ 12-Mar-25 11:52:56  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Mar-25 11:52:56  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/registration-client/tags/release-1.3.x HTTP/1.1" 404 150 
+ 12-Mar-25 11:52:56  ERROR  Image "mosipid/registration-client:release-1.3.x" does not exist 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/registration-client:release-1.3.x']] 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 12-Mar-25 11:52:56  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 12-Mar-25 11:52:56  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 12-Mar-25 11:52:56  DEBUG  Found 'auths' section 
+ 12-Mar-25 11:52:56  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 12-Mar-25 11:52:56  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 12-Mar-25 11:52:56  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:52:56  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:52:56  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  ********** [ mosipid/registration-client:release-1.3.x ] **************************************************** 
+ 12-Mar-25 11:52:56  INFO   
+ 12-Mar-25 11:52:56  INFO  [ PULL ----------------------> mosipdev/registration-client:release-1.3.x ]  
+ 12-Mar-25 11:52:56  DEBUG  Looking for auth config 
+ 12-Mar-25 11:52:56  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:52:56  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:52:56  DEBUG  Found auth config 
+ 12-Mar-25 11:52:56  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fregistration-client HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:20  INFO  Status: Downloaded newer image for mosipdev/registration-client:release-1.3.x 
+ 12-Mar-25 11:53:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=release-1.3.x&repo=mosipid%2Fregistration-client&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:53:20  INFO   
+ 12-Mar-25 11:53:20  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:release-1.3.x ]  
+ 12-Mar-25 11:53:20  DEBUG  Looking for auth config 
+ 12-Mar-25 11:53:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:53:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:53:20  DEBUG  Found auth config 
+ 12-Mar-25 11:53:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-client/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:22  INFO  release-1.3.x: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
+ 12-Mar-25 11:53:22  INFO   
+ 12-Mar-25 11:53:22  INFO  [ PUSH -----> mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:latest ]  
+ 12-Mar-25 11:53:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/registration-client:release-1.3.x/tag?tag=latest&repo=mosipid%2Fregistration-client&force=1 HTTP/1.1" 201 0 
+ 12-Mar-25 11:53:22  DEBUG  Looking for auth config 
+ 12-Mar-25 11:53:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Mar-25 11:53:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Mar-25 11:53:22  DEBUG  Found auth config 
+ 12-Mar-25 11:53:22  DEBUG  http://localhost:None "POST /v1.45/images/mosipid/registration-client/push?tag=latest HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:23  INFO  latest: digest: sha256:89b5bdd38b0fe2667cfd5422223960edbad745260b448b7353913d6833900d2e size: 2005 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 473 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-client%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 472 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-client:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 59 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipid%2Fregistration-client%3Alatest%22%5D%7D HTTP/1.1" 200 465 
+ 12-Mar-25 11:53:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:60f672657e22ef0d4c6ec47ec0e01c7a7243c3e2b554d65c22230fbd14c78aa6/json HTTP/1.1" 200 None 
+ 12-Mar-25 11:53:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipid/registration-client:latest?force=False&noprune=False HTTP/1.1" 200 941 
+ 12-Mar-25 11:53:24  INFO  Completed mosipdev/registration-client:release-1.3.x	------> mosipid/registration-client:release-1.3.x 
