@@ -1,85 +1,81 @@
- 09-Apr-25 13:08:21  INFO  LOGFILE CREATED : vidivi.log 
- 09-Apr-25 13:08:21  INFO   
- 09-Apr-25 13:08:21  INFO  ******************** Check Images List ************************************************************************************ 
- 09-Apr-25 13:08:21  INFO   
- 09-Apr-25 13:08:21  INFO  IMAGES= [['mosipdev2/apitest-esignet-signup:develop', 'develop']] 
- 09-Apr-25 13:08:21  INFO   
- 09-Apr-25 13:08:21  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 09-Apr-25 13:08:21  INFO   
- 09-Apr-25 13:08:21  INFO  src = "mosipdev2/apitest-esignet-signup" tag = "develop" 
- 09-Apr-25 13:08:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Apr-25 13:08:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-esignet-signup:pull HTTP/1.1" 200 None 
- 09-Apr-25 13:08:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Apr-25 13:08:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-esignet-signup/tags/develop HTTP/1.1" 200 834 
- 09-Apr-25 13:08:21  INFO   
- 09-Apr-25 13:08:21  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 09-Apr-25 13:08:21  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 09-Apr-25 13:08:22  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 09-Apr-25 13:08:22  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 09-Apr-25 13:08:22  INFO   
- 09-Apr-25 13:08:22  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 09-Apr-25 13:08:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Apr-25 13:08:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-esignet-signup:pull HTTP/1.1" 200 None 
- 09-Apr-25 13:08:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 09-Apr-25 13:08:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-esignet-signup/manifests/develop HTTP/1.1" 404 101 
- 09-Apr-25 13:08:22  INFO   
- 09-Apr-25 13:08:22  INFO  [ mosipqa/apitest-esignet-signup ]  
- 09-Apr-25 13:08:22  INFO  Destination Image = "mosipqa/apitest-esignet-signup" Destination Image tag = "develop" IMAGE_ID :  
- 09-Apr-25 13:08:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 09-Apr-25 13:08:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-esignet-signup:pull HTTP/1.1" 200 None 
- 09-Apr-25 13:08:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 09-Apr-25 13:08:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-esignet-signup/tags/develop HTTP/1.1" 404 141 
- 09-Apr-25 13:08:23  ERROR  Image "mosipqa/apitest-esignet-signup:develop" does not exist 
- 09-Apr-25 13:08:23  INFO   
- 09-Apr-25 13:08:23  INFO  ******************** HASH Operation Results ********************************************************************** 
- 09-Apr-25 13:08:23  INFO   
- 09-Apr-25 13:08:23  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/apitest-esignet-signup:develop']] 
- 09-Apr-25 13:08:23  INFO   
- 09-Apr-25 13:08:23  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 09-Apr-25 13:08:23  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 09-Apr-25 13:08:23  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 09-Apr-25 13:08:23  DEBUG  Found 'auths' section 
- 09-Apr-25 13:08:23  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 09-Apr-25 13:08:23  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 09-Apr-25 13:08:23  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Apr-25 13:08:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Apr-25 13:08:23  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 09-Apr-25 13:08:23  INFO   
- 09-Apr-25 13:08:23  INFO  ********** [ mosipqa/apitest-esignet-signup:develop ] **************************************************** 
- 09-Apr-25 13:08:23  INFO   
- 09-Apr-25 13:08:23  INFO  [ PULL ----------------------> mosipdev2/apitest-esignet-signup:develop ]  
- 09-Apr-25 13:08:23  DEBUG  Looking for auth config 
- 09-Apr-25 13:08:23  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Apr-25 13:08:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Apr-25 13:08:23  DEBUG  Found auth config 
- 09-Apr-25 13:08:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fapitest-esignet-signup HTTP/1.1" 200 None 
- 09-Apr-25 13:08:48  INFO  Status: Downloaded newer image for mosipdev2/apitest-esignet-signup:develop 
- 09-Apr-25 13:08:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-esignet-signup:develop/tag?tag=develop&repo=mosipqa%2Fapitest-esignet-signup&force=1 HTTP/1.1" 201 0 
- 09-Apr-25 13:08:48  INFO   
- 09-Apr-25 13:08:48  INFO  [ PUSH -----> mosipdev2/apitest-esignet-signup:develop	------> mosipqa/apitest-esignet-signup:develop ]  
- 09-Apr-25 13:08:48  DEBUG  Looking for auth config 
- 09-Apr-25 13:08:48  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Apr-25 13:08:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Apr-25 13:08:48  DEBUG  Found auth config 
- 09-Apr-25 13:08:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-esignet-signup/push?tag=develop HTTP/1.1" 200 None 
- 09-Apr-25 13:08:54  INFO  develop: digest: sha256:6c2a6927d9ff126526466f1ad20e9971b5b8d694e8beca84496df80b64352393 size: 2418 
- 09-Apr-25 13:08:54  INFO   
- 09-Apr-25 13:08:54  INFO  [ PUSH -----> mosipdev2/apitest-esignet-signup:develop	------> mosipqa/apitest-esignet-signup:latest ]  
- 09-Apr-25 13:08:54  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-esignet-signup:develop/tag?tag=latest&repo=mosipqa%2Fapitest-esignet-signup&force=1 HTTP/1.1" 201 0 
- 09-Apr-25 13:08:54  DEBUG  Looking for auth config 
- 09-Apr-25 13:08:54  DEBUG  Looking for auth entry for 'docker.io' 
- 09-Apr-25 13:08:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 09-Apr-25 13:08:54  DEBUG  Found auth config 
- 09-Apr-25 13:08:54  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-esignet-signup/push?tag=latest HTTP/1.1" 200 None 
- 09-Apr-25 13:08:56  INFO  latest: digest: sha256:6c2a6927d9ff126526466f1ad20e9971b5b8d694e8beca84496df80b64352393 size: 2418 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-esignet-signup%3Adevelop%22%5D%7D HTTP/1.1" 200 471 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2572b6ad7ad65b7e53d1401bab64db97c4e82fded2248197fd0e4c9c326fa099/json HTTP/1.1" 200 None 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-esignet-signup:develop?force=False&noprune=False HTTP/1.1" 200 178 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-esignet-signup%3Adevelop%22%5D%7D HTTP/1.1" 200 469 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2572b6ad7ad65b7e53d1401bab64db97c4e82fded2248197fd0e4c9c326fa099/json HTTP/1.1" 200 None 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-esignet-signup:develop?force=False&noprune=False HTTP/1.1" 200 56 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-esignet-signup%3Alatest%22%5D%7D HTTP/1.1" 200 468 
- 09-Apr-25 13:08:56  DEBUG  http://localhost:None "GET /v1.45/images/sha256:2572b6ad7ad65b7e53d1401bab64db97c4e82fded2248197fd0e4c9c326fa099/json HTTP/1.1" 200 None 
- 09-Apr-25 13:08:57  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-esignet-signup:latest?force=False&noprune=False HTTP/1.1" 200 1119 
- 09-Apr-25 13:08:57  INFO  Completed mosipdev2/apitest-esignet-signup:develop	------> mosipqa/apitest-esignet-signup:develop 
+ 11-Apr-25 04:59:17  INFO  LOGFILE CREATED : vidivi.log 
+ 11-Apr-25 04:59:17  INFO   
+ 11-Apr-25 04:59:17  INFO  ******************** Check Images List ************************************************************************************ 
+ 11-Apr-25 04:59:17  INFO   
+ 11-Apr-25 04:59:17  INFO  IMAGES= [['mosipdev2/apitest-esignet:develop', 'develop']] 
+ 11-Apr-25 04:59:17  INFO   
+ 11-Apr-25 04:59:17  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 11-Apr-25 04:59:17  INFO   
+ 11-Apr-25 04:59:17  INFO  src = "mosipdev2/apitest-esignet" tag = "develop" 
+ 11-Apr-25 04:59:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 11-Apr-25 04:59:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-esignet:pull HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 11-Apr-25 04:59:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-esignet/tags/develop HTTP/1.1" 200 834 
+ 11-Apr-25 04:59:17  INFO   
+ 11-Apr-25 04:59:17  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 11-Apr-25 04:59:17  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 11-Apr-25 04:59:18  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 11-Apr-25 04:59:18  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 11-Apr-25 04:59:18  INFO   
+ 11-Apr-25 04:59:18  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 11-Apr-25 04:59:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 11-Apr-25 04:59:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-esignet:pull HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:18  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 11-Apr-25 04:59:18  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-esignet/manifests/develop HTTP/1.1" 200 3471 
+ 11-Apr-25 04:59:18  INFO   
+ 11-Apr-25 04:59:18  INFO  [ mosipqa/apitest-esignet ]  
+ 11-Apr-25 04:59:18  INFO  Destination Image = "mosipqa/apitest-esignet" Destination Image tag = "develop" IMAGE_ID : "sha256:b0d78f3e5122be5d6335c5a2ac1c3907be1ee0ca2751615ea72649c63117a6a6" 
+ 11-Apr-25 04:59:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 11-Apr-25 04:59:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-esignet:pull HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 11-Apr-25 04:59:19  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-esignet/tags/develop HTTP/1.1" 200 813 
+ 11-Apr-25 04:59:19  INFO   
+ 11-Apr-25 04:59:19  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 11-Apr-25 04:59:19  INFO   
+ 11-Apr-25 04:59:19  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 11-Apr-25 04:59:19  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 11-Apr-25 04:59:19  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 11-Apr-25 04:59:19  DEBUG  Found 'auths' section 
+ 11-Apr-25 04:59:19  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 11-Apr-25 04:59:19  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 11-Apr-25 04:59:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 11-Apr-25 04:59:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 11-Apr-25 04:59:19  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 11-Apr-25 04:59:19  INFO   
+ 11-Apr-25 04:59:19  INFO  ********** [ mosipqa/apitest-esignet:develop ] **************************************************** 
+ 11-Apr-25 04:59:19  INFO   
+ 11-Apr-25 04:59:19  INFO  [ PULL ----------------------> mosipdev2/apitest-esignet:develop ]  
+ 11-Apr-25 04:59:19  DEBUG  Looking for auth config 
+ 11-Apr-25 04:59:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 11-Apr-25 04:59:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 11-Apr-25 04:59:19  DEBUG  Found auth config 
+ 11-Apr-25 04:59:20  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=develop&fromImage=mosipdev2%2Fapitest-esignet HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:42  INFO  Status: Downloaded newer image for mosipdev2/apitest-esignet:develop 
+ 11-Apr-25 04:59:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-esignet:develop/tag?tag=develop&repo=mosipqa%2Fapitest-esignet&force=1 HTTP/1.1" 201 0 
+ 11-Apr-25 04:59:42  INFO   
+ 11-Apr-25 04:59:42  INFO  [ PUSH -----> mosipdev2/apitest-esignet:develop	------> mosipqa/apitest-esignet:develop ]  
+ 11-Apr-25 04:59:42  DEBUG  Looking for auth config 
+ 11-Apr-25 04:59:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 11-Apr-25 04:59:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 11-Apr-25 04:59:42  DEBUG  Found auth config 
+ 11-Apr-25 04:59:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-esignet/push?tag=develop HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:48  INFO  develop: digest: sha256:a182c051a3f9fa3a5b5d79d6b44050e28129fb5e2577e894769dcfe5fdc0761a size: 2418 
+ 11-Apr-25 04:59:48  INFO   
+ 11-Apr-25 04:59:48  INFO  [ PUSH -----> mosipdev2/apitest-esignet:develop	------> mosipqa/apitest-esignet:latest ]  
+ 11-Apr-25 04:59:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-esignet:develop/tag?tag=latest&repo=mosipqa%2Fapitest-esignet&force=1 HTTP/1.1" 201 0 
+ 11-Apr-25 04:59:48  DEBUG  Looking for auth config 
+ 11-Apr-25 04:59:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 11-Apr-25 04:59:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 11-Apr-25 04:59:48  DEBUG  Found auth config 
+ 11-Apr-25 04:59:48  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/apitest-esignet/push?tag=latest HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:50  INFO  latest: digest: sha256:a182c051a3f9fa3a5b5d79d6b44050e28129fb5e2577e894769dcfe5fdc0761a size: 2418 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-esignet%3Adevelop%22%5D%7D HTTP/1.1" 200 464 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4fe81941d53a297effc9cc18ce220cd2bcc522555c7add0ef7064986d6324118/json HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-esignet:develop?force=False&noprune=False HTTP/1.1" 200 164 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-esignet%3Adevelop%22%5D%7D HTTP/1.1" 200 462 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4fe81941d53a297effc9cc18ce220cd2bcc522555c7add0ef7064986d6324118/json HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-esignet:develop?force=False&noprune=False HTTP/1.1" 200 49 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-esignet%3Alatest%22%5D%7D HTTP/1.1" 200 461 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4fe81941d53a297effc9cc18ce220cd2bcc522555c7add0ef7064986d6324118/json HTTP/1.1" 200 None 
+ 11-Apr-25 04:59:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/apitest-esignet:latest?force=False&noprune=False HTTP/1.1" 200 1105 
+ 11-Apr-25 04:59:50  INFO  Completed mosipdev2/apitest-esignet:develop	------> mosipqa/apitest-esignet:develop 
