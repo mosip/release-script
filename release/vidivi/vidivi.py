@@ -189,27 +189,6 @@ def chkDockerAccExistence(acc_name):
     return True
 
 
-# def create_manifest_list(src_image_name, dest_image_name, tag, digests, remote_client):
-#     """Create a multi-architecture manifest list from individual architecture digests"""
-#     try:
-#         # Create the manifest list
-#         manifest_create_cmd = f"docker manifest create --amend {dest_image_name}:{tag}"
-#         for digest in digests:
-#             manifest_create_cmd += f" {src_image_name}@{digest}"
-        
-#         print_log(f"Creating manifest list with command: {manifest_create_cmd}", 'info')
-#         subprocess.run(manifest_create_cmd, shell=True, check=True)
-        
-#         # Push the manifest list
-#         manifest_push_cmd = f"docker manifest push {dest_image_name}:{tag}"
-#         print_log(f"Pushing manifest list with command: {manifest_push_cmd}", 'info')
-#         subprocess.run(manifest_push_cmd, shell=True, check=True)
-        
-#         return True
-#     except subprocess.CalledProcessError as e:
-#         print_log(f"Error creating/pushing manifest list: {str(e)}", 'error')
-#         return False
-
 def create_manifest_list(src_image_name, dest_image_name, tag, digests, remote_client):
     """Create a multi-architecture manifest list from individual architecture digests"""
     try:
@@ -247,6 +226,220 @@ def create_manifest_list(src_image_name, dest_image_name, tag, digests, remote_c
     except subprocess.CalledProcessError as e:
         print_log(f"Error creating/pushing manifest list: {str(e)}", 'error')
         return False
+
+
+def process_image(image, client, remote_client):
+    """Process a single image (regardless of architecture)"""
+    srcImgRepo = image[0][: image[0].find("/")]
+    srcImgName = image[0][image[0].find("/") + 1:image[0].find(":")]
+    srcImgtag = image[0][image[0].find(":") + 1:]
+    destImgtag = image[1]  # Use the tag from image.txt
+    
+    print_log("", 'info')
+    print_log(10 * "*" + " [ " + config['docker']['destination_organization'] + "/" + srcImgName + ":" + destImgtag + " ] " + "*" * 52, 'info')
+    
+    # Get manifest list for the source image
+    full_src_img_name = image[0][: image[0].find(":")]
+    manifest_list = get_manifest_list(full_src_img_name, srcImgtag)
+    
+    # For multi-architecture images
+    if manifest_list and 'manifests' in manifest_list and len(manifest_list['manifests']) > 1:
+        print_log(f"Multi-arch image detected with {len(manifest_list['manifests'])} architectures", 'info')
+        
+        # Store digests for creating manifest list later
+        digests = []
+        temp_images = []
+        
+        # Pull and tag each architecture separately
+        with ThreadPoolExecutor() as arch_executor:
+            arch_futures = []
+            
+            for manifest in manifest_list['manifests']:
+                arch_digest = manifest['digest']
+                arch_type = manifest['platform']['architecture']
+                arch_os = manifest['platform']['os']
+                
+                print_log(f"Processing architecture: {arch_type}/{arch_os} with digest {arch_digest}", 'info')
+                digests.append(arch_digest)
+                
+                # Extract digest value without the "sha256:" prefix
+                digest_value = arch_digest.replace("sha256:", "")
+                
+                # Pull and tag as temporary image
+                temp_tag = f"temp-{arch_type}-{arch_os}-{digest_value[:8]}"
+                temp_dest_img = f"{config['docker']['destination_organization']}/{srcImgName}:{temp_tag}"
+                temp_images.append(temp_dest_img)
+                
+                try:
+                    future = arch_executor.submit(
+                        pull_tag_arch_image, 
+                        srcImgRepo, 
+                        srcImgName, 
+                        digest_value, 
+                        temp_tag, 
+                        config['docker']['destination_organization'], 
+                        remote_client,
+                        client,
+                        arch_type,
+                        arch_os
+                    )
+                    arch_futures.append(future)
+                except Exception as e:
+                    print_log(f"Error submitting multi-arch task to executor: {str(e)}", 'error')
+                    arch_executor.shutdown(wait=False)
+                    raise e
+            
+            # Wait for all threads to complete
+            for future in arch_futures:
+                try:
+                    result = future.result()
+                except Exception as e:
+                    print_log(f"Error occurred in arch thread: {str(e)}", 'error')
+                    arch_executor.shutdown(wait=False)
+                    raise e
+        
+        # Create and push manifest list with the destination tag
+        dest_repository = f"{config['docker']['destination_organization']}/{srcImgName}"
+        create_manifest_list(
+            dest_repository, 
+            dest_repository, 
+            destImgtag,  # Use the tag from image.txt
+            digests, 
+            remote_client
+        )
+        
+        # Also tag as latest if needed
+        create_manifest_list(
+            dest_repository,
+            dest_repository,
+            "latest",
+            digests,
+            remote_client
+        )
+        
+        # Clean up temporary images
+        for temp_img in temp_images:
+            try:
+                client.images.remove(temp_img)
+            except Exception as e:
+                print_log(f"Warning: Could not remove temp image {temp_img}: {str(e)}", 'warning')
+                
+    else:
+        # Handle single architecture image
+        promote(
+            srcImgRepo, 
+            srcImgName, 
+            srcImgtag, 
+            destImgtag,  # Use the tag from image.txt 
+            config['docker']['destination_organization'], 
+            remote_client, 
+            client
+        )
+
+    return f"Completed processing {image[0]} to {config['docker']['destination_organization']}/{srcImgName}:{destImgtag}"
+
+
+def pull_tag_arch_image(src_repo, src_image_name, digest, tag, dst_repo, remote_client, local_client, arch_type="unknown", arch_os="unknown"):
+    """Pull image digest and tag it for manifest list creation"""
+    src_repository = src_repo + "/" + src_image_name
+    src_image = src_repository + "@sha256:" + digest
+    force = True
+    dst_repository = dst_repo + "/" + src_image_name
+    dst_image = dst_repository + ":" + tag
+    
+    print_log("", 'info')
+    print_log(f"[ PULL {arch_os}/{arch_type} ----------------------> " + src_image + " ] ", 'info')
+    
+    # Pull the image by digest
+    pull_status = remote_client.pull(repository=src_repository, tag=f"sha256:{digest}", stream=True, decode=True)
+    status_update(pull_status)
+    
+    # Tag for this architecture
+    remote_client.tag(image=src_image, repository=dst_repository, tag=tag, force=force)
+    
+    # Push the architecture-specific image
+    print_log("", 'info')
+    print_log(f"[ PUSH {arch_os}/{arch_type} -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
+    push_status = remote_client.push(repository=dst_repository, tag=tag, stream=True, decode=True)
+    status_update(push_status)
+    
+    print_log(f"Completed pulling/tagging {src_image} \t------> {dst_image} ({arch_os}/{arch_type})", 'info')
+    return True
+
+
+def load_config():
+    global config
+    with open("config.yml", "r") as configfile:
+        config = yaml.safe_load(configfile)
+
+
+def strip_tag(image_name):
+    image_version = ""
+    stripped_list = image_name[0].split('/')
+    repository = stripped_list[0]
+    image = stripped_list[1]
+    image_version = image_name[1]
+    return repository, image, image_version
+
+
+def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_client, local_client):
+    src_repository = src_repo + "/" + src_image_name
+    src_tag = tag if src_image_version == "" else src_image_version
+    src_image = src_repository + ":" + src_tag
+    force = True
+    dst_repository = dst_repo + "/" + src_image_name
+    dst_tag = tag  # Use the tag from image.txt
+    dst_image = dst_repository + ":" + dst_tag
+    dst_latest = dst_repository + ":" + "latest"
+    
+    if '@sha256:' in dst_image:
+        dst_image = re.sub(r'@sha256','',dst_image)
+        dst_repository = re.sub(r'@sha256','',dst_repository)
+    
+    print_log("", 'info')
+    src_tag=':'+src_tag
+    if '@sha256:' in src_image:
+        src_repository = re.sub(r'@sha256','',src_repository)
+        src_tag='@sha256'+src_tag
+    
+    print_log("[ PULL ----------------------> " + src_image + " ] ", 'info')
+    print("src_repository : ",src_repository,'src_tag',src_tag, 'src_image : ',src_image )
+    print('dst_repository : ',dst_repository, 'dst_tag : ', dst_tag)
+    
+    pull_status = remote_client.pull(repository=src_repository+src_tag, stream=True, decode=True)
+    status_update(pull_status)
+    
+    remote_client.tag(image=src_image, repository=dst_repository, tag=dst_tag, force=force)
+    print_log("", 'info')
+    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
+    push_status = remote_client.push(repository=dst_repository, tag=dst_tag, stream=True, decode=True)
+    status_update(push_status)
+    
+    print_log("", 'info')
+    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_latest + " ] ", 'info')
+    remote_client.tag(image=src_image, repository=dst_repository, tag='latest', force=force)
+    latest_push = remote_client.push(repository=dst_repository, tag='latest', stream=True, decode=True)
+    status_update(latest_push)
+    
+    # remove docker images from local machine
+    rm_local_img = [src_image, dst_image, dst_latest]
+    for img in rm_local_img:
+        if len(local_client.images.list(img)) != 0:
+            local_client.images.remove(img)
+    
+    print_log("Completed " + src_image + "\t------> " + dst_image, 'info')
+
+
+def status_update(output):
+    status = ''
+    for line in output:
+        if line.get("error"):
+            raise InterruptedError(line.get("error"))
+        if line.get("progress"):
+            print(line.get("status"), line.get("progress"), end="\r")
+        if line.get('status'):
+            status = line.get('status')
+    print_log(status, 'info')
 
 
 def main():
@@ -385,216 +578,27 @@ def main():
     remote_client.login(username=config['docker']['username'], password=config['docker']['token'],
                         registry=config['docker']['registry_url'])
     
-    # Process each image
-    for image in images:
-        srcImgRepo = image[0][: image[0].find("/")]
-        srcImgName = image[0][image[0].find("/") + 1:image[0].find(":")]
-        srcImgtag = image[0][image[0].find(":") + 1:]
-        destImgtag = image[1]  # Use the tag from image.txt
+    # Process all images in parallel using ThreadPoolExecutor
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        for image in images:
+            try:
+                future = executor.submit(process_image, image, client, remote_client)
+                futures.append(future)
+            except Exception as e:
+                print_log(f"Error submitting task to executor: {str(e)}", 'error')
+                executor.shutdown(wait=False)
+                exit(1)
         
-        print_log("", 'info')
-        print_log(10 * "*" + " [ " + config['docker']['destination_organization'] + "/" + srcImgName + ":" + destImgtag + " ] " + "*" * 52, 'info')
-        
-        # Get manifest list for the source image
-        full_src_img_name = image[0][: image[0].find(":")]
-        manifest_list = get_manifest_list(full_src_img_name, srcImgtag)
-        
-        # For multi-architecture images
-        if manifest_list and 'manifests' in manifest_list and len(manifest_list['manifests']) > 1:
-            print_log(f"Multi-arch image detected with {len(manifest_list['manifests'])} architectures", 'info')
-            
-            # Store digests for creating manifest list later
-            digests = []
-            temp_images = []
-            
-            # Pull and tag each architecture separately
-            with ThreadPoolExecutor() as executor:
-                futures = []
-                
-                for manifest in manifest_list['manifests']:
-                    arch_digest = manifest['digest']
-                    arch_type = manifest['platform']['architecture']
-                    arch_os = manifest['platform']['os']
-                    
-                    print_log(f"Processing architecture: {arch_type}/{arch_os} with digest {arch_digest}", 'info')
-                    digests.append(arch_digest)
-                    
-                    # Extract digest value without the "sha256:" prefix
-                    digest_value = arch_digest.replace("sha256:", "")
-                    
-                    # Pull and tag as temporary image
-                    temp_tag = f"temp-{arch_type}-{arch_os}-{digest_value[:8]}"
-                    temp_dest_img = f"{config['docker']['destination_organization']}/{srcImgName}:{temp_tag}"
-                    temp_images.append(temp_dest_img)
-                    
-                    try:
-                        future = executor.submit(
-                            pull_tag_arch_image, 
-                            srcImgRepo, 
-                            srcImgName, 
-                            digest_value, 
-                            temp_tag, 
-                            config['docker']['destination_organization'], 
-                            remote_client,
-                            client,
-                            arch_type,
-                            arch_os
-                        )
-                        futures.append(future)
-                    except Exception as e:
-                        print_log(f"Error submitting multi-arch task to executor: {str(e)}", 'error')
-                        executor.shutdown(wait=False)
-                        exit(1)
-                
-                # Wait for all threads to complete
-                for future in futures:
-                    try:
-                        result = future.result()
-                    except Exception as e:
-                        print_log(f"Error occurred in thread: {str(e)}", 'error')
-                        executor.shutdown(wait=False)
-                        exit(1)
-            
-            # Create and push manifest list with the destination tag
-            dest_repository = f"{config['docker']['destination_organization']}/{srcImgName}"
-            create_manifest_list(
-                dest_repository, 
-                dest_repository, 
-                destImgtag,  # Use the tag from image.txt
-                digests, 
-                remote_client
-            )
-            
-            # Also tag as latest if needed
-            create_manifest_list(
-                dest_repository,
-                dest_repository,
-                "latest",
-                digests,
-                remote_client
-            )
-            
-            # Clean up temporary images
-            for temp_img in temp_images:
-                try:
-                    client.images.remove(temp_img)
-                except Exception as e:
-                    print_log(f"Warning: Could not remove temp image {temp_img}: {str(e)}", 'warning')
-                    
-        else:
-            # Handle single architecture image
-            promote(
-                srcImgRepo, 
-                srcImgName, 
-                srcImgtag, 
-                destImgtag,  # Use the tag from image.txt 
-                config['docker']['destination_organization'], 
-                remote_client, 
-                client
-            )
-
-
-def pull_tag_arch_image(src_repo, src_image_name, digest, tag, dst_repo, remote_client, local_client, arch_type="unknown", arch_os="unknown"):
-    """Pull image digest and tag it for manifest list creation"""
-    src_repository = src_repo + "/" + src_image_name
-    src_image = src_repository + "@sha256:" + digest
-    force = True
-    dst_repository = dst_repo + "/" + src_image_name
-    dst_image = dst_repository + ":" + tag
-    
-    print_log("", 'info')
-    print_log(f"[ PULL {arch_os}/{arch_type} ----------------------> " + src_image + " ] ", 'info')
-    
-    # Pull the image by digest
-    pull_status = remote_client.pull(repository=src_repository, tag=f"sha256:{digest}", stream=True, decode=True)
-    status_update(pull_status)
-    
-    # Tag for this architecture
-    remote_client.tag(image=src_image, repository=dst_repository, tag=tag, force=force)
-    
-    # Push the architecture-specific image
-    print_log("", 'info')
-    print_log(f"[ PUSH {arch_os}/{arch_type} -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
-    push_status = remote_client.push(repository=dst_repository, tag=tag, stream=True, decode=True)
-    status_update(push_status)
-    
-    print_log(f"Completed pulling/tagging {src_image} \t------> {dst_image} ({arch_os}/{arch_type})", 'info')
-    return True
-
-
-def load_config():
-    global config
-    with open("config.yml", "r") as configfile:
-        config = yaml.safe_load(configfile)
-
-
-def strip_tag(image_name):
-    image_version = ""
-    stripped_list = image_name[0].split('/')
-    repository = stripped_list[0]
-    image = stripped_list[1]
-    image_version = image_name[1]
-    return repository, image, image_version
-
-
-def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_client, local_client):
-    src_repository = src_repo + "/" + src_image_name
-    src_tag = tag if src_image_version == "" else src_image_version
-    src_image = src_repository + ":" + src_tag
-    force = True
-    dst_repository = dst_repo + "/" + src_image_name
-    dst_tag = tag  # Use the tag from image.txt
-    dst_image = dst_repository + ":" + dst_tag
-    dst_latest = dst_repository + ":" + "latest"
-    
-    if '@sha256:' in dst_image:
-        dst_image = re.sub(r'@sha256','',dst_image)
-        dst_repository = re.sub(r'@sha256','',dst_repository)
-    
-    print_log("", 'info')
-    src_tag=':'+src_tag
-    if '@sha256:' in src_image:
-        src_repository = re.sub(r'@sha256','',src_repository)
-        src_tag='@sha256'+src_tag
-    
-    print_log("[ PULL ----------------------> " + src_image + " ] ", 'info')
-    print("src_repository : ",src_repository,'src_tag',src_tag, 'src_image : ',src_image )
-    print('dst_repository : ',dst_repository, 'dst_tag : ', dst_tag)
-    
-    pull_status = remote_client.pull(repository=src_repository+src_tag, stream=True, decode=True)
-    status_update(pull_status)
-    
-    remote_client.tag(image=src_image, repository=dst_repository, tag=dst_tag, force=force)
-    print_log("", 'info')
-    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
-    push_status = remote_client.push(repository=dst_repository, tag=dst_tag, stream=True, decode=True)
-    status_update(push_status)
-    
-    print_log("", 'info')
-    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_latest + " ] ", 'info')
-    remote_client.tag(image=src_image, repository=dst_repository, tag='latest', force=force)
-    latest_push = remote_client.push(repository=dst_repository, tag='latest', stream=True, decode=True)
-    status_update(latest_push)
-    
-    # remove docker images from local machine
-    rm_local_img = [src_image, dst_image, dst_latest]
-    for img in rm_local_img:
-        if len(local_client.images.list(img)) != 0:
-            local_client.images.remove(img)
-    
-    print_log("Completed " + src_image + "\t------> " + dst_image, 'info')
-
-
-def status_update(output):
-    status = ''
-    for line in output:
-        if line.get("error"):
-            raise InterruptedError(line.get("error"))
-        if line.get("progress"):
-            print(line.get("status"), line.get("progress"), end="\r")
-        if line.get('status'):
-            status = line.get('status')
-    print_log(status, 'info')
+        # Wait for all threads to complete
+        for future in futures:
+            try:
+                result = future.result()
+                print_log(result, 'info')
+            except Exception as e:
+                print_log(f"Error occurred in thread: {str(e)}", 'error')
+                executor.shutdown(wait=False)
+                exit(1)
 
 
 if __name__ == "__main__":
