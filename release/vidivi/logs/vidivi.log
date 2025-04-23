@@ -1,81 +1,191 @@
- 22-Apr-25 12:47:17  INFO  LOGFILE CREATED : vidivi.log 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** Check Images List ************************************************************************************ 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  IMAGES= [['mosipdev/apitest-prereg:release-1.3.x', 'release-1.3.x']] 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  src = "mosipdev/apitest-prereg" tag = "release-1.3.x" 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 22-Apr-25 12:47:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-prereg:pull HTTP/1.1" 200 None 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 22-Apr-25 12:47:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-prereg/tags/release-1.3.x HTTP/1.1" 200 831 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 22-Apr-25 12:47:17  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 22-Apr-25 12:47:17  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 22-Apr-25 12:47:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-prereg:pull HTTP/1.1" 200 None 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 22-Apr-25 12:47:17  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-prereg/manifests/release-1.3.x HTTP/1.1" 200 1582 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  [ mosipdev2/apitest-prereg ]  
- 22-Apr-25 12:47:17  INFO  Destination Image = "mosipdev2/apitest-prereg" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:b25f4ad9a318adb84b7c1ed3f7beca6fab45e0b0a92bad08b19281388c8b7e0a" 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 22-Apr-25 12:47:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-prereg:pull HTTP/1.1" 200 None 
- 22-Apr-25 12:47:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 22-Apr-25 12:47:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-prereg/tags/release-1.3.x HTTP/1.1" 200 840 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** HASH Operation Results ********************************************************************** 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 22-Apr-25 12:47:17  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 22-Apr-25 12:47:17  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 22-Apr-25 12:47:17  DEBUG  Found 'auths' section 
- 22-Apr-25 12:47:17  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 22-Apr-25 12:47:17  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 22-Apr-25 12:47:17  DEBUG  Looking for auth entry for 'docker.io' 
- 22-Apr-25 12:47:17  DEBUG  Found 'https://index.docker.io/v1/' 
- 22-Apr-25 12:47:17  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  ********** [ mosipdev2/apitest-prereg:release-1.3.x ] **************************************************** 
- 22-Apr-25 12:47:17  INFO   
- 22-Apr-25 12:47:17  INFO  [ PULL ----------------------> mosipdev/apitest-prereg:release-1.3.x ]  
- 22-Apr-25 12:47:17  DEBUG  Looking for auth config 
- 22-Apr-25 12:47:17  DEBUG  Looking for auth entry for 'docker.io' 
- 22-Apr-25 12:47:17  DEBUG  Found 'https://index.docker.io/v1/' 
- 22-Apr-25 12:47:17  DEBUG  Found auth config 
- 22-Apr-25 12:47:18  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fapitest-prereg HTTP/1.1" 200 None 
- 22-Apr-25 12:47:42  INFO  Status: Downloaded newer image for mosipdev/apitest-prereg:release-1.3.x 
- 22-Apr-25 12:47:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-prereg:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fapitest-prereg&force=1 HTTP/1.1" 201 0 
- 22-Apr-25 12:47:42  INFO   
- 22-Apr-25 12:47:42  INFO  [ PUSH -----> mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:release-1.3.x ]  
- 22-Apr-25 12:47:42  DEBUG  Looking for auth config 
- 22-Apr-25 12:47:42  DEBUG  Looking for auth entry for 'docker.io' 
- 22-Apr-25 12:47:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 22-Apr-25 12:47:42  DEBUG  Found auth config 
- 22-Apr-25 12:47:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-prereg/push?tag=release-1.3.x HTTP/1.1" 200 None 
- 22-Apr-25 12:47:44  INFO  release-1.3.x: digest: sha256:68f6066468ea694b4dadfeba8710a8832ff6e7dc8debd36f882279b99a67380c size: 1582 
- 22-Apr-25 12:47:44  INFO   
- 22-Apr-25 12:47:44  INFO  [ PUSH -----> mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:latest ]  
- 22-Apr-25 12:47:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/apitest-prereg:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fapitest-prereg&force=1 HTTP/1.1" 201 0 
- 22-Apr-25 12:47:44  DEBUG  Looking for auth config 
- 22-Apr-25 12:47:44  DEBUG  Looking for auth entry for 'docker.io' 
- 22-Apr-25 12:47:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 22-Apr-25 12:47:44  DEBUG  Found auth config 
- 22-Apr-25 12:47:44  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev2/apitest-prereg/push?tag=latest HTTP/1.1" 200 None 
- 22-Apr-25 12:47:45  INFO  latest: digest: sha256:68f6066468ea694b4dadfeba8710a8832ff6e7dc8debd36f882279b99a67380c size: 1582 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fapitest-prereg%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 468 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d1c1e57f837150ffa78fef110cccedaf4deb974f43c12be7808b3494cfe208d9/json HTTP/1.1" 200 None 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/apitest-prereg:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 166 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-prereg%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 469 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d1c1e57f837150ffa78fef110cccedaf4deb974f43c12be7808b3494cfe208d9/json HTTP/1.1" 200 None 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-prereg:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 56 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-prereg%3Alatest%22%5D%7D HTTP/1.1" 200 462 
- 22-Apr-25 12:47:45  DEBUG  http://localhost:None "GET /v1.45/images/sha256:d1c1e57f837150ffa78fef110cccedaf4deb974f43c12be7808b3494cfe208d9/json HTTP/1.1" 200 None 
- 22-Apr-25 12:47:46  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev2/apitest-prereg:latest?force=False&noprune=False HTTP/1.1" 200 763 
- 22-Apr-25 12:47:46  INFO  Completed mosipdev/apitest-prereg:release-1.3.x	------> mosipdev2/apitest-prereg:release-1.3.x 
+ 23-Apr-25 06:07:15  INFO  LOGFILE CREATED : vidivi.log 
+ 23-Apr-25 06:07:15  INFO   
+ 23-Apr-25 06:07:15  INFO  ******************** Check Images List ************************************************************************************ 
+ 23-Apr-25 06:07:15  INFO   
+ 23-Apr-25 06:07:15  INFO  IMAGES= [['mosipdev/usecase-compass-ui:MOSIP-41056', 'MOSIP-41056'], ['mosipdev/usecase-compass:MOSIP-41056', 'MOSIP-41056'], ['mosipdev/artifactory-server:MOSIP-41056', 'MOSIP-41056']] 
+ 23-Apr-25 06:07:15  INFO   
+ 23-Apr-25 06:07:15  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 23-Apr-25 06:07:15  INFO   
+ 23-Apr-25 06:07:15  INFO  src = "mosipdev/usecase-compass-ui" tag = "MOSIP-41056" 
+ 23-Apr-25 06:07:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/usecase-compass-ui:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/usecase-compass-ui/tags/MOSIP-41056 HTTP/1.1" 200 822 
+ 23-Apr-25 06:07:16  INFO   
+ 23-Apr-25 06:07:16  INFO  src = "mosipdev/usecase-compass" tag = "MOSIP-41056" 
+ 23-Apr-25 06:07:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/usecase-compass:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/usecase-compass/tags/MOSIP-41056 HTTP/1.1" 200 827 
+ 23-Apr-25 06:07:17  INFO   
+ 23-Apr-25 06:07:17  INFO  src = "mosipdev/artifactory-server" tag = "MOSIP-41056" 
+ 23-Apr-25 06:07:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 829 
+ 23-Apr-25 06:07:17  INFO   
+ 23-Apr-25 06:07:17  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 23-Apr-25 06:07:17  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 23-Apr-25 06:07:17  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 23-Apr-25 06:07:17  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 23-Apr-25 06:07:17  INFO   
+ 23-Apr-25 06:07:17  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 23-Apr-25 06:07:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass-ui:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:18  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 23-Apr-25 06:07:18  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/usecase-compass-ui/manifests/MOSIP-41056 HTTP/1.1" 200 1988 
+ 23-Apr-25 06:07:18  INFO   
+ 23-Apr-25 06:07:18  INFO  [ mosipqa/usecase-compass-ui ]  
+ 23-Apr-25 06:07:18  INFO  Destination Image = "mosipqa/usecase-compass-ui" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:362d58467b2cbed6dd424bb956e9ec49674917fbdaff09b4984c38778da57ea3" 
+ 23-Apr-25 06:07:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass-ui:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:18  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/usecase-compass-ui/tags/MOSIP-41056 HTTP/1.1" 200 826 
+ 23-Apr-25 06:07:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:19  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 23-Apr-25 06:07:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/usecase-compass/manifests/MOSIP-41056 HTTP/1.1" 200 1580 
+ 23-Apr-25 06:07:19  INFO   
+ 23-Apr-25 06:07:19  INFO  [ mosipqa/usecase-compass ]  
+ 23-Apr-25 06:07:19  INFO  Destination Image = "mosipqa/usecase-compass" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:914c8e3f44c6901994590c34c8cbfd7fa1f2d44ebf0c66c9a7957da19bf2f136" 
+ 23-Apr-25 06:07:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:19  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/usecase-compass/tags/MOSIP-41056 HTTP/1.1" 200 828 
+ 23-Apr-25 06:07:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 23-Apr-25 06:07:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
+ 23-Apr-25 06:07:22  INFO   
+ 23-Apr-25 06:07:22  INFO  [ mosipqa/artifactory-server ]  
+ 23-Apr-25 06:07:22  INFO  Destination Image = "mosipqa/artifactory-server" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:024696d51a152d9f792a741137ee04f28e079c76f4ef5d86d6b65ff0f1f6f905" 
+ 23-Apr-25 06:07:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Apr-25 06:07:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Apr-25 06:07:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 827 
+ 23-Apr-25 06:07:22  INFO   
+ 23-Apr-25 06:07:22  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 23-Apr-25 06:07:22  INFO   
+ 23-Apr-25 06:07:22  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 23-Apr-25 06:07:22  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 23-Apr-25 06:07:22  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 23-Apr-25 06:07:22  DEBUG  Found 'auths' section 
+ 23-Apr-25 06:07:22  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 23-Apr-25 06:07:22  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 23-Apr-25 06:07:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:23  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  INFO  ********** [ mosipqa/usecase-compass-ui:MOSIP-41056 ] **************************************************** 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  INFO  [ PULL ----------------------> mosipdev/usecase-compass-ui:MOSIP-41056 ]  
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:23  INFO  ********** [ mosipqa/usecase-compass:MOSIP-41056 ] **************************************************** 
+ 23-Apr-25 06:07:23  DEBUG  Found auth config 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  INFO  [ PULL ----------------------> mosipdev/usecase-compass:MOSIP-41056 ]  
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:23  DEBUG  Found auth config 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  INFO  ********** [ mosipqa/artifactory-server:MOSIP-41056 ] **************************************************** 
+ 23-Apr-25 06:07:23  INFO   
+ 23-Apr-25 06:07:23  INFO  [ PULL ----------------------> mosipdev/artifactory-server:MOSIP-41056 ]  
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:23  DEBUG  Found auth config 
+ 23-Apr-25 06:07:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fusecase-compass-ui HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:24  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fusecase-compass HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:42  INFO  Status: Downloaded newer image for mosipdev/usecase-compass-ui:MOSIP-41056 
+ 23-Apr-25 06:07:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass-ui:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fusecase-compass-ui&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:07:42  INFO   
+ 23-Apr-25 06:07:42  INFO  [ PUSH -----> mosipdev/usecase-compass-ui:MOSIP-41056	------> mosipqa/usecase-compass-ui:MOSIP-41056 ]  
+ 23-Apr-25 06:07:42  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:42  DEBUG  Found auth config 
+ 23-Apr-25 06:07:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass-ui/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:46  INFO  Status: Downloaded newer image for mosipdev/usecase-compass:MOSIP-41056 
+ 23-Apr-25 06:07:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fusecase-compass&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:07:46  INFO   
+ 23-Apr-25 06:07:46  INFO  [ PUSH -----> mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:MOSIP-41056 ]  
+ 23-Apr-25 06:07:46  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:46  DEBUG  Found auth config 
+ 23-Apr-25 06:07:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:46  INFO  MOSIP-41056: digest: sha256:7988400439bec623222cc1f59e6f99946f12e4176771caf7298aab49c1c1da35 size: 1988 
+ 23-Apr-25 06:07:46  INFO   
+ 23-Apr-25 06:07:46  INFO  [ PUSH -----> mosipdev/usecase-compass-ui:MOSIP-41056	------> mosipqa/usecase-compass-ui:latest ]  
+ 23-Apr-25 06:07:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass-ui:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fusecase-compass-ui&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:07:46  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:46  DEBUG  Found auth config 
+ 23-Apr-25 06:07:46  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass-ui/push?tag=latest HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:49  INFO  latest: digest: sha256:7988400439bec623222cc1f59e6f99946f12e4176771caf7298aab49c1c1da35 size: 1988 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fusecase-compass-ui%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 446 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3815f215a9c95c425e0e44a432eadd5b746157a855386ad70f9e57dee8fe898e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/usecase-compass-ui:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 172 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass-ui%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 445 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3815f215a9c95c425e0e44a432eadd5b746157a855386ad70f9e57dee8fe898e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass-ui:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 56 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass-ui%3Alatest%22%5D%7D HTTP/1.1" 200 440 
+ 23-Apr-25 06:07:49  DEBUG  http://localhost:None "GET /v1.45/images/sha256:3815f215a9c95c425e0e44a432eadd5b746157a855386ad70f9e57dee8fe898e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:50  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass-ui:latest?force=False&noprune=False HTTP/1.1" 200 939 
+ 23-Apr-25 06:07:50  INFO  Completed mosipdev/usecase-compass-ui:MOSIP-41056	------> mosipqa/usecase-compass-ui:MOSIP-41056 
+ 23-Apr-25 06:07:50  INFO  MOSIP-41056: digest: sha256:523e7d7b15b98d055198d8ece9ad43c8c402e60a4c7cd34c4aa916632585e7cd size: 1580 
+ 23-Apr-25 06:07:50  INFO   
+ 23-Apr-25 06:07:50  INFO  [ PUSH -----> mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:latest ]  
+ 23-Apr-25 06:07:50  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fusecase-compass&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:07:50  DEBUG  Looking for auth config 
+ 23-Apr-25 06:07:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:07:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:07:50  DEBUG  Found auth config 
+ 23-Apr-25 06:07:50  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass/push?tag=latest HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:52  INFO  latest: digest: sha256:523e7d7b15b98d055198d8ece9ad43c8c402e60a4c7cd34c4aa916632585e7cd size: 1580 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fusecase-compass%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 466 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4030e8bbe2a75bceff75936e19bdc3f8106c86b3a0d12cdf17870a0ce450b05e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/usecase-compass:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 166 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 465 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4030e8bbe2a75bceff75936e19bdc3f8106c86b3a0d12cdf17870a0ce450b05e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 53 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass%3Alatest%22%5D%7D HTTP/1.1" 200 460 
+ 23-Apr-25 06:07:52  DEBUG  http://localhost:None "GET /v1.45/images/sha256:4030e8bbe2a75bceff75936e19bdc3f8106c86b3a0d12cdf17870a0ce450b05e/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:07:53  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass:latest?force=False&noprune=False HTTP/1.1" 200 761 
+ 23-Apr-25 06:07:53  INFO  Completed mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:MOSIP-41056 
+ 23-Apr-25 06:08:04  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:MOSIP-41056 
+ 23-Apr-25 06:08:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:08:04  INFO   
+ 23-Apr-25 06:08:04  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 ]  
+ 23-Apr-25 06:08:04  DEBUG  Looking for auth config 
+ 23-Apr-25 06:08:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:08:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:08:04  DEBUG  Found auth config 
+ 23-Apr-25 06:08:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:20  INFO  MOSIP-41056: digest: sha256:580ae65c360965510c1fd65ffd7b6d15b976821a45c1251b0c36fa873f43e14c size: 8896 
+ 23-Apr-25 06:08:20  INFO   
+ 23-Apr-25 06:08:20  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:latest ]  
+ 23-Apr-25 06:08:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 23-Apr-25 06:08:20  DEBUG  Looking for auth config 
+ 23-Apr-25 06:08:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Apr-25 06:08:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Apr-25 06:08:20  DEBUG  Found auth config 
+ 23-Apr-25 06:08:20  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:24  INFO  latest: digest: sha256:580ae65c360965510c1fd65ffd7b6d15b976821a45c1251b0c36fa873f43e14c size: 8896 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 447 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9808ccb129d4bb649a1b4871e4cc940e99fc02710ac6288316e0500e3322fae0/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 172 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 446 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9808ccb129d4bb649a1b4871e4cc940e99fc02710ac6288316e0500e3322fae0/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 56 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
+ 23-Apr-25 06:08:24  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9808ccb129d4bb649a1b4871e4cc940e99fc02710ac6288316e0500e3322fae0/json HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:25  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 23-Apr-25 06:08:25  INFO  Completed mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 
