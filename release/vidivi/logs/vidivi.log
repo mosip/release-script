@@ -1,212 +1,88 @@
- 25-Apr-25 07:37:21  INFO  LOGFILE CREATED : vidivi.log 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  ******************** Check Images List ************************************************************************************ 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  IMAGES= [['mosipdev/artifactory-server:MOSIP-41056', 'MOSIP-41056'], ['mosipdev/usecase-compass:MOSIP-41056', 'MOSIP-41056'], ['mosipdev/mock-relying-party-ui:MOSIP-41056', 'MOSIP-41056']] 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  src = "mosipdev/artifactory-server" tag = "MOSIP-41056" 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 829 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  src = "mosipdev/usecase-compass" tag = "MOSIP-41056" 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/usecase-compass:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/usecase-compass/tags/MOSIP-41056 HTTP/1.1" 200 827 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  src = "mosipdev/mock-relying-party-ui" tag = "MOSIP-41056" 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-ui:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-relying-party-ui/tags/MOSIP-41056 HTTP/1.1" 200 825 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 25-Apr-25 07:37:21  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 25-Apr-25 07:37:21  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 25-Apr-25 07:37:21  INFO   
- 25-Apr-25 07:37:21  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ mosipqa/artifactory-server ]  
- 25-Apr-25 07:37:22  INFO  Destination Image = "mosipqa/artifactory-server" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:b9a97aed1e2d853ebbe8d8d76165d7828ed5f1aa2de0ad6615144314c7a23c27" 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 827 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/usecase-compass/manifests/MOSIP-41056 HTTP/1.1" 200 1580 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ mosipqa/usecase-compass ]  
- 25-Apr-25 07:37:22  INFO  Destination Image = "mosipqa/usecase-compass" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:28def489bffe25017b7ddce095580d743a5b8253d0e517412d9a39a8daccec0f" 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/usecase-compass:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/usecase-compass/tags/MOSIP-41056 HTTP/1.1" 200 823 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-ui:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mock-relying-party-ui/manifests/MOSIP-41056 HTTP/1.1" 200 1991 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ mosipqa/mock-relying-party-ui ]  
- 25-Apr-25 07:37:22  INFO  Destination Image = "mosipqa/mock-relying-party-ui" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:b12e4dde5fb33cab561e6569d7b6bc19d7dc7b121bc1586a629d3e0d6c2566d3" 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-ui:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mock-relying-party-ui/tags/MOSIP-41056 HTTP/1.1" 200 823 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  ******************** HASH Operation Results ********************************************************************** 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 25-Apr-25 07:37:22  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 25-Apr-25 07:37:22  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 25-Apr-25 07:37:22  DEBUG  Found 'auths' section 
- 25-Apr-25 07:37:22  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 25-Apr-25 07:37:22  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 25-Apr-25 07:37:22  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:22  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  ********** [ mosipqa/artifactory-server:MOSIP-41056 ] **************************************************** 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  ********** [ mosipqa/usecase-compass:MOSIP-41056 ] **************************************************** 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  ********** [ mosipqa/mock-relying-party-ui:MOSIP-41056 ] **************************************************** 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/usecase-compass:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-ui:pull HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mock-relying-party-ui/manifests/MOSIP-41056 HTTP/1.1" 200 1991 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/usecase-compass/manifests/MOSIP-41056 HTTP/1.1" 200 1580 
- 25-Apr-25 07:37:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mock-relying-party-ui/manifests/MOSIP-41056 HTTP/1.1" 200 1991 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ PULL ----------------------> mosipdev/mock-relying-party-ui:MOSIP-41056 ]  
- 25-Apr-25 07:37:22  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:22  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:22  DEBUG  Found auth config 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ PULL ----------------------> mosipdev/artifactory-server:MOSIP-41056 ]  
- 25-Apr-25 07:37:22  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:22  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:22  DEBUG  Found auth config 
- 25-Apr-25 07:37:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/usecase-compass/manifests/MOSIP-41056 HTTP/1.1" 200 1580 
- 25-Apr-25 07:37:22  INFO   
- 25-Apr-25 07:37:22  INFO  [ PULL ----------------------> mosipdev/usecase-compass:MOSIP-41056 ]  
- 25-Apr-25 07:37:22  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:22  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:22  DEBUG  Found auth config 
- 25-Apr-25 07:37:22  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fmock-relying-party-ui HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
- 25-Apr-25 07:37:22  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fusecase-compass HTTP/1.1" 200 None 
- 25-Apr-25 07:37:42  INFO  Status: Downloaded newer image for mosipdev/mock-relying-party-ui:MOSIP-41056 
- 25-Apr-25 07:37:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-relying-party-ui:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fmock-relying-party-ui&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:37:42  INFO   
- 25-Apr-25 07:37:42  INFO  [ PUSH -----> mosipdev/mock-relying-party-ui:MOSIP-41056	------> mosipqa/mock-relying-party-ui:MOSIP-41056 ]  
- 25-Apr-25 07:37:42  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:42  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:42  DEBUG  Found auth config 
- 25-Apr-25 07:37:42  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mock-relying-party-ui/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
- 25-Apr-25 07:37:43  INFO  MOSIP-41056: digest: sha256:c9cca406169f7e3cd548b315e5023a9718e3ba39cdcf35c07c5a913dd1070894 size: 1991 
- 25-Apr-25 07:37:43  INFO   
- 25-Apr-25 07:37:43  INFO  [ PUSH -----> mosipdev/mock-relying-party-ui:MOSIP-41056	------> mosipqa/mock-relying-party-ui:latest ]  
- 25-Apr-25 07:37:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/mock-relying-party-ui:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fmock-relying-party-ui&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:37:43  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:43  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:43  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:43  DEBUG  Found auth config 
- 25-Apr-25 07:37:43  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/mock-relying-party-ui/push?tag=latest HTTP/1.1" 200 None 
- 25-Apr-25 07:37:44  INFO  latest: digest: sha256:c9cca406169f7e3cd548b315e5023a9718e3ba39cdcf35c07c5a913dd1070894 size: 1991 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fmock-relying-party-ui%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 449 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e77e375212960bcb8a39391d37154128f2da39d84be5454a816472288e78074/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/mock-relying-party-ui:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 178 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmock-relying-party-ui%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 448 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e77e375212960bcb8a39391d37154128f2da39d84be5454a816472288e78074/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mock-relying-party-ui:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 59 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fmock-relying-party-ui%3Alatest%22%5D%7D HTTP/1.1" 200 443 
- 25-Apr-25 07:37:44  DEBUG  http://localhost:None "GET /v1.45/images/sha256:9e77e375212960bcb8a39391d37154128f2da39d84be5454a816472288e78074/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:45  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/mock-relying-party-ui:latest?force=False&noprune=False HTTP/1.1" 200 945 
- 25-Apr-25 07:37:45  INFO  Completed mosipdev/mock-relying-party-ui:MOSIP-41056	------> mosipqa/mock-relying-party-ui:MOSIP-41056 
- 25-Apr-25 07:37:45  INFO  Status: Downloaded newer image for mosipdev/usecase-compass:MOSIP-41056 
- 25-Apr-25 07:37:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fusecase-compass&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:37:45  INFO   
- 25-Apr-25 07:37:45  INFO  [ PUSH -----> mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:MOSIP-41056 ]  
- 25-Apr-25 07:37:45  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:45  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:45  DEBUG  Found auth config 
- 25-Apr-25 07:37:45  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
- 25-Apr-25 07:37:47  INFO  MOSIP-41056: digest: sha256:04a5eaf6ae0e937aebd1674f1fe425f608e9554d5300d919565fda4ace28b252 size: 1580 
- 25-Apr-25 07:37:47  INFO   
- 25-Apr-25 07:37:47  INFO  [ PUSH -----> mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:latest ]  
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/usecase-compass:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fusecase-compass&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:37:47  DEBUG  Looking for auth config 
- 25-Apr-25 07:37:47  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:37:47  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:37:47  DEBUG  Found auth config 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/usecase-compass/push?tag=latest HTTP/1.1" 200 None 
- 25-Apr-25 07:37:47  INFO  latest: digest: sha256:04a5eaf6ae0e937aebd1674f1fe425f608e9554d5300d919565fda4ace28b252 size: 1580 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fusecase-compass%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 466 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e3c506499072ffeda68a48195edbb791e19b6655c23d90e9703a3fd1c93c45ec/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/usecase-compass:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 166 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 465 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e3c506499072ffeda68a48195edbb791e19b6655c23d90e9703a3fd1c93c45ec/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 53 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fusecase-compass%3Alatest%22%5D%7D HTTP/1.1" 200 460 
- 25-Apr-25 07:37:47  DEBUG  http://localhost:None "GET /v1.45/images/sha256:e3c506499072ffeda68a48195edbb791e19b6655c23d90e9703a3fd1c93c45ec/json HTTP/1.1" 200 None 
- 25-Apr-25 07:37:48  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/usecase-compass:latest?force=False&noprune=False HTTP/1.1" 200 761 
- 25-Apr-25 07:37:48  INFO  Completed mosipdev/usecase-compass:MOSIP-41056	------> mosipqa/usecase-compass:MOSIP-41056 
- 25-Apr-25 07:38:04  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:MOSIP-41056 
- 25-Apr-25 07:38:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:38:04  INFO   
- 25-Apr-25 07:38:04  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 ]  
- 25-Apr-25 07:38:04  DEBUG  Looking for auth config 
- 25-Apr-25 07:38:04  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:38:04  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:38:04  DEBUG  Found auth config 
- 25-Apr-25 07:38:04  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
- 25-Apr-25 07:38:05  INFO  MOSIP-41056: digest: sha256:b9a97aed1e2d853ebbe8d8d76165d7828ed5f1aa2de0ad6615144314c7a23c27 size: 8896 
- 25-Apr-25 07:38:05  INFO   
- 25-Apr-25 07:38:05  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:latest ]  
- 25-Apr-25 07:38:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
- 25-Apr-25 07:38:05  DEBUG  Looking for auth config 
- 25-Apr-25 07:38:05  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Apr-25 07:38:05  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Apr-25 07:38:05  DEBUG  Found auth config 
- 25-Apr-25 07:38:05  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
- 25-Apr-25 07:38:06  INFO  latest: digest: sha256:b9a97aed1e2d853ebbe8d8d76165d7828ed5f1aa2de0ad6615144314c7a23c27 size: 8896 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 447 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b00d651279746f009e13d492c938bb25ac73b846d4cc345c38d9b48b5e2f892a/json HTTP/1.1" 200 None 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 172 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 446 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b00d651279746f009e13d492c938bb25ac73b846d4cc345c38d9b48b5e2f892a/json HTTP/1.1" 200 None 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 56 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
- 25-Apr-25 07:38:06  DEBUG  http://localhost:None "GET /v1.45/images/sha256:b00d651279746f009e13d492c938bb25ac73b846d4cc345c38d9b48b5e2f892a/json HTTP/1.1" 200 None 
- 25-Apr-25 07:38:07  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
- 25-Apr-25 07:38:07  INFO  Completed mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 
- 25-Apr-25 07:38:07  INFO  Completed processing mosipdev/artifactory-server:MOSIP-41056 to mosipqa/artifactory-server:MOSIP-41056 
- 25-Apr-25 07:38:07  INFO  Completed processing mosipdev/usecase-compass:MOSIP-41056 to mosipqa/usecase-compass:MOSIP-41056 
- 25-Apr-25 07:38:07  INFO  Completed processing mosipdev/mock-relying-party-ui:MOSIP-41056 to mosipqa/mock-relying-party-ui:MOSIP-41056 
+ 25-Apr-25 08:32:36  INFO  LOGFILE CREATED : vidivi.log 
+ 25-Apr-25 08:32:36  INFO   
+ 25-Apr-25 08:32:36  INFO  ******************** Check Images List ************************************************************************************ 
+ 25-Apr-25 08:32:36  INFO   
+ 25-Apr-25 08:32:36  INFO  IMAGES= [['mosipdev/artifactory-server:MOSIP-41056', 'MOSIP-41056']] 
+ 25-Apr-25 08:32:36  INFO   
+ 25-Apr-25 08:32:36  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 25-Apr-25 08:32:36  INFO   
+ 25-Apr-25 08:32:36  INFO  src = "mosipdev/artifactory-server" tag = "MOSIP-41056" 
+ 25-Apr-25 08:32:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Apr-25 08:32:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 25-Apr-25 08:32:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 25-Apr-25 08:32:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 829 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 25-Apr-25 08:32:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 25-Apr-25 08:32:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Apr-25 08:32:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 25-Apr-25 08:32:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  [ mosipqa/artifactory-server ]  
+ 25-Apr-25 08:32:37  INFO  Destination Image = "mosipqa/artifactory-server" Destination Image tag = "MOSIP-41056" IMAGE_ID : "sha256:b9a97aed1e2d853ebbe8d8d76165d7828ed5f1aa2de0ad6615144314c7a23c27" 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Apr-25 08:32:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/artifactory-server:pull HTTP/1.1" 200 None 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 25-Apr-25 08:32:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/artifactory-server/tags/MOSIP-41056 HTTP/1.1" 200 830 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 25-Apr-25 08:32:37  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 25-Apr-25 08:32:37  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 25-Apr-25 08:32:37  DEBUG  Found 'auths' section 
+ 25-Apr-25 08:32:37  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 25-Apr-25 08:32:37  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 25-Apr-25 08:32:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 25-Apr-25 08:32:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 25-Apr-25 08:32:37  DEBUG  http://localhost:None "POST /v1.45/auth HTTP/1.1" 200 48 
+ 25-Apr-25 08:32:37  INFO   
+ 25-Apr-25 08:32:37  INFO  ********** [ mosipqa/artifactory-server:MOSIP-41056 ] **************************************************** 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Apr-25 08:32:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/artifactory-server:pull HTTP/1.1" 200 None 
+ 25-Apr-25 08:32:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 25-Apr-25 08:32:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
+ 25-Apr-25 08:32:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 25-Apr-25 08:32:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/artifactory-server/manifests/MOSIP-41056 HTTP/1.1" 200 8896 
+ 25-Apr-25 08:32:38  INFO   
+ 25-Apr-25 08:32:38  INFO  [ PULL ----------------------> mosipdev/artifactory-server:MOSIP-41056 ]  
+ 25-Apr-25 08:32:38  DEBUG  Looking for auth config 
+ 25-Apr-25 08:32:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 25-Apr-25 08:32:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 25-Apr-25 08:32:38  DEBUG  Found auth config 
+ 25-Apr-25 08:32:38  DEBUG  http://localhost:None "POST /v1.45/images/create?tag=MOSIP-41056&fromImage=mosipdev%2Fartifactory-server HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:15  INFO  Status: Downloaded newer image for mosipdev/artifactory-server:MOSIP-41056 
+ 25-Apr-25 08:33:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=MOSIP-41056&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 25-Apr-25 08:33:15  INFO   
+ 25-Apr-25 08:33:15  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 ]  
+ 25-Apr-25 08:33:15  DEBUG  Looking for auth config 
+ 25-Apr-25 08:33:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 25-Apr-25 08:33:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 25-Apr-25 08:33:15  DEBUG  Found auth config 
+ 25-Apr-25 08:33:15  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=MOSIP-41056 HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:21  INFO  MOSIP-41056: digest: sha256:a97a4c8f22031b72b5e42e4562027ebbea39f6e41d96079d20839813a2d7d597 size: 8896 
+ 25-Apr-25 08:33:21  INFO   
+ 25-Apr-25 08:33:21  INFO  [ PUSH -----> mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:latest ]  
+ 25-Apr-25 08:33:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipdev/artifactory-server:MOSIP-41056/tag?tag=latest&repo=mosipqa%2Fartifactory-server&force=1 HTTP/1.1" 201 0 
+ 25-Apr-25 08:33:21  DEBUG  Looking for auth config 
+ 25-Apr-25 08:33:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 25-Apr-25 08:33:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 25-Apr-25 08:33:21  DEBUG  Found auth config 
+ 25-Apr-25 08:33:21  DEBUG  http://localhost:None "POST /v1.45/images/mosipqa/artifactory-server/push?tag=latest HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:23  INFO  latest: digest: sha256:a97a4c8f22031b72b5e42e4562027ebbea39f6e41d96079d20839813a2d7d597 size: 8896 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 447 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:332ac3a28774990eda9c6370e4753fe3401f54a394f18970789c107bff512dd2/json HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipdev/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 172 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3AMOSIP-41056%22%5D%7D HTTP/1.1" 200 446 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:332ac3a28774990eda9c6370e4753fe3401f54a394f18970789c107bff512dd2/json HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:MOSIP-41056?force=False&noprune=False HTTP/1.1" 200 56 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fartifactory-server%3Alatest%22%5D%7D HTTP/1.1" 200 441 
+ 25-Apr-25 08:33:23  DEBUG  http://localhost:None "GET /v1.45/images/sha256:332ac3a28774990eda9c6370e4753fe3401f54a394f18970789c107bff512dd2/json HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:24  DEBUG  http://localhost:None "DELETE /v1.45/images/mosipqa/artifactory-server:latest?force=False&noprune=False HTTP/1.1" 200 None 
+ 25-Apr-25 08:33:24  INFO  Completed mosipdev/artifactory-server:MOSIP-41056	------> mosipqa/artifactory-server:MOSIP-41056 
+ 25-Apr-25 08:33:24  INFO  Completed processing mosipdev/artifactory-server:MOSIP-41056 to mosipqa/artifactory-server:MOSIP-41056 
