@@ -265,9 +265,9 @@ def process_image(image, client, remote_client):
                 # Extract digest value without the "sha256:" prefix
                 digest_value = arch_digest.replace("sha256:", "")
                 
-                # Pull and tag as temporary image
-                temp_tag = f"temp-{arch_type}-{arch_os}-{digest_value[:8]}"
-                temp_dest_img = f"{config['docker']['destination_organization']}/{srcImgName}:{temp_tag}"
+                # Use destination tag with architecture suffix instead of hash
+                arch_tag = f"{destImgtag}-{arch_type}-{arch_os}"
+                temp_dest_img = f"{config['docker']['destination_organization']}/{srcImgName}:{arch_tag}"
                 temp_images.append(temp_dest_img)
                 
                 try:
@@ -276,7 +276,7 @@ def process_image(image, client, remote_client):
                         srcImgRepo, 
                         srcImgName, 
                         digest_value, 
-                        temp_tag, 
+                        arch_tag,  # Use the arch-specific tag here
                         config['docker']['destination_organization'], 
                         remote_client,
                         client,
@@ -303,7 +303,7 @@ def process_image(image, client, remote_client):
         create_manifest_list(
             dest_repository, 
             dest_repository, 
-            destImgtag,  # Use the tag from image.txt
+            destImgtag,
             digests, 
             remote_client
         )
@@ -317,7 +317,9 @@ def process_image(image, client, remote_client):
             remote_client
         )
         
-        # Clean up temporary images
+        # Clean up temporary images if configured
+        # You might want to add a config option to determine if these should be removed
+        # or kept for future reference
         for temp_img in temp_images:
             try:
                 client.images.remove(temp_img)
@@ -330,7 +332,7 @@ def process_image(image, client, remote_client):
             srcImgRepo, 
             srcImgName, 
             srcImgtag, 
-            destImgtag,  # Use the tag from image.txt 
+            destImgtag,
             config['docker']['destination_organization'], 
             remote_client, 
             client
