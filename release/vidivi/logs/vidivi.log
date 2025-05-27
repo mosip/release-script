@@ -1,97 +1,150 @@
- 27-May-25 07:31:11  INFO  LOGFILE CREATED : vidivi.log 
- 27-May-25 07:31:11  INFO   
- 27-May-25 07:31:11  INFO  ******************** Check Images List ************************************************************************************ 
- 27-May-25 07:31:11  INFO   
- 27-May-25 07:31:11  INFO  IMAGES= [['mosipdev/inji-web:develop', 'develop']] 
- 27-May-25 07:31:11  INFO   
- 27-May-25 07:31:11  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 27-May-25 07:31:11  INFO   
- 27-May-25 07:31:11  INFO  src = "mosipdev/inji-web" tag = "develop" 
- 27-May-25 07:31:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-May-25 07:31:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-web:pull HTTP/1.1" 200 None 
- 27-May-25 07:31:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 27-May-25 07:31:12  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-web/tags/develop HTTP/1.1" 200 None 
- 27-May-25 07:31:12  INFO   
- 27-May-25 07:31:12  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 27-May-25 07:31:12  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 27-May-25 07:31:12  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 27-May-25 07:31:12  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 27-May-25 07:31:12  INFO   
- 27-May-25 07:31:12  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 27-May-25 07:31:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-May-25 07:31:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-web:pull HTTP/1.1" 200 None 
- 27-May-25 07:31:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 27-May-25 07:31:13  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-web/manifests/develop HTTP/1.1" 200 743 
- 27-May-25 07:31:13  INFO   
- 27-May-25 07:31:13  INFO  [ mosipqa/inji-web ]  
- 27-May-25 07:31:13  INFO  Destination Image = "mosipqa/inji-web" Destination Image tag = "develop" IMAGE_ID : "sha256:3d0c11d2d1417cd43523e75afe2de6f95d61f4c0a18b181593f951134ddfc02e" 
- 27-May-25 07:31:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-May-25 07:31:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-web:pull HTTP/1.1" 200 None 
- 27-May-25 07:31:13  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 27-May-25 07:31:13  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-web/tags/develop HTTP/1.1" 200 None 
- 27-May-25 07:31:13  INFO   
- 27-May-25 07:31:13  INFO  ******************** HASH Operation Results ********************************************************************** 
- 27-May-25 07:31:13  INFO   
- 27-May-25 07:31:13  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 27-May-25 07:31:13  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 27-May-25 07:31:13  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 27-May-25 07:31:13  DEBUG  Found 'auths' section 
- 27-May-25 07:31:13  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 27-May-25 07:31:13  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 27-May-25 07:31:13  DEBUG  Looking for auth entry for 'docker.io' 
- 27-May-25 07:31:13  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-May-25 07:31:14  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 27-May-25 07:31:14  INFO   
- 27-May-25 07:31:14  INFO  ********** [ mosipqa/inji-web:develop ] **************************************************** 
- 27-May-25 07:31:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 27-May-25 07:31:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-web:pull HTTP/1.1" 200 None 
- 27-May-25 07:31:14  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 27-May-25 07:31:14  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/inji-web/manifests/develop HTTP/1.1" 200 743 
- 27-May-25 07:31:14  INFO  Multi-arch image detected with 2 architectures 
- 27-May-25 07:31:14  INFO  Processing architecture: amd64/linux with digest sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 
- 27-May-25 07:31:14  INFO   
- 27-May-25 07:31:14  INFO  [ PULL linux/amd64 ----------------------> mosipdev/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 ]  
- 27-May-25 07:31:14  DEBUG  Looking for auth config 
- 27-May-25 07:31:14  DEBUG  Looking for auth entry for 'docker.io' 
- 27-May-25 07:31:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-May-25 07:31:14  DEBUG  Found auth config 
- 27-May-25 07:31:14  INFO  Processing architecture: arm64/linux with digest sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 
- 27-May-25 07:31:14  INFO   
- 27-May-25 07:31:14  INFO  [ PULL linux/arm64 ----------------------> mosipdev/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 ]  
- 27-May-25 07:31:14  DEBUG  Looking for auth config 
- 27-May-25 07:31:14  DEBUG  Looking for auth entry for 'docker.io' 
- 27-May-25 07:31:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-May-25 07:31:14  DEBUG  Found auth config 
- 27-May-25 07:31:15  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1&fromImage=mosipdev%2Finji-web HTTP/1.1" 200 None 
- 27-May-25 07:31:15  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057&fromImage=mosipdev%2Finji-web HTTP/1.1" 200 None 
- 27-May-25 07:31:22  INFO  Status: Downloaded newer image for mosipdev/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 
- 27-May-25 07:31:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/inji-web%40sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1/tag?tag=develop-amd64-linux&repo=mosipqa%2Finji-web&force=1 HTTP/1.1" 201 0 
- 27-May-25 07:31:22  INFO   
- 27-May-25 07:31:22  INFO  [ PUSH linux/amd64 -----> mosipdev/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1	------> mosipqa/inji-web:develop-amd64-linux ]  
- 27-May-25 07:31:22  DEBUG  Looking for auth config 
- 27-May-25 07:31:22  DEBUG  Looking for auth entry for 'docker.io' 
- 27-May-25 07:31:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-May-25 07:31:22  DEBUG  Found auth config 
- 27-May-25 07:31:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-web/push?tag=develop-amd64-linux HTTP/1.1" 200 None 
- 27-May-25 07:31:23  INFO  Status: Downloaded newer image for mosipdev/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 
- 27-May-25 07:31:23  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/inji-web%40sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057/tag?tag=develop-arm64-linux&repo=mosipqa%2Finji-web&force=1 HTTP/1.1" 201 0 
- 27-May-25 07:31:23  INFO   
- 27-May-25 07:31:23  INFO  [ PUSH linux/arm64 -----> mosipdev/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057	------> mosipqa/inji-web:develop-arm64-linux ]  
- 27-May-25 07:31:23  DEBUG  Looking for auth config 
- 27-May-25 07:31:23  DEBUG  Looking for auth entry for 'docker.io' 
- 27-May-25 07:31:23  DEBUG  Found 'https://index.docker.io/v1/' 
- 27-May-25 07:31:23  DEBUG  Found auth config 
- 27-May-25 07:31:23  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-web/push?tag=develop-arm64-linux HTTP/1.1" 200 None 
- 27-May-25 07:31:28  INFO  develop-amd64-linux: digest: sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 size: 3443 
- 27-May-25 07:31:28  INFO  Completed pulling/tagging mosipdev/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 	------> mosipqa/inji-web:develop-amd64-linux (linux/amd64) 
- 27-May-25 07:31:31  INFO  develop-arm64-linux: digest: sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 size: 3443 
- 27-May-25 07:31:31  INFO  Completed pulling/tagging mosipdev/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 	------> mosipqa/inji-web:develop-arm64-linux (linux/arm64) 
- 27-May-25 07:31:31  INFO  Logging in to Docker CLI for manifest operations 
- 27-May-25 07:31:32  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-web:develop mosipqa/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 mosipqa/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 
- 27-May-25 07:31:34  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-web:develop 
- 27-May-25 07:31:35  INFO  Logging in to Docker CLI for manifest operations 
- 27-May-25 07:31:36  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-web:latest mosipqa/inji-web@sha256:3d6a9ec517795ebf92ee8c564e5584045db3028b0c22c454187123e7bc44e1f1 mosipqa/inji-web@sha256:0a81cbdbecdfd5fde86254dc1147c3290d5ff2c9d4439d2cdf630317f8e1d057 
- 27-May-25 07:31:38  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-web:latest 
- 27-May-25 07:31:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-web:develop-amd64-linux?force=False&noprune=False HTTP/1.1" 200 158 
- 27-May-25 07:31:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-web:develop-arm64-linux?force=False&noprune=False HTTP/1.1" 200 158 
- 27-May-25 07:31:39  INFO  Completed processing mosipdev/inji-web:develop to mosipqa/inji-web:develop 
+ 27-May-25 07:33:15  INFO  LOGFILE CREATED : vidivi.log 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  ******************** Check Images List ************************************************************************************ 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  IMAGES= [['mosipdev/websub-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/consolidator-websub-service:release-1.3.x', 'release-1.3.x']] 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  src = "mosipdev/websub-service" tag = "release-1.3.x" 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-May-25 07:33:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/websub-service/tags/release-1.3.x HTTP/1.1" 200 829 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  src = "mosipdev/consolidator-websub-service" tag = "release-1.3.x" 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/consolidator-websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-May-25 07:33:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/consolidator-websub-service/tags/release-1.3.x HTTP/1.1" 200 828 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 27-May-25 07:33:15  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 27-May-25 07:33:15  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:15  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:15  INFO   
+ 27-May-25 07:33:15  INFO  [ mosipdev2/websub-service ]  
+ 27-May-25 07:33:15  INFO  Destination Image = "mosipdev2/websub-service" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:76c68bf466e0c8b1d1f410c5f9b8557d0ea506ed8444202f2e55b269163a4fd4" 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-May-25 07:33:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/websub-service/tags/release-1.3.x HTTP/1.1" 200 836 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/consolidator-websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/consolidator-websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  [ mosipdev2/consolidator-websub-service ]  
+ 27-May-25 07:33:16  INFO  Destination Image = "mosipdev2/consolidator-websub-service" Destination Image tag = "release-1.3.x" IMAGE_ID : "sha256:4a29f7b3f0dc3ff9fafd4562e07c4c186ed68ee0d94d396bd8ecffc5a77ae25a" 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/consolidator-websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 27-May-25 07:33:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/consolidator-websub-service/tags/release-1.3.x HTTP/1.1" 200 838 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 27-May-25 07:33:16  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 27-May-25 07:33:16  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 27-May-25 07:33:16  DEBUG  Found 'auths' section 
+ 27-May-25 07:33:16  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 27-May-25 07:33:16  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 27-May-25 07:33:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:16  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  ********** [ mosipdev2/websub-service:release-1.3.x ] **************************************************** 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  ********** [ mosipdev2/consolidator-websub-service:release-1.3.x ] **************************************************** 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/consolidator-websub-service:pull HTTP/1.1" 200 None 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/consolidator-websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 27-May-25 07:33:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  [ PULL ----------------------> mosipdev/websub-service:release-1.3.x ]  
+ 27-May-25 07:33:16  DEBUG  Looking for auth config 
+ 27-May-25 07:33:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:16  DEBUG  Found auth config 
+ 27-May-25 07:33:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/consolidator-websub-service/manifests/release-1.3.x HTTP/1.1" 200 1380 
+ 27-May-25 07:33:16  INFO   
+ 27-May-25 07:33:16  INFO  [ PULL ----------------------> mosipdev/consolidator-websub-service:release-1.3.x ]  
+ 27-May-25 07:33:16  DEBUG  Looking for auth config 
+ 27-May-25 07:33:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:16  DEBUG  Found auth config 
+ 27-May-25 07:33:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fwebsub-service HTTP/1.1" 200 None 
+ 27-May-25 07:33:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev%2Fconsolidator-websub-service HTTP/1.1" 200 None 
+ 27-May-25 07:33:41  INFO  Status: Downloaded newer image for mosipdev/websub-service:release-1.3.x 
+ 27-May-25 07:33:41  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/websub-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fwebsub-service&force=1 HTTP/1.1" 201 0 
+ 27-May-25 07:33:41  INFO   
+ 27-May-25 07:33:41  INFO  [ PUSH -----> mosipdev/websub-service:release-1.3.x	------> mosipdev2/websub-service:release-1.3.x ]  
+ 27-May-25 07:33:41  DEBUG  Looking for auth config 
+ 27-May-25 07:33:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:41  DEBUG  Found auth config 
+ 27-May-25 07:33:41  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/websub-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 27-May-25 07:33:44  INFO  release-1.3.x: digest: sha256:7797a35a7d5dc42a1cfaded581e4966752f007768b492aba523ca6988420c5ed size: 1380 
+ 27-May-25 07:33:44  INFO   
+ 27-May-25 07:33:44  INFO  [ PUSH -----> mosipdev/websub-service:release-1.3.x	------> mosipdev2/websub-service:latest ]  
+ 27-May-25 07:33:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/websub-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fwebsub-service&force=1 HTTP/1.1" 201 0 
+ 27-May-25 07:33:44  DEBUG  Looking for auth config 
+ 27-May-25 07:33:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:44  DEBUG  Found auth config 
+ 27-May-25 07:33:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/websub-service/push?tag=latest HTTP/1.1" 200 None 
+ 27-May-25 07:33:44  INFO  Status: Downloaded newer image for mosipdev/consolidator-websub-service:release-1.3.x 
+ 27-May-25 07:33:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/consolidator-websub-service:release-1.3.x/tag?tag=release-1.3.x&repo=mosipdev2%2Fconsolidator-websub-service&force=1 HTTP/1.1" 201 0 
+ 27-May-25 07:33:44  INFO   
+ 27-May-25 07:33:44  INFO  [ PUSH -----> mosipdev/consolidator-websub-service:release-1.3.x	------> mosipdev2/consolidator-websub-service:release-1.3.x ]  
+ 27-May-25 07:33:44  DEBUG  Looking for auth config 
+ 27-May-25 07:33:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:44  DEBUG  Found auth config 
+ 27-May-25 07:33:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/consolidator-websub-service/push?tag=release-1.3.x HTTP/1.1" 200 None 
+ 27-May-25 07:33:45  INFO  latest: digest: sha256:7797a35a7d5dc42a1cfaded581e4966752f007768b492aba523ca6988420c5ed size: 1380 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fwebsub-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 468 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c421b4e6ff16afb35431bbe4b45a6477007d350f1895b509cddda86e13279d52/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev/websub-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 166 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fwebsub-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 469 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c421b4e6ff16afb35431bbe4b45a6477007d350f1895b509cddda86e13279d52/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/websub-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 56 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fwebsub-service%3Alatest%22%5D%7D HTTP/1.1" 200 462 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c421b4e6ff16afb35431bbe4b45a6477007d350f1895b509cddda86e13279d52/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/websub-service:latest?force=False&noprune=False HTTP/1.1" 200 505 
+ 27-May-25 07:33:45  INFO  Completed mosipdev/websub-service:release-1.3.x	------> mosipdev2/websub-service:release-1.3.x 
+ 27-May-25 07:33:45  INFO  Completed processing mosipdev/websub-service:release-1.3.x to mosipdev2/websub-service:release-1.3.x 
+ 27-May-25 07:33:46  INFO  release-1.3.x: digest: sha256:28233349bd8b0748578fc28fb3696b50114b72f9c109b478c081ac94a11e7d33 size: 1380 
+ 27-May-25 07:33:46  INFO   
+ 27-May-25 07:33:46  INFO  [ PUSH -----> mosipdev/consolidator-websub-service:release-1.3.x	------> mosipdev2/consolidator-websub-service:latest ]  
+ 27-May-25 07:33:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/consolidator-websub-service:release-1.3.x/tag?tag=latest&repo=mosipdev2%2Fconsolidator-websub-service&force=1 HTTP/1.1" 201 0 
+ 27-May-25 07:33:46  DEBUG  Looking for auth config 
+ 27-May-25 07:33:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 27-May-25 07:33:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 27-May-25 07:33:46  DEBUG  Found auth config 
+ 27-May-25 07:33:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/consolidator-websub-service/push?tag=latest HTTP/1.1" 200 None 
+ 27-May-25 07:33:47  INFO  latest: digest: sha256:28233349bd8b0748578fc28fb3696b50114b72f9c109b478c081ac94a11e7d33 size: 1380 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fconsolidator-websub-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 481 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/sha256:a8acbb61b3f1be6539b746a175a0bad7876baf9bc864eedbe7abc8edbf2c8b4d/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev/consolidator-websub-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 192 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fconsolidator-websub-service%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 482 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/sha256:a8acbb61b3f1be6539b746a175a0bad7876baf9bc864eedbe7abc8edbf2c8b4d/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/consolidator-websub-service:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 69 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fconsolidator-websub-service%3Alatest%22%5D%7D HTTP/1.1" 200 475 
+ 27-May-25 07:33:47  DEBUG  http://localhost:None "GET /v1.48/images/sha256:a8acbb61b3f1be6539b746a175a0bad7876baf9bc864eedbe7abc8edbf2c8b4d/json HTTP/1.1" 200 None 
+ 27-May-25 07:33:48  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/consolidator-websub-service:latest?force=False&noprune=False HTTP/1.1" 200 703 
+ 27-May-25 07:33:48  INFO  Completed mosipdev/consolidator-websub-service:release-1.3.x	------> mosipdev2/consolidator-websub-service:release-1.3.x 
+ 27-May-25 07:33:48  INFO  Completed processing mosipdev/consolidator-websub-service:release-1.3.x to mosipdev2/consolidator-websub-service:release-1.3.x 
