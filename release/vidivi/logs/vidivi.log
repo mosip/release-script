@@ -1,97 +1,745 @@
- 29-May-25 13:09:41  INFO  LOGFILE CREATED : vidivi.log 
- 29-May-25 13:09:41  INFO   
- 29-May-25 13:09:41  INFO  ******************** Check Images List ************************************************************************************ 
- 29-May-25 13:09:41  INFO   
- 29-May-25 13:09:41  INFO  IMAGES= [['mosipdev/apitest-esignet:release-1.6.x', 'release-1.6.x']] 
- 29-May-25 13:09:41  INFO   
- 29-May-25 13:09:41  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 29-May-25 13:09:41  INFO   
- 29-May-25 13:09:41  INFO  src = "mosipdev/apitest-esignet" tag = "release-1.6.x" 
- 29-May-25 13:09:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-May-25 13:09:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-esignet:pull HTTP/1.1" 200 None 
- 29-May-25 13:09:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-May-25 13:09:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-esignet/tags/release-1.6.x HTTP/1.1" 200 None 
- 29-May-25 13:09:42  INFO   
- 29-May-25 13:09:42  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 29-May-25 13:09:42  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 29-May-25 13:09:42  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 29-May-25 13:09:42  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 29-May-25 13:09:42  INFO   
- 29-May-25 13:09:42  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 29-May-25 13:09:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-May-25 13:09:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-esignet:pull HTTP/1.1" 200 None 
- 29-May-25 13:09:42  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 29-May-25 13:09:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-esignet/manifests/release-1.6.x HTTP/1.1" 200 2418 
- 29-May-25 13:09:43  INFO   
- 29-May-25 13:09:43  INFO  [ mosipdev2/apitest-esignet ]  
- 29-May-25 13:09:43  INFO  Destination Image = "mosipdev2/apitest-esignet" Destination Image tag = "release-1.6.x" IMAGE_ID : "sha256:5f9b503ae556e47ba6baf9409895bfc6b1b1a47073e8c571622489cf7fa23c63" 
- 29-May-25 13:09:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-May-25 13:09:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-esignet:pull HTTP/1.1" 200 None 
- 29-May-25 13:09:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 29-May-25 13:09:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-esignet/tags/release-1.6.x HTTP/1.1" 200 838 
- 29-May-25 13:09:43  INFO   
- 29-May-25 13:09:43  INFO  ******************** HASH Operation Results ********************************************************************** 
- 29-May-25 13:09:43  INFO   
- 29-May-25 13:09:43  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 29-May-25 13:09:43  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 29-May-25 13:09:43  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 29-May-25 13:09:43  DEBUG  Found 'auths' section 
- 29-May-25 13:09:43  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 29-May-25 13:09:43  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 29-May-25 13:09:43  DEBUG  Looking for auth entry for 'docker.io' 
- 29-May-25 13:09:43  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-May-25 13:09:43  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 29-May-25 13:09:43  INFO   
- 29-May-25 13:09:43  INFO  ********** [ mosipdev2/apitest-esignet:release-1.6.x ] **************************************************** 
- 29-May-25 13:09:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 29-May-25 13:09:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-esignet:pull HTTP/1.1" 200 None 
- 29-May-25 13:09:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 29-May-25 13:09:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-esignet/manifests/release-1.6.x HTTP/1.1" 200 743 
- 29-May-25 13:09:44  INFO  Multi-arch image detected with 2 architectures 
- 29-May-25 13:09:44  INFO  Processing architecture: amd64/linux with digest sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 
- 29-May-25 13:09:44  INFO   
- 29-May-25 13:09:44  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 ]  
- 29-May-25 13:09:44  DEBUG  Looking for auth config 
- 29-May-25 13:09:44  DEBUG  Looking for auth entry for 'docker.io' 
- 29-May-25 13:09:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-May-25 13:09:44  DEBUG  Found auth config 
- 29-May-25 13:09:44  INFO  Processing architecture: arm64/linux with digest sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 
- 29-May-25 13:09:44  INFO   
- 29-May-25 13:09:44  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 ]  
- 29-May-25 13:09:44  DEBUG  Looking for auth config 
- 29-May-25 13:09:44  DEBUG  Looking for auth entry for 'docker.io' 
- 29-May-25 13:09:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-May-25 13:09:44  DEBUG  Found auth config 
- 29-May-25 13:09:44  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05&fromImage=mosipdev%2Fapitest-esignet HTTP/1.1" 200 None 
- 29-May-25 13:09:44  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3&fromImage=mosipdev%2Fapitest-esignet HTTP/1.1" 200 None 
- 29-May-25 13:10:14  INFO  Status: Downloaded newer image for mosipdev/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 
- 29-May-25 13:10:14  INFO  Status: Downloaded newer image for mosipdev/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 
- 29-May-25 13:10:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-esignet%40sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05/tag?tag=release-1.6.x-amd64-linux&repo=mosipdev2%2Fapitest-esignet&force=1 HTTP/1.1" 201 0 
- 29-May-25 13:10:14  INFO   
- 29-May-25 13:10:14  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05	------> mosipdev2/apitest-esignet:release-1.6.x-amd64-linux ]  
- 29-May-25 13:10:14  DEBUG  Looking for auth config 
- 29-May-25 13:10:14  DEBUG  Looking for auth entry for 'docker.io' 
- 29-May-25 13:10:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-May-25 13:10:14  DEBUG  Found auth config 
- 29-May-25 13:10:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-esignet%40sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3/tag?tag=release-1.6.x-arm64-linux&repo=mosipdev2%2Fapitest-esignet&force=1 HTTP/1.1" 201 0 
- 29-May-25 13:10:14  INFO   
- 29-May-25 13:10:14  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3	------> mosipdev2/apitest-esignet:release-1.6.x-arm64-linux ]  
- 29-May-25 13:10:14  DEBUG  Looking for auth config 
- 29-May-25 13:10:14  DEBUG  Looking for auth entry for 'docker.io' 
- 29-May-25 13:10:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 29-May-25 13:10:14  DEBUG  Found auth config 
- 29-May-25 13:10:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-esignet/push?tag=release-1.6.x-amd64-linux HTTP/1.1" 200 None 
- 29-May-25 13:10:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-esignet/push?tag=release-1.6.x-arm64-linux HTTP/1.1" 200 None 
- 29-May-25 13:10:18  INFO  release-1.6.x-arm64-linux: digest: sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 size: 2418 
- 29-May-25 13:10:18  INFO  Completed pulling/tagging mosipdev/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 	------> mosipdev2/apitest-esignet:release-1.6.x-arm64-linux (linux/arm64) 
- 29-May-25 13:10:18  INFO  release-1.6.x-amd64-linux: digest: sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 size: 2418 
- 29-May-25 13:10:18  INFO  Completed pulling/tagging mosipdev/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 	------> mosipdev2/apitest-esignet:release-1.6.x-amd64-linux (linux/amd64) 
- 29-May-25 13:10:18  INFO  Logging in to Docker CLI for manifest operations 
- 29-May-25 13:10:19  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-esignet:release-1.6.x mosipdev2/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 mosipdev2/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 
- 29-May-25 13:10:20  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-esignet:release-1.6.x 
- 29-May-25 13:10:21  INFO  Logging in to Docker CLI for manifest operations 
- 29-May-25 13:10:21  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-esignet:latest mosipdev2/apitest-esignet@sha256:5545eb73386943356980a89f16951ab519cc27dc8465e743effb97c8f7c89d05 mosipdev2/apitest-esignet@sha256:942b1a9410754c531784e1d2bc29d8725eb3050fb02fdc65be3b32c3fc3992d3 
- 29-May-25 13:10:22  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-esignet:latest 
- 29-May-25 13:10:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-esignet:release-1.6.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 182 
- 29-May-25 13:10:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-esignet:release-1.6.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 182 
- 29-May-25 13:10:23  INFO  Completed processing mosipdev/apitest-esignet:release-1.6.x to mosipdev2/apitest-esignet:release-1.6.x 
+ 30-May-25 07:10:30  INFO  LOGFILE CREATED : vidivi.log 
+ 30-May-25 07:10:30  INFO   
+ 30-May-25 07:10:30  INFO  ******************** Check Images List ************************************************************************************ 
+ 30-May-25 07:10:30  INFO   
+ 30-May-25 07:10:30  INFO  IMAGES= [['mosipdev/kernel-keymanager-service:release-1.2.2.x', 'release-1.2.2.x'], ['mosipdev/id-repository-identity-service:release-1.2.3.x', 'release-1.2.3.x'], ['mosipdev/id-repository-vid-service:release-1.2.3.x', 'release-1.2.3.x'], ['mosipdev/credential-service:release-1.2.3.x', 'release-1.2.3.x'], ['mosipdev/credential-request-generator:release-1.2.3.x', 'release-1.2.3.x'], ['mosipdev/kernel-ridgenerator-service:release-1.2.1.x', 'release-1.2.1.x'], ['mosipdev/kernel-pridgenerator-service:release-1.2.1.x', 'release-1.2.1.x'], ['mosipdev/kernel-idgenerator-service:release-1.2.1.x', 'release-1.2.1.x'], ['mosipdev/kernel-notification-service:release-1.2.1.x', 'release-1.2.1.x'], ['mosipdev/kernel-salt-generator:release-1.2.1.x', 'release-1.2.1.x']] 
+ 30-May-25 07:10:30  INFO   
+ 30-May-25 07:10:30  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 30-May-25 07:10:30  INFO   
+ 30-May-25 07:10:30  INFO  src = "mosipdev/kernel-keymanager-service" tag = "release-1.2.2.x" 
+ 30-May-25 07:10:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:30  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:30  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-keymanager-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:30  INFO   
+ 30-May-25 07:10:30  INFO  src = "mosipdev/id-repository-identity-service" tag = "release-1.2.3.x" 
+ 30-May-25 07:10:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:31  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:31  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-identity-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:31  INFO   
+ 30-May-25 07:10:31  INFO  src = "mosipdev/id-repository-vid-service" tag = "release-1.2.3.x" 
+ 30-May-25 07:10:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:31  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:31  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-vid-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:31  INFO   
+ 30-May-25 07:10:31  INFO  src = "mosipdev/credential-service" tag = "release-1.2.3.x" 
+ 30-May-25 07:10:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:32  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:32  INFO   
+ 30-May-25 07:10:32  INFO  src = "mosipdev/credential-request-generator" tag = "release-1.2.3.x" 
+ 30-May-25 07:10:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:32  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-request-generator/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:32  INFO   
+ 30-May-25 07:10:32  INFO  src = "mosipdev/kernel-ridgenerator-service" tag = "release-1.2.1.x" 
+ 30-May-25 07:10:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:33  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:33  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-ridgenerator-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:33  INFO   
+ 30-May-25 07:10:33  INFO  src = "mosipdev/kernel-pridgenerator-service" tag = "release-1.2.1.x" 
+ 30-May-25 07:10:33  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:33  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:33  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-pridgenerator-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:33  INFO   
+ 30-May-25 07:10:33  INFO  src = "mosipdev/kernel-idgenerator-service" tag = "release-1.2.1.x" 
+ 30-May-25 07:10:33  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:33  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:33  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:34  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-idgenerator-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:34  INFO   
+ 30-May-25 07:10:34  INFO  src = "mosipdev/kernel-notification-service" tag = "release-1.2.1.x" 
+ 30-May-25 07:10:34  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:34  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:34  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:34  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-notification-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:34  INFO   
+ 30-May-25 07:10:34  INFO  src = "mosipdev/kernel-salt-generator" tag = "release-1.2.1.x" 
+ 30-May-25 07:10:34  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:34  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:34  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-salt-generator/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:35  INFO   
+ 30-May-25 07:10:35  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 30-May-25 07:10:35  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 30-May-25 07:10:35  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 30-May-25 07:10:35  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
+ 30-May-25 07:10:35  INFO   
+ 30-May-25 07:10:35  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 30-May-25 07:10:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:35  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-keymanager-service/manifests/release-1.2.2.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:36  INFO   
+ 30-May-25 07:10:36  INFO  [ mosipdev2/kernel-keymanager-service ]  
+ 30-May-25 07:10:36  INFO  Destination Image = "mosipdev2/kernel-keymanager-service" Destination Image tag = "release-1.2.2.x" IMAGE_ID :  
+ 30-May-25 07:10:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-keymanager-service/tags/release-1.2.2.x HTTP/1.1" 404 162 
+ 30-May-25 07:10:36  ERROR  Image "mosipdev2/kernel-keymanager-service:release-1.2.2.x" does not exist 
+ 30-May-25 07:10:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:37  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/id-repository-identity-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:37  INFO   
+ 30-May-25 07:10:37  INFO  [ mosipdev2/id-repository-identity-service ]  
+ 30-May-25 07:10:37  INFO  Destination Image = "mosipdev2/id-repository-identity-service" Destination Image tag = "release-1.2.3.x" IMAGE_ID : "sha256:9b525f3390b5265ef4b16a471a99a08773c3f6a750321cd3f162d34126a53b9b" 
+ 30-May-25 07:10:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/id-repository-identity-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:37  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:38  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/id-repository-vid-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:38  INFO   
+ 30-May-25 07:10:38  INFO  [ mosipdev2/id-repository-vid-service ]  
+ 30-May-25 07:10:38  INFO  Destination Image = "mosipdev2/id-repository-vid-service" Destination Image tag = "release-1.2.3.x" IMAGE_ID : "sha256:4ee50a3d234488e2980896384a4ccd7ae8565351d6f3b5f572ebd01e5b5d23c3" 
+ 30-May-25 07:10:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/id-repository-vid-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/credential-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:38  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:39  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/credential-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:39  INFO   
+ 30-May-25 07:10:39  INFO  [ mosipdev2/credential-service ]  
+ 30-May-25 07:10:39  INFO  Destination Image = "mosipdev2/credential-service" Destination Image tag = "release-1.2.3.x" IMAGE_ID : "sha256:ec1a66b5246ce5d0c3ccdf821e4e39693c411c0b99d9842f6ca2e8c212c0cb58" 
+ 30-May-25 07:10:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/credential-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/credential-service/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/credential-request-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:40  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/credential-request-generator/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:40  INFO   
+ 30-May-25 07:10:40  INFO  [ mosipdev2/credential-request-generator ]  
+ 30-May-25 07:10:40  INFO  Destination Image = "mosipdev2/credential-request-generator" Destination Image tag = "release-1.2.3.x" IMAGE_ID : "sha256:f12e17378f226cde9462fd23929403e2d655da36796cf6268120e7016e6cabe7" 
+ 30-May-25 07:10:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/credential-request-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:40  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:40  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/credential-request-generator/tags/release-1.2.3.x HTTP/1.1" 200 None 
+ 30-May-25 07:10:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:40  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:41  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-ridgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:41  INFO   
+ 30-May-25 07:10:41  INFO  [ mosipdev2/kernel-ridgenerator-service ]  
+ 30-May-25 07:10:41  INFO  Destination Image = "mosipdev2/kernel-ridgenerator-service" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
+ 30-May-25 07:10:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-ridgenerator-service/tags/release-1.2.1.x HTTP/1.1" 404 164 
+ 30-May-25 07:10:41  ERROR  Image "mosipdev2/kernel-ridgenerator-service:release-1.2.1.x" does not exist 
+ 30-May-25 07:10:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:41  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:41  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-pridgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:41  INFO   
+ 30-May-25 07:10:41  INFO  [ mosipdev2/kernel-pridgenerator-service ]  
+ 30-May-25 07:10:41  INFO  Destination Image = "mosipdev2/kernel-pridgenerator-service" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
+ 30-May-25 07:10:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-pridgenerator-service/tags/release-1.2.1.x HTTP/1.1" 404 165 
+ 30-May-25 07:10:42  ERROR  Image "mosipdev2/kernel-pridgenerator-service:release-1.2.1.x" does not exist 
+ 30-May-25 07:10:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:42  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:42  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-idgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:42  INFO   
+ 30-May-25 07:10:42  INFO  [ mosipdev2/kernel-idgenerator-service ]  
+ 30-May-25 07:10:42  INFO  Destination Image = "mosipdev2/kernel-idgenerator-service" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
+ 30-May-25 07:10:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-idgenerator-service/tags/release-1.2.1.x HTTP/1.1" 404 163 
+ 30-May-25 07:10:43  ERROR  Image "mosipdev2/kernel-idgenerator-service:release-1.2.1.x" does not exist 
+ 30-May-25 07:10:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-notification-service/manifests/release-1.2.1.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:43  INFO   
+ 30-May-25 07:10:43  INFO  [ mosipdev2/kernel-notification-service ]  
+ 30-May-25 07:10:43  INFO  Destination Image = "mosipdev2/kernel-notification-service" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
+ 30-May-25 07:10:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-notification-service/tags/release-1.2.1.x HTTP/1.1" 404 164 
+ 30-May-25 07:10:44  ERROR  Image "mosipdev2/kernel-notification-service:release-1.2.1.x" does not exist 
+ 30-May-25 07:10:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/release-1.2.1.x HTTP/1.1" 404 109 
+ 30-May-25 07:10:44  INFO   
+ 30-May-25 07:10:44  INFO  [ mosipdev2/kernel-salt-generator ]  
+ 30-May-25 07:10:44  INFO  Destination Image = "mosipdev2/kernel-salt-generator" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
+ 30-May-25 07:10:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-May-25 07:10:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-salt-generator/tags/release-1.2.1.x HTTP/1.1" 404 158 
+ 30-May-25 07:10:44  ERROR  Image "mosipdev2/kernel-salt-generator:release-1.2.1.x" does not exist 
+ 30-May-25 07:10:44  INFO   
+ 30-May-25 07:10:44  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 30-May-25 07:10:44  INFO   
+ 30-May-25 07:10:44  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/kernel-keymanager-service:release-1.2.2.x'], ['mosipdev2/kernel-ridgenerator-service:release-1.2.1.x'], ['mosipdev2/kernel-pridgenerator-service:release-1.2.1.x'], ['mosipdev2/kernel-idgenerator-service:release-1.2.1.x'], ['mosipdev2/kernel-notification-service:release-1.2.1.x'], ['mosipdev2/kernel-salt-generator:release-1.2.1.x']] 
+ 30-May-25 07:10:44  INFO   
+ 30-May-25 07:10:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 30-May-25 07:10:44  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 30-May-25 07:10:44  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 30-May-25 07:10:44  DEBUG  Found 'auths' section 
+ 30-May-25 07:10:44  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 30-May-25 07:10:44  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 30-May-25 07:10:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:45  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/kernel-keymanager-service:release-1.2.2.x ] **************************************************** 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/id-repository-identity-service:release-1.2.3.x ] **************************************************** 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/id-repository-vid-service:release-1.2.3.x ] **************************************************** 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/credential-request-generator:release-1.2.3.x ] **************************************************** 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  INFO   
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/kernel-ridgenerator-service:release-1.2.1.x ] **************************************************** 
+ 30-May-25 07:10:45  INFO  ********** [ mosipdev2/credential-service:release-1.2.3.x ] **************************************************** 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-ridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:10:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/id-repository-identity-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/credential-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/id-repository-vid-service/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/credential-request-generator/manifests/release-1.2.3.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-ridgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-keymanager-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 30-May-25 07:10:46  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:10:46  INFO  Processing architecture: amd64/linux with digest sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  INFO  Processing architecture: arm64/linux with digest sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 
+ 30-May-25 07:10:46  INFO   
+ 30-May-25 07:10:46  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 ]  
+ 30-May-25 07:10:46  DEBUG  Looking for auth config 
+ 30-May-25 07:10:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:10:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:10:46  DEBUG  Found auth config 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508&fromImage=mosipdev%2Fid-repository-vid-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f&fromImage=mosipdev%2Fcredential-request-generator HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aaf15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2&fromImage=mosipdev%2Fcredential-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a&fromImage=mosipdev%2Fid-repository-vid-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d&fromImage=mosipdev%2Fcredential-request-generator HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1&fromImage=mosipdev%2Fcredential-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da&fromImage=mosipdev%2Fkernel-keymanager-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23&fromImage=mosipdev%2Fkernel-keymanager-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b&fromImage=mosipdev%2Fkernel-ridgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:10:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445&fromImage=mosipdev%2Fkernel-ridgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-ridgenerator-service%40sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fkernel-ridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:44  INFO   
+ 30-May-25 07:11:44  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445	------> mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-arm64-linux ]  
+ 30-May-25 07:11:44  DEBUG  Looking for auth config 
+ 30-May-25 07:11:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:44  DEBUG  Found auth config 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-ridgenerator-service/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-vid-service%40sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508/tag?tag=release-1.2.3.x-arm64-linux&repo=mosipdev2%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:44  INFO   
+ 30-May-25 07:11:44  INFO  [ PUSH linux/arm64 -----> mosipdev/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508	------> mosipdev2/id-repository-vid-service:release-1.2.3.x-arm64-linux ]  
+ 30-May-25 07:11:44  DEBUG  Looking for auth config 
+ 30-May-25 07:11:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:44  DEBUG  Found auth config 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/id-repository-vid-service/push?tag=release-1.2.3.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-vid-service%40sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a/tag?tag=release-1.2.3.x-amd64-linux&repo=mosipdev2%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:44  INFO   
+ 30-May-25 07:11:44  INFO  [ PUSH linux/amd64 -----> mosipdev/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a	------> mosipdev2/id-repository-vid-service:release-1.2.3.x-amd64-linux ]  
+ 30-May-25 07:11:44  DEBUG  Looking for auth config 
+ 30-May-25 07:11:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:44  DEBUG  Found auth config 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/id-repository-vid-service/push?tag=release-1.2.3.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac 
+ 30-May-25 07:11:44  INFO  Status: Downloaded newer image for mosipdev/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-identity-service%40sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4/tag?tag=release-1.2.3.x-arm64-linux&repo=mosipdev2%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:44  INFO   
+ 30-May-25 07:11:44  INFO  [ PUSH linux/arm64 -----> mosipdev/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4	------> mosipdev2/id-repository-identity-service:release-1.2.3.x-arm64-linux ]  
+ 30-May-25 07:11:44  DEBUG  Looking for auth config 
+ 30-May-25 07:11:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:44  DEBUG  Found auth config 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/id-repository-identity-service/push?tag=release-1.2.3.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-ridgenerator-service%40sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fkernel-ridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:44  INFO   
+ 30-May-25 07:11:44  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b	------> mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-amd64-linux ]  
+ 30-May-25 07:11:44  DEBUG  Looking for auth config 
+ 30-May-25 07:11:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:44  DEBUG  Found auth config 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-ridgenerator-service/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-service%40sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1/tag?tag=release-1.2.3.x-arm64-linux&repo=mosipdev2%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:45  INFO   
+ 30-May-25 07:11:45  INFO  [ PUSH linux/arm64 -----> mosipdev/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1	------> mosipdev2/credential-service:release-1.2.3.x-arm64-linux ]  
+ 30-May-25 07:11:45  DEBUG  Looking for auth config 
+ 30-May-25 07:11:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:45  DEBUG  Found auth config 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-request-generator%40sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f/tag?tag=release-1.2.3.x-amd64-linux&repo=mosipdev2%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:45  INFO   
+ 30-May-25 07:11:45  INFO  [ PUSH linux/amd64 -----> mosipdev/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f	------> mosipdev2/credential-request-generator:release-1.2.3.x-amd64-linux ]  
+ 30-May-25 07:11:45  DEBUG  Looking for auth config 
+ 30-May-25 07:11:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:45  DEBUG  Found auth config 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/credential-service/push?tag=release-1.2.3.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/credential-request-generator/push?tag=release-1.2.3.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-identity-service%40sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac/tag?tag=release-1.2.3.x-amd64-linux&repo=mosipdev2%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:45  INFO   
+ 30-May-25 07:11:45  INFO  [ PUSH linux/amd64 -----> mosipdev/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac	------> mosipdev2/id-repository-identity-service:release-1.2.3.x-amd64-linux ]  
+ 30-May-25 07:11:45  DEBUG  Looking for auth config 
+ 30-May-25 07:11:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:45  DEBUG  Found auth config 
+ 30-May-25 07:11:45  INFO  Status: Downloaded newer image for mosipdev/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/id-repository-identity-service/push?tag=release-1.2.3.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-request-generator%40sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d/tag?tag=release-1.2.3.x-arm64-linux&repo=mosipdev2%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:45  INFO   
+ 30-May-25 07:11:45  INFO  [ PUSH linux/arm64 -----> mosipdev/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d	------> mosipdev2/credential-request-generator:release-1.2.3.x-arm64-linux ]  
+ 30-May-25 07:11:45  DEBUG  Looking for auth config 
+ 30-May-25 07:11:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:45  DEBUG  Found auth config 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/credential-request-generator/push?tag=release-1.2.3.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-service%40sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2/tag?tag=release-1.2.3.x-amd64-linux&repo=mosipdev2%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:45  INFO   
+ 30-May-25 07:11:45  INFO  [ PUSH linux/amd64 -----> mosipdev/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2	------> mosipdev2/credential-service:release-1.2.3.x-amd64-linux ]  
+ 30-May-25 07:11:45  DEBUG  Looking for auth config 
+ 30-May-25 07:11:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:45  DEBUG  Found auth config 
+ 30-May-25 07:11:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/credential-service/push?tag=release-1.2.3.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:46  INFO  Status: Downloaded newer image for mosipdev/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 
+ 30-May-25 07:11:46  INFO  Status: Downloaded newer image for mosipdev/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da 
+ 30-May-25 07:11:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-keymanager-service%40sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23/tag?tag=release-1.2.2.x-arm64-linux&repo=mosipdev2%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:46  INFO   
+ 30-May-25 07:11:46  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23	------> mosipdev2/kernel-keymanager-service:release-1.2.2.x-arm64-linux ]  
+ 30-May-25 07:11:46  DEBUG  Looking for auth config 
+ 30-May-25 07:11:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:46  DEBUG  Found auth config 
+ 30-May-25 07:11:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-keymanager-service/push?tag=release-1.2.2.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-keymanager-service%40sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da/tag?tag=release-1.2.2.x-amd64-linux&repo=mosipdev2%2Fkernel-keymanager-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:11:46  INFO   
+ 30-May-25 07:11:46  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da	------> mosipdev2/kernel-keymanager-service:release-1.2.2.x-amd64-linux ]  
+ 30-May-25 07:11:46  DEBUG  Looking for auth config 
+ 30-May-25 07:11:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:11:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:11:46  DEBUG  Found auth config 
+ 30-May-25 07:11:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-keymanager-service/push?tag=release-1.2.2.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:11:49  INFO  release-1.2.3.x-amd64-linux: digest: sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a size: 2845 
+ 30-May-25 07:11:49  INFO  Completed pulling/tagging mosipdev/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a 	------> mosipdev2/id-repository-vid-service:release-1.2.3.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:11:54  INFO  release-1.2.1.x-arm64-linux: digest: sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 size: 2845 
+ 30-May-25 07:11:54  INFO  Completed pulling/tagging mosipdev/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 	------> mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:11:54  INFO  release-1.2.3.x-arm64-linux: digest: sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 size: 2845 
+ 30-May-25 07:11:54  INFO  Completed pulling/tagging mosipdev/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 	------> mosipdev2/id-repository-vid-service:release-1.2.3.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:11:54  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:11:55  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/id-repository-vid-service:release-1.2.3.x mosipdev2/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a mosipdev2/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 
+ 30-May-25 07:11:57  INFO  Pushing manifest list with command: docker manifest push mosipdev2/id-repository-vid-service:release-1.2.3.x 
+ 30-May-25 07:11:57  INFO  release-1.2.3.x-arm64-linux: digest: sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 size: 3468 
+ 30-May-25 07:11:57  INFO  Completed pulling/tagging mosipdev/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 	------> mosipdev2/id-repository-identity-service:release-1.2.3.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:11:58  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:11:59  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/id-repository-vid-service:latest mosipdev2/id-repository-vid-service@sha256:7818f867f6a98124bc975ead9f5723f8a308449267995b6ebc301cf79cd4f90a mosipdev2/id-repository-vid-service@sha256:6621f707606c3b9168aa870e68385cdbb5a8ec7d1c16d291a5bab11df3207508 
+ 30-May-25 07:12:01  INFO  Pushing manifest list with command: docker manifest push mosipdev2/id-repository-vid-service:latest 
+ 30-May-25 07:12:01  INFO  release-1.2.1.x-amd64-linux: digest: sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b size: 2845 
+ 30-May-25 07:12:01  INFO  Completed pulling/tagging mosipdev/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b 	------> mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:01  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/id-repository-vid-service:release-1.2.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 204 
+ 30-May-25 07:12:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/id-repository-vid-service:release-1.2.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 204 
+ 30-May-25 07:12:02  INFO   
+ 30-May-25 07:12:02  INFO  ********** [ mosipdev2/kernel-pridgenerator-service:release-1.2.1.x ] **************************************************** 
+ 30-May-25 07:12:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:12:02  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-ridgenerator-service:release-1.2.1.x mosipdev2/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b mosipdev2/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 
+ 30-May-25 07:12:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-pridgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:12:02  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:12:02  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-pridgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 30-May-25 07:12:02  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:12:02  INFO  Processing architecture: amd64/linux with digest sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b 
+ 30-May-25 07:12:02  INFO   
+ 30-May-25 07:12:02  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b ]  
+ 30-May-25 07:12:02  DEBUG  Looking for auth config 
+ 30-May-25 07:12:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:02  DEBUG  Found auth config 
+ 30-May-25 07:12:02  INFO  Processing architecture: arm64/linux with digest sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b 
+ 30-May-25 07:12:02  INFO   
+ 30-May-25 07:12:02  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b ]  
+ 30-May-25 07:12:02  DEBUG  Looking for auth config 
+ 30-May-25 07:12:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:02  DEBUG  Found auth config 
+ 30-May-25 07:12:02  INFO  release-1.2.3.x-arm64-linux: digest: sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 size: 2847 
+ 30-May-25 07:12:02  INFO  Completed pulling/tagging mosipdev/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 	------> mosipdev2/credential-service:release-1.2.3.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:03  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b&fromImage=mosipdev%2Fkernel-pridgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:03  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b&fromImage=mosipdev%2Fkernel-pridgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:04  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-ridgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:04  INFO  release-1.2.3.x-amd64-linux: digest: sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f size: 2845 
+ 30-May-25 07:12:04  INFO  Completed pulling/tagging mosipdev/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f 	------> mosipdev2/credential-request-generator:release-1.2.3.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:05  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:05  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-ridgenerator-service:latest mosipdev2/kernel-ridgenerator-service@sha256:541946266a74b9a09a92aba2b3e60c27f7d474171e05b1a08f0c09482b36376b mosipdev2/kernel-ridgenerator-service@sha256:fbefc1446c461f5452047c3c84b87e21196b8856347ee0ead3caa76a8b80b445 
+ 30-May-25 07:12:07  INFO  release-1.2.3.x-amd64-linux: digest: sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac size: 3468 
+ 30-May-25 07:12:07  INFO  Completed pulling/tagging mosipdev/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac 	------> mosipdev2/id-repository-identity-service:release-1.2.3.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:07  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:08  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/id-repository-identity-service:release-1.2.3.x mosipdev2/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac mosipdev2/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 
+ 30-May-25 07:12:08  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-ridgenerator-service:latest 
+ 30-May-25 07:12:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 30-May-25 07:12:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-ridgenerator-service:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 30-May-25 07:12:09  INFO   
+ 30-May-25 07:12:09  INFO  ********** [ mosipdev2/kernel-idgenerator-service:release-1.2.1.x ] **************************************************** 
+ 30-May-25 07:12:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:12:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-idgenerator-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:12:09  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:12:09  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-idgenerator-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 30-May-25 07:12:09  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:12:09  INFO  Processing architecture: amd64/linux with digest sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 
+ 30-May-25 07:12:09  INFO   
+ 30-May-25 07:12:09  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 ]  
+ 30-May-25 07:12:09  DEBUG  Looking for auth config 
+ 30-May-25 07:12:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:09  DEBUG  Found auth config 
+ 30-May-25 07:12:09  INFO  Processing architecture: arm64/linux with digest sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e 
+ 30-May-25 07:12:09  INFO   
+ 30-May-25 07:12:09  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e ]  
+ 30-May-25 07:12:09  DEBUG  Looking for auth config 
+ 30-May-25 07:12:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:09  DEBUG  Found auth config 
+ 30-May-25 07:12:10  INFO  release-1.2.3.x-arm64-linux: digest: sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d size: 2845 
+ 30-May-25 07:12:10  INFO  Completed pulling/tagging mosipdev/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d 	------> mosipdev2/credential-request-generator:release-1.2.3.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:10  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:10  INFO  Pushing manifest list with command: docker manifest push mosipdev2/id-repository-identity-service:release-1.2.3.x 
+ 30-May-25 07:12:10  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6&fromImage=mosipdev%2Fkernel-idgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:10  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e&fromImage=mosipdev%2Fkernel-idgenerator-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:10  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/credential-request-generator:release-1.2.3.x mosipdev2/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f mosipdev2/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d 
+ 30-May-25 07:12:11  INFO  Status: Downloaded newer image for mosipdev/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b 
+ 30-May-25 07:12:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-pridgenerator-service%40sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fkernel-pridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:11  INFO   
+ 30-May-25 07:12:11  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b	------> mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-arm64-linux ]  
+ 30-May-25 07:12:11  DEBUG  Looking for auth config 
+ 30-May-25 07:12:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:11  DEBUG  Found auth config 
+ 30-May-25 07:12:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-pridgenerator-service/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:11  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:11  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/id-repository-identity-service:latest mosipdev2/id-repository-identity-service@sha256:2d64ca977dad97f53548fc861df13c193a1e4ee6598bf5ab81c3fbcbaee4c2ac mosipdev2/id-repository-identity-service@sha256:55f05a26fc3bba7edad90616b2df88f6f9affff08bb8e7988533d2438e3b0cc4 
+ 30-May-25 07:12:11  INFO  release-1.2.3.x-amd64-linux: digest: sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 size: 2847 
+ 30-May-25 07:12:11  INFO  Completed pulling/tagging mosipdev/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 	------> mosipdev2/credential-service:release-1.2.3.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:11  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:12  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/credential-service:release-1.2.3.x mosipdev2/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 mosipdev2/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 
+ 30-May-25 07:12:12  INFO  Pushing manifest list with command: docker manifest push mosipdev2/credential-request-generator:release-1.2.3.x 
+ 30-May-25 07:12:13  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:13  INFO  Pushing manifest list with command: docker manifest push mosipdev2/id-repository-identity-service:latest 
+ 30-May-25 07:12:14  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/credential-request-generator:latest mosipdev2/credential-request-generator@sha256:1fb0cd61fce3d7e48e227872aa7c81a5912500ba602bb31c3fe28e4e8ea8936f mosipdev2/credential-request-generator@sha256:1fafd788c7b6f8e182f2c6ccb392a48b4bb877f3ecfc8d7e965b38080a5f531d 
+ 30-May-25 07:12:14  INFO  Pushing manifest list with command: docker manifest push mosipdev2/credential-service:release-1.2.3.x 
+ 30-May-25 07:12:15  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/id-repository-identity-service:release-1.2.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 214 
+ 30-May-25 07:12:15  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/id-repository-identity-service:release-1.2.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 214 
+ 30-May-25 07:12:15  INFO   
+ 30-May-25 07:12:15  INFO  ********** [ mosipdev2/kernel-notification-service:release-1.2.1.x ] **************************************************** 
+ 30-May-25 07:12:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:12:15  INFO  Status: Downloaded newer image for mosipdev/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b 
+ 30-May-25 07:12:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-notification-service:pull HTTP/1.1" 200 None 
+ 30-May-25 07:12:15  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:12:15  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-pridgenerator-service%40sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fkernel-pridgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:15  INFO   
+ 30-May-25 07:12:15  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b	------> mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-amd64-linux ]  
+ 30-May-25 07:12:15  DEBUG  Looking for auth config 
+ 30-May-25 07:12:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:15  DEBUG  Found auth config 
+ 30-May-25 07:12:15  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-pridgenerator-service/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:15  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-notification-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 30-May-25 07:12:15  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:12:15  INFO  Processing architecture: amd64/linux with digest sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d 
+ 30-May-25 07:12:15  INFO   
+ 30-May-25 07:12:15  INFO  Processing architecture: arm64/linux with digest sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 
+ 30-May-25 07:12:15  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d ]  
+ 30-May-25 07:12:15  DEBUG  Looking for auth config 
+ 30-May-25 07:12:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:15  INFO   
+ 30-May-25 07:12:15  DEBUG  Found auth config 
+ 30-May-25 07:12:15  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 ]  
+ 30-May-25 07:12:15  DEBUG  Looking for auth config 
+ 30-May-25 07:12:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:15  DEBUG  Found auth config 
+ 30-May-25 07:12:16  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:16  INFO  Pushing manifest list with command: docker manifest push mosipdev2/credential-request-generator:latest 
+ 30-May-25 07:12:16  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/credential-service:latest mosipdev2/credential-service@sha256:af15d1b463266362b96b8ade4d8019db27542c73234555da7efa10ade7c3e3e2 mosipdev2/credential-service@sha256:3a8a939c19a6fd48679437d5e5166e9769b24590929606f1b251bee959e44cd1 
+ 30-May-25 07:12:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ae5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d&fromImage=mosipdev%2Fkernel-notification-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3&fromImage=mosipdev%2Fkernel-notification-service HTTP/1.1" 200 None 
+ 30-May-25 07:12:17  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/credential-request-generator:release-1.2.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 210 
+ 30-May-25 07:12:17  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/credential-request-generator:release-1.2.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 210 
+ 30-May-25 07:12:17  INFO   
+ 30-May-25 07:12:17  INFO  ********** [ mosipdev2/kernel-salt-generator:release-1.2.1.x ] **************************************************** 
+ 30-May-25 07:12:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-May-25 07:12:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-May-25 07:12:17  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-May-25 07:12:18  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-salt-generator/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 30-May-25 07:12:18  INFO  Multi-arch image detected with 2 architectures 
+ 30-May-25 07:12:18  INFO  Processing architecture: amd64/linux with digest sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c 
+ 30-May-25 07:12:18  INFO   
+ 30-May-25 07:12:18  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c ]  
+ 30-May-25 07:12:18  INFO  Processing architecture: arm64/linux with digest sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e 
+ 30-May-25 07:12:18  DEBUG  Looking for auth config 
+ 30-May-25 07:12:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:18  DEBUG  Found auth config 
+ 30-May-25 07:12:18  INFO   
+ 30-May-25 07:12:18  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e ]  
+ 30-May-25 07:12:18  DEBUG  Looking for auth config 
+ 30-May-25 07:12:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:18  DEBUG  Found auth config 
+ 30-May-25 07:12:19  INFO  Pushing manifest list with command: docker manifest push mosipdev2/credential-service:latest 
+ 30-May-25 07:12:20  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 30-May-25 07:12:20  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e&fromImage=mosipdev%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 30-May-25 07:12:20  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/credential-service:release-1.2.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 190 
+ 30-May-25 07:12:20  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/credential-service:release-1.2.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 190 
+ 30-May-25 07:12:23  INFO  release-1.2.2.x-amd64-linux: digest: sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da size: 3680 
+ 30-May-25 07:12:23  INFO  Completed pulling/tagging mosipdev/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da 	------> mosipdev2/kernel-keymanager-service:release-1.2.2.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:24  INFO  release-1.2.2.x-arm64-linux: digest: sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 size: 3680 
+ 30-May-25 07:12:24  INFO  Completed pulling/tagging mosipdev/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 	------> mosipdev2/kernel-keymanager-service:release-1.2.2.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:24  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:24  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-keymanager-service:release-1.2.2.x mosipdev2/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da mosipdev2/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 
+ 30-May-25 07:12:25  INFO  Status: Downloaded newer image for mosipdev/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-idgenerator-service%40sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fkernel-idgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:25  INFO   
+ 30-May-25 07:12:25  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6	------> mosipdev2/kernel-idgenerator-service:release-1.2.1.x-amd64-linux ]  
+ 30-May-25 07:12:25  DEBUG  Looking for auth config 
+ 30-May-25 07:12:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:25  DEBUG  Found auth config 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-idgenerator-service/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:25  INFO  Status: Downloaded newer image for mosipdev/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-idgenerator-service%40sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fkernel-idgenerator-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:25  INFO   
+ 30-May-25 07:12:25  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e	------> mosipdev2/kernel-idgenerator-service:release-1.2.1.x-arm64-linux ]  
+ 30-May-25 07:12:25  DEBUG  Looking for auth config 
+ 30-May-25 07:12:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:25  DEBUG  Found auth config 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-idgenerator-service/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:25  INFO  Status: Downloaded newer image for mosipdev/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-notification-service%40sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fkernel-notification-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:25  INFO   
+ 30-May-25 07:12:25  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3	------> mosipdev2/kernel-notification-service:release-1.2.1.x-arm64-linux ]  
+ 30-May-25 07:12:25  DEBUG  Looking for auth config 
+ 30-May-25 07:12:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:25  DEBUG  Found auth config 
+ 30-May-25 07:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-notification-service/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:26  INFO  Status: Downloaded newer image for mosipdev/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-notification-service%40sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fkernel-notification-service&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:26  INFO   
+ 30-May-25 07:12:26  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d	------> mosipdev2/kernel-notification-service:release-1.2.1.x-amd64-linux ]  
+ 30-May-25 07:12:26  DEBUG  Looking for auth config 
+ 30-May-25 07:12:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:26  DEBUG  Found auth config 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-notification-service/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:26  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-salt-generator%40sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:26  INFO   
+ 30-May-25 07:12:26  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c	------> mosipdev2/kernel-salt-generator:release-1.2.1.x-amd64-linux ]  
+ 30-May-25 07:12:26  DEBUG  Looking for auth config 
+ 30-May-25 07:12:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:26  DEBUG  Found auth config 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-salt-generator/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:26  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-keymanager-service:release-1.2.2.x 
+ 30-May-25 07:12:26  INFO  Status: Downloaded newer image for mosipdev/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-salt-generator%40sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-May-25 07:12:26  INFO   
+ 30-May-25 07:12:26  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e	------> mosipdev2/kernel-salt-generator:release-1.2.1.x-arm64-linux ]  
+ 30-May-25 07:12:26  DEBUG  Looking for auth config 
+ 30-May-25 07:12:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-May-25 07:12:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-May-25 07:12:26  DEBUG  Found auth config 
+ 30-May-25 07:12:26  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-salt-generator/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
+ 30-May-25 07:12:28  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:28  INFO  release-1.2.1.x-arm64-linux: digest: sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b size: 3057 
+ 30-May-25 07:12:28  INFO  Completed pulling/tagging mosipdev/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b 	------> mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:28  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-keymanager-service:latest mosipdev2/kernel-keymanager-service@sha256:fb0a014e441631f7cfc630f8e0261b2bb68862c7d232fa33142cd89dfc55f0da mosipdev2/kernel-keymanager-service@sha256:832483be7f5117df43673b04d1e9206187cdf24f1f497757b99cf8ba6e801a23 
+ 30-May-25 07:12:30  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-keymanager-service:latest 
+ 30-May-25 07:12:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-keymanager-service:release-1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 204 
+ 30-May-25 07:12:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-keymanager-service:release-1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 204 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/kernel-keymanager-service:release-1.2.2.x to mosipdev2/kernel-keymanager-service:release-1.2.2.x 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/id-repository-identity-service:release-1.2.3.x to mosipdev2/id-repository-identity-service:release-1.2.3.x 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/id-repository-vid-service:release-1.2.3.x to mosipdev2/id-repository-vid-service:release-1.2.3.x 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/credential-service:release-1.2.3.x to mosipdev2/credential-service:release-1.2.3.x 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/credential-request-generator:release-1.2.3.x to mosipdev2/credential-request-generator:release-1.2.3.x 
+ 30-May-25 07:12:31  INFO  Completed processing mosipdev/kernel-ridgenerator-service:release-1.2.1.x to mosipdev2/kernel-ridgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:32  INFO  release-1.2.1.x-amd64-linux: digest: sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b size: 3057 
+ 30-May-25 07:12:32  INFO  Completed pulling/tagging mosipdev/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b 	------> mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:32  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:33  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-pridgenerator-service:release-1.2.1.x mosipdev2/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b mosipdev2/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b 
+ 30-May-25 07:12:33  INFO  release-1.2.1.x-amd64-linux: digest: sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 size: 3057 
+ 30-May-25 07:12:33  INFO  Completed pulling/tagging mosipdev/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 	------> mosipdev2/kernel-idgenerator-service:release-1.2.1.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:34  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-pridgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:35  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:36  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-pridgenerator-service:latest mosipdev2/kernel-pridgenerator-service@sha256:87757983eda3ce6b4c8c4686af92b66d1ed0e9f021447ed69b326d96ee8d1d4b mosipdev2/kernel-pridgenerator-service@sha256:0adc5ef97cd131081d564d9180888c34254c7d2fd882ddfbecb1aa8e4b73b01b 
+ 30-May-25 07:12:38  INFO  release-1.2.1.x-arm64-linux: digest: sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e size: 3057 
+ 30-May-25 07:12:38  INFO  Completed pulling/tagging mosipdev/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e 	------> mosipdev2/kernel-idgenerator-service:release-1.2.1.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:38  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:38  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-pridgenerator-service:latest 
+ 30-May-25 07:12:38  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-idgenerator-service:release-1.2.1.x mosipdev2/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 mosipdev2/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e 
+ 30-May-25 07:12:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 210 
+ 30-May-25 07:12:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-pridgenerator-service:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 210 
+ 30-May-25 07:12:39  INFO  Completed processing mosipdev/kernel-pridgenerator-service:release-1.2.1.x to mosipdev2/kernel-pridgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:40  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-idgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:41  INFO  release-1.2.1.x-arm64-linux: digest: sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 size: 2845 
+ 30-May-25 07:12:41  INFO  Completed pulling/tagging mosipdev/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 	------> mosipdev2/kernel-notification-service:release-1.2.1.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:41  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:42  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-idgenerator-service:latest mosipdev2/kernel-idgenerator-service@sha256:27fde39f5b1368abbd2065461cb544b42874ed60255762feb051c27c31ecbed6 mosipdev2/kernel-idgenerator-service@sha256:5d1f603633cd43b43413128df5ba639ac033d12124baa633c6bd9de3c89fe63e 
+ 30-May-25 07:12:44  INFO  release-1.2.1.x-amd64-linux: digest: sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d size: 2845 
+ 30-May-25 07:12:44  INFO  Completed pulling/tagging mosipdev/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d 	------> mosipdev2/kernel-notification-service:release-1.2.1.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:44  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:44  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-idgenerator-service:latest 
+ 30-May-25 07:12:44  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-notification-service:release-1.2.1.x mosipdev2/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d mosipdev2/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 
+ 30-May-25 07:12:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-idgenerator-service:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 206 
+ 30-May-25 07:12:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-idgenerator-service:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 206 
+ 30-May-25 07:12:45  INFO  Completed processing mosipdev/kernel-idgenerator-service:release-1.2.1.x to mosipdev2/kernel-idgenerator-service:release-1.2.1.x 
+ 30-May-25 07:12:46  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-notification-service:release-1.2.1.x 
+ 30-May-25 07:12:47  INFO  release-1.2.1.x-amd64-linux: digest: sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c size: 2845 
+ 30-May-25 07:12:47  INFO  Completed pulling/tagging mosipdev/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c 	------> mosipdev2/kernel-salt-generator:release-1.2.1.x-amd64-linux (linux/amd64) 
+ 30-May-25 07:12:47  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:48  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-notification-service:latest mosipdev2/kernel-notification-service@sha256:e5a6840e18ece3e607d842ff01752e3785ecfdf33fb97ec758ed461382f10c6d mosipdev2/kernel-notification-service@sha256:ef00e433e84331f82b372ad3fb81d108d7c7a75dcfbba5f15fd0b04a43bfb5c3 
+ 30-May-25 07:12:50  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-notification-service:latest 
+ 30-May-25 07:12:50  INFO  release-1.2.1.x-arm64-linux: digest: sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e size: 2845 
+ 30-May-25 07:12:50  INFO  Completed pulling/tagging mosipdev/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e 	------> mosipdev2/kernel-salt-generator:release-1.2.1.x-arm64-linux (linux/arm64) 
+ 30-May-25 07:12:50  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:50  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-salt-generator:release-1.2.1.x mosipdev2/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c mosipdev2/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e 
+ 30-May-25 07:12:51  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-notification-service:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 30-May-25 07:12:51  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-notification-service:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 30-May-25 07:12:51  INFO  Completed processing mosipdev/kernel-notification-service:release-1.2.1.x to mosipdev2/kernel-notification-service:release-1.2.1.x 
+ 30-May-25 07:12:52  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-salt-generator:release-1.2.1.x 
+ 30-May-25 07:12:53  INFO  Logging in to Docker CLI for manifest operations 
+ 30-May-25 07:12:54  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/kernel-salt-generator:latest mosipdev2/kernel-salt-generator@sha256:796bd4bd69e6ee20a7c6edd03d2dfd74d46e4bec74251d0539b4484a2cddef9c mosipdev2/kernel-salt-generator@sha256:fce39d397cb3c905c46195901a23561c8acdb14dda5fb16b5c199fb6ec038a9e 
+ 30-May-25 07:12:56  INFO  Pushing manifest list with command: docker manifest push mosipdev2/kernel-salt-generator:latest 
+ 30-May-25 07:12:57  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-salt-generator:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 196 
+ 30-May-25 07:12:57  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-salt-generator:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 196 
+ 30-May-25 07:12:57  INFO  Completed processing mosipdev/kernel-salt-generator:release-1.2.1.x to mosipdev2/kernel-salt-generator:release-1.2.1.x 
