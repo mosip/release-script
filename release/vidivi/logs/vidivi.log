@@ -1,97 +1,283 @@
- 30-Jun-25 06:16:27  INFO  LOGFILE CREATED : vidivi.log 
- 30-Jun-25 06:16:27  INFO   
- 30-Jun-25 06:16:27  INFO  ******************** Check Images List ************************************************************************************ 
- 30-Jun-25 06:16:27  INFO   
- 30-Jun-25 06:16:27  INFO  IMAGES= [['mosipdev2/apitest-pms:release-1.2.2.x', '1.2.2.x']] 
- 30-Jun-25 06:16:27  INFO   
- 30-Jun-25 06:16:27  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 30-Jun-25 06:16:27  INFO   
- 30-Jun-25 06:16:27  INFO  src = "mosipdev2/apitest-pms" tag = "release-1.2.2.x" 
- 30-Jun-25 06:16:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jun-25 06:16:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-pms:pull HTTP/1.1" 200 None 
- 30-Jun-25 06:16:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Jun-25 06:16:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-pms/tags/release-1.2.2.x HTTP/1.1" 200 None 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 30-Jun-25 06:16:28  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 30-Jun-25 06:16:28  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jun-25 06:16:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-pms:pull HTTP/1.1" 200 None 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 30-Jun-25 06:16:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-pms/manifests/1.2.2.x HTTP/1.1" 200 1582 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  [ mosipqa/apitest-pms ]  
- 30-Jun-25 06:16:28  INFO  Destination Image = "mosipqa/apitest-pms" Destination Image tag = "1.2.2.x" IMAGE_ID : "sha256:e1f3df04da5514f4625e2cc65bacd663869c234d9ee3ad197f1cf05935f9311c" 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jun-25 06:16:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-pms:pull HTTP/1.1" 200 None 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 30-Jun-25 06:16:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-pms/tags/1.2.2.x HTTP/1.1" 200 823 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  ******************** HASH Operation Results ********************************************************************** 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 30-Jun-25 06:16:28  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 30-Jun-25 06:16:28  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 30-Jun-25 06:16:28  DEBUG  Found 'auths' section 
- 30-Jun-25 06:16:28  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 30-Jun-25 06:16:28  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 30-Jun-25 06:16:28  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jun-25 06:16:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jun-25 06:16:28  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 30-Jun-25 06:16:28  INFO   
- 30-Jun-25 06:16:28  INFO  ********** [ mosipqa/apitest-pms:1.2.2.x ] **************************************************** 
- 30-Jun-25 06:16:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 30-Jun-25 06:16:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-pms:pull HTTP/1.1" 200 None 
- 30-Jun-25 06:16:29  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 30-Jun-25 06:16:29  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-pms/manifests/release-1.2.2.x HTTP/1.1" 200 743 
- 30-Jun-25 06:16:29  INFO  Multi-arch image detected with 2 architectures 
- 30-Jun-25 06:16:29  INFO  Processing architecture: amd64/linux with digest sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a 
- 30-Jun-25 06:16:29  INFO   
- 30-Jun-25 06:16:29  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a ]  
- 30-Jun-25 06:16:29  DEBUG  Looking for auth config 
- 30-Jun-25 06:16:29  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jun-25 06:16:29  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jun-25 06:16:29  DEBUG  Found auth config 
- 30-Jun-25 06:16:29  INFO  Processing architecture: arm64/linux with digest sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a 
- 30-Jun-25 06:16:29  INFO   
- 30-Jun-25 06:16:29  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a ]  
- 30-Jun-25 06:16:29  DEBUG  Looking for auth config 
- 30-Jun-25 06:16:29  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jun-25 06:16:29  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jun-25 06:16:29  DEBUG  Found auth config 
- 30-Jun-25 06:16:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a&fromImage=mosipdev2%2Fapitest-pms HTTP/1.1" 200 None 
- 30-Jun-25 06:16:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a&fromImage=mosipdev2%2Fapitest-pms HTTP/1.1" 200 None 
- 30-Jun-25 06:16:54  INFO  Status: Downloaded newer image for mosipdev2/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a 
- 30-Jun-25 06:16:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-pms%40sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a/tag?tag=1.2.2.x-amd64-linux&repo=mosipqa%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
- 30-Jun-25 06:16:54  INFO   
- 30-Jun-25 06:16:54  INFO  [ PUSH linux/amd64 -----> mosipdev2/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a	------> mosipqa/apitest-pms:1.2.2.x-amd64-linux ]  
- 30-Jun-25 06:16:54  DEBUG  Looking for auth config 
- 30-Jun-25 06:16:54  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jun-25 06:16:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jun-25 06:16:54  DEBUG  Found auth config 
- 30-Jun-25 06:16:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-pms/push?tag=1.2.2.x-amd64-linux HTTP/1.1" 200 None 
- 30-Jun-25 06:16:57  INFO  Status: Downloaded newer image for mosipdev2/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a 
- 30-Jun-25 06:16:57  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-pms%40sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a/tag?tag=1.2.2.x-arm64-linux&repo=mosipqa%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
- 30-Jun-25 06:16:57  INFO   
- 30-Jun-25 06:16:57  INFO  [ PUSH linux/arm64 -----> mosipdev2/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a	------> mosipqa/apitest-pms:1.2.2.x-arm64-linux ]  
- 30-Jun-25 06:16:57  DEBUG  Looking for auth config 
- 30-Jun-25 06:16:57  DEBUG  Looking for auth entry for 'docker.io' 
- 30-Jun-25 06:16:57  DEBUG  Found 'https://index.docker.io/v1/' 
- 30-Jun-25 06:16:57  DEBUG  Found auth config 
- 30-Jun-25 06:16:57  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-pms/push?tag=1.2.2.x-arm64-linux HTTP/1.1" 200 None 
- 30-Jun-25 06:16:58  INFO  1.2.2.x-amd64-linux: digest: sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a size: 1582 
- 30-Jun-25 06:16:58  INFO  Completed pulling/tagging mosipdev2/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a 	------> mosipqa/apitest-pms:1.2.2.x-amd64-linux (linux/amd64) 
- 30-Jun-25 06:16:58  INFO  1.2.2.x-arm64-linux: digest: sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a size: 1582 
- 30-Jun-25 06:16:58  INFO  Completed pulling/tagging mosipdev2/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a 	------> mosipqa/apitest-pms:1.2.2.x-arm64-linux (linux/arm64) 
- 30-Jun-25 06:16:58  INFO  Logging in to Docker CLI for manifest operations 
- 30-Jun-25 06:16:58  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-pms:1.2.2.x mosipqa/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a mosipqa/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a 
- 30-Jun-25 06:16:59  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-pms:1.2.2.x 
- 30-Jun-25 06:16:59  INFO  Logging in to Docker CLI for manifest operations 
- 30-Jun-25 06:16:59  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-pms:latest mosipqa/apitest-pms@sha256:3cea960ff99c38eb674163ce887e262da5cc45907d3c64de4a7606a95022d85a mosipqa/apitest-pms@sha256:fbcd1a3be827a96e7666d0f9a5075cd80ddbe01e830c3d9b7df226a22cf7c77a 
- 30-Jun-25 06:17:00  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-pms:latest 
- 30-Jun-25 06:17:00  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-pms:1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 164 
- 30-Jun-25 06:17:00  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-pms:1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 164 
- 30-Jun-25 06:17:00  INFO  Completed processing mosipdev2/apitest-pms:release-1.2.2.x to mosipqa/apitest-pms:1.2.2.x 
+ 30-Jun-25 07:02:26  INFO  LOGFILE CREATED : vidivi.log 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  ******************** Check Images List ************************************************************************************ 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  IMAGES= [['mosipdev2/keys-generator:release-1.3.x', '1.3.x'], ['mosipdev2/regclient-keystore:release-1.3.x', '1.3.x'], ['mosipdev2/kernel-salt-generator:release-1.3.x', '1.3.x'], ['mosipdev/id-repository-salt-generator:release-1.3.x', '1.3.x']] 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  src = "mosipdev2/keys-generator" tag = "release-1.3.x" 
+ 30-Jun-25 07:02:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/keys-generator/tags/release-1.3.x HTTP/1.1" 200 828 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  src = "mosipdev2/regclient-keystore" tag = "release-1.3.x" 
+ 30-Jun-25 07:02:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/regclient-keystore:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/regclient-keystore/tags/release-1.3.x HTTP/1.1" 200 836 
+ 30-Jun-25 07:02:26  INFO   
+ 30-Jun-25 07:02:26  INFO  src = "mosipdev2/kernel-salt-generator" tag = "release-1.3.x" 
+ 30-Jun-25 07:02:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/kernel-salt-generator/tags/release-1.3.x HTTP/1.1" 200 836 
+ 30-Jun-25 07:02:27  INFO   
+ 30-Jun-25 07:02:27  INFO  src = "mosipdev/id-repository-salt-generator" tag = "release-1.3.x" 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-salt-generator/tags/release-1.3.x HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  INFO   
+ 30-Jun-25 07:02:27  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 30-Jun-25 07:02:27  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 30-Jun-25 07:02:27  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 30-Jun-25 07:02:27  INFO   
+ 30-Jun-25 07:02:27  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/keys-generator/manifests/1.3.x HTTP/1.1" 200 2617 
+ 30-Jun-25 07:02:27  INFO   
+ 30-Jun-25 07:02:27  INFO  [ mosipqa/keys-generator ]  
+ 30-Jun-25 07:02:27  INFO  Destination Image = "mosipqa/keys-generator" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:430d0505233e7a5a9eb0031879957a819e204d3b2abe290efc00863c72027a19" 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/keys-generator/tags/1.3.x HTTP/1.1" 200 811 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/regclient-keystore:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/regclient-keystore/manifests/1.3.x HTTP/1.1" 200 1155 
+ 30-Jun-25 07:02:27  INFO   
+ 30-Jun-25 07:02:27  INFO  [ mosipqa/regclient-keystore ]  
+ 30-Jun-25 07:02:27  INFO  Destination Image = "mosipqa/regclient-keystore" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:781e6063d5a14f05a3dbf30df9b6c78bfc8d38821de2f6023618777cb7341c9f" 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/regclient-keystore:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/regclient-keystore/tags/1.3.x HTTP/1.1" 200 816 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/kernel-salt-generator/manifests/1.3.x HTTP/1.1" 200 2416 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ mosipqa/kernel-salt-generator ]  
+ 30-Jun-25 07:02:28  INFO  Destination Image = "mosipqa/kernel-salt-generator" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:0885bc8fe0148826676d71c9d7ddfe241617e1d27dfffa0fd097b4b34d0d50a3" 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/kernel-salt-generator/tags/1.3.x HTTP/1.1" 200 818 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/id-repository-salt-generator/manifests/1.3.x HTTP/1.1" 200 2416 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ mosipqa/id-repository-salt-generator ]  
+ 30-Jun-25 07:02:28  INFO  Destination Image = "mosipqa/id-repository-salt-generator" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:20acd8c98a8430f7fd910e8fe05b9edb9311df0a7e66c0ef5fca21a4b187eb4d" 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/id-repository-salt-generator/tags/1.3.x HTTP/1.1" 200 819 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 30-Jun-25 07:02:28  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 30-Jun-25 07:02:28  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 30-Jun-25 07:02:28  DEBUG  Found 'auths' section 
+ 30-Jun-25 07:02:28  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 30-Jun-25 07:02:28  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:28  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ********** [ mosipqa/keys-generator:1.3.x ] **************************************************** 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ********** [ mosipqa/regclient-keystore:1.3.x ] **************************************************** 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ********** [ mosipqa/kernel-salt-generator:1.3.x ] **************************************************** 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  ********** [ mosipqa/id-repository-salt-generator:1.3.x ] **************************************************** 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/keys-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/regclient-keystore:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/kernel-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-salt-generator:pull HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/keys-generator/manifests/release-1.3.x HTTP/1.1" 200 2617 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/regclient-keystore/manifests/release-1.3.x HTTP/1.1" 200 1155 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/id-repository-salt-generator/manifests/release-1.3.x HTTP/1.1" 200 743 
+ 30-Jun-25 07:02:28  INFO  Multi-arch image detected with 2 architectures 
+ 30-Jun-25 07:02:28  INFO  Processing architecture: amd64/linux with digest sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ PULL linux/amd64 ----------------------> mosipdev/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 ]  
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:28  DEBUG  Found auth config 
+ 30-Jun-25 07:02:28  INFO  Processing architecture: arm64/linux with digest sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ PULL linux/arm64 ----------------------> mosipdev/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 ]  
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:28  DEBUG  Found auth config 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/release-1.3.x HTTP/1.1" 200 2416 
+ 30-Jun-25 07:02:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/regclient-keystore/manifests/release-1.3.x HTTP/1.1" 200 1155 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ PULL ----------------------> mosipdev2/regclient-keystore:release-1.3.x ]  
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:28  DEBUG  Found auth config 
+ 30-Jun-25 07:02:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/keys-generator/manifests/release-1.3.x HTTP/1.1" 200 2617 
+ 30-Jun-25 07:02:28  INFO   
+ 30-Jun-25 07:02:28  INFO  [ PULL ----------------------> mosipdev2/keys-generator:release-1.3.x ]  
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:28  DEBUG  Found auth config 
+ 30-Jun-25 07:02:29  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/kernel-salt-generator/manifests/release-1.3.x HTTP/1.1" 200 2416 
+ 30-Jun-25 07:02:29  INFO   
+ 30-Jun-25 07:02:29  INFO  [ PULL ----------------------> mosipdev2/kernel-salt-generator:release-1.3.x ]  
+ 30-Jun-25 07:02:29  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:29  DEBUG  Found auth config 
+ 30-Jun-25 07:02:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4&fromImage=mosipdev%2Fid-repository-salt-generator HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ad6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29&fromImage=mosipdev%2Fid-repository-salt-generator HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fkeys-generator HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fregclient-keystore HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fkernel-salt-generator HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:42  INFO  Status: Downloaded newer image for mosipdev/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 
+ 30-Jun-25 07:02:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-salt-generator%40sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4/tag?tag=1.3.x-arm64-linux&repo=mosipqa%2Fid-repository-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:42  INFO   
+ 30-Jun-25 07:02:42  INFO  [ PUSH linux/arm64 -----> mosipdev/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4	------> mosipqa/id-repository-salt-generator:1.3.x-arm64-linux ]  
+ 30-Jun-25 07:02:42  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:42  DEBUG  Found auth config 
+ 30-Jun-25 07:02:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-salt-generator/push?tag=1.3.x-arm64-linux HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:46  INFO  1.3.x-arm64-linux: digest: sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 size: 2416 
+ 30-Jun-25 07:02:46  INFO  Completed pulling/tagging mosipdev/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 	------> mosipqa/id-repository-salt-generator:1.3.x-arm64-linux (linux/arm64) 
+ 30-Jun-25 07:02:47  INFO  Status: Downloaded newer image for mosipdev2/keys-generator:release-1.3.x 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/keys-generator:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fkeys-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:47  INFO   
+ 30-Jun-25 07:02:47  INFO  [ PUSH -----> mosipdev2/keys-generator:release-1.3.x	------> mosipqa/keys-generator:1.3.x ]  
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:47  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:47  DEBUG  Found auth config 
+ 30-Jun-25 07:02:47  INFO  Status: Downloaded newer image for mosipdev/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/keys-generator/push?tag=1.3.x HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-salt-generator%40sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29/tag?tag=1.3.x-amd64-linux&repo=mosipqa%2Fid-repository-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:47  INFO   
+ 30-Jun-25 07:02:47  INFO  [ PUSH linux/amd64 -----> mosipdev/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29	------> mosipqa/id-repository-salt-generator:1.3.x-amd64-linux ]  
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:47  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:47  DEBUG  Found auth config 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-salt-generator/push?tag=1.3.x-amd64-linux HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:47  INFO  Status: Downloaded newer image for mosipdev2/regclient-keystore:release-1.3.x 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/regclient-keystore:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fregclient-keystore&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:47  INFO   
+ 30-Jun-25 07:02:47  INFO  [ PUSH -----> mosipdev2/regclient-keystore:release-1.3.x	------> mosipqa/regclient-keystore:1.3.x ]  
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:47  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:47  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:47  DEBUG  Found auth config 
+ 30-Jun-25 07:02:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/regclient-keystore/push?tag=1.3.x HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:48  INFO  1.3.x: digest: sha256:430d0505233e7a5a9eb0031879957a819e204d3b2abe290efc00863c72027a19 size: 2617 
+ 30-Jun-25 07:02:48  INFO   
+ 30-Jun-25 07:02:48  INFO  [ PUSH -----> mosipdev2/keys-generator:release-1.3.x	------> mosipqa/keys-generator:latest ]  
+ 30-Jun-25 07:02:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/keys-generator:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fkeys-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:48  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:48  DEBUG  Found auth config 
+ 30-Jun-25 07:02:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/keys-generator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:48  INFO  Status: Downloaded newer image for mosipdev2/kernel-salt-generator:release-1.3.x 
+ 30-Jun-25 07:02:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-salt-generator:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:48  INFO   
+ 30-Jun-25 07:02:48  INFO  [ PUSH -----> mosipdev2/kernel-salt-generator:release-1.3.x	------> mosipqa/kernel-salt-generator:1.3.x ]  
+ 30-Jun-25 07:02:48  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:48  DEBUG  Found auth config 
+ 30-Jun-25 07:02:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/kernel-salt-generator/push?tag=1.3.x HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:49  INFO  1.3.x: digest: sha256:781e6063d5a14f05a3dbf30df9b6c78bfc8d38821de2f6023618777cb7341c9f size: 1155 
+ 30-Jun-25 07:02:49  INFO   
+ 30-Jun-25 07:02:49  INFO  [ PUSH -----> mosipdev2/regclient-keystore:release-1.3.x	------> mosipqa/regclient-keystore:latest ]  
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/regclient-keystore:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fregclient-keystore&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:49  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:49  DEBUG  Found auth config 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/regclient-keystore/push?tag=latest HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:49  INFO  latest: digest: sha256:430d0505233e7a5a9eb0031879957a819e204d3b2abe290efc00863c72027a19 size: 2617 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkeys-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 380 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/sha256:bc3a14b6c145005626669fcd2c0a04fc7f278de3baf9a9832c62e63aa06a78f3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/keys-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 168 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkeys-generator%3A1.3.x%22%5D%7D HTTP/1.1" 200 370 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/sha256:bc3a14b6c145005626669fcd2c0a04fc7f278de3baf9a9832c62e63aa06a78f3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/keys-generator:1.3.x?force=False&noprune=False HTTP/1.1" 200 46 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkeys-generator%3Alatest%22%5D%7D HTTP/1.1" 200 371 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "GET /v1.48/images/sha256:bc3a14b6c145005626669fcd2c0a04fc7f278de3baf9a9832c62e63aa06a78f3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:49  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/keys-generator:latest?force=False&noprune=False HTTP/1.1" 200 1189 
+ 30-Jun-25 07:02:49  INFO  Completed mosipdev2/keys-generator:release-1.3.x	------> mosipqa/keys-generator:1.3.x 
+ 30-Jun-25 07:02:49  INFO  1.3.x-amd64-linux: digest: sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 size: 2416 
+ 30-Jun-25 07:02:49  INFO  Completed pulling/tagging mosipdev/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 	------> mosipqa/id-repository-salt-generator:1.3.x-amd64-linux (linux/amd64) 
+ 30-Jun-25 07:02:49  INFO  Logging in to Docker CLI for manifest operations 
+ 30-Jun-25 07:02:49  INFO  Completed processing mosipdev2/keys-generator:release-1.3.x to mosipqa/keys-generator:1.3.x 
+ 30-Jun-25 07:02:49  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-salt-generator:1.3.x mosipqa/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 mosipqa/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 
+ 30-Jun-25 07:02:50  INFO  latest: digest: sha256:781e6063d5a14f05a3dbf30df9b6c78bfc8d38821de2f6023618777cb7341c9f size: 1155 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fregclient-keystore%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 406 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/sha256:afdfcea071c9556f654ba38e8992a9da77f800ada1b768ed4b2916a220a672a3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/regclient-keystore:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 176 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fregclient-keystore%3A1.3.x%22%5D%7D HTTP/1.1" 200 396 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/sha256:afdfcea071c9556f654ba38e8992a9da77f800ada1b768ed4b2916a220a672a3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/regclient-keystore:1.3.x?force=False&noprune=False HTTP/1.1" 200 50 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fregclient-keystore%3Alatest%22%5D%7D HTTP/1.1" 200 397 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "GET /v1.48/images/sha256:afdfcea071c9556f654ba38e8992a9da77f800ada1b768ed4b2916a220a672a3/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:50  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/regclient-keystore:latest?force=False&noprune=False HTTP/1.1" 200 595 
+ 30-Jun-25 07:02:50  INFO  Completed mosipdev2/regclient-keystore:release-1.3.x	------> mosipqa/regclient-keystore:1.3.x 
+ 30-Jun-25 07:02:50  INFO  Completed processing mosipdev2/regclient-keystore:release-1.3.x to mosipqa/regclient-keystore:1.3.x 
+ 30-Jun-25 07:02:50  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-salt-generator:1.3.x 
+ 30-Jun-25 07:02:50  INFO  1.3.x: digest: sha256:97941de244dbcb9e456bb27f01b3b5fddf38977274fc087ff74d4c2abd03ecf0 size: 2416 
+ 30-Jun-25 07:02:50  INFO   
+ 30-Jun-25 07:02:50  INFO  [ PUSH -----> mosipdev2/kernel-salt-generator:release-1.3.x	------> mosipqa/kernel-salt-generator:latest ]  
+ 30-Jun-25 07:02:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/kernel-salt-generator:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fkernel-salt-generator&force=1 HTTP/1.1" 201 0 
+ 30-Jun-25 07:02:51  DEBUG  Looking for auth config 
+ 30-Jun-25 07:02:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 30-Jun-25 07:02:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 30-Jun-25 07:02:51  DEBUG  Found auth config 
+ 30-Jun-25 07:02:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/kernel-salt-generator/push?tag=latest HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:51  INFO  Logging in to Docker CLI for manifest operations 
+ 30-Jun-25 07:02:51  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-salt-generator:latest mosipqa/id-repository-salt-generator@sha256:d6bd0c40f78017544da7e71f58aa07c899020d90d6d161e42696a97223599c29 mosipqa/id-repository-salt-generator@sha256:61638ba9cb1607decb6d3909c7bd42bcf9997d696bf2a31f791c4f3c21e734d4 
+ 30-Jun-25 07:02:51  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-salt-generator:latest 
+ 30-Jun-25 07:02:52  INFO  latest: digest: sha256:97941de244dbcb9e456bb27f01b3b5fddf38977274fc087ff74d4c2abd03ecf0 size: 2416 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fkernel-salt-generator%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 387 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/sha256:cdc10b777fc23befdb4fdf10de24e239ce12828dede820ac6ddb620c8089a778/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/kernel-salt-generator:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 182 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-salt-generator%3A1.3.x%22%5D%7D HTTP/1.1" 200 377 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/sha256:cdc10b777fc23befdb4fdf10de24e239ce12828dede820ac6ddb620c8089a778/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/kernel-salt-generator:1.3.x?force=False&noprune=False HTTP/1.1" 200 53 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fkernel-salt-generator%3Alatest%22%5D%7D HTTP/1.1" 200 378 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "GET /v1.48/images/sha256:cdc10b777fc23befdb4fdf10de24e239ce12828dede820ac6ddb620c8089a778/json HTTP/1.1" 200 None 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-salt-generator:1.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 196 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-salt-generator:1.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 196 
+ 30-Jun-25 07:02:52  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/kernel-salt-generator:latest?force=False&noprune=False HTTP/1.1" 200 1031 
+ 30-Jun-25 07:02:52  INFO  Completed mosipdev2/kernel-salt-generator:release-1.3.x	------> mosipqa/kernel-salt-generator:1.3.x 
+ 30-Jun-25 07:02:52  INFO  Completed processing mosipdev2/kernel-salt-generator:release-1.3.x to mosipqa/kernel-salt-generator:1.3.x 
+ 30-Jun-25 07:02:52  INFO  Completed processing mosipdev/id-repository-salt-generator:release-1.3.x to mosipqa/id-repository-salt-generator:1.3.x 
