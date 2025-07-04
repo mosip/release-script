@@ -1,173 +1,460 @@
- 04-Jul-25 07:34:38  INFO  LOGFILE CREATED : vidivi.log 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  ******************** Check Images List ************************************************************************************ 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  IMAGES= [['mosipdev/mimoto:release-0.18.x', '0.18.x'], ['mosipdev/inji-web:release-0.13.x', '0.13.x']] 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  src = "mosipdev/mimoto" tag = "release-0.18.x" 
- 04-Jul-25 07:34:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 07:34:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mimoto/tags/release-0.18.x HTTP/1.1" 200 None 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  src = "mosipdev/inji-web" tag = "release-0.13.x" 
- 04-Jul-25 07:34:38  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:38  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-web:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:38  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 07:34:38  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-web/tags/release-0.13.x HTTP/1.1" 200 None 
- 04-Jul-25 07:34:38  INFO   
- 04-Jul-25 07:34:38  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 04-Jul-25 07:34:38  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 04-Jul-25 07:34:38  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 04-Jul-25 07:34:39  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mimoto/manifests/0.18.x HTTP/1.1" 404 100 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  [ mosipqa/mimoto ]  
- 04-Jul-25 07:34:39  INFO  Destination Image = "mosipqa/mimoto" Destination Image tag = "0.18.x" IMAGE_ID :  
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mimoto:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 07:34:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mimoto/tags/0.18.x HTTP/1.1" 404 123 
- 04-Jul-25 07:34:39  ERROR  Image "mosipqa/mimoto:0.18.x" does not exist 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-web:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-web/manifests/0.13.x HTTP/1.1" 404 100 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  [ mosipqa/inji-web ]  
- 04-Jul-25 07:34:39  INFO  Destination Image = "mosipqa/inji-web" Destination Image tag = "0.13.x" IMAGE_ID :  
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-web:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 07:34:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-web/tags/0.13.x HTTP/1.1" 404 125 
- 04-Jul-25 07:34:39  ERROR  Image "mosipqa/inji-web:0.13.x" does not exist 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  ******************** HASH Operation Results ********************************************************************** 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/mimoto:0.18.x'], ['mosipqa/inji-web:0.13.x']] 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 04-Jul-25 07:34:39  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 04-Jul-25 07:34:39  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 04-Jul-25 07:34:39  DEBUG  Found 'auths' section 
- 04-Jul-25 07:34:39  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 04-Jul-25 07:34:39  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 04-Jul-25 07:34:39  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:39  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:39  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  ********** [ mosipqa/mimoto:0.18.x ] **************************************************** 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  INFO   
- 04-Jul-25 07:34:39  INFO  ********** [ mosipqa/inji-web:0.13.x ] **************************************************** 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 07:34:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-web:pull HTTP/1.1" 200 None 
- 04-Jul-25 07:34:39  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 07:34:40  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mimoto/manifests/release-0.18.x HTTP/1.1" 200 743 
- 04-Jul-25 07:34:40  INFO  Multi-arch image detected with 2 architectures 
- 04-Jul-25 07:34:40  INFO  Processing architecture: amd64/linux with digest sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a 
- 04-Jul-25 07:34:40  INFO   
- 04-Jul-25 07:34:40  INFO  [ PULL linux/amd64 ----------------------> mosipdev/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a ]  
- 04-Jul-25 07:34:40  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:40  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:40  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:40  DEBUG  Found auth config 
- 04-Jul-25 07:34:40  INFO  Processing architecture: arm64/linux with digest sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 
- 04-Jul-25 07:34:40  INFO   
- 04-Jul-25 07:34:40  INFO  [ PULL linux/arm64 ----------------------> mosipdev/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 ]  
- 04-Jul-25 07:34:40  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:40  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:40  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:40  DEBUG  Found auth config 
- 04-Jul-25 07:34:40  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/inji-web/manifests/release-0.13.x HTTP/1.1" 200 743 
- 04-Jul-25 07:34:40  INFO  Multi-arch image detected with 2 architectures 
- 04-Jul-25 07:34:40  INFO  Processing architecture: amd64/linux with digest sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 
- 04-Jul-25 07:34:40  INFO   
- 04-Jul-25 07:34:40  INFO  [ PULL linux/amd64 ----------------------> mosipdev/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 ]  
- 04-Jul-25 07:34:40  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:40  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:40  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:40  DEBUG  Found auth config 
- 04-Jul-25 07:34:40  INFO  Processing architecture: arm64/linux with digest sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed 
- 04-Jul-25 07:34:40  INFO   
- 04-Jul-25 07:34:40  INFO  [ PULL linux/arm64 ----------------------> mosipdev/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed ]  
- 04-Jul-25 07:34:40  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:40  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:40  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:40  DEBUG  Found auth config 
- 04-Jul-25 07:34:40  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a&fromImage=mosipdev%2Fmimoto HTTP/1.1" 200 None 
- 04-Jul-25 07:34:40  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455&fromImage=mosipdev%2Fmimoto HTTP/1.1" 200 None 
- 04-Jul-25 07:34:40  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Af6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed&fromImage=mosipdev%2Finji-web HTTP/1.1" 200 None 
- 04-Jul-25 07:34:40  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041&fromImage=mosipdev%2Finji-web HTTP/1.1" 200 None 
- 04-Jul-25 07:34:50  INFO  Status: Downloaded newer image for mosipdev/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed 
- 04-Jul-25 07:34:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/inji-web%40sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed/tag?tag=0.13.x-arm64-linux&repo=mosipqa%2Finji-web&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 07:34:50  INFO   
- 04-Jul-25 07:34:50  INFO  [ PUSH linux/arm64 -----> mosipdev/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed	------> mosipqa/inji-web:0.13.x-arm64-linux ]  
- 04-Jul-25 07:34:50  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:50  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:50  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:50  DEBUG  Found auth config 
- 04-Jul-25 07:34:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-web/push?tag=0.13.x-arm64-linux HTTP/1.1" 200 None 
- 04-Jul-25 07:34:54  INFO  Status: Downloaded newer image for mosipdev/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a 
- 04-Jul-25 07:34:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mimoto%40sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a/tag?tag=0.18.x-amd64-linux&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 07:34:54  INFO   
- 04-Jul-25 07:34:54  INFO  [ PUSH linux/amd64 -----> mosipdev/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a	------> mosipqa/mimoto:0.18.x-amd64-linux ]  
- 04-Jul-25 07:34:54  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:54  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:54  DEBUG  Found auth config 
- 04-Jul-25 07:34:54  INFO  Status: Downloaded newer image for mosipdev/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 
- 04-Jul-25 07:34:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mimoto/push?tag=0.18.x-amd64-linux HTTP/1.1" 200 None 
- 04-Jul-25 07:34:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/inji-web%40sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041/tag?tag=0.13.x-amd64-linux&repo=mosipqa%2Finji-web&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 07:34:54  INFO   
- 04-Jul-25 07:34:54  INFO  [ PUSH linux/amd64 -----> mosipdev/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041	------> mosipqa/inji-web:0.13.x-amd64-linux ]  
- 04-Jul-25 07:34:54  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:54  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:54  DEBUG  Found auth config 
- 04-Jul-25 07:34:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-web/push?tag=0.13.x-amd64-linux HTTP/1.1" 200 None 
- 04-Jul-25 07:34:55  INFO  Status: Downloaded newer image for mosipdev/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 
- 04-Jul-25 07:34:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mimoto%40sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455/tag?tag=0.18.x-arm64-linux&repo=mosipqa%2Fmimoto&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 07:34:55  INFO   
- 04-Jul-25 07:34:55  INFO  [ PUSH linux/arm64 -----> mosipdev/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455	------> mosipqa/mimoto:0.18.x-arm64-linux ]  
- 04-Jul-25 07:34:55  DEBUG  Looking for auth config 
- 04-Jul-25 07:34:55  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 07:34:55  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 07:34:55  DEBUG  Found auth config 
- 04-Jul-25 07:34:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mimoto/push?tag=0.18.x-arm64-linux HTTP/1.1" 200 None 
- 04-Jul-25 07:34:55  INFO  0.13.x-arm64-linux: digest: sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed size: 3651 
- 04-Jul-25 07:34:55  INFO  Completed pulling/tagging mosipdev/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed 	------> mosipqa/inji-web:0.13.x-arm64-linux (linux/arm64) 
- 04-Jul-25 07:34:56  INFO  0.18.x-amd64-linux: digest: sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a size: 1997 
- 04-Jul-25 07:34:56  INFO  Completed pulling/tagging mosipdev/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a 	------> mosipqa/mimoto:0.18.x-amd64-linux (linux/amd64) 
- 04-Jul-25 07:34:58  INFO  0.13.x-amd64-linux: digest: sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 size: 3651 
- 04-Jul-25 07:34:58  INFO  Completed pulling/tagging mosipdev/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 	------> mosipqa/inji-web:0.13.x-amd64-linux (linux/amd64) 
- 04-Jul-25 07:34:58  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 07:34:58  INFO  0.18.x-arm64-linux: digest: sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 size: 1997 
- 04-Jul-25 07:34:58  INFO  Completed pulling/tagging mosipdev/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 	------> mosipqa/mimoto:0.18.x-arm64-linux (linux/arm64) 
- 04-Jul-25 07:34:58  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 07:34:58  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-web:0.13.x mosipqa/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 mosipqa/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed 
- 04-Jul-25 07:34:59  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mimoto:0.18.x mosipqa/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a mosipqa/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 
- 04-Jul-25 07:34:59  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-web:0.13.x 
- 04-Jul-25 07:34:59  INFO  Pushing manifest list with command: docker manifest push mosipqa/mimoto:0.18.x 
- 04-Jul-25 07:35:00  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 07:35:00  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 07:35:00  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-web:latest mosipqa/inji-web@sha256:1833ade4387eab5f7bc0596c16749c190f3541798c26f40033f5031e8ca88041 mosipqa/inji-web@sha256:f6f83b04b2f2c2d954d529b75ad27aaa0a26698abf85e821777ccc949c53e0ed 
- 04-Jul-25 07:35:00  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mimoto:latest mosipqa/mimoto@sha256:6036f54d63f1f566b5d3b5ad65d7502a132b3d30a1f082a1d4f7d18ea9ed942a mosipqa/mimoto@sha256:660a177e91fe9ab15f00f74ef8853a4a951fa89595c402f489ea7242cd318455 
- 04-Jul-25 07:35:01  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-web:latest 
- 04-Jul-25 07:35:01  INFO  Pushing manifest list with command: docker manifest push mosipqa/mimoto:latest 
- 04-Jul-25 07:35:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-web:0.13.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 157 
- 04-Jul-25 07:35:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-web:0.13.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 157 
- 04-Jul-25 07:35:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mimoto:0.18.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 153 
- 04-Jul-25 07:35:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mimoto:0.18.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 153 
- 04-Jul-25 07:35:02  INFO  Completed processing mosipdev/mimoto:release-0.18.x to mosipqa/mimoto:0.18.x 
- 04-Jul-25 07:35:02  INFO  Completed processing mosipdev/inji-web:release-0.13.x to mosipqa/inji-web:0.13.x 
+ 04-Jul-25 18:11:47  INFO  LOGFILE CREATED : vidivi.log 
+ 04-Jul-25 18:11:47  INFO   
+ 04-Jul-25 18:11:47  INFO  ******************** Check Images List ************************************************************************************ 
+ 04-Jul-25 18:11:47  INFO   
+ 04-Jul-25 18:11:47  INFO  IMAGES= [['mosipdev/pmp-ui:release-1.2.2.x', '1.2.2.2'], ['mosipdev/pmp-revamp-ui:release-1.2.2.x', '1.2.2.2'], ['mosipdev/uitest-pmp:release-1.2.2.x', '1.2.2.2'], ['mosipdev/partner-management-service:release-1.2.2.x', '1.2.2.2'], ['mosipdev/policy-management-service:release-1.2.2.x', '1.2.2.2'], ['mosipdev/apitest-pms:release-1.2.2.x', '1.2.2.2']] 
+ 04-Jul-25 18:11:47  INFO   
+ 04-Jul-25 18:11:47  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 04-Jul-25 18:11:47  INFO   
+ 04-Jul-25 18:11:47  INFO  src = "mosipdev/pmp-ui" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:47  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:47  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-ui/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:47  INFO   
+ 04-Jul-25 18:11:47  INFO  src = "mosipdev/pmp-revamp-ui" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-revamp-ui/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  INFO   
+ 04-Jul-25 18:11:48  INFO  src = "mosipdev/uitest-pmp" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-pmp:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/uitest-pmp/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  INFO   
+ 04-Jul-25 18:11:48  INFO  src = "mosipdev/partner-management-service" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-management-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  INFO   
+ 04-Jul-25 18:11:48  INFO  src = "mosipdev/policy-management-service" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/policy-management-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:49  INFO   
+ 04-Jul-25 18:11:49  INFO  src = "mosipdev/apitest-pms" tag = "release-1.2.2.x" 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-pms:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-pms/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:49  INFO   
+ 04-Jul-25 18:11:49  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 04-Jul-25 18:11:49  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 04-Jul-25 18:11:49  INFO   
+ 04-Jul-25 18:11:49  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:49  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pmp-ui/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:49  INFO   
+ 04-Jul-25 18:11:49  INFO  [ mosipid/pmp-ui ]  
+ 04-Jul-25 18:11:49  INFO  Destination Image = "mosipid/pmp-ui" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pmp-ui/tags/1.2.2.2 HTTP/1.1" 404 125 
+ 04-Jul-25 18:11:50  ERROR  Image "mosipid/pmp-ui:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pmp-revamp-ui/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:50  INFO   
+ 04-Jul-25 18:11:50  INFO  [ mosipid/pmp-revamp-ui ]  
+ 04-Jul-25 18:11:50  INFO  Destination Image = "mosipid/pmp-revamp-ui" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pmp-revamp-ui/tags/1.2.2.2 HTTP/1.1" 404 132 
+ 04-Jul-25 18:11:50  ERROR  Image "mosipid/pmp-revamp-ui:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/uitest-pmp:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/uitest-pmp/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:50  INFO   
+ 04-Jul-25 18:11:50  INFO  [ mosipid/uitest-pmp ]  
+ 04-Jul-25 18:11:50  INFO  Destination Image = "mosipid/uitest-pmp" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/uitest-pmp:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/uitest-pmp/tags/1.2.2.2 HTTP/1.1" 404 129 
+ 04-Jul-25 18:11:51  ERROR  Image "mosipid/uitest-pmp:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/partner-management-service/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:51  INFO   
+ 04-Jul-25 18:11:51  INFO  [ mosipid/partner-management-service ]  
+ 04-Jul-25 18:11:51  INFO  Destination Image = "mosipid/partner-management-service" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/partner-management-service/tags/1.2.2.2 HTTP/1.1" 404 145 
+ 04-Jul-25 18:11:51  ERROR  Image "mosipid/partner-management-service:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/policy-management-service/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:51  INFO   
+ 04-Jul-25 18:11:51  INFO  [ mosipid/policy-management-service ]  
+ 04-Jul-25 18:11:51  INFO  Destination Image = "mosipid/policy-management-service" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:51  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:51  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/policy-management-service/tags/1.2.2.2 HTTP/1.1" 404 144 
+ 04-Jul-25 18:11:51  ERROR  Image "mosipid/policy-management-service:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:51  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-pms:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-pms/manifests/1.2.2.2 HTTP/1.1" 404 101 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  [ mosipid/apitest-pms ]  
+ 04-Jul-25 18:11:52  INFO  Destination Image = "mosipid/apitest-pms" Destination Image tag = "1.2.2.2" IMAGE_ID :  
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-pms:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 18:11:52  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-pms/tags/1.2.2.2 HTTP/1.1" 404 130 
+ 04-Jul-25 18:11:52  ERROR  Image "mosipid/apitest-pms:1.2.2.2" does not exist 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/pmp-ui:1.2.2.2'], ['mosipid/pmp-revamp-ui:1.2.2.2'], ['mosipid/uitest-pmp:1.2.2.2'], ['mosipid/partner-management-service:1.2.2.2'], ['mosipid/policy-management-service:1.2.2.2'], ['mosipid/apitest-pms:1.2.2.2']] 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 04-Jul-25 18:11:52  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 04-Jul-25 18:11:52  DEBUG  Found 'auths' section 
+ 04-Jul-25 18:11:52  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 04-Jul-25 18:11:52  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 04-Jul-25 18:11:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:52  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/pmp-ui:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/pmp-revamp-ui:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/uitest-pmp:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/partner-management-service:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/policy-management-service:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  INFO   
+ 04-Jul-25 18:11:52  INFO  ********** [ mosipid/apitest-pms:1.2.2.2 ] **************************************************** 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-pmp:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-pms:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:52  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/uitest-pmp/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pmp-ui/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/policy-management-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-pms/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pmp-revamp-ui/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/partner-management-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 04-Jul-25 18:11:53  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: amd64/linux with digest sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  INFO  Processing architecture: arm64/linux with digest sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 
+ 04-Jul-25 18:11:53  INFO   
+ 04-Jul-25 18:11:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 ]  
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth config 
+ 04-Jul-25 18:11:53  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:11:53  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:11:53  DEBUG  Found auth config 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a&fromImage=mosipdev%2Fuitest-pmp HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8&fromImage=mosipdev%2Fpmp-ui HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d&fromImage=mosipdev%2Fpmp-ui HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77&fromImage=mosipdev%2Fuitest-pmp HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670&fromImage=mosipdev%2Fpmp-revamp-ui HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5&fromImage=mosipdev%2Fpolicy-management-service HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010&fromImage=mosipdev%2Fpolicy-management-service HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ade4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8&fromImage=mosipdev%2Fpmp-revamp-ui HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a&fromImage=mosipdev%2Fpartner-management-service HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ad030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe&fromImage=mosipdev%2Fapitest-pms HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:53  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Af326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46&fromImage=mosipdev%2Fapitest-pms HTTP/1.1" 200 None 
+ 04-Jul-25 18:11:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ae408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61&fromImage=mosipdev%2Fpartner-management-service HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:07  INFO  Status: Downloaded newer image for mosipdev/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 
+ 04-Jul-25 18:12:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pmp-ui%40sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:12:07  INFO   
+ 04-Jul-25 18:12:07  INFO  [ PUSH linux/amd64 -----> mosipdev/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8	------> mosipid/pmp-ui:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:12:07  DEBUG  Looking for auth config 
+ 04-Jul-25 18:12:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:12:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:12:07  DEBUG  Found auth config 
+ 04-Jul-25 18:12:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pmp-ui/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:08  INFO  Status: Downloaded newer image for mosipdev/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d 
+ 04-Jul-25 18:12:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pmp-ui%40sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fpmp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:12:08  INFO   
+ 04-Jul-25 18:12:08  INFO  [ PUSH linux/arm64 -----> mosipdev/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d	------> mosipid/pmp-ui:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:12:08  DEBUG  Looking for auth config 
+ 04-Jul-25 18:12:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:12:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:12:08  DEBUG  Found auth config 
+ 04-Jul-25 18:12:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pmp-ui/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:14  INFO  1.2.2.2-amd64-linux: digest: sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 size: 3239 
+ 04-Jul-25 18:12:14  INFO  Completed pulling/tagging mosipdev/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 	------> mosipid/pmp-ui:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:12:17  INFO  1.2.2.2-arm64-linux: digest: sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d size: 3239 
+ 04-Jul-25 18:12:17  INFO  Completed pulling/tagging mosipdev/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d 	------> mosipid/pmp-ui:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:12:17  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:12:17  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pmp-ui:1.2.2.2 mosipid/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 mosipid/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d 
+ 04-Jul-25 18:12:19  INFO  Pushing manifest list with command: docker manifest push mosipid/pmp-ui:1.2.2.2 
+ 04-Jul-25 18:12:19  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:12:20  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pmp-ui:latest mosipid/pmp-ui@sha256:14623ce5acf0618dc11bf1627fd718fae92493ad1d40952dcecd7959caffe4f8 mosipid/pmp-ui@sha256:63d508cfbaf6c3e31e9181b30046e43322f6f7f2048d841c6ac39cc8dfc27e9d 
+ 04-Jul-25 18:12:22  INFO  Pushing manifest list with command: docker manifest push mosipid/pmp-ui:latest 
+ 04-Jul-25 18:12:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pmp-ui:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 04-Jul-25 18:12:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pmp-ui:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 04-Jul-25 18:12:23  INFO  Completed processing mosipdev/pmp-ui:release-1.2.2.x to mosipid/pmp-ui:1.2.2.2 
+ 04-Jul-25 18:12:25  INFO  Status: Downloaded newer image for mosipdev/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 
+ 04-Jul-25 18:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pmp-revamp-ui%40sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fpmp-revamp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:12:25  INFO   
+ 04-Jul-25 18:12:25  INFO  [ PUSH linux/arm64 -----> mosipdev/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670	------> mosipid/pmp-revamp-ui:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:12:25  DEBUG  Looking for auth config 
+ 04-Jul-25 18:12:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:12:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:12:25  DEBUG  Found auth config 
+ 04-Jul-25 18:12:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pmp-revamp-ui/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:34  INFO  1.2.2.2-arm64-linux: digest: sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 size: 3862 
+ 04-Jul-25 18:12:34  INFO  Completed pulling/tagging mosipdev/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 	------> mosipid/pmp-revamp-ui:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:12:44  INFO  Status: Downloaded newer image for mosipdev/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a 
+ 04-Jul-25 18:12:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/uitest-pmp%40sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fuitest-pmp&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:12:44  INFO   
+ 04-Jul-25 18:12:44  INFO  [ PUSH linux/amd64 -----> mosipdev/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a	------> mosipid/uitest-pmp:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:12:44  DEBUG  Looking for auth config 
+ 04-Jul-25 18:12:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:12:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:12:44  DEBUG  Found auth config 
+ 04-Jul-25 18:12:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/uitest-pmp/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:49  INFO  1.2.2.2-amd64-linux: digest: sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a size: 2421 
+ 04-Jul-25 18:12:49  INFO  Completed pulling/tagging mosipdev/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a 	------> mosipid/uitest-pmp:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:12:49  INFO  Status: Downloaded newer image for mosipdev/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 
+ 04-Jul-25 18:12:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pmp-revamp-ui%40sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fpmp-revamp-ui&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:12:49  INFO   
+ 04-Jul-25 18:12:49  INFO  [ PUSH linux/amd64 -----> mosipdev/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8	------> mosipid/pmp-revamp-ui:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:12:49  DEBUG  Looking for auth config 
+ 04-Jul-25 18:12:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:12:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:12:49  DEBUG  Found auth config 
+ 04-Jul-25 18:12:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pmp-revamp-ui/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:12:58  INFO  1.2.2.2-amd64-linux: digest: sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 size: 3862 
+ 04-Jul-25 18:12:58  INFO  Completed pulling/tagging mosipdev/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 	------> mosipid/pmp-revamp-ui:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:12:58  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:12:58  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pmp-revamp-ui:1.2.2.2 mosipid/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 mosipid/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 
+ 04-Jul-25 18:13:01  INFO  Pushing manifest list with command: docker manifest push mosipid/pmp-revamp-ui:1.2.2.2 
+ 04-Jul-25 18:13:02  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:02  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pmp-revamp-ui:latest mosipid/pmp-revamp-ui@sha256:de4739849cb70bbec0455c495b0b8ddda57086b8eb8e277ecd0138ce6d33f5b8 mosipid/pmp-revamp-ui@sha256:246b1005107765c6c143e1dea01e7e1586ec44f45111c48dcffb33f48fa4d670 
+ 04-Jul-25 18:13:04  INFO  Pushing manifest list with command: docker manifest push mosipid/pmp-revamp-ui:latest 
+ 04-Jul-25 18:13:05  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pmp-revamp-ui:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 04-Jul-25 18:13:05  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pmp-revamp-ui:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 04-Jul-25 18:13:05  INFO  Completed processing mosipdev/pmp-revamp-ui:release-1.2.2.x to mosipid/pmp-revamp-ui:1.2.2.2 
+ 04-Jul-25 18:13:11  INFO  Status: Downloaded newer image for mosipdev/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 
+ 04-Jul-25 18:13:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/policy-management-service%40sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:11  INFO   
+ 04-Jul-25 18:13:11  INFO  [ PUSH linux/amd64 -----> mosipdev/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5	------> mosipid/policy-management-service:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:13:11  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:11  DEBUG  Found auth config 
+ 04-Jul-25 18:13:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/policy-management-service/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:11  INFO  Status: Downloaded newer image for mosipdev/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 
+ 04-Jul-25 18:13:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/uitest-pmp%40sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fuitest-pmp&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:11  INFO   
+ 04-Jul-25 18:13:11  INFO  [ PUSH linux/arm64 -----> mosipdev/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77	------> mosipid/uitest-pmp:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:13:11  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:11  DEBUG  Found auth config 
+ 04-Jul-25 18:13:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/uitest-pmp/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:12  INFO  Status: Downloaded newer image for mosipdev/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a 
+ 04-Jul-25 18:13:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/partner-management-service%40sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:12  INFO   
+ 04-Jul-25 18:13:12  INFO  [ PUSH linux/amd64 -----> mosipdev/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a	------> mosipid/partner-management-service:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:13:12  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:12  DEBUG  Found auth config 
+ 04-Jul-25 18:13:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/partner-management-service/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:14  INFO  Status: Downloaded newer image for mosipdev/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 
+ 04-Jul-25 18:13:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/policy-management-service%40sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fpolicy-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:14  INFO   
+ 04-Jul-25 18:13:14  INFO  [ PUSH linux/arm64 -----> mosipdev/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010	------> mosipid/policy-management-service:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:13:14  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:14  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:14  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:14  DEBUG  Found auth config 
+ 04-Jul-25 18:13:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/policy-management-service/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:15  INFO  1.2.2.2-amd64-linux: digest: sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 size: 2640 
+ 04-Jul-25 18:13:15  INFO  Completed pulling/tagging mosipdev/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 	------> mosipid/policy-management-service:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:13:17  INFO  1.2.2.2-arm64-linux: digest: sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 size: 2421 
+ 04-Jul-25 18:13:17  INFO  Completed pulling/tagging mosipdev/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 	------> mosipid/uitest-pmp:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:13:17  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:17  INFO  Creating manifest list with command: docker manifest create --amend mosipid/uitest-pmp:1.2.2.2 mosipid/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a mosipid/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 
+ 04-Jul-25 18:13:18  INFO  1.2.2.2-amd64-linux: digest: sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a size: 2638 
+ 04-Jul-25 18:13:18  INFO  Completed pulling/tagging mosipdev/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a 	------> mosipid/partner-management-service:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:13:19  INFO  Pushing manifest list with command: docker manifest push mosipid/uitest-pmp:1.2.2.2 
+ 04-Jul-25 18:13:20  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:20  INFO  1.2.2.2-arm64-linux: digest: sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 size: 2640 
+ 04-Jul-25 18:13:20  INFO  Completed pulling/tagging mosipdev/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 	------> mosipid/policy-management-service:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:13:20  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:20  INFO  Creating manifest list with command: docker manifest create --amend mosipid/uitest-pmp:latest mosipid/uitest-pmp@sha256:b10f4636ccfb7a51a23df1ea08eeb8c7affe16267d0c8530e07342141124035a mosipid/uitest-pmp@sha256:6849c1e4180dfdcc97221492a53d9786ed14bb1fe8ee52182d9567f7457d3a77 
+ 04-Jul-25 18:13:20  INFO  Creating manifest list with command: docker manifest create --amend mosipid/policy-management-service:1.2.2.2 mosipid/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 mosipid/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 
+ 04-Jul-25 18:13:21  INFO  Pushing manifest list with command: docker manifest push mosipid/uitest-pmp:latest 
+ 04-Jul-25 18:13:21  INFO  Pushing manifest list with command: docker manifest push mosipid/policy-management-service:1.2.2.2 
+ 04-Jul-25 18:13:22  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/uitest-pmp:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 162 
+ 04-Jul-25 18:13:22  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/uitest-pmp:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 162 
+ 04-Jul-25 18:13:22  INFO  Completed processing mosipdev/uitest-pmp:release-1.2.2.x to mosipid/uitest-pmp:1.2.2.2 
+ 04-Jul-25 18:13:22  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:22  INFO  Creating manifest list with command: docker manifest create --amend mosipid/policy-management-service:latest mosipid/policy-management-service@sha256:3dd9a53f69c8d4b5bbcb731fbeaf722a11b772307c8b9fa959d30f63cf430dd5 mosipid/policy-management-service@sha256:970074f07ea90d156c77ed60678d27c8185dced12ae44a771a0aa4ccf0798010 
+ 04-Jul-25 18:13:24  INFO  Pushing manifest list with command: docker manifest push mosipid/policy-management-service:latest 
+ 04-Jul-25 18:13:25  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/policy-management-service:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 04-Jul-25 18:13:25  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/policy-management-service:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 04-Jul-25 18:13:35  INFO  Status: Downloaded newer image for mosipdev/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 
+ 04-Jul-25 18:13:35  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/partner-management-service%40sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fpartner-management-service&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:35  INFO   
+ 04-Jul-25 18:13:35  INFO  [ PUSH linux/arm64 -----> mosipdev/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61	------> mosipid/partner-management-service:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:13:35  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:35  DEBUG  Found auth config 
+ 04-Jul-25 18:13:35  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/partner-management-service/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:37  INFO  Status: Downloaded newer image for mosipdev/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 
+ 04-Jul-25 18:13:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-pms%40sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46/tag?tag=1.2.2.2-arm64-linux&repo=mosipid%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:38  INFO   
+ 04-Jul-25 18:13:38  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46	------> mosipid/apitest-pms:1.2.2.2-arm64-linux ]  
+ 04-Jul-25 18:13:38  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:38  DEBUG  Found auth config 
+ 04-Jul-25 18:13:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-pms/push?tag=1.2.2.2-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:39  INFO  Status: Downloaded newer image for mosipdev/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe 
+ 04-Jul-25 18:13:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-pms%40sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe/tag?tag=1.2.2.2-amd64-linux&repo=mosipid%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 18:13:39  INFO   
+ 04-Jul-25 18:13:39  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe	------> mosipid/apitest-pms:1.2.2.2-amd64-linux ]  
+ 04-Jul-25 18:13:39  DEBUG  Looking for auth config 
+ 04-Jul-25 18:13:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 18:13:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 18:13:39  DEBUG  Found auth config 
+ 04-Jul-25 18:13:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-pms/push?tag=1.2.2.2-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 18:13:41  INFO  1.2.2.2-arm64-linux: digest: sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 size: 2638 
+ 04-Jul-25 18:13:41  INFO  Completed pulling/tagging mosipdev/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 	------> mosipid/partner-management-service:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:13:41  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:41  INFO  Creating manifest list with command: docker manifest create --amend mosipid/partner-management-service:1.2.2.2 mosipid/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a mosipid/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 
+ 04-Jul-25 18:13:42  INFO  1.2.2.2-arm64-linux: digest: sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 size: 1582 
+ 04-Jul-25 18:13:42  INFO  Completed pulling/tagging mosipdev/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 	------> mosipid/apitest-pms:1.2.2.2-arm64-linux (linux/arm64) 
+ 04-Jul-25 18:13:42  INFO  Pushing manifest list with command: docker manifest push mosipid/partner-management-service:1.2.2.2 
+ 04-Jul-25 18:13:43  INFO  1.2.2.2-amd64-linux: digest: sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe size: 1582 
+ 04-Jul-25 18:13:43  INFO  Completed pulling/tagging mosipdev/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe 	------> mosipid/apitest-pms:1.2.2.2-amd64-linux (linux/amd64) 
+ 04-Jul-25 18:13:43  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:43  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-pms:1.2.2.2 mosipid/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe mosipid/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 
+ 04-Jul-25 18:13:43  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:43  INFO  Creating manifest list with command: docker manifest create --amend mosipid/partner-management-service:latest mosipid/partner-management-service@sha256:4b7d9d67fff1534cf502253fa9c12595718d402620a5635b4edf08f03ab6e81a mosipid/partner-management-service@sha256:e408f42ddd52ab9313cf1adba5e8a1505d8164826adcdfe5784cf8674cea1a61 
+ 04-Jul-25 18:13:44  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-pms:1.2.2.2 
+ 04-Jul-25 18:13:45  INFO  Pushing manifest list with command: docker manifest push mosipid/partner-management-service:latest 
+ 04-Jul-25 18:13:45  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 18:13:45  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-pms:latest mosipid/apitest-pms@sha256:d030b1a17cb3d86314f6ecb007c26e4b46094b7d7cddc731ac47bc9b4f6b44fe mosipid/apitest-pms@sha256:f326e46f3afebfd6f0c235fd22ffa9d69468c6912cc261b57ec6cbd27300be46 
+ 04-Jul-25 18:13:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/partner-management-service:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 194 
+ 04-Jul-25 18:13:45  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/partner-management-service:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 194 
+ 04-Jul-25 18:13:45  INFO  Completed processing mosipdev/partner-management-service:release-1.2.2.x to mosipid/partner-management-service:1.2.2.2 
+ 04-Jul-25 18:13:45  INFO  Completed processing mosipdev/policy-management-service:release-1.2.2.x to mosipid/policy-management-service:1.2.2.2 
+ 04-Jul-25 18:13:46  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-pms:latest 
+ 04-Jul-25 18:13:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-pms:1.2.2.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 164 
+ 04-Jul-25 18:13:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-pms:1.2.2.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 164 
+ 04-Jul-25 18:13:47  INFO  Completed processing mosipdev/apitest-pms:release-1.2.2.x to mosipid/apitest-pms:1.2.2.2 
