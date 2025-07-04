@@ -1,230 +1,101 @@
- 04-Jul-25 06:41:35  INFO  LOGFILE CREATED : vidivi.log 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  ******************** Check Images List ************************************************************************************ 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  IMAGES= [['mosipdev/compliance-toolkit-ui:release-1.4.0', '1.4.3'], ['mosipdev/compliance-toolkit-service:release-1.4.0', '1.4.2'], ['mosipdev/compliance-toolkit-batch-job:release-1.4.0', '1.4.2']] 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  src = "mosipdev/compliance-toolkit-ui" tag = "release-1.4.0" 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-ui/tags/release-1.4.0 HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  src = "mosipdev/compliance-toolkit-service" tag = "release-1.4.0" 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-service:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-service/tags/release-1.4.0 HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  src = "mosipdev/compliance-toolkit-batch-job" tag = "release-1.4.0" 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-batch-job:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/compliance-toolkit-batch-job/tags/release-1.4.0 HTTP/1.1" 200 829 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 04-Jul-25 06:41:35  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 04-Jul-25 06:41:35  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-ui/manifests/1.4.3 HTTP/1.1" 200 743 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  [ mosipqa/compliance-toolkit-ui ]  
- 04-Jul-25 06:41:35  INFO  Destination Image = "mosipqa/compliance-toolkit-ui" Destination Image tag = "1.4.3" IMAGE_ID : "sha256:cbcaf57b9a358f078243817eb58c63d20291ac52e674c067b87cb4ff067f1f2c" 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-ui/tags/1.4.3 HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-service:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-service/manifests/1.4.2 HTTP/1.1" 200 743 
- 04-Jul-25 06:41:35  INFO   
- 04-Jul-25 06:41:35  INFO  [ mosipqa/compliance-toolkit-service ]  
- 04-Jul-25 06:41:35  INFO  Destination Image = "mosipqa/compliance-toolkit-service" Destination Image tag = "1.4.2" IMAGE_ID : "sha256:04419a1f61ae760755b86fb6dfb92c467f40f13e98febad3c1396e80c965d3aa" 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-service:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-service/tags/1.4.2 HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-batch-job:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/compliance-toolkit-batch-job/manifests/1.4.2 HTTP/1.1" 200 2845 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ mosipqa/compliance-toolkit-batch-job ]  
- 04-Jul-25 06:41:36  INFO  Destination Image = "mosipqa/compliance-toolkit-batch-job" Destination Image tag = "1.4.2" IMAGE_ID : "sha256:7c0a528addee5faf83bd6c67d7ba4a999f9dc2135e3693987303e9c96e378121" 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/compliance-toolkit-batch-job:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Jul-25 06:41:36  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/compliance-toolkit-batch-job/tags/1.4.2 HTTP/1.1" 200 816 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  ******************** HASH Operation Results ********************************************************************** 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 04-Jul-25 06:41:36  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 04-Jul-25 06:41:36  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 04-Jul-25 06:41:36  DEBUG  Found 'auths' section 
- 04-Jul-25 06:41:36  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  ********** [ mosipqa/compliance-toolkit-ui:1.4.3 ] **************************************************** 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  ********** [ mosipqa/compliance-toolkit-service:1.4.2 ] **************************************************** 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:36  INFO  ********** [ mosipqa/compliance-toolkit-batch-job:1.4.2 ] **************************************************** 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-ui:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-service:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/compliance-toolkit-batch-job:pull HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/compliance-toolkit-service/manifests/release-1.4.0 HTTP/1.1" 200 743 
- 04-Jul-25 06:41:36  INFO  Multi-arch image detected with 2 architectures 
- 04-Jul-25 06:41:36  INFO  Processing architecture: amd64/linux with digest sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ PULL linux/amd64 ----------------------> mosipdev/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 ]  
- 04-Jul-25 06:41:36  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  Found auth config 
- 04-Jul-25 06:41:36  INFO  Processing architecture: arm64/linux with digest sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ PULL linux/arm64 ----------------------> mosipdev/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 ]  
- 04-Jul-25 06:41:36  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  Found auth config 
- 04-Jul-25 06:41:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/compliance-toolkit-ui/manifests/release-1.4.0 HTTP/1.1" 200 743 
- 04-Jul-25 06:41:36  INFO  Multi-arch image detected with 2 architectures 
- 04-Jul-25 06:41:36  INFO  Processing architecture: amd64/linux with digest sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ PULL linux/amd64 ----------------------> mosipdev/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a ]  
- 04-Jul-25 06:41:36  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  Found auth config 
- 04-Jul-25 06:41:36  INFO  Processing architecture: arm64/linux with digest sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ PULL linux/arm64 ----------------------> mosipdev/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a ]  
- 04-Jul-25 06:41:36  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  Found auth config 
- 04-Jul-25 06:41:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/compliance-toolkit-batch-job/manifests/release-1.4.0 HTTP/1.1" 200 2845 
- 04-Jul-25 06:41:36  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 04-Jul-25 06:41:36  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/compliance-toolkit-batch-job/manifests/release-1.4.0 HTTP/1.1" 200 2845 
- 04-Jul-25 06:41:36  INFO   
- 04-Jul-25 06:41:36  INFO  [ PULL ----------------------> mosipdev/compliance-toolkit-batch-job:release-1.4.0 ]  
- 04-Jul-25 06:41:36  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:36  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:36  DEBUG  Found auth config 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ad8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962&fromImage=mosipdev%2Fcompliance-toolkit-service HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a&fromImage=mosipdev%2Fcompliance-toolkit-ui HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884&fromImage=mosipdev%2Fcompliance-toolkit-service HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a&fromImage=mosipdev%2Fcompliance-toolkit-ui HTTP/1.1" 200 None 
- 04-Jul-25 06:41:36  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.4.0&fromImage=mosipdev%2Fcompliance-toolkit-batch-job HTTP/1.1" 200 None 
- 04-Jul-25 06:41:49  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a 
- 04-Jul-25 06:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-ui%40sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a/tag?tag=1.4.3-amd64-linux&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:41:49  INFO   
- 04-Jul-25 06:41:49  INFO  [ PUSH linux/amd64 -----> mosipdev/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a	------> mosipqa/compliance-toolkit-ui:1.4.3-amd64-linux ]  
- 04-Jul-25 06:41:49  DEBUG  Looking for auth config 
- 04-Jul-25 06:41:49  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:41:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:41:49  DEBUG  Found auth config 
- 04-Jul-25 06:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-ui/push?tag=1.4.3-amd64-linux HTTP/1.1" 200 None 
- 04-Jul-25 06:41:51  INFO  1.4.3-amd64-linux: digest: sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a size: 2822 
- 04-Jul-25 06:41:51  INFO  Completed pulling/tagging mosipdev/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a 	------> mosipqa/compliance-toolkit-ui:1.4.3-amd64-linux (linux/amd64) 
- 04-Jul-25 06:42:04  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a 
- 04-Jul-25 06:42:04  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-ui%40sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a/tag?tag=1.4.3-arm64-linux&repo=mosipqa%2Fcompliance-toolkit-ui&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:42:04  INFO   
- 04-Jul-25 06:42:04  INFO  [ PUSH linux/arm64 -----> mosipdev/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a	------> mosipqa/compliance-toolkit-ui:1.4.3-arm64-linux ]  
- 04-Jul-25 06:42:04  DEBUG  Looking for auth config 
- 04-Jul-25 06:42:04  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:42:04  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:42:04  DEBUG  Found auth config 
- 04-Jul-25 06:42:04  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-ui/push?tag=1.4.3-arm64-linux HTTP/1.1" 200 None 
- 04-Jul-25 06:42:06  INFO  1.4.3-arm64-linux: digest: sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a size: 2822 
- 04-Jul-25 06:42:06  INFO  Completed pulling/tagging mosipdev/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a 	------> mosipqa/compliance-toolkit-ui:1.4.3-arm64-linux (linux/arm64) 
- 04-Jul-25 06:42:06  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 06:42:06  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/compliance-toolkit-ui:1.4.3 mosipqa/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a mosipqa/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a 
- 04-Jul-25 06:42:07  INFO  Pushing manifest list with command: docker manifest push mosipqa/compliance-toolkit-ui:1.4.3 
- 04-Jul-25 06:42:08  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 06:42:08  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/compliance-toolkit-ui:latest mosipqa/compliance-toolkit-ui@sha256:fa94eebff8aae1a4446de3099c7fd1a1f78208fc5f00b24104a5e70d698d448a mosipqa/compliance-toolkit-ui@sha256:b630c3677a4882506ea4e61e983c4c0c9ca7eeae5323023c38fff6a95610460a 
- 04-Jul-25 06:42:08  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-batch-job:release-1.4.0 
- 04-Jul-25 06:42:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-batch-job:release-1.4.0/tag?tag=1.4.2&repo=mosipqa%2Fcompliance-toolkit-batch-job&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:42:08  INFO   
- 04-Jul-25 06:42:08  INFO  [ PUSH -----> mosipdev/compliance-toolkit-batch-job:release-1.4.0	------> mosipqa/compliance-toolkit-batch-job:1.4.2 ]  
- 04-Jul-25 06:42:08  DEBUG  Looking for auth config 
- 04-Jul-25 06:42:08  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:42:08  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:42:08  DEBUG  Found auth config 
- 04-Jul-25 06:42:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-batch-job/push?tag=1.4.2 HTTP/1.1" 200 None 
- 04-Jul-25 06:42:08  INFO  Pushing manifest list with command: docker manifest push mosipqa/compliance-toolkit-ui:latest 
- 04-Jul-25 06:42:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-ui:1.4.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 182 
- 04-Jul-25 06:42:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-ui:1.4.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 182 
- 04-Jul-25 06:42:09  INFO  Completed processing mosipdev/compliance-toolkit-ui:release-1.4.0 to mosipqa/compliance-toolkit-ui:1.4.3 
- 04-Jul-25 06:42:09  INFO  1.4.2: digest: sha256:7c0a528addee5faf83bd6c67d7ba4a999f9dc2135e3693987303e9c96e378121 size: 2845 
- 04-Jul-25 06:42:09  INFO   
- 04-Jul-25 06:42:09  INFO  [ PUSH -----> mosipdev/compliance-toolkit-batch-job:release-1.4.0	------> mosipqa/compliance-toolkit-batch-job:latest ]  
- 04-Jul-25 06:42:10  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-batch-job:release-1.4.0/tag?tag=latest&repo=mosipqa%2Fcompliance-toolkit-batch-job&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:42:10  DEBUG  Looking for auth config 
- 04-Jul-25 06:42:10  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:42:10  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:42:10  DEBUG  Found auth config 
- 04-Jul-25 06:42:10  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-batch-job/push?tag=latest HTTP/1.1" 200 None 
- 04-Jul-25 06:42:11  INFO  latest: digest: sha256:7c0a528addee5faf83bd6c67d7ba4a999f9dc2135e3693987303e9c96e378121 size: 2845 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev%2Fcompliance-toolkit-batch-job%3Arelease-1.4.0%22%5D%7D HTTP/1.1" 200 393 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/sha256:323baa4f27aa0c71bb559c25ae628109e8d3ead3e7a445fd4900534382f0ae0d/json HTTP/1.1" 200 None 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev/compliance-toolkit-batch-job:release-1.4.0?force=False&noprune=False HTTP/1.1" 200 194 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-batch-job%3A1.4.2%22%5D%7D HTTP/1.1" 200 384 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/sha256:323baa4f27aa0c71bb559c25ae628109e8d3ead3e7a445fd4900534382f0ae0d/json HTTP/1.1" 200 None 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-batch-job:1.4.2?force=False&noprune=False HTTP/1.1" 200 60 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fcompliance-toolkit-batch-job%3Alatest%22%5D%7D HTTP/1.1" 200 385 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "GET /v1.48/images/sha256:323baa4f27aa0c71bb559c25ae628109e8d3ead3e7a445fd4900534382f0ae0d/json HTTP/1.1" 200 None 
- 04-Jul-25 06:42:11  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-batch-job:latest?force=False&noprune=False HTTP/1.1" 200 701 
- 04-Jul-25 06:42:11  INFO  Completed mosipdev/compliance-toolkit-batch-job:release-1.4.0	------> mosipqa/compliance-toolkit-batch-job:1.4.2 
- 04-Jul-25 06:42:16  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 
- 04-Jul-25 06:42:16  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-service%40sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962/tag?tag=1.4.2-amd64-linux&repo=mosipqa%2Fcompliance-toolkit-service&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:42:16  INFO   
- 04-Jul-25 06:42:16  INFO  [ PUSH linux/amd64 -----> mosipdev/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962	------> mosipqa/compliance-toolkit-service:1.4.2-amd64-linux ]  
- 04-Jul-25 06:42:16  DEBUG  Looking for auth config 
- 04-Jul-25 06:42:16  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:42:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:42:16  DEBUG  Found auth config 
- 04-Jul-25 06:42:16  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-service/push?tag=1.4.2-amd64-linux HTTP/1.1" 200 None 
- 04-Jul-25 06:42:18  INFO  1.4.2-amd64-linux: digest: sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 size: 2847 
- 04-Jul-25 06:42:18  INFO  Completed pulling/tagging mosipdev/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 	------> mosipqa/compliance-toolkit-service:1.4.2-amd64-linux (linux/amd64) 
- 04-Jul-25 06:42:18  INFO  Status: Downloaded newer image for mosipdev/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 
- 04-Jul-25 06:42:18  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/compliance-toolkit-service%40sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884/tag?tag=1.4.2-arm64-linux&repo=mosipqa%2Fcompliance-toolkit-service&force=1 HTTP/1.1" 201 0 
- 04-Jul-25 06:42:18  INFO   
- 04-Jul-25 06:42:18  INFO  [ PUSH linux/arm64 -----> mosipdev/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884	------> mosipqa/compliance-toolkit-service:1.4.2-arm64-linux ]  
- 04-Jul-25 06:42:18  DEBUG  Looking for auth config 
- 04-Jul-25 06:42:18  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Jul-25 06:42:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Jul-25 06:42:18  DEBUG  Found auth config 
- 04-Jul-25 06:42:18  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/compliance-toolkit-service/push?tag=1.4.2-arm64-linux HTTP/1.1" 200 None 
- 04-Jul-25 06:42:20  INFO  1.4.2-arm64-linux: digest: sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 size: 2847 
- 04-Jul-25 06:42:20  INFO  Completed pulling/tagging mosipdev/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 	------> mosipqa/compliance-toolkit-service:1.4.2-arm64-linux (linux/arm64) 
- 04-Jul-25 06:42:20  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 06:42:20  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/compliance-toolkit-service:1.4.2 mosipqa/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 mosipqa/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 
- 04-Jul-25 06:42:21  INFO  Pushing manifest list with command: docker manifest push mosipqa/compliance-toolkit-service:1.4.2 
- 04-Jul-25 06:42:21  INFO  Logging in to Docker CLI for manifest operations 
- 04-Jul-25 06:42:21  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/compliance-toolkit-service:latest mosipqa/compliance-toolkit-service@sha256:d8c5f46a95192ac890c0a7fe0aee2009df9152b3e1ace83093ed9e527b287962 mosipqa/compliance-toolkit-service@sha256:8a648e29eacb8f6a0d7596fbae80728193530fab2b629094ba68fcb991e47884 
- 04-Jul-25 06:42:22  INFO  Pushing manifest list with command: docker manifest push mosipqa/compliance-toolkit-service:latest 
- 04-Jul-25 06:42:22  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-service:1.4.2-amd64-linux?force=False&noprune=False HTTP/1.1" 200 192 
- 04-Jul-25 06:42:22  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/compliance-toolkit-service:1.4.2-arm64-linux?force=False&noprune=False HTTP/1.1" 200 192 
- 04-Jul-25 06:42:22  INFO  Completed processing mosipdev/compliance-toolkit-service:release-1.4.0 to mosipqa/compliance-toolkit-service:1.4.2 
- 04-Jul-25 06:42:22  INFO  Completed processing mosipdev/compliance-toolkit-batch-job:release-1.4.0 to mosipqa/compliance-toolkit-batch-job:1.4.2 
+ 04-Jul-25 06:57:15  INFO  LOGFILE CREATED : vidivi.log 
+ 04-Jul-25 06:57:15  INFO   
+ 04-Jul-25 06:57:15  INFO  ******************** Check Images List ************************************************************************************ 
+ 04-Jul-25 06:57:15  INFO   
+ 04-Jul-25 06:57:15  INFO  IMAGES= [['mosipdev/apitest-mimoto:release-0.18.x', 'release-0.18.x']] 
+ 04-Jul-25 06:57:15  INFO   
+ 04-Jul-25 06:57:15  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 04-Jul-25 06:57:15  INFO   
+ 04-Jul-25 06:57:15  INFO  src = "mosipdev/apitest-mimoto" tag = "release-0.18.x" 
+ 04-Jul-25 06:57:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 06:57:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 06:57:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-mimoto/tags/release-0.18.x HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 04-Jul-25 06:57:16  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 04-Jul-25 06:57:16  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 06:57:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 06:57:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-mimoto/manifests/release-0.18.x HTTP/1.1" 404 108 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  [ mosipdev2/apitest-mimoto ]  
+ 04-Jul-25 06:57:16  INFO  Destination Image = "mosipdev2/apitest-mimoto" Destination Image tag = "release-0.18.x" IMAGE_ID :  
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 06:57:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Jul-25 06:57:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-mimoto/tags/release-0.18.x HTTP/1.1" 404 149 
+ 04-Jul-25 06:57:16  ERROR  Image "mosipdev2/apitest-mimoto:release-0.18.x" does not exist 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/apitest-mimoto:release-0.18.x']] 
+ 04-Jul-25 06:57:16  INFO   
+ 04-Jul-25 06:57:16  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 04-Jul-25 06:57:16  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 04-Jul-25 06:57:16  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 04-Jul-25 06:57:16  DEBUG  Found 'auths' section 
+ 04-Jul-25 06:57:16  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 04-Jul-25 06:57:16  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 04-Jul-25 06:57:16  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 06:57:16  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 06:57:17  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 04-Jul-25 06:57:17  INFO   
+ 04-Jul-25 06:57:17  INFO  ********** [ mosipdev2/apitest-mimoto:release-0.18.x ] **************************************************** 
+ 04-Jul-25 06:57:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Jul-25 06:57:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:17  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 04-Jul-25 06:57:17  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-mimoto/manifests/release-0.18.x HTTP/1.1" 200 743 
+ 04-Jul-25 06:57:17  INFO  Multi-arch image detected with 2 architectures 
+ 04-Jul-25 06:57:17  INFO  Processing architecture: amd64/linux with digest sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f 
+ 04-Jul-25 06:57:17  INFO   
+ 04-Jul-25 06:57:17  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f ]  
+ 04-Jul-25 06:57:17  DEBUG  Looking for auth config 
+ 04-Jul-25 06:57:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 06:57:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 06:57:17  DEBUG  Found auth config 
+ 04-Jul-25 06:57:17  INFO  Processing architecture: arm64/linux with digest sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 
+ 04-Jul-25 06:57:17  INFO   
+ 04-Jul-25 06:57:17  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 ]  
+ 04-Jul-25 06:57:17  DEBUG  Looking for auth config 
+ 04-Jul-25 06:57:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 06:57:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 06:57:17  DEBUG  Found auth config 
+ 04-Jul-25 06:57:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:17  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:46  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 
+ 04-Jul-25 06:57:46  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f 
+ 04-Jul-25 06:57:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-mimoto%40sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3/tag?tag=release-0.18.x-arm64-linux&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 06:57:46  INFO   
+ 04-Jul-25 06:57:46  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3	------> mosipdev2/apitest-mimoto:release-0.18.x-arm64-linux ]  
+ 04-Jul-25 06:57:46  DEBUG  Looking for auth config 
+ 04-Jul-25 06:57:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 06:57:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 06:57:46  DEBUG  Found auth config 
+ 04-Jul-25 06:57:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-mimoto%40sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f/tag?tag=release-0.18.x-amd64-linux&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
+ 04-Jul-25 06:57:46  INFO   
+ 04-Jul-25 06:57:46  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f	------> mosipdev2/apitest-mimoto:release-0.18.x-amd64-linux ]  
+ 04-Jul-25 06:57:46  DEBUG  Looking for auth config 
+ 04-Jul-25 06:57:46  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Jul-25 06:57:46  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Jul-25 06:57:46  DEBUG  Found auth config 
+ 04-Jul-25 06:57:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto/push?tag=release-0.18.x-arm64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:46  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto/push?tag=release-0.18.x-amd64-linux HTTP/1.1" 200 None 
+ 04-Jul-25 06:57:49  INFO  release-0.18.x-arm64-linux: digest: sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 size: 2212 
+ 04-Jul-25 06:57:49  INFO  Completed pulling/tagging mosipdev/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 	------> mosipdev2/apitest-mimoto:release-0.18.x-arm64-linux (linux/arm64) 
+ 04-Jul-25 06:57:49  INFO  release-0.18.x-amd64-linux: digest: sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f size: 2212 
+ 04-Jul-25 06:57:49  INFO  Completed pulling/tagging mosipdev/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f 	------> mosipdev2/apitest-mimoto:release-0.18.x-amd64-linux (linux/amd64) 
+ 04-Jul-25 06:57:49  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 06:57:50  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-mimoto:release-0.18.x mosipdev2/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f mosipdev2/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 
+ 04-Jul-25 06:57:51  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-mimoto:release-0.18.x 
+ 04-Jul-25 06:57:51  INFO  Logging in to Docker CLI for manifest operations 
+ 04-Jul-25 06:57:51  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-mimoto:latest mosipdev2/apitest-mimoto@sha256:fdfacccb440fbbe74af43a8894c537fe9e8fefd549c29d44bae7d9074b22248f mosipdev2/apitest-mimoto@sha256:53ef8e378e372cf92e415899bec7fdd3de0fee0c3fdbbef5bee0a65b74cc5bc3 
+ 04-Jul-25 06:57:52  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-mimoto:latest 
+ 04-Jul-25 06:57:53  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-mimoto:release-0.18.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 181 
+ 04-Jul-25 06:57:53  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-mimoto:release-0.18.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 181 
+ 04-Jul-25 06:57:53  INFO  Completed processing mosipdev/apitest-mimoto:release-0.18.x to mosipdev2/apitest-mimoto:release-0.18.x 
