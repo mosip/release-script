@@ -36,8 +36,8 @@ Use this guide to release a specific MOSIP version.
    * Docker Build
    * Publish to Nexus Build 
    * Sonar Analysis Build 
-7. Log in to [Nexus](https://oss.sonatype.org/#welcome) to release the artifacts to Maven Central.
-   * Ensure that all artifacts are in a closed state in the Nexus staging repository
+7. Log in to [Central](https://central.sonatype.com/) to release the artifacts to Maven Central.
+   * Ensure that all artifacts are in a closed state in the Central staging repository
    * Ensure that all artifact versions match the release version.
    * Click on `Release` Staging Repositories to release the artifacts to Maven Central.
 8. Verify that the released artifacts are present on [Maven central](https://repo1.maven.org/maven2/io/mosip/)
@@ -78,7 +78,7 @@ If any changes are introduced in the release branch during the module release pr
 # MOSIP Developer-Preview-Release Process
 * Please refer to the [Documentation](docs/developer-preview-release.md) for the Developer Preview-Release Process.
 ### Note:
-1. Avoid publishing `artifacts` from Nexus staging repositories for developer-preview-release.
+1. Avoid publishing `artifacts` from Central staging repositories for developer-preview-release.
 2. Tag should be `Pre-release`, it should not be `Latest`
 3. Avoid merging release code into the `master branch` developer-preview-release.
 
