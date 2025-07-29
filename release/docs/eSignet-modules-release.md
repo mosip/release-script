@@ -110,7 +110,7 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
 Please follow the steps outlined above, from Step 14 through Step 21, as part of the process.
 
 # eSignet modules Post Release Process
-* For post release process follow from [here](release/README.md)
+* For post release process follow from [here](../../release/README.md)
 
 # GitHub manual workflow to images transfer
 * Please refer to Image transfer from [here](../vidivi/README.md)
