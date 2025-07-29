@@ -2,8 +2,8 @@
 Use this guide to release eSignet, Signup, and eSignet-plugins version.
 
 ## Pre-requisites
-* All the pre-requisites are mentioned in [pre-requisites guide](docs/pre-requisites.md).
-* Ensure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-rule.md).
+* All the pre-requisites are mentioned in [pre-requisites guide](pre-requisites.md).
+* Ensure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](branching-rule.md).
 
 ## Release Steps for eSignet
 1. Create `release-branch` from the release-candidate branch and name it as follows:
@@ -43,11 +43,11 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
     * Sonar Analysis Build
     * The `build_maven_esignet_with_plugins` build will fail and needs to be disregarded.
 
-8. Log in to [Nexus](https://oss.sonatype.org/#welcome) to release the artifacts to Maven Central.
-    * Ensure that all artifacts are in a closed state in the Nexus staging repository
+8. Log in to [Central](https://central.sonatype.com/) to release the artifacts to Maven Central.
+    * Ensure that all artifacts are in a closed state in the Central staging repository
     * Ensure that all artifact versions match the release version.
     * Click on `Release` Staging Repositories to release the artifacts to Maven Central.
-9. Perform the **esignet, apitest-esignet and oidc-ui** docker images transfer from `mosipdev` to `mosipid` using the release version from [here](vidivi/README.md)
+9. Perform the **esignet, apitest-esignet and oidc-ui** docker images transfer from `mosipdev` to `mosipid` using the release version from [here](../vidivi/README.md)
     * Ensure that the Docker/Image tag is updated correctly with the release version.
 
 10. Verify that the released artifacts are present on [Maven central](https://repo1.maven.org/maven2/io/mosip/)
@@ -56,7 +56,7 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
 
 12. Run [Manual Workflow](https://github.com/mosip/esignet/actions/workflows/manual-docker-build.yml) to build the esignet-with-plugins docker image.
 
-13. Perform the esignet-with-plugins docker image transfer from `mosipdev` to `mosipid` using the release version from [here](vidivi/README.md)
+13. Perform the esignet-with-plugins docker image transfer from `mosipdev` to `mosipid` using the release version from [here](../vidivi/README.md)
 
 14. Execute the ```Helm-release Preparation``` by running the [Action](https://github.com/mosip/release-script/actions/workflows/helm-release.yaml)
     * Below inputs for `Helm-release Preparation`
@@ -73,13 +73,13 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
 
 17. Create a `DSD/MOSIP` ticket for image signing by the Security team.
 
-18. Tag the respective release repositories with the release version as outlined in the [documentation](gh_release/README.md)
+18. Tag the respective release repositories with the release version as outlined in the [documentation](../gh_release/README.md)
 
-19. Merge the release code into the master branch from [master update strategy](strategies/master-updates.md)
+19. Merge the release code into the master branch from [master update strategy](../strategies/master-updates.md)
 
 20. Change the branching rules to lock the branch for any further changes until next planned release.
 
-21. Release check shall be performed as per [Release checks](docs/release-check.md).
+21. Release check shall be performed as per [Release checks](release-check.md).
 
 ## Release Steps for eSignet-Signup
 * Please follow the steps outlined above, from Step 1 through Step 6, as part of the process.
@@ -91,12 +91,12 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
     * Sonar Analysis Build
     * The `build_maven_signup_with_plugins` build will fail and needs to be disregarded.
 
-8. Log in to [Nexus](https://oss.sonatype.org/#welcome) to release the artifacts to Maven Central.
-    * Ensure that all artifacts are in a closed state in the Nexus staging repository
+8. Log in to [Central](https://central.sonatype.com/) to release the artifacts to Maven Central.
+    * Ensure that all artifacts are in a closed state in the Central staging repository
     * Ensure that all artifact versions match the release version.
     * Click on `Release` Staging Repositories to release the artifacts to Maven Central.
 
-9. Perform the **signup-service, apitest-signup and signup-ui** docker images transfer from `mosipdev` to `mosipid` using the release version from [here](vidivi/README.md)
+9. Perform the **signup-service, apitest-signup and signup-ui** docker images transfer from `mosipdev` to `mosipid` using the release version from [here](../vidivi/README.md)
     * Ensure that the Docker/Image tag is updated correctly with the release version.
 
 10. Verify that the released artifacts are present on [Maven central](https://repo1.maven.org/maven2/io/mosip/)
@@ -105,15 +105,15 @@ Use this guide to release eSignet, Signup, and eSignet-plugins version.
 
 12. Run [Manual Workflow](https://github.com/mosip/esignet-signup/actions/workflows/manual-docker-build.yml) to build the esignet-with-plugins docker image.
 
-13. Perform the signup-with-plugins docker image transfer from `mosipdev` to `mosipid` using the release version from [here](vidivi/README.md)
+13. Perform the signup-with-plugins docker image transfer from `mosipdev` to `mosipid` using the release version from [here](../vidivi/README.md)
 
 Please follow the steps outlined above, from Step 14 through Step 21, as part of the process.
 
 # eSignet modules Post Release Process
-* For post release process follow from [here](release/README.md)
+* For post release process follow from [here](../release/README.md)
 
 # GitHub manual workflow to images transfer
-* Please refer to Image transfer from [here](vidivi/README.md)
+* Please refer to Image transfer from [here](../vidivi/README.md)
 
 # Tagging of Repos Workflow
-* Please refer to the Tagging of Repos link to [here](gh_release/README.md)
+* Please refer to the Tagging of Repos link to [here](../gh_release/README.md)
