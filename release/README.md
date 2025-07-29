@@ -1,18 +1,18 @@
 # MOSIP Release Process
 
 ## Overview
-Use this guide to release specific MOSIP version.
+Use this guide to release a specific MOSIP version.
 
 ## Pre-requisites
 * All the pre-requisites are mentioned in [pre-requisites guide](docs/pre-requisites.md).
-* Ensure proper branching rules are followed. For more details see [MOSIP repo Branching Rules](docs/branching-rule.md).
+* Ensure proper branching rules are followed. For more details, see [MOSIP repo Branching Rules](docs/branching-rule.md).
 ## Steps
 1. Create `release-branch` from the release-candidate branch and name it as follows:
     ```
     release-<release-version>
     eg: release-1.3.x
     ```
-2. Ensure that the `pom.xml` files should be updated with the release version of SNAPSHOT in the release branch ( Ex. release-1.3.x ).
+2. Ensure that the `pom.xml` files should be updated with the release version of SNAPSHOT in the release branch ( Ex, release-1.3.x ).
     * If not, please coordinate with the developer to ensure it is updated.
 3. Ensure that the `db_upgrade` and `db_rollback` scripts are updated with the latest release version.
     * If not, coordinate with the developer to make the necessary updates.
@@ -25,11 +25,11 @@ Use this guide to release specific MOSIP version.
       * base branch for PR ( e.g., release-1.3.x )
       * commit message ( DSD no. )
       * Next click on ```run workflow```
-5. Review and merge the pull request created by release bot from `releas-branch` to the respective release repository. While reviewing, ensure the following:
+5. Review and merge the pull request created by the release bot from `releas-branch` to the respective release repository. While reviewing, ensure the following:
     * Ensure that the latest POM version updates are reflected across all POM files.
     * Ensure that there are no SNAPSHOT versions in the Pull Request or the respective release branch.
-    * It should remove the `-DskipTests` references from all the triggers so that tests are not skipped while building and release and analysis.
-    * If PR contains changes in Dockerfile for changing `libs-snapshot-local` reference to `libs-release-local`.
+    * It should remove the `-DskipTests` references from all the triggers so that tests are not skipped while building and releasing, and analyzing.
+    * If PR contains changes in the Dockerfile for changing `libs-snapshot-local` reference to `libs-release-local`.
       * If this instance is found in the Dockerfile, update the same to `artifactory-ref-impl` repo owner so that it can be handled in the artifactory docker image as well
 6. After all changes are merged into the release branch, wait for the GitHub Actions workflow to complete, which includes the following builds:
    * Maven Build
@@ -57,35 +57,37 @@ Use this guide to release specific MOSIP version.
 13. Create a `DSD/MOSIP` ticket for image signing by the Security team.
 14. Tag the respective release repositories with the release version as outlined in the [documentation](gh_release/README.md)
 15. Merge the release code into the master branch from [master update strategy](strategies/master-updates.md)
-16. Change the branching rules to lock the branch for any further changes until next planned release.
+16. Change the branching rules to lock the branch for any further changes until the next planned release.
 17. Release check shall be performed as per [Release checks](docs/release-check.md).
 
-# MOSIP Post Release Process
-1. Execute the [Post-Release Preparation](https://github.com/mosip/release-script/actions/workflows/post-release-changes.yml) workflow to replace the "RELEASE_URL" with "OSSRH_SNAPSHOT_URL" to the release branch.
-2. while running manual workflow, it will ask for the following inputs as below:
-    * Repo URL ( EX. mosip/< repo name > ): Name of the owner of the repository and repository name.
+# MOSIP Post-Release Process
+1. Execute the [Post-Release Preparation](https://github.com/mosip/release-script/actions/workflows/post-release-changes.yml)
+2. While running the manual workflow, it will ask for the following inputs as below:
+    * Repo URL ( EX., mosip/< repo name >): Name of the owner of the repository and repository name.
     * Repo Branch: It should be the release-branch.
     * base branch for PR: It should be the release-branch.
     * Set to true to update Maven publish URL to OSSRH_SNAPSHOT_URL
     * Versions for Chart.yaml and install.sh files, format: CHART_VERSION,INSTALL_CHART_VERSION ( 1.3.0-beta.1-develop )
     * commit message ( DSD no. )
-    * Next click on `run workflow`.
-3. Ensure to update the Helm `Chart.yaml` and `install.sh` files to reflect the release version with the `-develop` suffix ( Ex. 1.3.0-develop ).
-4. Review and merge the pull request created by release bot from `releas-branch` to the respective release repository.
+    * Next, click on `run workflow`.
+3. Ensure to update the Helm `Chart.yaml` and `install.sh` files to reflect the release version with the `-develop` suffix ( Ex, 1.3.0-develop ).
+4. Review and merge the pull request created by the release bot from `releas-branch` to the respective release repository.
+### Note:  
+If any changes are introduced in the release branch during the module release process—such as bug fixes, configuration updates, or documentation edits—that are not already present in the `develop` branch, it is essential to propagate those changes back to `develop` after the release. This ensures consistency between branches and avoids potential regressions in future releases.
 
 # MOSIP Developer-Preview-Release Process
 * Please refer to the [Documentation](docs/developer-preview-release.md) for the Developer Preview-Release Process.
-### NOTE:
+### Note:
 1. Avoid publishing `artifacts` from Nexus staging repositories for developer-preview-release.
-2. Tag should be `Pre-release` it should not be `Latest`
+2. Tag should be `Pre-release`, it should not be `Latest`
 3. Avoid merging release code into the `master branch` developer-preview-release.
 
 # MOSIP beta Release Process
-### NOTE:
-1. Tag should be `Pre-release` it should not be `Latest`
+### Note:
+1. Tag should be `Pre-release`; it should not be `Latest`
 2. Avoid merging release code into the `master branch` beta release.
 
-# GitHub manual workflow to images transfer
+# GitHub manual workflow for image transfer
 * Please refer to Image transfer from [here](vidivi/README.md)
 
 # Tagging of Repos Workflow
