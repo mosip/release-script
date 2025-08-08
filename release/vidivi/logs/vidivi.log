@@ -1,88 +1,528 @@
- 08-Aug-25 09:14:16  INFO  LOGFILE CREATED : vidivi.log 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  ******************** Check Images List ************************************************************************************ 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  IMAGES= [['mosipdev2/apitest-pms:release-1.3.x', '1.3.x']] 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  src = "mosipdev2/apitest-pms" tag = "release-1.3.x" 
- 08-Aug-25 09:14:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Aug-25 09:14:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-pms:pull HTTP/1.1" 200 None 
- 08-Aug-25 09:14:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Aug-25 09:14:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-pms/tags/release-1.3.x HTTP/1.1" 200 840 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 08-Aug-25 09:14:16  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 08-Aug-25 09:14:16  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 08-Aug-25 09:14:16  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 08-Aug-25 09:14:16  INFO   
- 08-Aug-25 09:14:16  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 08-Aug-25 09:14:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Aug-25 09:14:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-pms:pull HTTP/1.1" 200 None 
- 08-Aug-25 09:14:17  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Aug-25 09:14:17  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-pms/manifests/1.3.x HTTP/1.1" 200 743 
- 08-Aug-25 09:14:17  INFO   
- 08-Aug-25 09:14:17  INFO  [ mosipqa/apitest-pms ]  
- 08-Aug-25 09:14:17  INFO  Destination Image = "mosipqa/apitest-pms" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:21c887e34b56f07e50070bdb14713415d1ec0d2ac98044174f72e7d2dfab24eb" 
- 08-Aug-25 09:14:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Aug-25 09:14:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-pms:pull HTTP/1.1" 200 None 
- 08-Aug-25 09:14:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Aug-25 09:14:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-pms/tags/1.3.x HTTP/1.1" 200 None 
- 08-Aug-25 09:14:17  INFO   
- 08-Aug-25 09:14:17  INFO  ******************** HASH Operation Results ********************************************************************** 
- 08-Aug-25 09:14:17  INFO   
- 08-Aug-25 09:14:17  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 08-Aug-25 09:14:17  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 08-Aug-25 09:14:17  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 08-Aug-25 09:14:17  DEBUG  Found 'auths' section 
- 08-Aug-25 09:14:17  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 08-Aug-25 09:14:17  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 08-Aug-25 09:14:17  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Aug-25 09:14:17  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Aug-25 09:14:18  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 08-Aug-25 09:14:18  INFO   
- 08-Aug-25 09:14:18  INFO  ********** [ mosipqa/apitest-pms:1.3.x ] **************************************************** 
- 08-Aug-25 09:14:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Aug-25 09:14:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-pms:pull HTTP/1.1" 200 None 
- 08-Aug-25 09:14:18  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Aug-25 09:14:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-pms/manifests/release-1.3.x HTTP/1.1" 200 1582 
- 08-Aug-25 09:14:19  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Aug-25 09:14:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-pms/manifests/release-1.3.x HTTP/1.1" 200 1582 
- 08-Aug-25 09:14:19  INFO   
- 08-Aug-25 09:14:19  INFO  [ PULL ----------------------> mosipdev2/apitest-pms:release-1.3.x ]  
- 08-Aug-25 09:14:19  DEBUG  Looking for auth config 
- 08-Aug-25 09:14:19  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Aug-25 09:14:19  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Aug-25 09:14:19  DEBUG  Found auth config 
- 08-Aug-25 09:14:20  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-1.3.x&fromImage=mosipdev2%2Fapitest-pms HTTP/1.1" 200 None 
- 08-Aug-25 09:15:11  INFO  Status: Downloaded newer image for mosipdev2/apitest-pms:release-1.3.x 
- 08-Aug-25 09:15:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-pms:release-1.3.x/tag?tag=1.3.x&repo=mosipqa%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
- 08-Aug-25 09:15:11  INFO   
- 08-Aug-25 09:15:11  INFO  [ PUSH -----> mosipdev2/apitest-pms:release-1.3.x	------> mosipqa/apitest-pms:1.3.x ]  
- 08-Aug-25 09:15:11  DEBUG  Looking for auth config 
- 08-Aug-25 09:15:11  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Aug-25 09:15:11  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Aug-25 09:15:11  DEBUG  Found auth config 
- 08-Aug-25 09:15:11  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-pms/push?tag=1.3.x HTTP/1.1" 200 None 
- 08-Aug-25 09:15:16  INFO  1.3.x: digest: sha256:bdc1235ac74910eeef85135a2c22fea488edc2ca578fec5ca10902b0524dfcfc size: 1582 
- 08-Aug-25 09:15:16  INFO   
- 08-Aug-25 09:15:16  INFO  [ PUSH -----> mosipdev2/apitest-pms:release-1.3.x	------> mosipqa/apitest-pms:latest ]  
- 08-Aug-25 09:15:16  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-pms:release-1.3.x/tag?tag=latest&repo=mosipqa%2Fapitest-pms&force=1 HTTP/1.1" 201 0 
- 08-Aug-25 09:15:16  DEBUG  Looking for auth config 
- 08-Aug-25 09:15:16  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Aug-25 09:15:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Aug-25 09:15:16  DEBUG  Found auth config 
- 08-Aug-25 09:15:16  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-pms/push?tag=latest HTTP/1.1" 200 None 
- 08-Aug-25 09:15:19  INFO  latest: digest: sha256:bdc1235ac74910eeef85135a2c22fea488edc2ca578fec5ca10902b0524dfcfc size: 1582 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Fapitest-pms%3Arelease-1.3.x%22%5D%7D HTTP/1.1" 200 466 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:6046a7146ea90bbc81a5ccad5d86adfc2a38425f939f81e72b7af967d4c653c7/json HTTP/1.1" 200 None 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-pms:release-1.3.x?force=False&noprune=False HTTP/1.1" 200 162 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-pms%3A1.3.x%22%5D%7D HTTP/1.1" 200 456 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:6046a7146ea90bbc81a5ccad5d86adfc2a38425f939f81e72b7af967d4c653c7/json HTTP/1.1" 200 None 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-pms:1.3.x?force=False&noprune=False HTTP/1.1" 200 43 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Fapitest-pms%3Alatest%22%5D%7D HTTP/1.1" 200 457 
- 08-Aug-25 09:15:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:6046a7146ea90bbc81a5ccad5d86adfc2a38425f939f81e72b7af967d4c653c7/json HTTP/1.1" 200 None 
- 08-Aug-25 09:15:20  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-pms:latest?force=False&noprune=False HTTP/1.1" 200 753 
- 08-Aug-25 09:15:20  INFO  Completed mosipdev2/apitest-pms:release-1.3.x	------> mosipqa/apitest-pms:1.3.x 
- 08-Aug-25 09:15:20  INFO  Completed processing mosipdev2/apitest-pms:release-1.3.x to mosipqa/apitest-pms:1.3.x 
+ 08-Aug-25 11:14:09  INFO  LOGFILE CREATED : vidivi.log 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  ******************** Check Images List ************************************************************************************ 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  IMAGES= [['mosipdev/esignet:release-1.6.x', '1.6.x'], ['mosipdev/oidc-ui:release-1.6.x', '1.6.x'], ['mosipdev/signup-service:release-1.2.x', '1.2.x'], ['mosipdev/signup-ui:release-1.2.x', '1.2.x'], ['mosipdev/mock-identity-system:release-0.11.x', '0.11.x'], ['mosipdev/mock-relying-party-service:release-0.11.x', '0.11.x'], ['mosipdev/mock-relying-party-ui:release-0.11.x', '0.11.x']] 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  src = "mosipdev/esignet" tag = "release-1.6.x" 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/esignet:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/esignet/tags/release-1.6.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  src = "mosipdev/oidc-ui" tag = "release-1.6.x" 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/release-1.6.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  src = "mosipdev/signup-service" tag = "release-1.2.x" 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-service/tags/release-1.2.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  src = "mosipdev/signup-ui" tag = "release-1.2.x" 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-ui/tags/release-1.2.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:09  INFO   
+ 08-Aug-25 11:14:09  INFO  src = "mosipdev/mock-identity-system" tag = "release-0.11.x" 
+ 08-Aug-25 11:14:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-identity-system:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-identity-system/tags/release-0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  src = "mosipdev/mock-relying-party-service" tag = "release-0.11.x" 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-relying-party-service/tags/release-0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  src = "mosipdev/mock-relying-party-ui" tag = "release-0.11.x" 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-relying-party-ui/tags/release-0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 08-Aug-25 11:14:10  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/esignet:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/esignet/manifests/1.6.x HTTP/1.1" 404 99 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  [ mosipqa/esignet ]  
+ 08-Aug-25 11:14:10  INFO  Destination Image = "mosipqa/esignet" Destination Image tag = "1.6.x" IMAGE_ID :  
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/esignet:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/esignet/tags/1.6.x HTTP/1.1" 404 122 
+ 08-Aug-25 11:14:10  ERROR  Image "mosipqa/esignet:1.6.x" does not exist 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/oidc-ui/manifests/1.6.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  [ mosipqa/oidc-ui ]  
+ 08-Aug-25 11:14:10  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "1.6.x" IMAGE_ID : "sha256:0512a1a8baff05355250c9216fd56a66613174a1718f546495137e71b9ceafc6" 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/oidc-ui/tags/1.6.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/signup-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/signup-service/manifests/1.2.x HTTP/1.1" 404 99 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  [ mosipqa/signup-service ]  
+ 08-Aug-25 11:14:10  INFO  Destination Image = "mosipqa/signup-service" Destination Image tag = "1.2.x" IMAGE_ID :  
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/signup-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/signup-service/tags/1.2.x HTTP/1.1" 404 129 
+ 08-Aug-25 11:14:10  ERROR  Image "mosipqa/signup-service:1.2.x" does not exist 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/signup-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:10  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/signup-ui/manifests/1.2.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:10  INFO   
+ 08-Aug-25 11:14:10  INFO  [ mosipqa/signup-ui ]  
+ 08-Aug-25 11:14:10  INFO  Destination Image = "mosipqa/signup-ui" Destination Image tag = "1.2.x" IMAGE_ID : "sha256:3a1a18ddac8954f9549c39e40413f99e5c300e571d84ad5b3e93e9ce08ffaeea" 
+ 08-Aug-25 11:14:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/signup-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/signup-ui/tags/1.2.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-identity-system:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mock-identity-system/manifests/0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  [ mosipqa/mock-identity-system ]  
+ 08-Aug-25 11:14:11  INFO  Destination Image = "mosipqa/mock-identity-system" Destination Image tag = "0.11.x" IMAGE_ID : "sha256:7d519a126c8d0a3361d0189a88363e518eac3895f47756cd7cac8440f714199a" 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-identity-system:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mock-identity-system/tags/0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mock-relying-party-service/manifests/0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  [ mosipqa/mock-relying-party-service ]  
+ 08-Aug-25 11:14:11  INFO  Destination Image = "mosipqa/mock-relying-party-service" Destination Image tag = "0.11.x" IMAGE_ID : "sha256:69059f8948a28e535c47bc41462782213390833ef20f812b5ec32fac5d679f30" 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mock-relying-party-service/tags/0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/mock-relying-party-ui/manifests/0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  [ mosipqa/mock-relying-party-ui ]  
+ 08-Aug-25 11:14:11  INFO  Destination Image = "mosipqa/mock-relying-party-ui" Destination Image tag = "0.11.x" IMAGE_ID : "sha256:afac95837afafae0e52fe03b8c93a3f901dce518292a7dcef0a0f6433d7f2954" 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/mock-relying-party-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Aug-25 11:14:11  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/mock-relying-party-ui/tags/0.11.x HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/esignet:1.6.x'], ['mosipqa/signup-service:1.2.x']] 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 08-Aug-25 11:14:11  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 08-Aug-25 11:14:11  DEBUG  Found 'auths' section 
+ 08-Aug-25 11:14:11  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 08-Aug-25 11:14:11  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 08-Aug-25 11:14:11  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:11  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:11  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/esignet:1.6.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/oidc-ui:1.6.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/signup-service:1.2.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/signup-ui:1.2.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/mock-identity-system:0.11.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/mock-relying-party-service:0.11.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:11  INFO   
+ 08-Aug-25 11:14:11  INFO  ********** [ mosipqa/mock-relying-party-ui:0.11.x ] **************************************************** 
+ 08-Aug-25 11:14:11  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/esignet:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-identity-system:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-service:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-ui:pull HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/signup-service/manifests/release-1.2.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mock-relying-party-service/manifests/release-0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/esignet/manifests/release-1.6.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/oidc-ui/manifests/release-1.6.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mock-identity-system/manifests/release-0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/signup-ui/manifests/release-1.2.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/mock-relying-party-ui/manifests/release-0.11.x HTTP/1.1" 200 743 
+ 08-Aug-25 11:14:12  INFO  Multi-arch image detected with 2 architectures 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: amd64/linux with digest sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/amd64 ----------------------> mosipdev/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  INFO  Processing architecture: arm64/linux with digest sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 
+ 08-Aug-25 11:14:12  INFO   
+ 08-Aug-25 11:14:12  INFO  [ PULL linux/arm64 ----------------------> mosipdev/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 ]  
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:12  DEBUG  Found auth config 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22&fromImage=mosipdev%2Fsignup-service HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434&fromImage=mosipdev%2Fsignup-service HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aa5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3&fromImage=mosipdev%2Fesignet HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ac9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad&fromImage=mosipdev%2Fsignup-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1&fromImage=mosipdev%2Fmock-relying-party-service HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Acd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4&fromImage=mosipdev%2Fesignet HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd&fromImage=mosipdev%2Fsignup-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598&fromImage=mosipdev%2Fmock-relying-party-service HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ae60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109&fromImage=mosipdev%2Fmock-identity-system HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d&fromImage=mosipdev%2Fmock-identity-system HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753&fromImage=mosipdev%2Fmock-relying-party-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:12  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ae6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a&fromImage=mosipdev%2Fmock-relying-party-ui HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:22  INFO  Status: Downloaded newer image for mosipdev/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 
+ 08-Aug-25 11:14:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/esignet%40sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3/tag?tag=1.6.x-amd64-linux&repo=mosipqa%2Fesignet&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:22  INFO   
+ 08-Aug-25 11:14:22  INFO  [ PUSH linux/amd64 -----> mosipdev/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3	------> mosipqa/esignet:1.6.x-amd64-linux ]  
+ 08-Aug-25 11:14:22  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:22  DEBUG  Found auth config 
+ 08-Aug-25 11:14:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/esignet/push?tag=1.6.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:22  INFO  Status: Downloaded newer image for mosipdev/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 
+ 08-Aug-25 11:14:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/signup-service%40sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22/tag?tag=1.2.x-arm64-linux&repo=mosipqa%2Fsignup-service&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:22  INFO   
+ 08-Aug-25 11:14:22  INFO  [ PUSH linux/arm64 -----> mosipdev/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22	------> mosipqa/signup-service:1.2.x-arm64-linux ]  
+ 08-Aug-25 11:14:22  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:22  DEBUG  Found auth config 
+ 08-Aug-25 11:14:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/signup-service/push?tag=1.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:24  INFO  1.6.x-amd64-linux: digest: sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 size: 1371 
+ 08-Aug-25 11:14:24  INFO  Completed pulling/tagging mosipdev/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 	------> mosipqa/esignet:1.6.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:25  INFO  1.2.x-arm64-linux: digest: sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 size: 1581 
+ 08-Aug-25 11:14:25  INFO  Completed pulling/tagging mosipdev/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 	------> mosipqa/signup-service:1.2.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:28  INFO  Status: Downloaded newer image for mosipdev/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 
+ 08-Aug-25 11:14:28  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/signup-service%40sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434/tag?tag=1.2.x-amd64-linux&repo=mosipqa%2Fsignup-service&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:28  INFO   
+ 08-Aug-25 11:14:28  INFO  [ PUSH linux/amd64 -----> mosipdev/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434	------> mosipqa/signup-service:1.2.x-amd64-linux ]  
+ 08-Aug-25 11:14:28  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:28  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:28  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:28  DEBUG  Found auth config 
+ 08-Aug-25 11:14:28  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/signup-service/push?tag=1.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:29  INFO  Status: Downloaded newer image for mosipdev/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 
+ 08-Aug-25 11:14:29  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-relying-party-service%40sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1/tag?tag=0.11.x-arm64-linux&repo=mosipqa%2Fmock-relying-party-service&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:29  INFO   
+ 08-Aug-25 11:14:29  INFO  [ PUSH linux/arm64 -----> mosipdev/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1	------> mosipqa/mock-relying-party-service:0.11.x-arm64-linux ]  
+ 08-Aug-25 11:14:29  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:29  DEBUG  Found auth config 
+ 08-Aug-25 11:14:29  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-relying-party-service/push?tag=0.11.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:30  INFO  0.11.x-arm64-linux: digest: sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 size: 1369 
+ 08-Aug-25 11:14:30  INFO  Completed pulling/tagging mosipdev/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 	------> mosipqa/mock-relying-party-service:0.11.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:30  INFO  1.2.x-amd64-linux: digest: sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 size: 1581 
+ 08-Aug-25 11:14:30  INFO  Completed pulling/tagging mosipdev/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 	------> mosipqa/signup-service:1.2.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:30  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:31  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/signup-service:1.2.x mosipqa/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 mosipqa/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 
+ 08-Aug-25 11:14:31  INFO  Pushing manifest list with command: docker manifest push mosipqa/signup-service:1.2.x 
+ 08-Aug-25 11:14:32  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:32  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/signup-service:latest mosipqa/signup-service@sha256:22fff8a453be8f59b2abb6a5e1c3412ee4361e13b5972c3658a7a0730523d434 mosipqa/signup-service@sha256:7d8296362488ca18f8e80cb0f535b74bce4aaedaa007b91bdde5fb1c6212ef22 
+ 08-Aug-25 11:14:32  INFO  Pushing manifest list with command: docker manifest push mosipqa/signup-service:latest 
+ 08-Aug-25 11:14:33  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/signup-service:1.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 08-Aug-25 11:14:33  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/signup-service:1.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 08-Aug-25 11:14:35  INFO  Status: Downloaded newer image for mosipdev/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 
+ 08-Aug-25 11:14:35  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/oidc-ui%40sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479/tag?tag=1.6.x-amd64-linux&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:35  INFO   
+ 08-Aug-25 11:14:35  INFO  [ PUSH linux/amd64 -----> mosipdev/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479	------> mosipqa/oidc-ui:1.6.x-amd64-linux ]  
+ 08-Aug-25 11:14:35  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:35  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:35  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:35  DEBUG  Found auth config 
+ 08-Aug-25 11:14:35  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/oidc-ui/push?tag=1.6.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:36  INFO  1.6.x-amd64-linux: digest: sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 size: 2200 
+ 08-Aug-25 11:14:36  INFO  Completed pulling/tagging mosipdev/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 	------> mosipqa/oidc-ui:1.6.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:36  INFO  Status: Downloaded newer image for mosipdev/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a 
+ 08-Aug-25 11:14:36  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/oidc-ui%40sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a/tag?tag=1.6.x-arm64-linux&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:36  INFO   
+ 08-Aug-25 11:14:36  INFO  [ PUSH linux/arm64 -----> mosipdev/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a	------> mosipqa/oidc-ui:1.6.x-arm64-linux ]  
+ 08-Aug-25 11:14:36  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:36  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:36  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:36  DEBUG  Found auth config 
+ 08-Aug-25 11:14:36  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/oidc-ui/push?tag=1.6.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:37  INFO  Status: Downloaded newer image for mosipdev/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 
+ 08-Aug-25 11:14:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-relying-party-service%40sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598/tag?tag=0.11.x-amd64-linux&repo=mosipqa%2Fmock-relying-party-service&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:37  INFO   
+ 08-Aug-25 11:14:37  INFO  [ PUSH linux/amd64 -----> mosipdev/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598	------> mosipqa/mock-relying-party-service:0.11.x-amd64-linux ]  
+ 08-Aug-25 11:14:37  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:37  DEBUG  Found auth config 
+ 08-Aug-25 11:14:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-relying-party-service/push?tag=0.11.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:37  INFO  Status: Downloaded newer image for mosipdev/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 
+ 08-Aug-25 11:14:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-relying-party-ui%40sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753/tag?tag=0.11.x-arm64-linux&repo=mosipqa%2Fmock-relying-party-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:37  INFO   
+ 08-Aug-25 11:14:37  INFO  [ PUSH linux/arm64 -----> mosipdev/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753	------> mosipqa/mock-relying-party-ui:0.11.x-arm64-linux ]  
+ 08-Aug-25 11:14:37  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:37  DEBUG  Found auth config 
+ 08-Aug-25 11:14:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-relying-party-ui/push?tag=0.11.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:37  INFO  0.11.x-amd64-linux: digest: sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 size: 1369 
+ 08-Aug-25 11:14:37  INFO  Completed pulling/tagging mosipdev/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 	------> mosipqa/mock-relying-party-service:0.11.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:37  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:38  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-relying-party-service:0.11.x mosipqa/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 mosipqa/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 
+ 08-Aug-25 11:14:38  INFO  1.6.x-arm64-linux: digest: sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a size: 2200 
+ 08-Aug-25 11:14:38  INFO  Completed pulling/tagging mosipdev/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a 	------> mosipqa/oidc-ui:1.6.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:38  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:38  INFO  Status: Downloaded newer image for mosipdev/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a 
+ 08-Aug-25 11:14:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-relying-party-ui%40sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a/tag?tag=0.11.x-amd64-linux&repo=mosipqa%2Fmock-relying-party-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:38  INFO   
+ 08-Aug-25 11:14:38  INFO  [ PUSH linux/amd64 -----> mosipdev/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a	------> mosipqa/mock-relying-party-ui:0.11.x-amd64-linux ]  
+ 08-Aug-25 11:14:38  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:38  DEBUG  Found auth config 
+ 08-Aug-25 11:14:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-relying-party-ui/push?tag=0.11.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:38  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/oidc-ui:1.6.x mosipqa/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 mosipqa/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a 
+ 08-Aug-25 11:14:38  INFO  0.11.x-arm64-linux: digest: sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 size: 1991 
+ 08-Aug-25 11:14:38  INFO  Completed pulling/tagging mosipdev/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 	------> mosipqa/mock-relying-party-ui:0.11.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:38  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-relying-party-service:0.11.x 
+ 08-Aug-25 11:14:38  INFO  Pushing manifest list with command: docker manifest push mosipqa/oidc-ui:1.6.x 
+ 08-Aug-25 11:14:38  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:38  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:39  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/oidc-ui:latest mosipqa/oidc-ui@sha256:4d584930849be23cd2736748f3db5658cf03c5bc3544959ae8abd00649f71479 mosipqa/oidc-ui@sha256:e60cde2c8bf7f29137644313c11e41f27f6c7113f917d88b2b4ddd45e152991a 
+ 08-Aug-25 11:14:39  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-relying-party-service:latest mosipqa/mock-relying-party-service@sha256:5e034ccbde8dd4b94f596c368d8f453bdbdf98291f56bfda1bd43d6b48b61598 mosipqa/mock-relying-party-service@sha256:6d9c7c1c1d59f70ce493dbb6ce20463f16a0858361d07dd825951a374247c3b1 
+ 08-Aug-25 11:14:39  INFO  Status: Downloaded newer image for mosipdev/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/esignet%40sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4/tag?tag=1.6.x-arm64-linux&repo=mosipqa%2Fesignet&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:39  INFO   
+ 08-Aug-25 11:14:39  INFO  [ PUSH linux/arm64 -----> mosipdev/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4	------> mosipqa/esignet:1.6.x-arm64-linux ]  
+ 08-Aug-25 11:14:39  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:39  DEBUG  Found auth config 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/esignet/push?tag=1.6.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:39  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-relying-party-service:latest 
+ 08-Aug-25 11:14:39  INFO  0.11.x-amd64-linux: digest: sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a size: 1991 
+ 08-Aug-25 11:14:39  INFO  Completed pulling/tagging mosipdev/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a 	------> mosipqa/mock-relying-party-ui:0.11.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:39  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:39  INFO  Pushing manifest list with command: docker manifest push mosipqa/oidc-ui:latest 
+ 08-Aug-25 11:14:39  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-relying-party-ui:0.11.x mosipqa/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a mosipqa/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-relying-party-service:0.11.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 193 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-relying-party-service:0.11.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 193 
+ 08-Aug-25 11:14:39  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-relying-party-ui:0.11.x 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/oidc-ui:1.6.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 08-Aug-25 11:14:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/oidc-ui:1.6.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 08-Aug-25 11:14:40  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:40  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-relying-party-ui:latest mosipqa/mock-relying-party-ui@sha256:e6f843687b74ba4a144ca7371c31ee41fc6c2e3636b13c0e3f0b59c5e2a2918a mosipqa/mock-relying-party-ui@sha256:99722c8d7f83d5948d64aead7eeb81a5c9d6aa03021aaebd497a2c2fb53a4753 
+ 08-Aug-25 11:14:40  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-relying-party-ui:latest 
+ 08-Aug-25 11:14:41  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-relying-party-ui:0.11.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 183 
+ 08-Aug-25 11:14:41  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-relying-party-ui:0.11.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 183 
+ 08-Aug-25 11:14:41  INFO  1.6.x-arm64-linux: digest: sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 size: 1371 
+ 08-Aug-25 11:14:41  INFO  Completed pulling/tagging mosipdev/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 	------> mosipqa/esignet:1.6.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:41  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:41  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/esignet:1.6.x mosipqa/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 mosipqa/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 
+ 08-Aug-25 11:14:41  INFO  Pushing manifest list with command: docker manifest push mosipqa/esignet:1.6.x 
+ 08-Aug-25 11:14:42  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:42  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/esignet:latest mosipqa/esignet@sha256:a5a602e18696950ec7eb11d03bde2f76005144796d02f3571646bc4b81e9f0e3 mosipqa/esignet@sha256:cd79a155ee85a5f415eabcc2c13bc40f5126c1a45b883ab43c2573eb18a22ef4 
+ 08-Aug-25 11:14:42  INFO  Pushing manifest list with command: docker manifest push mosipqa/esignet:latest 
+ 08-Aug-25 11:14:43  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/esignet:1.6.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 08-Aug-25 11:14:43  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/esignet:1.6.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 154 
+ 08-Aug-25 11:14:43  INFO  Completed processing mosipdev/esignet:release-1.6.x to mosipqa/esignet:1.6.x 
+ 08-Aug-25 11:14:43  INFO  Completed processing mosipdev/oidc-ui:release-1.6.x to mosipqa/oidc-ui:1.6.x 
+ 08-Aug-25 11:14:43  INFO  Completed processing mosipdev/signup-service:release-1.2.x to mosipqa/signup-service:1.2.x 
+ 08-Aug-25 11:14:51  INFO  Status: Downloaded newer image for mosipdev/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d 
+ 08-Aug-25 11:14:51  INFO  Status: Downloaded newer image for mosipdev/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 
+ 08-Aug-25 11:14:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-identity-system%40sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109/tag?tag=0.11.x-amd64-linux&repo=mosipqa%2Fmock-identity-system&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:51  INFO   
+ 08-Aug-25 11:14:51  INFO  [ PUSH linux/amd64 -----> mosipdev/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109	------> mosipqa/mock-identity-system:0.11.x-amd64-linux ]  
+ 08-Aug-25 11:14:51  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:51  DEBUG  Found auth config 
+ 08-Aug-25 11:14:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/mock-identity-system%40sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d/tag?tag=0.11.x-arm64-linux&repo=mosipqa%2Fmock-identity-system&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:51  INFO   
+ 08-Aug-25 11:14:51  INFO  [ PUSH linux/arm64 -----> mosipdev/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d	------> mosipqa/mock-identity-system:0.11.x-arm64-linux ]  
+ 08-Aug-25 11:14:51  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:51  DEBUG  Found auth config 
+ 08-Aug-25 11:14:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-identity-system/push?tag=0.11.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/mock-identity-system/push?tag=0.11.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:52  INFO  0.11.x-amd64-linux: digest: sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 size: 2007 
+ 08-Aug-25 11:14:52  INFO  Completed pulling/tagging mosipdev/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 	------> mosipqa/mock-identity-system:0.11.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:52  INFO  0.11.x-arm64-linux: digest: sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d size: 2007 
+ 08-Aug-25 11:14:52  INFO  Completed pulling/tagging mosipdev/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d 	------> mosipqa/mock-identity-system:0.11.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:52  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:52  INFO  Status: Downloaded newer image for mosipdev/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad 
+ 08-Aug-25 11:14:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/signup-ui%40sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad/tag?tag=1.2.x-amd64-linux&repo=mosipqa%2Fsignup-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:52  INFO   
+ 08-Aug-25 11:14:52  INFO  [ PUSH linux/amd64 -----> mosipdev/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad	------> mosipqa/signup-ui:1.2.x-amd64-linux ]  
+ 08-Aug-25 11:14:52  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:52  DEBUG  Found auth config 
+ 08-Aug-25 11:14:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/signup-ui/push?tag=1.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:52  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-identity-system:0.11.x mosipqa/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 mosipqa/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d 
+ 08-Aug-25 11:14:53  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-identity-system:0.11.x 
+ 08-Aug-25 11:14:53  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:53  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/mock-identity-system:latest mosipqa/mock-identity-system@sha256:1f7468ad53162d014bbaefe7b37b07bae1db1782a769181461041ee227fb8109 mosipqa/mock-identity-system@sha256:49b836aeb39fd27d6e1e1a42291dc2b70ad04d7865d7de1afb1c12f55e92dd3d 
+ 08-Aug-25 11:14:53  INFO  Pushing manifest list with command: docker manifest push mosipqa/mock-identity-system:latest 
+ 08-Aug-25 11:14:54  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-identity-system:0.11.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 181 
+ 08-Aug-25 11:14:54  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/mock-identity-system:0.11.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 181 
+ 08-Aug-25 11:14:54  INFO  1.2.x-amd64-linux: digest: sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad size: 2203 
+ 08-Aug-25 11:14:54  INFO  Completed pulling/tagging mosipdev/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad 	------> mosipqa/signup-ui:1.2.x-amd64-linux (linux/amd64) 
+ 08-Aug-25 11:14:55  INFO  Status: Downloaded newer image for mosipdev/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd 
+ 08-Aug-25 11:14:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/signup-ui%40sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd/tag?tag=1.2.x-arm64-linux&repo=mosipqa%2Fsignup-ui&force=1 HTTP/1.1" 201 0 
+ 08-Aug-25 11:14:55  INFO   
+ 08-Aug-25 11:14:55  INFO  [ PUSH linux/arm64 -----> mosipdev/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd	------> mosipqa/signup-ui:1.2.x-arm64-linux ]  
+ 08-Aug-25 11:14:55  DEBUG  Looking for auth config 
+ 08-Aug-25 11:14:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Aug-25 11:14:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Aug-25 11:14:55  DEBUG  Found auth config 
+ 08-Aug-25 11:14:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/signup-ui/push?tag=1.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Aug-25 11:14:58  INFO  1.2.x-arm64-linux: digest: sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd size: 2203 
+ 08-Aug-25 11:14:58  INFO  Completed pulling/tagging mosipdev/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd 	------> mosipqa/signup-ui:1.2.x-arm64-linux (linux/arm64) 
+ 08-Aug-25 11:14:58  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:58  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/signup-ui:1.2.x mosipqa/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad mosipqa/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd 
+ 08-Aug-25 11:14:58  INFO  Pushing manifest list with command: docker manifest push mosipqa/signup-ui:1.2.x 
+ 08-Aug-25 11:14:59  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Aug-25 11:14:59  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/signup-ui:latest mosipqa/signup-ui@sha256:c9ac13e7e15521fff5b3d60d6f90fff19f5191358ee99f8331920479b42935ad mosipqa/signup-ui@sha256:2f08bf728e2c5417ba493bc0a0be3f7526b259b9c6e7e27337285312647174cd 
+ 08-Aug-25 11:14:59  INFO  Pushing manifest list with command: docker manifest push mosipqa/signup-ui:latest 
+ 08-Aug-25 11:14:59  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/signup-ui:1.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 158 
+ 08-Aug-25 11:14:59  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/signup-ui:1.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 158 
+ 08-Aug-25 11:14:59  INFO  Completed processing mosipdev/signup-ui:release-1.2.x to mosipqa/signup-ui:1.2.x 
+ 08-Aug-25 11:14:59  INFO  Completed processing mosipdev/mock-identity-system:release-0.11.x to mosipqa/mock-identity-system:0.11.x 
+ 08-Aug-25 11:14:59  INFO  Completed processing mosipdev/mock-relying-party-service:release-0.11.x to mosipqa/mock-relying-party-service:0.11.x 
+ 08-Aug-25 11:14:59  INFO  Completed processing mosipdev/mock-relying-party-ui:release-0.11.x to mosipqa/mock-relying-party-ui:0.11.x 
