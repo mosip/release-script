@@ -1,173 +1,97 @@
- 13-Aug-25 09:41:26  INFO  LOGFILE CREATED : vidivi.log 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  ******************** Check Images List ************************************************************************************ 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  IMAGES= [['mosipdev/dsl-orchestrator:release-1.2.1.x', 'release-1.2.1.x'], ['mosipdev/dsl-packetcreator:release-1.2.1.x', 'release-1.2.1.x']] 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  src = "mosipdev/dsl-orchestrator" tag = "release-1.2.1.x" 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-orchestrator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-25 09:41:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/dsl-orchestrator/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  src = "mosipdev/dsl-packetcreator" tag = "release-1.2.1.x" 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-packetcreator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-25 09:41:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/dsl-packetcreator/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 13-Aug-25 09:41:26  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 13-Aug-25 09:41:26  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 13-Aug-25 09:41:26  INFO   
- 13-Aug-25 09:41:26  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 13-Aug-25 09:41:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-orchestrator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/dsl-orchestrator/manifests/release-1.2.1.x HTTP/1.1" 404 109 
- 13-Aug-25 09:41:27  INFO   
- 13-Aug-25 09:41:27  INFO  [ mosipdev2/dsl-orchestrator ]  
- 13-Aug-25 09:41:27  INFO  Destination Image = "mosipdev2/dsl-orchestrator" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-orchestrator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-25 09:41:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-orchestrator/tags/release-1.2.1.x HTTP/1.1" 404 153 
- 13-Aug-25 09:41:27  ERROR  Image "mosipdev2/dsl-orchestrator:release-1.2.1.x" does not exist 
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-packetcreator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/dsl-packetcreator/manifests/release-1.2.1.x HTTP/1.1" 404 109 
- 13-Aug-25 09:41:27  INFO   
- 13-Aug-25 09:41:27  INFO  [ mosipdev2/dsl-packetcreator ]  
- 13-Aug-25 09:41:27  INFO  Destination Image = "mosipdev2/dsl-packetcreator" Destination Image tag = "release-1.2.1.x" IMAGE_ID :  
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-packetcreator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 13-Aug-25 09:41:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-packetcreator/tags/release-1.2.1.x HTTP/1.1" 404 154 
- 13-Aug-25 09:41:27  ERROR  Image "mosipdev2/dsl-packetcreator:release-1.2.1.x" does not exist 
- 13-Aug-25 09:41:27  INFO   
- 13-Aug-25 09:41:27  INFO  ******************** HASH Operation Results ********************************************************************** 
- 13-Aug-25 09:41:27  INFO   
- 13-Aug-25 09:41:27  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/dsl-orchestrator:release-1.2.1.x'], ['mosipdev2/dsl-packetcreator:release-1.2.1.x']] 
- 13-Aug-25 09:41:27  INFO   
- 13-Aug-25 09:41:27  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 13-Aug-25 09:41:27  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 13-Aug-25 09:41:27  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 13-Aug-25 09:41:27  DEBUG  Found 'auths' section 
- 13-Aug-25 09:41:27  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 13-Aug-25 09:41:27  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 13-Aug-25 09:41:27  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:27  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:28  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  ********** [ mosipdev2/dsl-orchestrator:release-1.2.1.x ] **************************************************** 
- 13-Aug-25 09:41:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  ********** [ mosipdev2/dsl-packetcreator:release-1.2.1.x ] **************************************************** 
- 13-Aug-25 09:41:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 13-Aug-25 09:41:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-orchestrator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 13-Aug-25 09:41:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-packetcreator:pull HTTP/1.1" 200 None 
- 13-Aug-25 09:41:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 13-Aug-25 09:41:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/dsl-orchestrator/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 13-Aug-25 09:41:28  INFO  Multi-arch image detected with 2 architectures 
- 13-Aug-25 09:41:28  INFO  Processing architecture: amd64/linux with digest sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  [ PULL linux/amd64 ----------------------> mosipdev/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c ]  
- 13-Aug-25 09:41:28  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:28  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:28  DEBUG  Found auth config 
- 13-Aug-25 09:41:28  INFO  Processing architecture: arm64/linux with digest sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  [ PULL linux/arm64 ----------------------> mosipdev/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b ]  
- 13-Aug-25 09:41:28  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:28  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:28  DEBUG  Found auth config 
- 13-Aug-25 09:41:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/dsl-packetcreator/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 13-Aug-25 09:41:28  INFO  Multi-arch image detected with 2 architectures 
- 13-Aug-25 09:41:28  INFO  Processing architecture: amd64/linux with digest sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  [ PULL linux/amd64 ----------------------> mosipdev/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db ]  
- 13-Aug-25 09:41:28  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:28  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:28  DEBUG  Found auth config 
- 13-Aug-25 09:41:28  INFO  Processing architecture: arm64/linux with digest sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 
- 13-Aug-25 09:41:28  INFO   
- 13-Aug-25 09:41:28  INFO  [ PULL linux/arm64 ----------------------> mosipdev/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 ]  
- 13-Aug-25 09:41:28  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:28  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:28  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:28  DEBUG  Found auth config 
- 13-Aug-25 09:41:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b&fromImage=mosipdev%2Fdsl-orchestrator HTTP/1.1" 200 None 
- 13-Aug-25 09:41:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c&fromImage=mosipdev%2Fdsl-orchestrator HTTP/1.1" 200 None 
- 13-Aug-25 09:41:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db&fromImage=mosipdev%2Fdsl-packetcreator HTTP/1.1" 200 None 
- 13-Aug-25 09:41:29  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066&fromImage=mosipdev%2Fdsl-packetcreator HTTP/1.1" 200 None 
- 13-Aug-25 09:41:48  INFO  Status: Downloaded newer image for mosipdev/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c 
- 13-Aug-25 09:41:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-orchestrator%40sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
- 13-Aug-25 09:41:48  INFO   
- 13-Aug-25 09:41:48  INFO  [ PUSH linux/amd64 -----> mosipdev/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c	------> mosipdev2/dsl-orchestrator:release-1.2.1.x-amd64-linux ]  
- 13-Aug-25 09:41:48  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:48  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:48  DEBUG  Found auth config 
- 13-Aug-25 09:41:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/dsl-orchestrator/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 13-Aug-25 09:41:48  INFO  Status: Downloaded newer image for mosipdev/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b 
- 13-Aug-25 09:41:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-orchestrator%40sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
- 13-Aug-25 09:41:48  INFO   
- 13-Aug-25 09:41:48  INFO  [ PUSH linux/arm64 -----> mosipdev/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b	------> mosipdev2/dsl-orchestrator:release-1.2.1.x-arm64-linux ]  
- 13-Aug-25 09:41:48  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:48  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:48  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:48  DEBUG  Found auth config 
- 13-Aug-25 09:41:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/dsl-orchestrator/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 13-Aug-25 09:41:49  INFO  Status: Downloaded newer image for mosipdev/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 
- 13-Aug-25 09:41:49  INFO  Status: Downloaded newer image for mosipdev/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db 
- 13-Aug-25 09:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-packetcreator%40sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066/tag?tag=release-1.2.1.x-arm64-linux&repo=mosipdev2%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
- 13-Aug-25 09:41:49  INFO   
- 13-Aug-25 09:41:49  INFO  [ PUSH linux/arm64 -----> mosipdev/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066	------> mosipdev2/dsl-packetcreator:release-1.2.1.x-arm64-linux ]  
- 13-Aug-25 09:41:49  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:49  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:49  DEBUG  Found auth config 
- 13-Aug-25 09:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/dsl-packetcreator/push?tag=release-1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 13-Aug-25 09:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-packetcreator%40sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db/tag?tag=release-1.2.1.x-amd64-linux&repo=mosipdev2%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
- 13-Aug-25 09:41:49  INFO   
- 13-Aug-25 09:41:49  INFO  [ PUSH linux/amd64 -----> mosipdev/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db	------> mosipdev2/dsl-packetcreator:release-1.2.1.x-amd64-linux ]  
- 13-Aug-25 09:41:49  DEBUG  Looking for auth config 
- 13-Aug-25 09:41:49  DEBUG  Looking for auth entry for 'docker.io' 
- 13-Aug-25 09:41:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 13-Aug-25 09:41:49  DEBUG  Found auth config 
- 13-Aug-25 09:41:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/dsl-packetcreator/push?tag=release-1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 13-Aug-25 09:41:51  INFO  release-1.2.1.x-amd64-linux: digest: sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c size: 1790 
- 13-Aug-25 09:41:51  INFO  Completed pulling/tagging mosipdev/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c 	------> mosipdev2/dsl-orchestrator:release-1.2.1.x-amd64-linux (linux/amd64) 
- 13-Aug-25 09:41:52  INFO  release-1.2.1.x-arm64-linux: digest: sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b size: 1790 
- 13-Aug-25 09:41:52  INFO  Completed pulling/tagging mosipdev/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b 	------> mosipdev2/dsl-orchestrator:release-1.2.1.x-arm64-linux (linux/arm64) 
- 13-Aug-25 09:41:52  INFO  Logging in to Docker CLI for manifest operations 
- 13-Aug-25 09:41:53  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/dsl-orchestrator:release-1.2.1.x mosipdev2/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c mosipdev2/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b 
- 13-Aug-25 09:41:53  INFO  release-1.2.1.x-arm64-linux: digest: sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 size: 1792 
- 13-Aug-25 09:41:53  INFO  Completed pulling/tagging mosipdev/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 	------> mosipdev2/dsl-packetcreator:release-1.2.1.x-arm64-linux (linux/arm64) 
- 13-Aug-25 09:41:54  INFO  release-1.2.1.x-amd64-linux: digest: sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db size: 1792 
- 13-Aug-25 09:41:54  INFO  Completed pulling/tagging mosipdev/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db 	------> mosipdev2/dsl-packetcreator:release-1.2.1.x-amd64-linux (linux/amd64) 
- 13-Aug-25 09:41:54  INFO  Logging in to Docker CLI for manifest operations 
- 13-Aug-25 09:41:54  INFO  Pushing manifest list with command: docker manifest push mosipdev2/dsl-orchestrator:release-1.2.1.x 
- 13-Aug-25 09:41:54  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/dsl-packetcreator:release-1.2.1.x mosipdev2/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db mosipdev2/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 
- 13-Aug-25 09:41:55  INFO  Logging in to Docker CLI for manifest operations 
- 13-Aug-25 09:41:55  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/dsl-orchestrator:latest mosipdev2/dsl-orchestrator@sha256:29cba9d67f130a2664b2b13c968c5d37d1c088304eddad5cf5787c0451bce66c mosipdev2/dsl-orchestrator@sha256:49614a699d9a95601079f5d3e742309b2814f5fd3c089ff638964a2f706a0e4b 
- 13-Aug-25 09:41:56  INFO  Pushing manifest list with command: docker manifest push mosipdev2/dsl-packetcreator:release-1.2.1.x 
- 13-Aug-25 09:41:56  INFO  Pushing manifest list with command: docker manifest push mosipdev2/dsl-orchestrator:latest 
- 13-Aug-25 09:41:56  INFO  Logging in to Docker CLI for manifest operations 
- 13-Aug-25 09:41:57  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/dsl-packetcreator:latest mosipdev2/dsl-packetcreator@sha256:5380d7884acaa7917cffaddc16d0c676ae6db069f084ce90faf5603d038b11db mosipdev2/dsl-packetcreator@sha256:b594db5f54287800d8dcc6a666ef96abebf2be15d0ce034ccd081f4839db1066 
- 13-Aug-25 09:41:57  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/dsl-orchestrator:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 13-Aug-25 09:41:57  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/dsl-orchestrator:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 13-Aug-25 09:41:57  INFO  Completed processing mosipdev/dsl-orchestrator:release-1.2.1.x to mosipdev2/dsl-orchestrator:release-1.2.1.x 
- 13-Aug-25 09:41:58  INFO  Pushing manifest list with command: docker manifest push mosipdev2/dsl-packetcreator:latest 
- 13-Aug-25 09:41:59  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/dsl-packetcreator:release-1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 188 
- 13-Aug-25 09:41:59  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/dsl-packetcreator:release-1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 188 
- 13-Aug-25 09:41:59  INFO  Completed processing mosipdev/dsl-packetcreator:release-1.2.1.x to mosipdev2/dsl-packetcreator:release-1.2.1.x 
+ 13-Aug-25 13:56:21  INFO  LOGFILE CREATED : vidivi.log 
+ 13-Aug-25 13:56:21  INFO   
+ 13-Aug-25 13:56:21  INFO  ******************** Check Images List ************************************************************************************ 
+ 13-Aug-25 13:56:21  INFO   
+ 13-Aug-25 13:56:21  INFO  IMAGES= [['mosipdev2/apitest-mimoto:release-0.18.x', '0.18.x']] 
+ 13-Aug-25 13:56:21  INFO   
+ 13-Aug-25 13:56:21  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 13-Aug-25 13:56:21  INFO   
+ 13-Aug-25 13:56:21  INFO  src = "mosipdev2/apitest-mimoto" tag = "release-0.18.x" 
+ 13-Aug-25 13:56:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Aug-25 13:56:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:22  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Aug-25 13:56:22  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-mimoto/tags/release-0.18.x HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:22  INFO   
+ 13-Aug-25 13:56:22  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 13-Aug-25 13:56:22  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 13-Aug-25 13:56:22  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 13-Aug-25 13:56:22  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 13-Aug-25 13:56:22  INFO   
+ 13-Aug-25 13:56:22  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 13-Aug-25 13:56:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Aug-25 13:56:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:23  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 13-Aug-25 13:56:23  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-mimoto/manifests/0.18.x HTTP/1.1" 200 743 
+ 13-Aug-25 13:56:23  INFO   
+ 13-Aug-25 13:56:23  INFO  [ mosipqa/apitest-mimoto ]  
+ 13-Aug-25 13:56:23  INFO  Destination Image = "mosipqa/apitest-mimoto" Destination Image tag = "0.18.x" IMAGE_ID : "sha256:311046452d5a9a9a8776aefa4d5828b9ebc68287ed7116c4d5bc18a1e534f3fd" 
+ 13-Aug-25 13:56:23  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Aug-25 13:56:23  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:23  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Aug-25 13:56:23  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-mimoto/tags/0.18.x HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:23  INFO   
+ 13-Aug-25 13:56:23  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 13-Aug-25 13:56:23  INFO   
+ 13-Aug-25 13:56:23  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 13-Aug-25 13:56:23  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 13-Aug-25 13:56:23  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 13-Aug-25 13:56:23  DEBUG  Found 'auths' section 
+ 13-Aug-25 13:56:23  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 13-Aug-25 13:56:23  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 13-Aug-25 13:56:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Aug-25 13:56:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Aug-25 13:56:24  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 13-Aug-25 13:56:24  INFO   
+ 13-Aug-25 13:56:24  INFO  ********** [ mosipqa/apitest-mimoto:0.18.x ] **************************************************** 
+ 13-Aug-25 13:56:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Aug-25 13:56:24  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:24  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 13-Aug-25 13:56:25  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-mimoto/manifests/release-0.18.x HTTP/1.1" 200 743 
+ 13-Aug-25 13:56:25  INFO  Multi-arch image detected with 2 architectures 
+ 13-Aug-25 13:56:25  INFO  Processing architecture: amd64/linux with digest sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d 
+ 13-Aug-25 13:56:25  INFO   
+ 13-Aug-25 13:56:25  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d ]  
+ 13-Aug-25 13:56:25  DEBUG  Looking for auth config 
+ 13-Aug-25 13:56:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Aug-25 13:56:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Aug-25 13:56:25  DEBUG  Found auth config 
+ 13-Aug-25 13:56:25  INFO  Processing architecture: arm64/linux with digest sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 
+ 13-Aug-25 13:56:25  INFO   
+ 13-Aug-25 13:56:25  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 ]  
+ 13-Aug-25 13:56:25  DEBUG  Looking for auth config 
+ 13-Aug-25 13:56:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Aug-25 13:56:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Aug-25 13:56:25  DEBUG  Found auth config 
+ 13-Aug-25 13:56:25  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d&fromImage=mosipdev2%2Fapitest-mimoto HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:25  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55&fromImage=mosipdev2%2Fapitest-mimoto HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:49  INFO  Status: Downloaded newer image for mosipdev2/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d 
+ 13-Aug-25 13:56:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto%40sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d/tag?tag=0.18.x-amd64-linux&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
+ 13-Aug-25 13:56:49  INFO   
+ 13-Aug-25 13:56:49  INFO  [ PUSH linux/amd64 -----> mosipdev2/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d	------> mosipqa/apitest-mimoto:0.18.x-amd64-linux ]  
+ 13-Aug-25 13:56:49  DEBUG  Looking for auth config 
+ 13-Aug-25 13:56:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Aug-25 13:56:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Aug-25 13:56:49  DEBUG  Found auth config 
+ 13-Aug-25 13:56:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-mimoto/push?tag=0.18.x-amd64-linux HTTP/1.1" 200 None 
+ 13-Aug-25 13:56:56  INFO  0.18.x-amd64-linux: digest: sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d size: 2212 
+ 13-Aug-25 13:56:56  INFO  Completed pulling/tagging mosipdev2/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d 	------> mosipqa/apitest-mimoto:0.18.x-amd64-linux (linux/amd64) 
+ 13-Aug-25 13:57:24  INFO  Status: Downloaded newer image for mosipdev2/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 
+ 13-Aug-25 13:57:24  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto%40sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55/tag?tag=0.18.x-arm64-linux&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
+ 13-Aug-25 13:57:24  INFO   
+ 13-Aug-25 13:57:24  INFO  [ PUSH linux/arm64 -----> mosipdev2/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55	------> mosipqa/apitest-mimoto:0.18.x-arm64-linux ]  
+ 13-Aug-25 13:57:24  DEBUG  Looking for auth config 
+ 13-Aug-25 13:57:24  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Aug-25 13:57:24  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Aug-25 13:57:24  DEBUG  Found auth config 
+ 13-Aug-25 13:57:24  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-mimoto/push?tag=0.18.x-arm64-linux HTTP/1.1" 200 None 
+ 13-Aug-25 13:57:28  INFO  0.18.x-arm64-linux: digest: sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 size: 2212 
+ 13-Aug-25 13:57:28  INFO  Completed pulling/tagging mosipdev2/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 	------> mosipqa/apitest-mimoto:0.18.x-arm64-linux (linux/arm64) 
+ 13-Aug-25 13:57:28  INFO  Logging in to Docker CLI for manifest operations 
+ 13-Aug-25 13:57:29  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-mimoto:0.18.x mosipqa/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d mosipqa/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 
+ 13-Aug-25 13:57:31  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-mimoto:0.18.x 
+ 13-Aug-25 13:57:32  INFO  Logging in to Docker CLI for manifest operations 
+ 13-Aug-25 13:57:33  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-mimoto:latest mosipqa/apitest-mimoto@sha256:34d17fcda2724aac3a77118f3e7e31a65b67a9054dc8f2666cf30422ac80558d mosipqa/apitest-mimoto@sha256:76e2fdc1d637b4957106468ca0ce14020b7f93f6651b0412b0793ac639903c55 
+ 13-Aug-25 13:57:35  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-mimoto:latest 
+ 13-Aug-25 13:57:36  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-mimoto:0.18.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 169 
+ 13-Aug-25 13:57:36  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-mimoto:0.18.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 169 
+ 13-Aug-25 13:57:36  INFO  Completed processing mosipdev2/apitest-mimoto:release-0.18.x to mosipqa/apitest-mimoto:0.18.x 
