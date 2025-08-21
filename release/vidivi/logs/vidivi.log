@@ -1,97 +1,159 @@
- 21-Aug-25 05:44:12  INFO  LOGFILE CREATED : vidivi.log 
- 21-Aug-25 05:44:12  INFO   
- 21-Aug-25 05:44:12  INFO  ******************** Check Images List ************************************************************************************ 
- 21-Aug-25 05:44:12  INFO   
- 21-Aug-25 05:44:12  INFO  IMAGES= [['mosipdev2/uitest-pmp-v2:release-1.3.x', '1.3.x']] 
- 21-Aug-25 05:44:12  INFO   
- 21-Aug-25 05:44:12  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 21-Aug-25 05:44:12  INFO   
- 21-Aug-25 05:44:12  INFO  src = "mosipdev2/uitest-pmp-v2" tag = "release-1.3.x" 
- 21-Aug-25 05:44:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-25 05:44:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-pmp-v2:pull HTTP/1.1" 200 None 
- 21-Aug-25 05:44:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 21-Aug-25 05:44:13  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-pmp-v2/tags/release-1.3.x HTTP/1.1" 200 None 
- 21-Aug-25 05:44:13  INFO   
- 21-Aug-25 05:44:13  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 21-Aug-25 05:44:13  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 21-Aug-25 05:44:13  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 21-Aug-25 05:44:13  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 21-Aug-25 05:44:13  INFO   
- 21-Aug-25 05:44:13  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 21-Aug-25 05:44:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-25 05:44:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-pmp-v2:pull HTTP/1.1" 200 None 
- 21-Aug-25 05:44:13  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 21-Aug-25 05:44:14  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/uitest-pmp-v2/manifests/1.3.x HTTP/1.1" 200 743 
- 21-Aug-25 05:44:14  INFO   
- 21-Aug-25 05:44:14  INFO  [ mosipqa/uitest-pmp-v2 ]  
- 21-Aug-25 05:44:14  INFO  Destination Image = "mosipqa/uitest-pmp-v2" Destination Image tag = "1.3.x" IMAGE_ID : "sha256:261fa891458f3265595206cab3feb11b026cdac7bc75edab40d7244a1607d5b4" 
- 21-Aug-25 05:44:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-25 05:44:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-pmp-v2:pull HTTP/1.1" 200 None 
- 21-Aug-25 05:44:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 21-Aug-25 05:44:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/uitest-pmp-v2/tags/1.3.x HTTP/1.1" 200 None 
- 21-Aug-25 05:44:14  INFO   
- 21-Aug-25 05:44:14  INFO  ******************** HASH Operation Results ********************************************************************** 
- 21-Aug-25 05:44:14  INFO   
- 21-Aug-25 05:44:14  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 21-Aug-25 05:44:14  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 21-Aug-25 05:44:14  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 21-Aug-25 05:44:14  DEBUG  Found 'auths' section 
- 21-Aug-25 05:44:14  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 21-Aug-25 05:44:14  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 21-Aug-25 05:44:14  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-25 05:44:14  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-25 05:44:15  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 21-Aug-25 05:44:15  INFO   
- 21-Aug-25 05:44:15  INFO  ********** [ mosipqa/uitest-pmp-v2:1.3.x ] **************************************************** 
- 21-Aug-25 05:44:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 21-Aug-25 05:44:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-pmp-v2:pull HTTP/1.1" 200 None 
- 21-Aug-25 05:44:15  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 21-Aug-25 05:44:16  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/uitest-pmp-v2/manifests/release-1.3.x HTTP/1.1" 200 743 
- 21-Aug-25 05:44:16  INFO  Multi-arch image detected with 2 architectures 
- 21-Aug-25 05:44:16  INFO  Processing architecture: amd64/linux with digest sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 
- 21-Aug-25 05:44:16  INFO   
- 21-Aug-25 05:44:16  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 ]  
- 21-Aug-25 05:44:16  DEBUG  Looking for auth config 
- 21-Aug-25 05:44:16  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-25 05:44:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-25 05:44:16  DEBUG  Found auth config 
- 21-Aug-25 05:44:16  INFO  Processing architecture: arm64/linux with digest sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed 
- 21-Aug-25 05:44:16  INFO   
- 21-Aug-25 05:44:16  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed ]  
- 21-Aug-25 05:44:16  DEBUG  Looking for auth config 
- 21-Aug-25 05:44:16  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-25 05:44:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-25 05:44:16  DEBUG  Found auth config 
- 21-Aug-25 05:44:16  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ae85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed&fromImage=mosipdev2%2Fuitest-pmp-v2 HTTP/1.1" 200 None 
- 21-Aug-25 05:44:16  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Adb4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595&fromImage=mosipdev2%2Fuitest-pmp-v2 HTTP/1.1" 200 None 
- 21-Aug-25 05:44:47  INFO  Status: Downloaded newer image for mosipdev2/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed 
- 21-Aug-25 05:44:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-pmp-v2%40sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed/tag?tag=1.3.x-arm64-linux&repo=mosipqa%2Fuitest-pmp-v2&force=1 HTTP/1.1" 201 0 
- 21-Aug-25 05:44:47  INFO   
- 21-Aug-25 05:44:47  INFO  [ PUSH linux/arm64 -----> mosipdev2/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed	------> mosipqa/uitest-pmp-v2:1.3.x-arm64-linux ]  
- 21-Aug-25 05:44:47  DEBUG  Looking for auth config 
- 21-Aug-25 05:44:47  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-25 05:44:47  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-25 05:44:47  DEBUG  Found auth config 
- 21-Aug-25 05:44:47  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/uitest-pmp-v2/push?tag=1.3.x-arm64-linux HTTP/1.1" 200 None 
- 21-Aug-25 05:44:51  INFO  Status: Downloaded newer image for mosipdev2/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 
- 21-Aug-25 05:44:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-pmp-v2%40sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595/tag?tag=1.3.x-amd64-linux&repo=mosipqa%2Fuitest-pmp-v2&force=1 HTTP/1.1" 201 0 
- 21-Aug-25 05:44:51  INFO   
- 21-Aug-25 05:44:51  INFO  [ PUSH linux/amd64 -----> mosipdev2/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595	------> mosipqa/uitest-pmp-v2:1.3.x-amd64-linux ]  
- 21-Aug-25 05:44:51  DEBUG  Looking for auth config 
- 21-Aug-25 05:44:51  DEBUG  Looking for auth entry for 'docker.io' 
- 21-Aug-25 05:44:51  DEBUG  Found 'https://index.docker.io/v1/' 
- 21-Aug-25 05:44:51  DEBUG  Found auth config 
- 21-Aug-25 05:44:51  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/uitest-pmp-v2/push?tag=1.3.x-amd64-linux HTTP/1.1" 200 None 
- 21-Aug-25 05:44:54  INFO  1.3.x-arm64-linux: digest: sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed size: 2422 
- 21-Aug-25 05:44:54  INFO  Completed pulling/tagging mosipdev2/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed 	------> mosipqa/uitest-pmp-v2:1.3.x-arm64-linux (linux/arm64) 
- 21-Aug-25 05:44:57  INFO  1.3.x-amd64-linux: digest: sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 size: 2422 
- 21-Aug-25 05:44:57  INFO  Completed pulling/tagging mosipdev2/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 	------> mosipqa/uitest-pmp-v2:1.3.x-amd64-linux (linux/amd64) 
- 21-Aug-25 05:44:57  INFO  Logging in to Docker CLI for manifest operations 
- 21-Aug-25 05:44:59  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/uitest-pmp-v2:1.3.x mosipqa/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 mosipqa/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed 
- 21-Aug-25 05:45:02  INFO  Pushing manifest list with command: docker manifest push mosipqa/uitest-pmp-v2:1.3.x 
- 21-Aug-25 05:45:03  INFO  Logging in to Docker CLI for manifest operations 
- 21-Aug-25 05:45:04  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/uitest-pmp-v2:latest mosipqa/uitest-pmp-v2@sha256:db4ce5dac63c6ae152b9afa1b4d1019246f0b22222d8849a4d59f6115f0f5595 mosipqa/uitest-pmp-v2@sha256:e85a505649d664cdb1527fd27f51f8ea4db975c73b4f0c7bb582ee0eab38d0ed 
- 21-Aug-25 05:45:06  INFO  Pushing manifest list with command: docker manifest push mosipqa/uitest-pmp-v2:latest 
- 21-Aug-25 05:45:07  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/uitest-pmp-v2:1.3.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 166 
- 21-Aug-25 05:45:07  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/uitest-pmp-v2:1.3.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 166 
- 21-Aug-25 05:45:07  INFO  Completed processing mosipdev2/uitest-pmp-v2:release-1.3.x to mosipqa/uitest-pmp-v2:1.3.x 
+ 21-Aug-25 06:02:42  INFO  LOGFILE CREATED : vidivi.log 
+ 21-Aug-25 06:02:42  INFO   
+ 21-Aug-25 06:02:42  INFO  ******************** Check Images List ************************************************************************************ 
+ 21-Aug-25 06:02:42  INFO   
+ 21-Aug-25 06:02:42  INFO  IMAGES= [['mosipdev2/inji-verify-ui:release-0.14.x', '0.14.x'], ['mosipdev2/inji-verify-service:release-0.14.x', '0.14.x']] 
+ 21-Aug-25 06:02:42  INFO   
+ 21-Aug-25 06:02:42  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 21-Aug-25 06:02:42  INFO   
+ 21-Aug-25 06:02:42  INFO  src = "mosipdev2/inji-verify-ui" tag = "release-0.14.x" 
+ 21-Aug-25 06:02:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/inji-verify-ui/tags/release-0.14.x HTTP/1.1" 200 836 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  src = "mosipdev2/inji-verify-service" tag = "release-0.14.x" 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-verify-service:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/inji-verify-service/tags/release-0.14.x HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 21-Aug-25 06:02:43  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 21-Aug-25 06:02:43  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-verify-ui/manifests/0.14.x HTTP/1.1" 200 2818 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  [ mosipqa/inji-verify-ui ]  
+ 21-Aug-25 06:02:43  INFO  Destination Image = "mosipqa/inji-verify-ui" Destination Image tag = "0.14.x" IMAGE_ID : "sha256:3d25f26fd182a57526a80a6727128302fe15bb1dc3aa00ba3ccfbb22e3910b37" 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-verify-ui/tags/0.14.x HTTP/1.1" 200 820 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-service:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/inji-verify-service/manifests/0.14.x HTTP/1.1" 200 743 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  [ mosipqa/inji-verify-service ]  
+ 21-Aug-25 06:02:43  INFO  Destination Image = "mosipqa/inji-verify-service" Destination Image tag = "0.14.x" IMAGE_ID : "sha256:7bdf38afb92b980bdf53cf51e379dc9cfe70359e6aa0b172045d2fdd6763c6df" 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/inji-verify-service:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 21-Aug-25 06:02:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/inji-verify-service/tags/0.14.x HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 21-Aug-25 06:02:43  INFO   
+ 21-Aug-25 06:02:43  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 21-Aug-25 06:02:43  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 21-Aug-25 06:02:43  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 21-Aug-25 06:02:43  DEBUG  Found 'auths' section 
+ 21-Aug-25 06:02:43  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 21-Aug-25 06:02:43  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 21-Aug-25 06:02:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:44  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 21-Aug-25 06:02:44  INFO   
+ 21-Aug-25 06:02:44  INFO  ********** [ mosipqa/inji-verify-ui:0.14.x ] **************************************************** 
+ 21-Aug-25 06:02:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:44  INFO   
+ 21-Aug-25 06:02:44  INFO  ********** [ mosipqa/inji-verify-service:0.14.x ] **************************************************** 
+ 21-Aug-25 06:02:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 21-Aug-25 06:02:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-verify-service:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-verify-ui:pull HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-25 06:02:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-25 06:02:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/inji-verify-service/manifests/release-0.14.x HTTP/1.1" 200 743 
+ 21-Aug-25 06:02:44  INFO  Multi-arch image detected with 2 architectures 
+ 21-Aug-25 06:02:44  INFO  Processing architecture: amd64/linux with digest sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 
+ 21-Aug-25 06:02:44  INFO   
+ 21-Aug-25 06:02:44  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 ]  
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:44  DEBUG  Found auth config 
+ 21-Aug-25 06:02:44  INFO  Processing architecture: arm64/linux with digest sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 
+ 21-Aug-25 06:02:44  INFO   
+ 21-Aug-25 06:02:44  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 ]  
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:44  DEBUG  Found auth config 
+ 21-Aug-25 06:02:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/inji-verify-ui/manifests/release-0.14.x HTTP/1.1" 200 2818 
+ 21-Aug-25 06:02:44  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 21-Aug-25 06:02:44  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/inji-verify-ui/manifests/release-0.14.x HTTP/1.1" 200 2818 
+ 21-Aug-25 06:02:44  INFO   
+ 21-Aug-25 06:02:44  INFO  [ PULL ----------------------> mosipdev2/inji-verify-ui:release-0.14.x ]  
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:44  DEBUG  Found auth config 
+ 21-Aug-25 06:02:44  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5&fromImage=mosipdev2%2Finji-verify-service HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:44  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15&fromImage=mosipdev2%2Finji-verify-service HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:44  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=release-0.14.x&fromImage=mosipdev2%2Finji-verify-ui HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:50  INFO  Status: Downloaded newer image for mosipdev2/inji-verify-ui:release-0.14.x 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/inji-verify-ui:release-0.14.x/tag?tag=0.14.x&repo=mosipqa%2Finji-verify-ui&force=1 HTTP/1.1" 201 0 
+ 21-Aug-25 06:02:50  INFO   
+ 21-Aug-25 06:02:50  INFO  [ PUSH -----> mosipdev2/inji-verify-ui:release-0.14.x	------> mosipqa/inji-verify-ui:0.14.x ]  
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:50  DEBUG  Found auth config 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-verify-ui/push?tag=0.14.x HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:50  INFO  Status: Downloaded newer image for mosipdev2/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 
+ 21-Aug-25 06:02:50  INFO  Status: Downloaded newer image for mosipdev2/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/inji-verify-service%40sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5/tag?tag=0.14.x-arm64-linux&repo=mosipqa%2Finji-verify-service&force=1 HTTP/1.1" 201 0 
+ 21-Aug-25 06:02:50  INFO   
+ 21-Aug-25 06:02:50  INFO  [ PUSH linux/arm64 -----> mosipdev2/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5	------> mosipqa/inji-verify-service:0.14.x-arm64-linux ]  
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:50  DEBUG  Found auth config 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/inji-verify-service%40sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15/tag?tag=0.14.x-amd64-linux&repo=mosipqa%2Finji-verify-service&force=1 HTTP/1.1" 201 0 
+ 21-Aug-25 06:02:50  INFO   
+ 21-Aug-25 06:02:50  INFO  [ PUSH linux/amd64 -----> mosipdev2/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15	------> mosipqa/inji-verify-service:0.14.x-amd64-linux ]  
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:50  DEBUG  Found auth config 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-verify-service/push?tag=0.14.x-arm64-linux HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-verify-service/push?tag=0.14.x-amd64-linux HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:52  INFO  0.14.x: digest: sha256:bf876ac182e4a1f46f9effbbe0b97ea272a4a35d1beb13aa5a0df919bf3317b4 size: 2818 
+ 21-Aug-25 06:02:52  INFO   
+ 21-Aug-25 06:02:52  INFO  [ PUSH -----> mosipdev2/inji-verify-ui:release-0.14.x	------> mosipqa/inji-verify-ui:latest ]  
+ 21-Aug-25 06:02:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/inji-verify-ui:release-0.14.x/tag?tag=latest&repo=mosipqa%2Finji-verify-ui&force=1 HTTP/1.1" 201 0 
+ 21-Aug-25 06:02:52  DEBUG  Looking for auth config 
+ 21-Aug-25 06:02:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 21-Aug-25 06:02:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 21-Aug-25 06:02:52  DEBUG  Found auth config 
+ 21-Aug-25 06:02:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/inji-verify-ui/push?tag=latest HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:52  INFO  0.14.x-amd64-linux: digest: sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 size: 1791 
+ 21-Aug-25 06:02:52  INFO  Completed pulling/tagging mosipdev2/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 	------> mosipqa/inji-verify-service:0.14.x-amd64-linux (linux/amd64) 
+ 21-Aug-25 06:02:52  INFO  0.14.x-arm64-linux: digest: sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 size: 1791 
+ 21-Aug-25 06:02:52  INFO  Completed pulling/tagging mosipdev2/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 	------> mosipqa/inji-verify-service:0.14.x-arm64-linux (linux/arm64) 
+ 21-Aug-25 06:02:52  INFO  Logging in to Docker CLI for manifest operations 
+ 21-Aug-25 06:02:53  INFO  latest: digest: sha256:bf876ac182e4a1f46f9effbbe0b97ea272a4a35d1beb13aa5a0df919bf3317b4 size: 2818 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipdev2%2Finji-verify-ui%3Arelease-0.14.x%22%5D%7D HTTP/1.1" 200 446 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/sha256:9069d4d77aedf19fea20d8bbf537e266b10b6cac533e92e9c8bc5328b02d51f4/json HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/inji-verify-ui:release-0.14.x?force=False&noprune=False HTTP/1.1" 200 169 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-ui%3A0.14.x%22%5D%7D HTTP/1.1" 200 436 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/sha256:9069d4d77aedf19fea20d8bbf537e266b10b6cac533e92e9c8bc5328b02d51f4/json HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-verify-ui:0.14.x?force=False&noprune=False HTTP/1.1" 200 47 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipqa%2Finji-verify-ui%3Alatest%22%5D%7D HTTP/1.1" 200 436 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "GET /v1.48/images/sha256:9069d4d77aedf19fea20d8bbf537e266b10b6cac533e92e9c8bc5328b02d51f4/json HTTP/1.1" 200 None 
+ 21-Aug-25 06:02:53  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-verify-ui:latest?force=False&noprune=False HTTP/1.1" 200 1275 
+ 21-Aug-25 06:02:53  INFO  Completed mosipdev2/inji-verify-ui:release-0.14.x	------> mosipqa/inji-verify-ui:0.14.x 
+ 21-Aug-25 06:02:53  INFO  Completed processing mosipdev2/inji-verify-ui:release-0.14.x to mosipqa/inji-verify-ui:0.14.x 
+ 21-Aug-25 06:02:53  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-verify-service:0.14.x mosipqa/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 mosipqa/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 
+ 21-Aug-25 06:02:54  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-verify-service:0.14.x 
+ 21-Aug-25 06:02:54  INFO  Logging in to Docker CLI for manifest operations 
+ 21-Aug-25 06:02:55  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/inji-verify-service:latest mosipqa/inji-verify-service@sha256:15b0a02e1689c3358e698167a1e75b6be569917e8b2349be9f3b58ea17923b15 mosipqa/inji-verify-service@sha256:97a6cf42496eddfcac18795413c18515e92d7eccec21ef76fb534cbef3a173e5 
+ 21-Aug-25 06:02:55  INFO  Pushing manifest list with command: docker manifest push mosipqa/inji-verify-service:latest 
+ 21-Aug-25 06:02:55  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-verify-service:0.14.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 179 
+ 21-Aug-25 06:02:55  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/inji-verify-service:0.14.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 179 
+ 21-Aug-25 06:02:55  INFO  Completed processing mosipdev2/inji-verify-service:release-0.14.x to mosipqa/inji-verify-service:0.14.x 
