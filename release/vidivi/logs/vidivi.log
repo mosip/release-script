@@ -1,97 +1,101 @@
- 02-Sep-25 06:29:21  INFO  LOGFILE CREATED : vidivi.log 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** Check Images List ************************************************************************************ 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  IMAGES= [['mosipdev2/apitest-auth:release-1.2.1.x', '1.2.1.x']] 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  src = "mosipdev2/apitest-auth" tag = "release-1.2.1.x" 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-25 06:29:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-auth:pull HTTP/1.1" 200 None 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Sep-25 06:29:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-auth/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 02-Sep-25 06:29:21  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 02-Sep-25 06:29:21  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-25 06:29:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-auth:pull HTTP/1.1" 200 None 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 02-Sep-25 06:29:21  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-auth/manifests/1.2.1.x HTTP/1.1" 200 743 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  [ mosipqa/apitest-auth ]  
- 02-Sep-25 06:29:21  INFO  Destination Image = "mosipqa/apitest-auth" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:ab9fdae227cdda9267a81bd8360f559ce108192761732e21baac60f55c46a770" 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-25 06:29:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-auth:pull HTTP/1.1" 200 None 
- 02-Sep-25 06:29:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Sep-25 06:29:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-auth/tags/1.2.1.x HTTP/1.1" 200 None 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** HASH Operation Results ********************************************************************** 
- 02-Sep-25 06:29:21  INFO   
- 02-Sep-25 06:29:21  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 02-Sep-25 06:29:21  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 02-Sep-25 06:29:21  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 02-Sep-25 06:29:21  DEBUG  Found 'auths' section 
- 02-Sep-25 06:29:21  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 02-Sep-25 06:29:21  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 02-Sep-25 06:29:21  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-25 06:29:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-25 06:29:22  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 02-Sep-25 06:29:22  INFO   
- 02-Sep-25 06:29:22  INFO  ********** [ mosipqa/apitest-auth:1.2.1.x ] **************************************************** 
- 02-Sep-25 06:29:22  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Sep-25 06:29:22  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-auth:pull HTTP/1.1" 200 None 
- 02-Sep-25 06:29:22  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 02-Sep-25 06:29:22  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-auth/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 02-Sep-25 06:29:22  INFO  Multi-arch image detected with 2 architectures 
- 02-Sep-25 06:29:22  INFO  Processing architecture: arm64/linux with digest sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d 
- 02-Sep-25 06:29:22  INFO   
- 02-Sep-25 06:29:22  INFO  Processing architecture: amd64/linux with digest sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 
- 02-Sep-25 06:29:22  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d ]  
- 02-Sep-25 06:29:22  DEBUG  Looking for auth config 
- 02-Sep-25 06:29:22  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-25 06:29:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-25 06:29:22  DEBUG  Found auth config 
- 02-Sep-25 06:29:22  INFO   
- 02-Sep-25 06:29:22  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 ]  
- 02-Sep-25 06:29:22  DEBUG  Looking for auth config 
- 02-Sep-25 06:29:22  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-25 06:29:22  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-25 06:29:22  DEBUG  Found auth config 
- 02-Sep-25 06:29:22  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d&fromImage=mosipdev2%2Fapitest-auth HTTP/1.1" 200 None 
- 02-Sep-25 06:29:22  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4&fromImage=mosipdev2%2Fapitest-auth HTTP/1.1" 200 None 
- 02-Sep-25 06:29:42  INFO  Status: Downloaded newer image for mosipdev2/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 
- 02-Sep-25 06:29:42  INFO  Status: Downloaded newer image for mosipdev2/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d 
- 02-Sep-25 06:29:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-auth%40sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d/tag?tag=1.2.1.x-arm64-linux&repo=mosipqa%2Fapitest-auth&force=1 HTTP/1.1" 201 0 
- 02-Sep-25 06:29:42  INFO   
- 02-Sep-25 06:29:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-auth%40sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4/tag?tag=1.2.1.x-amd64-linux&repo=mosipqa%2Fapitest-auth&force=1 HTTP/1.1" 201 0 
- 02-Sep-25 06:29:42  INFO  [ PUSH linux/arm64 -----> mosipdev2/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d	------> mosipqa/apitest-auth:1.2.1.x-arm64-linux ]  
- 02-Sep-25 06:29:42  INFO   
- 02-Sep-25 06:29:42  DEBUG  Looking for auth config 
- 02-Sep-25 06:29:42  INFO  [ PUSH linux/amd64 -----> mosipdev2/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4	------> mosipqa/apitest-auth:1.2.1.x-amd64-linux ]  
- 02-Sep-25 06:29:42  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-25 06:29:42  DEBUG  Looking for auth config 
- 02-Sep-25 06:29:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-25 06:29:42  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Sep-25 06:29:42  DEBUG  Found auth config 
- 02-Sep-25 06:29:42  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Sep-25 06:29:42  DEBUG  Found auth config 
- 02-Sep-25 06:29:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-auth/push?tag=1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 02-Sep-25 06:29:42  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-auth/push?tag=1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 02-Sep-25 06:29:45  INFO  1.2.1.x-amd64-linux: digest: sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 size: 2418 
- 02-Sep-25 06:29:45  INFO  Completed pulling/tagging mosipdev2/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 	------> mosipqa/apitest-auth:1.2.1.x-amd64-linux (linux/amd64) 
- 02-Sep-25 06:29:45  INFO  1.2.1.x-arm64-linux: digest: sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d size: 2418 
- 02-Sep-25 06:29:45  INFO  Completed pulling/tagging mosipdev2/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d 	------> mosipqa/apitest-auth:1.2.1.x-arm64-linux (linux/arm64) 
- 02-Sep-25 06:29:45  INFO  Logging in to Docker CLI for manifest operations 
- 02-Sep-25 06:29:47  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-auth:1.2.1.x mosipqa/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d mosipqa/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 
- 02-Sep-25 06:29:47  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-auth:1.2.1.x 
- 02-Sep-25 06:29:48  INFO  Logging in to Docker CLI for manifest operations 
- 02-Sep-25 06:29:48  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-auth:latest mosipqa/apitest-auth@sha256:585f9fb1ac124b9e8c50d8481a9a94f4c606aac9cd95dff30a3b4dd1374d211d mosipqa/apitest-auth@sha256:59dae44a3c23f807a317aa32ca95777c09eaa2f42d351175267b068a8ea259c4 
- 02-Sep-25 06:29:49  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-auth:latest 
- 02-Sep-25 06:29:49  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-auth:1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 166 
- 02-Sep-25 06:29:49  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-auth:1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 166 
- 02-Sep-25 06:29:49  INFO  Completed processing mosipdev2/apitest-auth:release-1.2.1.x to mosipqa/apitest-auth:1.2.1.x 
+ 03-Sep-25 06:37:54  INFO  LOGFILE CREATED : vidivi.log 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  ******************** Check Images List ************************************************************************************ 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  IMAGES= [['mosipdev/ui-test:release-0.14.x', 'release-0.14.x']] 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  src = "mosipdev/ui-test" tag = "release-0.14.x" 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Sep-25 06:37:54  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/ui-test:pull HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Sep-25 06:37:54  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/ui-test/tags/release-0.14.x HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 03-Sep-25 06:37:54  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 03-Sep-25 06:37:54  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Sep-25 06:37:54  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/ui-test:pull HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 03-Sep-25 06:37:54  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/ui-test/manifests/release-0.14.x HTTP/1.1" 404 108 
+ 03-Sep-25 06:37:54  INFO   
+ 03-Sep-25 06:37:54  INFO  [ mosipdev2/ui-test ]  
+ 03-Sep-25 06:37:54  INFO  Destination Image = "mosipdev2/ui-test" Destination Image tag = "release-0.14.x" IMAGE_ID :  
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Sep-25 06:37:54  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/ui-test:pull HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:54  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Sep-25 06:37:55  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/ui-test/tags/release-0.14.x HTTP/1.1" 404 142 
+ 03-Sep-25 06:37:55  ERROR  Image "mosipdev2/ui-test:release-0.14.x" does not exist 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/ui-test:release-0.14.x']] 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 03-Sep-25 06:37:55  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 03-Sep-25 06:37:55  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 03-Sep-25 06:37:55  DEBUG  Found 'auths' section 
+ 03-Sep-25 06:37:55  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 03-Sep-25 06:37:55  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 03-Sep-25 06:37:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Sep-25 06:37:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Sep-25 06:37:55  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  ********** [ mosipdev2/ui-test:release-0.14.x ] **************************************************** 
+ 03-Sep-25 06:37:55  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Sep-25 06:37:55  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/ui-test:pull HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:55  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 03-Sep-25 06:37:55  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/ui-test/manifests/release-0.14.x HTTP/1.1" 200 743 
+ 03-Sep-25 06:37:55  INFO  Multi-arch image detected with 2 architectures 
+ 03-Sep-25 06:37:55  INFO  Processing architecture: amd64/linux with digest sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  [ PULL linux/amd64 ----------------------> mosipdev/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e ]  
+ 03-Sep-25 06:37:55  DEBUG  Looking for auth config 
+ 03-Sep-25 06:37:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Sep-25 06:37:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Sep-25 06:37:55  DEBUG  Found auth config 
+ 03-Sep-25 06:37:55  INFO  Processing architecture: arm64/linux with digest sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 
+ 03-Sep-25 06:37:55  INFO   
+ 03-Sep-25 06:37:55  INFO  [ PULL linux/arm64 ----------------------> mosipdev/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 ]  
+ 03-Sep-25 06:37:55  DEBUG  Looking for auth config 
+ 03-Sep-25 06:37:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Sep-25 06:37:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Sep-25 06:37:55  DEBUG  Found auth config 
+ 03-Sep-25 06:37:55  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e&fromImage=mosipdev%2Fui-test HTTP/1.1" 200 None 
+ 03-Sep-25 06:37:55  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905&fromImage=mosipdev%2Fui-test HTTP/1.1" 200 None 
+ 03-Sep-25 06:38:13  INFO  Status: Downloaded newer image for mosipdev/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e 
+ 03-Sep-25 06:38:13  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/ui-test%40sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e/tag?tag=release-0.14.x-amd64-linux&repo=mosipdev2%2Fui-test&force=1 HTTP/1.1" 201 0 
+ 03-Sep-25 06:38:13  INFO   
+ 03-Sep-25 06:38:13  INFO  [ PUSH linux/amd64 -----> mosipdev/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e	------> mosipdev2/ui-test:release-0.14.x-amd64-linux ]  
+ 03-Sep-25 06:38:13  DEBUG  Looking for auth config 
+ 03-Sep-25 06:38:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Sep-25 06:38:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Sep-25 06:38:13  DEBUG  Found auth config 
+ 03-Sep-25 06:38:13  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/ui-test/push?tag=release-0.14.x-amd64-linux HTTP/1.1" 200 None 
+ 03-Sep-25 06:38:19  INFO  release-0.14.x-amd64-linux: digest: sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e size: 5961 
+ 03-Sep-25 06:38:19  INFO  Completed pulling/tagging mosipdev/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e 	------> mosipdev2/ui-test:release-0.14.x-amd64-linux (linux/amd64) 
+ 03-Sep-25 06:38:38  INFO  Status: Downloaded newer image for mosipdev/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 
+ 03-Sep-25 06:38:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/ui-test%40sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905/tag?tag=release-0.14.x-arm64-linux&repo=mosipdev2%2Fui-test&force=1 HTTP/1.1" 201 0 
+ 03-Sep-25 06:38:38  INFO   
+ 03-Sep-25 06:38:38  INFO  [ PUSH linux/arm64 -----> mosipdev/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905	------> mosipdev2/ui-test:release-0.14.x-arm64-linux ]  
+ 03-Sep-25 06:38:38  DEBUG  Looking for auth config 
+ 03-Sep-25 06:38:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Sep-25 06:38:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Sep-25 06:38:38  DEBUG  Found auth config 
+ 03-Sep-25 06:38:38  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/ui-test/push?tag=release-0.14.x-arm64-linux HTTP/1.1" 200 None 
+ 03-Sep-25 06:38:43  INFO  release-0.14.x-arm64-linux: digest: sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 size: 5961 
+ 03-Sep-25 06:38:43  INFO  Completed pulling/tagging mosipdev/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 	------> mosipdev2/ui-test:release-0.14.x-arm64-linux (linux/arm64) 
+ 03-Sep-25 06:38:43  INFO  Logging in to Docker CLI for manifest operations 
+ 03-Sep-25 06:38:43  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/ui-test:release-0.14.x mosipdev2/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e mosipdev2/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 
+ 03-Sep-25 06:38:44  INFO  Pushing manifest list with command: docker manifest push mosipdev2/ui-test:release-0.14.x 
+ 03-Sep-25 06:38:44  INFO  Logging in to Docker CLI for manifest operations 
+ 03-Sep-25 06:38:45  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/ui-test:latest mosipdev2/ui-test@sha256:258a1d293e346a9e94c477146b4c026bb1eb90227aa40009518466c3522fb49e mosipdev2/ui-test@sha256:2706c773b529be60764cf680fe1956f8f48930da8dd8bfde3c645944f259b905 
+ 03-Sep-25 06:38:45  INFO  Pushing manifest list with command: docker manifest push mosipdev2/ui-test:latest 
+ 03-Sep-25 06:38:46  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/ui-test:release-0.14.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 167 
+ 03-Sep-25 06:38:46  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/ui-test:release-0.14.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 167 
+ 03-Sep-25 06:38:46  INFO  Completed processing mosipdev/ui-test:release-0.14.x to mosipdev2/ui-test:release-0.14.x 
