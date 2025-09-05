@@ -1,100 +1,892 @@
- 05-Sep-25 06:55:31  INFO  LOGFILE CREATED : vidivi.log 
- 05-Sep-25 06:55:31  INFO   
- 05-Sep-25 06:55:31  INFO  ******************** Check Images List ************************************************************************************ 
- 05-Sep-25 06:55:31  INFO   
- 05-Sep-25 06:55:31  INFO  IMAGES= [['mosipdev/commons-packet-service:release-1.2.0.x', '1.2.0.4']] 
- 05-Sep-25 06:55:31  INFO   
- 05-Sep-25 06:55:31  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 05-Sep-25 06:55:31  INFO   
- 05-Sep-25 06:55:31  INFO  src = "mosipdev/commons-packet-service" tag = "release-1.2.0.x" 
- 05-Sep-25 06:55:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Sep-25 06:55:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/commons-packet-service:pull HTTP/1.1" 200 None 
- 05-Sep-25 06:55:31  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Sep-25 06:55:31  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/commons-packet-service/tags/release-1.2.0.x HTTP/1.1" 200 None 
- 05-Sep-25 06:55:31  INFO   
- 05-Sep-25 06:55:31  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 05-Sep-25 06:55:31  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 05-Sep-25 06:55:32  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Sep-25 06:55:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/commons-packet-service:pull HTTP/1.1" 200 None 
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 05-Sep-25 06:55:32  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/commons-packet-service/manifests/1.2.0.4 HTTP/1.1" 404 101 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  [ mosipid/commons-packet-service ]  
- 05-Sep-25 06:55:32  INFO  Destination Image = "mosipid/commons-packet-service" Destination Image tag = "1.2.0.4" IMAGE_ID :  
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Sep-25 06:55:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/commons-packet-service:pull HTTP/1.1" 200 None 
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Sep-25 06:55:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/commons-packet-service/tags/1.2.0.4 HTTP/1.1" 404 141 
- 05-Sep-25 06:55:32  ERROR  Image "mosipid/commons-packet-service:1.2.0.4" does not exist 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  ******************** HASH Operation Results ********************************************************************** 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/commons-packet-service:1.2.0.4']] 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 05-Sep-25 06:55:32  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 05-Sep-25 06:55:32  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 05-Sep-25 06:55:32  DEBUG  Found 'auths' section 
- 05-Sep-25 06:55:32  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 05-Sep-25 06:55:32  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 05-Sep-25 06:55:32  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Sep-25 06:55:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Sep-25 06:55:32  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  ********** [ mosipid/commons-packet-service:1.2.0.4 ] **************************************************** 
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Sep-25 06:55:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/commons-packet-service:pull HTTP/1.1" 200 None 
- 05-Sep-25 06:55:32  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 05-Sep-25 06:55:32  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/commons-packet-service/manifests/release-1.2.0.x HTTP/1.1" 200 743 
- 05-Sep-25 06:55:32  INFO  Multi-arch image detected with 2 architectures 
- 05-Sep-25 06:55:32  INFO  Processing architecture: amd64/linux with digest sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  [ PULL linux/amd64 ----------------------> mosipdev/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 ]  
- 05-Sep-25 06:55:32  DEBUG  Looking for auth config 
- 05-Sep-25 06:55:32  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Sep-25 06:55:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Sep-25 06:55:32  DEBUG  Found auth config 
- 05-Sep-25 06:55:32  INFO  Processing architecture: arm64/linux with digest sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 
- 05-Sep-25 06:55:32  INFO   
- 05-Sep-25 06:55:32  INFO  [ PULL linux/arm64 ----------------------> mosipdev/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 ]  
- 05-Sep-25 06:55:32  DEBUG  Looking for auth config 
- 05-Sep-25 06:55:32  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Sep-25 06:55:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Sep-25 06:55:32  DEBUG  Found auth config 
- 05-Sep-25 06:55:32  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9&fromImage=mosipdev%2Fcommons-packet-service HTTP/1.1" 200 None 
- 05-Sep-25 06:55:32  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Adf55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25&fromImage=mosipdev%2Fcommons-packet-service HTTP/1.1" 200 None 
- 05-Sep-25 06:55:53  INFO  Status: Downloaded newer image for mosipdev/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 
- 05-Sep-25 06:55:53  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/commons-packet-service%40sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9/tag?tag=1.2.0.4-amd64-linux&repo=mosipid%2Fcommons-packet-service&force=1 HTTP/1.1" 201 0 
- 05-Sep-25 06:55:53  INFO   
- 05-Sep-25 06:55:53  INFO  [ PUSH linux/amd64 -----> mosipdev/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9	------> mosipid/commons-packet-service:1.2.0.4-amd64-linux ]  
- 05-Sep-25 06:55:53  DEBUG  Looking for auth config 
- 05-Sep-25 06:55:53  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Sep-25 06:55:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Sep-25 06:55:53  DEBUG  Found auth config 
- 05-Sep-25 06:55:53  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/commons-packet-service/push?tag=1.2.0.4-amd64-linux HTTP/1.1" 200 None 
- 05-Sep-25 06:55:55  INFO  1.2.0.4-amd64-linux: digest: sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 size: 2847 
- 05-Sep-25 06:55:55  INFO  Completed pulling/tagging mosipdev/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 	------> mosipid/commons-packet-service:1.2.0.4-amd64-linux (linux/amd64) 
- 05-Sep-25 06:55:58  INFO  Status: Downloaded newer image for mosipdev/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 
- 05-Sep-25 06:55:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/commons-packet-service%40sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25/tag?tag=1.2.0.4-arm64-linux&repo=mosipid%2Fcommons-packet-service&force=1 HTTP/1.1" 201 0 
- 05-Sep-25 06:55:58  INFO   
- 05-Sep-25 06:55:58  INFO  [ PUSH linux/arm64 -----> mosipdev/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25	------> mosipid/commons-packet-service:1.2.0.4-arm64-linux ]  
- 05-Sep-25 06:55:58  DEBUG  Looking for auth config 
- 05-Sep-25 06:55:58  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Sep-25 06:55:58  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Sep-25 06:55:58  DEBUG  Found auth config 
- 05-Sep-25 06:55:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/commons-packet-service/push?tag=1.2.0.4-arm64-linux HTTP/1.1" 200 None 
- 05-Sep-25 06:56:00  INFO  1.2.0.4-arm64-linux: digest: sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 size: 2847 
- 05-Sep-25 06:56:00  INFO  Completed pulling/tagging mosipdev/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 	------> mosipid/commons-packet-service:1.2.0.4-arm64-linux (linux/arm64) 
- 05-Sep-25 06:56:00  INFO  Logging in to Docker CLI for manifest operations 
- 05-Sep-25 06:56:01  INFO  Creating manifest list with command: docker manifest create --amend mosipid/commons-packet-service:1.2.0.4 mosipid/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 mosipid/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 
- 05-Sep-25 06:56:01  INFO  Pushing manifest list with command: docker manifest push mosipid/commons-packet-service:1.2.0.4 
- 05-Sep-25 06:56:02  INFO  Logging in to Docker CLI for manifest operations 
- 05-Sep-25 06:56:02  INFO  Creating manifest list with command: docker manifest create --amend mosipid/commons-packet-service:latest mosipid/commons-packet-service@sha256:97639c45b9b976e3b68166af39704d10b111ceecbfa5220fd1c14199922f1cf9 mosipid/commons-packet-service@sha256:df55989d3d558352b14067c1bd6a8cf0a654509b585a8a571e46ca60939e5f25 
- 05-Sep-25 06:56:02  INFO  Pushing manifest list with command: docker manifest push mosipid/commons-packet-service:latest 
- 05-Sep-25 06:56:03  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/commons-packet-service:1.2.0.4-amd64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 05-Sep-25 06:56:03  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/commons-packet-service:1.2.0.4-arm64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 05-Sep-25 06:56:03  INFO  Completed processing mosipdev/commons-packet-service:release-1.2.0.x to mosipid/commons-packet-service:1.2.0.4 
+ 05-Sep-25 11:49:01  INFO  LOGFILE CREATED : vidivi.log 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  ******************** Check Images List ************************************************************************************ 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  IMAGES= [['mosipdev/pre-registration-application-service:release-1.2.0.x', '1.2.0.3'], ['mosipdev/pre-registration-batchjob:release-1.2.0.x', '1.2.0.3'], ['mosipdev/pre-registration-datasync-service:release-1.2.0.x', '1.2.0.3'], ['mosipdev/pre-registration-captcha-service:release-1.2.0.x', '1.2.0.3'], ['mosipdev/apitest-prereg:release-1.2.0.x', '1.2.0.3'], ['mosipdev/admin-service:release-1.2.1.x', '1.2.1.3'], ['mosipdev/hotlist-service:release-1.2.1.x', '1.2.1.3'], ['mosipdev/kernel-masterdata-service:release-1.2.1.x', '1.2.1.3'], ['mosipdev/kernel-syncdata-service:release-1.2.1.x', '1.2.1.3'], ['mosipdev/apitest-masterdata:release-1.2.1.x', '1.2.1.3'], ['mosipdev/dsl-orchestrator:release-1.2.1.x', '1.2.1.0'], ['mosipdev/dsl-packetcreator:release-1.2.1.x', '1.2.1.0']] 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/pre-registration-application-service" tag = "release-1.2.0.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-application-service/tags/release-1.2.0.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/pre-registration-batchjob" tag = "release-1.2.0.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-batchjob/tags/release-1.2.0.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/pre-registration-datasync-service" tag = "release-1.2.0.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-datasync-service/tags/release-1.2.0.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/pre-registration-captcha-service" tag = "release-1.2.0.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-captcha-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pre-registration-captcha-service/tags/release-1.2.0.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/apitest-prereg" tag = "release-1.2.0.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-prereg:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:01  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-prereg/tags/release-1.2.0.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  INFO   
+ 05-Sep-25 11:49:01  INFO  src = "mosipdev/admin-service" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:01  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/admin-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:01  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/admin-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/hotlist-service" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/hotlist-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/hotlist-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/kernel-masterdata-service" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-masterdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-masterdata-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/kernel-syncdata-service" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-syncdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-syncdata-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/apitest-masterdata" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-masterdata/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/dsl-orchestrator" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/dsl-orchestrator/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  src = "mosipdev/dsl-packetcreator" tag = "release-1.2.1.x" 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/dsl-packetcreator/tags/release-1.2.1.x HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:02  INFO   
+ 05-Sep-25 11:49:02  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 05-Sep-25 11:49:02  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 05-Sep-25 11:49:03  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 200 264 
+ 05-Sep-25 11:49:03  INFO   
+ 05-Sep-25 11:49:03  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pre-registration-application-service/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:03  INFO   
+ 05-Sep-25 11:49:03  INFO  [ mosipid/pre-registration-application-service ]  
+ 05-Sep-25 11:49:03  INFO  Destination Image = "mosipid/pre-registration-application-service" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pre-registration-application-service/tags/1.2.0.3 HTTP/1.1" 404 155 
+ 05-Sep-25 11:49:03  ERROR  Image "mosipid/pre-registration-application-service:1.2.0.3" does not exist 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pre-registration-batchjob/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:03  INFO   
+ 05-Sep-25 11:49:03  INFO  [ mosipid/pre-registration-batchjob ]  
+ 05-Sep-25 11:49:03  INFO  Destination Image = "mosipid/pre-registration-batchjob" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pre-registration-batchjob/tags/1.2.0.3 HTTP/1.1" 404 144 
+ 05-Sep-25 11:49:03  ERROR  Image "mosipid/pre-registration-batchjob:1.2.0.3" does not exist 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pre-registration-datasync-service/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:03  INFO   
+ 05-Sep-25 11:49:03  INFO  [ mosipid/pre-registration-datasync-service ]  
+ 05-Sep-25 11:49:03  INFO  Destination Image = "mosipid/pre-registration-datasync-service" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pre-registration-datasync-service/tags/1.2.0.3 HTTP/1.1" 404 152 
+ 05-Sep-25 11:49:03  ERROR  Image "mosipid/pre-registration-datasync-service:1.2.0.3" does not exist 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-captcha-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:03  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/pre-registration-captcha-service/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:03  INFO   
+ 05-Sep-25 11:49:03  INFO  [ mosipid/pre-registration-captcha-service ]  
+ 05-Sep-25 11:49:03  INFO  Destination Image = "mosipid/pre-registration-captcha-service" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 05-Sep-25 11:49:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/pre-registration-captcha-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/pre-registration-captcha-service/tags/1.2.0.3 HTTP/1.1" 404 151 
+ 05-Sep-25 11:49:04  ERROR  Image "mosipid/pre-registration-captcha-service:1.2.0.3" does not exist 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-prereg:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-prereg/manifests/1.2.0.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:04  INFO   
+ 05-Sep-25 11:49:04  INFO  [ mosipid/apitest-prereg ]  
+ 05-Sep-25 11:49:04  INFO  Destination Image = "mosipid/apitest-prereg" Destination Image tag = "1.2.0.3" IMAGE_ID :  
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-prereg:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-prereg/tags/1.2.0.3 HTTP/1.1" 404 133 
+ 05-Sep-25 11:49:04  ERROR  Image "mosipid/apitest-prereg:1.2.0.3" does not exist 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/admin-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/admin-service/manifests/1.2.1.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:04  INFO   
+ 05-Sep-25 11:49:04  INFO  [ mosipid/admin-service ]  
+ 05-Sep-25 11:49:04  INFO  Destination Image = "mosipid/admin-service" Destination Image tag = "1.2.1.3" IMAGE_ID :  
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/admin-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/admin-service/tags/1.2.1.3 HTTP/1.1" 404 132 
+ 05-Sep-25 11:49:04  ERROR  Image "mosipid/admin-service:1.2.1.3" does not exist 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/hotlist-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/hotlist-service/manifests/1.2.1.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:04  INFO   
+ 05-Sep-25 11:49:04  INFO  [ mosipid/hotlist-service ]  
+ 05-Sep-25 11:49:04  INFO  Destination Image = "mosipid/hotlist-service" Destination Image tag = "1.2.1.3" IMAGE_ID :  
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/hotlist-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/hotlist-service/tags/1.2.1.3 HTTP/1.1" 404 134 
+ 05-Sep-25 11:49:04  ERROR  Image "mosipid/hotlist-service:1.2.1.3" does not exist 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-masterdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-masterdata-service/manifests/1.2.1.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:04  INFO   
+ 05-Sep-25 11:49:04  INFO  [ mosipid/kernel-masterdata-service ]  
+ 05-Sep-25 11:49:04  INFO  Destination Image = "mosipid/kernel-masterdata-service" Destination Image tag = "1.2.1.3" IMAGE_ID :  
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-masterdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-masterdata-service/tags/1.2.1.3 HTTP/1.1" 404 144 
+ 05-Sep-25 11:49:04  ERROR  Image "mosipid/kernel-masterdata-service:1.2.1.3" does not exist 
+ 05-Sep-25 11:49:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-syncdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/kernel-syncdata-service/manifests/1.2.1.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  [ mosipid/kernel-syncdata-service ]  
+ 05-Sep-25 11:49:05  INFO  Destination Image = "mosipid/kernel-syncdata-service" Destination Image tag = "1.2.1.3" IMAGE_ID :  
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/kernel-syncdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/kernel-syncdata-service/tags/1.2.1.3 HTTP/1.1" 404 142 
+ 05-Sep-25 11:49:05  ERROR  Image "mosipid/kernel-syncdata-service:1.2.1.3" does not exist 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/apitest-masterdata/manifests/1.2.1.3 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  [ mosipid/apitest-masterdata ]  
+ 05-Sep-25 11:49:05  INFO  Destination Image = "mosipid/apitest-masterdata" Destination Image tag = "1.2.1.3" IMAGE_ID :  
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/apitest-masterdata/tags/1.2.1.3 HTTP/1.1" 404 137 
+ 05-Sep-25 11:49:05  ERROR  Image "mosipid/apitest-masterdata:1.2.1.3" does not exist 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/dsl-orchestrator/manifests/1.2.1.0 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  [ mosipid/dsl-orchestrator ]  
+ 05-Sep-25 11:49:05  INFO  Destination Image = "mosipid/dsl-orchestrator" Destination Image tag = "1.2.1.0" IMAGE_ID :  
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/dsl-orchestrator/tags/1.2.1.0 HTTP/1.1" 404 135 
+ 05-Sep-25 11:49:05  ERROR  Image "mosipid/dsl-orchestrator:1.2.1.0" does not exist 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipid/dsl-packetcreator/manifests/1.2.1.0 HTTP/1.1" 404 101 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  [ mosipid/dsl-packetcreator ]  
+ 05-Sep-25 11:49:05  INFO  Destination Image = "mosipid/dsl-packetcreator" Destination Image tag = "1.2.1.0" IMAGE_ID :  
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipid/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Sep-25 11:49:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipid/dsl-packetcreator/tags/1.2.1.0 HTTP/1.1" 404 136 
+ 05-Sep-25 11:49:05  ERROR  Image "mosipid/dsl-packetcreator:1.2.1.0" does not exist 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/pre-registration-application-service:1.2.0.3'], ['mosipid/pre-registration-batchjob:1.2.0.3'], ['mosipid/pre-registration-datasync-service:1.2.0.3'], ['mosipid/pre-registration-captcha-service:1.2.0.3'], ['mosipid/apitest-prereg:1.2.0.3'], ['mosipid/admin-service:1.2.1.3'], ['mosipid/hotlist-service:1.2.1.3'], ['mosipid/kernel-masterdata-service:1.2.1.3'], ['mosipid/kernel-syncdata-service:1.2.1.3'], ['mosipid/apitest-masterdata:1.2.1.3'], ['mosipid/dsl-orchestrator:1.2.1.0'], ['mosipid/dsl-packetcreator:1.2.1.0']] 
+ 05-Sep-25 11:49:05  INFO   
+ 05-Sep-25 11:49:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 05-Sep-25 11:49:05  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 05-Sep-25 11:49:05  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 05-Sep-25 11:49:05  DEBUG  Found 'auths' section 
+ 05-Sep-25 11:49:05  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 05-Sep-25 11:49:05  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 05-Sep-25 11:49:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/pre-registration-application-service:1.2.0.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/pre-registration-batchjob:1.2.0.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/pre-registration-datasync-service:1.2.0.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/pre-registration-captcha-service:1.2.0.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/apitest-prereg:1.2.0.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/admin-service:1.2.1.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/hotlist-service:1.2.1.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  INFO  ********** [ mosipid/kernel-masterdata-service:1.2.1.3 ] **************************************************** 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-batchjob:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/admin-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-datasync-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-application-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-prereg:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-masterdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/hotlist-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pre-registration-captcha-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pre-registration-batchjob/manifests/release-1.2.0.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-prereg/manifests/release-1.2.0.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pre-registration-application-service/manifests/release-1.2.0.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-masterdata-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pre-registration-captcha-service/manifests/release-1.2.0.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d ]  
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/pre-registration-datasync-service/manifests/release-1.2.0.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/hotlist-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 ]  
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/admin-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:06  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:06  INFO  Processing architecture: amd64/linux with digest sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/amd64 ----------------------> mosipdev/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 ]  
+ 05-Sep-25 11:49:06  INFO  Processing architecture: arm64/linux with digest sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  INFO   
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  INFO  [ PULL linux/arm64 ----------------------> mosipdev/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 ]  
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:06  DEBUG  Found auth config 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4&fromImage=mosipdev%2Fpre-registration-batchjob HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e&fromImage=mosipdev%2Fpre-registration-batchjob HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc&fromImage=mosipdev%2Fpre-registration-application-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de&fromImage=mosipdev%2Fapitest-prereg HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266&fromImage=mosipdev%2Fapitest-prereg HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7&fromImage=mosipdev%2Fpre-registration-captcha-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523&fromImage=mosipdev%2Fpre-registration-datasync-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69&fromImage=mosipdev%2Fpre-registration-application-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa&fromImage=mosipdev%2Fkernel-masterdata-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202&fromImage=mosipdev%2Fkernel-masterdata-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d&fromImage=mosipdev%2Fpre-registration-captcha-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04&fromImage=mosipdev%2Fhotlist-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9&fromImage=mosipdev%2Fhotlist-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162&fromImage=mosipdev%2Fadmin-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Abe57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51&fromImage=mosipdev%2Fadmin-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:06  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Abe9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b&fromImage=mosipdev%2Fpre-registration-datasync-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:25  INFO  Status: Downloaded newer image for mosipdev/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e 
+ 05-Sep-25 11:49:25  INFO  Status: Downloaded newer image for mosipdev/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 
+ 05-Sep-25 11:49:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-batchjob%40sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4/tag?tag=1.2.0.3-amd64-linux&repo=mosipid%2Fpre-registration-batchjob&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:49:25  INFO   
+ 05-Sep-25 11:49:25  INFO  [ PUSH linux/amd64 -----> mosipdev/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4	------> mosipid/pre-registration-batchjob:1.2.0.3-amd64-linux ]  
+ 05-Sep-25 11:49:25  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:25  DEBUG  Found auth config 
+ 05-Sep-25 11:49:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-batchjob%40sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e/tag?tag=1.2.0.3-arm64-linux&repo=mosipid%2Fpre-registration-batchjob&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:49:25  INFO   
+ 05-Sep-25 11:49:25  INFO  [ PUSH linux/arm64 -----> mosipdev/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e	------> mosipid/pre-registration-batchjob:1.2.0.3-arm64-linux ]  
+ 05-Sep-25 11:49:25  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:25  DEBUG  Found auth config 
+ 05-Sep-25 11:49:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-batchjob/push?tag=1.2.0.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-batchjob/push?tag=1.2.0.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:28  INFO  1.2.0.3-arm64-linux: digest: sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e size: 2845 
+ 05-Sep-25 11:49:28  INFO  Completed pulling/tagging mosipdev/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e 	------> mosipid/pre-registration-batchjob:1.2.0.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:49:28  INFO  1.2.0.3-amd64-linux: digest: sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 size: 2845 
+ 05-Sep-25 11:49:28  INFO  Completed pulling/tagging mosipdev/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 	------> mosipid/pre-registration-batchjob:1.2.0.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:49:28  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:49:28  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-batchjob:1.2.0.3 mosipid/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 mosipid/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e 
+ 05-Sep-25 11:49:29  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-batchjob:1.2.0.3 
+ 05-Sep-25 11:49:29  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:49:29  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-batchjob:latest mosipid/pre-registration-batchjob@sha256:961af2f2acb4e0a20d07b8c560dd701234cc501c171bf9cbdd6d11b440dd51f4 mosipid/pre-registration-batchjob@sha256:9c561d19a70661e1e9de29c34968ec9bda0823e1d244f5f275821635015bdc2e 
+ 05-Sep-25 11:49:30  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-batchjob:latest 
+ 05-Sep-25 11:49:30  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-batchjob:1.2.0.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 05-Sep-25 11:49:30  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-batchjob:1.2.0.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 05-Sep-25 11:49:30  INFO   
+ 05-Sep-25 11:49:30  INFO  ********** [ mosipid/kernel-syncdata-service:1.2.1.3 ] **************************************************** 
+ 05-Sep-25 11:49:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:49:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-syncdata-service:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:30  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:49:31  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/kernel-syncdata-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:49:31  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:49:31  INFO  Processing architecture: amd64/linux with digest sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf 
+ 05-Sep-25 11:49:31  INFO   
+ 05-Sep-25 11:49:31  INFO  [ PULL linux/amd64 ----------------------> mosipdev/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf ]  
+ 05-Sep-25 11:49:31  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:31  INFO  Processing architecture: arm64/linux with digest sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 
+ 05-Sep-25 11:49:31  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:31  INFO   
+ 05-Sep-25 11:49:31  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:31  INFO  [ PULL linux/arm64 ----------------------> mosipdev/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 ]  
+ 05-Sep-25 11:49:31  DEBUG  Found auth config 
+ 05-Sep-25 11:49:31  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:31  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:31  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:31  DEBUG  Found auth config 
+ 05-Sep-25 11:49:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf&fromImage=mosipdev%2Fkernel-syncdata-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8&fromImage=mosipdev%2Fkernel-syncdata-service HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:41  INFO  Status: Downloaded newer image for mosipdev/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc 
+ 05-Sep-25 11:49:41  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-application-service%40sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc/tag?tag=1.2.0.3-amd64-linux&repo=mosipid%2Fpre-registration-application-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:49:41  INFO   
+ 05-Sep-25 11:49:41  INFO  [ PUSH linux/amd64 -----> mosipdev/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc	------> mosipid/pre-registration-application-service:1.2.0.3-amd64-linux ]  
+ 05-Sep-25 11:49:41  DEBUG  Looking for auth config 
+ 05-Sep-25 11:49:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:49:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:49:41  DEBUG  Found auth config 
+ 05-Sep-25 11:49:41  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-application-service/push?tag=1.2.0.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:49:43  INFO  1.2.0.3-amd64-linux: digest: sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc size: 2847 
+ 05-Sep-25 11:49:43  INFO  Completed pulling/tagging mosipdev/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc 	------> mosipid/pre-registration-application-service:1.2.0.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:50:09  INFO  Status: Downloaded newer image for mosipdev/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 
+ 05-Sep-25 11:50:09  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-captcha-service%40sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7/tag?tag=1.2.0.3-amd64-linux&repo=mosipid%2Fpre-registration-captcha-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:09  INFO   
+ 05-Sep-25 11:50:09  INFO  [ PUSH linux/amd64 -----> mosipdev/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7	------> mosipid/pre-registration-captcha-service:1.2.0.3-amd64-linux ]  
+ 05-Sep-25 11:50:09  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:09  DEBUG  Found auth config 
+ 05-Sep-25 11:50:09  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-captcha-service/push?tag=1.2.0.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:11  INFO  1.2.0.3-amd64-linux: digest: sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 size: 2845 
+ 05-Sep-25 11:50:11  INFO  Completed pulling/tagging mosipdev/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 	------> mosipid/pre-registration-captcha-service:1.2.0.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:50:17  INFO  Status: Downloaded newer image for mosipdev/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 
+ 05-Sep-25 11:50:17  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-datasync-service%40sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523/tag?tag=1.2.0.3-arm64-linux&repo=mosipid%2Fpre-registration-datasync-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:17  INFO   
+ 05-Sep-25 11:50:17  INFO  [ PUSH linux/arm64 -----> mosipdev/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523	------> mosipid/pre-registration-datasync-service:1.2.0.3-arm64-linux ]  
+ 05-Sep-25 11:50:17  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:17  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:17  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:17  DEBUG  Found auth config 
+ 05-Sep-25 11:50:17  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-datasync-service/push?tag=1.2.0.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:19  INFO  1.2.0.3-arm64-linux: digest: sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 size: 2845 
+ 05-Sep-25 11:50:19  INFO  Completed pulling/tagging mosipdev/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 	------> mosipid/pre-registration-datasync-service:1.2.0.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:25  INFO  Status: Downloaded newer image for mosipdev/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 
+ 05-Sep-25 11:50:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-prereg%40sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266/tag?tag=1.2.0.3-arm64-linux&repo=mosipid%2Fapitest-prereg&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:25  INFO   
+ 05-Sep-25 11:50:25  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266	------> mosipid/apitest-prereg:1.2.0.3-arm64-linux ]  
+ 05-Sep-25 11:50:25  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:25  DEBUG  Found auth config 
+ 05-Sep-25 11:50:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-prereg/push?tag=1.2.0.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:27  INFO  1.2.0.3-arm64-linux: digest: sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 size: 1582 
+ 05-Sep-25 11:50:27  INFO  Completed pulling/tagging mosipdev/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 	------> mosipid/apitest-prereg:1.2.0.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:39  INFO  Status: Downloaded newer image for mosipdev/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa 
+ 05-Sep-25 11:50:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-masterdata-service%40sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa/tag?tag=1.2.1.3-amd64-linux&repo=mosipid%2Fkernel-masterdata-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:39  INFO   
+ 05-Sep-25 11:50:39  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa	------> mosipid/kernel-masterdata-service:1.2.1.3-amd64-linux ]  
+ 05-Sep-25 11:50:39  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:39  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:39  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:39  DEBUG  Found auth config 
+ 05-Sep-25 11:50:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/kernel-masterdata-service/push?tag=1.2.1.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:44  INFO  Status: Downloaded newer image for mosipdev/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 
+ 05-Sep-25 11:50:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-masterdata-service%40sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202/tag?tag=1.2.1.3-arm64-linux&repo=mosipid%2Fkernel-masterdata-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:44  INFO   
+ 05-Sep-25 11:50:44  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202	------> mosipid/kernel-masterdata-service:1.2.1.3-arm64-linux ]  
+ 05-Sep-25 11:50:44  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:44  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:44  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:44  DEBUG  Found auth config 
+ 05-Sep-25 11:50:44  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/kernel-masterdata-service/push?tag=1.2.1.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:44  INFO  1.2.1.3-amd64-linux: digest: sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa size: 2845 
+ 05-Sep-25 11:50:44  INFO  Completed pulling/tagging mosipdev/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa 	------> mosipid/kernel-masterdata-service:1.2.1.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:50:45  INFO  Status: Downloaded newer image for mosipdev/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d 
+ 05-Sep-25 11:50:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-captcha-service%40sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d/tag?tag=1.2.0.3-arm64-linux&repo=mosipid%2Fpre-registration-captcha-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:45  INFO   
+ 05-Sep-25 11:50:45  INFO  [ PUSH linux/arm64 -----> mosipdev/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d	------> mosipid/pre-registration-captcha-service:1.2.0.3-arm64-linux ]  
+ 05-Sep-25 11:50:45  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:45  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:45  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:45  DEBUG  Found auth config 
+ 05-Sep-25 11:50:45  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-captcha-service/push?tag=1.2.0.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:46  INFO  1.2.1.3-arm64-linux: digest: sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 size: 2845 
+ 05-Sep-25 11:50:46  INFO  Completed pulling/tagging mosipdev/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 	------> mosipid/kernel-masterdata-service:1.2.1.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:46  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:46  INFO  Creating manifest list with command: docker manifest create --amend mosipid/kernel-masterdata-service:1.2.1.3 mosipid/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa mosipid/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 
+ 05-Sep-25 11:50:46  INFO  Pushing manifest list with command: docker manifest push mosipid/kernel-masterdata-service:1.2.1.3 
+ 05-Sep-25 11:50:47  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:47  INFO  Creating manifest list with command: docker manifest create --amend mosipid/kernel-masterdata-service:latest mosipid/kernel-masterdata-service@sha256:8f266664496eff963946ea47fe594061752542fd1472b221f3f1666069554aaa mosipid/kernel-masterdata-service@sha256:380772f343024e4c1027a414d254878596075e8c4763438deb9c39e4f4d7f202 
+ 05-Sep-25 11:50:48  INFO  1.2.0.3-arm64-linux: digest: sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d size: 2845 
+ 05-Sep-25 11:50:48  INFO  Completed pulling/tagging mosipdev/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d 	------> mosipid/pre-registration-captcha-service:1.2.0.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:48  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:48  INFO  Pushing manifest list with command: docker manifest push mosipid/kernel-masterdata-service:latest 
+ 05-Sep-25 11:50:48  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-captcha-service:1.2.0.3 mosipid/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 mosipid/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d 
+ 05-Sep-25 11:50:48  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/kernel-masterdata-service:1.2.1.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 05-Sep-25 11:50:48  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/kernel-masterdata-service:1.2.1.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 05-Sep-25 11:50:48  INFO   
+ 05-Sep-25 11:50:48  INFO  ********** [ mosipid/apitest-masterdata:1.2.1.3 ] **************************************************** 
+ 05-Sep-25 11:50:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:50:48  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-captcha-service:1.2.0.3 
+ 05-Sep-25 11:50:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-masterdata:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:48  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:50:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-masterdata/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:50:48  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:50:48  INFO  Processing architecture: amd64/linux with digest sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 
+ 05-Sep-25 11:50:48  INFO   
+ 05-Sep-25 11:50:48  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 ]  
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:48  DEBUG  Found auth config 
+ 05-Sep-25 11:50:48  INFO  Processing architecture: arm64/linux with digest sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 
+ 05-Sep-25 11:50:48  INFO   
+ 05-Sep-25 11:50:48  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 ]  
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:48  DEBUG  Found auth config 
+ 05-Sep-25 11:50:48  INFO  Status: Downloaded newer image for mosipdev/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 
+ 05-Sep-25 11:50:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/hotlist-service%40sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04/tag?tag=1.2.1.3-arm64-linux&repo=mosipid%2Fhotlist-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:48  INFO   
+ 05-Sep-25 11:50:48  INFO  [ PUSH linux/arm64 -----> mosipdev/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04	------> mosipid/hotlist-service:1.2.1.3-arm64-linux ]  
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:48  DEBUG  Found auth config 
+ 05-Sep-25 11:50:48  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/hotlist-service/push?tag=1.2.1.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:49  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ab35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35&fromImage=mosipdev%2Fapitest-masterdata HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:49  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ac705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398&fromImage=mosipdev%2Fapitest-masterdata HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:49  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:49  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-captcha-service:latest mosipid/pre-registration-captcha-service@sha256:45e2503a4cfdaeb1a253668f91cb33e910a92250562dd2304eee47b77653a9f7 mosipid/pre-registration-captcha-service@sha256:8305d6ca640bca3460c8ab6d7e6ce00c42c45d555a3d53b8b42044adb67c655d 
+ 05-Sep-25 11:50:49  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-captcha-service:latest 
+ 05-Sep-25 11:50:49  INFO  Status: Downloaded newer image for mosipdev/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 
+ 05-Sep-25 11:50:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/hotlist-service%40sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9/tag?tag=1.2.1.3-amd64-linux&repo=mosipid%2Fhotlist-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:49  INFO   
+ 05-Sep-25 11:50:49  INFO  [ PUSH linux/amd64 -----> mosipdev/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9	------> mosipid/hotlist-service:1.2.1.3-amd64-linux ]  
+ 05-Sep-25 11:50:49  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:49  DEBUG  Found auth config 
+ 05-Sep-25 11:50:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/hotlist-service/push?tag=1.2.1.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:50  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-captcha-service:1.2.0.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 206 
+ 05-Sep-25 11:50:50  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-captcha-service:1.2.0.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 206 
+ 05-Sep-25 11:50:50  INFO   
+ 05-Sep-25 11:50:50  INFO  ********** [ mosipid/dsl-orchestrator:1.2.1.0 ] **************************************************** 
+ 05-Sep-25 11:50:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:50:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-orchestrator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:50:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/dsl-orchestrator/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:50:50  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:50:50  INFO  Processing architecture: amd64/linux with digest sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 
+ 05-Sep-25 11:50:50  INFO   
+ 05-Sep-25 11:50:50  INFO  [ PULL linux/amd64 ----------------------> mosipdev/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 ]  
+ 05-Sep-25 11:50:50  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:50  DEBUG  Found auth config 
+ 05-Sep-25 11:50:50  INFO  Processing architecture: arm64/linux with digest sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 
+ 05-Sep-25 11:50:50  INFO   
+ 05-Sep-25 11:50:50  INFO  [ PULL linux/arm64 ----------------------> mosipdev/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 ]  
+ 05-Sep-25 11:50:50  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:50  DEBUG  Found auth config 
+ 05-Sep-25 11:50:50  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Af6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1&fromImage=mosipdev%2Fdsl-orchestrator HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:50  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9&fromImage=mosipdev%2Fdsl-orchestrator HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:52  INFO  1.2.1.3-arm64-linux: digest: sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 size: 2845 
+ 05-Sep-25 11:50:52  INFO  Completed pulling/tagging mosipdev/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 	------> mosipid/hotlist-service:1.2.1.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:52  INFO  Status: Downloaded newer image for mosipdev/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 
+ 05-Sep-25 11:50:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-application-service%40sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69/tag?tag=1.2.0.3-arm64-linux&repo=mosipid%2Fpre-registration-application-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:52  INFO   
+ 05-Sep-25 11:50:52  INFO  [ PUSH linux/arm64 -----> mosipdev/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69	------> mosipid/pre-registration-application-service:1.2.0.3-arm64-linux ]  
+ 05-Sep-25 11:50:52  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:52  DEBUG  Found auth config 
+ 05-Sep-25 11:50:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-application-service/push?tag=1.2.0.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:52  INFO  1.2.1.3-amd64-linux: digest: sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 size: 2845 
+ 05-Sep-25 11:50:52  INFO  Completed pulling/tagging mosipdev/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 	------> mosipid/hotlist-service:1.2.1.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:50:52  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:52  INFO  Creating manifest list with command: docker manifest create --amend mosipid/hotlist-service:1.2.1.3 mosipid/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 mosipid/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 
+ 05-Sep-25 11:50:52  INFO  Pushing manifest list with command: docker manifest push mosipid/hotlist-service:1.2.1.3 
+ 05-Sep-25 11:50:52  INFO  Status: Downloaded newer image for mosipdev/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de 
+ 05-Sep-25 11:50:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-prereg%40sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de/tag?tag=1.2.0.3-amd64-linux&repo=mosipid%2Fapitest-prereg&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:50:52  INFO   
+ 05-Sep-25 11:50:52  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de	------> mosipid/apitest-prereg:1.2.0.3-amd64-linux ]  
+ 05-Sep-25 11:50:52  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:52  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:52  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:52  DEBUG  Found auth config 
+ 05-Sep-25 11:50:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-prereg/push?tag=1.2.0.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:53  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:53  INFO  Creating manifest list with command: docker manifest create --amend mosipid/hotlist-service:latest mosipid/hotlist-service@sha256:81e60abcce8ee3c77f89e452f815ffe319cb98dbb287c31f90c36a1bbdec0df9 mosipid/hotlist-service@sha256:0358d8edf9a077e43dac0f2a6f51be97d387d7f20d898e0306b759a61d3f6e04 
+ 05-Sep-25 11:50:53  INFO  Pushing manifest list with command: docker manifest push mosipid/hotlist-service:latest 
+ 05-Sep-25 11:50:54  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/hotlist-service:1.2.1.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 172 
+ 05-Sep-25 11:50:54  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/hotlist-service:1.2.1.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 172 
+ 05-Sep-25 11:50:54  INFO   
+ 05-Sep-25 11:50:54  INFO  ********** [ mosipid/dsl-packetcreator:1.2.1.0 ] **************************************************** 
+ 05-Sep-25 11:50:54  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Sep-25 11:50:54  INFO  1.2.0.3-arm64-linux: digest: sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 size: 2847 
+ 05-Sep-25 11:50:54  INFO  Completed pulling/tagging mosipdev/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 	------> mosipid/pre-registration-application-service:1.2.0.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:50:54  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:54  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/dsl-packetcreator:pull HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:54  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 05-Sep-25 11:50:54  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-application-service:1.2.0.3 mosipid/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc mosipid/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 
+ 05-Sep-25 11:50:54  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/dsl-packetcreator/manifests/release-1.2.1.x HTTP/1.1" 200 743 
+ 05-Sep-25 11:50:54  INFO  Multi-arch image detected with 2 architectures 
+ 05-Sep-25 11:50:54  INFO  Processing architecture: amd64/linux with digest sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 
+ 05-Sep-25 11:50:54  INFO   
+ 05-Sep-25 11:50:54  INFO  [ PULL linux/amd64 ----------------------> mosipdev/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 ]  
+ 05-Sep-25 11:50:54  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:54  DEBUG  Found auth config 
+ 05-Sep-25 11:50:54  INFO  Processing architecture: arm64/linux with digest sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 
+ 05-Sep-25 11:50:54  INFO   
+ 05-Sep-25 11:50:54  INFO  [ PULL linux/arm64 ----------------------> mosipdev/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 ]  
+ 05-Sep-25 11:50:54  DEBUG  Looking for auth config 
+ 05-Sep-25 11:50:54  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:50:54  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:50:54  DEBUG  Found auth config 
+ 05-Sep-25 11:50:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Adc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143&fromImage=mosipdev%2Fdsl-packetcreator HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637&fromImage=mosipdev%2Fdsl-packetcreator HTTP/1.1" 200 None 
+ 05-Sep-25 11:50:54  INFO  1.2.0.3-amd64-linux: digest: sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de size: 1582 
+ 05-Sep-25 11:50:54  INFO  Completed pulling/tagging mosipdev/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de 	------> mosipid/apitest-prereg:1.2.0.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:50:54  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:54  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-prereg:1.2.0.3 mosipid/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de mosipid/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 
+ 05-Sep-25 11:50:55  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-application-service:1.2.0.3 
+ 05-Sep-25 11:50:55  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-prereg:1.2.0.3 
+ 05-Sep-25 11:50:55  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:55  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-application-service:latest mosipid/pre-registration-application-service@sha256:979e64cbab5567f8e33198b435ac3fb82b2cb5bc7b0f24ab33145cdb4e9786cc mosipid/pre-registration-application-service@sha256:8c9c2ca7bf02b58c275fbc65390bfbeb6436cad3434a0dcb14eb553e8bc1fe69 
+ 05-Sep-25 11:50:56  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:50:56  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-prereg:latest mosipid/apitest-prereg@sha256:b79ba5b566872135f3d061b0a7eba6b4abe476ec9769ad3cf87dc2a2376c64de mosipid/apitest-prereg@sha256:b90486499caa55d192730f1ce2e9c437df0ae7c59bcec00ec6269df8f9def266 
+ 05-Sep-25 11:50:56  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-application-service:latest 
+ 05-Sep-25 11:50:56  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-prereg:latest 
+ 05-Sep-25 11:50:56  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-application-service:1.2.0.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 214 
+ 05-Sep-25 11:50:56  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-application-service:1.2.0.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 214 
+ 05-Sep-25 11:50:56  INFO  Completed processing mosipdev/pre-registration-application-service:release-1.2.0.x to mosipid/pre-registration-application-service:1.2.0.3 
+ 05-Sep-25 11:50:56  INFO  Completed processing mosipdev/pre-registration-batchjob:release-1.2.0.x to mosipid/pre-registration-batchjob:1.2.0.3 
+ 05-Sep-25 11:50:56  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-prereg:1.2.0.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 170 
+ 05-Sep-25 11:50:56  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-prereg:1.2.0.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 170 
+ 05-Sep-25 11:51:05  INFO  Status: Downloaded newer image for mosipdev/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 
+ 05-Sep-25 11:51:05  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/admin-service%40sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162/tag?tag=1.2.1.3-amd64-linux&repo=mosipid%2Fadmin-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:05  INFO   
+ 05-Sep-25 11:51:05  INFO  [ PUSH linux/amd64 -----> mosipdev/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162	------> mosipid/admin-service:1.2.1.3-amd64-linux ]  
+ 05-Sep-25 11:51:05  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:05  DEBUG  Found auth config 
+ 05-Sep-25 11:51:05  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/admin-service/push?tag=1.2.1.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:08  INFO  1.2.1.3-amd64-linux: digest: sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 size: 2847 
+ 05-Sep-25 11:51:08  INFO  Completed pulling/tagging mosipdev/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 	------> mosipid/admin-service:1.2.1.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:51:18  INFO  Status: Downloaded newer image for mosipdev/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 
+ 05-Sep-25 11:51:18  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/admin-service%40sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51/tag?tag=1.2.1.3-arm64-linux&repo=mosipid%2Fadmin-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:18  INFO   
+ 05-Sep-25 11:51:18  INFO  [ PUSH linux/arm64 -----> mosipdev/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51	------> mosipid/admin-service:1.2.1.3-arm64-linux ]  
+ 05-Sep-25 11:51:18  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:18  DEBUG  Found auth config 
+ 05-Sep-25 11:51:18  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/admin-service/push?tag=1.2.1.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:21  INFO  1.2.1.3-arm64-linux: digest: sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 size: 2847 
+ 05-Sep-25 11:51:21  INFO  Completed pulling/tagging mosipdev/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 	------> mosipid/admin-service:1.2.1.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:51:21  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:21  INFO  Creating manifest list with command: docker manifest create --amend mosipid/admin-service:1.2.1.3 mosipid/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 mosipid/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 
+ 05-Sep-25 11:51:21  INFO  Pushing manifest list with command: docker manifest push mosipid/admin-service:1.2.1.3 
+ 05-Sep-25 11:51:22  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:22  INFO  Creating manifest list with command: docker manifest create --amend mosipid/admin-service:latest mosipid/admin-service@sha256:b88885af4ead690fc1fac78d7bfbe97f54b1866cdb78f561f7080762d8d81162 mosipid/admin-service@sha256:be57f21e8c6eec0d4264755b5e6ffea66f6dbdb2fd83b67aed15db5bede29d51 
+ 05-Sep-25 11:51:22  INFO  Status: Downloaded newer image for mosipdev/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 
+ 05-Sep-25 11:51:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-syncdata-service%40sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8/tag?tag=1.2.1.3-arm64-linux&repo=mosipid%2Fkernel-syncdata-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:22  INFO   
+ 05-Sep-25 11:51:22  INFO  [ PUSH linux/arm64 -----> mosipdev/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8	------> mosipid/kernel-syncdata-service:1.2.1.3-arm64-linux ]  
+ 05-Sep-25 11:51:22  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:22  DEBUG  Found auth config 
+ 05-Sep-25 11:51:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/kernel-syncdata-service/push?tag=1.2.1.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:22  INFO  Pushing manifest list with command: docker manifest push mosipid/admin-service:latest 
+ 05-Sep-25 11:51:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/admin-service:1.2.1.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 05-Sep-25 11:51:23  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/admin-service:1.2.1.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 168 
+ 05-Sep-25 11:51:23  INFO  Status: Downloaded newer image for mosipdev/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf 
+ 05-Sep-25 11:51:23  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/kernel-syncdata-service%40sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf/tag?tag=1.2.1.3-amd64-linux&repo=mosipid%2Fkernel-syncdata-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:23  INFO   
+ 05-Sep-25 11:51:23  INFO  [ PUSH linux/amd64 -----> mosipdev/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf	------> mosipid/kernel-syncdata-service:1.2.1.3-amd64-linux ]  
+ 05-Sep-25 11:51:23  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:23  DEBUG  Found auth config 
+ 05-Sep-25 11:51:23  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/kernel-syncdata-service/push?tag=1.2.1.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:24  INFO  1.2.1.3-arm64-linux: digest: sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 size: 2845 
+ 05-Sep-25 11:51:24  INFO  Completed pulling/tagging mosipdev/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 	------> mosipid/kernel-syncdata-service:1.2.1.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:51:25  INFO  1.2.1.3-amd64-linux: digest: sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf size: 2845 
+ 05-Sep-25 11:51:25  INFO  Completed pulling/tagging mosipdev/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf 	------> mosipid/kernel-syncdata-service:1.2.1.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:51:25  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:25  INFO  Creating manifest list with command: docker manifest create --amend mosipid/kernel-syncdata-service:1.2.1.3 mosipid/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf mosipid/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 
+ 05-Sep-25 11:51:26  INFO  Pushing manifest list with command: docker manifest push mosipid/kernel-syncdata-service:1.2.1.3 
+ 05-Sep-25 11:51:26  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:26  INFO  Creating manifest list with command: docker manifest create --amend mosipid/kernel-syncdata-service:latest mosipid/kernel-syncdata-service@sha256:58f4554aa049246a99c1e81a1814c2fa0395bbdefd6ba3b588bf10e8e6dd0cdf mosipid/kernel-syncdata-service@sha256:78c2af4980329e1844ac1654f16932ed44b0a38fbe77639046ba70f610328cc8 
+ 05-Sep-25 11:51:27  INFO  Pushing manifest list with command: docker manifest push mosipid/kernel-syncdata-service:latest 
+ 05-Sep-25 11:51:27  INFO  Status: Downloaded newer image for mosipdev/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b 
+ 05-Sep-25 11:51:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/pre-registration-datasync-service%40sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b/tag?tag=1.2.0.3-amd64-linux&repo=mosipid%2Fpre-registration-datasync-service&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:27  INFO   
+ 05-Sep-25 11:51:27  INFO  [ PUSH linux/amd64 -----> mosipdev/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b	------> mosipid/pre-registration-datasync-service:1.2.0.3-amd64-linux ]  
+ 05-Sep-25 11:51:27  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:27  DEBUG  Found auth config 
+ 05-Sep-25 11:51:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/pre-registration-datasync-service/push?tag=1.2.0.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:27  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/kernel-syncdata-service:1.2.1.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 188 
+ 05-Sep-25 11:51:27  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/kernel-syncdata-service:1.2.1.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 188 
+ 05-Sep-25 11:51:29  INFO  1.2.0.3-amd64-linux: digest: sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b size: 2845 
+ 05-Sep-25 11:51:29  INFO  Completed pulling/tagging mosipdev/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b 	------> mosipid/pre-registration-datasync-service:1.2.0.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:51:29  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:29  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-datasync-service:1.2.0.3 mosipid/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b mosipid/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 
+ 05-Sep-25 11:51:30  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-datasync-service:1.2.0.3 
+ 05-Sep-25 11:51:30  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:51:30  INFO  Creating manifest list with command: docker manifest create --amend mosipid/pre-registration-datasync-service:latest mosipid/pre-registration-datasync-service@sha256:be9b7acb259b66f9550191589a2ce6162a0d7bf6ba6e1b9012bd8b5513c1198b mosipid/pre-registration-datasync-service@sha256:71701e6c8ac904868b985be53532e2ff90ae1d4b83769cae474a1e2394e1f523 
+ 05-Sep-25 11:51:31  INFO  Pushing manifest list with command: docker manifest push mosipid/pre-registration-datasync-service:latest 
+ 05-Sep-25 11:51:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-datasync-service:1.2.0.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 05-Sep-25 11:51:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/pre-registration-datasync-service:1.2.0.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 208 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/pre-registration-datasync-service:release-1.2.0.x to mosipid/pre-registration-datasync-service:1.2.0.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/pre-registration-captcha-service:release-1.2.0.x to mosipid/pre-registration-captcha-service:1.2.0.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/apitest-prereg:release-1.2.0.x to mosipid/apitest-prereg:1.2.0.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/admin-service:release-1.2.1.x to mosipid/admin-service:1.2.1.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/hotlist-service:release-1.2.1.x to mosipid/hotlist-service:1.2.1.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/kernel-masterdata-service:release-1.2.1.x to mosipid/kernel-masterdata-service:1.2.1.3 
+ 05-Sep-25 11:51:31  INFO  Completed processing mosipdev/kernel-syncdata-service:release-1.2.1.x to mosipid/kernel-syncdata-service:1.2.1.3 
+ 05-Sep-25 11:51:55  INFO  Status: Downloaded newer image for mosipdev/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 
+ 05-Sep-25 11:51:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-masterdata%40sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398/tag?tag=1.2.1.3-arm64-linux&repo=mosipid%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:55  INFO   
+ 05-Sep-25 11:51:55  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398	------> mosipid/apitest-masterdata:1.2.1.3-arm64-linux ]  
+ 05-Sep-25 11:51:55  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:55  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:55  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:55  DEBUG  Found auth config 
+ 05-Sep-25 11:51:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-masterdata/push?tag=1.2.1.3-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:58  INFO  Status: Downloaded newer image for mosipdev/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 
+ 05-Sep-25 11:51:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-masterdata%40sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35/tag?tag=1.2.1.3-amd64-linux&repo=mosipid%2Fapitest-masterdata&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:51:58  INFO   
+ 05-Sep-25 11:51:58  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35	------> mosipid/apitest-masterdata:1.2.1.3-amd64-linux ]  
+ 05-Sep-25 11:51:58  DEBUG  Looking for auth config 
+ 05-Sep-25 11:51:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:51:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:51:58  DEBUG  Found auth config 
+ 05-Sep-25 11:51:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/apitest-masterdata/push?tag=1.2.1.3-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:51:59  INFO  1.2.1.3-arm64-linux: digest: sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 size: 1582 
+ 05-Sep-25 11:51:59  INFO  Completed pulling/tagging mosipdev/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 	------> mosipid/apitest-masterdata:1.2.1.3-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:52:00  INFO  1.2.1.3-amd64-linux: digest: sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 size: 1582 
+ 05-Sep-25 11:52:00  INFO  Completed pulling/tagging mosipdev/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 	------> mosipid/apitest-masterdata:1.2.1.3-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:52:00  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:00  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-masterdata:1.2.1.3 mosipid/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 mosipid/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 
+ 05-Sep-25 11:52:00  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-masterdata:1.2.1.3 
+ 05-Sep-25 11:52:01  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:01  INFO  Creating manifest list with command: docker manifest create --amend mosipid/apitest-masterdata:latest mosipid/apitest-masterdata@sha256:b35b1ddedbbdde7bee82980e6885fcdea106500aabf198a4fbe8670d9c82ec35 mosipid/apitest-masterdata@sha256:c705dc0448d5f011071327f7da3cccd7e16a4f8b30d4c0ec43aa0dd4f4eb7398 
+ 05-Sep-25 11:52:01  INFO  Pushing manifest list with command: docker manifest push mosipid/apitest-masterdata:latest 
+ 05-Sep-25 11:52:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-masterdata:1.2.1.3-amd64-linux?force=False&noprune=False HTTP/1.1" 200 178 
+ 05-Sep-25 11:52:02  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/apitest-masterdata:1.2.1.3-arm64-linux?force=False&noprune=False HTTP/1.1" 200 178 
+ 05-Sep-25 11:52:02  INFO  Completed processing mosipdev/apitest-masterdata:release-1.2.1.x to mosipid/apitest-masterdata:1.2.1.3 
+ 05-Sep-25 11:52:05  INFO  Status: Downloaded newer image for mosipdev/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 
+ 05-Sep-25 11:52:05  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-orchestrator%40sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1/tag?tag=1.2.1.0-amd64-linux&repo=mosipid%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:52:05  INFO   
+ 05-Sep-25 11:52:05  INFO  [ PUSH linux/amd64 -----> mosipdev/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1	------> mosipid/dsl-orchestrator:1.2.1.0-amd64-linux ]  
+ 05-Sep-25 11:52:05  DEBUG  Looking for auth config 
+ 05-Sep-25 11:52:05  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:52:05  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:52:05  DEBUG  Found auth config 
+ 05-Sep-25 11:52:05  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/dsl-orchestrator/push?tag=1.2.1.0-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:52:06  INFO  Status: Downloaded newer image for mosipdev/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 
+ 05-Sep-25 11:52:06  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-packetcreator%40sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143/tag?tag=1.2.1.0-arm64-linux&repo=mosipid%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:52:06  INFO   
+ 05-Sep-25 11:52:06  INFO  [ PUSH linux/arm64 -----> mosipdev/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143	------> mosipid/dsl-packetcreator:1.2.1.0-arm64-linux ]  
+ 05-Sep-25 11:52:06  DEBUG  Looking for auth config 
+ 05-Sep-25 11:52:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:52:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:52:06  DEBUG  Found auth config 
+ 05-Sep-25 11:52:06  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/dsl-packetcreator/push?tag=1.2.1.0-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:52:08  INFO  1.2.1.0-amd64-linux: digest: sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 size: 1790 
+ 05-Sep-25 11:52:08  INFO  Completed pulling/tagging mosipdev/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 	------> mosipid/dsl-orchestrator:1.2.1.0-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:52:08  INFO  1.2.1.0-arm64-linux: digest: sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 size: 1792 
+ 05-Sep-25 11:52:08  INFO  Completed pulling/tagging mosipdev/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 	------> mosipid/dsl-packetcreator:1.2.1.0-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:52:19  INFO  Status: Downloaded newer image for mosipdev/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 
+ 05-Sep-25 11:52:19  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-orchestrator%40sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9/tag?tag=1.2.1.0-arm64-linux&repo=mosipid%2Fdsl-orchestrator&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:52:19  INFO   
+ 05-Sep-25 11:52:19  INFO  [ PUSH linux/arm64 -----> mosipdev/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9	------> mosipid/dsl-orchestrator:1.2.1.0-arm64-linux ]  
+ 05-Sep-25 11:52:19  DEBUG  Looking for auth config 
+ 05-Sep-25 11:52:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:52:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:52:19  DEBUG  Found auth config 
+ 05-Sep-25 11:52:19  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/dsl-orchestrator/push?tag=1.2.1.0-arm64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:52:21  INFO  1.2.1.0-arm64-linux: digest: sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 size: 1790 
+ 05-Sep-25 11:52:21  INFO  Completed pulling/tagging mosipdev/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 	------> mosipid/dsl-orchestrator:1.2.1.0-arm64-linux (linux/arm64) 
+ 05-Sep-25 11:52:21  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:21  INFO  Creating manifest list with command: docker manifest create --amend mosipid/dsl-orchestrator:1.2.1.0 mosipid/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 mosipid/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 
+ 05-Sep-25 11:52:22  INFO  Status: Downloaded newer image for mosipdev/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 
+ 05-Sep-25 11:52:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/dsl-packetcreator%40sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637/tag?tag=1.2.1.0-amd64-linux&repo=mosipid%2Fdsl-packetcreator&force=1 HTTP/1.1" 201 0 
+ 05-Sep-25 11:52:22  INFO   
+ 05-Sep-25 11:52:22  INFO  [ PUSH linux/amd64 -----> mosipdev/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637	------> mosipid/dsl-packetcreator:1.2.1.0-amd64-linux ]  
+ 05-Sep-25 11:52:22  DEBUG  Looking for auth config 
+ 05-Sep-25 11:52:22  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Sep-25 11:52:22  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Sep-25 11:52:22  DEBUG  Found auth config 
+ 05-Sep-25 11:52:22  DEBUG  http://localhost:None "POST /v1.48/images/mosipid/dsl-packetcreator/push?tag=1.2.1.0-amd64-linux HTTP/1.1" 200 None 
+ 05-Sep-25 11:52:22  INFO  Pushing manifest list with command: docker manifest push mosipid/dsl-orchestrator:1.2.1.0 
+ 05-Sep-25 11:52:22  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:23  INFO  Creating manifest list with command: docker manifest create --amend mosipid/dsl-orchestrator:latest mosipid/dsl-orchestrator@sha256:f6fec28a9c1c144d210ec802c63e8f470dd1cfb026faafb36dc351f4360e70d1 mosipid/dsl-orchestrator@sha256:3ffdec250d5394d2a9c8e7a2190db27eb5dca37ed1790357ab473ec185d9e3b9 
+ 05-Sep-25 11:52:23  INFO  Pushing manifest list with command: docker manifest push mosipid/dsl-orchestrator:latest 
+ 05-Sep-25 11:52:24  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/dsl-orchestrator:1.2.1.0-amd64-linux?force=False&noprune=False HTTP/1.1" 200 174 
+ 05-Sep-25 11:52:24  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/dsl-orchestrator:1.2.1.0-arm64-linux?force=False&noprune=False HTTP/1.1" 200 174 
+ 05-Sep-25 11:52:24  INFO  Completed processing mosipdev/dsl-orchestrator:release-1.2.1.x to mosipid/dsl-orchestrator:1.2.1.0 
+ 05-Sep-25 11:52:24  INFO  1.2.1.0-amd64-linux: digest: sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 size: 1792 
+ 05-Sep-25 11:52:24  INFO  Completed pulling/tagging mosipdev/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 	------> mosipid/dsl-packetcreator:1.2.1.0-amd64-linux (linux/amd64) 
+ 05-Sep-25 11:52:24  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:24  INFO  Creating manifest list with command: docker manifest create --amend mosipid/dsl-packetcreator:1.2.1.0 mosipid/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 mosipid/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 
+ 05-Sep-25 11:52:24  INFO  Pushing manifest list with command: docker manifest push mosipid/dsl-packetcreator:1.2.1.0 
+ 05-Sep-25 11:52:25  INFO  Logging in to Docker CLI for manifest operations 
+ 05-Sep-25 11:52:25  INFO  Creating manifest list with command: docker manifest create --amend mosipid/dsl-packetcreator:latest mosipid/dsl-packetcreator@sha256:9410a6809d4c61e9c6783744fb589d9ef5a870325c3786e1269cae8e24af8637 mosipid/dsl-packetcreator@sha256:dc1d3600ec14119cd9bdc903423610112ac0aebd0410bcf4f376857e47f94143 
+ 05-Sep-25 11:52:26  INFO  Pushing manifest list with command: docker manifest push mosipid/dsl-packetcreator:latest 
+ 05-Sep-25 11:52:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/dsl-packetcreator:1.2.1.0-amd64-linux?force=False&noprune=False HTTP/1.1" 200 176 
+ 05-Sep-25 11:52:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipid/dsl-packetcreator:1.2.1.0-arm64-linux?force=False&noprune=False HTTP/1.1" 200 176 
+ 05-Sep-25 11:52:26  INFO  Completed processing mosipdev/dsl-packetcreator:release-1.2.1.x to mosipid/dsl-packetcreator:1.2.1.0 
