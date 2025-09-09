@@ -1,407 +1,173 @@
- 08-Sep-25 12:36:43  INFO  LOGFILE CREATED : vidivi.log 
- 08-Sep-25 12:36:43  INFO   
- 08-Sep-25 12:36:43  INFO  ******************** Check Images List ************************************************************************************ 
- 08-Sep-25 12:36:43  INFO   
- 08-Sep-25 12:36:43  INFO  IMAGES= [['bitnami/minio:2022.2.7-debian-10-r0', '2022.2.7-debian-10-r0'], ['bitnami/redis:7.0.5-debian-11-r25', '7.0.5-debian-11-r25'], ['bitnami/zookeeper:3.8.0-debian-11-r30', '3.8.0-debian-11-r30'], ['bitnami/kafka:3.2.1-debian-11-r9', '3.2.1-debian-11-r9'], ['bitnami/elasticsearch:7.17.2-debian-10-r4', '7.17.2-debian-10-r4'], ['bitnami/kibana:7.17.2-debian-10-r0', '7.17.2-debian-10-r0']] 
- 08-Sep-25 12:36:43  INFO   
- 08-Sep-25 12:36:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 08-Sep-25 12:36:43  INFO   
- 08-Sep-25 12:36:43  INFO  src = "bitnami/minio" tag = "2022.2.7-debian-10-r0" 
- 08-Sep-25 12:36:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/minio:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/minio/tags/2022.2.7-debian-10-r0 HTTP/1.1" 200 741 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  src = "bitnami/redis" tag = "7.0.5-debian-11-r25" 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/redis:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/redis/tags/7.0.5-debian-11-r25 HTTP/1.1" 200 821 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  src = "bitnami/zookeeper" tag = "3.8.0-debian-11-r30" 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/zookeeper:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/zookeeper/tags/3.8.0-debian-11-r30 HTTP/1.1" 200 845 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  src = "bitnami/kafka" tag = "3.2.1-debian-11-r9" 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/kafka:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/kafka/tags/3.2.1-debian-11-r9 HTTP/1.1" 200 828 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  src = "bitnami/elasticsearch" tag = "7.17.2-debian-10-r4" 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/elasticsearch:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/elasticsearch/tags/7.17.2-debian-10-r4 HTTP/1.1" 200 740 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  src = "bitnami/kibana" tag = "7.17.2-debian-10-r0" 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/kibana:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/bitnami/kibana/tags/7.17.2-debian-10-r0 HTTP/1.1" 200 740 
- 08-Sep-25 12:36:44  INFO   
- 08-Sep-25 12:36:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 08-Sep-25 12:36:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 08-Sep-25 12:36:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipint HTTP/1.1" 308 0 
- 08-Sep-25 12:36:44  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipint HTTP/1.1" 200 342 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/minio:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/minio/manifests/2022.2.7-debian-10-r0 HTTP/1.1" 401 157 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  [ mosipint/minio ]  
- 08-Sep-25 12:36:45  INFO  Destination Image = "mosipint/minio" Destination Image tag = "2022.2.7-debian-10-r0" IMAGE_ID :  
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/minio:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/minio/tags/2022.2.7-debian-10-r0 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:45  ERROR  Image "mosipint/minio:2022.2.7-debian-10-r0" does not exist 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/redis:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/redis/manifests/7.0.5-debian-11-r25 HTTP/1.1" 401 157 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  [ mosipint/redis ]  
- 08-Sep-25 12:36:45  INFO  Destination Image = "mosipint/redis" Destination Image tag = "7.0.5-debian-11-r25" IMAGE_ID :  
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/redis:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/redis/tags/7.0.5-debian-11-r25 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:45  ERROR  Image "mosipint/redis:7.0.5-debian-11-r25" does not exist 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/zookeeper:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/zookeeper/manifests/3.8.0-debian-11-r30 HTTP/1.1" 401 161 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  [ mosipint/zookeeper ]  
- 08-Sep-25 12:36:45  INFO  Destination Image = "mosipint/zookeeper" Destination Image tag = "3.8.0-debian-11-r30" IMAGE_ID :  
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/zookeeper:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/zookeeper/tags/3.8.0-debian-11-r30 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:45  ERROR  Image "mosipint/zookeeper:3.8.0-debian-11-r30" does not exist 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/kafka:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/kafka/manifests/3.2.1-debian-11-r9 HTTP/1.1" 401 157 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  [ mosipint/kafka ]  
- 08-Sep-25 12:36:45  INFO  Destination Image = "mosipint/kafka" Destination Image tag = "3.2.1-debian-11-r9" IMAGE_ID :  
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/kafka:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/kafka/tags/3.2.1-debian-11-r9 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:45  ERROR  Image "mosipint/kafka:3.2.1-debian-11-r9" does not exist 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/elasticsearch:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/elasticsearch/manifests/7.17.2-debian-10-r4 HTTP/1.1" 401 165 
- 08-Sep-25 12:36:45  INFO   
- 08-Sep-25 12:36:45  INFO  [ mosipint/elasticsearch ]  
- 08-Sep-25 12:36:45  INFO  Destination Image = "mosipint/elasticsearch" Destination Image tag = "7.17.2-debian-10-r4" IMAGE_ID :  
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/elasticsearch:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/elasticsearch/tags/7.17.2-debian-10-r4 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:46  ERROR  Image "mosipint/elasticsearch:7.17.2-debian-10-r4" does not exist 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/kibana:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipint/kibana/manifests/7.17.2-debian-10-r0 HTTP/1.1" 401 158 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  [ mosipint/kibana ]  
- 08-Sep-25 12:36:46  INFO  Destination Image = "mosipint/kibana" Destination Image tag = "7.17.2-debian-10-r0" IMAGE_ID :  
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/kibana:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/kibana/tags/7.17.2-debian-10-r0 HTTP/1.1" 404 44 
- 08-Sep-25 12:36:46  ERROR  Image "mosipint/kibana:7.17.2-debian-10-r0" does not exist 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ******************** HASH Operation Results ********************************************************************** 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipint/minio:2022.2.7-debian-10-r0'], ['mosipint/redis:7.0.5-debian-11-r25'], ['mosipint/zookeeper:3.8.0-debian-11-r30'], ['mosipint/kafka:3.2.1-debian-11-r9'], ['mosipint/elasticsearch:7.17.2-debian-10-r4'], ['mosipint/kibana:7.17.2-debian-10-r0']] 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 08-Sep-25 12:36:46  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 08-Sep-25 12:36:46  DEBUG  Found 'auths' section 
- 08-Sep-25 12:36:46  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/minio:2022.2.7-debian-10-r0 ] **************************************************** 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/redis:7.0.5-debian-11-r25 ] **************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/zookeeper:3.8.0-debian-11-r30 ] **************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/kafka:3.2.1-debian-11-r9 ] **************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/elasticsearch:7.17.2-debian-10-r4 ] **************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  ********** [ mosipint/kibana:7.17.2-debian-10-r0 ] **************************************************** 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/minio:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/kafka:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/zookeeper:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/kibana:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/redis:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:bitnami/elasticsearch:pull HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/kafka/manifests/3.2.1-debian-11-r9 HTTP/1.1" 200 3260 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/zookeeper/manifests/3.8.0-debian-11-r30 HTTP/1.1" 200 3043 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/redis/manifests/7.0.5-debian-11-r25 HTTP/1.1" 200 740 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/minio/manifests/2022.2.7-debian-10-r0 HTTP/1.1" 200 2832 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/kibana/manifests/7.17.2-debian-10-r0 HTTP/1.1" 200 2413 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/kafka/manifests/3.2.1-debian-11-r9 HTTP/1.1" 200 3260 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/kafka:3.2.1-debian-11-r9 ]  
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/elasticsearch/manifests/7.17.2-debian-10-r4 HTTP/1.1" 200 2633 
- 08-Sep-25 12:36:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/redis/manifests/7.0.5-debian-11-r25 HTTP/1.1" 200 740 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/minio/manifests/2022.2.7-debian-10-r0 HTTP/1.1" 200 2832 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/zookeeper/manifests/3.8.0-debian-11-r30 HTTP/1.1" 200 3043 
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/redis:7.0.5-debian-11-r25 ]  
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/minio:2022.2.7-debian-10-r0 ]  
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/zookeeper:3.8.0-debian-11-r30 ]  
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/kibana/manifests/7.17.2-debian-10-r0 HTTP/1.1" 200 2413 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/kibana:7.17.2-debian-10-r0 ]  
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/bitnami/elasticsearch/manifests/7.17.2-debian-10-r4 HTTP/1.1" 200 2633 
- 08-Sep-25 12:36:46  INFO   
- 08-Sep-25 12:36:46  INFO  [ PULL ----------------------> bitnami/elasticsearch:7.17.2-debian-10-r4 ]  
- 08-Sep-25 12:36:46  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:46  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:46  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:46  DEBUG  Found auth config 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=3.8.0-debian-11-r30&fromImage=bitnami%2Fzookeeper HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=2022.2.7-debian-10-r0&fromImage=bitnami%2Fminio HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=7.17.2-debian-10-r0&fromImage=bitnami%2Fkibana HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=7.0.5-debian-11-r25&fromImage=bitnami%2Fredis HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=3.2.1-debian-11-r9&fromImage=bitnami%2Fkafka HTTP/1.1" 200 None 
- 08-Sep-25 12:36:46  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=7.17.2-debian-10-r4&fromImage=bitnami%2Felasticsearch HTTP/1.1" 200 None 
- 08-Sep-25 12:36:52  INFO  Status: Downloaded newer image for bitnami/minio:2022.2.7-debian-10-r0 
- 08-Sep-25 12:36:52  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/minio:2022.2.7-debian-10-r0/tag?tag=2022.2.7-debian-10-r0&repo=mosipint%2Fminio&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:52  INFO   
- 08-Sep-25 12:36:52  INFO  [ PUSH -----> bitnami/minio:2022.2.7-debian-10-r0	------> mosipint/minio:2022.2.7-debian-10-r0 ]  
- 08-Sep-25 12:36:52  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:52  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:52  DEBUG  Found auth config 
- 08-Sep-25 12:36:52  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/minio/push?tag=2022.2.7-debian-10-r0 HTTP/1.1" 200 None 
- 08-Sep-25 12:36:55  INFO  Status: Downloaded newer image for bitnami/redis:7.0.5-debian-11-r25 
- 08-Sep-25 12:36:55  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/redis:7.0.5-debian-11-r25/tag?tag=7.0.5-debian-11-r25&repo=mosipint%2Fredis&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:55  INFO   
- 08-Sep-25 12:36:55  INFO  [ PUSH -----> bitnami/redis:7.0.5-debian-11-r25	------> mosipint/redis:7.0.5-debian-11-r25 ]  
- 08-Sep-25 12:36:55  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:55  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:55  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:55  DEBUG  Found auth config 
- 08-Sep-25 12:36:55  INFO  2022.2.7-debian-10-r0: digest: sha256:d2fc79469ebb6732fbc8fae7c6362cc99bcb5a93709e93a4bd4c80e7dc3b27b5 size: 2832 
- 08-Sep-25 12:36:55  INFO   
- 08-Sep-25 12:36:55  INFO  [ PUSH -----> bitnami/minio:2022.2.7-debian-10-r0	------> mosipint/minio:latest ]  
- 08-Sep-25 12:36:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/redis/push?tag=7.0.5-debian-11-r25 HTTP/1.1" 200 None 
- 08-Sep-25 12:36:55  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/minio:2022.2.7-debian-10-r0/tag?tag=latest&repo=mosipint%2Fminio&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:55  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:55  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:55  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:55  DEBUG  Found auth config 
- 08-Sep-25 12:36:55  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/minio/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:36:56  INFO  Status: Downloaded newer image for bitnami/zookeeper:3.8.0-debian-11-r30 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/zookeeper:3.8.0-debian-11-r30/tag?tag=3.8.0-debian-11-r30&repo=mosipint%2Fzookeeper&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:56  INFO   
- 08-Sep-25 12:36:56  INFO  [ PUSH -----> bitnami/zookeeper:3.8.0-debian-11-r30	------> mosipint/zookeeper:3.8.0-debian-11-r30 ]  
- 08-Sep-25 12:36:56  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:56  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:56  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:56  DEBUG  Found auth config 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/zookeeper/push?tag=3.8.0-debian-11-r30 HTTP/1.1" 200 None 
- 08-Sep-25 12:36:56  INFO  latest: digest: sha256:d2fc79469ebb6732fbc8fae7c6362cc99bcb5a93709e93a4bd4c80e7dc3b27b5 size: 2832 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Fminio%3A2022.2.7-debian-10-r0%22%5D%7D HTTP/1.1" 200 294 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/sha256:f64980389357b341e800100ce73bf197e6ab83d4dbbbf684ab87c49075c408f1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/minio:2022.2.7-debian-10-r0?force=False&noprune=False HTTP/1.1" 200 154 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fminio%3A2022.2.7-debian-10-r0%22%5D%7D HTTP/1.1" 200 295 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/sha256:f64980389357b341e800100ce73bf197e6ab83d4dbbbf684ab87c49075c408f1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/minio:2022.2.7-debian-10-r0?force=False&noprune=False HTTP/1.1" 200 54 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fminio%3Alatest%22%5D%7D HTTP/1.1" 200 280 
- 08-Sep-25 12:36:56  DEBUG  http://localhost:None "GET /v1.48/images/sha256:f64980389357b341e800100ce73bf197e6ab83d4dbbbf684ab87c49075c408f1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:57  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/minio:latest?force=False&noprune=False HTTP/1.1" 200 1259 
- 08-Sep-25 12:36:57  INFO  Completed bitnami/minio:2022.2.7-debian-10-r0	------> mosipint/minio:2022.2.7-debian-10-r0 
- 08-Sep-25 12:36:57  INFO  7.0.5-debian-11-r25: digest: sha256:8c5d86b2f548c72ff8816de1a6735cf5c6d3d036aa46a89469a3bf72978474ca size: 740 
- 08-Sep-25 12:36:57  INFO   
- 08-Sep-25 12:36:57  INFO  [ PUSH -----> bitnami/redis:7.0.5-debian-11-r25	------> mosipint/redis:latest ]  
- 08-Sep-25 12:36:57  INFO  Completed processing bitnami/minio:2022.2.7-debian-10-r0 to mosipint/minio:2022.2.7-debian-10-r0 
- 08-Sep-25 12:36:57  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/redis:7.0.5-debian-11-r25/tag?tag=latest&repo=mosipint%2Fredis&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:57  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:57  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:57  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:57  DEBUG  Found auth config 
- 08-Sep-25 12:36:57  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/redis/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:36:58  INFO  latest: digest: sha256:8c5d86b2f548c72ff8816de1a6735cf5c6d3d036aa46a89469a3bf72978474ca size: 740 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Fredis%3A7.0.5-debian-11-r25%22%5D%7D HTTP/1.1" 200 670 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/sha256:3225389df0d0ae775d2562e799a9c587dafb4c28fd7a447adbbb9ab344b61f90/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/redis:7.0.5-debian-11-r25?force=False&noprune=False HTTP/1.1" 200 152 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fredis%3A7.0.5-debian-11-r25%22%5D%7D HTTP/1.1" 200 671 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/sha256:3225389df0d0ae775d2562e799a9c587dafb4c28fd7a447adbbb9ab344b61f90/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/redis:7.0.5-debian-11-r25?force=False&noprune=False HTTP/1.1" 200 52 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fredis%3Alatest%22%5D%7D HTTP/1.1" 200 658 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "GET /v1.48/images/sha256:3225389df0d0ae775d2562e799a9c587dafb4c28fd7a447adbbb9ab344b61f90/json HTTP/1.1" 200 None 
- 08-Sep-25 12:36:58  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/redis:latest?force=False&noprune=False HTTP/1.1" 200 399 
- 08-Sep-25 12:36:58  INFO  Completed bitnami/redis:7.0.5-debian-11-r25	------> mosipint/redis:7.0.5-debian-11-r25 
- 08-Sep-25 12:36:58  INFO  Completed processing bitnami/redis:7.0.5-debian-11-r25 to mosipint/redis:7.0.5-debian-11-r25 
- 08-Sep-25 12:36:59  INFO  3.8.0-debian-11-r30: digest: sha256:10eddcf79cd0dc2cfc320de1389a2a788915b30180c8dda7d500693feb3d0cd5 size: 3043 
- 08-Sep-25 12:36:59  INFO   
- 08-Sep-25 12:36:59  INFO  [ PUSH -----> bitnami/zookeeper:3.8.0-debian-11-r30	------> mosipint/zookeeper:latest ]  
- 08-Sep-25 12:36:59  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/zookeeper:3.8.0-debian-11-r30/tag?tag=latest&repo=mosipint%2Fzookeeper&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:36:59  DEBUG  Looking for auth config 
- 08-Sep-25 12:36:59  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:36:59  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:36:59  DEBUG  Found auth config 
- 08-Sep-25 12:36:59  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/zookeeper/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:37:01  INFO  latest: digest: sha256:10eddcf79cd0dc2cfc320de1389a2a788915b30180c8dda7d500693feb3d0cd5 size: 3043 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Fzookeeper%3A3.8.0-debian-11-r30%22%5D%7D HTTP/1.1" 200 683 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/sha256:dd7f87e04f7b0ab66ef020f496957e3703e97eb8f56f25b0bc1835ba171ad13c/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/zookeeper:3.8.0-debian-11-r30?force=False&noprune=False HTTP/1.1" 200 160 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fzookeeper%3A3.8.0-debian-11-r30%22%5D%7D HTTP/1.1" 200 684 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/sha256:dd7f87e04f7b0ab66ef020f496957e3703e97eb8f56f25b0bc1835ba171ad13c/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/zookeeper:3.8.0-debian-11-r30?force=False&noprune=False HTTP/1.1" 200 56 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fzookeeper%3Alatest%22%5D%7D HTTP/1.1" 200 671 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "GET /v1.48/images/sha256:dd7f87e04f7b0ab66ef020f496957e3703e97eb8f56f25b0bc1835ba171ad13c/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:01  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/zookeeper:latest?force=False&noprune=False HTTP/1.1" 200 1267 
- 08-Sep-25 12:37:01  INFO  Completed bitnami/zookeeper:3.8.0-debian-11-r30	------> mosipint/zookeeper:3.8.0-debian-11-r30 
- 08-Sep-25 12:37:01  INFO  Completed processing bitnami/zookeeper:3.8.0-debian-11-r30 to mosipint/zookeeper:3.8.0-debian-11-r30 
- 08-Sep-25 12:37:09  INFO  Status: Downloaded newer image for bitnami/kafka:3.2.1-debian-11-r9 
- 08-Sep-25 12:37:09  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/kafka:3.2.1-debian-11-r9/tag?tag=3.2.1-debian-11-r9&repo=mosipint%2Fkafka&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:09  INFO   
- 08-Sep-25 12:37:09  INFO  [ PUSH -----> bitnami/kafka:3.2.1-debian-11-r9	------> mosipint/kafka:3.2.1-debian-11-r9 ]  
- 08-Sep-25 12:37:09  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:09  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:09  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:09  DEBUG  Found auth config 
- 08-Sep-25 12:37:09  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/kafka/push?tag=3.2.1-debian-11-r9 HTTP/1.1" 200 None 
- 08-Sep-25 12:37:12  INFO  3.2.1-debian-11-r9: digest: sha256:01b12a3090b532377e374f43f0a85d6a871586c3a3057ee7050e8e110eedfd54 size: 3260 
- 08-Sep-25 12:37:12  INFO   
- 08-Sep-25 12:37:12  INFO  [ PUSH -----> bitnami/kafka:3.2.1-debian-11-r9	------> mosipint/kafka:latest ]  
- 08-Sep-25 12:37:12  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/kafka:3.2.1-debian-11-r9/tag?tag=latest&repo=mosipint%2Fkafka&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:12  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:12  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:12  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:12  DEBUG  Found auth config 
- 08-Sep-25 12:37:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/kafka/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:37:13  INFO  latest: digest: sha256:01b12a3090b532377e374f43f0a85d6a871586c3a3057ee7050e8e110eedfd54 size: 3260 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Fkafka%3A3.2.1-debian-11-r9%22%5D%7D HTTP/1.1" 200 669 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/sha256:0bdb564d31b242c061bb5e32f3abe4d80a9a840f6dd108b872239f7c7fbecfd3/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/kafka:3.2.1-debian-11-r9?force=False&noprune=False HTTP/1.1" 200 151 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fkafka%3A3.2.1-debian-11-r9%22%5D%7D HTTP/1.1" 200 670 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/sha256:0bdb564d31b242c061bb5e32f3abe4d80a9a840f6dd108b872239f7c7fbecfd3/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/kafka:3.2.1-debian-11-r9?force=False&noprune=False HTTP/1.1" 200 51 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fkafka%3Alatest%22%5D%7D HTTP/1.1" 200 658 
- 08-Sep-25 12:37:13  DEBUG  http://localhost:None "GET /v1.48/images/sha256:0bdb564d31b242c061bb5e32f3abe4d80a9a840f6dd108b872239f7c7fbecfd3/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:14  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/kafka:latest?force=False&noprune=False HTTP/1.1" 200 1431 
- 08-Sep-25 12:37:14  INFO  Completed bitnami/kafka:3.2.1-debian-11-r9	------> mosipint/kafka:3.2.1-debian-11-r9 
- 08-Sep-25 12:37:14  INFO  Completed processing bitnami/kafka:3.2.1-debian-11-r9 to mosipint/kafka:3.2.1-debian-11-r9 
- 08-Sep-25 12:37:15  INFO  Status: Downloaded newer image for bitnami/elasticsearch:7.17.2-debian-10-r4 
- 08-Sep-25 12:37:15  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/elasticsearch:7.17.2-debian-10-r4/tag?tag=7.17.2-debian-10-r4&repo=mosipint%2Felasticsearch&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:15  INFO   
- 08-Sep-25 12:37:15  INFO  [ PUSH -----> bitnami/elasticsearch:7.17.2-debian-10-r4	------> mosipint/elasticsearch:7.17.2-debian-10-r4 ]  
- 08-Sep-25 12:37:15  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:15  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:15  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:15  DEBUG  Found auth config 
- 08-Sep-25 12:37:15  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/elasticsearch/push?tag=7.17.2-debian-10-r4 HTTP/1.1" 200 None 
- 08-Sep-25 12:37:18  INFO  7.17.2-debian-10-r4: digest: sha256:3e1e2528b85840f340946908733d5b7d50ed3de7b0aa3497942f287c2a0f78a2 size: 2633 
- 08-Sep-25 12:37:18  INFO   
- 08-Sep-25 12:37:18  INFO  [ PUSH -----> bitnami/elasticsearch:7.17.2-debian-10-r4	------> mosipint/elasticsearch:latest ]  
- 08-Sep-25 12:37:18  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/elasticsearch:7.17.2-debian-10-r4/tag?tag=latest&repo=mosipint%2Felasticsearch&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:18  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:18  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:18  DEBUG  Found auth config 
- 08-Sep-25 12:37:18  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/elasticsearch/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:37:19  INFO  latest: digest: sha256:3e1e2528b85840f340946908733d5b7d50ed3de7b0aa3497942f287c2a0f78a2 size: 2633 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Felasticsearch%3A7.17.2-debian-10-r4%22%5D%7D HTTP/1.1" 200 300 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c87f68793919b97929bc8d7c41904b1564a743ae533aa175c2587d13ae70af23/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/elasticsearch:7.17.2-debian-10-r4?force=False&noprune=False HTTP/1.1" 200 168 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Felasticsearch%3A7.17.2-debian-10-r4%22%5D%7D HTTP/1.1" 200 301 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c87f68793919b97929bc8d7c41904b1564a743ae533aa175c2587d13ae70af23/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/elasticsearch:7.17.2-debian-10-r4?force=False&noprune=False HTTP/1.1" 200 60 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Felasticsearch%3Alatest%22%5D%7D HTTP/1.1" 200 288 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "GET /v1.48/images/sha256:c87f68793919b97929bc8d7c41904b1564a743ae533aa175c2587d13ae70af23/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/elasticsearch:latest?force=False&noprune=False HTTP/1.1" 200 1189 
- 08-Sep-25 12:37:19  INFO  Completed bitnami/elasticsearch:7.17.2-debian-10-r4	------> mosipint/elasticsearch:7.17.2-debian-10-r4 
- 08-Sep-25 12:37:19  INFO  Completed processing bitnami/elasticsearch:7.17.2-debian-10-r4 to mosipint/elasticsearch:7.17.2-debian-10-r4 
- 08-Sep-25 12:37:21  INFO  Status: Downloaded newer image for bitnami/kibana:7.17.2-debian-10-r0 
- 08-Sep-25 12:37:21  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/kibana:7.17.2-debian-10-r0/tag?tag=7.17.2-debian-10-r0&repo=mosipint%2Fkibana&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:21  INFO   
- 08-Sep-25 12:37:21  INFO  [ PUSH -----> bitnami/kibana:7.17.2-debian-10-r0	------> mosipint/kibana:7.17.2-debian-10-r0 ]  
- 08-Sep-25 12:37:21  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:21  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:21  DEBUG  Found auth config 
- 08-Sep-25 12:37:21  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/kibana/push?tag=7.17.2-debian-10-r0 HTTP/1.1" 200 None 
- 08-Sep-25 12:37:24  INFO  7.17.2-debian-10-r0: digest: sha256:4774dd96090318a8e77b19dfa23ad335f9d064ed52ada504818b4238b9a93dc7 size: 2413 
- 08-Sep-25 12:37:24  INFO   
- 08-Sep-25 12:37:24  INFO  [ PUSH -----> bitnami/kibana:7.17.2-debian-10-r0	------> mosipint/kibana:latest ]  
- 08-Sep-25 12:37:24  DEBUG  http://localhost:None "POST /v1.48/images/bitnami/kibana:7.17.2-debian-10-r0/tag?tag=latest&repo=mosipint%2Fkibana&force=1 HTTP/1.1" 201 0 
- 08-Sep-25 12:37:24  DEBUG  Looking for auth config 
- 08-Sep-25 12:37:24  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Sep-25 12:37:24  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Sep-25 12:37:24  DEBUG  Found auth config 
- 08-Sep-25 12:37:24  DEBUG  http://localhost:None "POST /v1.48/images/mosipint/kibana/push?tag=latest HTTP/1.1" 200 None 
- 08-Sep-25 12:37:25  INFO  latest: digest: sha256:4774dd96090318a8e77b19dfa23ad335f9d064ed52ada504818b4238b9a93dc7 size: 2413 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22bitnami%2Fkibana%3A7.17.2-debian-10-r0%22%5D%7D HTTP/1.1" 200 293 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/sha256:023c57b30fed64d7a42c073a0263f7e49bdcd0e1a6ac07fad98b6dba700a67b1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "DELETE /v1.48/images/bitnami/kibana:7.17.2-debian-10-r0?force=False&noprune=False HTTP/1.1" 200 154 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fkibana%3A7.17.2-debian-10-r0%22%5D%7D HTTP/1.1" 200 294 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/sha256:023c57b30fed64d7a42c073a0263f7e49bdcd0e1a6ac07fad98b6dba700a67b1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/kibana:7.17.2-debian-10-r0?force=False&noprune=False HTTP/1.1" 200 53 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/json?only_ids=0&all=0&filters=%7B%22reference%22%3A+%5B%22mosipint%2Fkibana%3Alatest%22%5D%7D HTTP/1.1" 200 281 
- 08-Sep-25 12:37:25  DEBUG  http://localhost:None "GET /v1.48/images/sha256:023c57b30fed64d7a42c073a0263f7e49bdcd0e1a6ac07fad98b6dba700a67b1/json HTTP/1.1" 200 None 
- 08-Sep-25 12:37:27  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipint/kibana:latest?force=False&noprune=False HTTP/1.1" 200 1089 
- 08-Sep-25 12:37:27  INFO  Completed bitnami/kibana:7.17.2-debian-10-r0	------> mosipint/kibana:7.17.2-debian-10-r0 
- 08-Sep-25 12:37:27  INFO  Completed processing bitnami/kibana:7.17.2-debian-10-r0 to mosipint/kibana:7.17.2-debian-10-r0 
+ 09-Sep-25 10:38:02  INFO  LOGFILE CREATED : vidivi.log 
+ 09-Sep-25 10:38:02  INFO   
+ 09-Sep-25 10:38:02  INFO  ******************** Check Images List ************************************************************************************ 
+ 09-Sep-25 10:38:02  INFO   
+ 09-Sep-25 10:38:02  INFO  IMAGES= [['mosipdev2/uitest-verify:release-0.14.x', '0.14.x'], ['mosipdev2/apitest-inji-verify:release-0.14.x', '0.14.x']] 
+ 09-Sep-25 10:38:02  INFO   
+ 09-Sep-25 10:38:02  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 09-Sep-25 10:38:02  INFO   
+ 09-Sep-25 10:38:02  INFO  src = "mosipdev2/uitest-verify" tag = "release-0.14.x" 
+ 09-Sep-25 10:38:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Sep-25 10:38:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-verify/tags/release-0.14.x HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:03  INFO   
+ 09-Sep-25 10:38:03  INFO  src = "mosipdev2/apitest-inji-verify" tag = "release-0.14.x" 
+ 09-Sep-25 10:38:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-inji-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Sep-25 10:38:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-inji-verify/tags/release-0.14.x HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:03  INFO   
+ 09-Sep-25 10:38:03  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 09-Sep-25 10:38:03  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 09-Sep-25 10:38:03  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 09-Sep-25 10:38:04  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 09-Sep-25 10:38:04  INFO   
+ 09-Sep-25 10:38:04  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 09-Sep-25 10:38:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:04  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 09-Sep-25 10:38:04  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/uitest-verify/manifests/0.14.x HTTP/1.1" 404 100 
+ 09-Sep-25 10:38:04  INFO   
+ 09-Sep-25 10:38:04  INFO  [ mosipqa/uitest-verify ]  
+ 09-Sep-25 10:38:04  INFO  Destination Image = "mosipqa/uitest-verify" Destination Image tag = "0.14.x" IMAGE_ID :  
+ 09-Sep-25 10:38:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/uitest-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Sep-25 10:38:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/uitest-verify/tags/0.14.x HTTP/1.1" 404 130 
+ 09-Sep-25 10:38:05  ERROR  Image "mosipqa/uitest-verify:0.14.x" does not exist 
+ 09-Sep-25 10:38:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-inji-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:05  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 09-Sep-25 10:38:05  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-inji-verify/manifests/0.14.x HTTP/1.1" 404 100 
+ 09-Sep-25 10:38:05  INFO   
+ 09-Sep-25 10:38:05  INFO  [ mosipqa/apitest-inji-verify ]  
+ 09-Sep-25 10:38:05  INFO  Destination Image = "mosipqa/apitest-inji-verify" Destination Image tag = "0.14.x" IMAGE_ID :  
+ 09-Sep-25 10:38:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-inji-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 09-Sep-25 10:38:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-inji-verify/tags/0.14.x HTTP/1.1" 404 136 
+ 09-Sep-25 10:38:05  ERROR  Image "mosipqa/apitest-inji-verify:0.14.x" does not exist 
+ 09-Sep-25 10:38:05  INFO   
+ 09-Sep-25 10:38:05  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 09-Sep-25 10:38:05  INFO   
+ 09-Sep-25 10:38:05  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipqa/uitest-verify:0.14.x'], ['mosipqa/apitest-inji-verify:0.14.x']] 
+ 09-Sep-25 10:38:05  INFO   
+ 09-Sep-25 10:38:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 09-Sep-25 10:38:05  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 09-Sep-25 10:38:05  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 09-Sep-25 10:38:05  DEBUG  Found 'auths' section 
+ 09-Sep-25 10:38:05  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 09-Sep-25 10:38:06  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 09-Sep-25 10:38:06  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:06  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:06  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 09-Sep-25 10:38:06  INFO   
+ 09-Sep-25 10:38:06  INFO  ********** [ mosipqa/uitest-verify:0.14.x ] **************************************************** 
+ 09-Sep-25 10:38:06  INFO   
+ 09-Sep-25 10:38:06  INFO  ********** [ mosipqa/apitest-inji-verify:0.14.x ] **************************************************** 
+ 09-Sep-25 10:38:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 09-Sep-25 10:38:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:06  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 09-Sep-25 10:38:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-inji-verify:pull HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:07  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 09-Sep-25 10:38:07  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/uitest-verify/manifests/release-0.14.x HTTP/1.1" 200 743 
+ 09-Sep-25 10:38:07  INFO  Multi-arch image detected with 2 architectures 
+ 09-Sep-25 10:38:07  INFO  Processing architecture: arm64/linux with digest sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee 
+ 09-Sep-25 10:38:07  INFO   
+ 09-Sep-25 10:38:07  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee ]  
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:07  DEBUG  Found auth config 
+ 09-Sep-25 10:38:07  INFO  Processing architecture: amd64/linux with digest sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 
+ 09-Sep-25 10:38:07  INFO   
+ 09-Sep-25 10:38:07  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 ]  
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:07  DEBUG  Found auth config 
+ 09-Sep-25 10:38:07  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-inji-verify/manifests/release-0.14.x HTTP/1.1" 200 743 
+ 09-Sep-25 10:38:07  INFO  Multi-arch image detected with 2 architectures 
+ 09-Sep-25 10:38:07  INFO  Processing architecture: amd64/linux with digest sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f 
+ 09-Sep-25 10:38:07  INFO   
+ 09-Sep-25 10:38:07  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f ]  
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:07  DEBUG  Found auth config 
+ 09-Sep-25 10:38:07  INFO  Processing architecture: arm64/linux with digest sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a 
+ 09-Sep-25 10:38:07  INFO   
+ 09-Sep-25 10:38:07  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a ]  
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:07  DEBUG  Found auth config 
+ 09-Sep-25 10:38:08  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a&fromImage=mosipdev2%2Fapitest-inji-verify HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:08  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63&fromImage=mosipdev2%2Fuitest-verify HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:08  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee&fromImage=mosipdev2%2Fuitest-verify HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:08  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f&fromImage=mosipdev2%2Fapitest-inji-verify HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:37  INFO  Status: Downloaded newer image for mosipdev2/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a 
+ 09-Sep-25 10:38:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-inji-verify%40sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a/tag?tag=0.14.x-arm64-linux&repo=mosipqa%2Fapitest-inji-verify&force=1 HTTP/1.1" 201 0 
+ 09-Sep-25 10:38:37  INFO   
+ 09-Sep-25 10:38:37  INFO  [ PUSH linux/arm64 -----> mosipdev2/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a	------> mosipqa/apitest-inji-verify:0.14.x-arm64-linux ]  
+ 09-Sep-25 10:38:37  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:37  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:37  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:37  DEBUG  Found auth config 
+ 09-Sep-25 10:38:37  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-inji-verify/push?tag=0.14.x-arm64-linux HTTP/1.1" 200 None 
+ 09-Sep-25 10:38:44  INFO  0.14.x-arm64-linux: digest: sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a size: 1582 
+ 09-Sep-25 10:38:44  INFO  Completed pulling/tagging mosipdev2/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a 	------> mosipqa/apitest-inji-verify:0.14.x-arm64-linux (linux/arm64) 
+ 09-Sep-25 10:38:50  INFO  Status: Downloaded newer image for mosipdev2/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 
+ 09-Sep-25 10:38:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-verify%40sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63/tag?tag=0.14.x-amd64-linux&repo=mosipqa%2Fuitest-verify&force=1 HTTP/1.1" 201 0 
+ 09-Sep-25 10:38:50  INFO   
+ 09-Sep-25 10:38:50  INFO  [ PUSH linux/amd64 -----> mosipdev2/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63	------> mosipqa/uitest-verify:0.14.x-amd64-linux ]  
+ 09-Sep-25 10:38:50  DEBUG  Looking for auth config 
+ 09-Sep-25 10:38:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:38:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:38:50  DEBUG  Found auth config 
+ 09-Sep-25 10:38:50  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/uitest-verify/push?tag=0.14.x-amd64-linux HTTP/1.1" 200 None 
+ 09-Sep-25 10:39:02  INFO  Status: Downloaded newer image for mosipdev2/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee 
+ 09-Sep-25 10:39:02  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-verify%40sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee/tag?tag=0.14.x-arm64-linux&repo=mosipqa%2Fuitest-verify&force=1 HTTP/1.1" 201 0 
+ 09-Sep-25 10:39:02  INFO   
+ 09-Sep-25 10:39:02  INFO  [ PUSH linux/arm64 -----> mosipdev2/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee	------> mosipqa/uitest-verify:0.14.x-arm64-linux ]  
+ 09-Sep-25 10:39:02  DEBUG  Looking for auth config 
+ 09-Sep-25 10:39:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:39:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:39:02  DEBUG  Found auth config 
+ 09-Sep-25 10:39:02  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/uitest-verify/push?tag=0.14.x-arm64-linux HTTP/1.1" 200 None 
+ 09-Sep-25 10:39:02  INFO  Status: Downloaded newer image for mosipdev2/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f 
+ 09-Sep-25 10:39:02  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-inji-verify%40sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f/tag?tag=0.14.x-amd64-linux&repo=mosipqa%2Fapitest-inji-verify&force=1 HTTP/1.1" 201 0 
+ 09-Sep-25 10:39:02  INFO   
+ 09-Sep-25 10:39:02  INFO  [ PUSH linux/amd64 -----> mosipdev2/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f	------> mosipqa/apitest-inji-verify:0.14.x-amd64-linux ]  
+ 09-Sep-25 10:39:02  DEBUG  Looking for auth config 
+ 09-Sep-25 10:39:02  DEBUG  Looking for auth entry for 'docker.io' 
+ 09-Sep-25 10:39:02  DEBUG  Found 'https://index.docker.io/v1/' 
+ 09-Sep-25 10:39:02  DEBUG  Found auth config 
+ 09-Sep-25 10:39:02  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-inji-verify/push?tag=0.14.x-amd64-linux HTTP/1.1" 200 None 
+ 09-Sep-25 10:39:05  INFO  0.14.x-amd64-linux: digest: sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 size: 5967 
+ 09-Sep-25 10:39:05  INFO  Completed pulling/tagging mosipdev2/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 	------> mosipqa/uitest-verify:0.14.x-amd64-linux (linux/amd64) 
+ 09-Sep-25 10:39:16  INFO  0.14.x-amd64-linux: digest: sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f size: 1582 
+ 09-Sep-25 10:39:16  INFO  Completed pulling/tagging mosipdev2/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f 	------> mosipqa/apitest-inji-verify:0.14.x-amd64-linux (linux/amd64) 
+ 09-Sep-25 10:39:16  INFO  Logging in to Docker CLI for manifest operations 
+ 09-Sep-25 10:39:17  INFO  0.14.x-arm64-linux: digest: sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee size: 5967 
+ 09-Sep-25 10:39:17  INFO  Completed pulling/tagging mosipdev2/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee 	------> mosipqa/uitest-verify:0.14.x-arm64-linux (linux/arm64) 
+ 09-Sep-25 10:39:17  INFO  Logging in to Docker CLI for manifest operations 
+ 09-Sep-25 10:39:17  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-inji-verify:0.14.x mosipqa/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f mosipqa/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a 
+ 09-Sep-25 10:39:17  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/uitest-verify:0.14.x mosipqa/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee mosipqa/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 
+ 09-Sep-25 10:39:19  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-inji-verify:0.14.x 
+ 09-Sep-25 10:39:19  INFO  Pushing manifest list with command: docker manifest push mosipqa/uitest-verify:0.14.x 
+ 09-Sep-25 10:39:21  INFO  Logging in to Docker CLI for manifest operations 
+ 09-Sep-25 10:39:22  INFO  Logging in to Docker CLI for manifest operations 
+ 09-Sep-25 10:39:22  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-inji-verify:latest mosipqa/apitest-inji-verify@sha256:7f42a6c065bad39e592402482d57869f5c7fa055f5c4bd42f96a4475d17fd54f mosipqa/apitest-inji-verify@sha256:fa5cbde583dd7a2bdc16f8618915455677405300ee181bb5cdae95fb4b61db9a 
+ 09-Sep-25 10:39:22  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/uitest-verify:latest mosipqa/uitest-verify@sha256:2251b83b50c7deec66a3088b7315fed607f812a8d23bcc0dcf0ebc3c0eab3aee mosipqa/uitest-verify@sha256:ea441b48ac347689f4b3b980be25a34204eed455740f3409e362435fa8ca1f63 
+ 09-Sep-25 10:39:24  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-inji-verify:latest 
+ 09-Sep-25 10:39:24  INFO  Pushing manifest list with command: docker manifest push mosipqa/uitest-verify:latest 
+ 09-Sep-25 10:39:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-inji-verify:0.14.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 179 
+ 09-Sep-25 10:39:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-inji-verify:0.14.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 179 
+ 09-Sep-25 10:39:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/uitest-verify:0.14.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 167 
+ 09-Sep-25 10:39:26  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/uitest-verify:0.14.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 167 
+ 09-Sep-25 10:39:26  INFO  Completed processing mosipdev2/uitest-verify:release-0.14.x to mosipqa/uitest-verify:0.14.x 
+ 09-Sep-25 10:39:26  INFO  Completed processing mosipdev2/apitest-inji-verify:release-0.14.x to mosipqa/apitest-inji-verify:0.14.x 
