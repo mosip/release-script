@@ -1,172 +1,97 @@
- 23-Sep-25 06:14:52  INFO  LOGFILE CREATED : vidivi.log 
- 23-Sep-25 06:14:52  INFO   
- 23-Sep-25 06:14:52  INFO  ******************** Check Images List ************************************************************************************ 
- 23-Sep-25 06:14:52  INFO   
- 23-Sep-25 06:14:52  INFO  IMAGES= [['mosipdev/uitest-web:release-0.14.x', 'release-0.14.x'], ['mosipdev/apitest-mimoto:release-0.19.x', 'release-0.19.x']] 
- 23-Sep-25 06:14:52  INFO   
- 23-Sep-25 06:14:52  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 23-Sep-25 06:14:52  INFO   
- 23-Sep-25 06:14:52  INFO  src = "mosipdev/uitest-web" tag = "release-0.14.x" 
- 23-Sep-25 06:14:52  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:52  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-web:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:52  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/uitest-web/tags/release-0.14.x HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  src = "mosipdev/apitest-mimoto" tag = "release-0.19.x" 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-mimoto/tags/release-0.19.x HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 23-Sep-25 06:14:53  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 23-Sep-25 06:14:53  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 343 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-web:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/uitest-web/manifests/release-0.14.x HTTP/1.1" 401 163 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  [ mosipdev2/uitest-web ]  
- 23-Sep-25 06:14:53  INFO  Destination Image = "mosipdev2/uitest-web" Destination Image tag = "release-0.14.x" IMAGE_ID :  
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-web:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-web/tags/release-0.14.x HTTP/1.1" 404 44 
- 23-Sep-25 06:14:53  ERROR  Image "mosipdev2/uitest-web:release-0.14.x" does not exist 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-mimoto/manifests/release-0.19.x HTTP/1.1" 200 2212 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  [ mosipdev2/apitest-mimoto ]  
- 23-Sep-25 06:14:53  INFO  Destination Image = "mosipdev2/apitest-mimoto" Destination Image tag = "release-0.19.x" IMAGE_ID : "sha256:23a0592bd37c96248ef53116fea9d0f311f9161a1506b86cd00afb3850bb1f3b" 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-mimoto/tags/release-0.19.x HTTP/1.1" 200 841 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ******************** HASH Operation Results ********************************************************************** 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipdev2/uitest-web:release-0.14.x']] 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 23-Sep-25 06:14:53  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 23-Sep-25 06:14:53  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 23-Sep-25 06:14:53  DEBUG  Found 'auths' section 
- 23-Sep-25 06:14:53  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 23-Sep-25 06:14:53  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
- 23-Sep-25 06:14:53  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:14:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:14:53  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ********** [ mosipdev2/uitest-web:release-0.14.x ] **************************************************** 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  ********** [ mosipdev2/apitest-mimoto:release-0.19.x ] **************************************************** 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-web:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-mimoto:pull HTTP/1.1" 200 None 
- 23-Sep-25 06:14:53  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 23-Sep-25 06:14:53  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/uitest-web/manifests/release-0.14.x HTTP/1.1" 200 743 
- 23-Sep-25 06:14:53  INFO  Multi-arch image detected with 2 architectures 
- 23-Sep-25 06:14:53  INFO  Processing architecture: amd64/linux with digest sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  [ PULL linux/amd64 ----------------------> mosipdev/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 ]  
- 23-Sep-25 06:14:53  DEBUG  Looking for auth config 
- 23-Sep-25 06:14:53  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:14:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:14:53  DEBUG  Found auth config 
- 23-Sep-25 06:14:53  INFO  Processing architecture: arm64/linux with digest sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c 
- 23-Sep-25 06:14:53  INFO   
- 23-Sep-25 06:14:53  INFO  [ PULL linux/arm64 ----------------------> mosipdev/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c ]  
- 23-Sep-25 06:14:53  DEBUG  Looking for auth config 
- 23-Sep-25 06:14:53  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:14:53  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:14:53  DEBUG  Found auth config 
- 23-Sep-25 06:14:54  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-mimoto/manifests/release-0.19.x HTTP/1.1" 200 743 
- 23-Sep-25 06:14:54  INFO  Multi-arch image detected with 2 architectures 
- 23-Sep-25 06:14:54  INFO  Processing architecture: amd64/linux with digest sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 
- 23-Sep-25 06:14:54  INFO   
- 23-Sep-25 06:14:54  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 ]  
- 23-Sep-25 06:14:54  DEBUG  Looking for auth config 
- 23-Sep-25 06:14:54  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:14:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:14:54  DEBUG  Found auth config 
- 23-Sep-25 06:14:54  INFO  Processing architecture: arm64/linux with digest sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e 
- 23-Sep-25 06:14:54  INFO   
- 23-Sep-25 06:14:54  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e ]  
- 23-Sep-25 06:14:54  DEBUG  Looking for auth config 
- 23-Sep-25 06:14:54  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:14:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:14:54  DEBUG  Found auth config 
- 23-Sep-25 06:14:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
- 23-Sep-25 06:14:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30&fromImage=mosipdev%2Fapitest-mimoto HTTP/1.1" 200 None 
- 23-Sep-25 06:14:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377&fromImage=mosipdev%2Fuitest-web HTTP/1.1" 200 None 
- 23-Sep-25 06:14:54  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c&fromImage=mosipdev%2Fuitest-web HTTP/1.1" 200 None 
- 23-Sep-25 06:15:19  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e 
- 23-Sep-25 06:15:19  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-mimoto%40sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e/tag?tag=release-0.19.x-arm64-linux&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 23-Sep-25 06:15:19  INFO   
- 23-Sep-25 06:15:19  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e	------> mosipdev2/apitest-mimoto:release-0.19.x-arm64-linux ]  
- 23-Sep-25 06:15:19  DEBUG  Looking for auth config 
- 23-Sep-25 06:15:19  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:15:19  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:15:19  DEBUG  Found auth config 
- 23-Sep-25 06:15:19  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto/push?tag=release-0.19.x-arm64-linux HTTP/1.1" 200 None 
- 23-Sep-25 06:15:20  INFO  Status: Downloaded newer image for mosipdev/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 
- 23-Sep-25 06:15:20  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-mimoto%40sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30/tag?tag=release-0.19.x-amd64-linux&repo=mosipdev2%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 23-Sep-25 06:15:20  INFO   
- 23-Sep-25 06:15:20  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30	------> mosipdev2/apitest-mimoto:release-0.19.x-amd64-linux ]  
- 23-Sep-25 06:15:20  DEBUG  Looking for auth config 
- 23-Sep-25 06:15:20  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:15:20  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:15:20  DEBUG  Found auth config 
- 23-Sep-25 06:15:20  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto/push?tag=release-0.19.x-amd64-linux HTTP/1.1" 200 None 
- 23-Sep-25 06:15:23  INFO  release-0.19.x-arm64-linux: digest: sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e size: 2212 
- 23-Sep-25 06:15:23  INFO  Completed pulling/tagging mosipdev/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e 	------> mosipdev2/apitest-mimoto:release-0.19.x-arm64-linux (linux/arm64) 
- 23-Sep-25 06:15:23  INFO  release-0.19.x-amd64-linux: digest: sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 size: 2212 
- 23-Sep-25 06:15:23  INFO  Completed pulling/tagging mosipdev/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 	------> mosipdev2/apitest-mimoto:release-0.19.x-amd64-linux (linux/amd64) 
- 23-Sep-25 06:15:23  INFO  Logging in to Docker CLI for manifest operations 
- 23-Sep-25 06:15:24  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-mimoto:release-0.19.x mosipdev2/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 mosipdev2/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e 
- 23-Sep-25 06:15:24  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-mimoto:release-0.19.x 
- 23-Sep-25 06:15:26  INFO  Logging in to Docker CLI for manifest operations 
- 23-Sep-25 06:15:26  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-mimoto:latest mosipdev2/apitest-mimoto@sha256:49c3d7677533c8596c82b95b2d9b5daf914218f54913b09baf32986254f03a30 mosipdev2/apitest-mimoto@sha256:7965e6807fabf0f99f3d5dc7a651959045160b5d9ab7937108d5ae0679137c8e 
- 23-Sep-25 06:15:27  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-mimoto:latest 
- 23-Sep-25 06:15:27  INFO  Status: Downloaded newer image for mosipdev/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 
- 23-Sep-25 06:15:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/uitest-web%40sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377/tag?tag=release-0.14.x-amd64-linux&repo=mosipdev2%2Fuitest-web&force=1 HTTP/1.1" 201 0 
- 23-Sep-25 06:15:27  INFO   
- 23-Sep-25 06:15:27  INFO  [ PUSH linux/amd64 -----> mosipdev/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377	------> mosipdev2/uitest-web:release-0.14.x-amd64-linux ]  
- 23-Sep-25 06:15:27  DEBUG  Looking for auth config 
- 23-Sep-25 06:15:27  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:15:27  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:15:27  DEBUG  Found auth config 
- 23-Sep-25 06:15:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-web/push?tag=release-0.14.x-amd64-linux HTTP/1.1" 200 None 
- 23-Sep-25 06:15:28  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-mimoto:release-0.19.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 181 
- 23-Sep-25 06:15:28  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-mimoto:release-0.19.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 181 
- 23-Sep-25 06:15:31  INFO  release-0.14.x-amd64-linux: digest: sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 size: 5961 
- 23-Sep-25 06:15:31  INFO  Completed pulling/tagging mosipdev/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 	------> mosipdev2/uitest-web:release-0.14.x-amd64-linux (linux/amd64) 
- 23-Sep-25 06:15:39  INFO  Status: Downloaded newer image for mosipdev/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c 
- 23-Sep-25 06:15:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/uitest-web%40sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c/tag?tag=release-0.14.x-arm64-linux&repo=mosipdev2%2Fuitest-web&force=1 HTTP/1.1" 201 0 
- 23-Sep-25 06:15:39  INFO   
- 23-Sep-25 06:15:39  INFO  [ PUSH linux/arm64 -----> mosipdev/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c	------> mosipdev2/uitest-web:release-0.14.x-arm64-linux ]  
- 23-Sep-25 06:15:39  DEBUG  Looking for auth config 
- 23-Sep-25 06:15:39  DEBUG  Looking for auth entry for 'docker.io' 
- 23-Sep-25 06:15:39  DEBUG  Found 'https://index.docker.io/v1/' 
- 23-Sep-25 06:15:39  DEBUG  Found auth config 
- 23-Sep-25 06:15:39  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/uitest-web/push?tag=release-0.14.x-arm64-linux HTTP/1.1" 200 None 
- 23-Sep-25 06:15:43  INFO  release-0.14.x-arm64-linux: digest: sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c size: 5961 
- 23-Sep-25 06:15:43  INFO  Completed pulling/tagging mosipdev/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c 	------> mosipdev2/uitest-web:release-0.14.x-arm64-linux (linux/arm64) 
- 23-Sep-25 06:15:43  INFO  Logging in to Docker CLI for manifest operations 
- 23-Sep-25 06:15:43  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/uitest-web:release-0.14.x mosipdev2/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 mosipdev2/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c 
- 23-Sep-25 06:15:44  INFO  Pushing manifest list with command: docker manifest push mosipdev2/uitest-web:release-0.14.x 
- 23-Sep-25 06:15:45  INFO  Logging in to Docker CLI for manifest operations 
- 23-Sep-25 06:15:45  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/uitest-web:latest mosipdev2/uitest-web@sha256:85f7b52bc41a32d18595a13241f292e390c8743c6be488b36ae6692339c85377 mosipdev2/uitest-web@sha256:01e87855615275ed4c8cdcedfb256b572e42bd08ee59b651810ebb99ef63831c 
- 23-Sep-25 06:15:46  INFO  Pushing manifest list with command: docker manifest push mosipdev2/uitest-web:latest 
- 23-Sep-25 06:15:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/uitest-web:release-0.14.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 173 
- 23-Sep-25 06:15:47  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/uitest-web:release-0.14.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 173 
- 23-Sep-25 06:15:47  INFO  Completed processing mosipdev/uitest-web:release-0.14.x to mosipdev2/uitest-web:release-0.14.x 
- 23-Sep-25 06:15:47  INFO  Completed processing mosipdev/apitest-mimoto:release-0.19.x to mosipdev2/apitest-mimoto:release-0.19.x 
+ 23-Sep-25 08:57:18  INFO  LOGFILE CREATED : vidivi.log 
+ 23-Sep-25 08:57:18  INFO   
+ 23-Sep-25 08:57:18  INFO  ******************** Check Images List ************************************************************************************ 
+ 23-Sep-25 08:57:18  INFO   
+ 23-Sep-25 08:57:18  INFO  IMAGES= [['mosipdev/oidc-ui:develop', 'develop']] 
+ 23-Sep-25 08:57:18  INFO   
+ 23-Sep-25 08:57:18  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 23-Sep-25 08:57:18  INFO   
+ 23-Sep-25 08:57:18  INFO  src = "mosipdev/oidc-ui" tag = "develop" 
+ 23-Sep-25 08:57:18  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Sep-25 08:57:18  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:18  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Sep-25 08:57:19  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/develop HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:19  INFO   
+ 23-Sep-25 08:57:19  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 23-Sep-25 08:57:19  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 23-Sep-25 08:57:19  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 23-Sep-25 08:57:19  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 341 
+ 23-Sep-25 08:57:19  INFO   
+ 23-Sep-25 08:57:19  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 23-Sep-25 08:57:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Sep-25 08:57:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:19  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 23-Sep-25 08:57:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/oidc-ui/manifests/develop HTTP/1.1" 200 743 
+ 23-Sep-25 08:57:19  INFO   
+ 23-Sep-25 08:57:19  INFO  [ mosipqa/oidc-ui ]  
+ 23-Sep-25 08:57:19  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "develop" IMAGE_ID : "sha256:f68ba841f046fc25c1b285207a3da28c39129455a396480f422d241b63e1bb81" 
+ 23-Sep-25 08:57:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Sep-25 08:57:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/oidc-ui:pull HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 23-Sep-25 08:57:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/oidc-ui/tags/develop HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:20  INFO   
+ 23-Sep-25 08:57:20  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 23-Sep-25 08:57:20  INFO   
+ 23-Sep-25 08:57:20  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 23-Sep-25 08:57:20  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 23-Sep-25 08:57:20  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 23-Sep-25 08:57:20  DEBUG  Found 'auths' section 
+ 23-Sep-25 08:57:20  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 23-Sep-25 08:57:20  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 822 
+ 23-Sep-25 08:57:20  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Sep-25 08:57:20  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Sep-25 08:57:20  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 23-Sep-25 08:57:20  INFO   
+ 23-Sep-25 08:57:20  INFO  ********** [ mosipqa/oidc-ui:develop ] **************************************************** 
+ 23-Sep-25 08:57:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 23-Sep-25 08:57:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:21  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 23-Sep-25 08:57:21  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/oidc-ui/manifests/develop HTTP/1.1" 200 743 
+ 23-Sep-25 08:57:21  INFO  Multi-arch image detected with 2 architectures 
+ 23-Sep-25 08:57:21  INFO  Processing architecture: amd64/linux with digest sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e 
+ 23-Sep-25 08:57:21  INFO   
+ 23-Sep-25 08:57:21  INFO  [ PULL linux/amd64 ----------------------> mosipdev/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e ]  
+ 23-Sep-25 08:57:21  DEBUG  Looking for auth config 
+ 23-Sep-25 08:57:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Sep-25 08:57:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Sep-25 08:57:21  DEBUG  Found auth config 
+ 23-Sep-25 08:57:21  INFO  Processing architecture: arm64/linux with digest sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 
+ 23-Sep-25 08:57:21  INFO   
+ 23-Sep-25 08:57:21  INFO  [ PULL linux/arm64 ----------------------> mosipdev/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 ]  
+ 23-Sep-25 08:57:21  DEBUG  Looking for auth config 
+ 23-Sep-25 08:57:21  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Sep-25 08:57:21  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Sep-25 08:57:21  DEBUG  Found auth config 
+ 23-Sep-25 08:57:21  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:21  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aeb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1&fromImage=mosipdev%2Foidc-ui HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:25  INFO  Status: Downloaded newer image for mosipdev/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e 
+ 23-Sep-25 08:57:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/oidc-ui%40sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e/tag?tag=develop-amd64-linux&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 23-Sep-25 08:57:25  INFO   
+ 23-Sep-25 08:57:25  INFO  [ PUSH linux/amd64 -----> mosipdev/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e	------> mosipqa/oidc-ui:develop-amd64-linux ]  
+ 23-Sep-25 08:57:25  DEBUG  Looking for auth config 
+ 23-Sep-25 08:57:25  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Sep-25 08:57:25  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Sep-25 08:57:25  DEBUG  Found auth config 
+ 23-Sep-25 08:57:25  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/oidc-ui/push?tag=develop-amd64-linux HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:27  INFO  Status: Downloaded newer image for mosipdev/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 
+ 23-Sep-25 08:57:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/oidc-ui%40sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1/tag?tag=develop-arm64-linux&repo=mosipqa%2Foidc-ui&force=1 HTTP/1.1" 201 0 
+ 23-Sep-25 08:57:27  INFO   
+ 23-Sep-25 08:57:27  INFO  [ PUSH linux/arm64 -----> mosipdev/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1	------> mosipqa/oidc-ui:develop-arm64-linux ]  
+ 23-Sep-25 08:57:27  DEBUG  Looking for auth config 
+ 23-Sep-25 08:57:27  DEBUG  Looking for auth entry for 'docker.io' 
+ 23-Sep-25 08:57:27  DEBUG  Found 'https://index.docker.io/v1/' 
+ 23-Sep-25 08:57:27  DEBUG  Found auth config 
+ 23-Sep-25 08:57:27  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/oidc-ui/push?tag=develop-arm64-linux HTTP/1.1" 200 None 
+ 23-Sep-25 08:57:30  INFO  develop-amd64-linux: digest: sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e size: 2200 
+ 23-Sep-25 08:57:30  INFO  Completed pulling/tagging mosipdev/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e 	------> mosipqa/oidc-ui:develop-amd64-linux (linux/amd64) 
+ 23-Sep-25 08:57:32  INFO  develop-arm64-linux: digest: sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 size: 2200 
+ 23-Sep-25 08:57:32  INFO  Completed pulling/tagging mosipdev/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 	------> mosipqa/oidc-ui:develop-arm64-linux (linux/arm64) 
+ 23-Sep-25 08:57:32  INFO  Logging in to Docker CLI for manifest operations 
+ 23-Sep-25 08:57:33  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/oidc-ui:develop mosipqa/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e mosipqa/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 
+ 23-Sep-25 08:57:34  INFO  Pushing manifest list with command: docker manifest push mosipqa/oidc-ui:develop 
+ 23-Sep-25 08:57:36  INFO  Logging in to Docker CLI for manifest operations 
+ 23-Sep-25 08:57:37  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/oidc-ui:latest mosipqa/oidc-ui@sha256:5f2dbad17f7c7eefa4a9fd874eaed36125cf1a1cd72c155cde885daccc99673e mosipqa/oidc-ui@sha256:eb3167decca099903f479299d78b6976cb19a71e45bcd0fd131f902778b985c1 
+ 23-Sep-25 08:57:39  INFO  Pushing manifest list with command: docker manifest push mosipqa/oidc-ui:latest 
+ 23-Sep-25 08:57:40  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/oidc-ui:develop-amd64-linux?force=False&noprune=False HTTP/1.1" 200 156 
+ 23-Sep-25 08:57:40  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/oidc-ui:develop-arm64-linux?force=False&noprune=False HTTP/1.1" 200 156 
+ 23-Sep-25 08:57:40  INFO  Completed processing mosipdev/oidc-ui:develop to mosipqa/oidc-ui:develop 
