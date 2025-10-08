@@ -1,97 +1,310 @@
- 07-Oct-25 13:14:31  INFO  LOGFILE CREATED : vidivi.log 
- 07-Oct-25 13:14:31  INFO   
- 07-Oct-25 13:14:31  INFO  ******************** Check Images List ************************************************************************************ 
- 07-Oct-25 13:14:31  INFO   
- 07-Oct-25 13:14:31  INFO  IMAGES= [['mosipdev2/apitest-mimoto:release-0.19.x', '0.19.x']] 
- 07-Oct-25 13:14:31  INFO   
- 07-Oct-25 13:14:31  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 07-Oct-25 13:14:31  INFO   
- 07-Oct-25 13:14:31  INFO  src = "mosipdev2/apitest-mimoto" tag = "release-0.19.x" 
- 07-Oct-25 13:14:31  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Oct-25 13:14:31  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 07-Oct-25 13:14:31  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Oct-25 13:14:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-mimoto/tags/release-0.19.x HTTP/1.1" 200 None 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 07-Oct-25 13:14:32  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 07-Oct-25 13:14:32  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 343 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Oct-25 13:14:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 07-Oct-25 13:14:32  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/apitest-mimoto/manifests/0.19.x HTTP/1.1" 200 743 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  [ mosipqa/apitest-mimoto ]  
- 07-Oct-25 13:14:32  INFO  Destination Image = "mosipqa/apitest-mimoto" Destination Image tag = "0.19.x" IMAGE_ID : "sha256:11cc5c26616484eb84803632c07898d46918eaa81624d22c2a76c1dff5d0612f" 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Oct-25 13:14:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/apitest-mimoto:pull HTTP/1.1" 200 None 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Oct-25 13:14:32  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/apitest-mimoto/tags/0.19.x HTTP/1.1" 200 None 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  ******************** HASH Operation Results ********************************************************************** 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 07-Oct-25 13:14:32  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 07-Oct-25 13:14:32  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 07-Oct-25 13:14:32  DEBUG  Found 'auths' section 
- 07-Oct-25 13:14:32  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 07-Oct-25 13:14:32  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 07-Oct-25 13:14:32  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Oct-25 13:14:32  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Oct-25 13:14:32  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 07-Oct-25 13:14:32  INFO   
- 07-Oct-25 13:14:32  INFO  ********** [ mosipqa/apitest-mimoto:0.19.x ] **************************************************** 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Oct-25 13:14:32  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-mimoto:pull HTTP/1.1" 200 None 
- 07-Oct-25 13:14:32  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 07-Oct-25 13:14:33  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-mimoto/manifests/release-0.19.x HTTP/1.1" 200 743 
- 07-Oct-25 13:14:33  INFO  Multi-arch image detected with 2 architectures 
- 07-Oct-25 13:14:33  INFO  Processing architecture: arm64/linux with digest sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba 
- 07-Oct-25 13:14:33  INFO   
- 07-Oct-25 13:14:33  INFO  [ PULL linux/arm64 ----------------------> mosipdev2/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba ]  
- 07-Oct-25 13:14:33  DEBUG  Looking for auth config 
- 07-Oct-25 13:14:33  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Oct-25 13:14:33  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Oct-25 13:14:33  INFO  Processing architecture: amd64/linux with digest sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 
- 07-Oct-25 13:14:33  DEBUG  Found auth config 
- 07-Oct-25 13:14:33  INFO   
- 07-Oct-25 13:14:33  INFO  [ PULL linux/amd64 ----------------------> mosipdev2/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 ]  
- 07-Oct-25 13:14:33  DEBUG  Looking for auth config 
- 07-Oct-25 13:14:33  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Oct-25 13:14:33  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Oct-25 13:14:33  DEBUG  Found auth config 
- 07-Oct-25 13:14:33  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ad636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00&fromImage=mosipdev2%2Fapitest-mimoto HTTP/1.1" 200 None 
- 07-Oct-25 13:14:33  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba&fromImage=mosipdev2%2Fapitest-mimoto HTTP/1.1" 200 None 
- 07-Oct-25 13:14:54  INFO  Status: Downloaded newer image for mosipdev2/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 
- 07-Oct-25 13:14:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto%40sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00/tag?tag=0.19.x-amd64-linux&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 07-Oct-25 13:14:54  INFO   
- 07-Oct-25 13:14:54  INFO  [ PUSH linux/amd64 -----> mosipdev2/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00	------> mosipqa/apitest-mimoto:0.19.x-amd64-linux ]  
- 07-Oct-25 13:14:54  DEBUG  Looking for auth config 
- 07-Oct-25 13:14:54  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Oct-25 13:14:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Oct-25 13:14:54  DEBUG  Found auth config 
- 07-Oct-25 13:14:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-mimoto/push?tag=0.19.x-amd64-linux HTTP/1.1" 200 None 
- 07-Oct-25 13:14:59  INFO  0.19.x-amd64-linux: digest: sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 size: 2212 
- 07-Oct-25 13:14:59  INFO  Completed pulling/tagging mosipdev2/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 	------> mosipqa/apitest-mimoto:0.19.x-amd64-linux (linux/amd64) 
- 07-Oct-25 13:14:59  INFO  Status: Downloaded newer image for mosipdev2/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba 
- 07-Oct-25 13:14:59  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-mimoto%40sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba/tag?tag=0.19.x-arm64-linux&repo=mosipqa%2Fapitest-mimoto&force=1 HTTP/1.1" 201 0 
- 07-Oct-25 13:14:59  INFO   
- 07-Oct-25 13:14:59  INFO  [ PUSH linux/arm64 -----> mosipdev2/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba	------> mosipqa/apitest-mimoto:0.19.x-arm64-linux ]  
- 07-Oct-25 13:14:59  DEBUG  Looking for auth config 
- 07-Oct-25 13:14:59  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Oct-25 13:14:59  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Oct-25 13:14:59  DEBUG  Found auth config 
- 07-Oct-25 13:14:59  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/apitest-mimoto/push?tag=0.19.x-arm64-linux HTTP/1.1" 200 None 
- 07-Oct-25 13:15:03  INFO  0.19.x-arm64-linux: digest: sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba size: 2212 
- 07-Oct-25 13:15:03  INFO  Completed pulling/tagging mosipdev2/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba 	------> mosipqa/apitest-mimoto:0.19.x-arm64-linux (linux/arm64) 
- 07-Oct-25 13:15:03  INFO  Logging in to Docker CLI for manifest operations 
- 07-Oct-25 13:15:03  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-mimoto:0.19.x mosipqa/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba mosipqa/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 
- 07-Oct-25 13:15:04  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-mimoto:0.19.x 
- 07-Oct-25 13:15:06  INFO  Logging in to Docker CLI for manifest operations 
- 07-Oct-25 13:15:06  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/apitest-mimoto:latest mosipqa/apitest-mimoto@sha256:1e6a78baddcbac8a2a07eb28d3febb17741ed82dfe9f67527e2ee41dc97a14ba mosipqa/apitest-mimoto@sha256:d636223c4efebc79c75e0d843d3f162cc6471ad744ad95e5f7af5e62a53ceb00 
- 07-Oct-25 13:15:07  INFO  Pushing manifest list with command: docker manifest push mosipqa/apitest-mimoto:latest 
- 07-Oct-25 13:15:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-mimoto:0.19.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 169 
- 07-Oct-25 13:15:09  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/apitest-mimoto:0.19.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 169 
- 07-Oct-25 13:15:09  INFO  Completed processing mosipdev2/apitest-mimoto:release-0.19.x to mosipqa/apitest-mimoto:0.19.x 
+ 08-Oct-25 05:42:42  INFO  LOGFILE CREATED : vidivi.log 
+ 08-Oct-25 05:42:42  INFO   
+ 08-Oct-25 05:42:42  INFO  ******************** Check Images List ************************************************************************************ 
+ 08-Oct-25 05:42:42  INFO   
+ 08-Oct-25 05:42:42  INFO  IMAGES= [['mosipdev/credential-service:release-1.2.2.x', '1.2.2.x'], ['mosipdev/credential-request-generator:release-1.2.2.x', '1.2.2.x'], ['mosipdev/id-repository-identity-service:release-1.2.2.x', '1.2.2.x'], ['mosipdev/id-repository-vid-service:release-1.2.2.x', '1.2.2.x']] 
+ 08-Oct-25 05:42:42  INFO   
+ 08-Oct-25 05:42:42  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 08-Oct-25 05:42:42  INFO   
+ 08-Oct-25 05:42:42  INFO  src = "mosipdev/credential-service" tag = "release-1.2.2.x" 
+ 08-Oct-25 05:42:42  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:42  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:42  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:43  INFO   
+ 08-Oct-25 05:42:43  INFO  src = "mosipdev/credential-request-generator" tag = "release-1.2.2.x" 
+ 08-Oct-25 05:42:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:43  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-request-generator/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:43  INFO   
+ 08-Oct-25 05:42:43  INFO  src = "mosipdev/id-repository-identity-service" tag = "release-1.2.2.x" 
+ 08-Oct-25 05:42:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-identity-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:44  INFO   
+ 08-Oct-25 05:42:44  INFO  src = "mosipdev/id-repository-vid-service" tag = "release-1.2.2.x" 
+ 08-Oct-25 05:42:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-vid-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:44  INFO   
+ 08-Oct-25 05:42:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 08-Oct-25 05:42:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 08-Oct-25 05:42:45  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 08-Oct-25 05:42:45  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 343 
+ 08-Oct-25 05:42:45  INFO   
+ 08-Oct-25 05:42:45  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 08-Oct-25 05:42:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/credential-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:45  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:45  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/credential-service/manifests/1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:45  INFO   
+ 08-Oct-25 05:42:45  INFO  [ mosipqa/credential-service ]  
+ 08-Oct-25 05:42:45  INFO  Destination Image = "mosipqa/credential-service" Destination Image tag = "1.2.2.x" IMAGE_ID : "sha256:a3e8d4ba7985eeff5684f1eb21ef3407496cde535897bc69c320acad1abd1408" 
+ 08-Oct-25 05:42:45  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:45  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/credential-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:45  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:46  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/credential-service/tags/1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/credential-request-generator:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:46  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:46  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/credential-request-generator/manifests/1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:46  INFO   
+ 08-Oct-25 05:42:46  INFO  [ mosipqa/credential-request-generator ]  
+ 08-Oct-25 05:42:46  INFO  Destination Image = "mosipqa/credential-request-generator" Destination Image tag = "1.2.2.x" IMAGE_ID : "sha256:729ab1a672a4017d45572ee4a4a8222a7148a26a1f195eb0f69f537b2ce4386e" 
+ 08-Oct-25 05:42:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:46  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/credential-request-generator:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:46  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:47  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/credential-request-generator/tags/1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:47  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:47  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/id-repository-identity-service/manifests/1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:47  INFO   
+ 08-Oct-25 05:42:47  INFO  [ mosipqa/id-repository-identity-service ]  
+ 08-Oct-25 05:42:47  INFO  Destination Image = "mosipqa/id-repository-identity-service" Destination Image tag = "1.2.2.x" IMAGE_ID : "sha256:82a154efdd7df97642e5deb93860e2b17fed8495f587d544cb3a5c9d79063931" 
+ 08-Oct-25 05:42:47  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:47  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:48  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/id-repository-identity-service/tags/1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:48  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:48  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/id-repository-vid-service/manifests/1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:48  INFO   
+ 08-Oct-25 05:42:48  INFO  [ mosipqa/id-repository-vid-service ]  
+ 08-Oct-25 05:42:48  INFO  Destination Image = "mosipqa/id-repository-vid-service" Destination Image tag = "1.2.2.x" IMAGE_ID : "sha256:b18869eed83c7aec2f44e1b45aacd92a0cc31ba51b5a6eacf58b076b1a9c4981" 
+ 08-Oct-25 05:42:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Oct-25 05:42:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/id-repository-vid-service/tags/1.2.2.x HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 08-Oct-25 05:42:49  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 08-Oct-25 05:42:49  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 08-Oct-25 05:42:49  DEBUG  Found 'auths' section 
+ 08-Oct-25 05:42:49  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 08-Oct-25 05:42:49  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 08-Oct-25 05:42:49  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:49  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:49  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ********** [ mosipqa/credential-service:1.2.2.x ] **************************************************** 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ********** [ mosipqa/credential-request-generator:1.2.2.x ] **************************************************** 
+ 08-Oct-25 05:42:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ********** [ mosipqa/id-repository-identity-service:1.2.2.x ] **************************************************** 
+ 08-Oct-25 05:42:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:49  INFO   
+ 08-Oct-25 05:42:49  INFO  ********** [ mosipqa/id-repository-vid-service:1.2.2.x ] **************************************************** 
+ 08-Oct-25 05:42:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Oct-25 05:42:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:50  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 08-Oct-25 05:42:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/id-repository-vid-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:50  INFO  Multi-arch image detected with 2 architectures 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: amd64/linux with digest sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/amd64 ----------------------> mosipdev/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: arm64/linux with digest sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/arm64 ----------------------> mosipdev/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/id-repository-identity-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/credential-service/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:50  INFO  Multi-arch image detected with 2 architectures 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: amd64/linux with digest sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 
+ 08-Oct-25 05:42:50  INFO  Multi-arch image detected with 2 architectures 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: amd64/linux with digest sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/amd64 ----------------------> mosipdev/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: arm64/linux with digest sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/amd64 ----------------------> mosipdev/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: arm64/linux with digest sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/arm64 ----------------------> mosipdev/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/arm64 ----------------------> mosipdev/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/credential-request-generator/manifests/release-1.2.2.x HTTP/1.1" 200 743 
+ 08-Oct-25 05:42:50  INFO  Multi-arch image detected with 2 architectures 
+ 08-Oct-25 05:42:50  INFO  Processing architecture: amd64/linux with digest sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  Processing architecture: arm64/linux with digest sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b 
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/amd64 ----------------------> mosipdev/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:50  INFO   
+ 08-Oct-25 05:42:50  INFO  [ PULL linux/arm64 ----------------------> mosipdev/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b ]  
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth config 
+ 08-Oct-25 05:42:50  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:42:50  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:42:50  DEBUG  Found auth config 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889&fromImage=mosipdev%2Fid-repository-vid-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c&fromImage=mosipdev%2Fcredential-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50&fromImage=mosipdev%2Fcredential-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ac24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239&fromImage=mosipdev%2Fid-repository-identity-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790&fromImage=mosipdev%2Fid-repository-vid-service HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b&fromImage=mosipdev%2Fcredential-request-generator HTTP/1.1" 200 None 
+ 08-Oct-25 05:42:51  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901&fromImage=mosipdev%2Fcredential-request-generator HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:04  INFO  Status: Downloaded newer image for mosipdev/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 
+ 08-Oct-25 05:43:04  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-vid-service%40sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889/tag?tag=1.2.2.x-arm64-linux&repo=mosipqa%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:04  INFO   
+ 08-Oct-25 05:43:04  INFO  [ PUSH linux/arm64 -----> mosipdev/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889	------> mosipqa/id-repository-vid-service:1.2.2.x-arm64-linux ]  
+ 08-Oct-25 05:43:04  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:04  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:04  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:04  DEBUG  Found auth config 
+ 08-Oct-25 05:43:04  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-vid-service/push?tag=1.2.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:08  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 
+ 08-Oct-25 05:43:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-identity-service%40sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7/tag?tag=1.2.2.x-arm64-linux&repo=mosipqa%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:08  INFO   
+ 08-Oct-25 05:43:08  INFO  [ PUSH linux/arm64 -----> mosipdev/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7	------> mosipqa/id-repository-identity-service:1.2.2.x-arm64-linux ]  
+ 08-Oct-25 05:43:08  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:08  DEBUG  Found auth config 
+ 08-Oct-25 05:43:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-identity-service/push?tag=1.2.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:08  INFO  Status: Downloaded newer image for mosipdev/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 
+ 08-Oct-25 05:43:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-service%40sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50/tag?tag=1.2.2.x-arm64-linux&repo=mosipqa%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:08  INFO   
+ 08-Oct-25 05:43:08  INFO  [ PUSH linux/arm64 -----> mosipdev/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50	------> mosipqa/credential-service:1.2.2.x-arm64-linux ]  
+ 08-Oct-25 05:43:08  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:08  DEBUG  Found auth config 
+ 08-Oct-25 05:43:08  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/credential-service/push?tag=1.2.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:09  INFO  Status: Downloaded newer image for mosipdev/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c 
+ 08-Oct-25 05:43:09  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-service%40sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c/tag?tag=1.2.2.x-amd64-linux&repo=mosipqa%2Fcredential-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:09  INFO   
+ 08-Oct-25 05:43:09  INFO  [ PUSH linux/amd64 -----> mosipdev/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c	------> mosipqa/credential-service:1.2.2.x-amd64-linux ]  
+ 08-Oct-25 05:43:09  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:09  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:09  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:09  DEBUG  Found auth config 
+ 08-Oct-25 05:43:09  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/credential-service/push?tag=1.2.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:11  INFO  1.2.2.x-arm64-linux: digest: sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 size: 2845 
+ 08-Oct-25 05:43:11  INFO  Completed pulling/tagging mosipdev/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 	------> mosipqa/id-repository-vid-service:1.2.2.x-arm64-linux (linux/arm64) 
+ 08-Oct-25 05:43:12  INFO  Status: Downloaded newer image for mosipdev/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 
+ 08-Oct-25 05:43:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-vid-service%40sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790/tag?tag=1.2.2.x-amd64-linux&repo=mosipqa%2Fid-repository-vid-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:12  INFO   
+ 08-Oct-25 05:43:12  INFO  [ PUSH linux/amd64 -----> mosipdev/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790	------> mosipqa/id-repository-vid-service:1.2.2.x-amd64-linux ]  
+ 08-Oct-25 05:43:12  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:12  DEBUG  Found auth config 
+ 08-Oct-25 05:43:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-vid-service/push?tag=1.2.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:12  INFO  Status: Downloaded newer image for mosipdev/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 
+ 08-Oct-25 05:43:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/id-repository-identity-service%40sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239/tag?tag=1.2.2.x-amd64-linux&repo=mosipqa%2Fid-repository-identity-service&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:12  INFO   
+ 08-Oct-25 05:43:12  INFO  [ PUSH linux/amd64 -----> mosipdev/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239	------> mosipqa/id-repository-identity-service:1.2.2.x-amd64-linux ]  
+ 08-Oct-25 05:43:12  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:12  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:12  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:12  DEBUG  Found auth config 
+ 08-Oct-25 05:43:12  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/id-repository-identity-service/push?tag=1.2.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:13  INFO  Status: Downloaded newer image for mosipdev/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b 
+ 08-Oct-25 05:43:13  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-request-generator%40sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b/tag?tag=1.2.2.x-arm64-linux&repo=mosipqa%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:13  INFO   
+ 08-Oct-25 05:43:13  INFO  [ PUSH linux/arm64 -----> mosipdev/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b	------> mosipqa/credential-request-generator:1.2.2.x-arm64-linux ]  
+ 08-Oct-25 05:43:13  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:13  DEBUG  Found auth config 
+ 08-Oct-25 05:43:13  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/credential-request-generator/push?tag=1.2.2.x-arm64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:14  INFO  Status: Downloaded newer image for mosipdev/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 
+ 08-Oct-25 05:43:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/credential-request-generator%40sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901/tag?tag=1.2.2.x-amd64-linux&repo=mosipqa%2Fcredential-request-generator&force=1 HTTP/1.1" 201 0 
+ 08-Oct-25 05:43:14  INFO   
+ 08-Oct-25 05:43:14  INFO  [ PUSH linux/amd64 -----> mosipdev/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901	------> mosipqa/credential-request-generator:1.2.2.x-amd64-linux ]  
+ 08-Oct-25 05:43:14  DEBUG  Looking for auth config 
+ 08-Oct-25 05:43:14  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Oct-25 05:43:14  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Oct-25 05:43:14  DEBUG  Found auth config 
+ 08-Oct-25 05:43:14  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/credential-request-generator/push?tag=1.2.2.x-amd64-linux HTTP/1.1" 200 None 
+ 08-Oct-25 05:43:16  INFO  1.2.2.x-arm64-linux: digest: sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 size: 3468 
+ 08-Oct-25 05:43:16  INFO  Completed pulling/tagging mosipdev/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 	------> mosipqa/id-repository-identity-service:1.2.2.x-arm64-linux (linux/arm64) 
+ 08-Oct-25 05:43:18  INFO  1.2.2.x-arm64-linux: digest: sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 size: 2845 
+ 08-Oct-25 05:43:18  INFO  Completed pulling/tagging mosipdev/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 	------> mosipqa/credential-service:1.2.2.x-arm64-linux (linux/arm64) 
+ 08-Oct-25 05:43:20  INFO  1.2.2.x-amd64-linux: digest: sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c size: 2845 
+ 08-Oct-25 05:43:20  INFO  Completed pulling/tagging mosipdev/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c 	------> mosipqa/credential-service:1.2.2.x-amd64-linux (linux/amd64) 
+ 08-Oct-25 05:43:20  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:21  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/credential-service:1.2.2.x mosipqa/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c mosipqa/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 
+ 08-Oct-25 05:43:22  INFO  1.2.2.x-amd64-linux: digest: sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 size: 2845 
+ 08-Oct-25 05:43:22  INFO  Completed pulling/tagging mosipdev/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 	------> mosipqa/id-repository-vid-service:1.2.2.x-amd64-linux (linux/amd64) 
+ 08-Oct-25 05:43:22  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:23  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-vid-service:1.2.2.x mosipqa/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 mosipqa/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 
+ 08-Oct-25 05:43:23  INFO  Pushing manifest list with command: docker manifest push mosipqa/credential-service:1.2.2.x 
+ 08-Oct-25 05:43:25  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-vid-service:1.2.2.x 
+ 08-Oct-25 05:43:25  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:25  INFO  1.2.2.x-amd64-linux: digest: sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 size: 3468 
+ 08-Oct-25 05:43:25  INFO  Completed pulling/tagging mosipdev/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 	------> mosipqa/id-repository-identity-service:1.2.2.x-amd64-linux (linux/amd64) 
+ 08-Oct-25 05:43:25  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:25  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/credential-service:latest mosipqa/credential-service@sha256:284aacb48085aca1d3fcf5311421e871d20526941d25f791ed54e5cc60b6011c mosipqa/credential-service@sha256:4780eb190564a8c3acce63399927b5009ad9e44e778b8a4864d57dd4676a1e50 
+ 08-Oct-25 05:43:26  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-identity-service:1.2.2.x mosipqa/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 mosipqa/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 
+ 08-Oct-25 05:43:27  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:27  INFO  1.2.2.x-arm64-linux: digest: sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b size: 2845 
+ 08-Oct-25 05:43:27  INFO  Completed pulling/tagging mosipdev/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b 	------> mosipqa/credential-request-generator:1.2.2.x-arm64-linux (linux/arm64) 
+ 08-Oct-25 05:43:27  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-vid-service:latest mosipqa/id-repository-vid-service@sha256:ca7191ae2a55977f13669960643c9a4d6515c7f286a0acfc3570838aef53a790 mosipqa/id-repository-vid-service@sha256:532096abe7c49f0ca7a43e0cb8f7c75b3d04ab733c770f6a4f0ee1038e394889 
+ 08-Oct-25 05:43:27  INFO  Pushing manifest list with command: docker manifest push mosipqa/credential-service:latest 
+ 08-Oct-25 05:43:28  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-identity-service:1.2.2.x 
+ 08-Oct-25 05:43:29  INFO  1.2.2.x-amd64-linux: digest: sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 size: 2845 
+ 08-Oct-25 05:43:29  INFO  Completed pulling/tagging mosipdev/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 	------> mosipqa/credential-request-generator:1.2.2.x-amd64-linux (linux/amd64) 
+ 08-Oct-25 05:43:29  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:29  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-vid-service:latest 
+ 08-Oct-25 05:43:29  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/credential-service:1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 178 
+ 08-Oct-25 05:43:29  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/credential-service:1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 178 
+ 08-Oct-25 05:43:29  INFO  Completed processing mosipdev/credential-service:release-1.2.2.x to mosipqa/credential-service:1.2.2.x 
+ 08-Oct-25 05:43:30  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/credential-request-generator:1.2.2.x mosipqa/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 mosipqa/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b 
+ 08-Oct-25 05:43:30  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:31  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/id-repository-identity-service:latest mosipqa/id-repository-identity-service@sha256:c24d86d748c532f53cca21177f7a364e1e7044e32783e761a1c59078c99f6239 mosipqa/id-repository-identity-service@sha256:8e8bab2891407e3355751faf0be7562c4277ae9140a1dabd5c907ad4743227d7 
+ 08-Oct-25 05:43:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-vid-service:1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 08-Oct-25 05:43:31  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-vid-service:1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 192 
+ 08-Oct-25 05:43:32  INFO  Pushing manifest list with command: docker manifest push mosipqa/credential-request-generator:1.2.2.x 
+ 08-Oct-25 05:43:33  INFO  Pushing manifest list with command: docker manifest push mosipqa/id-repository-identity-service:latest 
+ 08-Oct-25 05:43:34  INFO  Logging in to Docker CLI for manifest operations 
+ 08-Oct-25 05:43:35  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-identity-service:1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 202 
+ 08-Oct-25 05:43:35  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/id-repository-identity-service:1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 202 
+ 08-Oct-25 05:43:35  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/credential-request-generator:latest mosipqa/credential-request-generator@sha256:3a51f4e85b7f56a1725e940cd2873113b96307852f86200b2ca3877c5e7f0901 mosipqa/credential-request-generator@sha256:54fd680f2d3b04992bfc6fbfa6ccf3ffcdc17fe28585cade483e2824fbfaff8b 
+ 08-Oct-25 05:43:37  INFO  Pushing manifest list with command: docker manifest push mosipqa/credential-request-generator:latest 
+ 08-Oct-25 05:43:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/credential-request-generator:1.2.2.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 198 
+ 08-Oct-25 05:43:39  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/credential-request-generator:1.2.2.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 198 
+ 08-Oct-25 05:43:39  INFO  Completed processing mosipdev/credential-request-generator:release-1.2.2.x to mosipqa/credential-request-generator:1.2.2.x 
+ 08-Oct-25 05:43:39  INFO  Completed processing mosipdev/id-repository-identity-service:release-1.2.2.x to mosipqa/id-repository-identity-service:1.2.2.x 
+ 08-Oct-25 05:43:39  INFO  Completed processing mosipdev/id-repository-vid-service:release-1.2.2.x to mosipqa/id-repository-vid-service:1.2.2.x 
