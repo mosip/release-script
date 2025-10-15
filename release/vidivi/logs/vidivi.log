@@ -1,239 +1,97 @@
- 15-Oct-25 10:19:27  INFO  LOGFILE CREATED : vidivi.log 
- 15-Oct-25 10:19:27  INFO   
- 15-Oct-25 10:19:27  INFO  ******************** Check Images List ************************************************************************************ 
- 15-Oct-25 10:19:27  INFO   
- 15-Oct-25 10:19:27  INFO  IMAGES= [['mosipdev/authentication-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev/authentication-internal-service:release-1.2.1.x', '1.2.1.x'], ['mosipdev/authentication-otp-service:release-1.2.1.x', '1.2.1.x']] 
- 15-Oct-25 10:19:27  INFO   
- 15-Oct-25 10:19:27  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 15-Oct-25 10:19:27  INFO   
- 15-Oct-25 10:19:27  INFO  src = "mosipdev/authentication-service" tag = "release-1.2.1.x" 
- 15-Oct-25 10:19:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  INFO   
- 15-Oct-25 10:19:28  INFO  src = "mosipdev/authentication-internal-service" tag = "release-1.2.1.x" 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-internal-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-internal-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  INFO   
- 15-Oct-25 10:19:28  INFO  src = "mosipdev/authentication-otp-service" tag = "release-1.2.1.x" 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-otp-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:28  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/authentication-otp-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  INFO   
- 15-Oct-25 10:19:28  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 15-Oct-25 10:19:28  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 15-Oct-25 10:19:28  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 343 
- 15-Oct-25 10:19:28  INFO   
- 15-Oct-25 10:19:28  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:28  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:28  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/authentication-service/manifests/1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:28  INFO   
- 15-Oct-25 10:19:28  INFO  [ mosipqa/authentication-service ]  
- 15-Oct-25 10:19:28  INFO  Destination Image = "mosipqa/authentication-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:18eb52a9c30258007b50292bc5459ffadf118f4e2961fe78fc888cbe558fa6d6" 
- 15-Oct-25 10:19:28  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:29  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/authentication-service/tags/1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-internal-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/authentication-internal-service/manifests/1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:29  INFO   
- 15-Oct-25 10:19:29  INFO  [ mosipqa/authentication-internal-service ]  
- 15-Oct-25 10:19:29  INFO  Destination Image = "mosipqa/authentication-internal-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:a7120793e343d88872488ca84c406ec66c64d649b8e1fc069b9d01684d9ffe52" 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-internal-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:29  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/authentication-internal-service/tags/1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-otp-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:29  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipqa/authentication-otp-service/manifests/1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:29  INFO   
- 15-Oct-25 10:19:29  INFO  [ mosipqa/authentication-otp-service ]  
- 15-Oct-25 10:19:29  INFO  Destination Image = "mosipqa/authentication-otp-service" Destination Image tag = "1.2.1.x" IMAGE_ID : "sha256:7a12c678f2f36863257f4e1d0005ef08a7e9a3821aa64fb5514a28adc83ec317" 
- 15-Oct-25 10:19:29  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipqa/authentication-otp-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 15-Oct-25 10:19:30  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipqa/authentication-otp-service/tags/1.2.1.x HTTP/1.1" 200 None 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  ******************** HASH Operation Results ********************************************************************** 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 15-Oct-25 10:19:30  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 15-Oct-25 10:19:30  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 15-Oct-25 10:19:30  DEBUG  Found 'auths' section 
- 15-Oct-25 10:19:30  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
- 15-Oct-25 10:19:30  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  ********** [ mosipqa/authentication-service:1.2.1.x ] **************************************************** 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  ********** [ mosipqa/authentication-internal-service:1.2.1.x ] **************************************************** 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  ********** [ mosipqa/authentication-otp-service:1.2.1.x ] **************************************************** 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-internal-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/authentication-otp-service:pull HTTP/1.1" 200 None 
- 15-Oct-25 10:19:30  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 15-Oct-25 10:19:30  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/authentication-internal-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:30  INFO  Multi-arch image detected with 2 architectures 
- 15-Oct-25 10:19:30  INFO  Processing architecture: amd64/linux with digest sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/amd64 ----------------------> mosipdev/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:30  INFO  Processing architecture: arm64/linux with digest sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/arm64 ----------------------> mosipdev/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:30  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/authentication-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:30  INFO  Multi-arch image detected with 2 architectures 
- 15-Oct-25 10:19:30  INFO  Processing architecture: amd64/linux with digest sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/amd64 ----------------------> mosipdev/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:30  INFO  Processing architecture: arm64/linux with digest sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/arm64 ----------------------> mosipdev/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:30  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/authentication-otp-service/manifests/release-1.2.1.x HTTP/1.1" 200 743 
- 15-Oct-25 10:19:30  INFO  Multi-arch image detected with 2 architectures 
- 15-Oct-25 10:19:30  INFO  Processing architecture: amd64/linux with digest sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/amd64 ----------------------> mosipdev/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:30  INFO  Processing architecture: arm64/linux with digest sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e 
- 15-Oct-25 10:19:30  INFO   
- 15-Oct-25 10:19:30  INFO  [ PULL linux/arm64 ----------------------> mosipdev/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e ]  
- 15-Oct-25 10:19:30  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:30  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:30  DEBUG  Found auth config 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Ad1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859&fromImage=mosipdev%2Fauthentication-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c&fromImage=mosipdev%2Fauthentication-internal-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910&fromImage=mosipdev%2Fauthentication-internal-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Aeafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e&fromImage=mosipdev%2Fauthentication-otp-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831&fromImage=mosipdev%2Fauthentication-otp-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:31  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383&fromImage=mosipdev%2Fauthentication-service HTTP/1.1" 200 None 
- 15-Oct-25 10:19:49  INFO  Status: Downloaded newer image for mosipdev/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c 
- 15-Oct-25 10:19:49  INFO  Status: Downloaded newer image for mosipdev/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 
- 15-Oct-25 10:19:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-internal-service%40sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c/tag?tag=1.2.1.x-amd64-linux&repo=mosipqa%2Fauthentication-internal-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:19:49  INFO   
- 15-Oct-25 10:19:49  INFO  [ PUSH linux/amd64 -----> mosipdev/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c	------> mosipqa/authentication-internal-service:1.2.1.x-amd64-linux ]  
- 15-Oct-25 10:19:49  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:49  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:49  DEBUG  Found auth config 
- 15-Oct-25 10:19:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-internal-service/push?tag=1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:19:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-service%40sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859/tag?tag=1.2.1.x-amd64-linux&repo=mosipqa%2Fauthentication-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:19:49  INFO   
- 15-Oct-25 10:19:49  INFO  [ PUSH linux/amd64 -----> mosipdev/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859	------> mosipqa/authentication-service:1.2.1.x-amd64-linux ]  
- 15-Oct-25 10:19:49  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:49  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:49  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:49  DEBUG  Found auth config 
- 15-Oct-25 10:19:49  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-service/push?tag=1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:19:53  INFO  1.2.1.x-amd64-linux: digest: sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c size: 3470 
- 15-Oct-25 10:19:53  INFO  Completed pulling/tagging mosipdev/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c 	------> mosipqa/authentication-internal-service:1.2.1.x-amd64-linux (linux/amd64) 
- 15-Oct-25 10:19:54  INFO  Status: Downloaded newer image for mosipdev/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 
- 15-Oct-25 10:19:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-internal-service%40sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910/tag?tag=1.2.1.x-arm64-linux&repo=mosipqa%2Fauthentication-internal-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:19:54  INFO   
- 15-Oct-25 10:19:54  INFO  [ PUSH linux/arm64 -----> mosipdev/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910	------> mosipqa/authentication-internal-service:1.2.1.x-arm64-linux ]  
- 15-Oct-25 10:19:54  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:54  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:54  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:54  DEBUG  Found auth config 
- 15-Oct-25 10:19:54  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-internal-service/push?tag=1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:19:54  INFO  1.2.1.x-amd64-linux: digest: sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 size: 3470 
- 15-Oct-25 10:19:54  INFO  Completed pulling/tagging mosipdev/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 	------> mosipqa/authentication-service:1.2.1.x-amd64-linux (linux/amd64) 
- 15-Oct-25 10:19:58  INFO  1.2.1.x-arm64-linux: digest: sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 size: 3470 
- 15-Oct-25 10:19:58  INFO  Completed pulling/tagging mosipdev/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 	------> mosipqa/authentication-internal-service:1.2.1.x-arm64-linux (linux/arm64) 
- 15-Oct-25 10:19:58  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:19:58  INFO  Status: Downloaded newer image for mosipdev/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e 
- 15-Oct-25 10:19:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-otp-service%40sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e/tag?tag=1.2.1.x-arm64-linux&repo=mosipqa%2Fauthentication-otp-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:19:58  INFO   
- 15-Oct-25 10:19:58  INFO  [ PUSH linux/arm64 -----> mosipdev/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e	------> mosipqa/authentication-otp-service:1.2.1.x-arm64-linux ]  
- 15-Oct-25 10:19:58  DEBUG  Looking for auth config 
- 15-Oct-25 10:19:58  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:19:58  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:19:58  DEBUG  Found auth config 
- 15-Oct-25 10:19:58  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-otp-service/push?tag=1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:19:59  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-internal-service:1.2.1.x mosipqa/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c mosipqa/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 
- 15-Oct-25 10:19:59  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-internal-service:1.2.1.x 
- 15-Oct-25 10:20:00  INFO  Status: Downloaded newer image for mosipdev/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 
- 15-Oct-25 10:20:00  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-otp-service%40sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831/tag?tag=1.2.1.x-amd64-linux&repo=mosipqa%2Fauthentication-otp-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:20:00  INFO   
- 15-Oct-25 10:20:00  INFO  [ PUSH linux/amd64 -----> mosipdev/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831	------> mosipqa/authentication-otp-service:1.2.1.x-amd64-linux ]  
- 15-Oct-25 10:20:00  DEBUG  Looking for auth config 
- 15-Oct-25 10:20:00  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:20:00  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:20:00  DEBUG  Found auth config 
- 15-Oct-25 10:20:00  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-otp-service/push?tag=1.2.1.x-amd64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:20:01  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:20:01  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-internal-service:latest mosipqa/authentication-internal-service@sha256:0180433c69373909fc8e7c98d90003ab0d9ed4660a6ebe076fa44c3948834c3c mosipqa/authentication-internal-service@sha256:79c989512d3cd4db7e7585b85bdcb4323bf09909886a25179e9dfa15fb575910 
- 15-Oct-25 10:20:02  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-internal-service:latest 
- 15-Oct-25 10:20:03  INFO  1.2.1.x-arm64-linux: digest: sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e size: 3470 
- 15-Oct-25 10:20:03  INFO  Completed pulling/tagging mosipdev/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e 	------> mosipqa/authentication-otp-service:1.2.1.x-arm64-linux (linux/arm64) 
- 15-Oct-25 10:20:04  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-internal-service:1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 204 
- 15-Oct-25 10:20:04  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-internal-service:1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 204 
- 15-Oct-25 10:20:05  INFO  1.2.1.x-amd64-linux: digest: sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 size: 3470 
- 15-Oct-25 10:20:05  INFO  Completed pulling/tagging mosipdev/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 	------> mosipqa/authentication-otp-service:1.2.1.x-amd64-linux (linux/amd64) 
- 15-Oct-25 10:20:05  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:20:05  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-otp-service:1.2.1.x mosipqa/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 mosipqa/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e 
- 15-Oct-25 10:20:06  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-otp-service:1.2.1.x 
- 15-Oct-25 10:20:07  INFO  Status: Downloaded newer image for mosipdev/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 
- 15-Oct-25 10:20:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/authentication-service%40sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383/tag?tag=1.2.1.x-arm64-linux&repo=mosipqa%2Fauthentication-service&force=1 HTTP/1.1" 201 0 
- 15-Oct-25 10:20:07  INFO   
- 15-Oct-25 10:20:07  INFO  [ PUSH linux/arm64 -----> mosipdev/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383	------> mosipqa/authentication-service:1.2.1.x-arm64-linux ]  
- 15-Oct-25 10:20:07  DEBUG  Looking for auth config 
- 15-Oct-25 10:20:07  DEBUG  Looking for auth entry for 'docker.io' 
- 15-Oct-25 10:20:07  DEBUG  Found 'https://index.docker.io/v1/' 
- 15-Oct-25 10:20:07  DEBUG  Found auth config 
- 15-Oct-25 10:20:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipqa/authentication-service/push?tag=1.2.1.x-arm64-linux HTTP/1.1" 200 None 
- 15-Oct-25 10:20:07  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:20:08  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-otp-service:latest mosipqa/authentication-otp-service@sha256:3fb575078ce5331b6980b79189128249283c20b8d90ffaa365a001fbd293b831 mosipqa/authentication-otp-service@sha256:eafd5fc70ecc81f6a36e46fb2c34a989be070b6d0cd95a0690e6597f444e677e 
- 15-Oct-25 10:20:08  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-otp-service:latest 
- 15-Oct-25 10:20:10  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-otp-service:1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 194 
- 15-Oct-25 10:20:10  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-otp-service:1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 194 
- 15-Oct-25 10:20:11  INFO  1.2.1.x-arm64-linux: digest: sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 size: 3470 
- 15-Oct-25 10:20:11  INFO  Completed pulling/tagging mosipdev/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 	------> mosipqa/authentication-service:1.2.1.x-arm64-linux (linux/arm64) 
- 15-Oct-25 10:20:11  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:20:11  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-service:1.2.1.x mosipqa/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 mosipqa/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 
- 15-Oct-25 10:20:12  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-service:1.2.1.x 
- 15-Oct-25 10:20:14  INFO  Logging in to Docker CLI for manifest operations 
- 15-Oct-25 10:20:14  INFO  Creating manifest list with command: docker manifest create --amend mosipqa/authentication-service:latest mosipqa/authentication-service@sha256:d1ac44c1a49606c6dcd1af8993e76243560176706289f7550e39814ba2db1859 mosipqa/authentication-service@sha256:72180078339b54867201375232da2dfd86a7c1e5f813582a0ec5bed9dd92f383 
- 15-Oct-25 10:20:15  INFO  Pushing manifest list with command: docker manifest push mosipqa/authentication-service:latest 
- 15-Oct-25 10:20:16  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-service:1.2.1.x-amd64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 15-Oct-25 10:20:16  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipqa/authentication-service:1.2.1.x-arm64-linux?force=False&noprune=False HTTP/1.1" 200 186 
- 15-Oct-25 10:20:16  INFO  Completed processing mosipdev/authentication-service:release-1.2.1.x to mosipqa/authentication-service:1.2.1.x 
- 15-Oct-25 10:20:16  INFO  Completed processing mosipdev/authentication-internal-service:release-1.2.1.x to mosipqa/authentication-internal-service:1.2.1.x 
- 15-Oct-25 10:20:16  INFO  Completed processing mosipdev/authentication-otp-service:release-1.2.1.x to mosipqa/authentication-otp-service:1.2.1.x 
+ 15-Oct-25 10:25:39  INFO  LOGFILE CREATED : vidivi.log 
+ 15-Oct-25 10:25:39  INFO   
+ 15-Oct-25 10:25:39  INFO  ******************** Check Images List ************************************************************************************ 
+ 15-Oct-25 10:25:39  INFO   
+ 15-Oct-25 10:25:39  INFO  IMAGES= [['mosipdev/apitest-inji-certify:develop', 'develop']] 
+ 15-Oct-25 10:25:39  INFO   
+ 15-Oct-25 10:25:39  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 15-Oct-25 10:25:39  INFO   
+ 15-Oct-25 10:25:39  INFO  src = "mosipdev/apitest-inji-certify" tag = "develop" 
+ 15-Oct-25 10:25:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Oct-25 10:25:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-inji-certify:pull HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 15-Oct-25 10:25:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-inji-certify/tags/develop HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:39  INFO   
+ 15-Oct-25 10:25:39  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 15-Oct-25 10:25:39  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 15-Oct-25 10:25:40  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 15-Oct-25 10:25:40  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 347 
+ 15-Oct-25 10:25:40  INFO   
+ 15-Oct-25 10:25:40  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 15-Oct-25 10:25:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Oct-25 10:25:40  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-inji-certify:pull HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:40  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 15-Oct-25 10:25:40  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev2/apitest-inji-certify/manifests/develop HTTP/1.1" 200 743 
+ 15-Oct-25 10:25:40  INFO   
+ 15-Oct-25 10:25:40  INFO  [ mosipdev2/apitest-inji-certify ]  
+ 15-Oct-25 10:25:40  INFO  Destination Image = "mosipdev2/apitest-inji-certify" Destination Image tag = "develop" IMAGE_ID : "sha256:ec1c406b1623ab323e9973d0cee2e8d59f01783bae806b850caa29d75ca4f5ed" 
+ 15-Oct-25 10:25:40  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Oct-25 10:25:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-inji-certify:pull HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 15-Oct-25 10:25:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-inji-certify/tags/develop HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:41  INFO   
+ 15-Oct-25 10:25:41  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 15-Oct-25 10:25:41  INFO   
+ 15-Oct-25 10:25:41  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 15-Oct-25 10:25:41  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 15-Oct-25 10:25:41  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 15-Oct-25 10:25:41  DEBUG  Found 'auths' section 
+ 15-Oct-25 10:25:41  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='githubactions') 
+ 15-Oct-25 10:25:41  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 15-Oct-25 10:25:41  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Oct-25 10:25:41  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Oct-25 10:25:41  DEBUG  http://localhost:None "POST /v1.48/auth HTTP/1.1" 200 48 
+ 15-Oct-25 10:25:41  INFO   
+ 15-Oct-25 10:25:41  INFO  ********** [ mosipdev2/apitest-inji-certify:develop ] **************************************************** 
+ 15-Oct-25 10:25:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 15-Oct-25 10:25:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-inji-certify:pull HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:41  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 15-Oct-25 10:25:42  DEBUG  https://registry-1.docker.io:443 "GET /v2/mosipdev/apitest-inji-certify/manifests/develop HTTP/1.1" 200 743 
+ 15-Oct-25 10:25:42  INFO  Multi-arch image detected with 2 architectures 
+ 15-Oct-25 10:25:42  INFO  Processing architecture: amd64/linux with digest sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 
+ 15-Oct-25 10:25:42  INFO   
+ 15-Oct-25 10:25:42  INFO  Processing architecture: arm64/linux with digest sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 
+ 15-Oct-25 10:25:42  INFO  [ PULL linux/amd64 ----------------------> mosipdev/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 ]  
+ 15-Oct-25 10:25:42  INFO   
+ 15-Oct-25 10:25:42  DEBUG  Looking for auth config 
+ 15-Oct-25 10:25:42  INFO  [ PULL linux/arm64 ----------------------> mosipdev/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 ]  
+ 15-Oct-25 10:25:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Oct-25 10:25:42  DEBUG  Looking for auth config 
+ 15-Oct-25 10:25:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Oct-25 10:25:42  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Oct-25 10:25:42  DEBUG  Found auth config 
+ 15-Oct-25 10:25:42  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Oct-25 10:25:42  DEBUG  Found auth config 
+ 15-Oct-25 10:25:42  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3Afda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7&fromImage=mosipdev%2Fapitest-inji-certify HTTP/1.1" 200 None 
+ 15-Oct-25 10:25:42  DEBUG  http://localhost:None "POST /v1.48/images/create?tag=sha256%3A5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18&fromImage=mosipdev%2Fapitest-inji-certify HTTP/1.1" 200 None 
+ 15-Oct-25 10:26:01  INFO  Status: Downloaded newer image for mosipdev/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 
+ 15-Oct-25 10:26:01  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-inji-certify%40sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18/tag?tag=develop-amd64-linux&repo=mosipdev2%2Fapitest-inji-certify&force=1 HTTP/1.1" 201 0 
+ 15-Oct-25 10:26:01  INFO   
+ 15-Oct-25 10:26:01  INFO  [ PUSH linux/amd64 -----> mosipdev/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18	------> mosipdev2/apitest-inji-certify:develop-amd64-linux ]  
+ 15-Oct-25 10:26:01  DEBUG  Looking for auth config 
+ 15-Oct-25 10:26:01  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Oct-25 10:26:01  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Oct-25 10:26:01  DEBUG  Found auth config 
+ 15-Oct-25 10:26:01  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-inji-certify/push?tag=develop-amd64-linux HTTP/1.1" 200 None 
+ 15-Oct-25 10:26:07  INFO  develop-amd64-linux: digest: sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 size: 2212 
+ 15-Oct-25 10:26:07  INFO  Completed pulling/tagging mosipdev/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 	------> mosipdev2/apitest-inji-certify:develop-amd64-linux (linux/amd64) 
+ 15-Oct-25 10:26:07  INFO  Status: Downloaded newer image for mosipdev/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 
+ 15-Oct-25 10:26:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev/apitest-inji-certify%40sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7/tag?tag=develop-arm64-linux&repo=mosipdev2%2Fapitest-inji-certify&force=1 HTTP/1.1" 201 0 
+ 15-Oct-25 10:26:07  INFO   
+ 15-Oct-25 10:26:07  INFO  [ PUSH linux/arm64 -----> mosipdev/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7	------> mosipdev2/apitest-inji-certify:develop-arm64-linux ]  
+ 15-Oct-25 10:26:07  DEBUG  Looking for auth config 
+ 15-Oct-25 10:26:07  DEBUG  Looking for auth entry for 'docker.io' 
+ 15-Oct-25 10:26:07  DEBUG  Found 'https://index.docker.io/v1/' 
+ 15-Oct-25 10:26:07  DEBUG  Found auth config 
+ 15-Oct-25 10:26:07  DEBUG  http://localhost:None "POST /v1.48/images/mosipdev2/apitest-inji-certify/push?tag=develop-arm64-linux HTTP/1.1" 200 None 
+ 15-Oct-25 10:26:12  INFO  develop-arm64-linux: digest: sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 size: 2212 
+ 15-Oct-25 10:26:12  INFO  Completed pulling/tagging mosipdev/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 	------> mosipdev2/apitest-inji-certify:develop-arm64-linux (linux/arm64) 
+ 15-Oct-25 10:26:12  INFO  Logging in to Docker CLI for manifest operations 
+ 15-Oct-25 10:26:12  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-inji-certify:develop mosipdev2/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 mosipdev2/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 
+ 15-Oct-25 10:26:14  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-inji-certify:develop 
+ 15-Oct-25 10:26:16  INFO  Logging in to Docker CLI for manifest operations 
+ 15-Oct-25 10:26:16  INFO  Creating manifest list with command: docker manifest create --amend mosipdev2/apitest-inji-certify:latest mosipdev2/apitest-inji-certify@sha256:5d09b43c89b9d823cfe1348a9e3e8585053f5f2decab6e4a1a56791df1699c18 mosipdev2/apitest-inji-certify@sha256:fda8274fba9baa987f222b7e03de637e53f17153312eab0ada6add697c9c55c7 
+ 15-Oct-25 10:26:18  INFO  Pushing manifest list with command: docker manifest push mosipdev2/apitest-inji-certify:latest 
+ 15-Oct-25 10:26:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-inji-certify:develop-amd64-linux?force=False&noprune=False HTTP/1.1" 200 186 
+ 15-Oct-25 10:26:19  DEBUG  http://localhost:None "DELETE /v1.48/images/mosipdev2/apitest-inji-certify:develop-arm64-linux?force=False&noprune=False HTTP/1.1" 200 186 
+ 15-Oct-25 10:26:19  INFO  Completed processing mosipdev/apitest-inji-certify:develop to mosipdev2/apitest-inji-certify:develop 
