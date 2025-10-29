@@ -3,7 +3,7 @@ import csv
 import yaml
 import sys
 import json
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 import concurrent
 import requests
 import string
@@ -150,36 +150,6 @@ def getDockerHash(repo, tag):
     return ''
 
 
-def get_manifest_list(repo, tag):
-    """Get manifest list for multi-architecture images"""
-    token = get_auth_token(repo)
-    if not token:
-        return None
-    
-    headers = {
-        "Accept": "application/vnd.docker.distribution.manifest.list.v2+json",
-        "Authorization": "Bearer " + token
-    }
-    registry_url = f'https://registry-1.docker.io/v2/{repo}/manifests/{tag}'
-    response = requests.get(registry_url, headers=headers)
-    
-    if response.status_code == 200 and 'manifests' in response.json():
-        return response.json()
-    
-    # If not a multi-arch image, try getting the regular manifest
-    headers = {
-        "Accept": "application/vnd.docker.distribution.manifest.v2+json",
-        "Authorization": "Bearer " + token
-    }
-    response = requests.get(registry_url, headers=headers)
-    if response.status_code == 200:
-        # Return a single-item list for consistent handling
-        return {"manifests": [{"digest": response.headers.get('docker-content-digest', ''), "platform": {"architecture": "unknown", "os": "unknown"}}]}
-    
-    print_log(f"Failed to get manifest for {repo}:{tag}", 'error')
-    return None
-
-
 def chkDockerAccExistence(acc_name):
     accUrl = 'https://hub.docker.com/v2/users/' + acc_name
     req = requests.get(url=accUrl)
@@ -189,47 +159,8 @@ def chkDockerAccExistence(acc_name):
     return True
 
 
-def create_manifest_list(src_image_name, dest_image_name, tag, digests, remote_client):
-    """Create a multi-architecture manifest list from individual architecture digests"""
-    try:
-        # First, perform a CLI-based Docker login using the credentials from config.yaml
-        docker_login_cmd = f"docker login -u {config['docker']['username']} -p {config['docker']['token']} {config['docker']['registry_url']}"
-        print_log(f"Logging in to Docker CLI for manifest operations", 'info')
-        # Use subprocess.PIPE to avoid printing the token to logs
-        login_process = subprocess.run(
-            docker_login_cmd, 
-            shell=True, 
-            check=True, 
-            stdout=subprocess.PIPE, 
-            stderr=subprocess.PIPE
-        )
-        
-        # If login failed, report the error
-        if login_process.returncode != 0:
-            print_log(f"Docker CLI login failed: {login_process.stderr.decode('utf-8')}", 'error')
-            return False
-            
-        # Create the manifest list with --amend flag to update if it exists
-        manifest_create_cmd = f"docker manifest create --amend {dest_image_name}:{tag}"
-        for digest in digests:
-            manifest_create_cmd += f" {dest_image_name}@{digest}"
-        
-        print_log(f"Creating manifest list with command: {manifest_create_cmd}", 'info')
-        subprocess.run(manifest_create_cmd, shell=True, check=True)
-        
-        # Push the manifest list
-        manifest_push_cmd = f"docker manifest push {dest_image_name}:{tag}"
-        print_log(f"Pushing manifest list with command: {manifest_push_cmd}", 'info')
-        subprocess.run(manifest_push_cmd, shell=True, check=True)
-        
-        return True
-    except subprocess.CalledProcessError as e:
-        print_log(f"Error creating/pushing manifest list: {str(e)}", 'error')
-        return False
-
-
 def process_image(image, client, remote_client):
-    """Process a single image (regardless of architecture)"""
+    """Process a single image using crane for all cases (single-arch and multi-arch)"""
     srcImgRepo = image[0][: image[0].find("/")]
     srcImgName = image[0][image[0].find("/") + 1:image[0].find(":")]
     srcImgtag = image[0][image[0].find(":") + 1:]
@@ -238,210 +169,79 @@ def process_image(image, client, remote_client):
     print_log("", 'info')
     print_log(10 * "*" + " [ " + config['docker']['destination_organization'] + "/" + srcImgName + ":" + destImgtag + " ] " + "*" * 52, 'info')
     
-    # Get manifest list for the source image
-    full_src_img_name = image[0][: image[0].find(":")]
-    manifest_list = get_manifest_list(full_src_img_name, srcImgtag)
-    
-    # For multi-architecture images
-    if manifest_list and 'manifests' in manifest_list and len(manifest_list['manifests']) > 1:
-        print_log(f"Multi-arch image detected with {len(manifest_list['manifests'])} architectures", 'info')
+    # Use crane for ALL images (single or multi-arch)
+    print_log("Transferring image using crane...", 'info')
+    try:
+        # Extract registry hostname from URL (remove http:// or https://)
+        registry_url = config['docker']['registry_url']
+        registry_host = registry_url.replace('https://', '').replace('http://', '').split('/')[0]
         
-        # Store digests for creating manifest list later
-        digests = []
-        temp_images = []
+        full_src_img_name = image[0][: image[0].find(":")]
+        dest_repo = f"{registry_host}/{config['docker']['destination_organization']}/{srcImgName}"
         
-        # Pull and tag each architecture separately
-        with ThreadPoolExecutor() as arch_executor:
-            arch_futures = []
+        import shutil
+        
+        if not shutil.which("crane"):
+            print_log("ERROR: crane tool not found. Please install crane to use this script.", 'error')
+            print_log("Install instructions: https://github.com/google/go-containerregistry/blob/main/cmd/crane/README.md", 'error')
+            raise Exception("Crane tool required for image transfer")
+        
+        # Determine if destination registry needs --insecure flag (HTTP)
+        use_insecure = registry_url.startswith('http://') or not registry_url.startswith('https://')
+        
+        # Build crane command with conditional --insecure flag
+        crane_cmd = ["crane", "copy"]
+        if use_insecure:
+            crane_cmd.append("--insecure")
+            print_log("Using --insecure flag for HTTP registry", 'info')
+        else:
+            print_log("Using secure connection for HTTPS registry", 'info')
+        
+        crane_cmd.extend([
+            f"{full_src_img_name}:{srcImgtag}",
+            f"{dest_repo}:{destImgtag}"
+        ])
+        
+        print_log(f"Executing: {' '.join(crane_cmd)}", 'info')
+        result = subprocess.run(crane_cmd, capture_output=True, text=True, check=False)
+        
+        if result.returncode == 0:
+            print_log(f"Successfully transferred image with crane", 'info')
             
-            for manifest in manifest_list['manifests']:
-                arch_digest = manifest['digest']
-                arch_type = manifest['platform']['architecture']
-                arch_os = manifest['platform']['os']
-                
-                print_log(f"Processing architecture: {arch_type}/{arch_os} with digest {arch_digest}", 'info')
-                digests.append(arch_digest)
-                
-                # Extract digest value without the "sha256:" prefix
-                digest_value = arch_digest.replace("sha256:", "")
-                
-                # Use destination tag with architecture suffix instead of hash
-                arch_tag = f"{destImgtag}-{arch_type}-{arch_os}"
-                temp_dest_img = f"{config['docker']['destination_organization']}/{srcImgName}:{arch_tag}"
-                temp_images.append(temp_dest_img)
-                
-                try:
-                    future = arch_executor.submit(
-                        pull_tag_arch_image, 
-                        srcImgRepo, 
-                        srcImgName, 
-                        digest_value, 
-                        arch_tag,  # Use the arch-specific tag here
-                        config['docker']['destination_organization'], 
-                        remote_client,
-                        client,
-                        arch_type,
-                        arch_os
-                    )
-                    arch_futures.append(future)
-                except Exception as e:
-                    print_log(f"Error submitting multi-arch task to executor: {str(e)}", 'error')
-                    arch_executor.shutdown(wait=False)
-                    raise e
+            # Also create latest tag with same insecure setting
+            latest_cmd = ["crane", "copy"]
+            if use_insecure:
+                latest_cmd.append("--insecure")
+            latest_cmd.extend([
+                f"{full_src_img_name}:{srcImgtag}",
+                f"{dest_repo}:latest"
+            ])
             
-            # Wait for all threads to complete
-            for future in arch_futures:
-                try:
-                    result = future.result()
-                except Exception as e:
-                    print_log(f"Error occurred in arch thread: {str(e)}", 'error')
-                    arch_executor.shutdown(wait=False)
-                    raise e
-        
-        # Create and push manifest list with the destination tag
-        dest_repository = f"{config['docker']['destination_organization']}/{srcImgName}"
-        create_manifest_list(
-            dest_repository, 
-            dest_repository, 
-            destImgtag,
-            digests, 
-            remote_client
-        )
-        
-        # Also tag as latest if needed
-        create_manifest_list(
-            dest_repository,
-            dest_repository,
-            "latest",
-            digests,
-            remote_client
-        )
-        
-        # Clean up temporary images if configured
-        # You might want to add a config option to determine if these should be removed
-        # or kept for future reference
-        for temp_img in temp_images:
-            try:
-                client.images.remove(temp_img)
-            except Exception as e:
-                print_log(f"Warning: Could not remove temp image {temp_img}: {str(e)}", 'warning')
-                
-    else:
-        # Handle single architecture image
-        promote(
-            srcImgRepo, 
-            srcImgName, 
-            srcImgtag, 
-            destImgtag,
-            config['docker']['destination_organization'], 
-            remote_client, 
-            client
-        )
+            print_log(f"Creating latest tag: {' '.join(latest_cmd)}", 'info')
+            latest_result = subprocess.run(latest_cmd, capture_output=True, text=True, check=False)
+            if latest_result.returncode == 0:
+                print_log("Successfully created latest tag", 'info')
+            else:
+                print_log(f"Latest tag creation failed: {latest_result.stderr}", 'warning')
+            
+            print_log(f"Image available at: {dest_repo}:{destImgtag}", 'info')
+            print_log("Crane automatically preserves all architectures and manifest structures", 'info')
+            
+        else:
+            print_log(f"Crane transfer failed: {result.stderr}", 'error')
+            raise Exception(f"Crane transfer failed: {result.stderr}")
+            
+    except Exception as e:
+        print_log(f"Error in crane transfer: {str(e)}", 'error')
+        raise e
 
     return f"Completed processing {image[0]} to {config['docker']['destination_organization']}/{srcImgName}:{destImgtag}"
-
-
-def pull_tag_arch_image(src_repo, src_image_name, digest, tag, dst_repo, remote_client, local_client, arch_type="unknown", arch_os="unknown"):
-    """Pull image digest and tag it for manifest list creation"""
-    src_repository = src_repo + "/" + src_image_name
-    src_image = src_repository + "@sha256:" + digest
-    force = True
-    dst_repository = dst_repo + "/" + src_image_name
-    dst_image = dst_repository + ":" + tag
-    
-    print_log("", 'info')
-    print_log(f"[ PULL {arch_os}/{arch_type} ----------------------> " + src_image + " ] ", 'info')
-    
-    # Pull the image by digest
-    pull_status = remote_client.pull(repository=src_repository, tag=f"sha256:{digest}", stream=True, decode=True)
-    status_update(pull_status)
-    
-    # Tag for this architecture
-    remote_client.tag(image=src_image, repository=dst_repository, tag=tag, force=force)
-    
-    # Push the architecture-specific image
-    print_log("", 'info')
-    print_log(f"[ PUSH {arch_os}/{arch_type} -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
-    push_status = remote_client.push(repository=dst_repository, tag=tag, stream=True, decode=True)
-    status_update(push_status)
-    
-    print_log(f"Completed pulling/tagging {src_image} \t------> {dst_image} ({arch_os}/{arch_type})", 'info')
-    return True
 
 
 def load_config():
     global config
     with open("config.yml", "r") as configfile:
         config = yaml.safe_load(configfile)
-
-
-def strip_tag(image_name):
-    image_version = ""
-    stripped_list = image_name[0].split('/')
-    repository = stripped_list[0]
-    image = stripped_list[1]
-    image_version = image_name[1]
-    return repository, image, image_version
-
-
-def promote(src_repo, src_image_name, src_image_version, tag, dst_repo, remote_client, local_client):
-    src_repository = src_repo + "/" + src_image_name
-    src_tag = tag if src_image_version == "" else src_image_version
-    src_image = src_repository + ":" + src_tag
-    force = True
-    dst_repository = dst_repo + "/" + src_image_name
-    dst_tag = tag  # Use the tag from image.txt
-    dst_image = dst_repository + ":" + dst_tag
-    dst_latest = dst_repository + ":" + "latest"
-    
-    if '@sha256:' in dst_image:
-        dst_image = re.sub(r'@sha256','',dst_image)
-        dst_repository = re.sub(r'@sha256','',dst_repository)
-    
-    print_log("", 'info')
-    src_tag=':'+src_tag
-    if '@sha256:' in src_image:
-        src_repository = re.sub(r'@sha256','',src_repository)
-        src_tag='@sha256'+src_tag
-    
-    print_log("[ PULL ----------------------> " + src_image + " ] ", 'info')
-    print("src_repository : ",src_repository,'src_tag',src_tag, 'src_image : ',src_image )
-    print('dst_repository : ',dst_repository, 'dst_tag : ', dst_tag)
-    
-    pull_status = remote_client.pull(repository=src_repository+src_tag, stream=True, decode=True)
-    status_update(pull_status)
-    
-    remote_client.tag(image=src_image, repository=dst_repository, tag=dst_tag, force=force)
-    print_log("", 'info')
-    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_image + " ] ", 'info')
-    push_status = remote_client.push(repository=dst_repository, tag=dst_tag, stream=True, decode=True)
-    status_update(push_status)
-    
-    print_log("", 'info')
-    print_log("[ PUSH -----> " + src_image + "\t------> " + dst_latest + " ] ", 'info')
-    remote_client.tag(image=src_image, repository=dst_repository, tag='latest', force=force)
-    latest_push = remote_client.push(repository=dst_repository, tag='latest', stream=True, decode=True)
-    status_update(latest_push)
-    
-    # remove docker images from local machine
-    rm_local_img = [src_image, dst_image, dst_latest]
-    for img in rm_local_img:
-        if len(local_client.images.list(img)) != 0:
-            local_client.images.remove(img)
-    
-    print_log("Completed " + src_image + "\t------> " + dst_image, 'info')
-
-
-def status_update(output):
-    status = ''
-    for line in output:
-        if line.get("error"):
-            raise InterruptedError(line.get("error"))
-        if line.get("progress"):
-            print(line.get("status"), line.get("progress"), end="\r")
-        if line.get('status'):
-            status = line.get('status')
-    print_log(status, 'info')
 
 
 def main():
@@ -487,10 +287,17 @@ def main():
         # call function to check existence of source images
         if not chkImageExistence(srcImgName, srcImgtag, imageExitUrl):
             srcImgNotExist.append([srcImgName + ":" + srcImgtag])
-        # check if source and destination images are same
+        # check if source and destination images are same (same registry, same name, same tag)
         destImgName = config['docker']['destination_organization'] + "/" + (srcImgName.split('/')[-1])
         destImgtag = image[1]
-        if destImgName == srcImgName and destImgtag == srcImgtag:
+        
+        # Only consider them the same if they're on the same registry AND have same name/tag
+        src_registry = "docker.io"  # Source is always Docker Hub (hardcoded in the script)
+        dest_registry_url = config['docker']['registry_url'].lower()
+        dest_is_dockerhub = 'docker.io' in dest_registry_url or 'hub.docker' in dest_registry_url or 'index.docker.io' in dest_registry_url
+        
+        # Images are the same only if: same registry + same name + same tag
+        if dest_is_dockerhub and destImgName == srcImgName and destImgtag == srcImgtag:
             srcDestSameImg.append([destImgName, destImgtag])
     # print list of source images which does not exist
     if len(srcImgNotExist) > 0:
@@ -513,8 +320,12 @@ def main():
     # check the existence of destImg+tag
     print_log("", 'info')
     print_log('*' * 20 + " Check existence of Destination Docker Account " + '*' * 63, 'info')
-    if not chkDockerAccExistence(config['docker']['destination_organization']):
-        exit(1)
+    # Skip Docker Hub account check for non-Docker Hub registries
+    if 'docker.io' in config['docker']['registry_url'].lower() or 'hub.docker' in config['docker']['registry_url'].lower():
+        if not chkDockerAccExistence(config['docker']['destination_organization']):
+            exit(1)
+    else:
+        print_log("Skipping Docker Hub account check for non-Docker Hub registry", 'info')
     print_log("", 'info')
     print_log('*' * 20 + " Check existence of Destination Images " + '*' * 63, 'info')
     for image in images:
@@ -580,8 +391,10 @@ def main():
     remote_client.login(username=config['docker']['username'], password=config['docker']['token'],
                         registry=config['docker']['registry_url'])
     
-    # Process all images in parallel using ThreadPoolExecutor
-    with ThreadPoolExecutor() as executor:
+    # Process all images in parallel using ThreadPoolExecutor with configured limit
+    max_workers = config.get('process', {}).get('count', 3)
+    print_log(f'Using {max_workers} parallel workers for image transfers', 'info')
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = []
         for image in images:
             try:
