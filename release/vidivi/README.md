@@ -13,18 +13,53 @@ In MOSIP, we maintain several Docker Hub organizations with specific purposes:
     * Maintains backups of QA-tested images from previous internal sprints
     * Images from here eventually move to `mosipid`
 * **`mosipdev`**: Contains Docker images in the development phase
+* **`mosipdev2`**: Intermediate staging environment for images before QA testing
 * **`mosipqa`**: Holds Docker images provided to the QA team for testing
 
 ## Docker Image Lifecycle
 
+MOSIP follows two primary release flows depending on the release strategy:
+
+### Flow 1: Direct Release Path (Recommended)
 ```
-mosipdev → mosipqa → mosipint → mosipid
+mosipdev → mosipdev2 → mosipqa → mosipid
 ```
 
-* **mosipdev**: Newly created images undergoing dev testing
-* **mosipqa**: Images that passed dev cycle, sent to QA team for testing
-* **mosipint**: QA-verified images, typically stable images from previous sprints
-* **mosipid**: Images released after QA testing completion
+* **mosipdev**: Newly created images from CI/CD, undergoing initial dev testing
+* **mosipdev2**: Intermediate staging for pre-QA validation and stabilization
+* **mosipqa**: Images verified in mosipdev2, sent to QA team for comprehensive testing
+* **mosipid**: Images that passed all QA testing, ready for production release
+
+**Use Case**: Standard releases where images are stable and ready for production after QA validation.
+
+### Flow 2: Staged Release Path (With Interim Release)
+```
+mosipdev → mosipdev2 → mosipqa/mosipint → mosipid
+```
+
+* **mosipdev**: Newly created images from CI/CD, undergoing initial dev testing
+* **mosipdev2**: Intermediate staging for pre-QA validation and stabilization
+* **mosipqa**: Images verified in mosipdev2, sent to QA team for comprehensive testing
+* **mosipint**: QA-verified images staged for specific implementations or interim releases
+  * Used for patches that need immediate deployment
+  * Holds stable images from previous sprints as backup
+  * Acts as a holding area before final production release
+* **mosipid**: Final production release after successful deployment validation in mosipint
+
+**Use Case**: 
+- Critical patches requiring staged rollout
+- Images needing validation in specific implementation environments before full release
+- Maintaining stable interim versions while next version is in QA
+
+### Choosing the Right Flow
+
+| Scenario | Recommended Flow | Reason |
+|----------|------------------|--------|
+| Regular sprint release | Flow 1 (Direct) | Faster time to production |
+| Critical security patch | Flow 2 (Staged) | Allows validation before wide release |
+| Breaking changes | Flow 2 (Staged) | Test in limited implementations first |
+| Minor bug fixes | Flow 1 (Direct) | Low risk, direct path sufficient |
+| Major version upgrade | Flow 2 (Staged) | Additional validation layer needed |
 
 ## Key Features
 
