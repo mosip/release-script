@@ -1,73 +1,214 @@
- 05-Nov-25 10:28:15  INFO  LOGFILE CREATED : vidivi.log 
- 05-Nov-25 10:28:15  INFO   
- 05-Nov-25 10:28:15  INFO  ******************** Check Images List ************************************************************************************ 
- 05-Nov-25 10:28:15  INFO   
- 05-Nov-25 10:28:15  INFO  IMAGES= [['mosipdev2/apitest-pms:release-1.3.x', '1.3.x']] 
- 05-Nov-25 10:28:15  INFO   
- 05-Nov-25 10:28:15  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 05-Nov-25 10:28:15  INFO   
- 05-Nov-25 10:28:15  INFO  src = "mosipdev2/apitest-pms" tag = "release-1.3.x" 
- 05-Nov-25 10:28:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 05-Nov-25 10:28:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-pms:pull HTTP/1.1" 200 None 
- 05-Nov-25 10:28:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 05-Nov-25 10:28:16  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-pms/tags/release-1.3.x HTTP/1.1" 200 None 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 05-Nov-25 10:28:16  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 05-Nov-25 10:28:16  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 05-Nov-25 10:28:16  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 354 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  [ mosipqa/apitest-pms ]  
- 05-Nov-25 10:28:16  INFO  Destination Image = "mosipqa/apitest-pms" Destination Image tag = "1.3.x" IMAGE_ID : sha256:16fc0e993f6a481e0ca4ae3370e330199b8ca7066c584e035cd5713eacadcb40 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  ******************** HASH Operation Results ********************************************************************** 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 05-Nov-25 10:28:16  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 05-Nov-25 10:28:16  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 05-Nov-25 10:28:16  DEBUG  Found 'auths' section 
- 05-Nov-25 10:28:16  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 05-Nov-25 10:28:16  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 05-Nov-25 10:28:16  DEBUG  Looking for auth entry for 'docker.io' 
- 05-Nov-25 10:28:16  DEBUG  Found 'https://index.docker.io/v1/' 
- 05-Nov-25 10:28:16  INFO  Using 3 parallel workers for image transfers 
- 05-Nov-25 10:28:16  INFO   
- 05-Nov-25 10:28:16  INFO  ********** [ mosipqa/apitest-pms:1.3.x ] **************************************************** 
- 05-Nov-25 10:28:16  INFO  Transferring image using crane... 
- 05-Nov-25 10:28:16  INFO  Source uses tag reference: mosipdev2/apitest-pms:release-1.3.x 
- 05-Nov-25 10:28:16  INFO  Analyzing source image manifest... 
- 05-Nov-25 10:28:17  INFO  Source is MULTI-ARCH image 
- 05-Nov-25 10:28:17  INFO  Source Index Digest (Manifest List): sha256:5ce80b48b84fb4596586a7d4f77a1dad83ace176c2a2b1ed64a8c4d8afe4d4bc 
- 05-Nov-25 10:28:17  INFO  Source has 2 platform(s): 
- 05-Nov-25 10:28:17  INFO    - linux/amd64: sha256:a6a36c813a6000418b896d0925056fa6bbe2380d0a9a00d06721cc0834e90f48 
- 05-Nov-25 10:28:17  INFO    - linux/arm64: sha256:7478033325906566ffacd6e9b1559de48d9c203e16363382821e044a1a17c6df 
- 05-Nov-25 10:28:17  INFO  Using secure connection for HTTPS registry 
- 05-Nov-25 10:28:17  INFO  Executing: crane copy mosipdev2/apitest-pms:release-1.3.x index.docker.io/mosipqa/apitest-pms:1.3.x 
- 05-Nov-25 10:28:20  INFO  Successfully transferred image with crane 
- 05-Nov-25 10:28:20  INFO   
- 05-Nov-25 10:28:20  INFO  Analyzing destination image manifest... 
- 05-Nov-25 10:28:21  INFO  Destination is MULTI-ARCH image 
- 05-Nov-25 10:28:21  INFO  Destination Index Digest (Manifest List): sha256:5ce80b48b84fb4596586a7d4f77a1dad83ace176c2a2b1ed64a8c4d8afe4d4bc 
- 05-Nov-25 10:28:21  INFO  Destination has 2 platform(s): 
- 05-Nov-25 10:28:21  INFO    - linux/amd64: sha256:a6a36c813a6000418b896d0925056fa6bbe2380d0a9a00d06721cc0834e90f48 
- 05-Nov-25 10:28:21  INFO    - linux/arm64: sha256:7478033325906566ffacd6e9b1559de48d9c203e16363382821e044a1a17c6df 
- 05-Nov-25 10:28:21  INFO   
- 05-Nov-25 10:28:21  INFO  === DIGEST VERIFICATION === 
- 05-Nov-25 10:28:21  INFO  Comparing Index Digests (Manifest Lists): 
- 05-Nov-25 10:28:21  INFO    Source:      sha256:5ce80b48b84fb4596586a7d4f77a1dad83ace176c2a2b1ed64a8c4d8afe4d4bc 
- 05-Nov-25 10:28:21  INFO    Destination: sha256:5ce80b48b84fb4596586a7d4f77a1dad83ace176c2a2b1ed64a8c4d8afe4d4bc 
- 05-Nov-25 10:28:21  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 05-Nov-25 10:28:21  INFO   
- 05-Nov-25 10:28:21  INFO  Comparing Platform Manifests: 
- 05-Nov-25 10:28:21  INFO    ✓ linux/amd64: sha256:a6a36c813a6000418b896d0925056fa6bbe2380d0a9a00d06721cc0834e90f48 (MATCH) 
- 05-Nov-25 10:28:21  INFO    ✓ linux/arm64: sha256:7478033325906566ffacd6e9b1559de48d9c203e16363382821e044a1a17c6df (MATCH) 
- 05-Nov-25 10:28:21  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 05-Nov-25 10:28:21  INFO  Creating latest tag: crane copy mosipdev2/apitest-pms:release-1.3.x index.docker.io/mosipqa/apitest-pms:latest 
- 05-Nov-25 10:28:23  INFO  Successfully created latest tag 
- 05-Nov-25 10:28:23  INFO  Image available at: index.docker.io/mosipqa/apitest-pms:1.3.x 
- 05-Nov-25 10:28:23  INFO   
- 05-Nov-25 10:28:23  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 05-Nov-25 10:28:23  INFO  Individual platform manifests should also match to ensure identical content. 
- 05-Nov-25 10:28:23  INFO  Completed processing mosipdev2/apitest-pms:release-1.3.x to mosipqa/apitest-pms:1.3.x 
+ 05-Nov-25 12:52:14  INFO  LOGFILE CREATED : vidivi.log 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  ******************** Check Images List ************************************************************************************ 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  IMAGES= [['mosipdev/credential-service:release-1.2.3.x-backup', '1.2.3.x'], ['mosipdev/credential-request-generator:release-1.2.3.x-backup', '1.2.3.x'], ['mosipdev/id-repository-identity-service:release-1.2.3.x-backup', '1.2.3.x'], ['mosipdev/id-repository-vid-service:release-1.2.3.x-backup', '1.2.3.x']] 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  src = "mosipdev/credential-service" tag = "release-1.2.3.x-backup" 
+ 05-Nov-25 12:52:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Nov-25 12:52:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-service:pull HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Nov-25 12:52:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-service/tags/release-1.2.3.x-backup HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  src = "mosipdev/credential-request-generator" tag = "release-1.2.3.x-backup" 
+ 05-Nov-25 12:52:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Nov-25 12:52:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/credential-request-generator:pull HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Nov-25 12:52:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/credential-request-generator/tags/release-1.2.3.x-backup HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:14  INFO   
+ 05-Nov-25 12:52:14  INFO  src = "mosipdev/id-repository-identity-service" tag = "release-1.2.3.x-backup" 
+ 05-Nov-25 12:52:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Nov-25 12:52:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-identity-service:pull HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Nov-25 12:52:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-identity-service/tags/release-1.2.3.x-backup HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  src = "mosipdev/id-repository-vid-service" tag = "release-1.2.3.x-backup" 
+ 05-Nov-25 12:52:15  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 05-Nov-25 12:52:15  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/id-repository-vid-service:pull HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:15  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 05-Nov-25 12:52:15  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/id-repository-vid-service/tags/release-1.2.3.x-backup HTTP/1.1" 200 None 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 05-Nov-25 12:52:15  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 05-Nov-25 12:52:15  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipint HTTP/1.1" 308 0 
+ 05-Nov-25 12:52:15  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipint HTTP/1.1" 200 345 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  [ mosipint/credential-service ]  
+ 05-Nov-25 12:52:15  INFO  Destination Image = "mosipint/credential-service" Destination Image tag = "1.2.3.x" IMAGE_ID : sha256:ea77178ecffefdb7465d572a5c630f6c0ddd1dd24d63bfaa17f3ff873759ac64 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  [ mosipint/credential-request-generator ]  
+ 05-Nov-25 12:52:15  INFO  Destination Image = "mosipint/credential-request-generator" Destination Image tag = "1.2.3.x" IMAGE_ID : sha256:197a0b69b5caecb4bf6d99746c12af316e20e53fd3288c453ec4626da1fcb8e2 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  [ mosipint/id-repository-identity-service ]  
+ 05-Nov-25 12:52:15  INFO  Destination Image = "mosipint/id-repository-identity-service" Destination Image tag = "1.2.3.x" IMAGE_ID : sha256:28523c6a83b30d255b6754a51ef907cbf430eacd4b3c3b0065177b382143e25c 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  [ mosipint/id-repository-vid-service ]  
+ 05-Nov-25 12:52:15  INFO  Destination Image = "mosipint/id-repository-vid-service" Destination Image tag = "1.2.3.x" IMAGE_ID : sha256:3e6209a06077080498497c45a2e6e12e5fbffd9d6cc466cac511b9c0dd157a09 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 05-Nov-25 12:52:15  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 05-Nov-25 12:52:15  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 05-Nov-25 12:52:15  DEBUG  Found 'auths' section 
+ 05-Nov-25 12:52:15  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
+ 05-Nov-25 12:52:15  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 05-Nov-25 12:52:15  DEBUG  Looking for auth entry for 'docker.io' 
+ 05-Nov-25 12:52:15  DEBUG  Found 'https://index.docker.io/v1/' 
+ 05-Nov-25 12:52:15  INFO  Using 3 parallel workers for image transfers 
+ 05-Nov-25 12:52:15  INFO   
+ 05-Nov-25 12:52:15  INFO  ********** [ mosipint/credential-service:1.2.3.x ] **************************************************** 
+ 05-Nov-25 12:52:15  INFO  Transferring image using crane... 
+ 05-Nov-25 12:52:16  INFO   
+ 05-Nov-25 12:52:16  INFO  ********** [ mosipint/credential-request-generator:1.2.3.x ] **************************************************** 
+ 05-Nov-25 12:52:16  INFO  Transferring image using crane... 
+ 05-Nov-25 12:52:16  INFO  Source uses tag reference: mosipdev/credential-request-generator:release-1.2.3.x-backup 
+ 05-Nov-25 12:52:16  INFO  Analyzing source image manifest... 
+ 05-Nov-25 12:52:16  INFO   
+ 05-Nov-25 12:52:16  INFO  Source uses tag reference: mosipdev/credential-service:release-1.2.3.x-backup 
+ 05-Nov-25 12:52:16  INFO  ********** [ mosipint/id-repository-identity-service:1.2.3.x ] **************************************************** 
+ 05-Nov-25 12:52:16  INFO  Analyzing source image manifest... 
+ 05-Nov-25 12:52:16  INFO  Transferring image using crane... 
+ 05-Nov-25 12:52:16  INFO  Source uses tag reference: mosipdev/id-repository-identity-service:release-1.2.3.x-backup 
+ 05-Nov-25 12:52:16  INFO  Analyzing source image manifest... 
+ 05-Nov-25 12:52:16  INFO  Source is MULTI-ARCH image 
+ 05-Nov-25 12:52:16  INFO  Source Index Digest (Manifest List): sha256:80a3ab3b0c6c6a82a16578a5d42dd7a83fefdef2d17ca9e466503c28da9e78ec 
+ 05-Nov-25 12:52:16  INFO  Source has 2 platform(s): 
+ 05-Nov-25 12:52:16  INFO    - linux/amd64: sha256:5f2de9358dc1509fe77ad8b692aea2bbba7904aab943e6f12bc1659d0108b4a6 
+ 05-Nov-25 12:52:16  INFO    - linux/arm64: sha256:ce2e2928aa696b73fb3f865be31a2f3c87e0f3636209823d9a5a8261f2e952b4 
+ 05-Nov-25 12:52:16  INFO  Using secure connection for HTTPS registry 
+ 05-Nov-25 12:52:16  INFO  Executing: crane copy mosipdev/id-repository-identity-service:release-1.2.3.x-backup index.docker.io/mosipint/id-repository-identity-service:1.2.3.x 
+ 05-Nov-25 12:52:16  INFO  Source is MULTI-ARCH image 
+ 05-Nov-25 12:52:16  INFO  Source Index Digest (Manifest List): sha256:2e2035c8649eea9f60b822675c9caf181517f3af53c95a57bac17105e95a17f4 
+ 05-Nov-25 12:52:16  INFO  Source has 2 platform(s): 
+ 05-Nov-25 12:52:16  INFO    - linux/amd64: sha256:5ee29c076ed6ed9ea102c7ec6d6fefc6a51fac5136fa33ea75709d178a12288a 
+ 05-Nov-25 12:52:16  INFO    - linux/arm64: sha256:92ae7c6bded39e832c3279a782eb071d5ffacd7be9916ff35710d42b2a6b84ee 
+ 05-Nov-25 12:52:16  INFO  Using secure connection for HTTPS registry 
+ 05-Nov-25 12:52:16  INFO  Executing: crane copy mosipdev/credential-service:release-1.2.3.x-backup index.docker.io/mosipint/credential-service:1.2.3.x 
+ 05-Nov-25 12:52:16  INFO  Source is MULTI-ARCH image 
+ 05-Nov-25 12:52:16  INFO  Source Index Digest (Manifest List): sha256:5f12b4b6b579d13334a7f7f5f87f596d4110cbf56e4bb79494e7be5c9225b89d 
+ 05-Nov-25 12:52:16  INFO  Source has 2 platform(s): 
+ 05-Nov-25 12:52:16  INFO    - linux/amd64: sha256:6ce07f4d1894043a953500a37956537c600bc80349147e9fbbeb6e4e64a151f0 
+ 05-Nov-25 12:52:16  INFO    - linux/arm64: sha256:2f81045e139484047d2b58f71ed1ae76ef72cf80ee55173b8eb6a987f53251eb 
+ 05-Nov-25 12:52:16  INFO  Using secure connection for HTTPS registry 
+ 05-Nov-25 12:52:16  INFO  Executing: crane copy mosipdev/credential-request-generator:release-1.2.3.x-backup index.docker.io/mosipint/credential-request-generator:1.2.3.x 
+ 05-Nov-25 12:52:18  INFO  Successfully transferred image with crane 
+ 05-Nov-25 12:52:18  INFO   
+ 05-Nov-25 12:52:18  INFO  Analyzing destination image manifest... 
+ 05-Nov-25 12:52:19  INFO  Successfully transferred image with crane 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  Analyzing destination image manifest... 
+ 05-Nov-25 12:52:19  INFO  Destination is MULTI-ARCH image 
+ 05-Nov-25 12:52:19  INFO  Destination Index Digest (Manifest List): sha256:2e2035c8649eea9f60b822675c9caf181517f3af53c95a57bac17105e95a17f4 
+ 05-Nov-25 12:52:19  INFO  Destination has 2 platform(s): 
+ 05-Nov-25 12:52:19  INFO    - linux/amd64: sha256:5ee29c076ed6ed9ea102c7ec6d6fefc6a51fac5136fa33ea75709d178a12288a 
+ 05-Nov-25 12:52:19  INFO    - linux/arm64: sha256:92ae7c6bded39e832c3279a782eb071d5ffacd7be9916ff35710d42b2a6b84ee 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  === DIGEST VERIFICATION === 
+ 05-Nov-25 12:52:19  INFO  Comparing Index Digests (Manifest Lists): 
+ 05-Nov-25 12:52:19  INFO    Source:      sha256:2e2035c8649eea9f60b822675c9caf181517f3af53c95a57bac17105e95a17f4 
+ 05-Nov-25 12:52:19  INFO    Destination: sha256:2e2035c8649eea9f60b822675c9caf181517f3af53c95a57bac17105e95a17f4 
+ 05-Nov-25 12:52:19  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  Comparing Platform Manifests: 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/amd64: sha256:5ee29c076ed6ed9ea102c7ec6d6fefc6a51fac5136fa33ea75709d178a12288a (MATCH) 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/arm64: sha256:92ae7c6bded39e832c3279a782eb071d5ffacd7be9916ff35710d42b2a6b84ee (MATCH) 
+ 05-Nov-25 12:52:19  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 05-Nov-25 12:52:19  INFO  Creating latest tag: crane copy mosipdev/credential-service:release-1.2.3.x-backup index.docker.io/mosipint/credential-service:latest 
+ 05-Nov-25 12:52:19  INFO  Successfully transferred image with crane 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  Analyzing destination image manifest... 
+ 05-Nov-25 12:52:19  INFO  Destination is MULTI-ARCH image 
+ 05-Nov-25 12:52:19  INFO  Destination Index Digest (Manifest List): sha256:5f12b4b6b579d13334a7f7f5f87f596d4110cbf56e4bb79494e7be5c9225b89d 
+ 05-Nov-25 12:52:19  INFO  Destination has 2 platform(s): 
+ 05-Nov-25 12:52:19  INFO    - linux/amd64: sha256:6ce07f4d1894043a953500a37956537c600bc80349147e9fbbeb6e4e64a151f0 
+ 05-Nov-25 12:52:19  INFO    - linux/arm64: sha256:2f81045e139484047d2b58f71ed1ae76ef72cf80ee55173b8eb6a987f53251eb 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  === DIGEST VERIFICATION === 
+ 05-Nov-25 12:52:19  INFO  Comparing Index Digests (Manifest Lists): 
+ 05-Nov-25 12:52:19  INFO    Source:      sha256:5f12b4b6b579d13334a7f7f5f87f596d4110cbf56e4bb79494e7be5c9225b89d 
+ 05-Nov-25 12:52:19  INFO    Destination: sha256:5f12b4b6b579d13334a7f7f5f87f596d4110cbf56e4bb79494e7be5c9225b89d 
+ 05-Nov-25 12:52:19  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  Comparing Platform Manifests: 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/amd64: sha256:6ce07f4d1894043a953500a37956537c600bc80349147e9fbbeb6e4e64a151f0 (MATCH) 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/arm64: sha256:2f81045e139484047d2b58f71ed1ae76ef72cf80ee55173b8eb6a987f53251eb (MATCH) 
+ 05-Nov-25 12:52:19  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 05-Nov-25 12:52:19  INFO  Creating latest tag: crane copy mosipdev/credential-request-generator:release-1.2.3.x-backup index.docker.io/mosipint/credential-request-generator:latest 
+ 05-Nov-25 12:52:19  INFO  Destination is MULTI-ARCH image 
+ 05-Nov-25 12:52:19  INFO  Destination Index Digest (Manifest List): sha256:80a3ab3b0c6c6a82a16578a5d42dd7a83fefdef2d17ca9e466503c28da9e78ec 
+ 05-Nov-25 12:52:19  INFO  Destination has 2 platform(s): 
+ 05-Nov-25 12:52:19  INFO    - linux/amd64: sha256:5f2de9358dc1509fe77ad8b692aea2bbba7904aab943e6f12bc1659d0108b4a6 
+ 05-Nov-25 12:52:19  INFO    - linux/arm64: sha256:ce2e2928aa696b73fb3f865be31a2f3c87e0f3636209823d9a5a8261f2e952b4 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  === DIGEST VERIFICATION === 
+ 05-Nov-25 12:52:19  INFO  Comparing Index Digests (Manifest Lists): 
+ 05-Nov-25 12:52:19  INFO    Source:      sha256:80a3ab3b0c6c6a82a16578a5d42dd7a83fefdef2d17ca9e466503c28da9e78ec 
+ 05-Nov-25 12:52:19  INFO    Destination: sha256:80a3ab3b0c6c6a82a16578a5d42dd7a83fefdef2d17ca9e466503c28da9e78ec 
+ 05-Nov-25 12:52:19  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 05-Nov-25 12:52:19  INFO   
+ 05-Nov-25 12:52:19  INFO  Comparing Platform Manifests: 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/amd64: sha256:5f2de9358dc1509fe77ad8b692aea2bbba7904aab943e6f12bc1659d0108b4a6 (MATCH) 
+ 05-Nov-25 12:52:19  INFO    ✓ linux/arm64: sha256:ce2e2928aa696b73fb3f865be31a2f3c87e0f3636209823d9a5a8261f2e952b4 (MATCH) 
+ 05-Nov-25 12:52:19  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 05-Nov-25 12:52:19  INFO  Creating latest tag: crane copy mosipdev/id-repository-identity-service:release-1.2.3.x-backup index.docker.io/mosipint/id-repository-identity-service:latest 
+ 05-Nov-25 12:52:20  INFO  Successfully created latest tag 
+ 05-Nov-25 12:52:20  INFO  Image available at: index.docker.io/mosipint/credential-service:1.2.3.x 
+ 05-Nov-25 12:52:20  INFO   
+ 05-Nov-25 12:52:20  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 05-Nov-25 12:52:20  INFO  Individual platform manifests should also match to ensure identical content. 
+ 05-Nov-25 12:52:20  INFO   
+ 05-Nov-25 12:52:20  INFO  ********** [ mosipint/id-repository-vid-service:1.2.3.x ] **************************************************** 
+ 05-Nov-25 12:52:20  INFO  Transferring image using crane... 
+ 05-Nov-25 12:52:20  INFO  Completed processing mosipdev/credential-service:release-1.2.3.x-backup to mosipint/credential-service:1.2.3.x 
+ 05-Nov-25 12:52:20  INFO  Source uses tag reference: mosipdev/id-repository-vid-service:release-1.2.3.x-backup 
+ 05-Nov-25 12:52:20  INFO  Analyzing source image manifest... 
+ 05-Nov-25 12:52:21  INFO  Successfully created latest tag 
+ 05-Nov-25 12:52:21  INFO  Image available at: index.docker.io/mosipint/credential-request-generator:1.2.3.x 
+ 05-Nov-25 12:52:21  INFO   
+ 05-Nov-25 12:52:21  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 05-Nov-25 12:52:21  INFO  Individual platform manifests should also match to ensure identical content. 
+ 05-Nov-25 12:52:21  INFO  Completed processing mosipdev/credential-request-generator:release-1.2.3.x-backup to mosipint/credential-request-generator:1.2.3.x 
+ 05-Nov-25 12:52:21  INFO  Source is MULTI-ARCH image 
+ 05-Nov-25 12:52:21  INFO  Source Index Digest (Manifest List): sha256:6076303807506cecec0b5467d9bfd3e1766da1288f45f919958580b279ad417e 
+ 05-Nov-25 12:52:21  INFO  Source has 2 platform(s): 
+ 05-Nov-25 12:52:21  INFO    - linux/amd64: sha256:21c7205af947ad92d12ce577328086695d77ef3e0fe5f3cb8bc1030890f5ec3c 
+ 05-Nov-25 12:52:21  INFO    - linux/arm64: sha256:c1b2628a79573e08924bf9448d897ffd6b0270d828e9663c381f92119e18a28a 
+ 05-Nov-25 12:52:21  INFO  Using secure connection for HTTPS registry 
+ 05-Nov-25 12:52:21  INFO  Executing: crane copy mosipdev/id-repository-vid-service:release-1.2.3.x-backup index.docker.io/mosipint/id-repository-vid-service:1.2.3.x 
+ 05-Nov-25 12:52:21  INFO  Successfully created latest tag 
+ 05-Nov-25 12:52:21  INFO  Image available at: index.docker.io/mosipint/id-repository-identity-service:1.2.3.x 
+ 05-Nov-25 12:52:21  INFO   
+ 05-Nov-25 12:52:21  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 05-Nov-25 12:52:21  INFO  Individual platform manifests should also match to ensure identical content. 
+ 05-Nov-25 12:52:21  INFO  Completed processing mosipdev/id-repository-identity-service:release-1.2.3.x-backup to mosipint/id-repository-identity-service:1.2.3.x 
+ 05-Nov-25 12:52:24  INFO  Successfully transferred image with crane 
+ 05-Nov-25 12:52:24  INFO   
+ 05-Nov-25 12:52:24  INFO  Analyzing destination image manifest... 
+ 05-Nov-25 12:52:24  INFO  Destination is MULTI-ARCH image 
+ 05-Nov-25 12:52:24  INFO  Destination Index Digest (Manifest List): sha256:6076303807506cecec0b5467d9bfd3e1766da1288f45f919958580b279ad417e 
+ 05-Nov-25 12:52:24  INFO  Destination has 2 platform(s): 
+ 05-Nov-25 12:52:24  INFO    - linux/amd64: sha256:21c7205af947ad92d12ce577328086695d77ef3e0fe5f3cb8bc1030890f5ec3c 
+ 05-Nov-25 12:52:24  INFO    - linux/arm64: sha256:c1b2628a79573e08924bf9448d897ffd6b0270d828e9663c381f92119e18a28a 
+ 05-Nov-25 12:52:24  INFO   
+ 05-Nov-25 12:52:24  INFO  === DIGEST VERIFICATION === 
+ 05-Nov-25 12:52:24  INFO  Comparing Index Digests (Manifest Lists): 
+ 05-Nov-25 12:52:24  INFO    Source:      sha256:6076303807506cecec0b5467d9bfd3e1766da1288f45f919958580b279ad417e 
+ 05-Nov-25 12:52:24  INFO    Destination: sha256:6076303807506cecec0b5467d9bfd3e1766da1288f45f919958580b279ad417e 
+ 05-Nov-25 12:52:24  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 05-Nov-25 12:52:24  INFO   
+ 05-Nov-25 12:52:24  INFO  Comparing Platform Manifests: 
+ 05-Nov-25 12:52:24  INFO    ✓ linux/amd64: sha256:21c7205af947ad92d12ce577328086695d77ef3e0fe5f3cb8bc1030890f5ec3c (MATCH) 
+ 05-Nov-25 12:52:24  INFO    ✓ linux/arm64: sha256:c1b2628a79573e08924bf9448d897ffd6b0270d828e9663c381f92119e18a28a (MATCH) 
+ 05-Nov-25 12:52:24  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 05-Nov-25 12:52:24  INFO  Creating latest tag: crane copy mosipdev/id-repository-vid-service:release-1.2.3.x-backup index.docker.io/mosipint/id-repository-vid-service:latest 
+ 05-Nov-25 12:52:26  INFO  Successfully created latest tag 
+ 05-Nov-25 12:52:26  INFO  Image available at: index.docker.io/mosipint/id-repository-vid-service:1.2.3.x 
+ 05-Nov-25 12:52:26  INFO   
+ 05-Nov-25 12:52:26  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 05-Nov-25 12:52:26  INFO  Individual platform manifests should also match to ensure identical content. 
+ 05-Nov-25 12:52:26  INFO  Completed processing mosipdev/id-repository-vid-service:release-1.2.3.x-backup to mosipint/id-repository-vid-service:1.2.3.x 
