@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Wed Nov  5 12:52:26 UTC 2025
+**Date**: Thu Nov  6 05:36:00 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
-**Organization**: mosipint
+**Organization**: mosipdev2
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 4
-- **Total completed**: 4
+- **Crane transfers**: 1
+- **Total completed**: 1
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,7 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipint/credential-service:1.2.3.x 
-- index.docker.io/mosipint/credential-request-generator:1.2.3.x 
-- index.docker.io/mosipint/id-repository-identity-service:1.2.3.x 
-- index.docker.io/mosipint/id-repository-vid-service:1.2.3.x 
+- index.docker.io/mosipdev2/uitest-pmp-v2:release-1.3.x 
