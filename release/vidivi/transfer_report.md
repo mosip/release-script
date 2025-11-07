@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Thu Nov  6 11:59:51 UTC 2025
+**Date**: Fri Nov  7 05:27:44 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
@@ -17,5 +17,5 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/dsl-packetcreator:release-1.3.x 
-- index.docker.io/mosipqa/dsl-orchestrator:release-1.3.x 
+- index.docker.io/mosipqa/mimoto:develop 
+- index.docker.io/mosipqa/inji-web:develop 
