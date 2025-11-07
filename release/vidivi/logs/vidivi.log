@@ -1,120 +1,73 @@
- 07-Nov-25 05:27:37  INFO  LOGFILE CREATED : vidivi.log 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  ******************** Check Images List ************************************************************************************ 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  IMAGES= [['mosipdev2/inji-web:develop', 'develop'], ['mosipdev2/mimoto:develop', 'develop']] 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  src = "mosipdev2/inji-web" tag = "develop" 
- 07-Nov-25 05:27:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Nov-25 05:27:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-web:pull HTTP/1.1" 200 None 
- 07-Nov-25 05:27:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Nov-25 05:27:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/inji-web/tags/develop HTTP/1.1" 200 None 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  src = "mosipdev2/mimoto" tag = "develop" 
- 07-Nov-25 05:27:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 07-Nov-25 05:27:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/mimoto:pull HTTP/1.1" 200 None 
- 07-Nov-25 05:27:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 07-Nov-25 05:27:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/mimoto/tags/develop HTTP/1.1" 200 None 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 07-Nov-25 05:27:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 07-Nov-25 05:27:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 07-Nov-25 05:27:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 354 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  [ mosipqa/inji-web ]  
- 07-Nov-25 05:27:37  INFO  Destination Image = "mosipqa/inji-web" Destination Image tag = "develop" IMAGE_ID : sha256:db84a3e563423125c4d92d72ebeb3f1b5d823393b4aea41aa90c5373aa91286e 
- 07-Nov-25 05:27:37  INFO   
- 07-Nov-25 05:27:37  INFO  [ mosipqa/mimoto ]  
- 07-Nov-25 05:27:38  INFO  Destination Image = "mosipqa/mimoto" Destination Image tag = "develop" IMAGE_ID : sha256:a0c98ad098ba04cf9390b732395e08c675ad6e5148aec56a4d90ebb2f7f3a56f 
- 07-Nov-25 05:27:38  INFO   
- 07-Nov-25 05:27:38  INFO  ******************** HASH Operation Results ********************************************************************** 
- 07-Nov-25 05:27:38  INFO   
- 07-Nov-25 05:27:38  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 07-Nov-25 05:27:38  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 07-Nov-25 05:27:38  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 07-Nov-25 05:27:38  DEBUG  Found 'auths' section 
- 07-Nov-25 05:27:38  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 07-Nov-25 05:27:38  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 07-Nov-25 05:27:38  DEBUG  Looking for auth entry for 'docker.io' 
- 07-Nov-25 05:27:38  DEBUG  Found 'https://index.docker.io/v1/' 
- 07-Nov-25 05:27:38  INFO  Using 3 parallel workers for image transfers 
- 07-Nov-25 05:27:38  INFO   
- 07-Nov-25 05:27:38  INFO  ********** [ mosipqa/inji-web:develop ] **************************************************** 
- 07-Nov-25 05:27:38  INFO  Transferring image using crane... 
- 07-Nov-25 05:27:38  INFO   
- 07-Nov-25 05:27:38  INFO  ********** [ mosipqa/mimoto:develop ] **************************************************** 
- 07-Nov-25 05:27:38  INFO  Transferring image using crane... 
- 07-Nov-25 05:27:38  INFO  Source uses tag reference: mosipdev2/inji-web:develop 
- 07-Nov-25 05:27:38  INFO  Analyzing source image manifest... 
- 07-Nov-25 05:27:38  INFO  Source uses tag reference: mosipdev2/mimoto:develop 
- 07-Nov-25 05:27:38  INFO  Analyzing source image manifest... 
- 07-Nov-25 05:27:38  INFO  Source is MULTI-ARCH image 
- 07-Nov-25 05:27:38  INFO  Source Index Digest (Manifest List): sha256:6d31c575ca66c2dfe6a5c5cabad26999aeca3bdab102245df5ccf67e25c151c0 
- 07-Nov-25 05:27:38  INFO  Source has 2 platform(s): 
- 07-Nov-25 05:27:38  INFO    - linux/amd64: sha256:9d3334ee7c5ce0d949d9c47202162c82100ae8feec9ad0389d59f70e54a11e9d 
- 07-Nov-25 05:27:38  INFO    - linux/arm64: sha256:10108afe3b19e744ff667bfe143b5f587210875013985fb6b320e89435abeb9a 
- 07-Nov-25 05:27:38  INFO  Using secure connection for HTTPS registry 
- 07-Nov-25 05:27:38  INFO  Executing: crane copy mosipdev2/mimoto:develop index.docker.io/mosipqa/mimoto:develop 
- 07-Nov-25 05:27:38  INFO  Source is MULTI-ARCH image 
- 07-Nov-25 05:27:38  INFO  Source Index Digest (Manifest List): sha256:773ca14520446cc24a632e8eaa767eb33221e4f5982e61d78a2e2c69bef75b5d 
- 07-Nov-25 05:27:38  INFO  Source has 2 platform(s): 
- 07-Nov-25 05:27:38  INFO    - linux/amd64: sha256:c4e23f6c2bd0ff15e0f8902b154d5e51f0c82163f69223dd4508ca27303076f4 
- 07-Nov-25 05:27:38  INFO    - linux/arm64: sha256:eb47e1ccfd4e9a694387743333324887d8ed6a7442a09e65100d22e6d9f3b95c 
- 07-Nov-25 05:27:38  INFO  Using secure connection for HTTPS registry 
- 07-Nov-25 05:27:38  INFO  Executing: crane copy mosipdev2/inji-web:develop index.docker.io/mosipqa/inji-web:develop 
- 07-Nov-25 05:27:41  INFO  Successfully transferred image with crane 
- 07-Nov-25 05:27:41  INFO   
- 07-Nov-25 05:27:41  INFO  Analyzing destination image manifest... 
- 07-Nov-25 05:27:42  INFO  Successfully transferred image with crane 
- 07-Nov-25 05:27:42  INFO   
- 07-Nov-25 05:27:42  INFO  Analyzing destination image manifest... 
- 07-Nov-25 05:27:42  INFO  Destination is MULTI-ARCH image 
- 07-Nov-25 05:27:42  INFO  Destination Index Digest (Manifest List): sha256:6d31c575ca66c2dfe6a5c5cabad26999aeca3bdab102245df5ccf67e25c151c0 
- 07-Nov-25 05:27:42  INFO  Destination has 2 platform(s): 
- 07-Nov-25 05:27:42  INFO    - linux/amd64: sha256:9d3334ee7c5ce0d949d9c47202162c82100ae8feec9ad0389d59f70e54a11e9d 
- 07-Nov-25 05:27:42  INFO    - linux/arm64: sha256:10108afe3b19e744ff667bfe143b5f587210875013985fb6b320e89435abeb9a 
- 07-Nov-25 05:27:42  INFO   
- 07-Nov-25 05:27:42  INFO  === DIGEST VERIFICATION === 
- 07-Nov-25 05:27:42  INFO  Comparing Index Digests (Manifest Lists): 
- 07-Nov-25 05:27:42  INFO    Source:      sha256:6d31c575ca66c2dfe6a5c5cabad26999aeca3bdab102245df5ccf67e25c151c0 
- 07-Nov-25 05:27:42  INFO    Destination: sha256:6d31c575ca66c2dfe6a5c5cabad26999aeca3bdab102245df5ccf67e25c151c0 
- 07-Nov-25 05:27:42  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 07-Nov-25 05:27:42  INFO   
- 07-Nov-25 05:27:42  INFO  Comparing Platform Manifests: 
- 07-Nov-25 05:27:42  INFO    ✓ linux/amd64: sha256:9d3334ee7c5ce0d949d9c47202162c82100ae8feec9ad0389d59f70e54a11e9d (MATCH) 
- 07-Nov-25 05:27:42  INFO    ✓ linux/arm64: sha256:10108afe3b19e744ff667bfe143b5f587210875013985fb6b320e89435abeb9a (MATCH) 
- 07-Nov-25 05:27:42  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 07-Nov-25 05:27:42  INFO  Creating latest tag: crane copy mosipdev2/mimoto:develop index.docker.io/mosipqa/mimoto:latest 
- 07-Nov-25 05:27:42  INFO  Destination is MULTI-ARCH image 
- 07-Nov-25 05:27:42  INFO  Destination Index Digest (Manifest List): sha256:773ca14520446cc24a632e8eaa767eb33221e4f5982e61d78a2e2c69bef75b5d 
- 07-Nov-25 05:27:42  INFO  Destination has 2 platform(s): 
- 07-Nov-25 05:27:42  INFO    - linux/amd64: sha256:c4e23f6c2bd0ff15e0f8902b154d5e51f0c82163f69223dd4508ca27303076f4 
- 07-Nov-25 05:27:42  INFO    - linux/arm64: sha256:eb47e1ccfd4e9a694387743333324887d8ed6a7442a09e65100d22e6d9f3b95c 
- 07-Nov-25 05:27:42  INFO   
- 07-Nov-25 05:27:42  INFO  === DIGEST VERIFICATION === 
- 07-Nov-25 05:27:42  INFO  Comparing Index Digests (Manifest Lists): 
- 07-Nov-25 05:27:42  INFO    Source:      sha256:773ca14520446cc24a632e8eaa767eb33221e4f5982e61d78a2e2c69bef75b5d 
- 07-Nov-25 05:27:42  INFO    Destination: sha256:773ca14520446cc24a632e8eaa767eb33221e4f5982e61d78a2e2c69bef75b5d 
- 07-Nov-25 05:27:42  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 07-Nov-25 05:27:42  INFO   
- 07-Nov-25 05:27:42  INFO  Comparing Platform Manifests: 
- 07-Nov-25 05:27:42  INFO    ✓ linux/amd64: sha256:c4e23f6c2bd0ff15e0f8902b154d5e51f0c82163f69223dd4508ca27303076f4 (MATCH) 
- 07-Nov-25 05:27:42  INFO    ✓ linux/arm64: sha256:eb47e1ccfd4e9a694387743333324887d8ed6a7442a09e65100d22e6d9f3b95c (MATCH) 
- 07-Nov-25 05:27:42  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 07-Nov-25 05:27:42  INFO  Creating latest tag: crane copy mosipdev2/inji-web:develop index.docker.io/mosipqa/inji-web:latest 
- 07-Nov-25 05:27:43  INFO  Successfully created latest tag 
- 07-Nov-25 05:27:43  INFO  Image available at: index.docker.io/mosipqa/mimoto:develop 
- 07-Nov-25 05:27:43  INFO   
- 07-Nov-25 05:27:43  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 07-Nov-25 05:27:43  INFO  Individual platform manifests should also match to ensure identical content. 
- 07-Nov-25 05:27:44  INFO  Successfully created latest tag 
- 07-Nov-25 05:27:44  INFO  Image available at: index.docker.io/mosipqa/inji-web:develop 
- 07-Nov-25 05:27:44  INFO   
- 07-Nov-25 05:27:44  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 07-Nov-25 05:27:44  INFO  Individual platform manifests should also match to ensure identical content. 
- 07-Nov-25 05:27:44  INFO  Completed processing mosipdev2/inji-web:develop to mosipqa/inji-web:develop 
- 07-Nov-25 05:27:44  INFO  Completed processing mosipdev2/mimoto:develop to mosipqa/mimoto:develop 
+ 07-Nov-25 06:08:06  INFO  LOGFILE CREATED : vidivi.log 
+ 07-Nov-25 06:08:06  INFO   
+ 07-Nov-25 06:08:06  INFO  ******************** Check Images List ************************************************************************************ 
+ 07-Nov-25 06:08:06  INFO   
+ 07-Nov-25 06:08:06  INFO  IMAGES= [['mosipdev/inji-certify-with-plugins:release-0.13.x', 'release-0.13.x']] 
+ 07-Nov-25 06:08:06  INFO   
+ 07-Nov-25 06:08:06  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 07-Nov-25 06:08:06  INFO   
+ 07-Nov-25 06:08:06  INFO  src = "mosipdev/inji-certify-with-plugins" tag = "release-0.13.x" 
+ 07-Nov-25 06:08:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 07-Nov-25 06:08:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify-with-plugins:pull HTTP/1.1" 200 None 
+ 07-Nov-25 06:08:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 07-Nov-25 06:08:07  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify-with-plugins/tags/release-0.13.x HTTP/1.1" 200 None 
+ 07-Nov-25 06:08:07  INFO   
+ 07-Nov-25 06:08:07  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 07-Nov-25 06:08:07  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 07-Nov-25 06:08:07  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 07-Nov-25 06:08:07  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 347 
+ 07-Nov-25 06:08:07  INFO   
+ 07-Nov-25 06:08:07  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 07-Nov-25 06:08:07  INFO   
+ 07-Nov-25 06:08:07  INFO  [ mosipdev2/inji-certify-with-plugins ]  
+ 07-Nov-25 06:08:08  INFO  Destination Image = "mosipdev2/inji-certify-with-plugins" Destination Image tag = "release-0.13.x" IMAGE_ID : sha256:0d56f5472ec8d87cd54a378ff258d8aec88c0f3a7042955809ed35e5765f1256 
+ 07-Nov-25 06:08:08  INFO   
+ 07-Nov-25 06:08:08  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 07-Nov-25 06:08:08  INFO   
+ 07-Nov-25 06:08:08  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 07-Nov-25 06:08:08  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 07-Nov-25 06:08:08  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 07-Nov-25 06:08:08  DEBUG  Found 'auths' section 
+ 07-Nov-25 06:08:08  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
+ 07-Nov-25 06:08:08  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 07-Nov-25 06:08:08  DEBUG  Looking for auth entry for 'docker.io' 
+ 07-Nov-25 06:08:08  DEBUG  Found 'https://index.docker.io/v1/' 
+ 07-Nov-25 06:08:08  INFO  Using 3 parallel workers for image transfers 
+ 07-Nov-25 06:08:08  INFO   
+ 07-Nov-25 06:08:08  INFO  ********** [ mosipdev2/inji-certify-with-plugins:release-0.13.x ] **************************************************** 
+ 07-Nov-25 06:08:08  INFO  Transferring image using crane... 
+ 07-Nov-25 06:08:08  INFO  Source uses tag reference: mosipdev/inji-certify-with-plugins:release-0.13.x 
+ 07-Nov-25 06:08:08  INFO  Analyzing source image manifest... 
+ 07-Nov-25 06:08:09  INFO  Source is MULTI-ARCH image 
+ 07-Nov-25 06:08:09  INFO  Source Index Digest (Manifest List): sha256:41feb37aa70215880d346c32151018f04c7eeac3c2f5d9a75d7da645b3b7716b 
+ 07-Nov-25 06:08:09  INFO  Source has 2 platform(s): 
+ 07-Nov-25 06:08:09  INFO    - linux/amd64: sha256:81874a7b889663e09d6b9fc45f6fac3dd657d8d2c257bf1c460f8f74af25f7a4 
+ 07-Nov-25 06:08:09  INFO    - linux/arm64: sha256:61f893d575b7286eea9b9c0b4b452e7bb06e82b3fba83b03a22556c5b9b37163 
+ 07-Nov-25 06:08:09  INFO  Using secure connection for HTTPS registry 
+ 07-Nov-25 06:08:09  INFO  Executing: crane copy mosipdev/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipdev2/inji-certify-with-plugins:release-0.13.x 
+ 07-Nov-25 06:08:12  INFO  Successfully transferred image with crane 
+ 07-Nov-25 06:08:13  INFO   
+ 07-Nov-25 06:08:13  INFO  Analyzing destination image manifest... 
+ 07-Nov-25 06:08:14  INFO  Destination is MULTI-ARCH image 
+ 07-Nov-25 06:08:14  INFO  Destination Index Digest (Manifest List): sha256:41feb37aa70215880d346c32151018f04c7eeac3c2f5d9a75d7da645b3b7716b 
+ 07-Nov-25 06:08:14  INFO  Destination has 2 platform(s): 
+ 07-Nov-25 06:08:14  INFO    - linux/amd64: sha256:81874a7b889663e09d6b9fc45f6fac3dd657d8d2c257bf1c460f8f74af25f7a4 
+ 07-Nov-25 06:08:14  INFO    - linux/arm64: sha256:61f893d575b7286eea9b9c0b4b452e7bb06e82b3fba83b03a22556c5b9b37163 
+ 07-Nov-25 06:08:14  INFO   
+ 07-Nov-25 06:08:14  INFO  === DIGEST VERIFICATION === 
+ 07-Nov-25 06:08:14  INFO  Comparing Index Digests (Manifest Lists): 
+ 07-Nov-25 06:08:14  INFO    Source:      sha256:41feb37aa70215880d346c32151018f04c7eeac3c2f5d9a75d7da645b3b7716b 
+ 07-Nov-25 06:08:14  INFO    Destination: sha256:41feb37aa70215880d346c32151018f04c7eeac3c2f5d9a75d7da645b3b7716b 
+ 07-Nov-25 06:08:14  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 07-Nov-25 06:08:14  INFO   
+ 07-Nov-25 06:08:14  INFO  Comparing Platform Manifests: 
+ 07-Nov-25 06:08:14  INFO    ✓ linux/amd64: sha256:81874a7b889663e09d6b9fc45f6fac3dd657d8d2c257bf1c460f8f74af25f7a4 (MATCH) 
+ 07-Nov-25 06:08:14  INFO    ✓ linux/arm64: sha256:61f893d575b7286eea9b9c0b4b452e7bb06e82b3fba83b03a22556c5b9b37163 (MATCH) 
+ 07-Nov-25 06:08:14  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 07-Nov-25 06:08:14  INFO  Creating latest tag: crane copy mosipdev/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipdev2/inji-certify-with-plugins:latest 
+ 07-Nov-25 06:08:16  INFO  Successfully created latest tag 
+ 07-Nov-25 06:08:16  INFO  Image available at: index.docker.io/mosipdev2/inji-certify-with-plugins:release-0.13.x 
+ 07-Nov-25 06:08:16  INFO   
+ 07-Nov-25 06:08:16  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 07-Nov-25 06:08:16  INFO  Individual platform manifests should also match to ensure identical content. 
+ 07-Nov-25 06:08:16  INFO  Completed processing mosipdev/inji-certify-with-plugins:release-0.13.x to mosipdev2/inji-certify-with-plugins:release-0.13.x 
