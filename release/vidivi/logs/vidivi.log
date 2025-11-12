@@ -1,107 +1,80 @@
- 12-Nov-25 11:09:09  INFO  LOGFILE CREATED : vidivi.log 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  ******************** Check Images List ************************************************************************************ 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  IMAGES= [['mosipdev/inji-verify-service:develop', 'develop'], ['mosipdev/inji-verify-ui:develop', 'develop']] 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  src = "mosipdev/inji-verify-service" tag = "develop" 
- 12-Nov-25 11:09:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Nov-25 11:09:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify-service:pull HTTP/1.1" 200 None 
- 12-Nov-25 11:09:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Nov-25 11:09:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify-service/tags/develop HTTP/1.1" 200 None 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  src = "mosipdev/inji-verify-ui" tag = "develop" 
- 12-Nov-25 11:09:09  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Nov-25 11:09:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-verify-ui:pull HTTP/1.1" 200 None 
- 12-Nov-25 11:09:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Nov-25 11:09:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-verify-ui/tags/develop HTTP/1.1" 200 819 
- 12-Nov-25 11:09:09  INFO   
- 12-Nov-25 11:09:09  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 12-Nov-25 11:09:09  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 12-Nov-25 11:09:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
- 12-Nov-25 11:09:10  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 347 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  [ mosipdev2/inji-verify-service ]  
- 12-Nov-25 11:09:10  INFO  Destination Image = "mosipdev2/inji-verify-service" Destination Image tag = "develop" IMAGE_ID : sha256:f2d6a48b71fb821c11dc0b888e7fb4b5b6c69ddfe03e70afbb05300ec828614d 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  [ mosipdev2/inji-verify-ui ]  
- 12-Nov-25 11:09:10  INFO  Destination Image = "mosipdev2/inji-verify-ui" Destination Image tag = "develop" IMAGE_ID : sha256:4834143fb46679f4c3bebd905ed564627f89aec9446c620a3a2d3c6e4464d69b 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  ******************** HASH Operation Results ********************************************************************** 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 12-Nov-25 11:09:10  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 12-Nov-25 11:09:10  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 12-Nov-25 11:09:10  DEBUG  Found 'auths' section 
- 12-Nov-25 11:09:10  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
- 12-Nov-25 11:09:10  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
- 12-Nov-25 11:09:10  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Nov-25 11:09:10  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Nov-25 11:09:10  INFO  Using 3 parallel workers for image transfers 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  ********** [ mosipdev2/inji-verify-service:develop ] **************************************************** 
- 12-Nov-25 11:09:10  INFO   
- 12-Nov-25 11:09:10  INFO  Transferring image using crane... 
- 12-Nov-25 11:09:10  INFO  ********** [ mosipdev2/inji-verify-ui:develop ] **************************************************** 
- 12-Nov-25 11:09:10  INFO  Transferring image using crane... 
- 12-Nov-25 11:09:10  INFO  Source uses tag reference: mosipdev/inji-verify-service:develop 
- 12-Nov-25 11:09:10  INFO  Analyzing source image manifest... 
- 12-Nov-25 11:09:10  INFO  Source uses tag reference: mosipdev/inji-verify-ui:develop 
- 12-Nov-25 11:09:10  INFO  Analyzing source image manifest... 
- 12-Nov-25 11:09:10  INFO  Source is SINGLE-ARCH image 
- 12-Nov-25 11:09:10  INFO  Source Platform Digest: sha256:5123902a73d3727d692af32faad8ec7da74d37bf75ffbc0062c8862b678700a4 
- 12-Nov-25 11:09:10  INFO  Using secure connection for HTTPS registry 
- 12-Nov-25 11:09:10  INFO  Executing: crane copy mosipdev/inji-verify-ui:develop index.docker.io/mosipdev2/inji-verify-ui:develop 
- 12-Nov-25 11:09:10  INFO  Source is MULTI-ARCH image 
- 12-Nov-25 11:09:10  INFO  Source Index Digest (Manifest List): sha256:10c08844e7ec7ecc2664d9ae55b16f966b1e51b94cbd204e69c357eb4fa13344 
- 12-Nov-25 11:09:10  INFO  Source has 2 platform(s): 
- 12-Nov-25 11:09:10  INFO    - linux/amd64: sha256:1f79e471a21d2b9e9e7595de2dbed733dcc0274b09cf0450a46f34decfcd3535 
- 12-Nov-25 11:09:10  INFO    - linux/arm64: sha256:e16546a99154d3855edc901664fad6996fc8563c3a8bdf18ffe8a5833960d9cd 
- 12-Nov-25 11:09:10  INFO  Using secure connection for HTTPS registry 
- 12-Nov-25 11:09:10  INFO  Executing: crane copy mosipdev/inji-verify-service:develop index.docker.io/mosipdev2/inji-verify-service:develop 
- 12-Nov-25 11:09:12  INFO  Successfully transferred image with crane 
- 12-Nov-25 11:09:12  INFO   
- 12-Nov-25 11:09:12  INFO  Analyzing destination image manifest... 
- 12-Nov-25 11:09:13  INFO  Destination is SINGLE-ARCH image 
- 12-Nov-25 11:09:13  INFO  Destination Platform Digest: sha256:5123902a73d3727d692af32faad8ec7da74d37bf75ffbc0062c8862b678700a4 
- 12-Nov-25 11:09:13  INFO   
- 12-Nov-25 11:09:13  INFO  === DIGEST VERIFICATION === 
- 12-Nov-25 11:09:13  INFO  Comparing Platform Digests: 
- 12-Nov-25 11:09:13  INFO    Source:      sha256:5123902a73d3727d692af32faad8ec7da74d37bf75ffbc0062c8862b678700a4 
- 12-Nov-25 11:09:13  INFO    Destination: sha256:5123902a73d3727d692af32faad8ec7da74d37bf75ffbc0062c8862b678700a4 
- 12-Nov-25 11:09:13  INFO  ✓ Platform Digest MATCH - Images are identical! 
- 12-Nov-25 11:09:13  INFO  Creating latest tag: crane copy mosipdev/inji-verify-ui:develop index.docker.io/mosipdev2/inji-verify-ui:latest 
- 12-Nov-25 11:09:13  INFO  Successfully transferred image with crane 
- 12-Nov-25 11:09:13  INFO   
- 12-Nov-25 11:09:13  INFO  Analyzing destination image manifest... 
- 12-Nov-25 11:09:13  INFO  Destination is MULTI-ARCH image 
- 12-Nov-25 11:09:13  INFO  Destination Index Digest (Manifest List): sha256:10c08844e7ec7ecc2664d9ae55b16f966b1e51b94cbd204e69c357eb4fa13344 
- 12-Nov-25 11:09:13  INFO  Destination has 2 platform(s): 
- 12-Nov-25 11:09:13  INFO    - linux/amd64: sha256:1f79e471a21d2b9e9e7595de2dbed733dcc0274b09cf0450a46f34decfcd3535 
- 12-Nov-25 11:09:13  INFO    - linux/arm64: sha256:e16546a99154d3855edc901664fad6996fc8563c3a8bdf18ffe8a5833960d9cd 
- 12-Nov-25 11:09:13  INFO   
- 12-Nov-25 11:09:13  INFO  === DIGEST VERIFICATION === 
- 12-Nov-25 11:09:13  INFO  Comparing Index Digests (Manifest Lists): 
- 12-Nov-25 11:09:13  INFO    Source:      sha256:10c08844e7ec7ecc2664d9ae55b16f966b1e51b94cbd204e69c357eb4fa13344 
- 12-Nov-25 11:09:13  INFO    Destination: sha256:10c08844e7ec7ecc2664d9ae55b16f966b1e51b94cbd204e69c357eb4fa13344 
- 12-Nov-25 11:09:13  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 12-Nov-25 11:09:13  INFO   
- 12-Nov-25 11:09:13  INFO  Comparing Platform Manifests: 
- 12-Nov-25 11:09:13  INFO    ✓ linux/amd64: sha256:1f79e471a21d2b9e9e7595de2dbed733dcc0274b09cf0450a46f34decfcd3535 (MATCH) 
- 12-Nov-25 11:09:13  INFO    ✓ linux/arm64: sha256:e16546a99154d3855edc901664fad6996fc8563c3a8bdf18ffe8a5833960d9cd (MATCH) 
- 12-Nov-25 11:09:13  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 12-Nov-25 11:09:13  INFO  Creating latest tag: crane copy mosipdev/inji-verify-service:develop index.docker.io/mosipdev2/inji-verify-service:latest 
- 12-Nov-25 11:09:14  INFO  Successfully created latest tag 
- 12-Nov-25 11:09:14  INFO  Image available at: index.docker.io/mosipdev2/inji-verify-ui:develop 
- 12-Nov-25 11:09:14  INFO   
- 12-Nov-25 11:09:15  INFO  Successfully created latest tag 
- 12-Nov-25 11:09:15  INFO  Image available at: index.docker.io/mosipdev2/inji-verify-service:develop 
- 12-Nov-25 11:09:15  INFO   
- 12-Nov-25 11:09:15  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 12-Nov-25 11:09:15  INFO  Individual platform manifests should also match to ensure identical content. 
- 12-Nov-25 11:09:15  INFO  Completed processing mosipdev/inji-verify-service:develop to mosipdev2/inji-verify-service:develop 
- 12-Nov-25 11:09:15  INFO  Completed processing mosipdev/inji-verify-ui:develop to mosipdev2/inji-verify-ui:develop 
+ 12-Nov-25 11:57:39  INFO  LOGFILE CREATED : vidivi.log 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  ******************** Check Images List ************************************************************************************ 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  IMAGES= [['mosipdev/uitest-web:release-0.15.x', 'release-0.15.x']] 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  src = "mosipdev/uitest-web" tag = "release-0.15.x" 
+ 12-Nov-25 11:57:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Nov-25 11:57:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-web:pull HTTP/1.1" 200 None 
+ 12-Nov-25 11:57:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Nov-25 11:57:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/uitest-web/tags/release-0.15.x HTTP/1.1" 200 None 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 12-Nov-25 11:57:39  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 12-Nov-25 11:57:39  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 12-Nov-25 11:57:39  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 347 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 12-Nov-25 11:57:39  INFO   
+ 12-Nov-25 11:57:39  INFO  [ mosipdev2/uitest-web ]  
+ 12-Nov-25 11:57:40  WARNING  Crane digest failed for index.docker.io/mosipdev2/uitest-web:release-0.15.x: 2025/11/12 11:57:40 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipdev2/uitest-web/manifests/release-0.15.x: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipdev2/uitest-web/manifests/release-0.15.x: MANIFEST_UNKNOWN: manifest unknown; unknown tag=release-0.15.x
+ 
+ 12-Nov-25 11:57:40  INFO  Destination Image = "mosipdev2/uitest-web" Destination Image tag = "release-0.15.x" IMAGE_ID :  
+ 12-Nov-25 11:57:40  INFO  Destination image mosipdev2/uitest-web:release-0.15.x does not exist 
+ 12-Nov-25 11:57:40  INFO   
+ 12-Nov-25 11:57:40  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 12-Nov-25 11:57:40  INFO   
+ 12-Nov-25 11:57:40  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipdev2/uitest-web:release-0.15.x']] 
+ 12-Nov-25 11:57:40  INFO   
+ 12-Nov-25 11:57:40  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 12-Nov-25 11:57:40  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 12-Nov-25 11:57:40  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 12-Nov-25 11:57:40  DEBUG  Found 'auths' section 
+ 12-Nov-25 11:57:40  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
+ 12-Nov-25 11:57:40  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 824 
+ 12-Nov-25 11:57:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Nov-25 11:57:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Nov-25 11:57:40  INFO  Using 3 parallel workers for image transfers 
+ 12-Nov-25 11:57:40  INFO   
+ 12-Nov-25 11:57:40  INFO  ********** [ mosipdev2/uitest-web:release-0.15.x ] **************************************************** 
+ 12-Nov-25 11:57:40  INFO  Transferring image using crane... 
+ 12-Nov-25 11:57:40  INFO  Source uses tag reference: mosipdev/uitest-web:release-0.15.x 
+ 12-Nov-25 11:57:40  INFO  Analyzing source image manifest... 
+ 12-Nov-25 11:57:41  INFO  Source is MULTI-ARCH image 
+ 12-Nov-25 11:57:41  INFO  Source Index Digest (Manifest List): sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
+ 12-Nov-25 11:57:41  INFO  Source has 2 platform(s): 
+ 12-Nov-25 11:57:41  INFO    - linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 
+ 12-Nov-25 11:57:41  INFO    - linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 
+ 12-Nov-25 11:57:41  INFO  Using secure connection for HTTPS registry 
+ 12-Nov-25 11:57:41  INFO  Executing: crane copy mosipdev/uitest-web:release-0.15.x index.docker.io/mosipdev2/uitest-web:release-0.15.x 
+ 12-Nov-25 11:57:47  INFO  Successfully transferred image with crane 
+ 12-Nov-25 11:57:47  INFO   
+ 12-Nov-25 11:57:47  INFO  Analyzing destination image manifest... 
+ 12-Nov-25 11:57:48  INFO  Destination is MULTI-ARCH image 
+ 12-Nov-25 11:57:48  INFO  Destination Index Digest (Manifest List): sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
+ 12-Nov-25 11:57:48  INFO  Destination has 2 platform(s): 
+ 12-Nov-25 11:57:48  INFO    - linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 
+ 12-Nov-25 11:57:48  INFO    - linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 
+ 12-Nov-25 11:57:48  INFO   
+ 12-Nov-25 11:57:48  INFO  === DIGEST VERIFICATION === 
+ 12-Nov-25 11:57:48  INFO  Comparing Index Digests (Manifest Lists): 
+ 12-Nov-25 11:57:48  INFO    Source:      sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
+ 12-Nov-25 11:57:48  INFO    Destination: sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
+ 12-Nov-25 11:57:48  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 12-Nov-25 11:57:48  INFO   
+ 12-Nov-25 11:57:48  INFO  Comparing Platform Manifests: 
+ 12-Nov-25 11:57:48  INFO    ✓ linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 (MATCH) 
+ 12-Nov-25 11:57:48  INFO    ✓ linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 (MATCH) 
+ 12-Nov-25 11:57:48  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 12-Nov-25 11:57:48  INFO  Creating latest tag: crane copy mosipdev/uitest-web:release-0.15.x index.docker.io/mosipdev2/uitest-web:latest 
+ 12-Nov-25 11:57:51  INFO  Successfully created latest tag 
+ 12-Nov-25 11:57:51  INFO  Image available at: index.docker.io/mosipdev2/uitest-web:release-0.15.x 
+ 12-Nov-25 11:57:51  INFO   
+ 12-Nov-25 11:57:51  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 12-Nov-25 11:57:51  INFO  Individual platform manifests should also match to ensure identical content. 
+ 12-Nov-25 11:57:51  INFO  Completed processing mosipdev/uitest-web:release-0.15.x to mosipdev2/uitest-web:release-0.15.x 
