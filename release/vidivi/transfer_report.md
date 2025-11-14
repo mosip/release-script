@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Fri Nov 14 07:07:03 UTC 2025
+**Date**: Fri Nov 14 07:53:00 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/apitest-pms:1.2.2.x 
+- index.docker.io/mosipqa/signup-with-plugins:1.3.x 
