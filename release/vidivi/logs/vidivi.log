@@ -1,73 +1,120 @@
- 16-Nov-25 19:22:35  INFO  LOGFILE CREATED : vidivi.log 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  ******************** Check Images List ************************************************************************************ 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  IMAGES= [['mosipdev2/commons-packet-service:release-1.3.x', '1.3.x']] 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  src = "mosipdev2/commons-packet-service" tag = "release-1.3.x" 
- 16-Nov-25 19:22:35  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 16-Nov-25 19:22:35  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/commons-packet-service:pull HTTP/1.1" 200 None 
- 16-Nov-25 19:22:35  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 16-Nov-25 19:22:35  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/commons-packet-service/tags/release-1.3.x HTTP/1.1" 200 None 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 16-Nov-25 19:22:35  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 16-Nov-25 19:22:35  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 16-Nov-25 19:22:35  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 16-Nov-25 19:22:35  INFO   
- 16-Nov-25 19:22:35  INFO  [ mosipqa/commons-packet-service ]  
- 16-Nov-25 19:22:36  INFO  Destination Image = "mosipqa/commons-packet-service" Destination Image tag = "1.3.x" IMAGE_ID : sha256:1951fc8439ae35eed5784b00fe9388bc06e93920bbc30e7ce6a069c8e7efe8c4 
- 16-Nov-25 19:22:36  INFO   
- 16-Nov-25 19:22:36  INFO  ******************** HASH Operation Results ********************************************************************** 
- 16-Nov-25 19:22:36  INFO   
- 16-Nov-25 19:22:36  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 16-Nov-25 19:22:36  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 16-Nov-25 19:22:36  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 16-Nov-25 19:22:36  DEBUG  Found 'auths' section 
- 16-Nov-25 19:22:36  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
- 16-Nov-25 19:22:36  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 16-Nov-25 19:22:36  DEBUG  Looking for auth entry for 'docker.io' 
- 16-Nov-25 19:22:36  DEBUG  Found 'https://index.docker.io/v1/' 
- 16-Nov-25 19:22:36  INFO  Using 3 parallel workers for image transfers 
- 16-Nov-25 19:22:36  INFO   
- 16-Nov-25 19:22:36  INFO  ********** [ mosipqa/commons-packet-service:1.3.x ] **************************************************** 
- 16-Nov-25 19:22:36  INFO  Transferring image using crane... 
- 16-Nov-25 19:22:36  INFO  Source uses tag reference: mosipdev2/commons-packet-service:release-1.3.x 
- 16-Nov-25 19:22:36  INFO  Analyzing source image manifest... 
- 16-Nov-25 19:22:37  INFO  Source is MULTI-ARCH image 
- 16-Nov-25 19:22:37  INFO  Source Index Digest (Manifest List): sha256:44cbc0de2d1144f5ba9012125cf7d50c406387de45f1e9b608f93c45ae546d65 
- 16-Nov-25 19:22:37  INFO  Source has 2 platform(s): 
- 16-Nov-25 19:22:37  INFO    - linux/amd64: sha256:e81e1c14ba18b2213236ea97eef1651983b0fe774c628d59beacd52345117046 
- 16-Nov-25 19:22:37  INFO    - linux/arm64: sha256:60cf99ec98bbc950f42fe91e4ea6f5d35c447b7e6a30ed7642035fcfa70e7fb8 
- 16-Nov-25 19:22:37  INFO  Using secure connection for HTTPS registry 
- 16-Nov-25 19:22:37  INFO  Executing: crane copy mosipdev2/commons-packet-service:release-1.3.x index.docker.io/mosipqa/commons-packet-service:1.3.x 
- 16-Nov-25 19:22:40  INFO  Successfully transferred image with crane 
- 16-Nov-25 19:22:40  INFO   
- 16-Nov-25 19:22:40  INFO  Analyzing destination image manifest... 
- 16-Nov-25 19:22:41  INFO  Destination is MULTI-ARCH image 
- 16-Nov-25 19:22:41  INFO  Destination Index Digest (Manifest List): sha256:44cbc0de2d1144f5ba9012125cf7d50c406387de45f1e9b608f93c45ae546d65 
- 16-Nov-25 19:22:41  INFO  Destination has 2 platform(s): 
- 16-Nov-25 19:22:41  INFO    - linux/amd64: sha256:e81e1c14ba18b2213236ea97eef1651983b0fe774c628d59beacd52345117046 
- 16-Nov-25 19:22:41  INFO    - linux/arm64: sha256:60cf99ec98bbc950f42fe91e4ea6f5d35c447b7e6a30ed7642035fcfa70e7fb8 
- 16-Nov-25 19:22:41  INFO   
- 16-Nov-25 19:22:41  INFO  === DIGEST VERIFICATION === 
- 16-Nov-25 19:22:41  INFO  Comparing Index Digests (Manifest Lists): 
- 16-Nov-25 19:22:41  INFO    Source:      sha256:44cbc0de2d1144f5ba9012125cf7d50c406387de45f1e9b608f93c45ae546d65 
- 16-Nov-25 19:22:41  INFO    Destination: sha256:44cbc0de2d1144f5ba9012125cf7d50c406387de45f1e9b608f93c45ae546d65 
- 16-Nov-25 19:22:41  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 16-Nov-25 19:22:41  INFO   
- 16-Nov-25 19:22:41  INFO  Comparing Platform Manifests: 
- 16-Nov-25 19:22:41  INFO    ✓ linux/amd64: sha256:e81e1c14ba18b2213236ea97eef1651983b0fe774c628d59beacd52345117046 (MATCH) 
- 16-Nov-25 19:22:41  INFO    ✓ linux/arm64: sha256:60cf99ec98bbc950f42fe91e4ea6f5d35c447b7e6a30ed7642035fcfa70e7fb8 (MATCH) 
- 16-Nov-25 19:22:41  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 16-Nov-25 19:22:41  INFO  Creating latest tag: crane copy mosipdev2/commons-packet-service:release-1.3.x index.docker.io/mosipqa/commons-packet-service:latest 
- 16-Nov-25 19:22:44  INFO  Successfully created latest tag 
- 16-Nov-25 19:22:44  INFO  Image available at: index.docker.io/mosipqa/commons-packet-service:1.3.x 
- 16-Nov-25 19:22:44  INFO   
- 16-Nov-25 19:22:44  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 16-Nov-25 19:22:44  INFO  Individual platform manifests should also match to ensure identical content. 
- 16-Nov-25 19:22:44  INFO  Completed processing mosipdev2/commons-packet-service:release-1.3.x to mosipqa/commons-packet-service:1.3.x 
+ 17-Nov-25 07:58:20  INFO  LOGFILE CREATED : vidivi.log 
+ 17-Nov-25 07:58:20  INFO   
+ 17-Nov-25 07:58:20  INFO  ******************** Check Images List ************************************************************************************ 
+ 17-Nov-25 07:58:20  INFO   
+ 17-Nov-25 07:58:20  INFO  IMAGES= [['mosipdev/mosip-file-server:release-1.3.x', '1.3.x'], ['mosipdev/masterdata-loader:release-1.3.x', '1.3.x']] 
+ 17-Nov-25 07:58:20  INFO   
+ 17-Nov-25 07:58:20  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 17-Nov-25 07:58:20  INFO   
+ 17-Nov-25 07:58:20  INFO  src = "mosipdev/mosip-file-server" tag = "release-1.3.x" 
+ 17-Nov-25 07:58:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 17-Nov-25 07:58:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mosip-file-server:pull HTTP/1.1" 200 None 
+ 17-Nov-25 07:58:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 17-Nov-25 07:58:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mosip-file-server/tags/release-1.3.x HTTP/1.1" 200 None 
+ 17-Nov-25 07:58:20  INFO   
+ 17-Nov-25 07:58:20  INFO  src = "mosipdev/masterdata-loader" tag = "release-1.3.x" 
+ 17-Nov-25 07:58:20  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 17-Nov-25 07:58:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/masterdata-loader:pull HTTP/1.1" 200 None 
+ 17-Nov-25 07:58:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 17-Nov-25 07:58:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/masterdata-loader/tags/release-1.3.x HTTP/1.1" 200 None 
+ 17-Nov-25 07:58:21  INFO   
+ 17-Nov-25 07:58:21  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 17-Nov-25 07:58:21  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 17-Nov-25 07:58:21  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 17-Nov-25 07:58:21  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
+ 17-Nov-25 07:58:21  INFO   
+ 17-Nov-25 07:58:21  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 17-Nov-25 07:58:21  INFO   
+ 17-Nov-25 07:58:21  INFO  [ mosipqa/mosip-file-server ]  
+ 17-Nov-25 07:58:22  INFO  Destination Image = "mosipqa/mosip-file-server" Destination Image tag = "1.3.x" IMAGE_ID : sha256:1ab3e9b496a29d5b02d55cfffc70137f06a68a393b7e679c29ed59eb03b83fb2 
+ 17-Nov-25 07:58:22  INFO   
+ 17-Nov-25 07:58:22  INFO  [ mosipqa/masterdata-loader ]  
+ 17-Nov-25 07:58:23  INFO  Destination Image = "mosipqa/masterdata-loader" Destination Image tag = "1.3.x" IMAGE_ID : sha256:e8a20cf145ee3631b1de9f92eebcdc46cb02104a03f984eb4435de5407a20c21 
+ 17-Nov-25 07:58:23  INFO   
+ 17-Nov-25 07:58:23  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 17-Nov-25 07:58:23  INFO   
+ 17-Nov-25 07:58:23  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 17-Nov-25 07:58:23  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 17-Nov-25 07:58:23  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 17-Nov-25 07:58:23  DEBUG  Found 'auths' section 
+ 17-Nov-25 07:58:23  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 17-Nov-25 07:58:23  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 17-Nov-25 07:58:23  DEBUG  Looking for auth entry for 'docker.io' 
+ 17-Nov-25 07:58:23  DEBUG  Found 'https://index.docker.io/v1/' 
+ 17-Nov-25 07:58:23  INFO  Using 3 parallel workers for image transfers 
+ 17-Nov-25 07:58:23  INFO   
+ 17-Nov-25 07:58:23  INFO  ********** [ mosipqa/mosip-file-server:1.3.x ] **************************************************** 
+ 17-Nov-25 07:58:23  INFO  Transferring image using crane... 
+ 17-Nov-25 07:58:23  INFO   
+ 17-Nov-25 07:58:23  INFO  ********** [ mosipqa/masterdata-loader:1.3.x ] **************************************************** 
+ 17-Nov-25 07:58:23  INFO  Transferring image using crane... 
+ 17-Nov-25 07:58:23  INFO  Source uses tag reference: mosipdev/masterdata-loader:release-1.3.x 
+ 17-Nov-25 07:58:23  INFO  Analyzing source image manifest... 
+ 17-Nov-25 07:58:23  INFO  Source uses tag reference: mosipdev/mosip-file-server:release-1.3.x 
+ 17-Nov-25 07:58:23  INFO  Analyzing source image manifest... 
+ 17-Nov-25 07:58:24  INFO  Source is MULTI-ARCH image 
+ 17-Nov-25 07:58:24  INFO  Source Index Digest (Manifest List): sha256:63fbc05eb6af97aace2021c5ee4932bc33740345947d65fa7c782c66ba7e5fcd 
+ 17-Nov-25 07:58:24  INFO  Source has 2 platform(s): 
+ 17-Nov-25 07:58:24  INFO    - linux/amd64: sha256:72afab6b9d6814a1f5127354ad7d0669ca4a6687c6027df1b284b5d32fb4b3d5 
+ 17-Nov-25 07:58:24  INFO    - linux/arm64: sha256:aecada74ce3e14201ed52d43c4a72277e99484c93f809584ab42ddfde38fccf2 
+ 17-Nov-25 07:58:24  INFO  Using secure connection for HTTPS registry 
+ 17-Nov-25 07:58:24  INFO  Executing: crane copy mosipdev/mosip-file-server:release-1.3.x index.docker.io/mosipqa/mosip-file-server:1.3.x 
+ 17-Nov-25 07:58:24  INFO  Source is MULTI-ARCH image 
+ 17-Nov-25 07:58:24  INFO  Source Index Digest (Manifest List): sha256:590b8b3e70d8199a0e579dc415657c76689e3e54e4e0ab3d275f2a20fc43356c 
+ 17-Nov-25 07:58:24  INFO  Source has 2 platform(s): 
+ 17-Nov-25 07:58:24  INFO    - linux/amd64: sha256:8bb7a29db32924fdea1d37a0f4809736ce6e749275347d750f8a101432207e34 
+ 17-Nov-25 07:58:24  INFO    - linux/arm64: sha256:8d656d1fe9d295985121020bb03ccd9fc0b46163d302405c11f26de4f4be0eb5 
+ 17-Nov-25 07:58:24  INFO  Using secure connection for HTTPS registry 
+ 17-Nov-25 07:58:24  INFO  Executing: crane copy mosipdev/masterdata-loader:release-1.3.x index.docker.io/mosipqa/masterdata-loader:1.3.x 
+ 17-Nov-25 07:58:28  INFO  Successfully transferred image with crane 
+ 17-Nov-25 07:58:28  INFO   
+ 17-Nov-25 07:58:28  INFO  Analyzing destination image manifest... 
+ 17-Nov-25 07:58:29  INFO  Successfully transferred image with crane 
+ 17-Nov-25 07:58:29  INFO   
+ 17-Nov-25 07:58:29  INFO  Analyzing destination image manifest... 
+ 17-Nov-25 07:58:29  INFO  Destination is MULTI-ARCH image 
+ 17-Nov-25 07:58:29  INFO  Destination Index Digest (Manifest List): sha256:590b8b3e70d8199a0e579dc415657c76689e3e54e4e0ab3d275f2a20fc43356c 
+ 17-Nov-25 07:58:29  INFO  Destination has 2 platform(s): 
+ 17-Nov-25 07:58:29  INFO    - linux/amd64: sha256:8bb7a29db32924fdea1d37a0f4809736ce6e749275347d750f8a101432207e34 
+ 17-Nov-25 07:58:29  INFO    - linux/arm64: sha256:8d656d1fe9d295985121020bb03ccd9fc0b46163d302405c11f26de4f4be0eb5 
+ 17-Nov-25 07:58:29  INFO   
+ 17-Nov-25 07:58:29  INFO  === DIGEST VERIFICATION === 
+ 17-Nov-25 07:58:29  INFO  Comparing Index Digests (Manifest Lists): 
+ 17-Nov-25 07:58:29  INFO    Source:      sha256:590b8b3e70d8199a0e579dc415657c76689e3e54e4e0ab3d275f2a20fc43356c 
+ 17-Nov-25 07:58:29  INFO    Destination: sha256:590b8b3e70d8199a0e579dc415657c76689e3e54e4e0ab3d275f2a20fc43356c 
+ 17-Nov-25 07:58:29  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 17-Nov-25 07:58:29  INFO   
+ 17-Nov-25 07:58:29  INFO  Comparing Platform Manifests: 
+ 17-Nov-25 07:58:29  INFO    ✓ linux/amd64: sha256:8bb7a29db32924fdea1d37a0f4809736ce6e749275347d750f8a101432207e34 (MATCH) 
+ 17-Nov-25 07:58:29  INFO    ✓ linux/arm64: sha256:8d656d1fe9d295985121020bb03ccd9fc0b46163d302405c11f26de4f4be0eb5 (MATCH) 
+ 17-Nov-25 07:58:29  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 17-Nov-25 07:58:29  INFO  Creating latest tag: crane copy mosipdev/masterdata-loader:release-1.3.x index.docker.io/mosipqa/masterdata-loader:latest 
+ 17-Nov-25 07:58:30  INFO  Destination is MULTI-ARCH image 
+ 17-Nov-25 07:58:30  INFO  Destination Index Digest (Manifest List): sha256:63fbc05eb6af97aace2021c5ee4932bc33740345947d65fa7c782c66ba7e5fcd 
+ 17-Nov-25 07:58:30  INFO  Destination has 2 platform(s): 
+ 17-Nov-25 07:58:30  INFO    - linux/amd64: sha256:72afab6b9d6814a1f5127354ad7d0669ca4a6687c6027df1b284b5d32fb4b3d5 
+ 17-Nov-25 07:58:30  INFO    - linux/arm64: sha256:aecada74ce3e14201ed52d43c4a72277e99484c93f809584ab42ddfde38fccf2 
+ 17-Nov-25 07:58:30  INFO   
+ 17-Nov-25 07:58:30  INFO  === DIGEST VERIFICATION === 
+ 17-Nov-25 07:58:30  INFO  Comparing Index Digests (Manifest Lists): 
+ 17-Nov-25 07:58:30  INFO    Source:      sha256:63fbc05eb6af97aace2021c5ee4932bc33740345947d65fa7c782c66ba7e5fcd 
+ 17-Nov-25 07:58:30  INFO    Destination: sha256:63fbc05eb6af97aace2021c5ee4932bc33740345947d65fa7c782c66ba7e5fcd 
+ 17-Nov-25 07:58:30  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 17-Nov-25 07:58:30  INFO   
+ 17-Nov-25 07:58:30  INFO  Comparing Platform Manifests: 
+ 17-Nov-25 07:58:30  INFO    ✓ linux/amd64: sha256:72afab6b9d6814a1f5127354ad7d0669ca4a6687c6027df1b284b5d32fb4b3d5 (MATCH) 
+ 17-Nov-25 07:58:30  INFO    ✓ linux/arm64: sha256:aecada74ce3e14201ed52d43c4a72277e99484c93f809584ab42ddfde38fccf2 (MATCH) 
+ 17-Nov-25 07:58:30  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 17-Nov-25 07:58:30  INFO  Creating latest tag: crane copy mosipdev/mosip-file-server:release-1.3.x index.docker.io/mosipqa/mosip-file-server:latest 
+ 17-Nov-25 07:58:32  INFO  Successfully created latest tag 
+ 17-Nov-25 07:58:32  INFO  Image available at: index.docker.io/mosipqa/masterdata-loader:1.3.x 
+ 17-Nov-25 07:58:32  INFO   
+ 17-Nov-25 07:58:32  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 17-Nov-25 07:58:32  INFO  Individual platform manifests should also match to ensure identical content. 
+ 17-Nov-25 07:58:32  INFO  Successfully created latest tag 
+ 17-Nov-25 07:58:32  INFO  Image available at: index.docker.io/mosipqa/mosip-file-server:1.3.x 
+ 17-Nov-25 07:58:32  INFO   
+ 17-Nov-25 07:58:32  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 17-Nov-25 07:58:32  INFO  Individual platform manifests should also match to ensure identical content. 
+ 17-Nov-25 07:58:32  INFO  Completed processing mosipdev/mosip-file-server:release-1.3.x to mosipqa/mosip-file-server:1.3.x 
+ 17-Nov-25 07:58:32  INFO  Completed processing mosipdev/masterdata-loader:release-1.3.x to mosipqa/masterdata-loader:1.3.x 
