@@ -1,80 +1,17 @@
- 17-Nov-25 12:24:19  INFO  LOGFILE CREATED : vidivi.log 
- 17-Nov-25 12:24:19  INFO   
- 17-Nov-25 12:24:19  INFO  ******************** Check Images List ************************************************************************************ 
- 17-Nov-25 12:24:19  INFO   
- 17-Nov-25 12:24:19  INFO  IMAGES= [['mosipdev2/uitest-web:release-0.15.x', '0.15.x']] 
- 17-Nov-25 12:24:19  INFO   
- 17-Nov-25 12:24:19  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 17-Nov-25 12:24:19  INFO   
- 17-Nov-25 12:24:19  INFO  src = "mosipdev2/uitest-web" tag = "release-0.15.x" 
- 17-Nov-25 12:24:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 17-Nov-25 12:24:20  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-web:pull HTTP/1.1" 200 None 
- 17-Nov-25 12:24:20  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 17-Nov-25 12:24:20  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-web/tags/release-0.15.x HTTP/1.1" 200 None 
- 17-Nov-25 12:24:20  INFO   
- 17-Nov-25 12:24:20  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 17-Nov-25 12:24:20  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 17-Nov-25 12:24:20  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 17-Nov-25 12:24:20  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 17-Nov-25 12:24:20  INFO   
- 17-Nov-25 12:24:20  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 17-Nov-25 12:24:20  INFO   
- 17-Nov-25 12:24:20  INFO  [ mosipqa/uitest-web ]  
- 17-Nov-25 12:24:21  WARNING  Crane digest failed for index.docker.io/mosipqa/uitest-web:0.15.x: 2025/11/17 12:24:21 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipqa/uitest-web/manifests/0.15.x: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipqa/uitest-web/manifests/0.15.x: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.15.x
- 
- 17-Nov-25 12:24:21  INFO  Destination Image = "mosipqa/uitest-web" Destination Image tag = "0.15.x" IMAGE_ID :  
- 17-Nov-25 12:24:21  INFO  Destination image mosipqa/uitest-web:0.15.x does not exist 
- 17-Nov-25 12:24:21  INFO   
- 17-Nov-25 12:24:21  INFO  ******************** HASH Operation Results ********************************************************************** 
- 17-Nov-25 12:24:21  INFO   
- 17-Nov-25 12:24:21  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/uitest-web:0.15.x']] 
- 17-Nov-25 12:24:21  INFO   
- 17-Nov-25 12:24:21  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 17-Nov-25 12:24:21  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 17-Nov-25 12:24:21  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 17-Nov-25 12:24:21  DEBUG  Found 'auths' section 
- 17-Nov-25 12:24:21  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 17-Nov-25 12:24:21  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 17-Nov-25 12:24:21  DEBUG  Looking for auth entry for 'docker.io' 
- 17-Nov-25 12:24:21  DEBUG  Found 'https://index.docker.io/v1/' 
- 17-Nov-25 12:24:21  INFO  Using 3 parallel workers for image transfers 
- 17-Nov-25 12:24:21  INFO   
- 17-Nov-25 12:24:21  INFO  ********** [ mosipqa/uitest-web:0.15.x ] **************************************************** 
- 17-Nov-25 12:24:21  INFO  Transferring image using crane... 
- 17-Nov-25 12:24:21  INFO  Source uses tag reference: mosipdev2/uitest-web:release-0.15.x 
- 17-Nov-25 12:24:21  INFO  Analyzing source image manifest... 
- 17-Nov-25 12:24:21  INFO  Source is MULTI-ARCH image 
- 17-Nov-25 12:24:21  INFO  Source Index Digest (Manifest List): sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
- 17-Nov-25 12:24:21  INFO  Source has 2 platform(s): 
- 17-Nov-25 12:24:21  INFO    - linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 
- 17-Nov-25 12:24:21  INFO    - linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 
- 17-Nov-25 12:24:21  INFO  Using secure connection for HTTPS registry 
- 17-Nov-25 12:24:21  INFO  Executing: crane copy mosipdev2/uitest-web:release-0.15.x index.docker.io/mosipqa/uitest-web:0.15.x 
- 17-Nov-25 12:24:26  INFO  Successfully transferred image with crane 
- 17-Nov-25 12:24:26  INFO   
- 17-Nov-25 12:24:26  INFO  Analyzing destination image manifest... 
- 17-Nov-25 12:24:26  INFO  Destination is MULTI-ARCH image 
- 17-Nov-25 12:24:26  INFO  Destination Index Digest (Manifest List): sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
- 17-Nov-25 12:24:26  INFO  Destination has 2 platform(s): 
- 17-Nov-25 12:24:26  INFO    - linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 
- 17-Nov-25 12:24:26  INFO    - linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 
- 17-Nov-25 12:24:26  INFO   
- 17-Nov-25 12:24:26  INFO  === DIGEST VERIFICATION === 
- 17-Nov-25 12:24:26  INFO  Comparing Index Digests (Manifest Lists): 
- 17-Nov-25 12:24:26  INFO    Source:      sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
- 17-Nov-25 12:24:26  INFO    Destination: sha256:7f558cba9608d52456d9470e94e33c544cff6febe78e0bc00fb46fd50595bca8 
- 17-Nov-25 12:24:26  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 17-Nov-25 12:24:26  INFO   
- 17-Nov-25 12:24:26  INFO  Comparing Platform Manifests: 
- 17-Nov-25 12:24:26  INFO    ✓ linux/amd64: sha256:466ad38e2b0282c8aeb5bad7dbed1da7471b3b21cc453b76eea7cf6d0bf94532 (MATCH) 
- 17-Nov-25 12:24:26  INFO    ✓ linux/arm64: sha256:5d2ea417504292404d9581c6ea1af5a8c93720a17d2c85a81a5e28d3c536f147 (MATCH) 
- 17-Nov-25 12:24:26  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 17-Nov-25 12:24:26  INFO  Creating latest tag: crane copy mosipdev2/uitest-web:release-0.15.x index.docker.io/mosipqa/uitest-web:latest 
- 17-Nov-25 12:24:28  INFO  Successfully created latest tag 
- 17-Nov-25 12:24:28  INFO  Image available at: index.docker.io/mosipqa/uitest-web:0.15.x 
- 17-Nov-25 12:24:28  INFO   
- 17-Nov-25 12:24:28  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 17-Nov-25 12:24:28  INFO  Individual platform manifests should also match to ensure identical content. 
- 17-Nov-25 12:24:28  INFO  Completed processing mosipdev2/uitest-web:release-0.15.x to mosipqa/uitest-web:0.15.x 
+ 17-Nov-25 14:30:21  INFO  LOGFILE CREATED : vidivi.log 
+ 17-Nov-25 14:30:21  INFO   
+ 17-Nov-25 14:30:21  INFO  ******************** Check Images List ************************************************************************************ 
+ 17-Nov-25 14:30:21  INFO   
+ 17-Nov-25 14:30:21  INFO  IMAGES= [['mosipdev/kernel-syncdata-service:MOSIP-43648-develop', 'MOSIP-43648']] 
+ 17-Nov-25 14:30:21  INFO   
+ 17-Nov-25 14:30:21  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 17-Nov-25 14:30:21  INFO   
+ 17-Nov-25 14:30:21  INFO  src = "mosipdev/kernel-syncdata-service" tag = "MOSIP-43648-develop" 
+ 17-Nov-25 14:30:21  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 17-Nov-25 14:30:21  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-syncdata-service:pull HTTP/1.1" 200 None 
+ 17-Nov-25 14:30:21  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 17-Nov-25 14:30:21  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-syncdata-service/tags/MOSIP-43648-develop HTTP/1.1" 404 167 
+ 17-Nov-25 14:30:21  ERROR  Image "mosipdev/kernel-syncdata-service:MOSIP-43648-develop" does not exist 
+ 17-Nov-25 14:30:21  INFO   
+ 17-Nov-25 14:30:21  ERROR  Below Source Images doesn't exists; EXITING;
+	[['mosipdev/kernel-syncdata-service:MOSIP-43648-develop']] 
