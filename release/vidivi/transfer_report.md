@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Mon Nov 17 18:24:55 UTC 2025
+**Date**: Tue Nov 18 04:55:18 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 00
-- **Total completed**: 00
+- **Crane transfers**: 2
+- **Total completed**: 2
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,3 +17,5 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
+- index.docker.io/mosipqa/registration-client:1.3.x 
+- index.docker.io/mosipqa/commons-packet-service:1.3.x 
