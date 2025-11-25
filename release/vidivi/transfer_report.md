@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Tue Nov 25 06:16:51 UTC 2025
+**Date**: Tue Nov 25 10:01:36 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
-**Organization**: mosipqa
+**Organization**: mosipid
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 1
-- **Total completed**: 1
+- **Crane transfers**: 2
+- **Total completed**: 2
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,4 +17,5 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
+- index.docker.io/mosipid/zookeeper:3.9.1-debian-12-r13 
+- index.docker.io/mosipid/kafka:3.6.1-debian-12-r12 

@@ -1,73 +1,105 @@
- 25-Nov-25 06:16:44  INFO  LOGFILE CREATED : vidivi.log 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** Check Images List ************************************************************************************ 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  IMAGES= [['mosipdev2/inji-certify-with-plugins:release-0.13.x', '0.13.x']] 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  src = "mosipdev2/inji-certify-with-plugins" tag = "release-0.13.x" 
- 25-Nov-25 06:16:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 25-Nov-25 06:16:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-certify-with-plugins:pull HTTP/1.1" 200 None 
- 25-Nov-25 06:16:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 25-Nov-25 06:16:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/inji-certify-with-plugins/tags/release-0.13.x HTTP/1.1" 200 None 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 25-Nov-25 06:16:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 25-Nov-25 06:16:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 25-Nov-25 06:16:44  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  [ mosipqa/inji-certify-with-plugins ]  
- 25-Nov-25 06:16:44  INFO  Destination Image = "mosipqa/inji-certify-with-plugins" Destination Image tag = "0.13.x" IMAGE_ID : sha256:44212860d769697ee4986d04af38a3444b110bd995b31836d67ae4f9597bad50 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** HASH Operation Results ********************************************************************** 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 25-Nov-25 06:16:44  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 25-Nov-25 06:16:44  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 25-Nov-25 06:16:44  DEBUG  Found 'auths' section 
- 25-Nov-25 06:16:44  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 25-Nov-25 06:16:44  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 25-Nov-25 06:16:44  DEBUG  Looking for auth entry for 'docker.io' 
- 25-Nov-25 06:16:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 25-Nov-25 06:16:44  INFO  Using 3 parallel workers for image transfers 
- 25-Nov-25 06:16:44  INFO   
- 25-Nov-25 06:16:44  INFO  ********** [ mosipqa/inji-certify-with-plugins:0.13.x ] **************************************************** 
- 25-Nov-25 06:16:44  INFO  Transferring image using crane... 
- 25-Nov-25 06:16:44  INFO  Source uses tag reference: mosipdev2/inji-certify-with-plugins:release-0.13.x 
- 25-Nov-25 06:16:44  INFO  Analyzing source image manifest... 
- 25-Nov-25 06:16:45  INFO  Source is MULTI-ARCH image 
- 25-Nov-25 06:16:45  INFO  Source Index Digest (Manifest List): sha256:b69667822e7207dd9bb2224d52d35e60fe190d5aae98d49a32c1984dfe299c89 
- 25-Nov-25 06:16:45  INFO  Source has 2 platform(s): 
- 25-Nov-25 06:16:45  INFO    - linux/amd64: sha256:85b4d7f9df71380222fa5536372319f0033500014ce897140b71a20b009c65d2 
- 25-Nov-25 06:16:45  INFO    - linux/arm64: sha256:6dbe28ceef31f5fe2c95bd749b43f41eccaa4c71afaca6f1c6a7e2559b8b96fe 
- 25-Nov-25 06:16:45  INFO  Using secure connection for HTTPS registry 
- 25-Nov-25 06:16:45  INFO  Executing: crane copy mosipdev2/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
- 25-Nov-25 06:16:48  INFO  Successfully transferred image with crane 
- 25-Nov-25 06:16:48  INFO   
- 25-Nov-25 06:16:48  INFO  Analyzing destination image manifest... 
- 25-Nov-25 06:16:49  INFO  Destination is MULTI-ARCH image 
- 25-Nov-25 06:16:49  INFO  Destination Index Digest (Manifest List): sha256:b69667822e7207dd9bb2224d52d35e60fe190d5aae98d49a32c1984dfe299c89 
- 25-Nov-25 06:16:49  INFO  Destination has 2 platform(s): 
- 25-Nov-25 06:16:49  INFO    - linux/amd64: sha256:85b4d7f9df71380222fa5536372319f0033500014ce897140b71a20b009c65d2 
- 25-Nov-25 06:16:49  INFO    - linux/arm64: sha256:6dbe28ceef31f5fe2c95bd749b43f41eccaa4c71afaca6f1c6a7e2559b8b96fe 
- 25-Nov-25 06:16:49  INFO   
- 25-Nov-25 06:16:49  INFO  === DIGEST VERIFICATION === 
- 25-Nov-25 06:16:49  INFO  Comparing Index Digests (Manifest Lists): 
- 25-Nov-25 06:16:49  INFO    Source:      sha256:b69667822e7207dd9bb2224d52d35e60fe190d5aae98d49a32c1984dfe299c89 
- 25-Nov-25 06:16:49  INFO    Destination: sha256:b69667822e7207dd9bb2224d52d35e60fe190d5aae98d49a32c1984dfe299c89 
- 25-Nov-25 06:16:49  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 25-Nov-25 06:16:49  INFO   
- 25-Nov-25 06:16:49  INFO  Comparing Platform Manifests: 
- 25-Nov-25 06:16:49  INFO    ✓ linux/amd64: sha256:85b4d7f9df71380222fa5536372319f0033500014ce897140b71a20b009c65d2 (MATCH) 
- 25-Nov-25 06:16:49  INFO    ✓ linux/arm64: sha256:6dbe28ceef31f5fe2c95bd749b43f41eccaa4c71afaca6f1c6a7e2559b8b96fe (MATCH) 
- 25-Nov-25 06:16:49  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 25-Nov-25 06:16:49  INFO  Creating latest tag: crane copy mosipdev2/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipqa/inji-certify-with-plugins:latest 
- 25-Nov-25 06:16:51  INFO  Successfully created latest tag 
- 25-Nov-25 06:16:51  INFO  Image available at: index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
- 25-Nov-25 06:16:51  INFO   
- 25-Nov-25 06:16:51  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 25-Nov-25 06:16:51  INFO  Individual platform manifests should also match to ensure identical content. 
- 25-Nov-25 06:16:51  INFO  Completed processing mosipdev2/inji-certify-with-plugins:release-0.13.x to mosipqa/inji-certify-with-plugins:0.13.x 
+ 25-Nov-25 10:01:26  INFO  LOGFILE CREATED : vidivi.log 
+ 25-Nov-25 10:01:26  INFO   
+ 25-Nov-25 10:01:26  INFO  ******************** Check Images List ************************************************************************************ 
+ 25-Nov-25 10:01:26  INFO   
+ 25-Nov-25 10:01:26  INFO  IMAGES= [['mosipint/zookeeper:3.9.1-debian-12-r13', '3.9.1-debian-12-r13'], ['mosipint/kafka:3.6.1-debian-12-r12', '3.6.1-debian-12-r12']] 
+ 25-Nov-25 10:01:26  INFO   
+ 25-Nov-25 10:01:26  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 25-Nov-25 10:01:26  INFO   
+ 25-Nov-25 10:01:26  INFO  src = "mosipint/zookeeper" tag = "3.9.1-debian-12-r13" 
+ 25-Nov-25 10:01:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Nov-25 10:01:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/zookeeper:pull HTTP/1.1" 200 None 
+ 25-Nov-25 10:01:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 25-Nov-25 10:01:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/zookeeper/tags/3.9.1-debian-12-r13 HTTP/1.1" 200 829 
+ 25-Nov-25 10:01:27  INFO   
+ 25-Nov-25 10:01:27  INFO  src = "mosipint/kafka" tag = "3.6.1-debian-12-r12" 
+ 25-Nov-25 10:01:27  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 25-Nov-25 10:01:27  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/kafka:pull HTTP/1.1" 200 None 
+ 25-Nov-25 10:01:27  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 25-Nov-25 10:01:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/kafka/tags/3.6.1-debian-12-r12 HTTP/1.1" 200 831 
+ 25-Nov-25 10:01:27  INFO   
+ 25-Nov-25 10:01:27  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 25-Nov-25 10:01:27  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 25-Nov-25 10:01:27  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
+ 25-Nov-25 10:01:27  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
+ 25-Nov-25 10:01:27  INFO   
+ 25-Nov-25 10:01:27  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 25-Nov-25 10:01:27  INFO   
+ 25-Nov-25 10:01:27  INFO  [ mosipid/zookeeper ]  
+ 25-Nov-25 10:01:28  WARNING  Crane digest failed for index.docker.io/mosipid/zookeeper:3.9.1-debian-12-r13: 2025/11/25 10:01:28 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/zookeeper/manifests/3.9.1-debian-12-r13: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/zookeeper/manifests/3.9.1-debian-12-r13: MANIFEST_UNKNOWN: manifest unknown; unknown tag=3.9.1-debian-12-r13
+ 
+ 25-Nov-25 10:01:28  INFO  Destination Image = "mosipid/zookeeper" Destination Image tag = "3.9.1-debian-12-r13" IMAGE_ID :  
+ 25-Nov-25 10:01:28  INFO  Destination image mosipid/zookeeper:3.9.1-debian-12-r13 does not exist 
+ 25-Nov-25 10:01:28  INFO   
+ 25-Nov-25 10:01:28  INFO  [ mosipid/kafka ]  
+ 25-Nov-25 10:01:29  WARNING  Crane digest failed for index.docker.io/mosipid/kafka:3.6.1-debian-12-r12: 2025/11/25 10:01:29 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/kafka/manifests/3.6.1-debian-12-r12: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/kafka/manifests/3.6.1-debian-12-r12: MANIFEST_UNKNOWN: manifest unknown; unknown tag=3.6.1-debian-12-r12
+ 
+ 25-Nov-25 10:01:29  INFO  Destination Image = "mosipid/kafka" Destination Image tag = "3.6.1-debian-12-r12" IMAGE_ID :  
+ 25-Nov-25 10:01:29  INFO  Destination image mosipid/kafka:3.6.1-debian-12-r12 does not exist 
+ 25-Nov-25 10:01:29  INFO   
+ 25-Nov-25 10:01:29  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 25-Nov-25 10:01:29  INFO   
+ 25-Nov-25 10:01:29  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/zookeeper:3.9.1-debian-12-r13'], ['mosipid/kafka:3.6.1-debian-12-r12']] 
+ 25-Nov-25 10:01:29  INFO   
+ 25-Nov-25 10:01:29  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 25-Nov-25 10:01:29  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 25-Nov-25 10:01:29  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 25-Nov-25 10:01:29  DEBUG  Found 'auths' section 
+ 25-Nov-25 10:01:29  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 25-Nov-25 10:01:29  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 25-Nov-25 10:01:29  DEBUG  Looking for auth entry for 'docker.io' 
+ 25-Nov-25 10:01:29  DEBUG  Found 'https://index.docker.io/v1/' 
+ 25-Nov-25 10:01:29  INFO  Using 3 parallel workers for image transfers 
+ 25-Nov-25 10:01:29  INFO   
+ 25-Nov-25 10:01:29  INFO  ********** [ mosipid/zookeeper:3.9.1-debian-12-r13 ] **************************************************** 
+ 25-Nov-25 10:01:29  INFO  Transferring image using crane... 
+ 25-Nov-25 10:01:29  INFO   
+ 25-Nov-25 10:01:29  INFO  ********** [ mosipid/kafka:3.6.1-debian-12-r12 ] **************************************************** 
+ 25-Nov-25 10:01:29  INFO  Transferring image using crane... 
+ 25-Nov-25 10:01:29  INFO  Source uses tag reference: mosipint/kafka:3.6.1-debian-12-r12 
+ 25-Nov-25 10:01:29  INFO  Analyzing source image manifest... 
+ 25-Nov-25 10:01:29  INFO  Source uses tag reference: mosipint/zookeeper:3.9.1-debian-12-r13 
+ 25-Nov-25 10:01:29  INFO  Analyzing source image manifest... 
+ 25-Nov-25 10:01:30  INFO  Source is SINGLE-ARCH image 
+ 25-Nov-25 10:01:30  INFO  Source Platform Digest: sha256:4af5c385ba22a775fe48488a124ce960ce05fa8bbc5878a98af8bcceb07257ae 
+ 25-Nov-25 10:01:30  INFO  Using secure connection for HTTPS registry 
+ 25-Nov-25 10:01:30  INFO  Executing: crane copy mosipint/kafka:3.6.1-debian-12-r12 index.docker.io/mosipid/kafka:3.6.1-debian-12-r12 
+ 25-Nov-25 10:01:30  INFO  Source is SINGLE-ARCH image 
+ 25-Nov-25 10:01:30  INFO  Source Platform Digest: sha256:730db36c6f9d6554ece6a1308f87c9101b935edda1eac0a01638e7bcafd7a87c 
+ 25-Nov-25 10:01:30  INFO  Using secure connection for HTTPS registry 
+ 25-Nov-25 10:01:30  INFO  Executing: crane copy mosipint/zookeeper:3.9.1-debian-12-r13 index.docker.io/mosipid/zookeeper:3.9.1-debian-12-r13 
+ 25-Nov-25 10:01:32  INFO  Successfully transferred image with crane 
+ 25-Nov-25 10:01:32  INFO   
+ 25-Nov-25 10:01:32  INFO  Analyzing destination image manifest... 
+ 25-Nov-25 10:01:32  INFO  Successfully transferred image with crane 
+ 25-Nov-25 10:01:32  INFO   
+ 25-Nov-25 10:01:32  INFO  Analyzing destination image manifest... 
+ 25-Nov-25 10:01:33  INFO  Destination is SINGLE-ARCH image 
+ 25-Nov-25 10:01:33  INFO  Destination Platform Digest: sha256:730db36c6f9d6554ece6a1308f87c9101b935edda1eac0a01638e7bcafd7a87c 
+ 25-Nov-25 10:01:33  INFO   
+ 25-Nov-25 10:01:33  INFO  === DIGEST VERIFICATION === 
+ 25-Nov-25 10:01:33  INFO  Comparing Platform Digests: 
+ 25-Nov-25 10:01:33  INFO    Source:      sha256:730db36c6f9d6554ece6a1308f87c9101b935edda1eac0a01638e7bcafd7a87c 
+ 25-Nov-25 10:01:33  INFO    Destination: sha256:730db36c6f9d6554ece6a1308f87c9101b935edda1eac0a01638e7bcafd7a87c 
+ 25-Nov-25 10:01:33  INFO  ✓ Platform Digest MATCH - Images are identical! 
+ 25-Nov-25 10:01:33  INFO  Creating latest tag: crane copy mosipint/zookeeper:3.9.1-debian-12-r13 index.docker.io/mosipid/zookeeper:latest 
+ 25-Nov-25 10:01:33  INFO  Destination is SINGLE-ARCH image 
+ 25-Nov-25 10:01:33  INFO  Destination Platform Digest: sha256:4af5c385ba22a775fe48488a124ce960ce05fa8bbc5878a98af8bcceb07257ae 
+ 25-Nov-25 10:01:33  INFO   
+ 25-Nov-25 10:01:33  INFO  === DIGEST VERIFICATION === 
+ 25-Nov-25 10:01:33  INFO  Comparing Platform Digests: 
+ 25-Nov-25 10:01:33  INFO    Source:      sha256:4af5c385ba22a775fe48488a124ce960ce05fa8bbc5878a98af8bcceb07257ae 
+ 25-Nov-25 10:01:33  INFO    Destination: sha256:4af5c385ba22a775fe48488a124ce960ce05fa8bbc5878a98af8bcceb07257ae 
+ 25-Nov-25 10:01:33  INFO  ✓ Platform Digest MATCH - Images are identical! 
+ 25-Nov-25 10:01:33  INFO  Creating latest tag: crane copy mosipint/kafka:3.6.1-debian-12-r12 index.docker.io/mosipid/kafka:latest 
+ 25-Nov-25 10:01:35  INFO  Successfully created latest tag 
+ 25-Nov-25 10:01:35  INFO  Image available at: index.docker.io/mosipid/zookeeper:3.9.1-debian-12-r13 
+ 25-Nov-25 10:01:35  INFO   
+ 25-Nov-25 10:01:35  INFO  Completed processing mosipint/zookeeper:3.9.1-debian-12-r13 to mosipid/zookeeper:3.9.1-debian-12-r13 
+ 25-Nov-25 10:01:35  INFO  Successfully created latest tag 
+ 25-Nov-25 10:01:35  INFO  Image available at: index.docker.io/mosipid/kafka:3.6.1-debian-12-r12 
+ 25-Nov-25 10:01:35  INFO   
+ 25-Nov-25 10:01:35  INFO  Completed processing mosipint/kafka:3.6.1-debian-12-r12 to mosipid/kafka:3.6.1-debian-12-r12 
