@@ -1,9 +1,9 @@
 # Image Transfer Report
 
-**Date**: Mon Nov 24 10:14:08 UTC 2025
+**Date**: Tue Nov 25 06:16:51 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
-**Organization**: mosipdev2
+**Organization**: mosipqa
 **WireGuard VPN**: Disabled
 
 ## Statistics
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipdev2/uitest-signup:develop 
+- index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
