@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Wed Nov 26 09:25:53 UTC 2025
+**Date**: Wed Nov 26 11:13:28 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/uitest-pmp-v2:1.3.x 
+- index.docker.io/mosipqa/uitest-admin:1.3.x 
