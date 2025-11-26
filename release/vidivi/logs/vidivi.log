@@ -1,73 +1,335 @@
- 26-Nov-25 11:13:16  INFO  LOGFILE CREATED : vidivi.log 
- 26-Nov-25 11:13:16  INFO   
- 26-Nov-25 11:13:16  INFO  ******************** Check Images List ************************************************************************************ 
- 26-Nov-25 11:13:16  INFO   
- 26-Nov-25 11:13:16  INFO  IMAGES= [['mosipdev2/uitest-admin:release-1.3.x', '1.3.x']] 
- 26-Nov-25 11:13:16  INFO   
- 26-Nov-25 11:13:16  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 26-Nov-25 11:13:16  INFO   
- 26-Nov-25 11:13:16  INFO  src = "mosipdev2/uitest-admin" tag = "release-1.3.x" 
- 26-Nov-25 11:13:16  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 26-Nov-25 11:13:16  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/uitest-admin:pull HTTP/1.1" 200 None 
- 26-Nov-25 11:13:16  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 26-Nov-25 11:13:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/uitest-admin/tags/release-1.3.x HTTP/1.1" 200 None 
- 26-Nov-25 11:13:17  INFO   
- 26-Nov-25 11:13:17  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 26-Nov-25 11:13:17  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 26-Nov-25 11:13:17  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 26-Nov-25 11:13:17  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 26-Nov-25 11:13:17  INFO   
- 26-Nov-25 11:13:17  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 26-Nov-25 11:13:17  INFO   
- 26-Nov-25 11:13:17  INFO  [ mosipqa/uitest-admin ]  
- 26-Nov-25 11:13:18  INFO  Destination Image = "mosipqa/uitest-admin" Destination Image tag = "1.3.x" IMAGE_ID : sha256:f32b7e8d3b00e5b899a5e9989425ddd3b7b1ea4c3e7b158119d509910a0f05ab 
- 26-Nov-25 11:13:18  INFO   
- 26-Nov-25 11:13:18  INFO  ******************** HASH Operation Results ********************************************************************** 
- 26-Nov-25 11:13:18  INFO   
- 26-Nov-25 11:13:18  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 26-Nov-25 11:13:18  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 26-Nov-25 11:13:18  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 26-Nov-25 11:13:18  DEBUG  Found 'auths' section 
- 26-Nov-25 11:13:18  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 26-Nov-25 11:13:18  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 26-Nov-25 11:13:18  DEBUG  Looking for auth entry for 'docker.io' 
- 26-Nov-25 11:13:18  DEBUG  Found 'https://index.docker.io/v1/' 
- 26-Nov-25 11:13:18  INFO  Using 3 parallel workers for image transfers 
- 26-Nov-25 11:13:18  INFO   
- 26-Nov-25 11:13:18  INFO  ********** [ mosipqa/uitest-admin:1.3.x ] **************************************************** 
- 26-Nov-25 11:13:18  INFO  Transferring image using crane... 
- 26-Nov-25 11:13:18  INFO  Source uses tag reference: mosipdev2/uitest-admin:release-1.3.x 
- 26-Nov-25 11:13:18  INFO  Analyzing source image manifest... 
- 26-Nov-25 11:13:19  INFO  Source is MULTI-ARCH image 
- 26-Nov-25 11:13:19  INFO  Source Index Digest (Manifest List): sha256:24aad76956ddff19391902bf204430a27e0c4e4035e0c0637832789ded1df7ef 
- 26-Nov-25 11:13:19  INFO  Source has 2 platform(s): 
- 26-Nov-25 11:13:19  INFO    - linux/amd64: sha256:7b351dad5c914699d0635dedceb0de5463ce9e858b2a3ddaf113bf78ffd45991 
- 26-Nov-25 11:13:19  INFO    - linux/arm64: sha256:0d656200a6011c79d02f8309826f1f0038fd0c0677ed4cb977ca53edc0523790 
- 26-Nov-25 11:13:19  INFO  Using secure connection for HTTPS registry 
- 26-Nov-25 11:13:19  INFO  Executing: crane copy mosipdev2/uitest-admin:release-1.3.x index.docker.io/mosipqa/uitest-admin:1.3.x 
- 26-Nov-25 11:13:24  INFO  Successfully transferred image with crane 
- 26-Nov-25 11:13:24  INFO   
- 26-Nov-25 11:13:24  INFO  Analyzing destination image manifest... 
- 26-Nov-25 11:13:25  INFO  Destination is MULTI-ARCH image 
- 26-Nov-25 11:13:25  INFO  Destination Index Digest (Manifest List): sha256:24aad76956ddff19391902bf204430a27e0c4e4035e0c0637832789ded1df7ef 
- 26-Nov-25 11:13:25  INFO  Destination has 2 platform(s): 
- 26-Nov-25 11:13:25  INFO    - linux/amd64: sha256:7b351dad5c914699d0635dedceb0de5463ce9e858b2a3ddaf113bf78ffd45991 
- 26-Nov-25 11:13:25  INFO    - linux/arm64: sha256:0d656200a6011c79d02f8309826f1f0038fd0c0677ed4cb977ca53edc0523790 
- 26-Nov-25 11:13:25  INFO   
- 26-Nov-25 11:13:25  INFO  === DIGEST VERIFICATION === 
- 26-Nov-25 11:13:25  INFO  Comparing Index Digests (Manifest Lists): 
- 26-Nov-25 11:13:25  INFO    Source:      sha256:24aad76956ddff19391902bf204430a27e0c4e4035e0c0637832789ded1df7ef 
- 26-Nov-25 11:13:25  INFO    Destination: sha256:24aad76956ddff19391902bf204430a27e0c4e4035e0c0637832789ded1df7ef 
- 26-Nov-25 11:13:25  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 26-Nov-25 11:13:25  INFO   
- 26-Nov-25 11:13:25  INFO  Comparing Platform Manifests: 
- 26-Nov-25 11:13:25  INFO    ✓ linux/amd64: sha256:7b351dad5c914699d0635dedceb0de5463ce9e858b2a3ddaf113bf78ffd45991 (MATCH) 
- 26-Nov-25 11:13:25  INFO    ✓ linux/arm64: sha256:0d656200a6011c79d02f8309826f1f0038fd0c0677ed4cb977ca53edc0523790 (MATCH) 
- 26-Nov-25 11:13:25  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 26-Nov-25 11:13:25  INFO  Creating latest tag: crane copy mosipdev2/uitest-admin:release-1.3.x index.docker.io/mosipqa/uitest-admin:latest 
- 26-Nov-25 11:13:27  INFO  Successfully created latest tag 
- 26-Nov-25 11:13:27  INFO  Image available at: index.docker.io/mosipqa/uitest-admin:1.3.x 
- 26-Nov-25 11:13:27  INFO   
- 26-Nov-25 11:13:27  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 26-Nov-25 11:13:27  INFO  Individual platform manifests should also match to ensure identical content. 
- 26-Nov-25 11:13:27  INFO  Completed processing mosipdev2/uitest-admin:release-1.3.x to mosipqa/uitest-admin:1.3.x 
+ 26-Nov-25 16:43:56  INFO  LOGFILE CREATED : vidivi.log 
+ 26-Nov-25 16:43:56  INFO   
+ 26-Nov-25 16:43:56  INFO  ******************** Check Images List ************************************************************************************ 
+ 26-Nov-25 16:43:56  INFO   
+ 26-Nov-25 16:43:56  INFO  IMAGES= [['mosipdev/partner-management-service:release-1.2.2.x', '1.2.2.3'], ['mosipdev/policy-management-service:release-1.2.2.x', '1.2.2.3'], ['mosipdev/apitest-pms:release-1.2.2.x', '1.2.2.3'], ['mosipdev/pmp-ui:release-1.2.2.x', '1.2.2.3'], ['mosipdev/pmp-revamp-ui:release-1.2.2.x', '1.2.2.3'], ['mosipdev/uitest-pmp:release-1.2.2.x', '1.2.2.3']] 
+ 26-Nov-25 16:43:56  INFO   
+ 26-Nov-25 16:43:56  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 26-Nov-25 16:43:56  INFO   
+ 26-Nov-25 16:43:56  INFO  src = "mosipdev/partner-management-service" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-management-service:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:56  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:56  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-management-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:56  INFO   
+ 26-Nov-25 16:43:56  INFO  src = "mosipdev/policy-management-service" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:56  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:56  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/policy-management-service:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:56  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/policy-management-service/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  src = "mosipdev/apitest-pms" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-pms:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-pms/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  src = "mosipdev/pmp-ui" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-ui:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-ui/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  src = "mosipdev/pmp-revamp-ui" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/pmp-revamp-ui:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/pmp-revamp-ui/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  src = "mosipdev/uitest-pmp" tag = "release-1.2.2.x" 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 26-Nov-25 16:43:57  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/uitest-pmp:pull HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/uitest-pmp/tags/release-1.2.2.x HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 26-Nov-25 16:43:57  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 26-Nov-25 16:43:57  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
+ 26-Nov-25 16:43:57  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  [ mosipid/partner-management-service ]  
+ 26-Nov-25 16:43:57  WARNING  Crane digest failed for index.docker.io/mosipid/partner-management-service:1.2.2.3: 2025/11/26 16:43:57 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/partner-management-service/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/partner-management-service/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:57  INFO  Destination Image = "mosipid/partner-management-service" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:57  INFO  Destination image mosipid/partner-management-service:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  [ mosipid/policy-management-service ]  
+ 26-Nov-25 16:43:57  WARNING  Crane digest failed for index.docker.io/mosipid/policy-management-service:1.2.2.3: 2025/11/26 16:43:57 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/policy-management-service/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/policy-management-service/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:57  INFO  Destination Image = "mosipid/policy-management-service" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:57  INFO  Destination image mosipid/policy-management-service:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  [ mosipid/apitest-pms ]  
+ 26-Nov-25 16:43:57  WARNING  Crane digest failed for index.docker.io/mosipid/apitest-pms:1.2.2.3: 2025/11/26 16:43:57 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/apitest-pms/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/apitest-pms/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:57  INFO  Destination Image = "mosipid/apitest-pms" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:57  INFO  Destination image mosipid/apitest-pms:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:57  INFO   
+ 26-Nov-25 16:43:57  INFO  [ mosipid/pmp-ui ]  
+ 26-Nov-25 16:43:58  WARNING  Crane digest failed for index.docker.io/mosipid/pmp-ui:1.2.2.3: 2025/11/26 16:43:58 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/pmp-ui/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/pmp-ui/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:58  INFO  Destination Image = "mosipid/pmp-ui" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:58  INFO  Destination image mosipid/pmp-ui:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  [ mosipid/pmp-revamp-ui ]  
+ 26-Nov-25 16:43:58  WARNING  Crane digest failed for index.docker.io/mosipid/pmp-revamp-ui:1.2.2.3: 2025/11/26 16:43:58 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/pmp-revamp-ui/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/pmp-revamp-ui/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:58  INFO  Destination Image = "mosipid/pmp-revamp-ui" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:58  INFO  Destination image mosipid/pmp-revamp-ui:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  [ mosipid/uitest-pmp ]  
+ 26-Nov-25 16:43:58  WARNING  Crane digest failed for index.docker.io/mosipid/uitest-pmp:1.2.2.3: 2025/11/26 16:43:58 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/uitest-pmp/manifests/1.2.2.3: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/uitest-pmp/manifests/1.2.2.3: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.2.3
+ 
+ 26-Nov-25 16:43:58  INFO  Destination Image = "mosipid/uitest-pmp" Destination Image tag = "1.2.2.3" IMAGE_ID :  
+ 26-Nov-25 16:43:58  INFO  Destination image mosipid/uitest-pmp:1.2.2.3 does not exist 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/partner-management-service:1.2.2.3'], ['mosipid/policy-management-service:1.2.2.3'], ['mosipid/apitest-pms:1.2.2.3'], ['mosipid/pmp-ui:1.2.2.3'], ['mosipid/pmp-revamp-ui:1.2.2.3'], ['mosipid/uitest-pmp:1.2.2.3']] 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 26-Nov-25 16:43:58  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 26-Nov-25 16:43:58  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 26-Nov-25 16:43:58  DEBUG  Found 'auths' section 
+ 26-Nov-25 16:43:58  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 26-Nov-25 16:43:58  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 26-Nov-25 16:43:58  DEBUG  Looking for auth entry for 'docker.io' 
+ 26-Nov-25 16:43:58  DEBUG  Found 'https://index.docker.io/v1/' 
+ 26-Nov-25 16:43:58  INFO  Using 3 parallel workers for image transfers 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  ********** [ mosipid/partner-management-service:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:43:58  INFO  Transferring image using crane... 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  ********** [ mosipid/policy-management-service:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:43:58  INFO  Transferring image using crane... 
+ 26-Nov-25 16:43:58  INFO  Source uses tag reference: mosipdev/policy-management-service:release-1.2.2.x 
+ 26-Nov-25 16:43:58  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:43:58  INFO  Source uses tag reference: mosipdev/partner-management-service:release-1.2.2.x 
+ 26-Nov-25 16:43:58  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:43:58  INFO   
+ 26-Nov-25 16:43:58  INFO  ********** [ mosipid/apitest-pms:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:43:58  INFO  Transferring image using crane... 
+ 26-Nov-25 16:43:58  INFO  Source uses tag reference: mosipdev/apitest-pms:release-1.2.2.x 
+ 26-Nov-25 16:43:58  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:43:58  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:43:58  INFO  Source Index Digest (Manifest List): sha256:f27b8e2a9e8348c06a48d0697a415104237b11419a249990f46595c73aede2a0 
+ 26-Nov-25 16:43:58  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:43:58  INFO    - linux/amd64: sha256:569a89832aeb24707805020ac134a07dba8555ace8bdf2e5da9ca9a4c4754ae7 
+ 26-Nov-25 16:43:58  INFO    - linux/arm64: sha256:fd9fd4835007373edbd84957b7035346006f2204398c7336c3e9dcef327298ad 
+ 26-Nov-25 16:43:58  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:43:58  INFO  Executing: crane copy mosipdev/apitest-pms:release-1.2.2.x index.docker.io/mosipid/apitest-pms:1.2.2.3 
+ 26-Nov-25 16:43:58  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:43:58  INFO  Source Index Digest (Manifest List): sha256:c798fbe295da29cfb0ff9e2a198a86baf1930c4e8767d636cfca888a2683ce5b 
+ 26-Nov-25 16:43:58  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:43:58  INFO    - linux/amd64: sha256:3210058db3efcfc527663ada2562922fdc8e4817b8cd491bfc9f70d7ea2c7b6b 
+ 26-Nov-25 16:43:58  INFO    - linux/arm64: sha256:90bb4ac68525b57bb02916e5ec6faba193762a5a1d3d9cdfdebf3f41e75389c1 
+ 26-Nov-25 16:43:58  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:43:58  INFO  Executing: crane copy mosipdev/partner-management-service:release-1.2.2.x index.docker.io/mosipid/partner-management-service:1.2.2.3 
+ 26-Nov-25 16:43:58  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:43:58  INFO  Source Index Digest (Manifest List): sha256:e00edfb71b4384b867b81d4c7960addeef11edbe62c9889d702f4ff510053199 
+ 26-Nov-25 16:43:58  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:43:58  INFO    - linux/amd64: sha256:da6e50450c62438f48d1622bda1f3402ea0b11ff4ca5d09c3dbc191aaff11d37 
+ 26-Nov-25 16:43:58  INFO    - linux/arm64: sha256:d23da11b071066a74d6c5df0fb261a04146bfcfd62ae0227949e48af0d1d9833 
+ 26-Nov-25 16:43:58  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:43:58  INFO  Executing: crane copy mosipdev/policy-management-service:release-1.2.2.x index.docker.io/mosipid/policy-management-service:1.2.2.3 
+ 26-Nov-25 16:44:00  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:00  INFO   
+ 26-Nov-25 16:44:00  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:00  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:00  INFO   
+ 26-Nov-25 16:44:00  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:01  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:01  INFO  Destination Index Digest (Manifest List): sha256:f27b8e2a9e8348c06a48d0697a415104237b11419a249990f46595c73aede2a0 
+ 26-Nov-25 16:44:01  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:01  INFO    - linux/amd64: sha256:569a89832aeb24707805020ac134a07dba8555ace8bdf2e5da9ca9a4c4754ae7 
+ 26-Nov-25 16:44:01  INFO    - linux/arm64: sha256:fd9fd4835007373edbd84957b7035346006f2204398c7336c3e9dcef327298ad 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:01  INFO    Source:      sha256:f27b8e2a9e8348c06a48d0697a415104237b11419a249990f46595c73aede2a0 
+ 26-Nov-25 16:44:01  INFO    Destination: sha256:f27b8e2a9e8348c06a48d0697a415104237b11419a249990f46595c73aede2a0 
+ 26-Nov-25 16:44:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/amd64: sha256:569a89832aeb24707805020ac134a07dba8555ace8bdf2e5da9ca9a4c4754ae7 (MATCH) 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/arm64: sha256:fd9fd4835007373edbd84957b7035346006f2204398c7336c3e9dcef327298ad (MATCH) 
+ 26-Nov-25 16:44:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:01  INFO  Creating latest tag: crane copy mosipdev/apitest-pms:release-1.2.2.x index.docker.io/mosipid/apitest-pms:latest 
+ 26-Nov-25 16:44:01  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:01  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:01  INFO  Destination Index Digest (Manifest List): sha256:c798fbe295da29cfb0ff9e2a198a86baf1930c4e8767d636cfca888a2683ce5b 
+ 26-Nov-25 16:44:01  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:01  INFO    - linux/amd64: sha256:3210058db3efcfc527663ada2562922fdc8e4817b8cd491bfc9f70d7ea2c7b6b 
+ 26-Nov-25 16:44:01  INFO    - linux/arm64: sha256:90bb4ac68525b57bb02916e5ec6faba193762a5a1d3d9cdfdebf3f41e75389c1 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:01  INFO    Source:      sha256:c798fbe295da29cfb0ff9e2a198a86baf1930c4e8767d636cfca888a2683ce5b 
+ 26-Nov-25 16:44:01  INFO    Destination: sha256:c798fbe295da29cfb0ff9e2a198a86baf1930c4e8767d636cfca888a2683ce5b 
+ 26-Nov-25 16:44:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/amd64: sha256:3210058db3efcfc527663ada2562922fdc8e4817b8cd491bfc9f70d7ea2c7b6b (MATCH) 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/arm64: sha256:90bb4ac68525b57bb02916e5ec6faba193762a5a1d3d9cdfdebf3f41e75389c1 (MATCH) 
+ 26-Nov-25 16:44:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:01  INFO  Creating latest tag: crane copy mosipdev/partner-management-service:release-1.2.2.x index.docker.io/mosipid/partner-management-service:latest 
+ 26-Nov-25 16:44:01  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:01  INFO  Destination Index Digest (Manifest List): sha256:e00edfb71b4384b867b81d4c7960addeef11edbe62c9889d702f4ff510053199 
+ 26-Nov-25 16:44:01  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:01  INFO    - linux/amd64: sha256:da6e50450c62438f48d1622bda1f3402ea0b11ff4ca5d09c3dbc191aaff11d37 
+ 26-Nov-25 16:44:01  INFO    - linux/arm64: sha256:d23da11b071066a74d6c5df0fb261a04146bfcfd62ae0227949e48af0d1d9833 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:01  INFO    Source:      sha256:e00edfb71b4384b867b81d4c7960addeef11edbe62c9889d702f4ff510053199 
+ 26-Nov-25 16:44:01  INFO    Destination: sha256:e00edfb71b4384b867b81d4c7960addeef11edbe62c9889d702f4ff510053199 
+ 26-Nov-25 16:44:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:01  INFO   
+ 26-Nov-25 16:44:01  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/amd64: sha256:da6e50450c62438f48d1622bda1f3402ea0b11ff4ca5d09c3dbc191aaff11d37 (MATCH) 
+ 26-Nov-25 16:44:01  INFO    ✓ linux/arm64: sha256:d23da11b071066a74d6c5df0fb261a04146bfcfd62ae0227949e48af0d1d9833 (MATCH) 
+ 26-Nov-25 16:44:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:01  INFO  Creating latest tag: crane copy mosipdev/policy-management-service:release-1.2.2.x index.docker.io/mosipid/policy-management-service:latest 
+ 26-Nov-25 16:44:02  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:02  INFO  Image available at: index.docker.io/mosipid/apitest-pms:1.2.2.3 
+ 26-Nov-25 16:44:02  INFO   
+ 26-Nov-25 16:44:02  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:02  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:02  INFO   
+ 26-Nov-25 16:44:02  INFO  ********** [ mosipid/pmp-ui:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:44:02  INFO  Transferring image using crane... 
+ 26-Nov-25 16:44:02  INFO  Source uses tag reference: mosipdev/pmp-ui:release-1.2.2.x 
+ 26-Nov-25 16:44:02  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:44:02  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:02  INFO  Image available at: index.docker.io/mosipid/partner-management-service:1.2.2.3 
+ 26-Nov-25 16:44:02  INFO   
+ 26-Nov-25 16:44:02  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:02  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:02  INFO   
+ 26-Nov-25 16:44:02  INFO  ********** [ mosipid/pmp-revamp-ui:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:44:02  INFO  Transferring image using crane... 
+ 26-Nov-25 16:44:02  INFO  Completed processing mosipdev/partner-management-service:release-1.2.2.x to mosipid/partner-management-service:1.2.2.3 
+ 26-Nov-25 16:44:02  INFO  Source uses tag reference: mosipdev/pmp-revamp-ui:release-1.2.2.x 
+ 26-Nov-25 16:44:02  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:44:03  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:44:03  INFO  Source Index Digest (Manifest List): sha256:5a0583b7fca224fd25920836c713a25f84ffcd03741c8c5da7368574092c8ceb 
+ 26-Nov-25 16:44:03  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:44:03  INFO    - linux/amd64: sha256:1e9c0e669c6828758d2eda4df2647fa9bb80c1df4978453104389de01b83769d 
+ 26-Nov-25 16:44:03  INFO    - linux/arm64: sha256:ffc65216c60f92337c45e24ff895815ad62bf6a451a6b02331becc05cfff71af 
+ 26-Nov-25 16:44:03  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:44:03  INFO  Executing: crane copy mosipdev/pmp-ui:release-1.2.2.x index.docker.io/mosipid/pmp-ui:1.2.2.3 
+ 26-Nov-25 16:44:03  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:44:03  INFO  Source Index Digest (Manifest List): sha256:7ca34c314685eec89ec5b8be57f1e5b08c82faa7760284d394cb17b9a89b1911 
+ 26-Nov-25 16:44:03  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:44:03  INFO    - linux/amd64: sha256:2a8f74106c569546de23ceafed9e6586c1794e324e4daaaf304b822e00dbc929 
+ 26-Nov-25 16:44:03  INFO    - linux/arm64: sha256:7007fc87bb4c53cf95fb03e9460471db915cd7873f35a77669c018e28642e5fd 
+ 26-Nov-25 16:44:03  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:44:03  INFO  Executing: crane copy mosipdev/pmp-revamp-ui:release-1.2.2.x index.docker.io/mosipid/pmp-revamp-ui:1.2.2.3 
+ 26-Nov-25 16:44:03  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:03  INFO  Image available at: index.docker.io/mosipid/policy-management-service:1.2.2.3 
+ 26-Nov-25 16:44:03  INFO   
+ 26-Nov-25 16:44:03  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:03  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:03  INFO   
+ 26-Nov-25 16:44:03  INFO  ********** [ mosipid/uitest-pmp:1.2.2.3 ] **************************************************** 
+ 26-Nov-25 16:44:03  INFO  Transferring image using crane... 
+ 26-Nov-25 16:44:03  INFO  Completed processing mosipdev/policy-management-service:release-1.2.2.x to mosipid/policy-management-service:1.2.2.3 
+ 26-Nov-25 16:44:03  INFO  Completed processing mosipdev/apitest-pms:release-1.2.2.x to mosipid/apitest-pms:1.2.2.3 
+ 26-Nov-25 16:44:03  INFO  Source uses tag reference: mosipdev/uitest-pmp:release-1.2.2.x 
+ 26-Nov-25 16:44:03  INFO  Analyzing source image manifest... 
+ 26-Nov-25 16:44:03  INFO  Source is MULTI-ARCH image 
+ 26-Nov-25 16:44:03  INFO  Source Index Digest (Manifest List): sha256:8caa7a64b5a630be7ee23e5729d3f6aa4c0c90261c3c078c697a70de116a92b0 
+ 26-Nov-25 16:44:03  INFO  Source has 2 platform(s): 
+ 26-Nov-25 16:44:03  INFO    - linux/amd64: sha256:75bbb647d9489e2095d03be71939d3ef0b5f9755b533b138f6caebe9a2219df9 
+ 26-Nov-25 16:44:03  INFO    - linux/arm64: sha256:dbc8900865d987a154640978806b2ccbd037f52b2f81c1bc14bc385629f34b3a 
+ 26-Nov-25 16:44:03  INFO  Using secure connection for HTTPS registry 
+ 26-Nov-25 16:44:03  INFO  Executing: crane copy mosipdev/uitest-pmp:release-1.2.2.x index.docker.io/mosipid/uitest-pmp:1.2.2.3 
+ 26-Nov-25 16:44:05  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:05  INFO   
+ 26-Nov-25 16:44:05  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:05  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:05  INFO   
+ 26-Nov-25 16:44:05  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:05  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:05  INFO  Destination Index Digest (Manifest List): sha256:5a0583b7fca224fd25920836c713a25f84ffcd03741c8c5da7368574092c8ceb 
+ 26-Nov-25 16:44:05  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:05  INFO    - linux/amd64: sha256:1e9c0e669c6828758d2eda4df2647fa9bb80c1df4978453104389de01b83769d 
+ 26-Nov-25 16:44:05  INFO    - linux/arm64: sha256:ffc65216c60f92337c45e24ff895815ad62bf6a451a6b02331becc05cfff71af 
+ 26-Nov-25 16:44:05  INFO   
+ 26-Nov-25 16:44:05  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:05  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:05  INFO    Source:      sha256:5a0583b7fca224fd25920836c713a25f84ffcd03741c8c5da7368574092c8ceb 
+ 26-Nov-25 16:44:05  INFO    Destination: sha256:5a0583b7fca224fd25920836c713a25f84ffcd03741c8c5da7368574092c8ceb 
+ 26-Nov-25 16:44:05  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:05  INFO   
+ 26-Nov-25 16:44:05  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:05  INFO    ✓ linux/amd64: sha256:1e9c0e669c6828758d2eda4df2647fa9bb80c1df4978453104389de01b83769d (MATCH) 
+ 26-Nov-25 16:44:05  INFO    ✓ linux/arm64: sha256:ffc65216c60f92337c45e24ff895815ad62bf6a451a6b02331becc05cfff71af (MATCH) 
+ 26-Nov-25 16:44:05  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:05  INFO  Creating latest tag: crane copy mosipdev/pmp-ui:release-1.2.2.x index.docker.io/mosipid/pmp-ui:latest 
+ 26-Nov-25 16:44:05  INFO  Successfully transferred image with crane 
+ 26-Nov-25 16:44:05  INFO   
+ 26-Nov-25 16:44:05  INFO  Analyzing destination image manifest... 
+ 26-Nov-25 16:44:06  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:06  INFO  Destination Index Digest (Manifest List): sha256:7ca34c314685eec89ec5b8be57f1e5b08c82faa7760284d394cb17b9a89b1911 
+ 26-Nov-25 16:44:06  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:06  INFO    - linux/amd64: sha256:2a8f74106c569546de23ceafed9e6586c1794e324e4daaaf304b822e00dbc929 
+ 26-Nov-25 16:44:06  INFO    - linux/arm64: sha256:7007fc87bb4c53cf95fb03e9460471db915cd7873f35a77669c018e28642e5fd 
+ 26-Nov-25 16:44:06  INFO   
+ 26-Nov-25 16:44:06  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:06  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:06  INFO    Source:      sha256:7ca34c314685eec89ec5b8be57f1e5b08c82faa7760284d394cb17b9a89b1911 
+ 26-Nov-25 16:44:06  INFO    Destination: sha256:7ca34c314685eec89ec5b8be57f1e5b08c82faa7760284d394cb17b9a89b1911 
+ 26-Nov-25 16:44:06  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:06  INFO   
+ 26-Nov-25 16:44:06  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:06  INFO    ✓ linux/amd64: sha256:2a8f74106c569546de23ceafed9e6586c1794e324e4daaaf304b822e00dbc929 (MATCH) 
+ 26-Nov-25 16:44:06  INFO    ✓ linux/arm64: sha256:7007fc87bb4c53cf95fb03e9460471db915cd7873f35a77669c018e28642e5fd (MATCH) 
+ 26-Nov-25 16:44:06  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:06  INFO  Creating latest tag: crane copy mosipdev/pmp-revamp-ui:release-1.2.2.x index.docker.io/mosipid/pmp-revamp-ui:latest 
+ 26-Nov-25 16:44:06  INFO  Destination is MULTI-ARCH image 
+ 26-Nov-25 16:44:06  INFO  Destination Index Digest (Manifest List): sha256:8caa7a64b5a630be7ee23e5729d3f6aa4c0c90261c3c078c697a70de116a92b0 
+ 26-Nov-25 16:44:06  INFO  Destination has 2 platform(s): 
+ 26-Nov-25 16:44:06  INFO    - linux/amd64: sha256:75bbb647d9489e2095d03be71939d3ef0b5f9755b533b138f6caebe9a2219df9 
+ 26-Nov-25 16:44:06  INFO    - linux/arm64: sha256:dbc8900865d987a154640978806b2ccbd037f52b2f81c1bc14bc385629f34b3a 
+ 26-Nov-25 16:44:06  INFO   
+ 26-Nov-25 16:44:06  INFO  === DIGEST VERIFICATION === 
+ 26-Nov-25 16:44:06  INFO  Comparing Index Digests (Manifest Lists): 
+ 26-Nov-25 16:44:06  INFO    Source:      sha256:8caa7a64b5a630be7ee23e5729d3f6aa4c0c90261c3c078c697a70de116a92b0 
+ 26-Nov-25 16:44:06  INFO    Destination: sha256:8caa7a64b5a630be7ee23e5729d3f6aa4c0c90261c3c078c697a70de116a92b0 
+ 26-Nov-25 16:44:06  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 26-Nov-25 16:44:06  INFO   
+ 26-Nov-25 16:44:06  INFO  Comparing Platform Manifests: 
+ 26-Nov-25 16:44:06  INFO    ✓ linux/amd64: sha256:75bbb647d9489e2095d03be71939d3ef0b5f9755b533b138f6caebe9a2219df9 (MATCH) 
+ 26-Nov-25 16:44:06  INFO    ✓ linux/arm64: sha256:dbc8900865d987a154640978806b2ccbd037f52b2f81c1bc14bc385629f34b3a (MATCH) 
+ 26-Nov-25 16:44:06  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 26-Nov-25 16:44:06  INFO  Creating latest tag: crane copy mosipdev/uitest-pmp:release-1.2.2.x index.docker.io/mosipid/uitest-pmp:latest 
+ 26-Nov-25 16:44:07  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:07  INFO  Image available at: index.docker.io/mosipid/pmp-ui:1.2.2.3 
+ 26-Nov-25 16:44:07  INFO   
+ 26-Nov-25 16:44:07  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:07  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:07  INFO  Completed processing mosipdev/pmp-ui:release-1.2.2.x to mosipid/pmp-ui:1.2.2.3 
+ 26-Nov-25 16:44:07  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:07  INFO  Image available at: index.docker.io/mosipid/pmp-revamp-ui:1.2.2.3 
+ 26-Nov-25 16:44:07  INFO   
+ 26-Nov-25 16:44:07  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:07  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:07  INFO  Completed processing mosipdev/pmp-revamp-ui:release-1.2.2.x to mosipid/pmp-revamp-ui:1.2.2.3 
+ 26-Nov-25 16:44:07  INFO  Successfully created latest tag 
+ 26-Nov-25 16:44:07  INFO  Image available at: index.docker.io/mosipid/uitest-pmp:1.2.2.3 
+ 26-Nov-25 16:44:07  INFO   
+ 26-Nov-25 16:44:07  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 26-Nov-25 16:44:07  INFO  Individual platform manifests should also match to ensure identical content. 
+ 26-Nov-25 16:44:07  INFO  Completed processing mosipdev/uitest-pmp:release-1.2.2.x to mosipid/uitest-pmp:1.2.2.3 
