@@ -1,284 +1,80 @@
- 28-Nov-25 07:43:48  INFO  LOGFILE CREATED : vidivi.log 
- 28-Nov-25 07:43:48  INFO   
- 28-Nov-25 07:43:48  INFO  ******************** Check Images List ************************************************************************************ 
- 28-Nov-25 07:43:48  INFO   
- 28-Nov-25 07:43:48  INFO  IMAGES= [['mosipdev/kernel-keymanager-service:release-1.3.x-beta.5', '1.3.0-beta.5'], ['mosipdev/keys-generator:release-1.3.x-beta.5', '1.3.0-beta.5'], ['mosipdev/keys-migrator:release-1.3.x-beta.5', '1.3.0-beta.5'], ['mosipdev/inji-certify:release-0.13.x', '0.13.0'], ['mosipdev/apitest-inji-certify:release-0.13.x', '0.13.0']] 
- 28-Nov-25 07:43:48  INFO   
- 28-Nov-25 07:43:48  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 28-Nov-25 07:43:48  INFO   
- 28-Nov-25 07:43:48  INFO  src = "mosipdev/kernel-keymanager-service" tag = "release-1.3.x-beta.5" 
- 28-Nov-25 07:43:48  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 28-Nov-25 07:43:48  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-keymanager-service:pull HTTP/1.1" 200 None 
- 28-Nov-25 07:43:48  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 28-Nov-25 07:43:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-keymanager-service/tags/release-1.3.x-beta.5 HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  INFO   
- 28-Nov-25 07:43:49  INFO  src = "mosipdev/keys-generator" tag = "release-1.3.x-beta.5" 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 28-Nov-25 07:43:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/keys-generator:pull HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 28-Nov-25 07:43:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/keys-generator/tags/release-1.3.x-beta.5 HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  INFO   
- 28-Nov-25 07:43:49  INFO  src = "mosipdev/keys-migrator" tag = "release-1.3.x-beta.5" 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 28-Nov-25 07:43:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/keys-migrator:pull HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 28-Nov-25 07:43:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/keys-migrator/tags/release-1.3.x-beta.5 HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  INFO   
- 28-Nov-25 07:43:49  INFO  src = "mosipdev/inji-certify" tag = "release-0.13.x" 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 28-Nov-25 07:43:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify:pull HTTP/1.1" 200 None 
- 28-Nov-25 07:43:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 28-Nov-25 07:43:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify/tags/release-0.13.x HTTP/1.1" 200 None 
- 28-Nov-25 07:43:50  INFO   
- 28-Nov-25 07:43:50  INFO  src = "mosipdev/apitest-inji-certify" tag = "release-0.13.x" 
- 28-Nov-25 07:43:50  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 28-Nov-25 07:43:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-inji-certify:pull HTTP/1.1" 200 None 
- 28-Nov-25 07:43:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 28-Nov-25 07:43:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-inji-certify/tags/release-0.13.x HTTP/1.1" 200 None 
- 28-Nov-25 07:43:50  INFO   
- 28-Nov-25 07:43:50  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 28-Nov-25 07:43:50  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 28-Nov-25 07:43:50  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
- 28-Nov-25 07:43:50  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
- 28-Nov-25 07:43:50  INFO   
- 28-Nov-25 07:43:50  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 28-Nov-25 07:43:50  INFO   
- 28-Nov-25 07:43:50  INFO  [ mosipid/kernel-keymanager-service ]  
- 28-Nov-25 07:43:51  WARNING  Crane digest failed for index.docker.io/mosipid/kernel-keymanager-service:1.3.0-beta.5: 2025/11/28 07:43:50 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/kernel-keymanager-service/manifests/1.3.0-beta.5: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/kernel-keymanager-service/manifests/1.3.0-beta.5: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.0-beta.5
+ 28-Nov-25 07:51:46  INFO  LOGFILE CREATED : vidivi.log 
+ 28-Nov-25 07:51:46  INFO   
+ 28-Nov-25 07:51:46  INFO  ******************** Check Images List ************************************************************************************ 
+ 28-Nov-25 07:51:46  INFO   
+ 28-Nov-25 07:51:46  INFO  IMAGES= [['mosipdev/inji-certify-with-plugins:release-0.13.x', '0.13.0']] 
+ 28-Nov-25 07:51:46  INFO   
+ 28-Nov-25 07:51:46  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 28-Nov-25 07:51:46  INFO   
+ 28-Nov-25 07:51:46  INFO  src = "mosipdev/inji-certify-with-plugins" tag = "release-0.13.x" 
+ 28-Nov-25 07:51:46  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 28-Nov-25 07:51:47  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify-with-plugins:pull HTTP/1.1" 200 None 
+ 28-Nov-25 07:51:47  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 28-Nov-25 07:51:47  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify-with-plugins/tags/release-0.13.x HTTP/1.1" 200 None 
+ 28-Nov-25 07:51:47  INFO   
+ 28-Nov-25 07:51:47  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 28-Nov-25 07:51:47  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 28-Nov-25 07:51:47  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
+ 28-Nov-25 07:51:47  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
+ 28-Nov-25 07:51:47  INFO   
+ 28-Nov-25 07:51:47  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 28-Nov-25 07:51:47  INFO   
+ 28-Nov-25 07:51:47  INFO  [ mosipid/inji-certify-with-plugins ]  
+ 28-Nov-25 07:51:48  WARNING  Crane digest failed for index.docker.io/mosipid/inji-certify-with-plugins:0.13.0: 2025/11/28 07:51:48 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/inji-certify-with-plugins/manifests/0.13.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/inji-certify-with-plugins/manifests/0.13.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.13.0
  
- 28-Nov-25 07:43:51  INFO  Destination Image = "mosipid/kernel-keymanager-service" Destination Image tag = "1.3.0-beta.5" IMAGE_ID :  
- 28-Nov-25 07:43:51  INFO  Destination image mosipid/kernel-keymanager-service:1.3.0-beta.5 does not exist 
- 28-Nov-25 07:43:51  INFO   
- 28-Nov-25 07:43:51  INFO  [ mosipid/keys-generator ]  
- 28-Nov-25 07:43:51  WARNING  Crane digest failed for index.docker.io/mosipid/keys-generator:1.3.0-beta.5: 2025/11/28 07:43:51 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/keys-generator/manifests/1.3.0-beta.5: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/keys-generator/manifests/1.3.0-beta.5: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.0-beta.5
- 
- 28-Nov-25 07:43:51  INFO  Destination Image = "mosipid/keys-generator" Destination Image tag = "1.3.0-beta.5" IMAGE_ID :  
- 28-Nov-25 07:43:51  INFO  Destination image mosipid/keys-generator:1.3.0-beta.5 does not exist 
- 28-Nov-25 07:43:51  INFO   
- 28-Nov-25 07:43:51  INFO  [ mosipid/keys-migrator ]  
- 28-Nov-25 07:43:51  WARNING  Crane digest failed for index.docker.io/mosipid/keys-migrator:1.3.0-beta.5: 2025/11/28 07:43:51 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/keys-migrator/manifests/1.3.0-beta.5: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/keys-migrator/manifests/1.3.0-beta.5: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.0-beta.5
- 
- 28-Nov-25 07:43:51  INFO  Destination Image = "mosipid/keys-migrator" Destination Image tag = "1.3.0-beta.5" IMAGE_ID :  
- 28-Nov-25 07:43:51  INFO  Destination image mosipid/keys-migrator:1.3.0-beta.5 does not exist 
- 28-Nov-25 07:43:51  INFO   
- 28-Nov-25 07:43:51  INFO  [ mosipid/inji-certify ]  
- 28-Nov-25 07:43:52  WARNING  Crane digest failed for index.docker.io/mosipid/inji-certify:0.13.0: 2025/11/28 07:43:52 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/inji-certify/manifests/0.13.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/inji-certify/manifests/0.13.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.13.0
- 
- 28-Nov-25 07:43:52  INFO  Destination Image = "mosipid/inji-certify" Destination Image tag = "0.13.0" IMAGE_ID :  
- 28-Nov-25 07:43:52  INFO  Destination image mosipid/inji-certify:0.13.0 does not exist 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  [ mosipid/apitest-inji-certify ]  
- 28-Nov-25 07:43:52  WARNING  Crane digest failed for index.docker.io/mosipid/apitest-inji-certify:0.13.0: 2025/11/28 07:43:52 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/apitest-inji-certify/manifests/0.13.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/apitest-inji-certify/manifests/0.13.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.13.0
- 
- 28-Nov-25 07:43:52  INFO  Destination Image = "mosipid/apitest-inji-certify" Destination Image tag = "0.13.0" IMAGE_ID :  
- 28-Nov-25 07:43:52  INFO  Destination image mosipid/apitest-inji-certify:0.13.0 does not exist 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  ******************** HASH Operation Results ********************************************************************** 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/kernel-keymanager-service:1.3.0-beta.5'], ['mosipid/keys-generator:1.3.0-beta.5'], ['mosipid/keys-migrator:1.3.0-beta.5'], ['mosipid/inji-certify:0.13.0'], ['mosipid/apitest-inji-certify:0.13.0']] 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 28-Nov-25 07:43:52  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 28-Nov-25 07:43:52  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 28-Nov-25 07:43:52  DEBUG  Found 'auths' section 
- 28-Nov-25 07:43:52  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
- 28-Nov-25 07:43:52  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 28-Nov-25 07:43:52  DEBUG  Looking for auth entry for 'docker.io' 
- 28-Nov-25 07:43:52  DEBUG  Found 'https://index.docker.io/v1/' 
- 28-Nov-25 07:43:52  INFO  Using 3 parallel workers for image transfers 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  ********** [ mosipid/kernel-keymanager-service:1.3.0-beta.5 ] **************************************************** 
- 28-Nov-25 07:43:52  INFO  Transferring image using crane... 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  ********** [ mosipid/keys-generator:1.3.0-beta.5 ] **************************************************** 
- 28-Nov-25 07:43:52  INFO  Transferring image using crane... 
- 28-Nov-25 07:43:52  INFO  Source uses tag reference: mosipdev/keys-generator:release-1.3.x-beta.5 
- 28-Nov-25 07:43:52  INFO  Analyzing source image manifest... 
- 28-Nov-25 07:43:52  INFO  Source uses tag reference: mosipdev/kernel-keymanager-service:release-1.3.x-beta.5 
- 28-Nov-25 07:43:52  INFO  Analyzing source image manifest... 
- 28-Nov-25 07:43:52  INFO   
- 28-Nov-25 07:43:52  INFO  ********** [ mosipid/keys-migrator:1.3.0-beta.5 ] **************************************************** 
- 28-Nov-25 07:43:52  INFO  Transferring image using crane... 
- 28-Nov-25 07:43:52  INFO  Source uses tag reference: mosipdev/keys-migrator:release-1.3.x-beta.5 
- 28-Nov-25 07:43:52  INFO  Analyzing source image manifest... 
- 28-Nov-25 07:43:53  INFO  Source is MULTI-ARCH image 
- 28-Nov-25 07:43:53  INFO  Source Index Digest (Manifest List): sha256:0ebf3a3b8b6368c6651ed4cf7ee4fdf9999180191bef7881b06d099deb21545b 
- 28-Nov-25 07:43:53  INFO  Source has 2 platform(s): 
- 28-Nov-25 07:43:53  INFO    - linux/amd64: sha256:b7fef382d70b9d2a0ac238c1545a0cb29f51c5aa90f71e5d4a3b340588a5b616 
- 28-Nov-25 07:43:53  INFO    - linux/arm64: sha256:eae6c23be892fcd65615752185ebfd652c98486816767c99e3f9c61ccae3089f 
- 28-Nov-25 07:43:53  INFO  Using secure connection for HTTPS registry 
- 28-Nov-25 07:43:53  INFO  Executing: crane copy mosipdev/keys-generator:release-1.3.x-beta.5 index.docker.io/mosipid/keys-generator:1.3.0-beta.5 
- 28-Nov-25 07:43:53  INFO  Source is MULTI-ARCH image 
- 28-Nov-25 07:43:53  INFO  Source Index Digest (Manifest List): sha256:5077d497251cf556fd7566f64cdf506e67a602a354ee42e935ff4c5671e5c450 
- 28-Nov-25 07:43:53  INFO  Source has 2 platform(s): 
- 28-Nov-25 07:43:53  INFO    - linux/amd64: sha256:30bc8b04cd5ff8b5a0bafec1e483c2059170055b751f0b9022fb883646b3c331 
- 28-Nov-25 07:43:53  INFO    - linux/arm64: sha256:4f9f92782648675bae4d311b9c3f6dbaa9a3473bbf642a0586332fda673c9be4 
- 28-Nov-25 07:43:53  INFO  Using secure connection for HTTPS registry 
- 28-Nov-25 07:43:53  INFO  Executing: crane copy mosipdev/keys-migrator:release-1.3.x-beta.5 index.docker.io/mosipid/keys-migrator:1.3.0-beta.5 
- 28-Nov-25 07:43:53  INFO  Source is MULTI-ARCH image 
- 28-Nov-25 07:43:53  INFO  Source Index Digest (Manifest List): sha256:49f36087b640221322e5aad1b33b5765322fb475434360e28ff2591bef81ab9b 
- 28-Nov-25 07:43:53  INFO  Source has 2 platform(s): 
- 28-Nov-25 07:43:53  INFO    - linux/amd64: sha256:58593fa72505a58ee7971bf1188ee3dd91f947beb5137f595927ed755dc142a6 
- 28-Nov-25 07:43:53  INFO    - linux/arm64: sha256:7ed06f1b8e4f94ef16d3fdd14da8cce79aa08e2a633aac16c4a4997ddb6c18e0 
- 28-Nov-25 07:43:53  INFO  Using secure connection for HTTPS registry 
- 28-Nov-25 07:43:53  INFO  Executing: crane copy mosipdev/kernel-keymanager-service:release-1.3.x-beta.5 index.docker.io/mosipid/kernel-keymanager-service:1.3.0-beta.5 
- 28-Nov-25 07:43:56  INFO  Successfully transferred image with crane 
- 28-Nov-25 07:43:56  INFO   
- 28-Nov-25 07:43:56  INFO  Analyzing destination image manifest... 
- 28-Nov-25 07:43:56  INFO  Successfully transferred image with crane 
- 28-Nov-25 07:43:56  INFO   
- 28-Nov-25 07:43:56  INFO  Analyzing destination image manifest... 
- 28-Nov-25 07:43:56  INFO  Successfully transferred image with crane 
- 28-Nov-25 07:43:56  INFO   
- 28-Nov-25 07:43:56  INFO  Analyzing destination image manifest... 
- 28-Nov-25 07:43:56  INFO  Destination is MULTI-ARCH image 
- 28-Nov-25 07:43:56  INFO  Destination Index Digest (Manifest List): sha256:0ebf3a3b8b6368c6651ed4cf7ee4fdf9999180191bef7881b06d099deb21545b 
- 28-Nov-25 07:43:56  INFO  Destination has 2 platform(s): 
- 28-Nov-25 07:43:56  INFO    - linux/amd64: sha256:b7fef382d70b9d2a0ac238c1545a0cb29f51c5aa90f71e5d4a3b340588a5b616 
- 28-Nov-25 07:43:56  INFO    - linux/arm64: sha256:eae6c23be892fcd65615752185ebfd652c98486816767c99e3f9c61ccae3089f 
- 28-Nov-25 07:43:56  INFO   
- 28-Nov-25 07:43:56  INFO  === DIGEST VERIFICATION === 
- 28-Nov-25 07:43:56  INFO  Comparing Index Digests (Manifest Lists): 
- 28-Nov-25 07:43:56  INFO    Source:      sha256:0ebf3a3b8b6368c6651ed4cf7ee4fdf9999180191bef7881b06d099deb21545b 
- 28-Nov-25 07:43:56  INFO    Destination: sha256:0ebf3a3b8b6368c6651ed4cf7ee4fdf9999180191bef7881b06d099deb21545b 
- 28-Nov-25 07:43:56  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 28-Nov-25 07:43:56  INFO   
- 28-Nov-25 07:43:56  INFO  Comparing Platform Manifests: 
- 28-Nov-25 07:43:56  INFO    ✓ linux/amd64: sha256:b7fef382d70b9d2a0ac238c1545a0cb29f51c5aa90f71e5d4a3b340588a5b616 (MATCH) 
- 28-Nov-25 07:43:56  INFO    ✓ linux/arm64: sha256:eae6c23be892fcd65615752185ebfd652c98486816767c99e3f9c61ccae3089f (MATCH) 
- 28-Nov-25 07:43:56  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 28-Nov-25 07:43:56  INFO  Creating latest tag: crane copy mosipdev/keys-generator:release-1.3.x-beta.5 index.docker.io/mosipid/keys-generator:latest 
- 28-Nov-25 07:43:57  INFO  Destination is MULTI-ARCH image 
- 28-Nov-25 07:43:57  INFO  Destination Index Digest (Manifest List): sha256:49f36087b640221322e5aad1b33b5765322fb475434360e28ff2591bef81ab9b 
- 28-Nov-25 07:43:57  INFO  Destination has 2 platform(s): 
- 28-Nov-25 07:43:57  INFO    - linux/amd64: sha256:58593fa72505a58ee7971bf1188ee3dd91f947beb5137f595927ed755dc142a6 
- 28-Nov-25 07:43:57  INFO    - linux/arm64: sha256:7ed06f1b8e4f94ef16d3fdd14da8cce79aa08e2a633aac16c4a4997ddb6c18e0 
- 28-Nov-25 07:43:57  INFO   
- 28-Nov-25 07:43:57  INFO  === DIGEST VERIFICATION === 
- 28-Nov-25 07:43:57  INFO  Comparing Index Digests (Manifest Lists): 
- 28-Nov-25 07:43:57  INFO    Source:      sha256:49f36087b640221322e5aad1b33b5765322fb475434360e28ff2591bef81ab9b 
- 28-Nov-25 07:43:57  INFO    Destination: sha256:49f36087b640221322e5aad1b33b5765322fb475434360e28ff2591bef81ab9b 
- 28-Nov-25 07:43:57  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 28-Nov-25 07:43:57  INFO   
- 28-Nov-25 07:43:57  INFO  Comparing Platform Manifests: 
- 28-Nov-25 07:43:57  INFO    ✓ linux/amd64: sha256:58593fa72505a58ee7971bf1188ee3dd91f947beb5137f595927ed755dc142a6 (MATCH) 
- 28-Nov-25 07:43:57  INFO    ✓ linux/arm64: sha256:7ed06f1b8e4f94ef16d3fdd14da8cce79aa08e2a633aac16c4a4997ddb6c18e0 (MATCH) 
- 28-Nov-25 07:43:57  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 28-Nov-25 07:43:57  INFO  Creating latest tag: crane copy mosipdev/kernel-keymanager-service:release-1.3.x-beta.5 index.docker.io/mosipid/kernel-keymanager-service:latest 
- 28-Nov-25 07:43:57  INFO  Destination is MULTI-ARCH image 
- 28-Nov-25 07:43:57  INFO  Destination Index Digest (Manifest List): sha256:5077d497251cf556fd7566f64cdf506e67a602a354ee42e935ff4c5671e5c450 
- 28-Nov-25 07:43:57  INFO  Destination has 2 platform(s): 
- 28-Nov-25 07:43:57  INFO    - linux/amd64: sha256:30bc8b04cd5ff8b5a0bafec1e483c2059170055b751f0b9022fb883646b3c331 
- 28-Nov-25 07:43:57  INFO    - linux/arm64: sha256:4f9f92782648675bae4d311b9c3f6dbaa9a3473bbf642a0586332fda673c9be4 
- 28-Nov-25 07:43:57  INFO   
- 28-Nov-25 07:43:57  INFO  === DIGEST VERIFICATION === 
- 28-Nov-25 07:43:57  INFO  Comparing Index Digests (Manifest Lists): 
- 28-Nov-25 07:43:57  INFO    Source:      sha256:5077d497251cf556fd7566f64cdf506e67a602a354ee42e935ff4c5671e5c450 
- 28-Nov-25 07:43:57  INFO    Destination: sha256:5077d497251cf556fd7566f64cdf506e67a602a354ee42e935ff4c5671e5c450 
- 28-Nov-25 07:43:57  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 28-Nov-25 07:43:57  INFO   
- 28-Nov-25 07:43:57  INFO  Comparing Platform Manifests: 
- 28-Nov-25 07:43:57  INFO    ✓ linux/amd64: sha256:30bc8b04cd5ff8b5a0bafec1e483c2059170055b751f0b9022fb883646b3c331 (MATCH) 
- 28-Nov-25 07:43:57  INFO    ✓ linux/arm64: sha256:4f9f92782648675bae4d311b9c3f6dbaa9a3473bbf642a0586332fda673c9be4 (MATCH) 
- 28-Nov-25 07:43:57  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 28-Nov-25 07:43:57  INFO  Creating latest tag: crane copy mosipdev/keys-migrator:release-1.3.x-beta.5 index.docker.io/mosipid/keys-migrator:latest 
- 28-Nov-25 07:43:58  INFO  Successfully created latest tag 
- 28-Nov-25 07:43:58  INFO  Image available at: index.docker.io/mosipid/keys-generator:1.3.0-beta.5 
- 28-Nov-25 07:43:58  INFO   
- 28-Nov-25 07:43:58  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 28-Nov-25 07:43:58  INFO  Individual platform manifests should also match to ensure identical content. 
- 28-Nov-25 07:43:58  INFO   
- 28-Nov-25 07:43:58  INFO  ********** [ mosipid/inji-certify:0.13.0 ] **************************************************** 
- 28-Nov-25 07:43:58  INFO  Transferring image using crane... 
- 28-Nov-25 07:43:58  INFO  Source uses tag reference: mosipdev/inji-certify:release-0.13.x 
- 28-Nov-25 07:43:58  INFO  Analyzing source image manifest... 
- 28-Nov-25 07:43:59  INFO  Successfully created latest tag 
- 28-Nov-25 07:43:59  INFO  Image available at: index.docker.io/mosipid/kernel-keymanager-service:1.3.0-beta.5 
- 28-Nov-25 07:43:59  INFO   
- 28-Nov-25 07:43:59  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 28-Nov-25 07:43:59  INFO  Individual platform manifests should also match to ensure identical content. 
- 28-Nov-25 07:43:59  INFO   
- 28-Nov-25 07:43:59  INFO  ********** [ mosipid/apitest-inji-certify:0.13.0 ] **************************************************** 
- 28-Nov-25 07:43:59  INFO  Transferring image using crane... 
- 28-Nov-25 07:43:59  INFO  Completed processing mosipdev/kernel-keymanager-service:release-1.3.x-beta.5 to mosipid/kernel-keymanager-service:1.3.0-beta.5 
- 28-Nov-25 07:43:59  INFO  Completed processing mosipdev/keys-generator:release-1.3.x-beta.5 to mosipid/keys-generator:1.3.0-beta.5 
- 28-Nov-25 07:43:59  INFO  Source uses tag reference: mosipdev/apitest-inji-certify:release-0.13.x 
- 28-Nov-25 07:43:59  INFO  Analyzing source image manifest... 
- 28-Nov-25 07:43:59  INFO  Successfully created latest tag 
- 28-Nov-25 07:43:59  INFO  Image available at: index.docker.io/mosipid/keys-migrator:1.3.0-beta.5 
- 28-Nov-25 07:43:59  INFO   
- 28-Nov-25 07:43:59  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 28-Nov-25 07:43:59  INFO  Individual platform manifests should also match to ensure identical content. 
- 28-Nov-25 07:43:59  INFO  Completed processing mosipdev/keys-migrator:release-1.3.x-beta.5 to mosipid/keys-migrator:1.3.0-beta.5 
- 28-Nov-25 07:43:59  INFO  Source is MULTI-ARCH image 
- 28-Nov-25 07:43:59  INFO  Source Index Digest (Manifest List): sha256:649a4f442ff471fc26aa139af69a08983d0b8f9cd16782bc4968a1e7d3a51c39 
- 28-Nov-25 07:43:59  INFO  Source has 2 platform(s): 
- 28-Nov-25 07:43:59  INFO    - linux/amd64: sha256:4b3bc47eb60a9a2792f2e9c71b6d24092077a7a3a0e4e55e4e6e7c81285ed82f 
- 28-Nov-25 07:43:59  INFO    - linux/arm64: sha256:993a54899d8e5db63c5224a1c3a3a592650d3ee76dd436b30511b00fda03f2e3 
- 28-Nov-25 07:43:59  INFO  Using secure connection for HTTPS registry 
- 28-Nov-25 07:43:59  INFO  Executing: crane copy mosipdev/inji-certify:release-0.13.x index.docker.io/mosipid/inji-certify:0.13.0 
- 28-Nov-25 07:43:59  INFO  Source is MULTI-ARCH image 
- 28-Nov-25 07:43:59  INFO  Source Index Digest (Manifest List): sha256:dd16594280bf09aefe818936afffc6ffa2ef11faaf20d7c7bc057832ec1d08c9 
- 28-Nov-25 07:43:59  INFO  Source has 2 platform(s): 
- 28-Nov-25 07:43:59  INFO    - linux/amd64: sha256:9cf42d00e3009bbbd5514aa45abf3df1f9f2d18cb6224abd3f3f559c2a06b058 
- 28-Nov-25 07:43:59  INFO    - linux/arm64: sha256:250eb55e89b00f4e405fe63000b21568edcf1afa4b41d82cdfdba3e186d80407 
- 28-Nov-25 07:43:59  INFO  Using secure connection for HTTPS registry 
- 28-Nov-25 07:43:59  INFO  Executing: crane copy mosipdev/apitest-inji-certify:release-0.13.x index.docker.io/mosipid/apitest-inji-certify:0.13.0 
- 28-Nov-25 07:44:02  INFO  Successfully transferred image with crane 
- 28-Nov-25 07:44:02  INFO   
- 28-Nov-25 07:44:02  INFO  Analyzing destination image manifest... 
- 28-Nov-25 07:44:02  INFO  Successfully transferred image with crane 
- 28-Nov-25 07:44:02  INFO   
- 28-Nov-25 07:44:02  INFO  Analyzing destination image manifest... 
- 28-Nov-25 07:44:03  INFO  Destination is MULTI-ARCH image 
- 28-Nov-25 07:44:03  INFO  Destination Index Digest (Manifest List): sha256:649a4f442ff471fc26aa139af69a08983d0b8f9cd16782bc4968a1e7d3a51c39 
- 28-Nov-25 07:44:03  INFO  Destination has 2 platform(s): 
- 28-Nov-25 07:44:03  INFO    - linux/amd64: sha256:4b3bc47eb60a9a2792f2e9c71b6d24092077a7a3a0e4e55e4e6e7c81285ed82f 
- 28-Nov-25 07:44:03  INFO    - linux/arm64: sha256:993a54899d8e5db63c5224a1c3a3a592650d3ee76dd436b30511b00fda03f2e3 
- 28-Nov-25 07:44:03  INFO   
- 28-Nov-25 07:44:03  INFO  === DIGEST VERIFICATION === 
- 28-Nov-25 07:44:03  INFO  Comparing Index Digests (Manifest Lists): 
- 28-Nov-25 07:44:03  INFO    Source:      sha256:649a4f442ff471fc26aa139af69a08983d0b8f9cd16782bc4968a1e7d3a51c39 
- 28-Nov-25 07:44:03  INFO    Destination: sha256:649a4f442ff471fc26aa139af69a08983d0b8f9cd16782bc4968a1e7d3a51c39 
- 28-Nov-25 07:44:03  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 28-Nov-25 07:44:03  INFO   
- 28-Nov-25 07:44:03  INFO  Comparing Platform Manifests: 
- 28-Nov-25 07:44:03  INFO    ✓ linux/amd64: sha256:4b3bc47eb60a9a2792f2e9c71b6d24092077a7a3a0e4e55e4e6e7c81285ed82f (MATCH) 
- 28-Nov-25 07:44:03  INFO    ✓ linux/arm64: sha256:993a54899d8e5db63c5224a1c3a3a592650d3ee76dd436b30511b00fda03f2e3 (MATCH) 
- 28-Nov-25 07:44:03  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 28-Nov-25 07:44:03  INFO  Creating latest tag: crane copy mosipdev/inji-certify:release-0.13.x index.docker.io/mosipid/inji-certify:latest 
- 28-Nov-25 07:44:03  INFO  Destination is MULTI-ARCH image 
- 28-Nov-25 07:44:03  INFO  Destination Index Digest (Manifest List): sha256:dd16594280bf09aefe818936afffc6ffa2ef11faaf20d7c7bc057832ec1d08c9 
- 28-Nov-25 07:44:03  INFO  Destination has 2 platform(s): 
- 28-Nov-25 07:44:03  INFO    - linux/amd64: sha256:9cf42d00e3009bbbd5514aa45abf3df1f9f2d18cb6224abd3f3f559c2a06b058 
- 28-Nov-25 07:44:03  INFO    - linux/arm64: sha256:250eb55e89b00f4e405fe63000b21568edcf1afa4b41d82cdfdba3e186d80407 
- 28-Nov-25 07:44:03  INFO   
- 28-Nov-25 07:44:03  INFO  === DIGEST VERIFICATION === 
- 28-Nov-25 07:44:03  INFO  Comparing Index Digests (Manifest Lists): 
- 28-Nov-25 07:44:03  INFO    Source:      sha256:dd16594280bf09aefe818936afffc6ffa2ef11faaf20d7c7bc057832ec1d08c9 
- 28-Nov-25 07:44:03  INFO    Destination: sha256:dd16594280bf09aefe818936afffc6ffa2ef11faaf20d7c7bc057832ec1d08c9 
- 28-Nov-25 07:44:03  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 28-Nov-25 07:44:03  INFO   
- 28-Nov-25 07:44:03  INFO  Comparing Platform Manifests: 
- 28-Nov-25 07:44:03  INFO    ✓ linux/amd64: sha256:9cf42d00e3009bbbd5514aa45abf3df1f9f2d18cb6224abd3f3f559c2a06b058 (MATCH) 
- 28-Nov-25 07:44:03  INFO    ✓ linux/arm64: sha256:250eb55e89b00f4e405fe63000b21568edcf1afa4b41d82cdfdba3e186d80407 (MATCH) 
- 28-Nov-25 07:44:03  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 28-Nov-25 07:44:03  INFO  Creating latest tag: crane copy mosipdev/apitest-inji-certify:release-0.13.x index.docker.io/mosipid/apitest-inji-certify:latest 
- 28-Nov-25 07:44:05  INFO  Successfully created latest tag 
- 28-Nov-25 07:44:05  INFO  Image available at: index.docker.io/mosipid/inji-certify:0.13.0 
- 28-Nov-25 07:44:05  INFO   
- 28-Nov-25 07:44:05  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 28-Nov-25 07:44:05  INFO  Individual platform manifests should also match to ensure identical content. 
- 28-Nov-25 07:44:05  INFO  Completed processing mosipdev/inji-certify:release-0.13.x to mosipid/inji-certify:0.13.0 
- 28-Nov-25 07:44:05  INFO  Successfully created latest tag 
- 28-Nov-25 07:44:05  INFO  Image available at: index.docker.io/mosipid/apitest-inji-certify:0.13.0 
- 28-Nov-25 07:44:05  INFO   
- 28-Nov-25 07:44:05  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 28-Nov-25 07:44:05  INFO  Individual platform manifests should also match to ensure identical content. 
- 28-Nov-25 07:44:05  INFO  Completed processing mosipdev/apitest-inji-certify:release-0.13.x to mosipid/apitest-inji-certify:0.13.0 
+ 28-Nov-25 07:51:48  INFO  Destination Image = "mosipid/inji-certify-with-plugins" Destination Image tag = "0.13.0" IMAGE_ID :  
+ 28-Nov-25 07:51:48  INFO  Destination image mosipid/inji-certify-with-plugins:0.13.0 does not exist 
+ 28-Nov-25 07:51:48  INFO   
+ 28-Nov-25 07:51:48  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 28-Nov-25 07:51:48  INFO   
+ 28-Nov-25 07:51:48  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/inji-certify-with-plugins:0.13.0']] 
+ 28-Nov-25 07:51:48  INFO   
+ 28-Nov-25 07:51:48  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 28-Nov-25 07:51:48  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 28-Nov-25 07:51:48  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 28-Nov-25 07:51:48  DEBUG  Found 'auths' section 
+ 28-Nov-25 07:51:48  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 28-Nov-25 07:51:48  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 28-Nov-25 07:51:48  DEBUG  Looking for auth entry for 'docker.io' 
+ 28-Nov-25 07:51:48  DEBUG  Found 'https://index.docker.io/v1/' 
+ 28-Nov-25 07:51:48  INFO  Using 3 parallel workers for image transfers 
+ 28-Nov-25 07:51:48  INFO   
+ 28-Nov-25 07:51:48  INFO  ********** [ mosipid/inji-certify-with-plugins:0.13.0 ] **************************************************** 
+ 28-Nov-25 07:51:48  INFO  Transferring image using crane... 
+ 28-Nov-25 07:51:48  INFO  Source uses tag reference: mosipdev/inji-certify-with-plugins:release-0.13.x 
+ 28-Nov-25 07:51:48  INFO  Analyzing source image manifest... 
+ 28-Nov-25 07:51:49  INFO  Source is MULTI-ARCH image 
+ 28-Nov-25 07:51:49  INFO  Source Index Digest (Manifest List): sha256:08b218f413373ccc3c0724f14f3260a6d87a1b8d4f75baea031d2b684527a73e 
+ 28-Nov-25 07:51:49  INFO  Source has 2 platform(s): 
+ 28-Nov-25 07:51:49  INFO    - linux/amd64: sha256:2cae3fbd7e287e197e204244cfdc25d47e5d1cdf6ca8b503e880523e4134ee17 
+ 28-Nov-25 07:51:49  INFO    - linux/arm64: sha256:bfc05cd58e2c42f3a63f8d45b2681b5a72843f791bfb345d0ac08a27c5cf992f 
+ 28-Nov-25 07:51:49  INFO  Using secure connection for HTTPS registry 
+ 28-Nov-25 07:51:49  INFO  Executing: crane copy mosipdev/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipid/inji-certify-with-plugins:0.13.0 
+ 28-Nov-25 07:51:53  INFO  Successfully transferred image with crane 
+ 28-Nov-25 07:51:53  INFO   
+ 28-Nov-25 07:51:53  INFO  Analyzing destination image manifest... 
+ 28-Nov-25 07:51:54  INFO  Destination is MULTI-ARCH image 
+ 28-Nov-25 07:51:54  INFO  Destination Index Digest (Manifest List): sha256:08b218f413373ccc3c0724f14f3260a6d87a1b8d4f75baea031d2b684527a73e 
+ 28-Nov-25 07:51:54  INFO  Destination has 2 platform(s): 
+ 28-Nov-25 07:51:54  INFO    - linux/amd64: sha256:2cae3fbd7e287e197e204244cfdc25d47e5d1cdf6ca8b503e880523e4134ee17 
+ 28-Nov-25 07:51:54  INFO    - linux/arm64: sha256:bfc05cd58e2c42f3a63f8d45b2681b5a72843f791bfb345d0ac08a27c5cf992f 
+ 28-Nov-25 07:51:54  INFO   
+ 28-Nov-25 07:51:54  INFO  === DIGEST VERIFICATION === 
+ 28-Nov-25 07:51:54  INFO  Comparing Index Digests (Manifest Lists): 
+ 28-Nov-25 07:51:54  INFO    Source:      sha256:08b218f413373ccc3c0724f14f3260a6d87a1b8d4f75baea031d2b684527a73e 
+ 28-Nov-25 07:51:54  INFO    Destination: sha256:08b218f413373ccc3c0724f14f3260a6d87a1b8d4f75baea031d2b684527a73e 
+ 28-Nov-25 07:51:54  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 28-Nov-25 07:51:54  INFO   
+ 28-Nov-25 07:51:54  INFO  Comparing Platform Manifests: 
+ 28-Nov-25 07:51:54  INFO    ✓ linux/amd64: sha256:2cae3fbd7e287e197e204244cfdc25d47e5d1cdf6ca8b503e880523e4134ee17 (MATCH) 
+ 28-Nov-25 07:51:54  INFO    ✓ linux/arm64: sha256:bfc05cd58e2c42f3a63f8d45b2681b5a72843f791bfb345d0ac08a27c5cf992f (MATCH) 
+ 28-Nov-25 07:51:54  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 28-Nov-25 07:51:54  INFO  Creating latest tag: crane copy mosipdev/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipid/inji-certify-with-plugins:latest 
+ 28-Nov-25 07:51:57  INFO  Successfully created latest tag 
+ 28-Nov-25 07:51:57  INFO  Image available at: index.docker.io/mosipid/inji-certify-with-plugins:0.13.0 
+ 28-Nov-25 07:51:57  INFO   
+ 28-Nov-25 07:51:57  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 28-Nov-25 07:51:57  INFO  Individual platform manifests should also match to ensure identical content. 
+ 28-Nov-25 07:51:57  INFO  Completed processing mosipdev/inji-certify-with-plugins:release-0.13.x to mosipid/inji-certify-with-plugins:0.13.0 
