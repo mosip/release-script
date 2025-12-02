@@ -1,284 +1,67 @@
- 01-Dec-25 13:53:02  INFO  LOGFILE CREATED : vidivi.log 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  ******************** Check Images List ************************************************************************************ 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  IMAGES= [['mosipdev/admin-service:release-1.2.1.x', '1.2.1.4'], ['mosipdev/hotlist-service:release-1.2.1.x', '1.2.1.4'], ['mosipdev/kernel-masterdata-service:release-1.2.1.x', '1.2.1.4'], ['mosipdev/kernel-syncdata-service:release-1.2.1.x', '1.2.1.4'], ['mosipdev/apitest-masterdata:release-1.2.1.x', '1.2.1.4']] 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  src = "mosipdev/admin-service" tag = "release-1.2.1.x" 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 01-Dec-25 13:53:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/admin-service:pull HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 01-Dec-25 13:53:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/admin-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  src = "mosipdev/hotlist-service" tag = "release-1.2.1.x" 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 01-Dec-25 13:53:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/hotlist-service:pull HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 01-Dec-25 13:53:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/hotlist-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  src = "mosipdev/kernel-masterdata-service" tag = "release-1.2.1.x" 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 01-Dec-25 13:53:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-masterdata-service:pull HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 01-Dec-25 13:53:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-masterdata-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  INFO   
- 01-Dec-25 13:53:02  INFO  src = "mosipdev/kernel-syncdata-service" tag = "release-1.2.1.x" 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 01-Dec-25 13:53:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/kernel-syncdata-service:pull HTTP/1.1" 200 None 
- 01-Dec-25 13:53:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 01-Dec-25 13:53:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/kernel-syncdata-service/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 01-Dec-25 13:53:03  INFO   
- 01-Dec-25 13:53:03  INFO  src = "mosipdev/apitest-masterdata" tag = "release-1.2.1.x" 
- 01-Dec-25 13:53:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 01-Dec-25 13:53:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/apitest-masterdata:pull HTTP/1.1" 200 None 
- 01-Dec-25 13:53:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 01-Dec-25 13:53:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/apitest-masterdata/tags/release-1.2.1.x HTTP/1.1" 200 None 
- 01-Dec-25 13:53:03  INFO   
- 01-Dec-25 13:53:03  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 01-Dec-25 13:53:03  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 01-Dec-25 13:53:03  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
- 01-Dec-25 13:53:03  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
- 01-Dec-25 13:53:03  INFO   
- 01-Dec-25 13:53:03  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 01-Dec-25 13:53:03  INFO   
- 01-Dec-25 13:53:03  INFO  [ mosipid/admin-service ]  
- 01-Dec-25 13:53:03  WARNING  Crane digest failed for index.docker.io/mosipid/admin-service:1.2.1.4: 2025/12/01 13:53:03 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/admin-service/manifests/1.2.1.4: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/admin-service/manifests/1.2.1.4: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.1.4
+ 02-Dec-25 09:50:25  INFO  LOGFILE CREATED : vidivi.log 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  ******************** Check Images List ************************************************************************************ 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  IMAGES= [['mosipint/minio:2025.2.28-debian-12-r1', '2025.2.28-debian-12-r1']] 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  src = "mosipint/minio" tag = "2025.2.28-debian-12-r1" 
+ 02-Dec-25 09:50:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 02-Dec-25 09:50:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipint/minio:pull HTTP/1.1" 200 None 
+ 02-Dec-25 09:50:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 02-Dec-25 09:50:25  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipint/minio/tags/2025.2.28-debian-12-r1 HTTP/1.1" 200 836 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 02-Dec-25 09:50:25  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 02-Dec-25 09:50:25  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
+ 02-Dec-25 09:50:25  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 02-Dec-25 09:50:25  INFO   
+ 02-Dec-25 09:50:25  INFO  [ mosipid/minio ]  
+ 02-Dec-25 09:50:26  WARNING  Crane digest failed for index.docker.io/mosipid/minio:2025.2.28-debian-12-r1: 2025/12/02 09:50:26 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/minio/manifests/2025.2.28-debian-12-r1: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
+Error: GET https://index.docker.io/v2/mosipid/minio/manifests/2025.2.28-debian-12-r1: MANIFEST_UNKNOWN: manifest unknown; unknown tag=2025.2.28-debian-12-r1
  
- 01-Dec-25 13:53:03  INFO  Destination Image = "mosipid/admin-service" Destination Image tag = "1.2.1.4" IMAGE_ID :  
- 01-Dec-25 13:53:03  INFO  Destination image mosipid/admin-service:1.2.1.4 does not exist 
- 01-Dec-25 13:53:03  INFO   
- 01-Dec-25 13:53:03  INFO  [ mosipid/hotlist-service ]  
- 01-Dec-25 13:53:04  WARNING  Crane digest failed for index.docker.io/mosipid/hotlist-service:1.2.1.4: 2025/12/01 13:53:04 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/hotlist-service/manifests/1.2.1.4: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/hotlist-service/manifests/1.2.1.4: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.1.4
- 
- 01-Dec-25 13:53:04  INFO  Destination Image = "mosipid/hotlist-service" Destination Image tag = "1.2.1.4" IMAGE_ID :  
- 01-Dec-25 13:53:04  INFO  Destination image mosipid/hotlist-service:1.2.1.4 does not exist 
- 01-Dec-25 13:53:04  INFO   
- 01-Dec-25 13:53:04  INFO  [ mosipid/kernel-masterdata-service ]  
- 01-Dec-25 13:53:04  WARNING  Crane digest failed for index.docker.io/mosipid/kernel-masterdata-service:1.2.1.4: 2025/12/01 13:53:04 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/kernel-masterdata-service/manifests/1.2.1.4: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/kernel-masterdata-service/manifests/1.2.1.4: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.1.4
- 
- 01-Dec-25 13:53:04  INFO  Destination Image = "mosipid/kernel-masterdata-service" Destination Image tag = "1.2.1.4" IMAGE_ID :  
- 01-Dec-25 13:53:04  INFO  Destination image mosipid/kernel-masterdata-service:1.2.1.4 does not exist 
- 01-Dec-25 13:53:04  INFO   
- 01-Dec-25 13:53:04  INFO  [ mosipid/kernel-syncdata-service ]  
- 01-Dec-25 13:53:04  WARNING  Crane digest failed for index.docker.io/mosipid/kernel-syncdata-service:1.2.1.4: 2025/12/01 13:53:04 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/kernel-syncdata-service/manifests/1.2.1.4: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/kernel-syncdata-service/manifests/1.2.1.4: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.1.4
- 
- 01-Dec-25 13:53:04  INFO  Destination Image = "mosipid/kernel-syncdata-service" Destination Image tag = "1.2.1.4" IMAGE_ID :  
- 01-Dec-25 13:53:04  INFO  Destination image mosipid/kernel-syncdata-service:1.2.1.4 does not exist 
- 01-Dec-25 13:53:04  INFO   
- 01-Dec-25 13:53:04  INFO  [ mosipid/apitest-masterdata ]  
- 01-Dec-25 13:53:05  WARNING  Crane digest failed for index.docker.io/mosipid/apitest-masterdata:1.2.1.4: 2025/12/01 13:53:04 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/apitest-masterdata/manifests/1.2.1.4: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/apitest-masterdata/manifests/1.2.1.4: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.2.1.4
- 
- 01-Dec-25 13:53:05  INFO  Destination Image = "mosipid/apitest-masterdata" Destination Image tag = "1.2.1.4" IMAGE_ID :  
- 01-Dec-25 13:53:05  INFO  Destination image mosipid/apitest-masterdata:1.2.1.4 does not exist 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  ******************** HASH Operation Results ********************************************************************** 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/admin-service:1.2.1.4'], ['mosipid/hotlist-service:1.2.1.4'], ['mosipid/kernel-masterdata-service:1.2.1.4'], ['mosipid/kernel-syncdata-service:1.2.1.4'], ['mosipid/apitest-masterdata:1.2.1.4']] 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 01-Dec-25 13:53:05  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 01-Dec-25 13:53:05  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 01-Dec-25 13:53:05  DEBUG  Found 'auths' section 
- 01-Dec-25 13:53:05  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
- 01-Dec-25 13:53:05  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 01-Dec-25 13:53:05  DEBUG  Looking for auth entry for 'docker.io' 
- 01-Dec-25 13:53:05  DEBUG  Found 'https://index.docker.io/v1/' 
- 01-Dec-25 13:53:05  INFO  Using 3 parallel workers for image transfers 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  ********** [ mosipid/admin-service:1.2.1.4 ] **************************************************** 
- 01-Dec-25 13:53:05  INFO  Transferring image using crane... 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  ********** [ mosipid/hotlist-service:1.2.1.4 ] **************************************************** 
- 01-Dec-25 13:53:05  INFO  Transferring image using crane... 
- 01-Dec-25 13:53:05  INFO  Source uses tag reference: mosipdev/hotlist-service:release-1.2.1.x 
- 01-Dec-25 13:53:05  INFO   
- 01-Dec-25 13:53:05  INFO  Analyzing source image manifest... 
- 01-Dec-25 13:53:05  INFO  Source uses tag reference: mosipdev/admin-service:release-1.2.1.x 
- 01-Dec-25 13:53:05  INFO  ********** [ mosipid/kernel-masterdata-service:1.2.1.4 ] **************************************************** 
- 01-Dec-25 13:53:05  INFO  Analyzing source image manifest... 
- 01-Dec-25 13:53:05  INFO  Transferring image using crane... 
- 01-Dec-25 13:53:05  INFO  Source uses tag reference: mosipdev/kernel-masterdata-service:release-1.2.1.x 
- 01-Dec-25 13:53:05  INFO  Analyzing source image manifest... 
- 01-Dec-25 13:53:05  INFO  Source is MULTI-ARCH image 
- 01-Dec-25 13:53:05  INFO  Source Index Digest (Manifest List): sha256:4201d1d9e8d241f3b044ae3c6af4bd157b5e13b707651afddaa74886065ed224 
- 01-Dec-25 13:53:05  INFO  Source has 2 platform(s): 
- 01-Dec-25 13:53:05  INFO    - linux/amd64: sha256:5396b0202e4bddf8885cb47706ff61bb2009853e5cb22d4167e2784479ed8036 
- 01-Dec-25 13:53:05  INFO    - linux/arm64: sha256:395a0db2dbaa70887c5afaff571dce853eb6750a1cd26393187bd4e067b4eb3c 
- 01-Dec-25 13:53:05  INFO  Using secure connection for HTTPS registry 
- 01-Dec-25 13:53:05  INFO  Executing: crane copy mosipdev/admin-service:release-1.2.1.x index.docker.io/mosipid/admin-service:1.2.1.4 
- 01-Dec-25 13:53:05  INFO  Source is MULTI-ARCH image 
- 01-Dec-25 13:53:05  INFO  Source Index Digest (Manifest List): sha256:1a7964ba4946e0f4b653ea7b02afc08cd4234fbce148fd70bee0bb818c13f754 
- 01-Dec-25 13:53:05  INFO  Source has 2 platform(s): 
- 01-Dec-25 13:53:05  INFO    - linux/amd64: sha256:9bb3d0804ffd28608081141a685d3b351038b24729c82aa9c6badbf86c278217 
- 01-Dec-25 13:53:05  INFO    - linux/arm64: sha256:4abfc6b8eb703f99982526dc6df66b74bfdb662cce4d52739d6eb6f36b15c00e 
- 01-Dec-25 13:53:05  INFO  Using secure connection for HTTPS registry 
- 01-Dec-25 13:53:05  INFO  Executing: crane copy mosipdev/hotlist-service:release-1.2.1.x index.docker.io/mosipid/hotlist-service:1.2.1.4 
- 01-Dec-25 13:53:05  INFO  Source is MULTI-ARCH image 
- 01-Dec-25 13:53:05  INFO  Source Index Digest (Manifest List): sha256:9167a764e7b17d2f18147ca2bf7f3bc903a7c0428508b1ee93e511de55c9896e 
- 01-Dec-25 13:53:05  INFO  Source has 2 platform(s): 
- 01-Dec-25 13:53:05  INFO    - linux/amd64: sha256:e3dca6153b2c0f392c65c4c93b12b53ace9e97fa458830f2f02971d9d8ee225b 
- 01-Dec-25 13:53:05  INFO    - linux/arm64: sha256:3ea975592b77526349983eea5b936776639273dace7d81adde5955b7e0895e0a 
- 01-Dec-25 13:53:05  INFO  Using secure connection for HTTPS registry 
- 01-Dec-25 13:53:05  INFO  Executing: crane copy mosipdev/kernel-masterdata-service:release-1.2.1.x index.docker.io/mosipid/kernel-masterdata-service:1.2.1.4 
- 01-Dec-25 13:53:08  INFO  Successfully transferred image with crane 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  Analyzing destination image manifest... 
- 01-Dec-25 13:53:08  INFO  Successfully transferred image with crane 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  Analyzing destination image manifest... 
- 01-Dec-25 13:53:08  INFO  Successfully transferred image with crane 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  Analyzing destination image manifest... 
- 01-Dec-25 13:53:08  INFO  Destination is MULTI-ARCH image 
- 01-Dec-25 13:53:08  INFO  Destination Index Digest (Manifest List): sha256:4201d1d9e8d241f3b044ae3c6af4bd157b5e13b707651afddaa74886065ed224 
- 01-Dec-25 13:53:08  INFO  Destination has 2 platform(s): 
- 01-Dec-25 13:53:08  INFO    - linux/amd64: sha256:5396b0202e4bddf8885cb47706ff61bb2009853e5cb22d4167e2784479ed8036 
- 01-Dec-25 13:53:08  INFO    - linux/arm64: sha256:395a0db2dbaa70887c5afaff571dce853eb6750a1cd26393187bd4e067b4eb3c 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  === DIGEST VERIFICATION === 
- 01-Dec-25 13:53:08  INFO  Comparing Index Digests (Manifest Lists): 
- 01-Dec-25 13:53:08  INFO    Source:      sha256:4201d1d9e8d241f3b044ae3c6af4bd157b5e13b707651afddaa74886065ed224 
- 01-Dec-25 13:53:08  INFO    Destination: sha256:4201d1d9e8d241f3b044ae3c6af4bd157b5e13b707651afddaa74886065ed224 
- 01-Dec-25 13:53:08  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  Comparing Platform Manifests: 
- 01-Dec-25 13:53:08  INFO    ✓ linux/amd64: sha256:5396b0202e4bddf8885cb47706ff61bb2009853e5cb22d4167e2784479ed8036 (MATCH) 
- 01-Dec-25 13:53:08  INFO    ✓ linux/arm64: sha256:395a0db2dbaa70887c5afaff571dce853eb6750a1cd26393187bd4e067b4eb3c (MATCH) 
- 01-Dec-25 13:53:08  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 01-Dec-25 13:53:08  INFO  Creating latest tag: crane copy mosipdev/admin-service:release-1.2.1.x index.docker.io/mosipid/admin-service:latest 
- 01-Dec-25 13:53:08  INFO  Destination is MULTI-ARCH image 
- 01-Dec-25 13:53:08  INFO  Destination Index Digest (Manifest List): sha256:1a7964ba4946e0f4b653ea7b02afc08cd4234fbce148fd70bee0bb818c13f754 
- 01-Dec-25 13:53:08  INFO  Destination has 2 platform(s): 
- 01-Dec-25 13:53:08  INFO    - linux/amd64: sha256:9bb3d0804ffd28608081141a685d3b351038b24729c82aa9c6badbf86c278217 
- 01-Dec-25 13:53:08  INFO    - linux/arm64: sha256:4abfc6b8eb703f99982526dc6df66b74bfdb662cce4d52739d6eb6f36b15c00e 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  === DIGEST VERIFICATION === 
- 01-Dec-25 13:53:08  INFO  Comparing Index Digests (Manifest Lists): 
- 01-Dec-25 13:53:08  INFO    Source:      sha256:1a7964ba4946e0f4b653ea7b02afc08cd4234fbce148fd70bee0bb818c13f754 
- 01-Dec-25 13:53:08  INFO    Destination: sha256:1a7964ba4946e0f4b653ea7b02afc08cd4234fbce148fd70bee0bb818c13f754 
- 01-Dec-25 13:53:08  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 01-Dec-25 13:53:08  INFO   
- 01-Dec-25 13:53:08  INFO  Comparing Platform Manifests: 
- 01-Dec-25 13:53:08  INFO    ✓ linux/amd64: sha256:9bb3d0804ffd28608081141a685d3b351038b24729c82aa9c6badbf86c278217 (MATCH) 
- 01-Dec-25 13:53:08  INFO    ✓ linux/arm64: sha256:4abfc6b8eb703f99982526dc6df66b74bfdb662cce4d52739d6eb6f36b15c00e (MATCH) 
- 01-Dec-25 13:53:08  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 01-Dec-25 13:53:08  INFO  Creating latest tag: crane copy mosipdev/hotlist-service:release-1.2.1.x index.docker.io/mosipid/hotlist-service:latest 
- 01-Dec-25 13:53:09  INFO  Destination is MULTI-ARCH image 
- 01-Dec-25 13:53:09  INFO  Destination Index Digest (Manifest List): sha256:9167a764e7b17d2f18147ca2bf7f3bc903a7c0428508b1ee93e511de55c9896e 
- 01-Dec-25 13:53:09  INFO  Destination has 2 platform(s): 
- 01-Dec-25 13:53:09  INFO    - linux/amd64: sha256:e3dca6153b2c0f392c65c4c93b12b53ace9e97fa458830f2f02971d9d8ee225b 
- 01-Dec-25 13:53:09  INFO    - linux/arm64: sha256:3ea975592b77526349983eea5b936776639273dace7d81adde5955b7e0895e0a 
- 01-Dec-25 13:53:09  INFO   
- 01-Dec-25 13:53:09  INFO  === DIGEST VERIFICATION === 
- 01-Dec-25 13:53:09  INFO  Comparing Index Digests (Manifest Lists): 
- 01-Dec-25 13:53:09  INFO    Source:      sha256:9167a764e7b17d2f18147ca2bf7f3bc903a7c0428508b1ee93e511de55c9896e 
- 01-Dec-25 13:53:09  INFO    Destination: sha256:9167a764e7b17d2f18147ca2bf7f3bc903a7c0428508b1ee93e511de55c9896e 
- 01-Dec-25 13:53:09  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 01-Dec-25 13:53:09  INFO   
- 01-Dec-25 13:53:09  INFO  Comparing Platform Manifests: 
- 01-Dec-25 13:53:09  INFO    ✓ linux/amd64: sha256:e3dca6153b2c0f392c65c4c93b12b53ace9e97fa458830f2f02971d9d8ee225b (MATCH) 
- 01-Dec-25 13:53:09  INFO    ✓ linux/arm64: sha256:3ea975592b77526349983eea5b936776639273dace7d81adde5955b7e0895e0a (MATCH) 
- 01-Dec-25 13:53:09  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 01-Dec-25 13:53:09  INFO  Creating latest tag: crane copy mosipdev/kernel-masterdata-service:release-1.2.1.x index.docker.io/mosipid/kernel-masterdata-service:latest 
- 01-Dec-25 13:53:10  INFO  Successfully created latest tag 
- 01-Dec-25 13:53:10  INFO  Image available at: index.docker.io/mosipid/admin-service:1.2.1.4 
- 01-Dec-25 13:53:10  INFO   
- 01-Dec-25 13:53:10  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 01-Dec-25 13:53:10  INFO  Individual platform manifests should also match to ensure identical content. 
- 01-Dec-25 13:53:10  INFO   
- 01-Dec-25 13:53:10  INFO  ********** [ mosipid/kernel-syncdata-service:1.2.1.4 ] **************************************************** 
- 01-Dec-25 13:53:10  INFO  Transferring image using crane... 
- 01-Dec-25 13:53:10  INFO  Completed processing mosipdev/admin-service:release-1.2.1.x to mosipid/admin-service:1.2.1.4 
- 01-Dec-25 13:53:10  INFO  Source uses tag reference: mosipdev/kernel-syncdata-service:release-1.2.1.x 
- 01-Dec-25 13:53:10  INFO  Analyzing source image manifest... 
- 01-Dec-25 13:53:10  INFO  Successfully created latest tag 
- 01-Dec-25 13:53:10  INFO  Image available at: index.docker.io/mosipid/hotlist-service:1.2.1.4 
- 01-Dec-25 13:53:10  INFO   
- 01-Dec-25 13:53:10  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 01-Dec-25 13:53:10  INFO  Individual platform manifests should also match to ensure identical content. 
- 01-Dec-25 13:53:10  INFO   
- 01-Dec-25 13:53:10  INFO  ********** [ mosipid/apitest-masterdata:1.2.1.4 ] **************************************************** 
- 01-Dec-25 13:53:10  INFO  Transferring image using crane... 
- 01-Dec-25 13:53:10  INFO  Completed processing mosipdev/hotlist-service:release-1.2.1.x to mosipid/hotlist-service:1.2.1.4 
- 01-Dec-25 13:53:10  INFO  Source uses tag reference: mosipdev/apitest-masterdata:release-1.2.1.x 
- 01-Dec-25 13:53:10  INFO  Analyzing source image manifest... 
- 01-Dec-25 13:53:10  INFO  Successfully created latest tag 
- 01-Dec-25 13:53:10  INFO  Image available at: index.docker.io/mosipid/kernel-masterdata-service:1.2.1.4 
- 01-Dec-25 13:53:10  INFO   
- 01-Dec-25 13:53:10  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 01-Dec-25 13:53:10  INFO  Individual platform manifests should also match to ensure identical content. 
- 01-Dec-25 13:53:10  INFO  Completed processing mosipdev/kernel-masterdata-service:release-1.2.1.x to mosipid/kernel-masterdata-service:1.2.1.4 
- 01-Dec-25 13:53:11  INFO  Source is MULTI-ARCH image 
- 01-Dec-25 13:53:11  INFO  Source Index Digest (Manifest List): sha256:38dda3115c8c1c36dce28ddeb7cd5f5be731045b3db4fc7e535a111e68776820 
- 01-Dec-25 13:53:11  INFO  Source has 2 platform(s): 
- 01-Dec-25 13:53:11  INFO    - linux/amd64: sha256:f9f57897701ccaf72f3a45cf516b5fd86be75a1ba481a4126b111ff8331511a0 
- 01-Dec-25 13:53:11  INFO    - linux/arm64: sha256:7da6208ff5dab124516e8d7c56d32a86170b610f125704e2a33976d089277b9f 
- 01-Dec-25 13:53:11  INFO  Using secure connection for HTTPS registry 
- 01-Dec-25 13:53:11  INFO  Executing: crane copy mosipdev/kernel-syncdata-service:release-1.2.1.x index.docker.io/mosipid/kernel-syncdata-service:1.2.1.4 
- 01-Dec-25 13:53:11  INFO  Source is MULTI-ARCH image 
- 01-Dec-25 13:53:11  INFO  Source Index Digest (Manifest List): sha256:6da677ca94b2a8d63ad46fd6365ee15ddccdf22571df8510ffa9ac9991073aba 
- 01-Dec-25 13:53:11  INFO  Source has 2 platform(s): 
- 01-Dec-25 13:53:11  INFO    - linux/amd64: sha256:fbf3ee39564521dfff4bdb464184d3fcf8d9de08bcb849b2da62e6b031fa3f76 
- 01-Dec-25 13:53:11  INFO    - linux/arm64: sha256:f17b84c30d642f8b26f9a645ff9ce4f9e52b9e254bcdaa8b7c76ce98c40c7d12 
- 01-Dec-25 13:53:11  INFO  Using secure connection for HTTPS registry 
- 01-Dec-25 13:53:11  INFO  Executing: crane copy mosipdev/apitest-masterdata:release-1.2.1.x index.docker.io/mosipid/apitest-masterdata:1.2.1.4 
- 01-Dec-25 13:53:13  INFO  Successfully transferred image with crane 
- 01-Dec-25 13:53:13  INFO   
- 01-Dec-25 13:53:13  INFO  Analyzing destination image manifest... 
- 01-Dec-25 13:53:14  INFO  Successfully transferred image with crane 
- 01-Dec-25 13:53:14  INFO   
- 01-Dec-25 13:53:14  INFO  Analyzing destination image manifest... 
- 01-Dec-25 13:53:14  INFO  Destination is MULTI-ARCH image 
- 01-Dec-25 13:53:14  INFO  Destination Index Digest (Manifest List): sha256:6da677ca94b2a8d63ad46fd6365ee15ddccdf22571df8510ffa9ac9991073aba 
- 01-Dec-25 13:53:14  INFO  Destination has 2 platform(s): 
- 01-Dec-25 13:53:14  INFO    - linux/amd64: sha256:fbf3ee39564521dfff4bdb464184d3fcf8d9de08bcb849b2da62e6b031fa3f76 
- 01-Dec-25 13:53:14  INFO    - linux/arm64: sha256:f17b84c30d642f8b26f9a645ff9ce4f9e52b9e254bcdaa8b7c76ce98c40c7d12 
- 01-Dec-25 13:53:14  INFO   
- 01-Dec-25 13:53:14  INFO  === DIGEST VERIFICATION === 
- 01-Dec-25 13:53:14  INFO  Comparing Index Digests (Manifest Lists): 
- 01-Dec-25 13:53:14  INFO    Source:      sha256:6da677ca94b2a8d63ad46fd6365ee15ddccdf22571df8510ffa9ac9991073aba 
- 01-Dec-25 13:53:14  INFO    Destination: sha256:6da677ca94b2a8d63ad46fd6365ee15ddccdf22571df8510ffa9ac9991073aba 
- 01-Dec-25 13:53:14  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 01-Dec-25 13:53:14  INFO   
- 01-Dec-25 13:53:14  INFO  Comparing Platform Manifests: 
- 01-Dec-25 13:53:14  INFO    ✓ linux/amd64: sha256:fbf3ee39564521dfff4bdb464184d3fcf8d9de08bcb849b2da62e6b031fa3f76 (MATCH) 
- 01-Dec-25 13:53:14  INFO    ✓ linux/arm64: sha256:f17b84c30d642f8b26f9a645ff9ce4f9e52b9e254bcdaa8b7c76ce98c40c7d12 (MATCH) 
- 01-Dec-25 13:53:14  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 01-Dec-25 13:53:14  INFO  Creating latest tag: crane copy mosipdev/apitest-masterdata:release-1.2.1.x index.docker.io/mosipid/apitest-masterdata:latest 
- 01-Dec-25 13:53:14  INFO  Destination is MULTI-ARCH image 
- 01-Dec-25 13:53:14  INFO  Destination Index Digest (Manifest List): sha256:38dda3115c8c1c36dce28ddeb7cd5f5be731045b3db4fc7e535a111e68776820 
- 01-Dec-25 13:53:14  INFO  Destination has 2 platform(s): 
- 01-Dec-25 13:53:14  INFO    - linux/amd64: sha256:f9f57897701ccaf72f3a45cf516b5fd86be75a1ba481a4126b111ff8331511a0 
- 01-Dec-25 13:53:14  INFO    - linux/arm64: sha256:7da6208ff5dab124516e8d7c56d32a86170b610f125704e2a33976d089277b9f 
- 01-Dec-25 13:53:14  INFO   
- 01-Dec-25 13:53:14  INFO  === DIGEST VERIFICATION === 
- 01-Dec-25 13:53:14  INFO  Comparing Index Digests (Manifest Lists): 
- 01-Dec-25 13:53:14  INFO    Source:      sha256:38dda3115c8c1c36dce28ddeb7cd5f5be731045b3db4fc7e535a111e68776820 
- 01-Dec-25 13:53:14  INFO    Destination: sha256:38dda3115c8c1c36dce28ddeb7cd5f5be731045b3db4fc7e535a111e68776820 
- 01-Dec-25 13:53:14  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 01-Dec-25 13:53:14  INFO   
- 01-Dec-25 13:53:14  INFO  Comparing Platform Manifests: 
- 01-Dec-25 13:53:14  INFO    ✓ linux/amd64: sha256:f9f57897701ccaf72f3a45cf516b5fd86be75a1ba481a4126b111ff8331511a0 (MATCH) 
- 01-Dec-25 13:53:14  INFO    ✓ linux/arm64: sha256:7da6208ff5dab124516e8d7c56d32a86170b610f125704e2a33976d089277b9f (MATCH) 
- 01-Dec-25 13:53:14  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 01-Dec-25 13:53:14  INFO  Creating latest tag: crane copy mosipdev/kernel-syncdata-service:release-1.2.1.x index.docker.io/mosipid/kernel-syncdata-service:latest 
- 01-Dec-25 13:53:16  INFO  Successfully created latest tag 
- 01-Dec-25 13:53:16  INFO  Image available at: index.docker.io/mosipid/apitest-masterdata:1.2.1.4 
- 01-Dec-25 13:53:16  INFO   
- 01-Dec-25 13:53:16  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 01-Dec-25 13:53:16  INFO  Individual platform manifests should also match to ensure identical content. 
- 01-Dec-25 13:53:16  INFO  Successfully created latest tag 
- 01-Dec-25 13:53:16  INFO  Image available at: index.docker.io/mosipid/kernel-syncdata-service:1.2.1.4 
- 01-Dec-25 13:53:16  INFO   
- 01-Dec-25 13:53:16  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 01-Dec-25 13:53:16  INFO  Individual platform manifests should also match to ensure identical content. 
- 01-Dec-25 13:53:16  INFO  Completed processing mosipdev/kernel-syncdata-service:release-1.2.1.x to mosipid/kernel-syncdata-service:1.2.1.4 
- 01-Dec-25 13:53:16  INFO  Completed processing mosipdev/apitest-masterdata:release-1.2.1.x to mosipid/apitest-masterdata:1.2.1.4 
+ 02-Dec-25 09:50:26  INFO  Destination Image = "mosipid/minio" Destination Image tag = "2025.2.28-debian-12-r1" IMAGE_ID :  
+ 02-Dec-25 09:50:26  INFO  Destination image mosipid/minio:2025.2.28-debian-12-r1 does not exist 
+ 02-Dec-25 09:50:26  INFO   
+ 02-Dec-25 09:50:26  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 02-Dec-25 09:50:26  INFO   
+ 02-Dec-25 09:50:26  INFO  Below Destination Images doesn't exists; CONTINUE;
+	[['mosipid/minio:2025.2.28-debian-12-r1']] 
+ 02-Dec-25 09:50:26  INFO   
+ 02-Dec-25 09:50:26  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 02-Dec-25 09:50:26  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 02-Dec-25 09:50:26  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 02-Dec-25 09:50:26  DEBUG  Found 'auths' section 
+ 02-Dec-25 09:50:26  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 02-Dec-25 09:50:26  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 02-Dec-25 09:50:26  DEBUG  Looking for auth entry for 'docker.io' 
+ 02-Dec-25 09:50:26  DEBUG  Found 'https://index.docker.io/v1/' 
+ 02-Dec-25 09:50:26  INFO  Using 3 parallel workers for image transfers 
+ 02-Dec-25 09:50:26  INFO   
+ 02-Dec-25 09:50:26  INFO  ********** [ mosipid/minio:2025.2.28-debian-12-r1 ] **************************************************** 
+ 02-Dec-25 09:50:26  INFO  Transferring image using crane... 
+ 02-Dec-25 09:50:26  INFO  Source uses tag reference: mosipint/minio:2025.2.28-debian-12-r1 
+ 02-Dec-25 09:50:26  INFO  Analyzing source image manifest... 
+ 02-Dec-25 09:50:26  INFO  Source is SINGLE-ARCH image 
+ 02-Dec-25 09:50:26  INFO  Source Platform Digest: sha256:916a8dfba974e410c61b9be474f4d1c718aa31637178760a6ed64e501b46d2c9 
+ 02-Dec-25 09:50:26  INFO  Using secure connection for HTTPS registry 
+ 02-Dec-25 09:50:26  INFO  Executing: crane copy mosipint/minio:2025.2.28-debian-12-r1 index.docker.io/mosipid/minio:2025.2.28-debian-12-r1 
+ 02-Dec-25 09:50:27  INFO  Successfully transferred image with crane 
+ 02-Dec-25 09:50:27  INFO   
+ 02-Dec-25 09:50:27  INFO  Analyzing destination image manifest... 
+ 02-Dec-25 09:50:28  INFO  Destination is SINGLE-ARCH image 
+ 02-Dec-25 09:50:28  INFO  Destination Platform Digest: sha256:916a8dfba974e410c61b9be474f4d1c718aa31637178760a6ed64e501b46d2c9 
+ 02-Dec-25 09:50:28  INFO   
+ 02-Dec-25 09:50:28  INFO  === DIGEST VERIFICATION === 
+ 02-Dec-25 09:50:28  INFO  Comparing Platform Digests: 
+ 02-Dec-25 09:50:28  INFO    Source:      sha256:916a8dfba974e410c61b9be474f4d1c718aa31637178760a6ed64e501b46d2c9 
+ 02-Dec-25 09:50:28  INFO    Destination: sha256:916a8dfba974e410c61b9be474f4d1c718aa31637178760a6ed64e501b46d2c9 
+ 02-Dec-25 09:50:28  INFO  ✓ Platform Digest MATCH - Images are identical! 
+ 02-Dec-25 09:50:28  INFO  Creating latest tag: crane copy mosipint/minio:2025.2.28-debian-12-r1 index.docker.io/mosipid/minio:latest 
+ 02-Dec-25 09:50:29  INFO  Successfully created latest tag 
+ 02-Dec-25 09:50:29  INFO  Image available at: index.docker.io/mosipid/minio:2025.2.28-debian-12-r1 
+ 02-Dec-25 09:50:29  INFO   
+ 02-Dec-25 09:50:29  INFO  Completed processing mosipint/minio:2025.2.28-debian-12-r1 to mosipid/minio:2025.2.28-debian-12-r1 
