@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Wed Dec  3 10:31:55 UTC 2025
+**Date**: Wed Dec  3 10:57:17 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipdev2
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipdev2/apitest-inji-certify:release-0.13.x 
+- index.docker.io/mosipdev2/uitest-admin:release-1.3.x 
