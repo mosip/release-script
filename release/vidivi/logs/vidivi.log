@@ -1,284 +1,120 @@
- 02-Dec-25 12:07:24  INFO  LOGFILE CREATED : vidivi.log 
- 02-Dec-25 12:07:24  INFO   
- 02-Dec-25 12:07:24  INFO  ******************** Check Images List ************************************************************************************ 
- 02-Dec-25 12:07:24  INFO   
- 02-Dec-25 12:07:24  INFO  IMAGES= [['mosipdev/signup-with-plugins:release-1.3.x', '1.3.0'], ['mosipdev/esignet-with-plugins:release-1.7.x', '1.7.0'], ['mosipdev/mock-relying-party-ui:release-0.12.x', '0.12.0'], ['mosipdev/mock-relying-party-service:release-0.12.x', '0.12.0'], ['mosipdev/mock-identity-system:release-0.12.x', '0.12.0']] 
- 02-Dec-25 12:07:24  INFO   
- 02-Dec-25 12:07:24  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 02-Dec-25 12:07:24  INFO   
- 02-Dec-25 12:07:24  INFO  src = "mosipdev/signup-with-plugins" tag = "release-1.3.x" 
- 02-Dec-25 12:07:24  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Dec-25 12:07:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-with-plugins:pull HTTP/1.1" 200 None 
- 02-Dec-25 12:07:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Dec-25 12:07:25  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-with-plugins/tags/release-1.3.x HTTP/1.1" 200 None 
- 02-Dec-25 12:07:25  INFO   
- 02-Dec-25 12:07:25  INFO  src = "mosipdev/esignet-with-plugins" tag = "release-1.7.x" 
- 02-Dec-25 12:07:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Dec-25 12:07:25  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/esignet-with-plugins:pull HTTP/1.1" 200 None 
- 02-Dec-25 12:07:25  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Dec-25 12:07:25  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/esignet-with-plugins/tags/release-1.7.x HTTP/1.1" 200 None 
- 02-Dec-25 12:07:25  INFO   
- 02-Dec-25 12:07:25  INFO  src = "mosipdev/mock-relying-party-ui" tag = "release-0.12.x" 
- 02-Dec-25 12:07:25  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Dec-25 12:07:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-ui:pull HTTP/1.1" 200 None 
- 02-Dec-25 12:07:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Dec-25 12:07:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-relying-party-ui/tags/release-0.12.x HTTP/1.1" 200 None 
- 02-Dec-25 12:07:26  INFO   
- 02-Dec-25 12:07:26  INFO  src = "mosipdev/mock-relying-party-service" tag = "release-0.12.x" 
- 02-Dec-25 12:07:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Dec-25 12:07:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-relying-party-service:pull HTTP/1.1" 200 None 
- 02-Dec-25 12:07:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Dec-25 12:07:26  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-relying-party-service/tags/release-0.12.x HTTP/1.1" 200 None 
- 02-Dec-25 12:07:26  INFO   
- 02-Dec-25 12:07:26  INFO  src = "mosipdev/mock-identity-system" tag = "release-0.12.x" 
- 02-Dec-25 12:07:26  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 02-Dec-25 12:07:26  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mock-identity-system:pull HTTP/1.1" 200 None 
- 02-Dec-25 12:07:26  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 02-Dec-25 12:07:27  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mock-identity-system/tags/release-0.12.x HTTP/1.1" 200 None 
- 02-Dec-25 12:07:27  INFO   
- 02-Dec-25 12:07:27  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 02-Dec-25 12:07:27  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 02-Dec-25 12:07:27  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipid HTTP/1.1" 308 0 
- 02-Dec-25 12:07:27  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipid HTTP/1.1" 200 None 
- 02-Dec-25 12:07:27  INFO   
- 02-Dec-25 12:07:27  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 02-Dec-25 12:07:27  INFO   
- 02-Dec-25 12:07:27  INFO  [ mosipid/signup-with-plugins ]  
- 02-Dec-25 12:07:28  WARNING  Crane digest failed for index.docker.io/mosipid/signup-with-plugins:1.3.0: 2025/12/02 12:07:27 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/signup-with-plugins/manifests/1.3.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/signup-with-plugins/manifests/1.3.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.0
- 
- 02-Dec-25 12:07:28  INFO  Destination Image = "mosipid/signup-with-plugins" Destination Image tag = "1.3.0" IMAGE_ID :  
- 02-Dec-25 12:07:28  INFO  Destination image mosipid/signup-with-plugins:1.3.0 does not exist 
- 02-Dec-25 12:07:28  INFO   
- 02-Dec-25 12:07:28  INFO  [ mosipid/esignet-with-plugins ]  
- 02-Dec-25 12:07:28  WARNING  Crane digest failed for index.docker.io/mosipid/esignet-with-plugins:1.7.0: 2025/12/02 12:07:28 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/esignet-with-plugins/manifests/1.7.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/esignet-with-plugins/manifests/1.7.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.7.0
- 
- 02-Dec-25 12:07:28  INFO  Destination Image = "mosipid/esignet-with-plugins" Destination Image tag = "1.7.0" IMAGE_ID :  
- 02-Dec-25 12:07:28  INFO  Destination image mosipid/esignet-with-plugins:1.7.0 does not exist 
- 02-Dec-25 12:07:28  INFO   
- 02-Dec-25 12:07:28  INFO  [ mosipid/mock-relying-party-ui ]  
- 02-Dec-25 12:07:29  WARNING  Crane digest failed for index.docker.io/mosipid/mock-relying-party-ui:0.12.0: 2025/12/02 12:07:29 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/mock-relying-party-ui/manifests/0.12.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/mock-relying-party-ui/manifests/0.12.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.12.0
- 
- 02-Dec-25 12:07:29  INFO  Destination Image = "mosipid/mock-relying-party-ui" Destination Image tag = "0.12.0" IMAGE_ID :  
- 02-Dec-25 12:07:29  INFO  Destination image mosipid/mock-relying-party-ui:0.12.0 does not exist 
- 02-Dec-25 12:07:29  INFO   
- 02-Dec-25 12:07:29  INFO  [ mosipid/mock-relying-party-service ]  
- 02-Dec-25 12:07:29  WARNING  Crane digest failed for index.docker.io/mosipid/mock-relying-party-service:0.12.0: 2025/12/02 12:07:29 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/mock-relying-party-service/manifests/0.12.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/mock-relying-party-service/manifests/0.12.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.12.0
- 
- 02-Dec-25 12:07:29  INFO  Destination Image = "mosipid/mock-relying-party-service" Destination Image tag = "0.12.0" IMAGE_ID :  
- 02-Dec-25 12:07:29  INFO  Destination image mosipid/mock-relying-party-service:0.12.0 does not exist 
- 02-Dec-25 12:07:29  INFO   
- 02-Dec-25 12:07:29  INFO  [ mosipid/mock-identity-system ]  
- 02-Dec-25 12:07:30  WARNING  Crane digest failed for index.docker.io/mosipid/mock-identity-system:0.12.0: 2025/12/02 12:07:30 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipid/mock-identity-system/manifests/0.12.0: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipid/mock-identity-system/manifests/0.12.0: MANIFEST_UNKNOWN: manifest unknown; unknown tag=0.12.0
- 
- 02-Dec-25 12:07:30  INFO  Destination Image = "mosipid/mock-identity-system" Destination Image tag = "0.12.0" IMAGE_ID :  
- 02-Dec-25 12:07:30  INFO  Destination image mosipid/mock-identity-system:0.12.0 does not exist 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  ******************** HASH Operation Results ********************************************************************** 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipid/signup-with-plugins:1.3.0'], ['mosipid/esignet-with-plugins:1.7.0'], ['mosipid/mock-relying-party-ui:0.12.0'], ['mosipid/mock-relying-party-service:0.12.0'], ['mosipid/mock-identity-system:0.12.0']] 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 02-Dec-25 12:07:30  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 02-Dec-25 12:07:30  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 02-Dec-25 12:07:30  DEBUG  Found 'auths' section 
- 02-Dec-25 12:07:30  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
- 02-Dec-25 12:07:30  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 02-Dec-25 12:07:30  DEBUG  Looking for auth entry for 'docker.io' 
- 02-Dec-25 12:07:30  DEBUG  Found 'https://index.docker.io/v1/' 
- 02-Dec-25 12:07:30  INFO  Using 3 parallel workers for image transfers 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  ********** [ mosipid/signup-with-plugins:1.3.0 ] **************************************************** 
- 02-Dec-25 12:07:30  INFO  Transferring image using crane... 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  ********** [ mosipid/esignet-with-plugins:1.7.0 ] **************************************************** 
- 02-Dec-25 12:07:30  INFO  Transferring image using crane... 
- 02-Dec-25 12:07:30  INFO  Source uses tag reference: mosipdev/esignet-with-plugins:release-1.7.x 
- 02-Dec-25 12:07:30  INFO  Analyzing source image manifest... 
- 02-Dec-25 12:07:30  INFO  Source uses tag reference: mosipdev/signup-with-plugins:release-1.3.x 
- 02-Dec-25 12:07:30  INFO  Analyzing source image manifest... 
- 02-Dec-25 12:07:30  INFO   
- 02-Dec-25 12:07:30  INFO  ********** [ mosipid/mock-relying-party-ui:0.12.0 ] **************************************************** 
- 02-Dec-25 12:07:30  INFO  Transferring image using crane... 
- 02-Dec-25 12:07:30  INFO  Source uses tag reference: mosipdev/mock-relying-party-ui:release-0.12.x 
- 02-Dec-25 12:07:30  INFO  Analyzing source image manifest... 
- 02-Dec-25 12:07:31  INFO  Source is MULTI-ARCH image 
- 02-Dec-25 12:07:31  INFO  Source Index Digest (Manifest List): sha256:c15c0a07c23f27040c6ba1907a4769c62b33d9a340a0d636f1635e4dfcc97be4 
- 02-Dec-25 12:07:31  INFO  Source has 2 platform(s): 
- 02-Dec-25 12:07:31  INFO    - linux/amd64: sha256:008dbdcd66daf3bc23b726644b5ab5d6c83b6ef2f27707477bf38e76913155c3 
- 02-Dec-25 12:07:31  INFO    - linux/arm64: sha256:e25654d37e2e551fbf843bc23bf286f137a4551b232ca8b10cd359994c16c14e 
- 02-Dec-25 12:07:31  INFO  Using secure connection for HTTPS registry 
- 02-Dec-25 12:07:31  INFO  Executing: crane copy mosipdev/mock-relying-party-ui:release-0.12.x index.docker.io/mosipid/mock-relying-party-ui:0.12.0 
- 02-Dec-25 12:07:31  INFO  Source is MULTI-ARCH image 
- 02-Dec-25 12:07:31  INFO  Source Index Digest (Manifest List): sha256:b8a2d269eeeb8d6e46246a0417cd4e9f088d6bb8e1d93070a449e8e24f97ecda 
- 02-Dec-25 12:07:31  INFO  Source has 2 platform(s): 
- 02-Dec-25 12:07:31  INFO    - linux/amd64: sha256:57c5887526b30b45cf8c56b81b85fec0e97281c4c540da0e17a2452c0d04c301 
- 02-Dec-25 12:07:31  INFO    - linux/arm64: sha256:6b576ad893899bf137961a030539c9e014f9302e03352ed8c4f9acf5d65ac089 
- 02-Dec-25 12:07:31  INFO  Using secure connection for HTTPS registry 
- 02-Dec-25 12:07:31  INFO  Executing: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipid/esignet-with-plugins:1.7.0 
- 02-Dec-25 12:07:31  INFO  Source is MULTI-ARCH image 
- 02-Dec-25 12:07:31  INFO  Source Index Digest (Manifest List): sha256:3c792897a45c17cede8027e18089920943110d067900f9442f694adb25a87574 
- 02-Dec-25 12:07:31  INFO  Source has 2 platform(s): 
- 02-Dec-25 12:07:31  INFO    - linux/amd64: sha256:1aadce456959ab4966417f6033ca3f40fb6ab82675c3f8109b730395738410e5 
- 02-Dec-25 12:07:31  INFO    - linux/arm64: sha256:c19c4af8230d6511456a52f24ad8d4fe390a0d50e045dc4a8c82657cba135bef 
- 02-Dec-25 12:07:31  INFO  Using secure connection for HTTPS registry 
- 02-Dec-25 12:07:31  INFO  Executing: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipid/signup-with-plugins:1.3.0 
- 02-Dec-25 12:07:34  INFO  Successfully transferred image with crane 
- 02-Dec-25 12:07:34  INFO   
- 02-Dec-25 12:07:34  INFO  Analyzing destination image manifest... 
- 02-Dec-25 12:07:35  INFO  Successfully transferred image with crane 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  Analyzing destination image manifest... 
- 02-Dec-25 12:07:35  INFO  Successfully transferred image with crane 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  Analyzing destination image manifest... 
- 02-Dec-25 12:07:35  INFO  Destination is MULTI-ARCH image 
- 02-Dec-25 12:07:35  INFO  Destination Index Digest (Manifest List): sha256:b8a2d269eeeb8d6e46246a0417cd4e9f088d6bb8e1d93070a449e8e24f97ecda 
- 02-Dec-25 12:07:35  INFO  Destination has 2 platform(s): 
- 02-Dec-25 12:07:35  INFO    - linux/amd64: sha256:57c5887526b30b45cf8c56b81b85fec0e97281c4c540da0e17a2452c0d04c301 
- 02-Dec-25 12:07:35  INFO    - linux/arm64: sha256:6b576ad893899bf137961a030539c9e014f9302e03352ed8c4f9acf5d65ac089 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  === DIGEST VERIFICATION === 
- 02-Dec-25 12:07:35  INFO  Comparing Index Digests (Manifest Lists): 
- 02-Dec-25 12:07:35  INFO    Source:      sha256:b8a2d269eeeb8d6e46246a0417cd4e9f088d6bb8e1d93070a449e8e24f97ecda 
- 02-Dec-25 12:07:35  INFO    Destination: sha256:b8a2d269eeeb8d6e46246a0417cd4e9f088d6bb8e1d93070a449e8e24f97ecda 
- 02-Dec-25 12:07:35  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  Comparing Platform Manifests: 
- 02-Dec-25 12:07:35  INFO    ✓ linux/amd64: sha256:57c5887526b30b45cf8c56b81b85fec0e97281c4c540da0e17a2452c0d04c301 (MATCH) 
- 02-Dec-25 12:07:35  INFO    ✓ linux/arm64: sha256:6b576ad893899bf137961a030539c9e014f9302e03352ed8c4f9acf5d65ac089 (MATCH) 
- 02-Dec-25 12:07:35  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 02-Dec-25 12:07:35  INFO  Creating latest tag: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipid/esignet-with-plugins:latest 
- 02-Dec-25 12:07:35  INFO  Destination is MULTI-ARCH image 
- 02-Dec-25 12:07:35  INFO  Destination Index Digest (Manifest List): sha256:3c792897a45c17cede8027e18089920943110d067900f9442f694adb25a87574 
- 02-Dec-25 12:07:35  INFO  Destination has 2 platform(s): 
- 02-Dec-25 12:07:35  INFO    - linux/amd64: sha256:1aadce456959ab4966417f6033ca3f40fb6ab82675c3f8109b730395738410e5 
- 02-Dec-25 12:07:35  INFO    - linux/arm64: sha256:c19c4af8230d6511456a52f24ad8d4fe390a0d50e045dc4a8c82657cba135bef 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  === DIGEST VERIFICATION === 
- 02-Dec-25 12:07:35  INFO  Comparing Index Digests (Manifest Lists): 
- 02-Dec-25 12:07:35  INFO    Source:      sha256:3c792897a45c17cede8027e18089920943110d067900f9442f694adb25a87574 
- 02-Dec-25 12:07:35  INFO    Destination: sha256:3c792897a45c17cede8027e18089920943110d067900f9442f694adb25a87574 
- 02-Dec-25 12:07:35  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 02-Dec-25 12:07:35  INFO   
- 02-Dec-25 12:07:35  INFO  Comparing Platform Manifests: 
- 02-Dec-25 12:07:35  INFO    ✓ linux/amd64: sha256:1aadce456959ab4966417f6033ca3f40fb6ab82675c3f8109b730395738410e5 (MATCH) 
- 02-Dec-25 12:07:35  INFO    ✓ linux/arm64: sha256:c19c4af8230d6511456a52f24ad8d4fe390a0d50e045dc4a8c82657cba135bef (MATCH) 
- 02-Dec-25 12:07:35  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 02-Dec-25 12:07:35  INFO  Creating latest tag: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipid/signup-with-plugins:latest 
- 02-Dec-25 12:07:36  INFO  Destination is MULTI-ARCH image 
- 02-Dec-25 12:07:36  INFO  Destination Index Digest (Manifest List): sha256:c15c0a07c23f27040c6ba1907a4769c62b33d9a340a0d636f1635e4dfcc97be4 
- 02-Dec-25 12:07:36  INFO  Destination has 2 platform(s): 
- 02-Dec-25 12:07:36  INFO    - linux/amd64: sha256:008dbdcd66daf3bc23b726644b5ab5d6c83b6ef2f27707477bf38e76913155c3 
- 02-Dec-25 12:07:36  INFO    - linux/arm64: sha256:e25654d37e2e551fbf843bc23bf286f137a4551b232ca8b10cd359994c16c14e 
- 02-Dec-25 12:07:36  INFO   
- 02-Dec-25 12:07:36  INFO  === DIGEST VERIFICATION === 
- 02-Dec-25 12:07:36  INFO  Comparing Index Digests (Manifest Lists): 
- 02-Dec-25 12:07:36  INFO    Source:      sha256:c15c0a07c23f27040c6ba1907a4769c62b33d9a340a0d636f1635e4dfcc97be4 
- 02-Dec-25 12:07:36  INFO    Destination: sha256:c15c0a07c23f27040c6ba1907a4769c62b33d9a340a0d636f1635e4dfcc97be4 
- 02-Dec-25 12:07:36  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 02-Dec-25 12:07:36  INFO   
- 02-Dec-25 12:07:36  INFO  Comparing Platform Manifests: 
- 02-Dec-25 12:07:36  INFO    ✓ linux/amd64: sha256:008dbdcd66daf3bc23b726644b5ab5d6c83b6ef2f27707477bf38e76913155c3 (MATCH) 
- 02-Dec-25 12:07:36  INFO    ✓ linux/arm64: sha256:e25654d37e2e551fbf843bc23bf286f137a4551b232ca8b10cd359994c16c14e (MATCH) 
- 02-Dec-25 12:07:36  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 02-Dec-25 12:07:36  INFO  Creating latest tag: crane copy mosipdev/mock-relying-party-ui:release-0.12.x index.docker.io/mosipid/mock-relying-party-ui:latest 
- 02-Dec-25 12:07:38  INFO  Successfully created latest tag 
- 02-Dec-25 12:07:38  INFO  Image available at: index.docker.io/mosipid/signup-with-plugins:1.3.0 
- 02-Dec-25 12:07:38  INFO   
- 02-Dec-25 12:07:38  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 02-Dec-25 12:07:38  INFO  Individual platform manifests should also match to ensure identical content. 
- 02-Dec-25 12:07:38  INFO   
- 02-Dec-25 12:07:38  INFO  ********** [ mosipid/mock-relying-party-service:0.12.0 ] **************************************************** 
- 02-Dec-25 12:07:38  INFO  Transferring image using crane... 
- 02-Dec-25 12:07:38  INFO  Completed processing mosipdev/signup-with-plugins:release-1.3.x to mosipid/signup-with-plugins:1.3.0 
- 02-Dec-25 12:07:38  INFO  Source uses tag reference: mosipdev/mock-relying-party-service:release-0.12.x 
- 02-Dec-25 12:07:38  INFO  Analyzing source image manifest... 
- 02-Dec-25 12:07:38  INFO  Successfully created latest tag 
- 02-Dec-25 12:07:38  INFO  Image available at: index.docker.io/mosipid/esignet-with-plugins:1.7.0 
- 02-Dec-25 12:07:38  INFO   
- 02-Dec-25 12:07:38  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 02-Dec-25 12:07:38  INFO  Individual platform manifests should also match to ensure identical content. 
- 02-Dec-25 12:07:38  INFO   
- 02-Dec-25 12:07:38  INFO  ********** [ mosipid/mock-identity-system:0.12.0 ] **************************************************** 
- 02-Dec-25 12:07:38  INFO  Transferring image using crane... 
- 02-Dec-25 12:07:38  INFO  Completed processing mosipdev/esignet-with-plugins:release-1.7.x to mosipid/esignet-with-plugins:1.7.0 
- 02-Dec-25 12:07:38  INFO  Source uses tag reference: mosipdev/mock-identity-system:release-0.12.x 
- 02-Dec-25 12:07:38  INFO  Analyzing source image manifest... 
- 02-Dec-25 12:07:38  INFO  Successfully created latest tag 
- 02-Dec-25 12:07:38  INFO  Image available at: index.docker.io/mosipid/mock-relying-party-ui:0.12.0 
- 02-Dec-25 12:07:38  INFO   
- 02-Dec-25 12:07:38  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 02-Dec-25 12:07:38  INFO  Individual platform manifests should also match to ensure identical content. 
- 02-Dec-25 12:07:38  INFO  Completed processing mosipdev/mock-relying-party-ui:release-0.12.x to mosipid/mock-relying-party-ui:0.12.0 
- 02-Dec-25 12:07:39  INFO  Source is MULTI-ARCH image 
- 02-Dec-25 12:07:39  INFO  Source Index Digest (Manifest List): sha256:b012fad1e02810cbc588d81640ce1be199545bd1898f6e133f2b78447e33c3ed 
- 02-Dec-25 12:07:39  INFO  Source has 2 platform(s): 
- 02-Dec-25 12:07:39  INFO    - linux/amd64: sha256:ff0d57af877f4c3dc2d3efa178e2fa87535dc9b1aba8ddcda151d3f26575d521 
- 02-Dec-25 12:07:39  INFO    - linux/arm64: sha256:1efca05953b3ac4ee59e267da1975fe046883bbef62e4ee8bf2f77abfb836da4 
- 02-Dec-25 12:07:39  INFO  Using secure connection for HTTPS registry 
- 02-Dec-25 12:07:39  INFO  Executing: crane copy mosipdev/mock-relying-party-service:release-0.12.x index.docker.io/mosipid/mock-relying-party-service:0.12.0 
- 02-Dec-25 12:07:39  INFO  Source is MULTI-ARCH image 
- 02-Dec-25 12:07:39  INFO  Source Index Digest (Manifest List): sha256:63efe5c42b6869122588b4eb7cce4f931b1f1d1c4898905ea71ab648fdf17f8c 
- 02-Dec-25 12:07:39  INFO  Source has 2 platform(s): 
- 02-Dec-25 12:07:39  INFO    - linux/amd64: sha256:fe41fbe826b68b90b55fcf1e3f0129d904a60a6074bc4ab5fa7566e487cb1348 
- 02-Dec-25 12:07:39  INFO    - linux/arm64: sha256:8c3ab58f3c385856b51b8a9d5bb3921528887e07d41d90aa3cd924470551102b 
- 02-Dec-25 12:07:39  INFO  Using secure connection for HTTPS registry 
- 02-Dec-25 12:07:39  INFO  Executing: crane copy mosipdev/mock-identity-system:release-0.12.x index.docker.io/mosipid/mock-identity-system:0.12.0 
- 02-Dec-25 12:07:42  INFO  Successfully transferred image with crane 
- 02-Dec-25 12:07:42  INFO   
- 02-Dec-25 12:07:42  INFO  Analyzing destination image manifest... 
- 02-Dec-25 12:07:42  INFO  Successfully transferred image with crane 
- 02-Dec-25 12:07:42  INFO   
- 02-Dec-25 12:07:42  INFO  Analyzing destination image manifest... 
- 02-Dec-25 12:07:43  INFO  Destination is MULTI-ARCH image 
- 02-Dec-25 12:07:43  INFO  Destination Index Digest (Manifest List): sha256:b012fad1e02810cbc588d81640ce1be199545bd1898f6e133f2b78447e33c3ed 
- 02-Dec-25 12:07:43  INFO  Destination has 2 platform(s): 
- 02-Dec-25 12:07:43  INFO    - linux/amd64: sha256:ff0d57af877f4c3dc2d3efa178e2fa87535dc9b1aba8ddcda151d3f26575d521 
- 02-Dec-25 12:07:43  INFO    - linux/arm64: sha256:1efca05953b3ac4ee59e267da1975fe046883bbef62e4ee8bf2f77abfb836da4 
- 02-Dec-25 12:07:43  INFO   
- 02-Dec-25 12:07:43  INFO  === DIGEST VERIFICATION === 
- 02-Dec-25 12:07:43  INFO  Comparing Index Digests (Manifest Lists): 
- 02-Dec-25 12:07:43  INFO    Source:      sha256:b012fad1e02810cbc588d81640ce1be199545bd1898f6e133f2b78447e33c3ed 
- 02-Dec-25 12:07:43  INFO    Destination: sha256:b012fad1e02810cbc588d81640ce1be199545bd1898f6e133f2b78447e33c3ed 
- 02-Dec-25 12:07:43  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 02-Dec-25 12:07:43  INFO   
- 02-Dec-25 12:07:43  INFO  Comparing Platform Manifests: 
- 02-Dec-25 12:07:43  INFO    ✓ linux/amd64: sha256:ff0d57af877f4c3dc2d3efa178e2fa87535dc9b1aba8ddcda151d3f26575d521 (MATCH) 
- 02-Dec-25 12:07:43  INFO    ✓ linux/arm64: sha256:1efca05953b3ac4ee59e267da1975fe046883bbef62e4ee8bf2f77abfb836da4 (MATCH) 
- 02-Dec-25 12:07:43  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 02-Dec-25 12:07:43  INFO  Creating latest tag: crane copy mosipdev/mock-relying-party-service:release-0.12.x index.docker.io/mosipid/mock-relying-party-service:latest 
- 02-Dec-25 12:07:43  INFO  Destination is MULTI-ARCH image 
- 02-Dec-25 12:07:43  INFO  Destination Index Digest (Manifest List): sha256:63efe5c42b6869122588b4eb7cce4f931b1f1d1c4898905ea71ab648fdf17f8c 
- 02-Dec-25 12:07:43  INFO  Destination has 2 platform(s): 
- 02-Dec-25 12:07:43  INFO    - linux/amd64: sha256:fe41fbe826b68b90b55fcf1e3f0129d904a60a6074bc4ab5fa7566e487cb1348 
- 02-Dec-25 12:07:43  INFO    - linux/arm64: sha256:8c3ab58f3c385856b51b8a9d5bb3921528887e07d41d90aa3cd924470551102b 
- 02-Dec-25 12:07:43  INFO   
- 02-Dec-25 12:07:43  INFO  === DIGEST VERIFICATION === 
- 02-Dec-25 12:07:43  INFO  Comparing Index Digests (Manifest Lists): 
- 02-Dec-25 12:07:43  INFO    Source:      sha256:63efe5c42b6869122588b4eb7cce4f931b1f1d1c4898905ea71ab648fdf17f8c 
- 02-Dec-25 12:07:43  INFO    Destination: sha256:63efe5c42b6869122588b4eb7cce4f931b1f1d1c4898905ea71ab648fdf17f8c 
- 02-Dec-25 12:07:43  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 02-Dec-25 12:07:43  INFO   
- 02-Dec-25 12:07:43  INFO  Comparing Platform Manifests: 
- 02-Dec-25 12:07:43  INFO    ✓ linux/amd64: sha256:fe41fbe826b68b90b55fcf1e3f0129d904a60a6074bc4ab5fa7566e487cb1348 (MATCH) 
- 02-Dec-25 12:07:43  INFO    ✓ linux/arm64: sha256:8c3ab58f3c385856b51b8a9d5bb3921528887e07d41d90aa3cd924470551102b (MATCH) 
- 02-Dec-25 12:07:43  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 02-Dec-25 12:07:43  INFO  Creating latest tag: crane copy mosipdev/mock-identity-system:release-0.12.x index.docker.io/mosipid/mock-identity-system:latest 
- 02-Dec-25 12:07:45  INFO  Successfully created latest tag 
- 02-Dec-25 12:07:45  INFO  Image available at: index.docker.io/mosipid/mock-relying-party-service:0.12.0 
- 02-Dec-25 12:07:45  INFO   
- 02-Dec-25 12:07:45  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 02-Dec-25 12:07:45  INFO  Individual platform manifests should also match to ensure identical content. 
- 02-Dec-25 12:07:45  INFO  Completed processing mosipdev/mock-relying-party-service:release-0.12.x to mosipid/mock-relying-party-service:0.12.0 
- 02-Dec-25 12:07:45  INFO  Successfully created latest tag 
- 02-Dec-25 12:07:45  INFO  Image available at: index.docker.io/mosipid/mock-identity-system:0.12.0 
- 02-Dec-25 12:07:45  INFO   
- 02-Dec-25 12:07:45  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 02-Dec-25 12:07:45  INFO  Individual platform manifests should also match to ensure identical content. 
- 02-Dec-25 12:07:45  INFO  Completed processing mosipdev/mock-identity-system:release-0.12.x to mosipid/mock-identity-system:0.12.0 
+ 03-Dec-25 05:23:37  INFO  LOGFILE CREATED : vidivi.log 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  ******************** Check Images List ************************************************************************************ 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  IMAGES= [['mosipdev/inji-web:develop', 'develop'], ['mosipdev/mimoto:develop', 'develop']] 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  src = "mosipdev/inji-web" tag = "develop" 
+ 03-Dec-25 05:23:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Dec-25 05:23:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-web:pull HTTP/1.1" 200 None 
+ 03-Dec-25 05:23:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Dec-25 05:23:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-web/tags/develop HTTP/1.1" 200 None 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  src = "mosipdev/mimoto" tag = "develop" 
+ 03-Dec-25 05:23:37  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 03-Dec-25 05:23:37  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/mimoto:pull HTTP/1.1" 200 None 
+ 03-Dec-25 05:23:37  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 03-Dec-25 05:23:37  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/mimoto/tags/develop HTTP/1.1" 200 None 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 03-Dec-25 05:23:37  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 03-Dec-25 05:23:37  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 03-Dec-25 05:23:37  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 None 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 03-Dec-25 05:23:37  INFO   
+ 03-Dec-25 05:23:37  INFO  [ mosipdev2/inji-web ]  
+ 03-Dec-25 05:23:38  INFO  Destination Image = "mosipdev2/inji-web" Destination Image tag = "develop" IMAGE_ID : sha256:773ca14520446cc24a632e8eaa767eb33221e4f5982e61d78a2e2c69bef75b5d 
+ 03-Dec-25 05:23:38  INFO   
+ 03-Dec-25 05:23:38  INFO  [ mosipdev2/mimoto ]  
+ 03-Dec-25 05:23:38  INFO  Destination Image = "mosipdev2/mimoto" Destination Image tag = "develop" IMAGE_ID : sha256:6d31c575ca66c2dfe6a5c5cabad26999aeca3bdab102245df5ccf67e25c151c0 
+ 03-Dec-25 05:23:38  INFO   
+ 03-Dec-25 05:23:38  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 03-Dec-25 05:23:38  INFO   
+ 03-Dec-25 05:23:38  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 03-Dec-25 05:23:38  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 03-Dec-25 05:23:38  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 03-Dec-25 05:23:38  DEBUG  Found 'auths' section 
+ 03-Dec-25 05:23:38  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
+ 03-Dec-25 05:23:38  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 03-Dec-25 05:23:38  DEBUG  Looking for auth entry for 'docker.io' 
+ 03-Dec-25 05:23:38  DEBUG  Found 'https://index.docker.io/v1/' 
+ 03-Dec-25 05:23:38  INFO  Using 3 parallel workers for image transfers 
+ 03-Dec-25 05:23:38  INFO   
+ 03-Dec-25 05:23:38  INFO  ********** [ mosipdev2/inji-web:develop ] **************************************************** 
+ 03-Dec-25 05:23:38  INFO  Transferring image using crane... 
+ 03-Dec-25 05:23:38  INFO   
+ 03-Dec-25 05:23:38  INFO  ********** [ mosipdev2/mimoto:develop ] **************************************************** 
+ 03-Dec-25 05:23:38  INFO  Transferring image using crane... 
+ 03-Dec-25 05:23:38  INFO  Source uses tag reference: mosipdev/inji-web:develop 
+ 03-Dec-25 05:23:38  INFO  Analyzing source image manifest... 
+ 03-Dec-25 05:23:38  INFO  Source uses tag reference: mosipdev/mimoto:develop 
+ 03-Dec-25 05:23:38  INFO  Analyzing source image manifest... 
+ 03-Dec-25 05:23:38  INFO  Source is MULTI-ARCH image 
+ 03-Dec-25 05:23:38  INFO  Source Index Digest (Manifest List): sha256:ea591aac282569a8400e08783735153512ae97cc659b71eb9d498cbf2cf3d52b 
+ 03-Dec-25 05:23:38  INFO  Source has 2 platform(s): 
+ 03-Dec-25 05:23:38  INFO    - linux/amd64: sha256:c1a3ae441c5287829ea4dcae11eb7269c57fd3fbb6b8c3b005e8999467bfd1fd 
+ 03-Dec-25 05:23:38  INFO    - linux/arm64: sha256:81bba11c43781079bfdf7e83551f5cc6f4767e6f604dd36b175cc5022e6c4c80 
+ 03-Dec-25 05:23:38  INFO  Using secure connection for HTTPS registry 
+ 03-Dec-25 05:23:38  INFO  Executing: crane copy mosipdev/mimoto:develop index.docker.io/mosipdev2/mimoto:develop 
+ 03-Dec-25 05:23:38  INFO  Source is MULTI-ARCH image 
+ 03-Dec-25 05:23:38  INFO  Source Index Digest (Manifest List): sha256:234aff12f7a285c13b58f11a3ccf012232b9f447a2ec1409cba26ed01003a2b0 
+ 03-Dec-25 05:23:38  INFO  Source has 2 platform(s): 
+ 03-Dec-25 05:23:38  INFO    - linux/amd64: sha256:67ad362dab07d9faa76b5a3950f7d15229b615e4d2fc342e632dfbd84b557a72 
+ 03-Dec-25 05:23:38  INFO    - linux/arm64: sha256:7dbb1b3e1fa2fc13b8b57418a89cae2f3ca812974f4f33609c46c08af5704c3a 
+ 03-Dec-25 05:23:38  INFO  Using secure connection for HTTPS registry 
+ 03-Dec-25 05:23:38  INFO  Executing: crane copy mosipdev/inji-web:develop index.docker.io/mosipdev2/inji-web:develop 
+ 03-Dec-25 05:23:41  INFO  Successfully transferred image with crane 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  Analyzing destination image manifest... 
+ 03-Dec-25 05:23:41  INFO  Destination is MULTI-ARCH image 
+ 03-Dec-25 05:23:41  INFO  Destination Index Digest (Manifest List): sha256:ea591aac282569a8400e08783735153512ae97cc659b71eb9d498cbf2cf3d52b 
+ 03-Dec-25 05:23:41  INFO  Destination has 2 platform(s): 
+ 03-Dec-25 05:23:41  INFO    - linux/amd64: sha256:c1a3ae441c5287829ea4dcae11eb7269c57fd3fbb6b8c3b005e8999467bfd1fd 
+ 03-Dec-25 05:23:41  INFO    - linux/arm64: sha256:81bba11c43781079bfdf7e83551f5cc6f4767e6f604dd36b175cc5022e6c4c80 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  === DIGEST VERIFICATION === 
+ 03-Dec-25 05:23:41  INFO  Comparing Index Digests (Manifest Lists): 
+ 03-Dec-25 05:23:41  INFO    Source:      sha256:ea591aac282569a8400e08783735153512ae97cc659b71eb9d498cbf2cf3d52b 
+ 03-Dec-25 05:23:41  INFO    Destination: sha256:ea591aac282569a8400e08783735153512ae97cc659b71eb9d498cbf2cf3d52b 
+ 03-Dec-25 05:23:41  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  Comparing Platform Manifests: 
+ 03-Dec-25 05:23:41  INFO    ✓ linux/amd64: sha256:c1a3ae441c5287829ea4dcae11eb7269c57fd3fbb6b8c3b005e8999467bfd1fd (MATCH) 
+ 03-Dec-25 05:23:41  INFO    ✓ linux/arm64: sha256:81bba11c43781079bfdf7e83551f5cc6f4767e6f604dd36b175cc5022e6c4c80 (MATCH) 
+ 03-Dec-25 05:23:41  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 03-Dec-25 05:23:41  INFO  Creating latest tag: crane copy mosipdev/mimoto:develop index.docker.io/mosipdev2/mimoto:latest 
+ 03-Dec-25 05:23:41  INFO  Successfully transferred image with crane 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  Analyzing destination image manifest... 
+ 03-Dec-25 05:23:41  INFO  Destination is MULTI-ARCH image 
+ 03-Dec-25 05:23:41  INFO  Destination Index Digest (Manifest List): sha256:234aff12f7a285c13b58f11a3ccf012232b9f447a2ec1409cba26ed01003a2b0 
+ 03-Dec-25 05:23:41  INFO  Destination has 2 platform(s): 
+ 03-Dec-25 05:23:41  INFO    - linux/amd64: sha256:67ad362dab07d9faa76b5a3950f7d15229b615e4d2fc342e632dfbd84b557a72 
+ 03-Dec-25 05:23:41  INFO    - linux/arm64: sha256:7dbb1b3e1fa2fc13b8b57418a89cae2f3ca812974f4f33609c46c08af5704c3a 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  === DIGEST VERIFICATION === 
+ 03-Dec-25 05:23:41  INFO  Comparing Index Digests (Manifest Lists): 
+ 03-Dec-25 05:23:41  INFO    Source:      sha256:234aff12f7a285c13b58f11a3ccf012232b9f447a2ec1409cba26ed01003a2b0 
+ 03-Dec-25 05:23:41  INFO    Destination: sha256:234aff12f7a285c13b58f11a3ccf012232b9f447a2ec1409cba26ed01003a2b0 
+ 03-Dec-25 05:23:41  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 03-Dec-25 05:23:41  INFO   
+ 03-Dec-25 05:23:41  INFO  Comparing Platform Manifests: 
+ 03-Dec-25 05:23:41  INFO    ✓ linux/amd64: sha256:67ad362dab07d9faa76b5a3950f7d15229b615e4d2fc342e632dfbd84b557a72 (MATCH) 
+ 03-Dec-25 05:23:41  INFO    ✓ linux/arm64: sha256:7dbb1b3e1fa2fc13b8b57418a89cae2f3ca812974f4f33609c46c08af5704c3a (MATCH) 
+ 03-Dec-25 05:23:41  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 03-Dec-25 05:23:41  INFO  Creating latest tag: crane copy mosipdev/inji-web:develop index.docker.io/mosipdev2/inji-web:latest 
+ 03-Dec-25 05:23:43  INFO  Successfully created latest tag 
+ 03-Dec-25 05:23:43  INFO  Image available at: index.docker.io/mosipdev2/mimoto:develop 
+ 03-Dec-25 05:23:43  INFO   
+ 03-Dec-25 05:23:43  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 03-Dec-25 05:23:43  INFO  Individual platform manifests should also match to ensure identical content. 
+ 03-Dec-25 05:23:43  INFO  Successfully created latest tag 
+ 03-Dec-25 05:23:43  INFO  Image available at: index.docker.io/mosipdev2/inji-web:develop 
+ 03-Dec-25 05:23:43  INFO   
+ 03-Dec-25 05:23:43  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 03-Dec-25 05:23:43  INFO  Individual platform manifests should also match to ensure identical content. 
+ 03-Dec-25 05:23:43  INFO  Completed processing mosipdev/inji-web:develop to mosipdev2/inji-web:develop 
+ 03-Dec-25 05:23:43  INFO  Completed processing mosipdev/mimoto:develop to mosipdev2/mimoto:develop 
