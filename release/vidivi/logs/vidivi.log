@@ -1,120 +1,73 @@
- 04-Dec-25 09:59:43  INFO  LOGFILE CREATED : vidivi.log 
- 04-Dec-25 09:59:43  INFO   
- 04-Dec-25 09:59:43  INFO  ******************** Check Images List ************************************************************************************ 
- 04-Dec-25 09:59:43  INFO   
- 04-Dec-25 09:59:43  INFO  IMAGES= [['mosipdev2/dsl-orchestrator:release-1.3.x', '1.3.x'], ['mosipdev2/dsl-packetcreator:release-1.3.x', '1.3.x']] 
- 04-Dec-25 09:59:43  INFO   
- 04-Dec-25 09:59:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 04-Dec-25 09:59:43  INFO   
- 04-Dec-25 09:59:43  INFO  src = "mosipdev2/dsl-orchestrator" tag = "release-1.3.x" 
- 04-Dec-25 09:59:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Dec-25 09:59:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-orchestrator:pull HTTP/1.1" 200 None 
- 04-Dec-25 09:59:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Dec-25 09:59:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-orchestrator/tags/release-1.3.x HTTP/1.1" 200 None 
- 04-Dec-25 09:59:44  INFO   
- 04-Dec-25 09:59:44  INFO  src = "mosipdev2/dsl-packetcreator" tag = "release-1.3.x" 
- 04-Dec-25 09:59:44  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 04-Dec-25 09:59:44  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/dsl-packetcreator:pull HTTP/1.1" 200 None 
- 04-Dec-25 09:59:44  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 04-Dec-25 09:59:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/dsl-packetcreator/tags/release-1.3.x HTTP/1.1" 200 None 
- 04-Dec-25 09:59:44  INFO   
- 04-Dec-25 09:59:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 04-Dec-25 09:59:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 04-Dec-25 09:59:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 04-Dec-25 09:59:44  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 04-Dec-25 09:59:44  INFO   
- 04-Dec-25 09:59:44  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 04-Dec-25 09:59:44  INFO   
- 04-Dec-25 09:59:44  INFO  [ mosipqa/dsl-orchestrator ]  
- 04-Dec-25 09:59:45  INFO  Destination Image = "mosipqa/dsl-orchestrator" Destination Image tag = "1.3.x" IMAGE_ID : sha256:48832ff4a87fc7f726af1c7873b668344ebd6fe059add32895dd6552fdf5fdcc 
- 04-Dec-25 09:59:45  INFO   
- 04-Dec-25 09:59:45  INFO  [ mosipqa/dsl-packetcreator ]  
- 04-Dec-25 09:59:45  INFO  Destination Image = "mosipqa/dsl-packetcreator" Destination Image tag = "1.3.x" IMAGE_ID : sha256:abb033ccd279fde522c907a96378fcd101a4dfbd129d537d32ce11e299e4e5ab 
- 04-Dec-25 09:59:45  INFO   
- 04-Dec-25 09:59:45  INFO  ******************** HASH Operation Results ********************************************************************** 
- 04-Dec-25 09:59:45  INFO   
- 04-Dec-25 09:59:45  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 04-Dec-25 09:59:45  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 04-Dec-25 09:59:45  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 04-Dec-25 09:59:45  DEBUG  Found 'auths' section 
- 04-Dec-25 09:59:45  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 04-Dec-25 09:59:45  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 04-Dec-25 09:59:45  DEBUG  Looking for auth entry for 'docker.io' 
- 04-Dec-25 09:59:45  DEBUG  Found 'https://index.docker.io/v1/' 
- 04-Dec-25 09:59:45  INFO  Using 3 parallel workers for image transfers 
- 04-Dec-25 09:59:45  INFO   
- 04-Dec-25 09:59:45  INFO  ********** [ mosipqa/dsl-orchestrator:1.3.x ] **************************************************** 
- 04-Dec-25 09:59:45  INFO  Transferring image using crane... 
- 04-Dec-25 09:59:45  INFO   
- 04-Dec-25 09:59:45  INFO  ********** [ mosipqa/dsl-packetcreator:1.3.x ] **************************************************** 
- 04-Dec-25 09:59:45  INFO  Transferring image using crane... 
- 04-Dec-25 09:59:45  INFO  Source uses tag reference: mosipdev2/dsl-packetcreator:release-1.3.x 
- 04-Dec-25 09:59:45  INFO  Analyzing source image manifest... 
- 04-Dec-25 09:59:45  INFO  Source uses tag reference: mosipdev2/dsl-orchestrator:release-1.3.x 
- 04-Dec-25 09:59:45  INFO  Analyzing source image manifest... 
- 04-Dec-25 09:59:46  INFO  Source is MULTI-ARCH image 
- 04-Dec-25 09:59:46  INFO  Source Index Digest (Manifest List): sha256:6edf3b49874f6a75f4afc76266597778124024bda57b5e2ba2742aeb24e1f376 
- 04-Dec-25 09:59:46  INFO  Source has 2 platform(s): 
- 04-Dec-25 09:59:46  INFO    - linux/amd64: sha256:b714e582b6d17f36bae6347791d7e0b3312319298929811db44a2a2651d87497 
- 04-Dec-25 09:59:46  INFO    - linux/arm64: sha256:bad6160ba66b9a653d00dc80667307fdb80e62d561160a1d6920fbb2a57ce092 
- 04-Dec-25 09:59:46  INFO  Using secure connection for HTTPS registry 
- 04-Dec-25 09:59:46  INFO  Executing: crane copy mosipdev2/dsl-orchestrator:release-1.3.x index.docker.io/mosipqa/dsl-orchestrator:1.3.x 
- 04-Dec-25 09:59:46  INFO  Source is MULTI-ARCH image 
- 04-Dec-25 09:59:46  INFO  Source Index Digest (Manifest List): sha256:9c86141ce2bb90077f3a5a0855e4e99f179e54dc6c942064e80a78d0f77d37b8 
- 04-Dec-25 09:59:46  INFO  Source has 2 platform(s): 
- 04-Dec-25 09:59:46  INFO    - linux/amd64: sha256:bcb50be13d5ae526313539526c296bb6a8eb40cf4c5a38977852871371e1583e 
- 04-Dec-25 09:59:46  INFO    - linux/arm64: sha256:2bd4508c98e0e7ce13faab3b8079e28b7e942573f5cdaeb4f455aa23e8e5ddd5 
- 04-Dec-25 09:59:46  INFO  Using secure connection for HTTPS registry 
- 04-Dec-25 09:59:46  INFO  Executing: crane copy mosipdev2/dsl-packetcreator:release-1.3.x index.docker.io/mosipqa/dsl-packetcreator:1.3.x 
- 04-Dec-25 09:59:50  INFO  Successfully transferred image with crane 
- 04-Dec-25 09:59:50  INFO   
- 04-Dec-25 09:59:50  INFO  Analyzing destination image manifest... 
- 04-Dec-25 09:59:50  INFO  Successfully transferred image with crane 
- 04-Dec-25 09:59:50  INFO   
- 04-Dec-25 09:59:50  INFO  Analyzing destination image manifest... 
- 04-Dec-25 09:59:51  INFO  Destination is MULTI-ARCH image 
- 04-Dec-25 09:59:51  INFO  Destination Index Digest (Manifest List): sha256:6edf3b49874f6a75f4afc76266597778124024bda57b5e2ba2742aeb24e1f376 
- 04-Dec-25 09:59:51  INFO  Destination has 2 platform(s): 
- 04-Dec-25 09:59:51  INFO    - linux/amd64: sha256:b714e582b6d17f36bae6347791d7e0b3312319298929811db44a2a2651d87497 
- 04-Dec-25 09:59:51  INFO    - linux/arm64: sha256:bad6160ba66b9a653d00dc80667307fdb80e62d561160a1d6920fbb2a57ce092 
- 04-Dec-25 09:59:51  INFO   
- 04-Dec-25 09:59:51  INFO  === DIGEST VERIFICATION === 
- 04-Dec-25 09:59:51  INFO  Comparing Index Digests (Manifest Lists): 
- 04-Dec-25 09:59:51  INFO    Source:      sha256:6edf3b49874f6a75f4afc76266597778124024bda57b5e2ba2742aeb24e1f376 
- 04-Dec-25 09:59:51  INFO    Destination: sha256:6edf3b49874f6a75f4afc76266597778124024bda57b5e2ba2742aeb24e1f376 
- 04-Dec-25 09:59:51  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 04-Dec-25 09:59:51  INFO   
- 04-Dec-25 09:59:51  INFO  Comparing Platform Manifests: 
- 04-Dec-25 09:59:51  INFO    ✓ linux/amd64: sha256:b714e582b6d17f36bae6347791d7e0b3312319298929811db44a2a2651d87497 (MATCH) 
- 04-Dec-25 09:59:51  INFO    ✓ linux/arm64: sha256:bad6160ba66b9a653d00dc80667307fdb80e62d561160a1d6920fbb2a57ce092 (MATCH) 
- 04-Dec-25 09:59:51  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 04-Dec-25 09:59:51  INFO  Creating latest tag: crane copy mosipdev2/dsl-orchestrator:release-1.3.x index.docker.io/mosipqa/dsl-orchestrator:latest 
- 04-Dec-25 09:59:51  INFO  Destination is MULTI-ARCH image 
- 04-Dec-25 09:59:51  INFO  Destination Index Digest (Manifest List): sha256:9c86141ce2bb90077f3a5a0855e4e99f179e54dc6c942064e80a78d0f77d37b8 
- 04-Dec-25 09:59:51  INFO  Destination has 2 platform(s): 
- 04-Dec-25 09:59:51  INFO    - linux/amd64: sha256:bcb50be13d5ae526313539526c296bb6a8eb40cf4c5a38977852871371e1583e 
- 04-Dec-25 09:59:51  INFO    - linux/arm64: sha256:2bd4508c98e0e7ce13faab3b8079e28b7e942573f5cdaeb4f455aa23e8e5ddd5 
- 04-Dec-25 09:59:51  INFO   
- 04-Dec-25 09:59:51  INFO  === DIGEST VERIFICATION === 
- 04-Dec-25 09:59:51  INFO  Comparing Index Digests (Manifest Lists): 
- 04-Dec-25 09:59:51  INFO    Source:      sha256:9c86141ce2bb90077f3a5a0855e4e99f179e54dc6c942064e80a78d0f77d37b8 
- 04-Dec-25 09:59:51  INFO    Destination: sha256:9c86141ce2bb90077f3a5a0855e4e99f179e54dc6c942064e80a78d0f77d37b8 
- 04-Dec-25 09:59:51  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 04-Dec-25 09:59:51  INFO   
- 04-Dec-25 09:59:51  INFO  Comparing Platform Manifests: 
- 04-Dec-25 09:59:51  INFO    ✓ linux/amd64: sha256:bcb50be13d5ae526313539526c296bb6a8eb40cf4c5a38977852871371e1583e (MATCH) 
- 04-Dec-25 09:59:51  INFO    ✓ linux/arm64: sha256:2bd4508c98e0e7ce13faab3b8079e28b7e942573f5cdaeb4f455aa23e8e5ddd5 (MATCH) 
- 04-Dec-25 09:59:51  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 04-Dec-25 09:59:51  INFO  Creating latest tag: crane copy mosipdev2/dsl-packetcreator:release-1.3.x index.docker.io/mosipqa/dsl-packetcreator:latest 
- 04-Dec-25 09:59:53  INFO  Successfully created latest tag 
- 04-Dec-25 09:59:53  INFO  Image available at: index.docker.io/mosipqa/dsl-orchestrator:1.3.x 
- 04-Dec-25 09:59:53  INFO   
- 04-Dec-25 09:59:53  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 04-Dec-25 09:59:53  INFO  Individual platform manifests should also match to ensure identical content. 
- 04-Dec-25 09:59:53  INFO  Completed processing mosipdev2/dsl-orchestrator:release-1.3.x to mosipqa/dsl-orchestrator:1.3.x 
- 04-Dec-25 09:59:53  INFO  Successfully created latest tag 
- 04-Dec-25 09:59:53  INFO  Image available at: index.docker.io/mosipqa/dsl-packetcreator:1.3.x 
- 04-Dec-25 09:59:53  INFO   
- 04-Dec-25 09:59:53  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 04-Dec-25 09:59:53  INFO  Individual platform manifests should also match to ensure identical content. 
- 04-Dec-25 09:59:53  INFO  Completed processing mosipdev2/dsl-packetcreator:release-1.3.x to mosipqa/dsl-packetcreator:1.3.x 
+ 04-Dec-25 10:26:39  INFO  LOGFILE CREATED : vidivi.log 
+ 04-Dec-25 10:26:39  INFO   
+ 04-Dec-25 10:26:39  INFO  ******************** Check Images List ************************************************************************************ 
+ 04-Dec-25 10:26:39  INFO   
+ 04-Dec-25 10:26:39  INFO  IMAGES= [['mosipdev2/inji-certify-with-plugins:release-0.13.x', '0.13.x']] 
+ 04-Dec-25 10:26:39  INFO   
+ 04-Dec-25 10:26:39  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 04-Dec-25 10:26:39  INFO   
+ 04-Dec-25 10:26:39  INFO  src = "mosipdev2/inji-certify-with-plugins" tag = "release-0.13.x" 
+ 04-Dec-25 10:26:39  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 04-Dec-25 10:26:39  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/inji-certify-with-plugins:pull HTTP/1.1" 200 None 
+ 04-Dec-25 10:26:39  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 04-Dec-25 10:26:39  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/inji-certify-with-plugins/tags/release-0.13.x HTTP/1.1" 200 None 
+ 04-Dec-25 10:26:39  INFO   
+ 04-Dec-25 10:26:39  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 04-Dec-25 10:26:39  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 04-Dec-25 10:26:39  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 04-Dec-25 10:26:40  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
+ 04-Dec-25 10:26:40  INFO   
+ 04-Dec-25 10:26:40  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 04-Dec-25 10:26:40  INFO   
+ 04-Dec-25 10:26:40  INFO  [ mosipqa/inji-certify-with-plugins ]  
+ 04-Dec-25 10:26:40  INFO  Destination Image = "mosipqa/inji-certify-with-plugins" Destination Image tag = "0.13.x" IMAGE_ID : sha256:b69667822e7207dd9bb2224d52d35e60fe190d5aae98d49a32c1984dfe299c89 
+ 04-Dec-25 10:26:40  INFO   
+ 04-Dec-25 10:26:40  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 04-Dec-25 10:26:40  INFO   
+ 04-Dec-25 10:26:40  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 04-Dec-25 10:26:40  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 04-Dec-25 10:26:40  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 04-Dec-25 10:26:40  DEBUG  Found 'auths' section 
+ 04-Dec-25 10:26:40  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
+ 04-Dec-25 10:26:40  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 04-Dec-25 10:26:40  DEBUG  Looking for auth entry for 'docker.io' 
+ 04-Dec-25 10:26:40  DEBUG  Found 'https://index.docker.io/v1/' 
+ 04-Dec-25 10:26:40  INFO  Using 3 parallel workers for image transfers 
+ 04-Dec-25 10:26:40  INFO   
+ 04-Dec-25 10:26:40  INFO  ********** [ mosipqa/inji-certify-with-plugins:0.13.x ] **************************************************** 
+ 04-Dec-25 10:26:40  INFO  Transferring image using crane... 
+ 04-Dec-25 10:26:40  INFO  Source uses tag reference: mosipdev2/inji-certify-with-plugins:release-0.13.x 
+ 04-Dec-25 10:26:40  INFO  Analyzing source image manifest... 
+ 04-Dec-25 10:26:41  INFO  Source is MULTI-ARCH image 
+ 04-Dec-25 10:26:41  INFO  Source Index Digest (Manifest List): sha256:0374af99cadcbe210b7c0696d0014ea29fc1df33b28d20786407c62608ec1ea5 
+ 04-Dec-25 10:26:41  INFO  Source has 2 platform(s): 
+ 04-Dec-25 10:26:41  INFO    - linux/amd64: sha256:9b4d4178d188a3a559805c124bbfde60d5d2a4e3f338a10dddb1bada0d8310ad 
+ 04-Dec-25 10:26:41  INFO    - linux/arm64: sha256:b0e3f87168eaa0416fdbcf25511e2a50758fefd48e03d3aee03e132091878cb7 
+ 04-Dec-25 10:26:41  INFO  Using secure connection for HTTPS registry 
+ 04-Dec-25 10:26:41  INFO  Executing: crane copy mosipdev2/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
+ 04-Dec-25 10:26:45  INFO  Successfully transferred image with crane 
+ 04-Dec-25 10:26:45  INFO   
+ 04-Dec-25 10:26:45  INFO  Analyzing destination image manifest... 
+ 04-Dec-25 10:26:46  INFO  Destination is MULTI-ARCH image 
+ 04-Dec-25 10:26:46  INFO  Destination Index Digest (Manifest List): sha256:0374af99cadcbe210b7c0696d0014ea29fc1df33b28d20786407c62608ec1ea5 
+ 04-Dec-25 10:26:46  INFO  Destination has 2 platform(s): 
+ 04-Dec-25 10:26:46  INFO    - linux/amd64: sha256:9b4d4178d188a3a559805c124bbfde60d5d2a4e3f338a10dddb1bada0d8310ad 
+ 04-Dec-25 10:26:46  INFO    - linux/arm64: sha256:b0e3f87168eaa0416fdbcf25511e2a50758fefd48e03d3aee03e132091878cb7 
+ 04-Dec-25 10:26:46  INFO   
+ 04-Dec-25 10:26:46  INFO  === DIGEST VERIFICATION === 
+ 04-Dec-25 10:26:46  INFO  Comparing Index Digests (Manifest Lists): 
+ 04-Dec-25 10:26:46  INFO    Source:      sha256:0374af99cadcbe210b7c0696d0014ea29fc1df33b28d20786407c62608ec1ea5 
+ 04-Dec-25 10:26:46  INFO    Destination: sha256:0374af99cadcbe210b7c0696d0014ea29fc1df33b28d20786407c62608ec1ea5 
+ 04-Dec-25 10:26:46  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 04-Dec-25 10:26:46  INFO   
+ 04-Dec-25 10:26:46  INFO  Comparing Platform Manifests: 
+ 04-Dec-25 10:26:46  INFO    ✓ linux/amd64: sha256:9b4d4178d188a3a559805c124bbfde60d5d2a4e3f338a10dddb1bada0d8310ad (MATCH) 
+ 04-Dec-25 10:26:46  INFO    ✓ linux/arm64: sha256:b0e3f87168eaa0416fdbcf25511e2a50758fefd48e03d3aee03e132091878cb7 (MATCH) 
+ 04-Dec-25 10:26:46  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 04-Dec-25 10:26:46  INFO  Creating latest tag: crane copy mosipdev2/inji-certify-with-plugins:release-0.13.x index.docker.io/mosipqa/inji-certify-with-plugins:latest 
+ 04-Dec-25 10:26:49  INFO  Successfully created latest tag 
+ 04-Dec-25 10:26:49  INFO  Image available at: index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
+ 04-Dec-25 10:26:49  INFO   
+ 04-Dec-25 10:26:49  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 04-Dec-25 10:26:49  INFO  Individual platform manifests should also match to ensure identical content. 
+ 04-Dec-25 10:26:49  INFO  Completed processing mosipdev2/inji-certify-with-plugins:release-0.13.x to mosipqa/inji-certify-with-plugins:0.13.x 

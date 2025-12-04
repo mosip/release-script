@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Thu Dec  4 09:59:53 UTC 2025
+**Date**: Thu Dec  4 10:26:49 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 2
-- **Total completed**: 2
+- **Crane transfers**: 1
+- **Total completed**: 1
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,5 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/dsl-orchestrator:1.3.x 
-- index.docker.io/mosipqa/dsl-packetcreator:1.3.x 
+- index.docker.io/mosipqa/inji-certify-with-plugins:0.13.x 
