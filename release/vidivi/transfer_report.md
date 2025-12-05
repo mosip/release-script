@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Fri Dec  5 10:42:50 UTC 2025
+**Date**: Fri Dec  5 11:13:02 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipid
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 2
-- **Total completed**: 2
+- **Crane transfers**: 1
+- **Total completed**: 1
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,5 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipid/inji-certify:0.13.1 
-- index.docker.io/mosipid/apitest-inji-certify:0.13.1 
+- index.docker.io/mosipid/inji-certify-with-plugins:0.13.1 
