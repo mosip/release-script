@@ -1,73 +1,214 @@
- 08-Dec-25 12:10:59  INFO  LOGFILE CREATED : vidivi.log 
- 08-Dec-25 12:10:59  INFO   
- 08-Dec-25 12:10:59  INFO  ******************** Check Images List ************************************************************************************ 
- 08-Dec-25 12:10:59  INFO   
- 08-Dec-25 12:10:59  INFO  IMAGES= [['mosipdev2/apitest-esignet-signup:release-1.3.x', '1.3.x']] 
- 08-Dec-25 12:10:59  INFO   
- 08-Dec-25 12:10:59  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 08-Dec-25 12:10:59  INFO   
- 08-Dec-25 12:10:59  INFO  src = "mosipdev2/apitest-esignet-signup" tag = "release-1.3.x" 
- 08-Dec-25 12:10:59  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 08-Dec-25 12:11:00  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev2/apitest-esignet-signup:pull HTTP/1.1" 200 None 
- 08-Dec-25 12:11:00  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 08-Dec-25 12:11:00  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev2/apitest-esignet-signup/tags/release-1.3.x HTTP/1.1" 200 None 
- 08-Dec-25 12:11:00  INFO   
- 08-Dec-25 12:11:00  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 08-Dec-25 12:11:00  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 08-Dec-25 12:11:00  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 08-Dec-25 12:11:00  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 08-Dec-25 12:11:00  INFO   
- 08-Dec-25 12:11:00  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 08-Dec-25 12:11:00  INFO   
- 08-Dec-25 12:11:00  INFO  [ mosipqa/apitest-esignet-signup ]  
- 08-Dec-25 12:11:01  INFO  Destination Image = "mosipqa/apitest-esignet-signup" Destination Image tag = "1.3.x" IMAGE_ID : sha256:967c1bbac031a8303c9db50d7de873941a8ddc338c1bd33e2eac88110d207a53 
- 08-Dec-25 12:11:01  INFO   
- 08-Dec-25 12:11:01  INFO  ******************** HASH Operation Results ********************************************************************** 
- 08-Dec-25 12:11:01  INFO   
- 08-Dec-25 12:11:01  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 08-Dec-25 12:11:01  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 08-Dec-25 12:11:01  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 08-Dec-25 12:11:01  DEBUG  Found 'auths' section 
- 08-Dec-25 12:11:01  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 08-Dec-25 12:11:01  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 08-Dec-25 12:11:01  DEBUG  Looking for auth entry for 'docker.io' 
- 08-Dec-25 12:11:01  DEBUG  Found 'https://index.docker.io/v1/' 
- 08-Dec-25 12:11:01  INFO  Using 3 parallel workers for image transfers 
- 08-Dec-25 12:11:01  INFO   
- 08-Dec-25 12:11:01  INFO  ********** [ mosipqa/apitest-esignet-signup:1.3.x ] **************************************************** 
- 08-Dec-25 12:11:01  INFO  Transferring image using crane... 
- 08-Dec-25 12:11:01  INFO  Source uses tag reference: mosipdev2/apitest-esignet-signup:release-1.3.x 
- 08-Dec-25 12:11:01  INFO  Analyzing source image manifest... 
- 08-Dec-25 12:11:02  INFO  Source is MULTI-ARCH image 
- 08-Dec-25 12:11:02  INFO  Source Index Digest (Manifest List): sha256:5d56eb2aa407b7ea85fb7ff63a3aaaae306f59abd46feece01a13401253fe317 
- 08-Dec-25 12:11:02  INFO  Source has 2 platform(s): 
- 08-Dec-25 12:11:02  INFO    - linux/amd64: sha256:f9bafc1a7ebdc24c7b43c6d87020cf970459f71208a3377ec4c6fa97cceee8e0 
- 08-Dec-25 12:11:02  INFO    - linux/arm64: sha256:c28f3fbd0828efe5760fd1b6fa3ce29a846f1a63c05a79bf20c697d953ee8931 
- 08-Dec-25 12:11:02  INFO  Using secure connection for HTTPS registry 
- 08-Dec-25 12:11:02  INFO  Executing: crane copy mosipdev2/apitest-esignet-signup:release-1.3.x index.docker.io/mosipqa/apitest-esignet-signup:1.3.x 
- 08-Dec-25 12:11:07  INFO  Successfully transferred image with crane 
- 08-Dec-25 12:11:07  INFO   
- 08-Dec-25 12:11:07  INFO  Analyzing destination image manifest... 
- 08-Dec-25 12:11:08  INFO  Destination is MULTI-ARCH image 
- 08-Dec-25 12:11:08  INFO  Destination Index Digest (Manifest List): sha256:5d56eb2aa407b7ea85fb7ff63a3aaaae306f59abd46feece01a13401253fe317 
- 08-Dec-25 12:11:08  INFO  Destination has 2 platform(s): 
- 08-Dec-25 12:11:08  INFO    - linux/amd64: sha256:f9bafc1a7ebdc24c7b43c6d87020cf970459f71208a3377ec4c6fa97cceee8e0 
- 08-Dec-25 12:11:08  INFO    - linux/arm64: sha256:c28f3fbd0828efe5760fd1b6fa3ce29a846f1a63c05a79bf20c697d953ee8931 
- 08-Dec-25 12:11:08  INFO   
- 08-Dec-25 12:11:08  INFO  === DIGEST VERIFICATION === 
- 08-Dec-25 12:11:08  INFO  Comparing Index Digests (Manifest Lists): 
- 08-Dec-25 12:11:08  INFO    Source:      sha256:5d56eb2aa407b7ea85fb7ff63a3aaaae306f59abd46feece01a13401253fe317 
- 08-Dec-25 12:11:08  INFO    Destination: sha256:5d56eb2aa407b7ea85fb7ff63a3aaaae306f59abd46feece01a13401253fe317 
- 08-Dec-25 12:11:08  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 08-Dec-25 12:11:08  INFO   
- 08-Dec-25 12:11:08  INFO  Comparing Platform Manifests: 
- 08-Dec-25 12:11:08  INFO    ✓ linux/amd64: sha256:f9bafc1a7ebdc24c7b43c6d87020cf970459f71208a3377ec4c6fa97cceee8e0 (MATCH) 
- 08-Dec-25 12:11:08  INFO    ✓ linux/arm64: sha256:c28f3fbd0828efe5760fd1b6fa3ce29a846f1a63c05a79bf20c697d953ee8931 (MATCH) 
- 08-Dec-25 12:11:08  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 08-Dec-25 12:11:08  INFO  Creating latest tag: crane copy mosipdev2/apitest-esignet-signup:release-1.3.x index.docker.io/mosipqa/apitest-esignet-signup:latest 
- 08-Dec-25 12:11:11  INFO  Successfully created latest tag 
- 08-Dec-25 12:11:11  INFO  Image available at: index.docker.io/mosipqa/apitest-esignet-signup:1.3.x 
- 08-Dec-25 12:11:11  INFO   
- 08-Dec-25 12:11:11  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 08-Dec-25 12:11:11  INFO  Individual platform manifests should also match to ensure identical content. 
- 08-Dec-25 12:11:11  INFO  Completed processing mosipdev2/apitest-esignet-signup:release-1.3.x to mosipqa/apitest-esignet-signup:1.3.x 
+ 08-Dec-25 12:38:41  INFO  LOGFILE CREATED : vidivi.log 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  ******************** Check Images List ************************************************************************************ 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  IMAGES= [['mosipdev/esignet-with-plugins:release-1.7.x', '1.7.x'], ['mosipdev/oidc-ui:release-1.7.x', '1.7.x'], ['mosipdev/signup-with-plugins:release-1.3.x', '1.3.x'], ['mosipdev/signup-ui:release-1.3.x', '1.3.x']] 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  src = "mosipdev/esignet-with-plugins" tag = "release-1.7.x" 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Dec-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/esignet-with-plugins:pull HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Dec-25 12:38:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/esignet-with-plugins/tags/release-1.7.x HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  src = "mosipdev/oidc-ui" tag = "release-1.7.x" 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Dec-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Dec-25 12:38:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/release-1.7.x HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  src = "mosipdev/signup-with-plugins" tag = "release-1.3.x" 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Dec-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-with-plugins:pull HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Dec-25 12:38:41  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-with-plugins/tags/release-1.3.x HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  INFO   
+ 08-Dec-25 12:38:41  INFO  src = "mosipdev/signup-ui" tag = "release-1.3.x" 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 08-Dec-25 12:38:41  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-ui:pull HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:41  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 08-Dec-25 12:38:42  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-ui/tags/release-1.3.x HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:42  INFO   
+ 08-Dec-25 12:38:42  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 08-Dec-25 12:38:42  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 08-Dec-25 12:38:42  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 08-Dec-25 12:38:42  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
+ 08-Dec-25 12:38:42  INFO   
+ 08-Dec-25 12:38:42  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 08-Dec-25 12:38:42  INFO   
+ 08-Dec-25 12:38:42  INFO  [ mosipqa/esignet-with-plugins ]  
+ 08-Dec-25 12:38:42  INFO  Destination Image = "mosipqa/esignet-with-plugins" Destination Image tag = "1.7.x" IMAGE_ID : sha256:9cc68e54622fc77040b3b2c6b5ac73c6469f150d17e3ecafe78868deaafe91aa 
+ 08-Dec-25 12:38:42  INFO   
+ 08-Dec-25 12:38:42  INFO  [ mosipqa/oidc-ui ]  
+ 08-Dec-25 12:38:42  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "1.7.x" IMAGE_ID : sha256:549cc3e46295e4c1ea9004a3db605332f4e2a070e21817935b2f37b60d97e0c5 
+ 08-Dec-25 12:38:42  INFO   
+ 08-Dec-25 12:38:42  INFO  [ mosipqa/signup-with-plugins ]  
+ 08-Dec-25 12:38:43  INFO  Destination Image = "mosipqa/signup-with-plugins" Destination Image tag = "1.3.x" IMAGE_ID : sha256:bb18872a4a1df8cd626eea8d9cdefd4fc22bfdbeeea7b72f1c7805606f54a1e1 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  [ mosipqa/signup-ui ]  
+ 08-Dec-25 12:38:43  INFO  Destination Image = "mosipqa/signup-ui" Destination Image tag = "1.3.x" IMAGE_ID : sha256:93c708d933716d1cef14b56a599bd926f408764c3eb307801db65f19c75b5e2f 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 08-Dec-25 12:38:43  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 08-Dec-25 12:38:43  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 08-Dec-25 12:38:43  DEBUG  Found 'auths' section 
+ 08-Dec-25 12:38:43  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
+ 08-Dec-25 12:38:43  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 08-Dec-25 12:38:43  DEBUG  Looking for auth entry for 'docker.io' 
+ 08-Dec-25 12:38:43  DEBUG  Found 'https://index.docker.io/v1/' 
+ 08-Dec-25 12:38:43  INFO  Using 3 parallel workers for image transfers 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  ********** [ mosipqa/esignet-with-plugins:1.7.x ] **************************************************** 
+ 08-Dec-25 12:38:43  INFO  Transferring image using crane... 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  ********** [ mosipqa/oidc-ui:1.7.x ] **************************************************** 
+ 08-Dec-25 12:38:43  INFO  Transferring image using crane... 
+ 08-Dec-25 12:38:43  INFO  Source uses tag reference: mosipdev/oidc-ui:release-1.7.x 
+ 08-Dec-25 12:38:43  INFO  Source uses tag reference: mosipdev/esignet-with-plugins:release-1.7.x 
+ 08-Dec-25 12:38:43  INFO  Analyzing source image manifest... 
+ 08-Dec-25 12:38:43  INFO  Analyzing source image manifest... 
+ 08-Dec-25 12:38:43  INFO   
+ 08-Dec-25 12:38:43  INFO  ********** [ mosipqa/signup-with-plugins:1.3.x ] **************************************************** 
+ 08-Dec-25 12:38:43  INFO  Transferring image using crane... 
+ 08-Dec-25 12:38:43  INFO  Source uses tag reference: mosipdev/signup-with-plugins:release-1.3.x 
+ 08-Dec-25 12:38:43  INFO  Analyzing source image manifest... 
+ 08-Dec-25 12:38:43  INFO  Source is MULTI-ARCH image 
+ 08-Dec-25 12:38:43  INFO  Source Index Digest (Manifest List): sha256:64f47e5d98412139f6cbfc82b57e4061f16ad25169672fd22de7ed64bf403ec4 
+ 08-Dec-25 12:38:43  INFO  Source has 2 platform(s): 
+ 08-Dec-25 12:38:43  INFO    - linux/amd64: sha256:081994b7dc44c551eb62b7919c39ac72c42d20210d2aa3212f8f8b36d8fe4098 
+ 08-Dec-25 12:38:43  INFO    - linux/arm64: sha256:e631760701837fef676cc15c22fe8b6303b644dabc7ef4e5f7faefd3cdeb4f47 
+ 08-Dec-25 12:38:43  INFO  Using secure connection for HTTPS registry 
+ 08-Dec-25 12:38:43  INFO  Executing: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipqa/signup-with-plugins:1.3.x 
+ 08-Dec-25 12:38:43  INFO  Source is MULTI-ARCH image 
+ 08-Dec-25 12:38:43  INFO  Source Index Digest (Manifest List): sha256:576b8c363c33246a69056ef23009bac5da7251fa31d716e0eda67b854e2d7c02 
+ 08-Dec-25 12:38:43  INFO  Source has 2 platform(s): 
+ 08-Dec-25 12:38:43  INFO    - linux/amd64: sha256:19fa7f6e1c0fbba5bf5a59e52bd8723b90a79ceeaf2ae74e1f9a89f45eb08428 
+ 08-Dec-25 12:38:43  INFO    - linux/arm64: sha256:a8356b5e0da3301f91361f31bb2b5cfa4ffa42ba7493bb2cbeb8dc9ffdbe8421 
+ 08-Dec-25 12:38:43  INFO  Using secure connection for HTTPS registry 
+ 08-Dec-25 12:38:43  INFO  Executing: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:1.7.x 
+ 08-Dec-25 12:38:43  INFO  Source is MULTI-ARCH image 
+ 08-Dec-25 12:38:43  INFO  Source Index Digest (Manifest List): sha256:af58374d1b663e96476a5ebe681bdc914cfba41e9ddd6767f5864aef38e497bd 
+ 08-Dec-25 12:38:43  INFO  Source has 2 platform(s): 
+ 08-Dec-25 12:38:43  INFO    - linux/amd64: sha256:5d119d51569dab1d57974482993004949bc83503aa44c4eb272d927a7a647ab1 
+ 08-Dec-25 12:38:43  INFO    - linux/arm64: sha256:5a2acacb9a4c11ba371efc073c0b1afc5e18585b1b60c06863e5adcad7afd651 
+ 08-Dec-25 12:38:43  INFO  Using secure connection for HTTPS registry 
+ 08-Dec-25 12:38:43  INFO  Executing: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipqa/esignet-with-plugins:1.7.x 
+ 08-Dec-25 12:38:46  INFO  Successfully transferred image with crane 
+ 08-Dec-25 12:38:46  INFO   
+ 08-Dec-25 12:38:46  INFO  Analyzing destination image manifest... 
+ 08-Dec-25 12:38:46  INFO  Successfully transferred image with crane 
+ 08-Dec-25 12:38:46  INFO   
+ 08-Dec-25 12:38:46  INFO  Analyzing destination image manifest... 
+ 08-Dec-25 12:38:46  INFO  Successfully transferred image with crane 
+ 08-Dec-25 12:38:46  INFO   
+ 08-Dec-25 12:38:46  INFO  Analyzing destination image manifest... 
+ 08-Dec-25 12:38:46  INFO  Destination is MULTI-ARCH image 
+ 08-Dec-25 12:38:46  INFO  Destination Index Digest (Manifest List): sha256:64f47e5d98412139f6cbfc82b57e4061f16ad25169672fd22de7ed64bf403ec4 
+ 08-Dec-25 12:38:46  INFO  Destination has 2 platform(s): 
+ 08-Dec-25 12:38:46  INFO    - linux/amd64: sha256:081994b7dc44c551eb62b7919c39ac72c42d20210d2aa3212f8f8b36d8fe4098 
+ 08-Dec-25 12:38:46  INFO    - linux/arm64: sha256:e631760701837fef676cc15c22fe8b6303b644dabc7ef4e5f7faefd3cdeb4f47 
+ 08-Dec-25 12:38:46  INFO   
+ 08-Dec-25 12:38:46  INFO  === DIGEST VERIFICATION === 
+ 08-Dec-25 12:38:46  INFO  Comparing Index Digests (Manifest Lists): 
+ 08-Dec-25 12:38:46  INFO    Source:      sha256:64f47e5d98412139f6cbfc82b57e4061f16ad25169672fd22de7ed64bf403ec4 
+ 08-Dec-25 12:38:46  INFO    Destination: sha256:64f47e5d98412139f6cbfc82b57e4061f16ad25169672fd22de7ed64bf403ec4 
+ 08-Dec-25 12:38:46  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 08-Dec-25 12:38:46  INFO   
+ 08-Dec-25 12:38:46  INFO  Comparing Platform Manifests: 
+ 08-Dec-25 12:38:46  INFO    ✓ linux/amd64: sha256:081994b7dc44c551eb62b7919c39ac72c42d20210d2aa3212f8f8b36d8fe4098 (MATCH) 
+ 08-Dec-25 12:38:46  INFO    ✓ linux/arm64: sha256:e631760701837fef676cc15c22fe8b6303b644dabc7ef4e5f7faefd3cdeb4f47 (MATCH) 
+ 08-Dec-25 12:38:46  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 08-Dec-25 12:38:46  INFO  Creating latest tag: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipqa/signup-with-plugins:latest 
+ 08-Dec-25 12:38:47  INFO  Destination is MULTI-ARCH image 
+ 08-Dec-25 12:38:47  INFO  Destination Index Digest (Manifest List): sha256:576b8c363c33246a69056ef23009bac5da7251fa31d716e0eda67b854e2d7c02 
+ 08-Dec-25 12:38:47  INFO  Destination has 2 platform(s): 
+ 08-Dec-25 12:38:47  INFO    - linux/amd64: sha256:19fa7f6e1c0fbba5bf5a59e52bd8723b90a79ceeaf2ae74e1f9a89f45eb08428 
+ 08-Dec-25 12:38:47  INFO    - linux/arm64: sha256:a8356b5e0da3301f91361f31bb2b5cfa4ffa42ba7493bb2cbeb8dc9ffdbe8421 
+ 08-Dec-25 12:38:47  INFO   
+ 08-Dec-25 12:38:47  INFO  === DIGEST VERIFICATION === 
+ 08-Dec-25 12:38:47  INFO  Comparing Index Digests (Manifest Lists): 
+ 08-Dec-25 12:38:47  INFO    Source:      sha256:576b8c363c33246a69056ef23009bac5da7251fa31d716e0eda67b854e2d7c02 
+ 08-Dec-25 12:38:47  INFO    Destination: sha256:576b8c363c33246a69056ef23009bac5da7251fa31d716e0eda67b854e2d7c02 
+ 08-Dec-25 12:38:47  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 08-Dec-25 12:38:47  INFO   
+ 08-Dec-25 12:38:47  INFO  Comparing Platform Manifests: 
+ 08-Dec-25 12:38:47  INFO    ✓ linux/amd64: sha256:19fa7f6e1c0fbba5bf5a59e52bd8723b90a79ceeaf2ae74e1f9a89f45eb08428 (MATCH) 
+ 08-Dec-25 12:38:47  INFO    ✓ linux/arm64: sha256:a8356b5e0da3301f91361f31bb2b5cfa4ffa42ba7493bb2cbeb8dc9ffdbe8421 (MATCH) 
+ 08-Dec-25 12:38:47  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 08-Dec-25 12:38:47  INFO  Creating latest tag: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:latest 
+ 08-Dec-25 12:38:47  INFO  Destination is MULTI-ARCH image 
+ 08-Dec-25 12:38:47  INFO  Destination Index Digest (Manifest List): sha256:af58374d1b663e96476a5ebe681bdc914cfba41e9ddd6767f5864aef38e497bd 
+ 08-Dec-25 12:38:47  INFO  Destination has 2 platform(s): 
+ 08-Dec-25 12:38:47  INFO    - linux/amd64: sha256:5d119d51569dab1d57974482993004949bc83503aa44c4eb272d927a7a647ab1 
+ 08-Dec-25 12:38:47  INFO    - linux/arm64: sha256:5a2acacb9a4c11ba371efc073c0b1afc5e18585b1b60c06863e5adcad7afd651 
+ 08-Dec-25 12:38:47  INFO   
+ 08-Dec-25 12:38:47  INFO  === DIGEST VERIFICATION === 
+ 08-Dec-25 12:38:47  INFO  Comparing Index Digests (Manifest Lists): 
+ 08-Dec-25 12:38:47  INFO    Source:      sha256:af58374d1b663e96476a5ebe681bdc914cfba41e9ddd6767f5864aef38e497bd 
+ 08-Dec-25 12:38:47  INFO    Destination: sha256:af58374d1b663e96476a5ebe681bdc914cfba41e9ddd6767f5864aef38e497bd 
+ 08-Dec-25 12:38:47  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 08-Dec-25 12:38:47  INFO   
+ 08-Dec-25 12:38:47  INFO  Comparing Platform Manifests: 
+ 08-Dec-25 12:38:47  INFO    ✓ linux/amd64: sha256:5d119d51569dab1d57974482993004949bc83503aa44c4eb272d927a7a647ab1 (MATCH) 
+ 08-Dec-25 12:38:47  INFO    ✓ linux/arm64: sha256:5a2acacb9a4c11ba371efc073c0b1afc5e18585b1b60c06863e5adcad7afd651 (MATCH) 
+ 08-Dec-25 12:38:47  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 08-Dec-25 12:38:47  INFO  Creating latest tag: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipqa/esignet-with-plugins:latest 
+ 08-Dec-25 12:38:48  INFO  Successfully created latest tag 
+ 08-Dec-25 12:38:48  INFO  Image available at: index.docker.io/mosipqa/signup-with-plugins:1.3.x 
+ 08-Dec-25 12:38:48  INFO   
+ 08-Dec-25 12:38:48  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 08-Dec-25 12:38:48  INFO  Individual platform manifests should also match to ensure identical content. 
+ 08-Dec-25 12:38:48  INFO   
+ 08-Dec-25 12:38:48  INFO  ********** [ mosipqa/signup-ui:1.3.x ] **************************************************** 
+ 08-Dec-25 12:38:48  INFO  Transferring image using crane... 
+ 08-Dec-25 12:38:48  INFO  Source uses tag reference: mosipdev/signup-ui:release-1.3.x 
+ 08-Dec-25 12:38:48  INFO  Analyzing source image manifest... 
+ 08-Dec-25 12:38:49  INFO  Successfully created latest tag 
+ 08-Dec-25 12:38:49  INFO  Image available at: index.docker.io/mosipqa/oidc-ui:1.7.x 
+ 08-Dec-25 12:38:49  INFO   
+ 08-Dec-25 12:38:49  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 08-Dec-25 12:38:49  INFO  Individual platform manifests should also match to ensure identical content. 
+ 08-Dec-25 12:38:49  INFO  Successfully created latest tag 
+ 08-Dec-25 12:38:49  INFO  Image available at: index.docker.io/mosipqa/esignet-with-plugins:1.7.x 
+ 08-Dec-25 12:38:49  INFO   
+ 08-Dec-25 12:38:49  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 08-Dec-25 12:38:49  INFO  Individual platform manifests should also match to ensure identical content. 
+ 08-Dec-25 12:38:49  INFO  Completed processing mosipdev/esignet-with-plugins:release-1.7.x to mosipqa/esignet-with-plugins:1.7.x 
+ 08-Dec-25 12:38:49  INFO  Completed processing mosipdev/oidc-ui:release-1.7.x to mosipqa/oidc-ui:1.7.x 
+ 08-Dec-25 12:38:49  INFO  Completed processing mosipdev/signup-with-plugins:release-1.3.x to mosipqa/signup-with-plugins:1.3.x 
+ 08-Dec-25 12:38:49  INFO  Source is MULTI-ARCH image 
+ 08-Dec-25 12:38:49  INFO  Source Index Digest (Manifest List): sha256:02dece043d16da7a79c7e3e170d711a35175df3c67bef1d307f6c1dd2a823b6c 
+ 08-Dec-25 12:38:49  INFO  Source has 2 platform(s): 
+ 08-Dec-25 12:38:49  INFO    - linux/amd64: sha256:cbd4ca201a109c5e0fd52f3ccff4f3a837e470f8de9ccc56fb8c521966ded4ad 
+ 08-Dec-25 12:38:49  INFO    - linux/arm64: sha256:bd237dcb12944b01cba9a544b7e03bb11f2ce8940d929d6c348301d520aa8257 
+ 08-Dec-25 12:38:49  INFO  Using secure connection for HTTPS registry 
+ 08-Dec-25 12:38:49  INFO  Executing: crane copy mosipdev/signup-ui:release-1.3.x index.docker.io/mosipqa/signup-ui:1.3.x 
+ 08-Dec-25 12:38:52  INFO  Successfully transferred image with crane 
+ 08-Dec-25 12:38:52  INFO   
+ 08-Dec-25 12:38:52  INFO  Analyzing destination image manifest... 
+ 08-Dec-25 12:38:53  INFO  Destination is MULTI-ARCH image 
+ 08-Dec-25 12:38:53  INFO  Destination Index Digest (Manifest List): sha256:02dece043d16da7a79c7e3e170d711a35175df3c67bef1d307f6c1dd2a823b6c 
+ 08-Dec-25 12:38:53  INFO  Destination has 2 platform(s): 
+ 08-Dec-25 12:38:53  INFO    - linux/amd64: sha256:cbd4ca201a109c5e0fd52f3ccff4f3a837e470f8de9ccc56fb8c521966ded4ad 
+ 08-Dec-25 12:38:53  INFO    - linux/arm64: sha256:bd237dcb12944b01cba9a544b7e03bb11f2ce8940d929d6c348301d520aa8257 
+ 08-Dec-25 12:38:53  INFO   
+ 08-Dec-25 12:38:53  INFO  === DIGEST VERIFICATION === 
+ 08-Dec-25 12:38:53  INFO  Comparing Index Digests (Manifest Lists): 
+ 08-Dec-25 12:38:53  INFO    Source:      sha256:02dece043d16da7a79c7e3e170d711a35175df3c67bef1d307f6c1dd2a823b6c 
+ 08-Dec-25 12:38:53  INFO    Destination: sha256:02dece043d16da7a79c7e3e170d711a35175df3c67bef1d307f6c1dd2a823b6c 
+ 08-Dec-25 12:38:53  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 08-Dec-25 12:38:53  INFO   
+ 08-Dec-25 12:38:53  INFO  Comparing Platform Manifests: 
+ 08-Dec-25 12:38:53  INFO    ✓ linux/amd64: sha256:cbd4ca201a109c5e0fd52f3ccff4f3a837e470f8de9ccc56fb8c521966ded4ad (MATCH) 
+ 08-Dec-25 12:38:53  INFO    ✓ linux/arm64: sha256:bd237dcb12944b01cba9a544b7e03bb11f2ce8940d929d6c348301d520aa8257 (MATCH) 
+ 08-Dec-25 12:38:53  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 08-Dec-25 12:38:53  INFO  Creating latest tag: crane copy mosipdev/signup-ui:release-1.3.x index.docker.io/mosipqa/signup-ui:latest 
+ 08-Dec-25 12:38:54  INFO  Successfully created latest tag 
+ 08-Dec-25 12:38:54  INFO  Image available at: index.docker.io/mosipqa/signup-ui:1.3.x 
+ 08-Dec-25 12:38:54  INFO   
+ 08-Dec-25 12:38:54  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 08-Dec-25 12:38:54  INFO  Individual platform manifests should also match to ensure identical content. 
+ 08-Dec-25 12:38:54  INFO  Completed processing mosipdev/signup-ui:release-1.3.x to mosipqa/signup-ui:1.3.x 
