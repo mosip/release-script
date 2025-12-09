@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Tue Dec  9 10:10:15 UTC 2025
+**Date**: Tue Dec  9 19:03:03 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 15
-- **Total completed**: 15
+- **Crane transfers**: 1
+- **Total completed**: 1
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,18 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/registration-processor-stage-group-2:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-1:1.3.x 
-- index.docker.io/mosipqa/registration-processor-common-camel-bridge:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-3:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-5:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-4:1.3.x 
-- index.docker.io/mosipqa/registration-processor-landing-zone:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-7:1.3.x 
-- index.docker.io/mosipqa/registration-processor-stage-group-6:1.3.x 
-- index.docker.io/mosipqa/registration-processor-dmz-packet-server:1.3.x 
-- index.docker.io/mosipqa/registration-processor-reprocessor:1.3.x 
-- index.docker.io/mosipqa/registration-processor-notification-service:1.3.x 
-- index.docker.io/mosipqa/registration-processor-registration-status-service:1.3.x 
-- index.docker.io/mosipqa/registration-processor-registration-transaction-service:1.3.x 
-- index.docker.io/mosipqa/registration-processor-workflow-manager-service:1.3.x 
+- index.docker.io/mosipqa/postgres-upgrade:1.3x 
