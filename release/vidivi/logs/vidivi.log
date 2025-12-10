@@ -1,73 +1,73 @@
- 10-Dec-25 10:12:49  INFO  LOGFILE CREATED : vidivi.log 
- 10-Dec-25 10:12:49  INFO   
- 10-Dec-25 10:12:49  INFO  ******************** Check Images List ************************************************************************************ 
- 10-Dec-25 10:12:49  INFO   
- 10-Dec-25 10:12:49  INFO  IMAGES= [['mosipdev/admin-service:release-1.3.x', '1.3.x']] 
- 10-Dec-25 10:12:49  INFO   
- 10-Dec-25 10:12:49  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 10-Dec-25 10:12:49  INFO   
- 10-Dec-25 10:12:49  INFO  src = "mosipdev/admin-service" tag = "release-1.3.x" 
- 10-Dec-25 10:12:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Dec-25 10:12:49  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/admin-service:pull HTTP/1.1" 200 None 
- 10-Dec-25 10:12:49  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Dec-25 10:12:49  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/admin-service/tags/release-1.3.x HTTP/1.1" 200 None 
- 10-Dec-25 10:12:49  INFO   
- 10-Dec-25 10:12:49  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 10-Dec-25 10:12:49  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 10-Dec-25 10:12:50  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 10-Dec-25 10:12:50  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 10-Dec-25 10:12:50  INFO   
- 10-Dec-25 10:12:50  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 10-Dec-25 10:12:50  INFO   
- 10-Dec-25 10:12:50  INFO  [ mosipqa/admin-service ]  
- 10-Dec-25 10:12:50  INFO  Destination Image = "mosipqa/admin-service" Destination Image tag = "1.3.x" IMAGE_ID : sha256:495d79a478eb9ad6992fec2f5cc7584e6ecde8f30af03f7381248725835df0ff 
- 10-Dec-25 10:12:50  INFO   
- 10-Dec-25 10:12:50  INFO  ******************** HASH Operation Results ********************************************************************** 
- 10-Dec-25 10:12:50  INFO   
- 10-Dec-25 10:12:50  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 10-Dec-25 10:12:50  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 10-Dec-25 10:12:50  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 10-Dec-25 10:12:50  DEBUG  Found 'auths' section 
- 10-Dec-25 10:12:50  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 10-Dec-25 10:12:50  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 10-Dec-25 10:12:50  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Dec-25 10:12:50  DEBUG  Found 'https://index.docker.io/v1/' 
- 10-Dec-25 10:12:50  INFO  Using 3 parallel workers for image transfers 
- 10-Dec-25 10:12:50  INFO   
- 10-Dec-25 10:12:50  INFO  ********** [ mosipqa/admin-service:1.3.x ] **************************************************** 
- 10-Dec-25 10:12:50  INFO  Transferring image using crane... 
- 10-Dec-25 10:12:50  INFO  Source uses tag reference: mosipdev/admin-service:release-1.3.x 
- 10-Dec-25 10:12:50  INFO  Analyzing source image manifest... 
- 10-Dec-25 10:12:50  INFO  Source is MULTI-ARCH image 
- 10-Dec-25 10:12:50  INFO  Source Index Digest (Manifest List): sha256:082b79c013330fa53c7d6fcee0f56b7ed733ec4251386c980c22737042b377e6 
- 10-Dec-25 10:12:50  INFO  Source has 2 platform(s): 
- 10-Dec-25 10:12:50  INFO    - linux/amd64: sha256:d4531da5e8ba5a39a86896c446915e26be82a179feed45a343aa0a44816c281b 
- 10-Dec-25 10:12:50  INFO    - linux/arm64: sha256:18f532c2b3cff1a2511664a5f8cafc92e7004b5db7dd4a18c3be94da6017846f 
- 10-Dec-25 10:12:50  INFO  Using secure connection for HTTPS registry 
- 10-Dec-25 10:12:50  INFO  Executing: crane copy mosipdev/admin-service:release-1.3.x index.docker.io/mosipqa/admin-service:1.3.x 
- 10-Dec-25 10:12:53  INFO  Successfully transferred image with crane 
- 10-Dec-25 10:12:53  INFO   
- 10-Dec-25 10:12:53  INFO  Analyzing destination image manifest... 
- 10-Dec-25 10:12:54  INFO  Destination is MULTI-ARCH image 
- 10-Dec-25 10:12:54  INFO  Destination Index Digest (Manifest List): sha256:082b79c013330fa53c7d6fcee0f56b7ed733ec4251386c980c22737042b377e6 
- 10-Dec-25 10:12:54  INFO  Destination has 2 platform(s): 
- 10-Dec-25 10:12:54  INFO    - linux/amd64: sha256:d4531da5e8ba5a39a86896c446915e26be82a179feed45a343aa0a44816c281b 
- 10-Dec-25 10:12:54  INFO    - linux/arm64: sha256:18f532c2b3cff1a2511664a5f8cafc92e7004b5db7dd4a18c3be94da6017846f 
- 10-Dec-25 10:12:54  INFO   
- 10-Dec-25 10:12:54  INFO  === DIGEST VERIFICATION === 
- 10-Dec-25 10:12:54  INFO  Comparing Index Digests (Manifest Lists): 
- 10-Dec-25 10:12:54  INFO    Source:      sha256:082b79c013330fa53c7d6fcee0f56b7ed733ec4251386c980c22737042b377e6 
- 10-Dec-25 10:12:54  INFO    Destination: sha256:082b79c013330fa53c7d6fcee0f56b7ed733ec4251386c980c22737042b377e6 
- 10-Dec-25 10:12:54  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 10-Dec-25 10:12:54  INFO   
- 10-Dec-25 10:12:54  INFO  Comparing Platform Manifests: 
- 10-Dec-25 10:12:54  INFO    ✓ linux/amd64: sha256:d4531da5e8ba5a39a86896c446915e26be82a179feed45a343aa0a44816c281b (MATCH) 
- 10-Dec-25 10:12:54  INFO    ✓ linux/arm64: sha256:18f532c2b3cff1a2511664a5f8cafc92e7004b5db7dd4a18c3be94da6017846f (MATCH) 
- 10-Dec-25 10:12:54  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 10-Dec-25 10:12:54  INFO  Creating latest tag: crane copy mosipdev/admin-service:release-1.3.x index.docker.io/mosipqa/admin-service:latest 
- 10-Dec-25 10:12:56  INFO  Successfully created latest tag 
- 10-Dec-25 10:12:56  INFO  Image available at: index.docker.io/mosipqa/admin-service:1.3.x 
- 10-Dec-25 10:12:56  INFO   
- 10-Dec-25 10:12:56  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 10-Dec-25 10:12:56  INFO  Individual platform manifests should also match to ensure identical content. 
- 10-Dec-25 10:12:56  INFO  Completed processing mosipdev/admin-service:release-1.3.x to mosipqa/admin-service:1.3.x 
+ 10-Dec-25 15:29:49  INFO  LOGFILE CREATED : vidivi.log 
+ 10-Dec-25 15:29:49  INFO   
+ 10-Dec-25 15:29:49  INFO  ******************** Check Images List ************************************************************************************ 
+ 10-Dec-25 15:29:49  INFO   
+ 10-Dec-25 15:29:49  INFO  IMAGES= [['mosipdev/oidc-ui:release-1.7.x', '1.7.x']] 
+ 10-Dec-25 15:29:49  INFO   
+ 10-Dec-25 15:29:49  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 10-Dec-25 15:29:49  INFO   
+ 10-Dec-25 15:29:49  INFO  src = "mosipdev/oidc-ui" tag = "release-1.7.x" 
+ 10-Dec-25 15:29:49  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 15:29:50  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
+ 10-Dec-25 15:29:50  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 15:29:50  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/release-1.7.x HTTP/1.1" 200 None 
+ 10-Dec-25 15:29:50  INFO   
+ 10-Dec-25 15:29:50  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 10-Dec-25 15:29:50  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 10-Dec-25 15:29:50  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 10-Dec-25 15:29:50  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
+ 10-Dec-25 15:29:50  INFO   
+ 10-Dec-25 15:29:50  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 10-Dec-25 15:29:50  INFO   
+ 10-Dec-25 15:29:50  INFO  [ mosipqa/oidc-ui ]  
+ 10-Dec-25 15:29:51  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "1.7.x" IMAGE_ID : sha256:132661796e9a21084f96d6c9731f0ddafe2103ec442a840d216256b42ae267ef 
+ 10-Dec-25 15:29:51  INFO   
+ 10-Dec-25 15:29:51  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 10-Dec-25 15:29:51  INFO   
+ 10-Dec-25 15:29:51  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 10-Dec-25 15:29:51  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 10-Dec-25 15:29:51  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 10-Dec-25 15:29:51  DEBUG  Found 'auths' section 
+ 10-Dec-25 15:29:51  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
+ 10-Dec-25 15:29:51  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 10-Dec-25 15:29:51  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Dec-25 15:29:51  DEBUG  Found 'https://index.docker.io/v1/' 
+ 10-Dec-25 15:29:51  INFO  Using 3 parallel workers for image transfers 
+ 10-Dec-25 15:29:51  INFO   
+ 10-Dec-25 15:29:51  INFO  ********** [ mosipqa/oidc-ui:1.7.x ] **************************************************** 
+ 10-Dec-25 15:29:51  INFO  Transferring image using crane... 
+ 10-Dec-25 15:29:51  INFO  Source uses tag reference: mosipdev/oidc-ui:release-1.7.x 
+ 10-Dec-25 15:29:51  INFO  Analyzing source image manifest... 
+ 10-Dec-25 15:29:52  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 15:29:52  INFO  Source Index Digest (Manifest List): sha256:7caaffe0afd7eedd9dbe3c8bfe67c4adb842f0d613c8a1722cacceb025c2ca22 
+ 10-Dec-25 15:29:52  INFO  Source has 2 platform(s): 
+ 10-Dec-25 15:29:52  INFO    - linux/amd64: sha256:08b12c9972e396ec0c5b0e46ca87f48b945409be8f814e8eafd93b5ce713b901 
+ 10-Dec-25 15:29:52  INFO    - linux/arm64: sha256:9b97bb4599f048b2fb13f0757ef87b9a917b590513c1940162fff08a7491ff56 
+ 10-Dec-25 15:29:52  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 15:29:52  INFO  Executing: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:1.7.x 
+ 10-Dec-25 15:29:55  INFO  Successfully transferred image with crane 
+ 10-Dec-25 15:29:55  INFO   
+ 10-Dec-25 15:29:55  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 15:29:56  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 15:29:56  INFO  Destination Index Digest (Manifest List): sha256:7caaffe0afd7eedd9dbe3c8bfe67c4adb842f0d613c8a1722cacceb025c2ca22 
+ 10-Dec-25 15:29:56  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 15:29:56  INFO    - linux/amd64: sha256:08b12c9972e396ec0c5b0e46ca87f48b945409be8f814e8eafd93b5ce713b901 
+ 10-Dec-25 15:29:56  INFO    - linux/arm64: sha256:9b97bb4599f048b2fb13f0757ef87b9a917b590513c1940162fff08a7491ff56 
+ 10-Dec-25 15:29:56  INFO   
+ 10-Dec-25 15:29:56  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 15:29:56  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 15:29:56  INFO    Source:      sha256:7caaffe0afd7eedd9dbe3c8bfe67c4adb842f0d613c8a1722cacceb025c2ca22 
+ 10-Dec-25 15:29:56  INFO    Destination: sha256:7caaffe0afd7eedd9dbe3c8bfe67c4adb842f0d613c8a1722cacceb025c2ca22 
+ 10-Dec-25 15:29:56  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 15:29:56  INFO   
+ 10-Dec-25 15:29:56  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 15:29:56  INFO    ✓ linux/amd64: sha256:08b12c9972e396ec0c5b0e46ca87f48b945409be8f814e8eafd93b5ce713b901 (MATCH) 
+ 10-Dec-25 15:29:56  INFO    ✓ linux/arm64: sha256:9b97bb4599f048b2fb13f0757ef87b9a917b590513c1940162fff08a7491ff56 (MATCH) 
+ 10-Dec-25 15:29:56  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 15:29:56  INFO  Creating latest tag: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:latest 
+ 10-Dec-25 15:29:59  INFO  Successfully created latest tag 
+ 10-Dec-25 15:29:59  INFO  Image available at: index.docker.io/mosipqa/oidc-ui:1.7.x 
+ 10-Dec-25 15:29:59  INFO   
+ 10-Dec-25 15:29:59  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 15:29:59  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 15:29:59  INFO  Completed processing mosipdev/oidc-ui:release-1.7.x to mosipqa/oidc-ui:1.7.x 
