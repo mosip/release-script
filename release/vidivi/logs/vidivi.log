@@ -1,214 +1,731 @@
- 10-Dec-25 03:51:13  INFO  LOGFILE CREATED : vidivi.log 
- 10-Dec-25 03:51:13  INFO   
- 10-Dec-25 03:51:13  INFO  ******************** Check Images List ************************************************************************************ 
- 10-Dec-25 03:51:13  INFO   
- 10-Dec-25 03:51:13  INFO  IMAGES= [['mosipdev/esignet-with-plugins:release-1.7.x', '1.7.x'], ['mosipdev/oidc-ui:release-1.7.x', '1.7.x'], ['mosipdev/signup-with-plugins:release-1.3.x', '1.3.x'], ['mosipdev/signup-ui:release-1.3.x', '1.3.x']] 
- 10-Dec-25 03:51:13  INFO   
- 10-Dec-25 03:51:13  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 10-Dec-25 03:51:13  INFO   
- 10-Dec-25 03:51:13  INFO  src = "mosipdev/esignet-with-plugins" tag = "release-1.7.x" 
- 10-Dec-25 03:51:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Dec-25 03:51:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/esignet-with-plugins:pull HTTP/1.1" 200 None 
- 10-Dec-25 03:51:13  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Dec-25 03:51:13  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/esignet-with-plugins/tags/release-1.7.x HTTP/1.1" 200 None 
- 10-Dec-25 03:51:13  INFO   
- 10-Dec-25 03:51:13  INFO  src = "mosipdev/oidc-ui" tag = "release-1.7.x" 
- 10-Dec-25 03:51:13  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Dec-25 03:51:13  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/oidc-ui:pull HTTP/1.1" 200 None 
- 10-Dec-25 03:51:13  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Dec-25 03:51:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/oidc-ui/tags/release-1.7.x HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  src = "mosipdev/signup-with-plugins" tag = "release-1.3.x" 
- 10-Dec-25 03:51:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Dec-25 03:51:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-with-plugins:pull HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Dec-25 03:51:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-with-plugins/tags/release-1.3.x HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  src = "mosipdev/signup-ui" tag = "release-1.3.x" 
- 10-Dec-25 03:51:14  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 10-Dec-25 03:51:14  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/signup-ui:pull HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 10-Dec-25 03:51:14  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/signup-ui/tags/release-1.3.x HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 10-Dec-25 03:51:14  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 10-Dec-25 03:51:14  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 10-Dec-25 03:51:14  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  [ mosipqa/esignet-with-plugins ]  
- 10-Dec-25 03:51:14  INFO  Destination Image = "mosipqa/esignet-with-plugins" Destination Image tag = "1.7.x" IMAGE_ID : sha256:af58374d1b663e96476a5ebe681bdc914cfba41e9ddd6767f5864aef38e497bd 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  [ mosipqa/oidc-ui ]  
- 10-Dec-25 03:51:14  INFO  Destination Image = "mosipqa/oidc-ui" Destination Image tag = "1.7.x" IMAGE_ID : sha256:576b8c363c33246a69056ef23009bac5da7251fa31d716e0eda67b854e2d7c02 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  [ mosipqa/signup-with-plugins ]  
- 10-Dec-25 03:51:14  INFO  Destination Image = "mosipqa/signup-with-plugins" Destination Image tag = "1.3.x" IMAGE_ID : sha256:64f47e5d98412139f6cbfc82b57e4061f16ad25169672fd22de7ed64bf403ec4 
- 10-Dec-25 03:51:14  INFO   
- 10-Dec-25 03:51:14  INFO  [ mosipqa/signup-ui ]  
- 10-Dec-25 03:51:15  INFO  Destination Image = "mosipqa/signup-ui" Destination Image tag = "1.3.x" IMAGE_ID : sha256:02dece043d16da7a79c7e3e170d711a35175df3c67bef1d307f6c1dd2a823b6c 
- 10-Dec-25 03:51:15  INFO   
- 10-Dec-25 03:51:15  INFO  ******************** HASH Operation Results ********************************************************************** 
- 10-Dec-25 03:51:15  INFO   
- 10-Dec-25 03:51:15  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 10-Dec-25 03:51:15  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 10-Dec-25 03:51:15  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 10-Dec-25 03:51:15  DEBUG  Found 'auths' section 
- 10-Dec-25 03:51:15  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 10-Dec-25 03:51:15  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 10-Dec-25 03:51:15  DEBUG  Looking for auth entry for 'docker.io' 
- 10-Dec-25 03:51:15  DEBUG  Found 'https://index.docker.io/v1/' 
- 10-Dec-25 03:51:15  INFO  Using 3 parallel workers for image transfers 
- 10-Dec-25 03:51:15  INFO   
- 10-Dec-25 03:51:15  INFO  ********** [ mosipqa/esignet-with-plugins:1.7.x ] **************************************************** 
- 10-Dec-25 03:51:15  INFO  Transferring image using crane... 
- 10-Dec-25 03:51:15  INFO   
- 10-Dec-25 03:51:15  INFO  ********** [ mosipqa/oidc-ui:1.7.x ] **************************************************** 
- 10-Dec-25 03:51:15  INFO  Transferring image using crane... 
- 10-Dec-25 03:51:15  INFO  Source uses tag reference: mosipdev/esignet-with-plugins:release-1.7.x 
- 10-Dec-25 03:51:15  INFO  Analyzing source image manifest... 
- 10-Dec-25 03:51:15  INFO  Source uses tag reference: mosipdev/oidc-ui:release-1.7.x 
- 10-Dec-25 03:51:15  INFO   
- 10-Dec-25 03:51:15  INFO  Analyzing source image manifest... 
- 10-Dec-25 03:51:15  INFO  ********** [ mosipqa/signup-with-plugins:1.3.x ] **************************************************** 
- 10-Dec-25 03:51:15  INFO  Transferring image using crane... 
- 10-Dec-25 03:51:15  INFO  Source uses tag reference: mosipdev/signup-with-plugins:release-1.3.x 
- 10-Dec-25 03:51:15  INFO  Analyzing source image manifest... 
- 10-Dec-25 03:51:15  INFO  Source is MULTI-ARCH image 
- 10-Dec-25 03:51:15  INFO  Source Index Digest (Manifest List): sha256:adcd39e56823cb553a0ba04b5ec2af6f5a7fe216711720cb1e3a673c4bd08f50 
- 10-Dec-25 03:51:15  INFO  Source has 2 platform(s): 
- 10-Dec-25 03:51:15  INFO    - linux/amd64: sha256:65e497d674bbe49f8d5ea06bc5a0bf7d8b4bc665eb41e2809b96c38892839852 
- 10-Dec-25 03:51:15  INFO    - linux/arm64: sha256:595f2b392730b04e651f370e4b7a8b0080ed75683e4130f416d7bf8d221bde3f 
- 10-Dec-25 03:51:15  INFO  Using secure connection for HTTPS registry 
- 10-Dec-25 03:51:15  INFO  Executing: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipqa/signup-with-plugins:1.3.x 
- 10-Dec-25 03:51:15  INFO  Source is MULTI-ARCH image 
- 10-Dec-25 03:51:15  INFO  Source Index Digest (Manifest List): sha256:132661796e9a21084f96d6c9731f0ddafe2103ec442a840d216256b42ae267ef 
- 10-Dec-25 03:51:15  INFO  Source has 2 platform(s): 
- 10-Dec-25 03:51:15  INFO    - linux/amd64: sha256:4ccfb64830970036e2a0f5d121642666a207bde30ee339c2069b7e405fc5ff0a 
- 10-Dec-25 03:51:15  INFO    - linux/arm64: sha256:06cccec20362a96dc9c69de52f9b40e954ac7e5e95899f5fb8b875b32bafb739 
- 10-Dec-25 03:51:15  INFO  Using secure connection for HTTPS registry 
- 10-Dec-25 03:51:15  INFO  Executing: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:1.7.x 
- 10-Dec-25 03:51:15  INFO  Source is MULTI-ARCH image 
- 10-Dec-25 03:51:15  INFO  Source Index Digest (Manifest List): sha256:e56b86a3374086e79e52164812ddb9aad8f7a7b592d222b17361e774fb6cf9fe 
- 10-Dec-25 03:51:15  INFO  Source has 2 platform(s): 
- 10-Dec-25 03:51:15  INFO    - linux/amd64: sha256:267af889e750ba464f4d68f22a6f7088afc24c6515c925d83a6bcd751f5bacde 
- 10-Dec-25 03:51:15  INFO    - linux/arm64: sha256:0263cfcdd6886560e15dfac75dde65cc2443c1578a416111445b59c36514b4d8 
- 10-Dec-25 03:51:15  INFO  Using secure connection for HTTPS registry 
- 10-Dec-25 03:51:15  INFO  Executing: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipqa/esignet-with-plugins:1.7.x 
- 10-Dec-25 03:51:17  INFO  Successfully transferred image with crane 
- 10-Dec-25 03:51:17  INFO   
- 10-Dec-25 03:51:17  INFO  Analyzing destination image manifest... 
- 10-Dec-25 03:51:17  INFO  Successfully transferred image with crane 
- 10-Dec-25 03:51:17  INFO   
- 10-Dec-25 03:51:17  INFO  Analyzing destination image manifest... 
- 10-Dec-25 03:51:18  INFO  Destination is MULTI-ARCH image 
- 10-Dec-25 03:51:18  INFO  Destination Index Digest (Manifest List): sha256:adcd39e56823cb553a0ba04b5ec2af6f5a7fe216711720cb1e3a673c4bd08f50 
- 10-Dec-25 03:51:18  INFO  Destination has 2 platform(s): 
- 10-Dec-25 03:51:18  INFO    - linux/amd64: sha256:65e497d674bbe49f8d5ea06bc5a0bf7d8b4bc665eb41e2809b96c38892839852 
- 10-Dec-25 03:51:18  INFO    - linux/arm64: sha256:595f2b392730b04e651f370e4b7a8b0080ed75683e4130f416d7bf8d221bde3f 
- 10-Dec-25 03:51:18  INFO   
- 10-Dec-25 03:51:18  INFO  === DIGEST VERIFICATION === 
- 10-Dec-25 03:51:18  INFO  Comparing Index Digests (Manifest Lists): 
- 10-Dec-25 03:51:18  INFO    Source:      sha256:adcd39e56823cb553a0ba04b5ec2af6f5a7fe216711720cb1e3a673c4bd08f50 
- 10-Dec-25 03:51:18  INFO    Destination: sha256:adcd39e56823cb553a0ba04b5ec2af6f5a7fe216711720cb1e3a673c4bd08f50 
- 10-Dec-25 03:51:18  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 10-Dec-25 03:51:18  INFO   
- 10-Dec-25 03:51:18  INFO  Comparing Platform Manifests: 
- 10-Dec-25 03:51:18  INFO    ✓ linux/amd64: sha256:65e497d674bbe49f8d5ea06bc5a0bf7d8b4bc665eb41e2809b96c38892839852 (MATCH) 
- 10-Dec-25 03:51:18  INFO    ✓ linux/arm64: sha256:595f2b392730b04e651f370e4b7a8b0080ed75683e4130f416d7bf8d221bde3f (MATCH) 
- 10-Dec-25 03:51:18  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 10-Dec-25 03:51:18  INFO  Creating latest tag: crane copy mosipdev/signup-with-plugins:release-1.3.x index.docker.io/mosipqa/signup-with-plugins:latest 
- 10-Dec-25 03:51:18  INFO  Destination is MULTI-ARCH image 
- 10-Dec-25 03:51:18  INFO  Destination Index Digest (Manifest List): sha256:e56b86a3374086e79e52164812ddb9aad8f7a7b592d222b17361e774fb6cf9fe 
- 10-Dec-25 03:51:18  INFO  Destination has 2 platform(s): 
- 10-Dec-25 03:51:18  INFO    - linux/amd64: sha256:267af889e750ba464f4d68f22a6f7088afc24c6515c925d83a6bcd751f5bacde 
- 10-Dec-25 03:51:18  INFO    - linux/arm64: sha256:0263cfcdd6886560e15dfac75dde65cc2443c1578a416111445b59c36514b4d8 
- 10-Dec-25 03:51:18  INFO   
- 10-Dec-25 03:51:18  INFO  === DIGEST VERIFICATION === 
- 10-Dec-25 03:51:18  INFO  Comparing Index Digests (Manifest Lists): 
- 10-Dec-25 03:51:18  INFO    Source:      sha256:e56b86a3374086e79e52164812ddb9aad8f7a7b592d222b17361e774fb6cf9fe 
- 10-Dec-25 03:51:18  INFO    Destination: sha256:e56b86a3374086e79e52164812ddb9aad8f7a7b592d222b17361e774fb6cf9fe 
- 10-Dec-25 03:51:18  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 10-Dec-25 03:51:18  INFO   
- 10-Dec-25 03:51:18  INFO  Comparing Platform Manifests: 
- 10-Dec-25 03:51:18  INFO    ✓ linux/amd64: sha256:267af889e750ba464f4d68f22a6f7088afc24c6515c925d83a6bcd751f5bacde (MATCH) 
- 10-Dec-25 03:51:18  INFO    ✓ linux/arm64: sha256:0263cfcdd6886560e15dfac75dde65cc2443c1578a416111445b59c36514b4d8 (MATCH) 
- 10-Dec-25 03:51:18  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 10-Dec-25 03:51:18  INFO  Creating latest tag: crane copy mosipdev/esignet-with-plugins:release-1.7.x index.docker.io/mosipqa/esignet-with-plugins:latest 
- 10-Dec-25 03:51:19  INFO  Successfully created latest tag 
- 10-Dec-25 03:51:19  INFO  Image available at: index.docker.io/mosipqa/signup-with-plugins:1.3.x 
- 10-Dec-25 03:51:19  INFO   
- 10-Dec-25 03:51:19  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 10-Dec-25 03:51:19  INFO  Individual platform manifests should also match to ensure identical content. 
- 10-Dec-25 03:51:19  INFO   
- 10-Dec-25 03:51:19  INFO  ********** [ mosipqa/signup-ui:1.3.x ] **************************************************** 
- 10-Dec-25 03:51:19  INFO  Transferring image using crane... 
- 10-Dec-25 03:51:19  INFO  Source uses tag reference: mosipdev/signup-ui:release-1.3.x 
- 10-Dec-25 03:51:19  INFO  Analyzing source image manifest... 
- 10-Dec-25 03:51:19  INFO  Successfully created latest tag 
- 10-Dec-25 03:51:19  INFO  Image available at: index.docker.io/mosipqa/esignet-with-plugins:1.7.x 
- 10-Dec-25 03:51:19  INFO   
- 10-Dec-25 03:51:19  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 10-Dec-25 03:51:19  INFO  Individual platform manifests should also match to ensure identical content. 
- 10-Dec-25 03:51:19  INFO  Completed processing mosipdev/esignet-with-plugins:release-1.7.x to mosipqa/esignet-with-plugins:1.7.x 
- 10-Dec-25 03:51:20  INFO  Source is MULTI-ARCH image 
- 10-Dec-25 03:51:20  INFO  Source Index Digest (Manifest List): sha256:e743017d663324f39df7cdebd7cb11df71e21964824b751bbd448b2c04e555cf 
- 10-Dec-25 03:51:20  INFO  Source has 2 platform(s): 
- 10-Dec-25 03:51:20  INFO    - linux/amd64: sha256:9474c18150d9b810cce5e798bb8c1de1e812340188e794e90719b83f74931ef4 
- 10-Dec-25 03:51:20  INFO    - linux/arm64: sha256:ab14838363360cc436097f419706127993c73b0660c93c5e86e41d5c17f5f79f 
- 10-Dec-25 03:51:20  INFO  Using secure connection for HTTPS registry 
- 10-Dec-25 03:51:20  INFO  Executing: crane copy mosipdev/signup-ui:release-1.3.x index.docker.io/mosipqa/signup-ui:1.3.x 
- 10-Dec-25 03:51:23  INFO  Successfully transferred image with crane 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  Analyzing destination image manifest... 
- 10-Dec-25 03:51:23  INFO  Successfully transferred image with crane 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  Analyzing destination image manifest... 
- 10-Dec-25 03:51:23  INFO  Destination is MULTI-ARCH image 
- 10-Dec-25 03:51:23  INFO  Destination Index Digest (Manifest List): sha256:e743017d663324f39df7cdebd7cb11df71e21964824b751bbd448b2c04e555cf 
- 10-Dec-25 03:51:23  INFO  Destination has 2 platform(s): 
- 10-Dec-25 03:51:23  INFO    - linux/amd64: sha256:9474c18150d9b810cce5e798bb8c1de1e812340188e794e90719b83f74931ef4 
- 10-Dec-25 03:51:23  INFO    - linux/arm64: sha256:ab14838363360cc436097f419706127993c73b0660c93c5e86e41d5c17f5f79f 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  === DIGEST VERIFICATION === 
- 10-Dec-25 03:51:23  INFO  Comparing Index Digests (Manifest Lists): 
- 10-Dec-25 03:51:23  INFO    Source:      sha256:e743017d663324f39df7cdebd7cb11df71e21964824b751bbd448b2c04e555cf 
- 10-Dec-25 03:51:23  INFO    Destination: sha256:e743017d663324f39df7cdebd7cb11df71e21964824b751bbd448b2c04e555cf 
- 10-Dec-25 03:51:23  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  Comparing Platform Manifests: 
- 10-Dec-25 03:51:23  INFO    ✓ linux/amd64: sha256:9474c18150d9b810cce5e798bb8c1de1e812340188e794e90719b83f74931ef4 (MATCH) 
- 10-Dec-25 03:51:23  INFO    ✓ linux/arm64: sha256:ab14838363360cc436097f419706127993c73b0660c93c5e86e41d5c17f5f79f (MATCH) 
- 10-Dec-25 03:51:23  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 10-Dec-25 03:51:23  INFO  Creating latest tag: crane copy mosipdev/signup-ui:release-1.3.x index.docker.io/mosipqa/signup-ui:latest 
- 10-Dec-25 03:51:23  INFO  Destination is MULTI-ARCH image 
- 10-Dec-25 03:51:23  INFO  Destination Index Digest (Manifest List): sha256:132661796e9a21084f96d6c9731f0ddafe2103ec442a840d216256b42ae267ef 
- 10-Dec-25 03:51:23  INFO  Destination has 2 platform(s): 
- 10-Dec-25 03:51:23  INFO    - linux/amd64: sha256:4ccfb64830970036e2a0f5d121642666a207bde30ee339c2069b7e405fc5ff0a 
- 10-Dec-25 03:51:23  INFO    - linux/arm64: sha256:06cccec20362a96dc9c69de52f9b40e954ac7e5e95899f5fb8b875b32bafb739 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  === DIGEST VERIFICATION === 
- 10-Dec-25 03:51:23  INFO  Comparing Index Digests (Manifest Lists): 
- 10-Dec-25 03:51:23  INFO    Source:      sha256:132661796e9a21084f96d6c9731f0ddafe2103ec442a840d216256b42ae267ef 
- 10-Dec-25 03:51:23  INFO    Destination: sha256:132661796e9a21084f96d6c9731f0ddafe2103ec442a840d216256b42ae267ef 
- 10-Dec-25 03:51:23  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 10-Dec-25 03:51:23  INFO   
- 10-Dec-25 03:51:23  INFO  Comparing Platform Manifests: 
- 10-Dec-25 03:51:23  INFO    ✓ linux/amd64: sha256:4ccfb64830970036e2a0f5d121642666a207bde30ee339c2069b7e405fc5ff0a (MATCH) 
- 10-Dec-25 03:51:23  INFO    ✓ linux/arm64: sha256:06cccec20362a96dc9c69de52f9b40e954ac7e5e95899f5fb8b875b32bafb739 (MATCH) 
- 10-Dec-25 03:51:23  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 10-Dec-25 03:51:23  INFO  Creating latest tag: crane copy mosipdev/oidc-ui:release-1.7.x index.docker.io/mosipqa/oidc-ui:latest 
- 10-Dec-25 03:51:25  INFO  Successfully created latest tag 
- 10-Dec-25 03:51:25  INFO  Image available at: index.docker.io/mosipqa/signup-ui:1.3.x 
- 10-Dec-25 03:51:25  INFO   
- 10-Dec-25 03:51:25  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 10-Dec-25 03:51:25  INFO  Individual platform manifests should also match to ensure identical content. 
- 10-Dec-25 03:51:25  INFO  Successfully created latest tag 
- 10-Dec-25 03:51:25  INFO  Image available at: index.docker.io/mosipqa/oidc-ui:1.7.x 
- 10-Dec-25 03:51:25  INFO   
- 10-Dec-25 03:51:25  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 10-Dec-25 03:51:25  INFO  Individual platform manifests should also match to ensure identical content. 
- 10-Dec-25 03:51:25  INFO  Completed processing mosipdev/oidc-ui:release-1.7.x to mosipqa/oidc-ui:1.7.x 
- 10-Dec-25 03:51:25  INFO  Completed processing mosipdev/signup-with-plugins:release-1.3.x to mosipqa/signup-with-plugins:1.3.x 
- 10-Dec-25 03:51:25  INFO  Completed processing mosipdev/signup-ui:release-1.3.x to mosipqa/signup-ui:1.3.x 
+ 10-Dec-25 04:06:01  INFO  LOGFILE CREATED : vidivi.log 
+ 10-Dec-25 04:06:01  INFO   
+ 10-Dec-25 04:06:01  INFO  ******************** Check Images List ************************************************************************************ 
+ 10-Dec-25 04:06:01  INFO   
+ 10-Dec-25 04:06:01  INFO  IMAGES= [['mosipdev/registration-processor-common-camel-bridge:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-1:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-2:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-3:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-4:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-5:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-6:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-stage-group-7:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-landing-zone:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-notification-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-dmz-packet-server:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-reprocessor:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-registration-status-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-registration-transaction-service:release-1.3.x', 'release-1.3.x'], ['mosipdev/registration-processor-workflow-manager-service:release-1.3.x', 'release-1.3.x']] 
+ 10-Dec-25 04:06:01  INFO   
+ 10-Dec-25 04:06:01  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 10-Dec-25 04:06:01  INFO   
+ 10-Dec-25 04:06:01  INFO  src = "mosipdev/registration-processor-common-camel-bridge" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:01  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-common-camel-bridge:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-common-camel-bridge/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:02  INFO   
+ 10-Dec-25 04:06:02  INFO  src = "mosipdev/registration-processor-stage-group-1" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:02  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-1:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:02  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:02  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-1/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:02  INFO   
+ 10-Dec-25 04:06:02  INFO  src = "mosipdev/registration-processor-stage-group-2" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:02  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-2:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-2/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:03  INFO   
+ 10-Dec-25 04:06:03  INFO  src = "mosipdev/registration-processor-stage-group-3" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:03  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-3:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:03  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:03  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-3/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:03  INFO   
+ 10-Dec-25 04:06:03  INFO  src = "mosipdev/registration-processor-stage-group-4" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:03  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-4:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-4/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:04  INFO   
+ 10-Dec-25 04:06:04  INFO  src = "mosipdev/registration-processor-stage-group-5" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-5:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-5/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:04  INFO   
+ 10-Dec-25 04:06:04  INFO  src = "mosipdev/registration-processor-stage-group-6" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-6:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-6/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:05  INFO   
+ 10-Dec-25 04:06:05  INFO  src = "mosipdev/registration-processor-stage-group-7" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:05  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-stage-group-7:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:05  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:05  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-stage-group-7/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:05  INFO   
+ 10-Dec-25 04:06:05  INFO  src = "mosipdev/registration-processor-landing-zone" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:05  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-landing-zone:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-landing-zone/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:06  INFO   
+ 10-Dec-25 04:06:06  INFO  src = "mosipdev/registration-processor-notification-service" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:06  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-notification-service:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:06  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:06  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-notification-service/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:06  INFO   
+ 10-Dec-25 04:06:06  INFO  src = "mosipdev/registration-processor-dmz-packet-server" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:06  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-dmz-packet-server:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:07  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:07  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-dmz-packet-server/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:07  INFO   
+ 10-Dec-25 04:06:07  INFO  src = "mosipdev/registration-processor-reprocessor" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:07  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:07  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-reprocessor:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:07  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:07  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-reprocessor/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:07  INFO   
+ 10-Dec-25 04:06:07  INFO  src = "mosipdev/registration-processor-registration-status-service" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:07  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-registration-status-service:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:08  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-registration-status-service/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:08  INFO   
+ 10-Dec-25 04:06:08  INFO  src = "mosipdev/registration-processor-registration-transaction-service" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-registration-transaction-service:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:08  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:08  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-registration-transaction-service/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:08  INFO   
+ 10-Dec-25 04:06:08  INFO  src = "mosipdev/registration-processor-workflow-manager-service" tag = "release-1.3.x" 
+ 10-Dec-25 04:06:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 10-Dec-25 04:06:09  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/registration-processor-workflow-manager-service:pull HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:09  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 10-Dec-25 04:06:09  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/registration-processor-workflow-manager-service/tags/release-1.3.x HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:09  INFO   
+ 10-Dec-25 04:06:09  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 10-Dec-25 04:06:09  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 10-Dec-25 04:06:09  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 10-Dec-25 04:06:09  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 None 
+ 10-Dec-25 04:06:09  INFO   
+ 10-Dec-25 04:06:09  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 10-Dec-25 04:06:09  INFO   
+ 10-Dec-25 04:06:09  INFO  [ mosipdev2/registration-processor-common-camel-bridge ]  
+ 10-Dec-25 04:06:10  INFO  Destination Image = "mosipdev2/registration-processor-common-camel-bridge" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:3bb48d58eeeecda3dd909b3151353a99a4a9d44ba446f9f77a2ee5216308d7bb 
+ 10-Dec-25 04:06:10  INFO   
+ 10-Dec-25 04:06:10  INFO  [ mosipdev2/registration-processor-stage-group-1 ]  
+ 10-Dec-25 04:06:11  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-1" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:30e180d10f1339bc5738c5892910a800d361e38e69a893828fc5258ba798dc43 
+ 10-Dec-25 04:06:11  INFO   
+ 10-Dec-25 04:06:11  INFO  [ mosipdev2/registration-processor-stage-group-2 ]  
+ 10-Dec-25 04:06:11  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-2" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:f2e23fc5ee94294bdd3dc060b7ee4e37d47782c7ae3916aeb6302ec851fc5ad2 
+ 10-Dec-25 04:06:11  INFO   
+ 10-Dec-25 04:06:11  INFO  [ mosipdev2/registration-processor-stage-group-3 ]  
+ 10-Dec-25 04:06:12  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-3" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:0a0463a203f17777c15f2a080002b493b2b677e1c014968cf553625288639ae5 
+ 10-Dec-25 04:06:12  INFO   
+ 10-Dec-25 04:06:12  INFO  [ mosipdev2/registration-processor-stage-group-4 ]  
+ 10-Dec-25 04:06:12  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-4" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:440532238a33713da76d7b6aed56e5af4f5ea02b4556b767727920cd2080b82a 
+ 10-Dec-25 04:06:12  INFO   
+ 10-Dec-25 04:06:12  INFO  [ mosipdev2/registration-processor-stage-group-5 ]  
+ 10-Dec-25 04:06:13  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-5" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:7c694f8f475a0f5ff2176be185eb90de037c046b65a4f4b79e2004e1ad8f4343 
+ 10-Dec-25 04:06:13  INFO   
+ 10-Dec-25 04:06:13  INFO  [ mosipdev2/registration-processor-stage-group-6 ]  
+ 10-Dec-25 04:06:14  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-6" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:deefd73d255ff39573604fa5de6ea672a293ae9960c45871c98fa20e8701825b 
+ 10-Dec-25 04:06:14  INFO   
+ 10-Dec-25 04:06:14  INFO  [ mosipdev2/registration-processor-stage-group-7 ]  
+ 10-Dec-25 04:06:14  INFO  Destination Image = "mosipdev2/registration-processor-stage-group-7" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:c96f2160e7f26bdb7a937e9e6bb57aecd8acb99b2bae726addc8903e74e4ec6f 
+ 10-Dec-25 04:06:14  INFO   
+ 10-Dec-25 04:06:14  INFO  [ mosipdev2/registration-processor-landing-zone ]  
+ 10-Dec-25 04:06:15  INFO  Destination Image = "mosipdev2/registration-processor-landing-zone" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:d9a2c49610575f0b7505a0be402f9a3c279e94929c13b24cf0f8253cf83ecf75 
+ 10-Dec-25 04:06:15  INFO   
+ 10-Dec-25 04:06:15  INFO  [ mosipdev2/registration-processor-notification-service ]  
+ 10-Dec-25 04:06:15  INFO  Destination Image = "mosipdev2/registration-processor-notification-service" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:c4416e0fcad863ebf4f2084151905c972d2a505feeabd61b8947deb87a7910b1 
+ 10-Dec-25 04:06:15  INFO   
+ 10-Dec-25 04:06:15  INFO  [ mosipdev2/registration-processor-dmz-packet-server ]  
+ 10-Dec-25 04:06:16  INFO  Destination Image = "mosipdev2/registration-processor-dmz-packet-server" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:337ef6a95601b580f72144a53b89b6c75d733a4cd98bae675fe15d6256225444 
+ 10-Dec-25 04:06:16  INFO   
+ 10-Dec-25 04:06:16  INFO  [ mosipdev2/registration-processor-reprocessor ]  
+ 10-Dec-25 04:06:16  INFO  Destination Image = "mosipdev2/registration-processor-reprocessor" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:730e1024c4b02a14620ed55947c2f7d838c50a91bd92724078f88b055118eedb 
+ 10-Dec-25 04:06:16  INFO   
+ 10-Dec-25 04:06:16  INFO  [ mosipdev2/registration-processor-registration-status-service ]  
+ 10-Dec-25 04:06:17  INFO  Destination Image = "mosipdev2/registration-processor-registration-status-service" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:bb6283217ed059f0d58be896cd61a72c01037a079ff0b3b0380147450cc0fc26 
+ 10-Dec-25 04:06:17  INFO   
+ 10-Dec-25 04:06:17  INFO  [ mosipdev2/registration-processor-registration-transaction-service ]  
+ 10-Dec-25 04:06:18  INFO  Destination Image = "mosipdev2/registration-processor-registration-transaction-service" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:1dfbbc45ce8bb5c342eb9544dc617282bccaf81cecd1e7d42a6a3bf9e0988835 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  [ mosipdev2/registration-processor-workflow-manager-service ]  
+ 10-Dec-25 04:06:18  INFO  Destination Image = "mosipdev2/registration-processor-workflow-manager-service" Destination Image tag = "release-1.3.x" IMAGE_ID : sha256:387a90cc23496d91c2d79d423dc7839bae7b0cfabb85eada186b73e0cc138289 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 10-Dec-25 04:06:18  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 10-Dec-25 04:06:18  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 10-Dec-25 04:06:18  DEBUG  Found 'auths' section 
+ 10-Dec-25 04:06:18  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
+ 10-Dec-25 04:06:18  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 10-Dec-25 04:06:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 10-Dec-25 04:06:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 10-Dec-25 04:06:18  INFO  Using 3 parallel workers for image transfers 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  ********** [ mosipdev2/registration-processor-common-camel-bridge:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:18  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  ********** [ mosipdev2/registration-processor-stage-group-1:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:18  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:18  INFO  Source uses tag reference: mosipdev/registration-processor-common-camel-bridge:release-1.3.x 
+ 10-Dec-25 04:06:18  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:18  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-1:release-1.3.x 
+ 10-Dec-25 04:06:18  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:18  INFO   
+ 10-Dec-25 04:06:18  INFO  ********** [ mosipdev2/registration-processor-stage-group-2:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:18  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:18  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-2:release-1.3.x 
+ 10-Dec-25 04:06:18  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:19  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:19  INFO  Source Index Digest (Manifest List): sha256:01bfbce9bce5f24bc04ca2594d3a2251d393ee1c1ea51389edbf2fcce0416e1f 
+ 10-Dec-25 04:06:19  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:19  INFO    - linux/amd64: sha256:685c9df4d96756520472f18e223c255c2bf38feda4cb5bc2fbc3fe4bb70947d3 
+ 10-Dec-25 04:06:19  INFO    - linux/arm64: sha256:c0de62870ab6e25558057dc28d5d79c091d8dcb77d1f2fb32589d0d3cc31148d 
+ 10-Dec-25 04:06:19  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:19  INFO  Executing: crane copy mosipdev/registration-processor-common-camel-bridge:release-1.3.x index.docker.io/mosipdev2/registration-processor-common-camel-bridge:release-1.3.x 
+ 10-Dec-25 04:06:19  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:19  INFO  Source Index Digest (Manifest List): sha256:a8976b9f1e99e837144e30a3a7c103ddd3d58871f0641c9b580a867c3d0183c1 
+ 10-Dec-25 04:06:19  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:19  INFO    - linux/amd64: sha256:675325d74e67accecd8f84e8d2956faf7090633ce40741f094439aa985cbe6c8 
+ 10-Dec-25 04:06:19  INFO    - linux/arm64: sha256:458195fea2b2a5efc918b28cd6b9358222a8093e351ce7ae7e0c53553155d276 
+ 10-Dec-25 04:06:19  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:19  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-2:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-2:release-1.3.x 
+ 10-Dec-25 04:06:19  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:19  INFO  Source Index Digest (Manifest List): sha256:3a7bd2133973b110da19be7c8ebcdffaf6c44a1adecb38d1d33d1cc153c76697 
+ 10-Dec-25 04:06:19  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:19  INFO    - linux/amd64: sha256:db30908c6e0dc4a60c7bb712645802c636d23df3c047a9d623865ecc72fc6919 
+ 10-Dec-25 04:06:19  INFO    - linux/arm64: sha256:b76b6223fe61e8681687e79ba55c5a682ddca8f4ba4d6b85f6f2182b3dd9a04d 
+ 10-Dec-25 04:06:19  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:19  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-1:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-1:release-1.3.x 
+ 10-Dec-25 04:06:23  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:23  INFO   
+ 10-Dec-25 04:06:23  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:24  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:24  INFO   
+ 10-Dec-25 04:06:24  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:24  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:24  INFO   
+ 10-Dec-25 04:06:24  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:25  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:25  INFO  Destination Index Digest (Manifest List): sha256:3a7bd2133973b110da19be7c8ebcdffaf6c44a1adecb38d1d33d1cc153c76697 
+ 10-Dec-25 04:06:25  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:25  INFO    - linux/amd64: sha256:db30908c6e0dc4a60c7bb712645802c636d23df3c047a9d623865ecc72fc6919 
+ 10-Dec-25 04:06:25  INFO    - linux/arm64: sha256:b76b6223fe61e8681687e79ba55c5a682ddca8f4ba4d6b85f6f2182b3dd9a04d 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:25  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:25  INFO    Source:      sha256:3a7bd2133973b110da19be7c8ebcdffaf6c44a1adecb38d1d33d1cc153c76697 
+ 10-Dec-25 04:06:25  INFO    Destination: sha256:3a7bd2133973b110da19be7c8ebcdffaf6c44a1adecb38d1d33d1cc153c76697 
+ 10-Dec-25 04:06:25  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/amd64: sha256:db30908c6e0dc4a60c7bb712645802c636d23df3c047a9d623865ecc72fc6919 (MATCH) 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/arm64: sha256:b76b6223fe61e8681687e79ba55c5a682ddca8f4ba4d6b85f6f2182b3dd9a04d (MATCH) 
+ 10-Dec-25 04:06:25  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:25  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-1:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-1:latest 
+ 10-Dec-25 04:06:25  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:25  INFO  Destination Index Digest (Manifest List): sha256:a8976b9f1e99e837144e30a3a7c103ddd3d58871f0641c9b580a867c3d0183c1 
+ 10-Dec-25 04:06:25  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:25  INFO    - linux/amd64: sha256:675325d74e67accecd8f84e8d2956faf7090633ce40741f094439aa985cbe6c8 
+ 10-Dec-25 04:06:25  INFO    - linux/arm64: sha256:458195fea2b2a5efc918b28cd6b9358222a8093e351ce7ae7e0c53553155d276 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:25  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:25  INFO    Source:      sha256:a8976b9f1e99e837144e30a3a7c103ddd3d58871f0641c9b580a867c3d0183c1 
+ 10-Dec-25 04:06:25  INFO    Destination: sha256:a8976b9f1e99e837144e30a3a7c103ddd3d58871f0641c9b580a867c3d0183c1 
+ 10-Dec-25 04:06:25  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/amd64: sha256:675325d74e67accecd8f84e8d2956faf7090633ce40741f094439aa985cbe6c8 (MATCH) 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/arm64: sha256:458195fea2b2a5efc918b28cd6b9358222a8093e351ce7ae7e0c53553155d276 (MATCH) 
+ 10-Dec-25 04:06:25  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:25  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-2:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-2:latest 
+ 10-Dec-25 04:06:25  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:25  INFO  Destination Index Digest (Manifest List): sha256:01bfbce9bce5f24bc04ca2594d3a2251d393ee1c1ea51389edbf2fcce0416e1f 
+ 10-Dec-25 04:06:25  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:25  INFO    - linux/amd64: sha256:685c9df4d96756520472f18e223c255c2bf38feda4cb5bc2fbc3fe4bb70947d3 
+ 10-Dec-25 04:06:25  INFO    - linux/arm64: sha256:c0de62870ab6e25558057dc28d5d79c091d8dcb77d1f2fb32589d0d3cc31148d 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:25  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:25  INFO    Source:      sha256:01bfbce9bce5f24bc04ca2594d3a2251d393ee1c1ea51389edbf2fcce0416e1f 
+ 10-Dec-25 04:06:25  INFO    Destination: sha256:01bfbce9bce5f24bc04ca2594d3a2251d393ee1c1ea51389edbf2fcce0416e1f 
+ 10-Dec-25 04:06:25  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:25  INFO   
+ 10-Dec-25 04:06:25  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/amd64: sha256:685c9df4d96756520472f18e223c255c2bf38feda4cb5bc2fbc3fe4bb70947d3 (MATCH) 
+ 10-Dec-25 04:06:25  INFO    ✓ linux/arm64: sha256:c0de62870ab6e25558057dc28d5d79c091d8dcb77d1f2fb32589d0d3cc31148d (MATCH) 
+ 10-Dec-25 04:06:25  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:25  INFO  Creating latest tag: crane copy mosipdev/registration-processor-common-camel-bridge:release-1.3.x index.docker.io/mosipdev2/registration-processor-common-camel-bridge:latest 
+ 10-Dec-25 04:06:27  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:27  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-1:release-1.3.x 
+ 10-Dec-25 04:06:27  INFO   
+ 10-Dec-25 04:06:27  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:27  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:27  INFO   
+ 10-Dec-25 04:06:27  INFO  ********** [ mosipdev2/registration-processor-stage-group-3:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:27  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:27  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-3:release-1.3.x 
+ 10-Dec-25 04:06:27  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:27  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:27  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-2:release-1.3.x 
+ 10-Dec-25 04:06:27  INFO   
+ 10-Dec-25 04:06:27  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:27  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:27  INFO   
+ 10-Dec-25 04:06:27  INFO  ********** [ mosipdev2/registration-processor-stage-group-4:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:27  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:27  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-4:release-1.3.x 
+ 10-Dec-25 04:06:27  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:28  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:28  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-common-camel-bridge:release-1.3.x 
+ 10-Dec-25 04:06:28  INFO   
+ 10-Dec-25 04:06:28  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:28  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:28  INFO   
+ 10-Dec-25 04:06:28  INFO  ********** [ mosipdev2/registration-processor-stage-group-5:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:28  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:28  INFO  Completed processing mosipdev/registration-processor-common-camel-bridge:release-1.3.x to mosipdev2/registration-processor-common-camel-bridge:release-1.3.x 
+ 10-Dec-25 04:06:28  INFO  Completed processing mosipdev/registration-processor-stage-group-1:release-1.3.x to mosipdev2/registration-processor-stage-group-1:release-1.3.x 
+ 10-Dec-25 04:06:28  INFO  Completed processing mosipdev/registration-processor-stage-group-2:release-1.3.x to mosipdev2/registration-processor-stage-group-2:release-1.3.x 
+ 10-Dec-25 04:06:28  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-5:release-1.3.x 
+ 10-Dec-25 04:06:28  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:28  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:28  INFO  Source Index Digest (Manifest List): sha256:fd9651fa885715f186748eeeb95281f2a3ba7260e3639375ec0b82174c97c01a 
+ 10-Dec-25 04:06:28  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:28  INFO    - linux/amd64: sha256:227ed6cbe2313c23a6817dbabe53ef5535a72809854c496ada75bd20f56593cf 
+ 10-Dec-25 04:06:28  INFO    - linux/arm64: sha256:fc27242718d5c4501d70bb7d38513bff937e7e1b4f1a7e72b94cb2f3eadb855b 
+ 10-Dec-25 04:06:28  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:28  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-3:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-3:release-1.3.x 
+ 10-Dec-25 04:06:29  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:29  INFO  Source Index Digest (Manifest List): sha256:06e8dda02e3fe3073e7c07b197b3d4aa38ec691d10614ce5e6140358945da53d 
+ 10-Dec-25 04:06:29  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:29  INFO    - linux/amd64: sha256:c3d0534ad6075624894ba8ea57eb9f13772f1544f36f2b4a28da918f135e0276 
+ 10-Dec-25 04:06:29  INFO    - linux/arm64: sha256:1c3d80c25c0afdddfbc3e8b0d237901e1829ad6c359f410683ced62c6b13bf22 
+ 10-Dec-25 04:06:29  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:29  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-4:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-4:release-1.3.x 
+ 10-Dec-25 04:06:29  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:29  INFO  Source Index Digest (Manifest List): sha256:0ed38bbf0354ff3f57c74daa3874fd722f9ffeda38c294aff112829d8116e80d 
+ 10-Dec-25 04:06:29  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:29  INFO    - linux/amd64: sha256:aa23ce3a69f8db942b6432739662de292cf0b662b47e7266fdb2b2790bb90139 
+ 10-Dec-25 04:06:29  INFO    - linux/arm64: sha256:e558401f28e99417ee126dcd69962d5f35125a76eca0b8db39c68e324285bd9f 
+ 10-Dec-25 04:06:29  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:29  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-5:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-5:release-1.3.x 
+ 10-Dec-25 04:06:33  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:33  INFO   
+ 10-Dec-25 04:06:33  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:33  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:33  INFO   
+ 10-Dec-25 04:06:33  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:33  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:33  INFO   
+ 10-Dec-25 04:06:33  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:34  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:34  INFO  Destination Index Digest (Manifest List): sha256:0ed38bbf0354ff3f57c74daa3874fd722f9ffeda38c294aff112829d8116e80d 
+ 10-Dec-25 04:06:34  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:34  INFO    - linux/amd64: sha256:aa23ce3a69f8db942b6432739662de292cf0b662b47e7266fdb2b2790bb90139 
+ 10-Dec-25 04:06:34  INFO    - linux/arm64: sha256:e558401f28e99417ee126dcd69962d5f35125a76eca0b8db39c68e324285bd9f 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:34  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:34  INFO    Source:      sha256:0ed38bbf0354ff3f57c74daa3874fd722f9ffeda38c294aff112829d8116e80d 
+ 10-Dec-25 04:06:34  INFO    Destination: sha256:0ed38bbf0354ff3f57c74daa3874fd722f9ffeda38c294aff112829d8116e80d 
+ 10-Dec-25 04:06:34  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/amd64: sha256:aa23ce3a69f8db942b6432739662de292cf0b662b47e7266fdb2b2790bb90139 (MATCH) 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/arm64: sha256:e558401f28e99417ee126dcd69962d5f35125a76eca0b8db39c68e324285bd9f (MATCH) 
+ 10-Dec-25 04:06:34  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:34  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-5:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-5:latest 
+ 10-Dec-25 04:06:34  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:34  INFO  Destination Index Digest (Manifest List): sha256:06e8dda02e3fe3073e7c07b197b3d4aa38ec691d10614ce5e6140358945da53d 
+ 10-Dec-25 04:06:34  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:34  INFO    - linux/amd64: sha256:c3d0534ad6075624894ba8ea57eb9f13772f1544f36f2b4a28da918f135e0276 
+ 10-Dec-25 04:06:34  INFO    - linux/arm64: sha256:1c3d80c25c0afdddfbc3e8b0d237901e1829ad6c359f410683ced62c6b13bf22 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:34  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:34  INFO    Source:      sha256:06e8dda02e3fe3073e7c07b197b3d4aa38ec691d10614ce5e6140358945da53d 
+ 10-Dec-25 04:06:34  INFO    Destination: sha256:06e8dda02e3fe3073e7c07b197b3d4aa38ec691d10614ce5e6140358945da53d 
+ 10-Dec-25 04:06:34  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/amd64: sha256:c3d0534ad6075624894ba8ea57eb9f13772f1544f36f2b4a28da918f135e0276 (MATCH) 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/arm64: sha256:1c3d80c25c0afdddfbc3e8b0d237901e1829ad6c359f410683ced62c6b13bf22 (MATCH) 
+ 10-Dec-25 04:06:34  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:34  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-4:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-4:latest 
+ 10-Dec-25 04:06:34  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:34  INFO  Destination Index Digest (Manifest List): sha256:fd9651fa885715f186748eeeb95281f2a3ba7260e3639375ec0b82174c97c01a 
+ 10-Dec-25 04:06:34  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:34  INFO    - linux/amd64: sha256:227ed6cbe2313c23a6817dbabe53ef5535a72809854c496ada75bd20f56593cf 
+ 10-Dec-25 04:06:34  INFO    - linux/arm64: sha256:fc27242718d5c4501d70bb7d38513bff937e7e1b4f1a7e72b94cb2f3eadb855b 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:34  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:34  INFO    Source:      sha256:fd9651fa885715f186748eeeb95281f2a3ba7260e3639375ec0b82174c97c01a 
+ 10-Dec-25 04:06:34  INFO    Destination: sha256:fd9651fa885715f186748eeeb95281f2a3ba7260e3639375ec0b82174c97c01a 
+ 10-Dec-25 04:06:34  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:34  INFO   
+ 10-Dec-25 04:06:34  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/amd64: sha256:227ed6cbe2313c23a6817dbabe53ef5535a72809854c496ada75bd20f56593cf (MATCH) 
+ 10-Dec-25 04:06:34  INFO    ✓ linux/arm64: sha256:fc27242718d5c4501d70bb7d38513bff937e7e1b4f1a7e72b94cb2f3eadb855b (MATCH) 
+ 10-Dec-25 04:06:34  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:34  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-3:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-3:latest 
+ 10-Dec-25 04:06:36  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:36  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-5:release-1.3.x 
+ 10-Dec-25 04:06:36  INFO   
+ 10-Dec-25 04:06:36  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:36  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:36  INFO   
+ 10-Dec-25 04:06:36  INFO  ********** [ mosipdev2/registration-processor-stage-group-6:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:36  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:36  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-6:release-1.3.x 
+ 10-Dec-25 04:06:36  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:37  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:37  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-4:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO   
+ 10-Dec-25 04:06:37  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:37  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:37  INFO   
+ 10-Dec-25 04:06:37  INFO  ********** [ mosipdev2/registration-processor-stage-group-7:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:37  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:37  INFO  Source uses tag reference: mosipdev/registration-processor-stage-group-7:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:37  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:37  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-3:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO   
+ 10-Dec-25 04:06:37  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:37  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:37  INFO   
+ 10-Dec-25 04:06:37  INFO  ********** [ mosipdev2/registration-processor-landing-zone:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:37  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:37  INFO  Completed processing mosipdev/registration-processor-stage-group-3:release-1.3.x to mosipdev2/registration-processor-stage-group-3:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO  Completed processing mosipdev/registration-processor-stage-group-4:release-1.3.x to mosipdev2/registration-processor-stage-group-4:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO  Completed processing mosipdev/registration-processor-stage-group-5:release-1.3.x to mosipdev2/registration-processor-stage-group-5:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO  Source uses tag reference: mosipdev/registration-processor-landing-zone:release-1.3.x 
+ 10-Dec-25 04:06:37  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:38  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:38  INFO  Source Index Digest (Manifest List): sha256:556b8b811acfc3d979cf48a44501561c7e73f317491edc34cf9f8b0478196e48 
+ 10-Dec-25 04:06:38  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:38  INFO    - linux/amd64: sha256:fcd125e3c38ea12f7f053a1adad233478821195cfdbaa443b68dd26ecc5aa9a3 
+ 10-Dec-25 04:06:38  INFO    - linux/arm64: sha256:5ab4d89d14e8406f4766297bf7c936fa124f05842fc25af064397074c2522d01 
+ 10-Dec-25 04:06:38  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:38  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-6:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-6:release-1.3.x 
+ 10-Dec-25 04:06:38  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:38  INFO  Source Index Digest (Manifest List): sha256:626ca5c4d377e04eb4ee15aad661708242ee01ef9b27bbe32e8d118569f571fb 
+ 10-Dec-25 04:06:38  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:38  INFO    - linux/amd64: sha256:c8d78a6e430d0e97461366febbb69856101ffd4db40691fc643483b793c3a077 
+ 10-Dec-25 04:06:38  INFO    - linux/arm64: sha256:80da987230026f0e621d5b94cff0a6a5eda90df21a5a4c285abf3a6c57c7e096 
+ 10-Dec-25 04:06:38  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:38  INFO  Executing: crane copy mosipdev/registration-processor-stage-group-7:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-7:release-1.3.x 
+ 10-Dec-25 04:06:38  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:38  INFO  Source Index Digest (Manifest List): sha256:6e761e019875c5ebab523d574cf3b26f21236ceb89328cd7dd4ba042454b43a6 
+ 10-Dec-25 04:06:38  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:38  INFO    - linux/amd64: sha256:844be26b28c5fbd0b04c4216689d784d7a17e60e55929b4425c512c0fe6c38ba 
+ 10-Dec-25 04:06:38  INFO    - linux/arm64: sha256:1f0581db7c86f2d8c5a8c6c58d94c1d2ab13fb0ceedc9062ecd96521ae944a09 
+ 10-Dec-25 04:06:38  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:38  INFO  Executing: crane copy mosipdev/registration-processor-landing-zone:release-1.3.x index.docker.io/mosipdev2/registration-processor-landing-zone:release-1.3.x 
+ 10-Dec-25 04:06:42  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:42  INFO   
+ 10-Dec-25 04:06:42  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:42  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:42  INFO   
+ 10-Dec-25 04:06:42  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:42  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:42  INFO   
+ 10-Dec-25 04:06:42  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:43  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:43  INFO  Destination Index Digest (Manifest List): sha256:626ca5c4d377e04eb4ee15aad661708242ee01ef9b27bbe32e8d118569f571fb 
+ 10-Dec-25 04:06:43  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:43  INFO    - linux/amd64: sha256:c8d78a6e430d0e97461366febbb69856101ffd4db40691fc643483b793c3a077 
+ 10-Dec-25 04:06:43  INFO    - linux/arm64: sha256:80da987230026f0e621d5b94cff0a6a5eda90df21a5a4c285abf3a6c57c7e096 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:43  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:43  INFO    Source:      sha256:626ca5c4d377e04eb4ee15aad661708242ee01ef9b27bbe32e8d118569f571fb 
+ 10-Dec-25 04:06:43  INFO    Destination: sha256:626ca5c4d377e04eb4ee15aad661708242ee01ef9b27bbe32e8d118569f571fb 
+ 10-Dec-25 04:06:43  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/amd64: sha256:c8d78a6e430d0e97461366febbb69856101ffd4db40691fc643483b793c3a077 (MATCH) 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/arm64: sha256:80da987230026f0e621d5b94cff0a6a5eda90df21a5a4c285abf3a6c57c7e096 (MATCH) 
+ 10-Dec-25 04:06:43  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:43  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-7:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-7:latest 
+ 10-Dec-25 04:06:43  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:43  INFO  Destination Index Digest (Manifest List): sha256:556b8b811acfc3d979cf48a44501561c7e73f317491edc34cf9f8b0478196e48 
+ 10-Dec-25 04:06:43  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:43  INFO    - linux/amd64: sha256:fcd125e3c38ea12f7f053a1adad233478821195cfdbaa443b68dd26ecc5aa9a3 
+ 10-Dec-25 04:06:43  INFO    - linux/arm64: sha256:5ab4d89d14e8406f4766297bf7c936fa124f05842fc25af064397074c2522d01 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:43  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:43  INFO    Source:      sha256:556b8b811acfc3d979cf48a44501561c7e73f317491edc34cf9f8b0478196e48 
+ 10-Dec-25 04:06:43  INFO    Destination: sha256:556b8b811acfc3d979cf48a44501561c7e73f317491edc34cf9f8b0478196e48 
+ 10-Dec-25 04:06:43  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/amd64: sha256:fcd125e3c38ea12f7f053a1adad233478821195cfdbaa443b68dd26ecc5aa9a3 (MATCH) 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/arm64: sha256:5ab4d89d14e8406f4766297bf7c936fa124f05842fc25af064397074c2522d01 (MATCH) 
+ 10-Dec-25 04:06:43  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:43  INFO  Creating latest tag: crane copy mosipdev/registration-processor-stage-group-6:release-1.3.x index.docker.io/mosipdev2/registration-processor-stage-group-6:latest 
+ 10-Dec-25 04:06:43  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:43  INFO  Destination Index Digest (Manifest List): sha256:6e761e019875c5ebab523d574cf3b26f21236ceb89328cd7dd4ba042454b43a6 
+ 10-Dec-25 04:06:43  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:43  INFO    - linux/amd64: sha256:844be26b28c5fbd0b04c4216689d784d7a17e60e55929b4425c512c0fe6c38ba 
+ 10-Dec-25 04:06:43  INFO    - linux/arm64: sha256:1f0581db7c86f2d8c5a8c6c58d94c1d2ab13fb0ceedc9062ecd96521ae944a09 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:43  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:43  INFO    Source:      sha256:6e761e019875c5ebab523d574cf3b26f21236ceb89328cd7dd4ba042454b43a6 
+ 10-Dec-25 04:06:43  INFO    Destination: sha256:6e761e019875c5ebab523d574cf3b26f21236ceb89328cd7dd4ba042454b43a6 
+ 10-Dec-25 04:06:43  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:43  INFO   
+ 10-Dec-25 04:06:43  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/amd64: sha256:844be26b28c5fbd0b04c4216689d784d7a17e60e55929b4425c512c0fe6c38ba (MATCH) 
+ 10-Dec-25 04:06:43  INFO    ✓ linux/arm64: sha256:1f0581db7c86f2d8c5a8c6c58d94c1d2ab13fb0ceedc9062ecd96521ae944a09 (MATCH) 
+ 10-Dec-25 04:06:43  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:43  INFO  Creating latest tag: crane copy mosipdev/registration-processor-landing-zone:release-1.3.x index.docker.io/mosipdev2/registration-processor-landing-zone:latest 
+ 10-Dec-25 04:06:46  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:46  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-6:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:46  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  ********** [ mosipdev2/registration-processor-notification-service:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:46  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:46  INFO  Completed processing mosipdev/registration-processor-stage-group-6:release-1.3.x to mosipdev2/registration-processor-stage-group-6:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO  Source uses tag reference: mosipdev/registration-processor-notification-service:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:46  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:46  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-stage-group-7:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:46  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  ********** [ mosipdev2/registration-processor-dmz-packet-server:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:46  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:46  INFO  Completed processing mosipdev/registration-processor-stage-group-7:release-1.3.x to mosipdev2/registration-processor-stage-group-7:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO  Source uses tag reference: mosipdev/registration-processor-dmz-packet-server:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:46  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:46  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-landing-zone:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:46  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:46  INFO   
+ 10-Dec-25 04:06:46  INFO  ********** [ mosipdev2/registration-processor-reprocessor:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:46  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:46  INFO  Source uses tag reference: mosipdev/registration-processor-reprocessor:release-1.3.x 
+ 10-Dec-25 04:06:46  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:46  INFO  Completed processing mosipdev/registration-processor-landing-zone:release-1.3.x to mosipdev2/registration-processor-landing-zone:release-1.3.x 
+ 10-Dec-25 04:06:47  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:47  INFO  Source Index Digest (Manifest List): sha256:d615477236de84a5d2a09cf0569b639bf0c2d61dfef1235650f8051c40817dd6 
+ 10-Dec-25 04:06:47  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:47  INFO    - linux/amd64: sha256:de114da2131c02fb8921f8ca2b1d36d156f5a854a08ef6f019c2ce9efdd7bc6c 
+ 10-Dec-25 04:06:47  INFO    - linux/arm64: sha256:c77a34aaad99f1c19ed1372e16d3e62f9928649e6b6e66b3ec3f1fd774341e1e 
+ 10-Dec-25 04:06:47  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:47  INFO  Executing: crane copy mosipdev/registration-processor-dmz-packet-server:release-1.3.x index.docker.io/mosipdev2/registration-processor-dmz-packet-server:release-1.3.x 
+ 10-Dec-25 04:06:47  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:47  INFO  Source Index Digest (Manifest List): sha256:5716d0930b20add2b18558017a701aabb26ae4a1e83b8ef0e01dea1e3833f9c4 
+ 10-Dec-25 04:06:47  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:47  INFO    - linux/amd64: sha256:3fb30f0e69f6b7ea8af0147a9ed6e9642e2058c821935c0d14790b5d102f00d0 
+ 10-Dec-25 04:06:47  INFO    - linux/arm64: sha256:98999739b38b3b02bb064025591e61e48d794013d0d2a7ed135399b6d3c911aa 
+ 10-Dec-25 04:06:47  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:47  INFO  Executing: crane copy mosipdev/registration-processor-notification-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-notification-service:release-1.3.x 
+ 10-Dec-25 04:06:47  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:47  INFO  Source Index Digest (Manifest List): sha256:2c7e737ebaf8efde6001e9ec91b3f3fb39f8d3da4ec9975e84eedfbd6f788684 
+ 10-Dec-25 04:06:47  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:47  INFO    - linux/amd64: sha256:f5e3dae0959e8f92939a01bd210edfc1881c9ed9673ea9e29736cc2aaaf85f5e 
+ 10-Dec-25 04:06:47  INFO    - linux/arm64: sha256:8db4be3ec779b527f811cd21ccdefdecae6f5e34d48106e71f553fa84bb8e5e2 
+ 10-Dec-25 04:06:47  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:47  INFO  Executing: crane copy mosipdev/registration-processor-reprocessor:release-1.3.x index.docker.io/mosipdev2/registration-processor-reprocessor:release-1.3.x 
+ 10-Dec-25 04:06:51  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:51  INFO   
+ 10-Dec-25 04:06:51  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:51  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:51  INFO   
+ 10-Dec-25 04:06:51  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:51  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:06:51  INFO   
+ 10-Dec-25 04:06:51  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:06:52  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:52  INFO  Destination Index Digest (Manifest List): sha256:5716d0930b20add2b18558017a701aabb26ae4a1e83b8ef0e01dea1e3833f9c4 
+ 10-Dec-25 04:06:52  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:52  INFO    - linux/amd64: sha256:3fb30f0e69f6b7ea8af0147a9ed6e9642e2058c821935c0d14790b5d102f00d0 
+ 10-Dec-25 04:06:52  INFO    - linux/arm64: sha256:98999739b38b3b02bb064025591e61e48d794013d0d2a7ed135399b6d3c911aa 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:52  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:52  INFO    Source:      sha256:5716d0930b20add2b18558017a701aabb26ae4a1e83b8ef0e01dea1e3833f9c4 
+ 10-Dec-25 04:06:52  INFO    Destination: sha256:5716d0930b20add2b18558017a701aabb26ae4a1e83b8ef0e01dea1e3833f9c4 
+ 10-Dec-25 04:06:52  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/amd64: sha256:3fb30f0e69f6b7ea8af0147a9ed6e9642e2058c821935c0d14790b5d102f00d0 (MATCH) 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/arm64: sha256:98999739b38b3b02bb064025591e61e48d794013d0d2a7ed135399b6d3c911aa (MATCH) 
+ 10-Dec-25 04:06:52  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:52  INFO  Creating latest tag: crane copy mosipdev/registration-processor-notification-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-notification-service:latest 
+ 10-Dec-25 04:06:52  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:52  INFO  Destination Index Digest (Manifest List): sha256:d615477236de84a5d2a09cf0569b639bf0c2d61dfef1235650f8051c40817dd6 
+ 10-Dec-25 04:06:52  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:52  INFO    - linux/amd64: sha256:de114da2131c02fb8921f8ca2b1d36d156f5a854a08ef6f019c2ce9efdd7bc6c 
+ 10-Dec-25 04:06:52  INFO    - linux/arm64: sha256:c77a34aaad99f1c19ed1372e16d3e62f9928649e6b6e66b3ec3f1fd774341e1e 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:52  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:52  INFO    Source:      sha256:d615477236de84a5d2a09cf0569b639bf0c2d61dfef1235650f8051c40817dd6 
+ 10-Dec-25 04:06:52  INFO    Destination: sha256:d615477236de84a5d2a09cf0569b639bf0c2d61dfef1235650f8051c40817dd6 
+ 10-Dec-25 04:06:52  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/amd64: sha256:de114da2131c02fb8921f8ca2b1d36d156f5a854a08ef6f019c2ce9efdd7bc6c (MATCH) 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/arm64: sha256:c77a34aaad99f1c19ed1372e16d3e62f9928649e6b6e66b3ec3f1fd774341e1e (MATCH) 
+ 10-Dec-25 04:06:52  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:52  INFO  Creating latest tag: crane copy mosipdev/registration-processor-dmz-packet-server:release-1.3.x index.docker.io/mosipdev2/registration-processor-dmz-packet-server:latest 
+ 10-Dec-25 04:06:52  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:06:52  INFO  Destination Index Digest (Manifest List): sha256:2c7e737ebaf8efde6001e9ec91b3f3fb39f8d3da4ec9975e84eedfbd6f788684 
+ 10-Dec-25 04:06:52  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:06:52  INFO    - linux/amd64: sha256:f5e3dae0959e8f92939a01bd210edfc1881c9ed9673ea9e29736cc2aaaf85f5e 
+ 10-Dec-25 04:06:52  INFO    - linux/arm64: sha256:8db4be3ec779b527f811cd21ccdefdecae6f5e34d48106e71f553fa84bb8e5e2 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:06:52  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:06:52  INFO    Source:      sha256:2c7e737ebaf8efde6001e9ec91b3f3fb39f8d3da4ec9975e84eedfbd6f788684 
+ 10-Dec-25 04:06:52  INFO    Destination: sha256:2c7e737ebaf8efde6001e9ec91b3f3fb39f8d3da4ec9975e84eedfbd6f788684 
+ 10-Dec-25 04:06:52  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:06:52  INFO   
+ 10-Dec-25 04:06:52  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/amd64: sha256:f5e3dae0959e8f92939a01bd210edfc1881c9ed9673ea9e29736cc2aaaf85f5e (MATCH) 
+ 10-Dec-25 04:06:52  INFO    ✓ linux/arm64: sha256:8db4be3ec779b527f811cd21ccdefdecae6f5e34d48106e71f553fa84bb8e5e2 (MATCH) 
+ 10-Dec-25 04:06:52  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:06:52  INFO  Creating latest tag: crane copy mosipdev/registration-processor-reprocessor:release-1.3.x index.docker.io/mosipdev2/registration-processor-reprocessor:latest 
+ 10-Dec-25 04:06:54  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:54  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-notification-service:release-1.3.x 
+ 10-Dec-25 04:06:54  INFO   
+ 10-Dec-25 04:06:54  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:54  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:54  INFO   
+ 10-Dec-25 04:06:54  INFO  ********** [ mosipdev2/registration-processor-registration-status-service:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:54  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:54  INFO  Completed processing mosipdev/registration-processor-notification-service:release-1.3.x to mosipdev2/registration-processor-notification-service:release-1.3.x 
+ 10-Dec-25 04:06:54  INFO  Source uses tag reference: mosipdev/registration-processor-registration-status-service:release-1.3.x 
+ 10-Dec-25 04:06:54  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:55  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:55  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-dmz-packet-server:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO   
+ 10-Dec-25 04:06:55  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:55  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:55  INFO   
+ 10-Dec-25 04:06:55  INFO  ********** [ mosipdev2/registration-processor-registration-transaction-service:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:55  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:55  INFO  Completed processing mosipdev/registration-processor-dmz-packet-server:release-1.3.x to mosipdev2/registration-processor-dmz-packet-server:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO  Source uses tag reference: mosipdev/registration-processor-registration-transaction-service:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:55  INFO  Successfully created latest tag 
+ 10-Dec-25 04:06:55  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-reprocessor:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO   
+ 10-Dec-25 04:06:55  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:06:55  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:06:55  INFO   
+ 10-Dec-25 04:06:55  INFO  ********** [ mosipdev2/registration-processor-workflow-manager-service:release-1.3.x ] **************************************************** 
+ 10-Dec-25 04:06:55  INFO  Transferring image using crane... 
+ 10-Dec-25 04:06:55  INFO  Completed processing mosipdev/registration-processor-reprocessor:release-1.3.x to mosipdev2/registration-processor-reprocessor:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO  Source uses tag reference: mosipdev/registration-processor-workflow-manager-service:release-1.3.x 
+ 10-Dec-25 04:06:55  INFO  Analyzing source image manifest... 
+ 10-Dec-25 04:06:56  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:56  INFO  Source Index Digest (Manifest List): sha256:24e5bcd0a1ac58dc262e2de564d3654a91bbd2bc730e6b78d5fbef07a11fa17d 
+ 10-Dec-25 04:06:56  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:56  INFO    - linux/amd64: sha256:64e89307ddb3685144baf93fe5558de46fe0db1fc0050b905ad93cf6e5ec471b 
+ 10-Dec-25 04:06:56  INFO    - linux/arm64: sha256:85c64926fd1971f88a0e4cd198374ca1a32b958598ec9d8c98719d4da0a9c638 
+ 10-Dec-25 04:06:56  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:56  INFO  Executing: crane copy mosipdev/registration-processor-registration-status-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-registration-status-service:release-1.3.x 
+ 10-Dec-25 04:06:56  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:56  INFO  Source Index Digest (Manifest List): sha256:1ec131421a948085a69412532562b9cb76917a7ccafe242fd840e8f36da5fc93 
+ 10-Dec-25 04:06:56  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:56  INFO    - linux/amd64: sha256:c4395eb5917809f8028bde15a05b3feae62ee987882c4a583ce11e5fd82afb28 
+ 10-Dec-25 04:06:56  INFO    - linux/arm64: sha256:f11fcd3317fd57263cf44855ed9b563994d8737ec4dd41f9132f2d4f37ece61e 
+ 10-Dec-25 04:06:56  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:56  INFO  Executing: crane copy mosipdev/registration-processor-registration-transaction-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-registration-transaction-service:release-1.3.x 
+ 10-Dec-25 04:06:56  INFO  Source is MULTI-ARCH image 
+ 10-Dec-25 04:06:56  INFO  Source Index Digest (Manifest List): sha256:04b1ac0f2bca7befe9ca017630fdb50fa942600d4ee0d316299a8e2b173dc704 
+ 10-Dec-25 04:06:56  INFO  Source has 2 platform(s): 
+ 10-Dec-25 04:06:56  INFO    - linux/amd64: sha256:2fcedb815828af461b3a67bc607ac8f5da4c503c9ece1f4a25b15187c8a843cc 
+ 10-Dec-25 04:06:56  INFO    - linux/arm64: sha256:3cf311f690df4be7421ddd5c945d5bafc93b84dac68c1a2cfa18e5173311b396 
+ 10-Dec-25 04:06:56  INFO  Using secure connection for HTTPS registry 
+ 10-Dec-25 04:06:56  INFO  Executing: crane copy mosipdev/registration-processor-workflow-manager-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-workflow-manager-service:release-1.3.x 
+ 10-Dec-25 04:07:00  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:07:00  INFO   
+ 10-Dec-25 04:07:00  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:07:00  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:07:00  INFO   
+ 10-Dec-25 04:07:00  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:07:00  INFO  Successfully transferred image with crane 
+ 10-Dec-25 04:07:00  INFO   
+ 10-Dec-25 04:07:00  INFO  Analyzing destination image manifest... 
+ 10-Dec-25 04:07:01  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:07:01  INFO  Destination Index Digest (Manifest List): sha256:24e5bcd0a1ac58dc262e2de564d3654a91bbd2bc730e6b78d5fbef07a11fa17d 
+ 10-Dec-25 04:07:01  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:07:01  INFO    - linux/amd64: sha256:64e89307ddb3685144baf93fe5558de46fe0db1fc0050b905ad93cf6e5ec471b 
+ 10-Dec-25 04:07:01  INFO    - linux/arm64: sha256:85c64926fd1971f88a0e4cd198374ca1a32b958598ec9d8c98719d4da0a9c638 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:07:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:07:01  INFO    Source:      sha256:24e5bcd0a1ac58dc262e2de564d3654a91bbd2bc730e6b78d5fbef07a11fa17d 
+ 10-Dec-25 04:07:01  INFO    Destination: sha256:24e5bcd0a1ac58dc262e2de564d3654a91bbd2bc730e6b78d5fbef07a11fa17d 
+ 10-Dec-25 04:07:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/amd64: sha256:64e89307ddb3685144baf93fe5558de46fe0db1fc0050b905ad93cf6e5ec471b (MATCH) 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/arm64: sha256:85c64926fd1971f88a0e4cd198374ca1a32b958598ec9d8c98719d4da0a9c638 (MATCH) 
+ 10-Dec-25 04:07:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:07:01  INFO  Creating latest tag: crane copy mosipdev/registration-processor-registration-status-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-registration-status-service:latest 
+ 10-Dec-25 04:07:01  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:07:01  INFO  Destination Index Digest (Manifest List): sha256:04b1ac0f2bca7befe9ca017630fdb50fa942600d4ee0d316299a8e2b173dc704 
+ 10-Dec-25 04:07:01  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:07:01  INFO    - linux/amd64: sha256:2fcedb815828af461b3a67bc607ac8f5da4c503c9ece1f4a25b15187c8a843cc 
+ 10-Dec-25 04:07:01  INFO    - linux/arm64: sha256:3cf311f690df4be7421ddd5c945d5bafc93b84dac68c1a2cfa18e5173311b396 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:07:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:07:01  INFO    Source:      sha256:04b1ac0f2bca7befe9ca017630fdb50fa942600d4ee0d316299a8e2b173dc704 
+ 10-Dec-25 04:07:01  INFO    Destination: sha256:04b1ac0f2bca7befe9ca017630fdb50fa942600d4ee0d316299a8e2b173dc704 
+ 10-Dec-25 04:07:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/amd64: sha256:2fcedb815828af461b3a67bc607ac8f5da4c503c9ece1f4a25b15187c8a843cc (MATCH) 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/arm64: sha256:3cf311f690df4be7421ddd5c945d5bafc93b84dac68c1a2cfa18e5173311b396 (MATCH) 
+ 10-Dec-25 04:07:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:07:01  INFO  Creating latest tag: crane copy mosipdev/registration-processor-workflow-manager-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-workflow-manager-service:latest 
+ 10-Dec-25 04:07:01  INFO  Destination is MULTI-ARCH image 
+ 10-Dec-25 04:07:01  INFO  Destination Index Digest (Manifest List): sha256:1ec131421a948085a69412532562b9cb76917a7ccafe242fd840e8f36da5fc93 
+ 10-Dec-25 04:07:01  INFO  Destination has 2 platform(s): 
+ 10-Dec-25 04:07:01  INFO    - linux/amd64: sha256:c4395eb5917809f8028bde15a05b3feae62ee987882c4a583ce11e5fd82afb28 
+ 10-Dec-25 04:07:01  INFO    - linux/arm64: sha256:f11fcd3317fd57263cf44855ed9b563994d8737ec4dd41f9132f2d4f37ece61e 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  === DIGEST VERIFICATION === 
+ 10-Dec-25 04:07:01  INFO  Comparing Index Digests (Manifest Lists): 
+ 10-Dec-25 04:07:01  INFO    Source:      sha256:1ec131421a948085a69412532562b9cb76917a7ccafe242fd840e8f36da5fc93 
+ 10-Dec-25 04:07:01  INFO    Destination: sha256:1ec131421a948085a69412532562b9cb76917a7ccafe242fd840e8f36da5fc93 
+ 10-Dec-25 04:07:01  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 10-Dec-25 04:07:01  INFO   
+ 10-Dec-25 04:07:01  INFO  Comparing Platform Manifests: 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/amd64: sha256:c4395eb5917809f8028bde15a05b3feae62ee987882c4a583ce11e5fd82afb28 (MATCH) 
+ 10-Dec-25 04:07:01  INFO    ✓ linux/arm64: sha256:f11fcd3317fd57263cf44855ed9b563994d8737ec4dd41f9132f2d4f37ece61e (MATCH) 
+ 10-Dec-25 04:07:01  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 10-Dec-25 04:07:01  INFO  Creating latest tag: crane copy mosipdev/registration-processor-registration-transaction-service:release-1.3.x index.docker.io/mosipdev2/registration-processor-registration-transaction-service:latest 
+ 10-Dec-25 04:07:03  INFO  Successfully created latest tag 
+ 10-Dec-25 04:07:03  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-registration-status-service:release-1.3.x 
+ 10-Dec-25 04:07:03  INFO   
+ 10-Dec-25 04:07:03  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:07:03  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:07:03  INFO  Completed processing mosipdev/registration-processor-registration-status-service:release-1.3.x to mosipdev2/registration-processor-registration-status-service:release-1.3.x 
+ 10-Dec-25 04:07:04  INFO  Successfully created latest tag 
+ 10-Dec-25 04:07:04  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-workflow-manager-service:release-1.3.x 
+ 10-Dec-25 04:07:04  INFO   
+ 10-Dec-25 04:07:04  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:07:04  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:07:04  INFO  Successfully created latest tag 
+ 10-Dec-25 04:07:04  INFO  Image available at: index.docker.io/mosipdev2/registration-processor-registration-transaction-service:release-1.3.x 
+ 10-Dec-25 04:07:04  INFO   
+ 10-Dec-25 04:07:04  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 10-Dec-25 04:07:04  INFO  Individual platform manifests should also match to ensure identical content. 
+ 10-Dec-25 04:07:04  INFO  Completed processing mosipdev/registration-processor-registration-transaction-service:release-1.3.x to mosipdev2/registration-processor-registration-transaction-service:release-1.3.x 
+ 10-Dec-25 04:07:04  INFO  Completed processing mosipdev/registration-processor-workflow-manager-service:release-1.3.x to mosipdev2/registration-processor-workflow-manager-service:release-1.3.x 
