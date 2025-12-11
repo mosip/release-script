@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Thu Dec 11 04:32:56 UTC 2025
+**Date**: Thu Dec 11 06:02:40 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/postgres-upgrade:1.3x 
+- index.docker.io/mosipqa/activemq-artemis:2.39.0 
