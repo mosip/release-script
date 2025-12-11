@@ -1,80 +1,73 @@
- 11-Dec-25 06:19:43  INFO  LOGFILE CREATED : vidivi.log 
- 11-Dec-25 06:19:43  INFO   
- 11-Dec-25 06:19:43  INFO  ******************** Check Images List ************************************************************************************ 
- 11-Dec-25 06:19:43  INFO   
- 11-Dec-25 06:19:43  INFO  IMAGES= [['mosipdev/postgres-upgrade:release-1.3.x', '1.3.x']] 
- 11-Dec-25 06:19:43  INFO   
- 11-Dec-25 06:19:43  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 11-Dec-25 06:19:43  INFO   
- 11-Dec-25 06:19:43  INFO  src = "mosipdev/postgres-upgrade" tag = "release-1.3.x" 
- 11-Dec-25 06:19:43  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 11-Dec-25 06:19:43  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/postgres-upgrade:pull HTTP/1.1" 200 None 
- 11-Dec-25 06:19:43  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 11-Dec-25 06:19:44  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/postgres-upgrade/tags/release-1.3.x HTTP/1.1" 200 None 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 11-Dec-25 06:19:44  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 11-Dec-25 06:19:44  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 11-Dec-25 06:19:44  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  [ mosipqa/postgres-upgrade ]  
- 11-Dec-25 06:19:44  WARNING  Crane digest failed for index.docker.io/mosipqa/postgres-upgrade:1.3.x: 2025/12/11 06:19:44 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipqa/postgres-upgrade/manifests/1.3.x: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipqa/postgres-upgrade/manifests/1.3.x: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.x
- 
- 11-Dec-25 06:19:44  INFO  Destination Image = "mosipqa/postgres-upgrade" Destination Image tag = "1.3.x" IMAGE_ID :  
- 11-Dec-25 06:19:44  INFO  Destination image mosipqa/postgres-upgrade:1.3.x does not exist 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  ******************** HASH Operation Results ********************************************************************** 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/postgres-upgrade:1.3.x']] 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 11-Dec-25 06:19:44  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 11-Dec-25 06:19:44  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 11-Dec-25 06:19:44  DEBUG  Found 'auths' section 
- 11-Dec-25 06:19:44  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 11-Dec-25 06:19:44  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 11-Dec-25 06:19:44  DEBUG  Looking for auth entry for 'docker.io' 
- 11-Dec-25 06:19:44  DEBUG  Found 'https://index.docker.io/v1/' 
- 11-Dec-25 06:19:44  INFO  Using 3 parallel workers for image transfers 
- 11-Dec-25 06:19:44  INFO   
- 11-Dec-25 06:19:44  INFO  ********** [ mosipqa/postgres-upgrade:1.3.x ] **************************************************** 
- 11-Dec-25 06:19:44  INFO  Transferring image using crane... 
- 11-Dec-25 06:19:44  INFO  Source uses tag reference: mosipdev/postgres-upgrade:release-1.3.x 
- 11-Dec-25 06:19:44  INFO  Analyzing source image manifest... 
- 11-Dec-25 06:19:46  INFO  Source is MULTI-ARCH image 
- 11-Dec-25 06:19:46  INFO  Source Index Digest (Manifest List): sha256:64efa1b585d67ea051b3ccbbf9d4b1e71c431ff37be613e17eb776f8a4427721 
- 11-Dec-25 06:19:46  INFO  Source has 2 platform(s): 
- 11-Dec-25 06:19:46  INFO    - linux/amd64: sha256:8b47dccf16c235ee836594ebe04943c136526c2e2486b683c23feee9419bbc73 
- 11-Dec-25 06:19:46  INFO    - linux/arm64: sha256:307f2afb0ef0d7d0d5f642263a71bb129cb00f4baec24fb4b1492a5e612e3b33 
- 11-Dec-25 06:19:46  INFO  Using secure connection for HTTPS registry 
- 11-Dec-25 06:19:46  INFO  Executing: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:1.3.x 
- 11-Dec-25 06:19:51  INFO  Successfully transferred image with crane 
- 11-Dec-25 06:19:51  INFO   
- 11-Dec-25 06:19:51  INFO  Analyzing destination image manifest... 
- 11-Dec-25 06:19:52  INFO  Destination is MULTI-ARCH image 
- 11-Dec-25 06:19:52  INFO  Destination Index Digest (Manifest List): sha256:64efa1b585d67ea051b3ccbbf9d4b1e71c431ff37be613e17eb776f8a4427721 
- 11-Dec-25 06:19:52  INFO  Destination has 2 platform(s): 
- 11-Dec-25 06:19:52  INFO    - linux/amd64: sha256:8b47dccf16c235ee836594ebe04943c136526c2e2486b683c23feee9419bbc73 
- 11-Dec-25 06:19:52  INFO    - linux/arm64: sha256:307f2afb0ef0d7d0d5f642263a71bb129cb00f4baec24fb4b1492a5e612e3b33 
- 11-Dec-25 06:19:52  INFO   
- 11-Dec-25 06:19:52  INFO  === DIGEST VERIFICATION === 
- 11-Dec-25 06:19:52  INFO  Comparing Index Digests (Manifest Lists): 
- 11-Dec-25 06:19:52  INFO    Source:      sha256:64efa1b585d67ea051b3ccbbf9d4b1e71c431ff37be613e17eb776f8a4427721 
- 11-Dec-25 06:19:52  INFO    Destination: sha256:64efa1b585d67ea051b3ccbbf9d4b1e71c431ff37be613e17eb776f8a4427721 
- 11-Dec-25 06:19:52  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 11-Dec-25 06:19:52  INFO   
- 11-Dec-25 06:19:52  INFO  Comparing Platform Manifests: 
- 11-Dec-25 06:19:52  INFO    ✓ linux/amd64: sha256:8b47dccf16c235ee836594ebe04943c136526c2e2486b683c23feee9419bbc73 (MATCH) 
- 11-Dec-25 06:19:52  INFO    ✓ linux/arm64: sha256:307f2afb0ef0d7d0d5f642263a71bb129cb00f4baec24fb4b1492a5e612e3b33 (MATCH) 
- 11-Dec-25 06:19:52  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 11-Dec-25 06:19:52  INFO  Creating latest tag: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:latest 
- 11-Dec-25 06:19:54  INFO  Successfully created latest tag 
- 11-Dec-25 06:19:54  INFO  Image available at: index.docker.io/mosipqa/postgres-upgrade:1.3.x 
- 11-Dec-25 06:19:54  INFO   
- 11-Dec-25 06:19:54  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 11-Dec-25 06:19:54  INFO  Individual platform manifests should also match to ensure identical content. 
- 11-Dec-25 06:19:54  INFO  Completed processing mosipdev/postgres-upgrade:release-1.3.x to mosipqa/postgres-upgrade:1.3.x 
+ 11-Dec-25 07:40:17  INFO  LOGFILE CREATED : vidivi.log 
+ 11-Dec-25 07:40:17  INFO   
+ 11-Dec-25 07:40:17  INFO  ******************** Check Images List ************************************************************************************ 
+ 11-Dec-25 07:40:17  INFO   
+ 11-Dec-25 07:40:17  INFO  IMAGES= [['mosipdev/inji-certify-with-plugins:develop', 'develop']] 
+ 11-Dec-25 07:40:17  INFO   
+ 11-Dec-25 07:40:17  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 11-Dec-25 07:40:17  INFO   
+ 11-Dec-25 07:40:17  INFO  src = "mosipdev/inji-certify-with-plugins" tag = "develop" 
+ 11-Dec-25 07:40:17  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 11-Dec-25 07:40:17  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/inji-certify-with-plugins:pull HTTP/1.1" 200 None 
+ 11-Dec-25 07:40:17  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 11-Dec-25 07:40:17  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/inji-certify-with-plugins/tags/develop HTTP/1.1" 200 None 
+ 11-Dec-25 07:40:17  INFO   
+ 11-Dec-25 07:40:17  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 11-Dec-25 07:40:17  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 11-Dec-25 07:40:18  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipdev2 HTTP/1.1" 308 0 
+ 11-Dec-25 07:40:18  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipdev2 HTTP/1.1" 200 None 
+ 11-Dec-25 07:40:18  INFO   
+ 11-Dec-25 07:40:18  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 11-Dec-25 07:40:18  INFO   
+ 11-Dec-25 07:40:18  INFO  [ mosipdev2/inji-certify-with-plugins ]  
+ 11-Dec-25 07:40:18  INFO  Destination Image = "mosipdev2/inji-certify-with-plugins" Destination Image tag = "develop" IMAGE_ID : sha256:98196f8f4906abcd1cfe00f739f20132111d3f4f1e3099cbc8a0b2231e9e72aa 
+ 11-Dec-25 07:40:18  INFO   
+ 11-Dec-25 07:40:18  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 11-Dec-25 07:40:18  INFO   
+ 11-Dec-25 07:40:18  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 11-Dec-25 07:40:18  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 11-Dec-25 07:40:18  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 11-Dec-25 07:40:18  DEBUG  Found 'auths' section 
+ 11-Dec-25 07:40:18  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='rakshitharakshu') 
+ 11-Dec-25 07:40:18  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 11-Dec-25 07:40:18  DEBUG  Looking for auth entry for 'docker.io' 
+ 11-Dec-25 07:40:18  DEBUG  Found 'https://index.docker.io/v1/' 
+ 11-Dec-25 07:40:18  INFO  Using 3 parallel workers for image transfers 
+ 11-Dec-25 07:40:18  INFO   
+ 11-Dec-25 07:40:18  INFO  ********** [ mosipdev2/inji-certify-with-plugins:develop ] **************************************************** 
+ 11-Dec-25 07:40:18  INFO  Transferring image using crane... 
+ 11-Dec-25 07:40:18  INFO  Source uses tag reference: mosipdev/inji-certify-with-plugins:develop 
+ 11-Dec-25 07:40:18  INFO  Analyzing source image manifest... 
+ 11-Dec-25 07:40:19  INFO  Source is MULTI-ARCH image 
+ 11-Dec-25 07:40:19  INFO  Source Index Digest (Manifest List): sha256:5c4ad5d60e1264ab2bbb18e6bdb8c4a16f90f470c0648718d5576dcca067ccf3 
+ 11-Dec-25 07:40:19  INFO  Source has 2 platform(s): 
+ 11-Dec-25 07:40:19  INFO    - linux/amd64: sha256:e892709695cbb406cabf135b948fbfaf4cb23c544f40252f6eeb92b403e5091a 
+ 11-Dec-25 07:40:19  INFO    - linux/arm64: sha256:84a9da3dce226e5dae50e04ef47fe0ac5072218b07219996c544562148c97837 
+ 11-Dec-25 07:40:19  INFO  Using secure connection for HTTPS registry 
+ 11-Dec-25 07:40:19  INFO  Executing: crane copy mosipdev/inji-certify-with-plugins:develop index.docker.io/mosipdev2/inji-certify-with-plugins:develop 
+ 11-Dec-25 07:40:23  INFO  Successfully transferred image with crane 
+ 11-Dec-25 07:40:23  INFO   
+ 11-Dec-25 07:40:23  INFO  Analyzing destination image manifest... 
+ 11-Dec-25 07:40:24  INFO  Destination is MULTI-ARCH image 
+ 11-Dec-25 07:40:24  INFO  Destination Index Digest (Manifest List): sha256:5c4ad5d60e1264ab2bbb18e6bdb8c4a16f90f470c0648718d5576dcca067ccf3 
+ 11-Dec-25 07:40:24  INFO  Destination has 2 platform(s): 
+ 11-Dec-25 07:40:24  INFO    - linux/amd64: sha256:e892709695cbb406cabf135b948fbfaf4cb23c544f40252f6eeb92b403e5091a 
+ 11-Dec-25 07:40:24  INFO    - linux/arm64: sha256:84a9da3dce226e5dae50e04ef47fe0ac5072218b07219996c544562148c97837 
+ 11-Dec-25 07:40:24  INFO   
+ 11-Dec-25 07:40:24  INFO  === DIGEST VERIFICATION === 
+ 11-Dec-25 07:40:24  INFO  Comparing Index Digests (Manifest Lists): 
+ 11-Dec-25 07:40:24  INFO    Source:      sha256:5c4ad5d60e1264ab2bbb18e6bdb8c4a16f90f470c0648718d5576dcca067ccf3 
+ 11-Dec-25 07:40:24  INFO    Destination: sha256:5c4ad5d60e1264ab2bbb18e6bdb8c4a16f90f470c0648718d5576dcca067ccf3 
+ 11-Dec-25 07:40:24  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 11-Dec-25 07:40:24  INFO   
+ 11-Dec-25 07:40:24  INFO  Comparing Platform Manifests: 
+ 11-Dec-25 07:40:24  INFO    ✓ linux/amd64: sha256:e892709695cbb406cabf135b948fbfaf4cb23c544f40252f6eeb92b403e5091a (MATCH) 
+ 11-Dec-25 07:40:24  INFO    ✓ linux/arm64: sha256:84a9da3dce226e5dae50e04ef47fe0ac5072218b07219996c544562148c97837 (MATCH) 
+ 11-Dec-25 07:40:24  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 11-Dec-25 07:40:24  INFO  Creating latest tag: crane copy mosipdev/inji-certify-with-plugins:develop index.docker.io/mosipdev2/inji-certify-with-plugins:latest 
+ 11-Dec-25 07:40:27  INFO  Successfully created latest tag 
+ 11-Dec-25 07:40:27  INFO  Image available at: index.docker.io/mosipdev2/inji-certify-with-plugins:develop 
+ 11-Dec-25 07:40:27  INFO   
+ 11-Dec-25 07:40:27  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 11-Dec-25 07:40:27  INFO  Individual platform manifests should also match to ensure identical content. 
+ 11-Dec-25 07:40:27  INFO  Completed processing mosipdev/inji-certify-with-plugins:develop to mosipdev2/inji-certify-with-plugins:develop 
