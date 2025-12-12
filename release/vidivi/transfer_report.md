@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Fri Dec 12 05:43:03 UTC 2025
+**Date**: Fri Dec 12 05:48:56 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 1
-- **Total completed**: 1
+- **Crane transfers**: 5
+- **Total completed**: 5
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,4 +17,8 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/postgres-upgrade:1.3.x 
+- index.docker.io/mosipqa/apitest-masterdata:1.3.x 
+- index.docker.io/mosipqa/apitest-auth:1.3.x 
+- index.docker.io/mosipqa/apitest-idrepo:1.3.x 
+- index.docker.io/mosipqa/apitest-prereg:1.3.x 
+- index.docker.io/mosipqa/apitest-resident:1.3.x 
