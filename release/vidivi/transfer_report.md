@@ -1,6 +1,6 @@
 # Image Transfer Report
 
-**Date**: Fri Dec 12 05:37:16 UTC 2025
+**Date**: Fri Dec 12 05:43:03 UTC 2025
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: mosipqa
@@ -17,4 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/postgres-upgrade:1.3x 
+- index.docker.io/mosipqa/postgres-upgrade:1.3.x 

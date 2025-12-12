@@ -1,73 +1,73 @@
- 12-Dec-25 05:37:04  INFO  LOGFILE CREATED : vidivi.log 
- 12-Dec-25 05:37:04  INFO   
- 12-Dec-25 05:37:04  INFO  ******************** Check Images List ************************************************************************************ 
- 12-Dec-25 05:37:04  INFO   
- 12-Dec-25 05:37:04  INFO  IMAGES= [['mosipdev/postgres-upgrade:release-1.3.x', '1.3x']] 
- 12-Dec-25 05:37:04  INFO   
- 12-Dec-25 05:37:04  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 12-Dec-25 05:37:04  INFO   
- 12-Dec-25 05:37:04  INFO  src = "mosipdev/postgres-upgrade" tag = "release-1.3.x" 
- 12-Dec-25 05:37:04  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Dec-25 05:37:04  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/postgres-upgrade:pull HTTP/1.1" 200 None 
- 12-Dec-25 05:37:04  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Dec-25 05:37:04  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/postgres-upgrade/tags/release-1.3.x HTTP/1.1" 200 None 
- 12-Dec-25 05:37:04  INFO   
- 12-Dec-25 05:37:04  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 12-Dec-25 05:37:04  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 12-Dec-25 05:37:05  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 12-Dec-25 05:37:05  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 12-Dec-25 05:37:05  INFO   
- 12-Dec-25 05:37:05  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 12-Dec-25 05:37:05  INFO   
- 12-Dec-25 05:37:05  INFO  [ mosipqa/postgres-upgrade ]  
- 12-Dec-25 05:37:05  INFO  Destination Image = "mosipqa/postgres-upgrade" Destination Image tag = "1.3x" IMAGE_ID : sha256:55e0da9c271d368630b33bda449b602190109c7c62bfe2f2aee52fce778c19a5 
- 12-Dec-25 05:37:05  INFO   
- 12-Dec-25 05:37:05  INFO  ******************** HASH Operation Results ********************************************************************** 
- 12-Dec-25 05:37:05  INFO   
- 12-Dec-25 05:37:05  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 12-Dec-25 05:37:05  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 12-Dec-25 05:37:05  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 12-Dec-25 05:37:05  DEBUG  Found 'auths' section 
- 12-Dec-25 05:37:05  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
- 12-Dec-25 05:37:05  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 12-Dec-25 05:37:05  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Dec-25 05:37:05  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Dec-25 05:37:05  INFO  Using 3 parallel workers for image transfers 
- 12-Dec-25 05:37:05  INFO   
- 12-Dec-25 05:37:05  INFO  ********** [ mosipqa/postgres-upgrade:1.3x ] **************************************************** 
- 12-Dec-25 05:37:05  INFO  Transferring image using crane... 
- 12-Dec-25 05:37:05  INFO  Source uses tag reference: mosipdev/postgres-upgrade:release-1.3.x 
- 12-Dec-25 05:37:05  INFO  Analyzing source image manifest... 
- 12-Dec-25 05:37:07  INFO  Source is MULTI-ARCH image 
- 12-Dec-25 05:37:07  INFO  Source Index Digest (Manifest List): sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
- 12-Dec-25 05:37:07  INFO  Source has 2 platform(s): 
- 12-Dec-25 05:37:07  INFO    - linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da 
- 12-Dec-25 05:37:07  INFO    - linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 
- 12-Dec-25 05:37:07  INFO  Using secure connection for HTTPS registry 
- 12-Dec-25 05:37:07  INFO  Executing: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:1.3x 
- 12-Dec-25 05:37:12  INFO  Successfully transferred image with crane 
- 12-Dec-25 05:37:12  INFO   
- 12-Dec-25 05:37:12  INFO  Analyzing destination image manifest... 
- 12-Dec-25 05:37:13  INFO  Destination is MULTI-ARCH image 
- 12-Dec-25 05:37:13  INFO  Destination Index Digest (Manifest List): sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
- 12-Dec-25 05:37:13  INFO  Destination has 2 platform(s): 
- 12-Dec-25 05:37:13  INFO    - linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da 
- 12-Dec-25 05:37:13  INFO    - linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 
- 12-Dec-25 05:37:13  INFO   
- 12-Dec-25 05:37:13  INFO  === DIGEST VERIFICATION === 
- 12-Dec-25 05:37:13  INFO  Comparing Index Digests (Manifest Lists): 
- 12-Dec-25 05:37:13  INFO    Source:      sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
- 12-Dec-25 05:37:13  INFO    Destination: sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
- 12-Dec-25 05:37:13  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 12-Dec-25 05:37:13  INFO   
- 12-Dec-25 05:37:13  INFO  Comparing Platform Manifests: 
- 12-Dec-25 05:37:13  INFO    ✓ linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da (MATCH) 
- 12-Dec-25 05:37:13  INFO    ✓ linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 (MATCH) 
- 12-Dec-25 05:37:13  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 12-Dec-25 05:37:13  INFO  Creating latest tag: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:latest 
- 12-Dec-25 05:37:15  INFO  Successfully created latest tag 
- 12-Dec-25 05:37:15  INFO  Image available at: index.docker.io/mosipqa/postgres-upgrade:1.3x 
- 12-Dec-25 05:37:15  INFO   
- 12-Dec-25 05:37:15  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 12-Dec-25 05:37:15  INFO  Individual platform manifests should also match to ensure identical content. 
- 12-Dec-25 05:37:15  INFO  Completed processing mosipdev/postgres-upgrade:release-1.3.x to mosipqa/postgres-upgrade:1.3x 
+ 12-Dec-25 05:43:00  INFO  LOGFILE CREATED : vidivi.log 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** Check Images List ************************************************************************************ 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  IMAGES= [['mosipdev/postgres-upgrade:release-1.3.x', '1.3.x']] 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  src = "mosipdev/postgres-upgrade" tag = "release-1.3.x" 
+ 12-Dec-25 05:43:00  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 12-Dec-25 05:43:00  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/postgres-upgrade:pull HTTP/1.1" 200 None 
+ 12-Dec-25 05:43:00  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 12-Dec-25 05:43:00  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/postgres-upgrade/tags/release-1.3.x HTTP/1.1" 200 None 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 12-Dec-25 05:43:00  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 12-Dec-25 05:43:00  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
+ 12-Dec-25 05:43:00  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  [ mosipqa/postgres-upgrade ]  
+ 12-Dec-25 05:43:00  INFO  Destination Image = "mosipqa/postgres-upgrade" Destination Image tag = "1.3.x" IMAGE_ID : sha256:64efa1b585d67ea051b3ccbbf9d4b1e71c431ff37be613e17eb776f8a4427721 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 12-Dec-25 05:43:00  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 12-Dec-25 05:43:00  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 12-Dec-25 05:43:00  DEBUG  Found 'auths' section 
+ 12-Dec-25 05:43:00  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='ckm007') 
+ 12-Dec-25 05:43:00  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 12-Dec-25 05:43:00  DEBUG  Looking for auth entry for 'docker.io' 
+ 12-Dec-25 05:43:00  DEBUG  Found 'https://index.docker.io/v1/' 
+ 12-Dec-25 05:43:00  INFO  Using 3 parallel workers for image transfers 
+ 12-Dec-25 05:43:00  INFO   
+ 12-Dec-25 05:43:00  INFO  ********** [ mosipqa/postgres-upgrade:1.3.x ] **************************************************** 
+ 12-Dec-25 05:43:00  INFO  Transferring image using crane... 
+ 12-Dec-25 05:43:00  INFO  Source uses tag reference: mosipdev/postgres-upgrade:release-1.3.x 
+ 12-Dec-25 05:43:00  INFO  Analyzing source image manifest... 
+ 12-Dec-25 05:43:01  INFO  Source is MULTI-ARCH image 
+ 12-Dec-25 05:43:01  INFO  Source Index Digest (Manifest List): sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
+ 12-Dec-25 05:43:01  INFO  Source has 2 platform(s): 
+ 12-Dec-25 05:43:01  INFO    - linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da 
+ 12-Dec-25 05:43:01  INFO    - linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 
+ 12-Dec-25 05:43:01  INFO  Using secure connection for HTTPS registry 
+ 12-Dec-25 05:43:01  INFO  Executing: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:1.3.x 
+ 12-Dec-25 05:43:02  INFO  Successfully transferred image with crane 
+ 12-Dec-25 05:43:02  INFO   
+ 12-Dec-25 05:43:02  INFO  Analyzing destination image manifest... 
+ 12-Dec-25 05:43:03  INFO  Destination is MULTI-ARCH image 
+ 12-Dec-25 05:43:03  INFO  Destination Index Digest (Manifest List): sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
+ 12-Dec-25 05:43:03  INFO  Destination has 2 platform(s): 
+ 12-Dec-25 05:43:03  INFO    - linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da 
+ 12-Dec-25 05:43:03  INFO    - linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 
+ 12-Dec-25 05:43:03  INFO   
+ 12-Dec-25 05:43:03  INFO  === DIGEST VERIFICATION === 
+ 12-Dec-25 05:43:03  INFO  Comparing Index Digests (Manifest Lists): 
+ 12-Dec-25 05:43:03  INFO    Source:      sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
+ 12-Dec-25 05:43:03  INFO    Destination: sha256:4cb11176960df1e636210315f203333e3205cf172d310e02b922bd1e14c30909 
+ 12-Dec-25 05:43:03  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 12-Dec-25 05:43:03  INFO   
+ 12-Dec-25 05:43:03  INFO  Comparing Platform Manifests: 
+ 12-Dec-25 05:43:03  INFO    ✓ linux/amd64: sha256:81b69de95a96fc2a8226c33e8969a2651d509888a367e0ccbee165ccaac9f1da (MATCH) 
+ 12-Dec-25 05:43:03  INFO    ✓ linux/arm64: sha256:2408c2982e658bda228be2362428e8d57c5bfeca6639f925d2df269c679ec926 (MATCH) 
+ 12-Dec-25 05:43:03  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 12-Dec-25 05:43:03  INFO  Creating latest tag: crane copy mosipdev/postgres-upgrade:release-1.3.x index.docker.io/mosipqa/postgres-upgrade:latest 
+ 12-Dec-25 05:43:03  INFO  Successfully created latest tag 
+ 12-Dec-25 05:43:03  INFO  Image available at: index.docker.io/mosipqa/postgres-upgrade:1.3.x 
+ 12-Dec-25 05:43:03  INFO   
+ 12-Dec-25 05:43:03  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 12-Dec-25 05:43:03  INFO  Individual platform manifests should also match to ensure identical content. 
+ 12-Dec-25 05:43:03  INFO  Completed processing mosipdev/postgres-upgrade:release-1.3.x to mosipqa/postgres-upgrade:1.3.x 
