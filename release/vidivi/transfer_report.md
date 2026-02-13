@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Fri Feb 13 17:20:51 UTC 2026
+**Date**: Fri Feb 13 17:47:51 UTC 2026
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
 **Organization**: bn46
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 2
-- **Total completed**: 2
+- **Crane transfers**: 1
+- **Total completed**: 1
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,5 +17,4 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/bn46/mimoto:0.21.x 
-- index.docker.io/bn46/inji-web:0.16.x 
+- index.docker.io/bn46/uitest-verify:0.17.x 
