@@ -192,19 +192,43 @@ Execute the [Manual workflow to transfer images](https://github.com/mosip/releas
 | Input | Description | Required | Default | Example |
 |-------|-------------|----------|---------|---------|
 | `USERNAME` | Registry username | Yes | - | `robot$mosipdev+release-bot` (Harbor)<br>`myusername` (Docker Hub) |
-| `TOKEN` | Registry token/password | Yes (secret) | - | Robot account token or personal access token |
-| `DESTINATION_ORGANIZATION` | Destination org/project | Yes | - | `mosipid`, `library`, `myproject` |
+| `DESTINATION_ORGANIZATION` | Destination org/project | Yes | - | `mosipid`, `mosipqa`, `myproject` |
 | `REGISTRY_URL` | Destination registry URL | Yes | `https://index.docker.io/v1/` | `https://harbor.example.com` |
 | `REGISTRY_TYPE` | Registry type | Yes | `dockerhub` | `dockerhub`, `harbor`, `other` |
 | `ENABLE_WIREGUARD` | Enable VPN for private networks | No | `false` | `true` or `false` |
 
 ### Workflow Secrets
 
-Configure these in GitHub repository settings → Secrets:
+Configure these GitHub secrets dynamically based on your destination organization:
 
-- `TOKEN`: Registry authentication token
-- `SLACK_WEBHOOK_URL`: Slack notification webhook
-- `WIREGUARD_CONFIG`: (Optional) WireGuard VPN configuration for private registries
+**Secret Naming Convention:**
+- Token: `<ORGANIZATION_NAME>_DOCKER_TOKEN`
+- Examples:
+  - For `mosipqa` org → `MOSIPQA_DOCKER_TOKEN`
+  - For `mosipdev` org → `MOSIPDEV_DOCKER_TOKEN`
+  - For `acmecorp` org → `ACMECORP_DOCKER_TOKEN`
+
+**Required Secrets:**
+1. **`<ORG>_DOCKER_TOKEN`**: Registry authentication token for the specific organization
+   - Docker Hub: Personal Access Token or Account Password
+   - Harbor: Robot account token
+   - Other registries: Appropriate authentication token
+
+2. **`SLACK_WEBHOOK_DEVOPS`**: Slack notification webhook (shared across all workflows)
+
+3. **`WIREGUARD_CONFIG`**: (Optional) WireGuard VPN configuration for private registries
+
+**How to Add Secrets:**
+1. Go to GitHub repository → Settings → Secrets and variables → Actions
+2. Click "New repository secret"
+3. Add secrets following the naming convention above
+4. For a new organization `myorg`, create: `MYORG_DOCKER_TOKEN`
+
+**Security Benefits:**
+- Tokens are never exposed in workflow logs
+- Each organization has isolated credentials
+- No hardcoded credentials in workflow files
+- Automatic secret selection based on destination organization
 
 ### Running the Workflow
 
@@ -220,6 +244,12 @@ Configure these in GitHub repository settings → Secrets:
    ENABLE_WIREGUARD: true (if registry is on private network)
    ```
 5. Click "Run workflow"
+
+**Note:** The workflow automatically selects the correct token secret based on the `DESTINATION_ORGANIZATION` input:
+- Organization `mosipqa` uses secret `MOSIPQA_DOCKER_TOKEN`
+- Organization `mosipdev` uses secret `MOSIPDEV_DOCKER_TOKEN`
+- Organization `acmecorp` uses secret `ACMECORP_DOCKER_TOKEN`
+- And so on...
 
 ### Workflow Features
 
