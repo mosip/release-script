@@ -1,14 +1,14 @@
 # Image Transfer Report
 
-**Date**: Fri Dec 12 13:27:17 UTC 2025
+**Date**: Fri Feb 13 17:20:51 UTC 2026
 **Registry Type**: dockerhub
 **Registry URL**: https://index.docker.io/v1/  
-**Organization**: mosipqa
+**Organization**: bn46
 **WireGuard VPN**: Disabled
 
 ## Statistics
-- **Crane transfers**: 1
-- **Total completed**: 1
+- **Crane transfers**: 2
+- **Total completed**: 2
 - **Failed transfers**: 00
 
 ## Tools Used
@@ -17,4 +17,5 @@
 - Registry Support: HTTP/HTTPS auto-detection
 
 ## Transferred Images
-- index.docker.io/mosipqa/partner-onboarder:1.3.x-beta.2 
+- index.docker.io/bn46/mimoto:0.21.x 
+- index.docker.io/bn46/inji-web:0.16.x 
