@@ -41,37 +41,40 @@ jobs:
     steps:
       - name: Set organization secrets dynamically
         id: ORG_TOKEN
+        env:
+          DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
         run: |
-          ORG="${{ inputs.DESTINATION_ORGANIZATION }}"
+          ORG="$DESTINATION_ORGANIZATION"
           
-          # Convert organization name to uppercase for secret name
-          ORG_UPPER=$(echo "$ORG" | tr '[:lower:]' '[:upper:]')
+          # Convert organization name to valid secret name (replace hyphens, then uppercase)
+          # GitHub secret names can only contain [A-Z0-9_]
+          ORG_NORMALIZED=$(printf '%s' "$ORG" | tr '-' '_' | tr '[:lower:]' '[:upper:]')
           
           # Dynamically construct secret name based on organization
-          TOKEN_SECRET="${ORG_UPPER}_DOCKER_TOKEN"
+          TOKEN_SECRET="${ORG_NORMALIZED}_DOCKER_TOKEN"
           
-          echo "TOKEN=${TOKEN_SECRET}" >> $GITHUB_OUTPUT
+          printf 'TOKEN=%s\n' "$TOKEN_SECRET" >> "$GITHUB_OUTPUT"
       
       - name: Validate secret configuration
         env:
           TOKEN_EXISTS: ${{ secrets[steps.ORG_TOKEN.outputs.TOKEN] != '' }}
+          SECRET_NAME: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
+          DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
         run: |
-          SECRET_NAME="${{ steps.ORG_TOKEN.outputs.TOKEN }}"
-          
           if [ "$TOKEN_EXISTS" != "true" ]; then
-            echo "❌ ERROR: Secret '$SECRET_NAME' is not configured or is empty"
-            echo ""
-            echo "Please configure the following secret in GitHub repository settings:"
-            echo "  Secret name: $SECRET_NAME"
-            echo "  Path: Settings → Secrets and variables → Actions → New repository secret"
-            echo ""
-            echo "For organization '${{ inputs.DESTINATION_ORGANIZATION }}', you need:"
-            echo "  - Secret: $SECRET_NAME"
-            echo "  - Value: Your Docker registry token/password"
+            printf '❌ ERROR: Secret '\''%s'\'' is not configured or is empty\n' "$SECRET_NAME"
+            printf '\n'
+            printf 'Please configure the following secret in GitHub repository settings:\n'
+            printf '  Secret name: %s\n' "$SECRET_NAME"
+            printf '  Path: Settings → Secrets and variables → Actions → New repository secret\n'
+            printf '\n'
+            printf 'For organization '\''%s'\'', you need:\n' "$DESTINATION_ORGANIZATION"
+            printf '  - Secret: %s\n' "$SECRET_NAME"
+            printf '  - Value: Your Docker registry token/password\n'
             exit 1
           fi
           
-          echo "✅ Secret '$SECRET_NAME' is configured"
+          printf '✅ Secret '\''%s'\'' is configured\n' "$SECRET_NAME"
   Image-transfer:
     needs: chk_token
     uses: mosip/kattu/.github/workflows/image-transfer.yml@master

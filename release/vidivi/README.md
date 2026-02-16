@@ -203,10 +203,15 @@ Configure these GitHub secrets dynamically based on your destination organizatio
 
 **Secret Naming Convention:**
 - Token: `<ORGANIZATION_NAME>_DOCKER_TOKEN`
-- Examples:
-  - For `mosipqa` org → `MOSIPQA_DOCKER_TOKEN`
-  - For `mosipdev` org → `MOSIPDEV_DOCKER_TOKEN`
-  - For `acmecorp` org → `ACMECORP_DOCKER_TOKEN`
+- Organization names are normalized: hyphens converted to underscores, then uppercased
+- GitHub secret names can only contain `[A-Z0-9_]`
+
+**Examples:**
+  - `mosipqa` → `MOSIPQA_DOCKER_TOKEN`
+  - `mosipdev` → `MOSIPDEV_DOCKER_TOKEN`
+  - `acmecorp` → `ACMECORP_DOCKER_TOKEN`
+  - `my-org` → `MY_ORG_DOCKER_TOKEN` (hyphen → underscore)
+  - `test-dev-env` → `TEST_DEV_ENV_DOCKER_TOKEN` (all hyphens → underscores)
 
 **Required Secrets:**
 1. **`<ORG>_DOCKER_TOKEN`**: Registry authentication token for the specific organization
@@ -222,7 +227,8 @@ Configure these GitHub secrets dynamically based on your destination organizatio
 1. Go to GitHub repository → Settings → Secrets and variables → Actions
 2. Click "New repository secret"
 3. Add secrets following the naming convention above
-4. For a new organization `myorg`, create: `MYORG_DOCKER_TOKEN`
+4. For organization `myorg`, create: `MYORG_DOCKER_TOKEN`
+5. For organization `my-org`, create: `MY_ORG_DOCKER_TOKEN` (hyphens become underscores)
 
 **Security Benefits:**
 - Tokens are never exposed in workflow logs
@@ -249,7 +255,8 @@ Configure these GitHub secrets dynamically based on your destination organizatio
 - Organization `mosipqa` uses secret `MOSIPQA_DOCKER_TOKEN`
 - Organization `mosipdev` uses secret `MOSIPDEV_DOCKER_TOKEN`
 - Organization `acmecorp` uses secret `ACMECORP_DOCKER_TOKEN`
-- And so on...
+- Organization `my-org` uses secret `MY_ORG_DOCKER_TOKEN` (hyphens converted to underscores)
+- Organization names are normalized: hyphens → underscores, then uppercased
 
 ### Workflow Features
 
