@@ -1,72 +1,72 @@
- 16-Feb-26 06:16:08  INFO  LOGFILE CREATED : vidivi.log 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  ******************** Check Images List ************************************************************************************ 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  IMAGES= [['injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91', '0.17.x']] 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  src = "injistackdev2/uitest-verify" digest = "sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91" 
- 16-Feb-26 06:16:08  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 16-Feb-26 06:16:08  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:injistackdev2/uitest-verify:pull HTTP/1.1" 200 None 
- 16-Feb-26 06:16:08  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
- 16-Feb-26 06:16:08  DEBUG  https://registry-1.docker.io:443 "GET /v2/injistackdev2/uitest-verify/manifests/sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 HTTP/1.1" 200 743 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 16-Feb-26 06:16:08  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 16-Feb-26 06:16:08  DEBUG  https://hub.docker.com:443 "GET /v2/users/bn46 HTTP/1.1" 200 None 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 16-Feb-26 06:16:08  INFO   
- 16-Feb-26 06:16:08  INFO  [ bn46/uitest-verify ]  
- 16-Feb-26 06:16:09  INFO  Destination Image = "bn46/uitest-verify" Destination Image tag = "0.17.x" IMAGE_ID : sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:09  INFO   
- 16-Feb-26 06:16:09  INFO  ******************** HASH Operation Results ********************************************************************** 
- 16-Feb-26 06:16:09  INFO   
- 16-Feb-26 06:16:09  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 16-Feb-26 06:16:09  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 16-Feb-26 06:16:09  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 16-Feb-26 06:16:09  DEBUG  Found 'auths' section 
- 16-Feb-26 06:16:09  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='bn46') 
- 16-Feb-26 06:16:09  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 16-Feb-26 06:16:09  DEBUG  Looking for auth entry for 'docker.io' 
- 16-Feb-26 06:16:09  DEBUG  Found 'https://index.docker.io/v1/' 
- 16-Feb-26 06:16:09  INFO  Using 3 parallel workers for image transfers 
- 16-Feb-26 06:16:09  INFO   
- 16-Feb-26 06:16:09  INFO  ********** [ bn46/uitest-verify:0.17.x ] **************************************************** 
- 16-Feb-26 06:16:09  INFO  Transferring image using crane... 
- 16-Feb-26 06:16:09  INFO  Source uses digest reference: injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:09  INFO  Analyzing source image manifest... 
- 16-Feb-26 06:16:09  INFO  Source is MULTI-ARCH image 
- 16-Feb-26 06:16:09  INFO  Source Index Digest (Manifest List): sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:09  INFO  Source has 2 platform(s): 
- 16-Feb-26 06:16:09  INFO    - linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b 
- 16-Feb-26 06:16:09  INFO    - linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf 
- 16-Feb-26 06:16:09  INFO  Using secure connection for HTTPS registry 
- 16-Feb-26 06:16:09  INFO  Executing: crane copy injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 index.docker.io/bn46/uitest-verify:0.17.x 
- 16-Feb-26 06:16:10  INFO  Successfully transferred image with crane 
- 16-Feb-26 06:16:10  INFO   
- 16-Feb-26 06:16:10  INFO  Analyzing destination image manifest... 
- 16-Feb-26 06:16:10  INFO  Destination is MULTI-ARCH image 
- 16-Feb-26 06:16:10  INFO  Destination Index Digest (Manifest List): sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:10  INFO  Destination has 2 platform(s): 
- 16-Feb-26 06:16:10  INFO    - linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b 
- 16-Feb-26 06:16:10  INFO    - linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf 
- 16-Feb-26 06:16:10  INFO   
- 16-Feb-26 06:16:10  INFO  === DIGEST VERIFICATION === 
- 16-Feb-26 06:16:10  INFO  Comparing Index Digests (Manifest Lists): 
- 16-Feb-26 06:16:10  INFO    Source:      sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:10  INFO    Destination: sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
- 16-Feb-26 06:16:10  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 16-Feb-26 06:16:10  INFO   
- 16-Feb-26 06:16:10  INFO  Comparing Platform Manifests: 
- 16-Feb-26 06:16:10  INFO    ✓ linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b (MATCH) 
- 16-Feb-26 06:16:10  INFO    ✓ linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf (MATCH) 
- 16-Feb-26 06:16:10  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 16-Feb-26 06:16:10  INFO  Creating latest tag: crane copy injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 index.docker.io/bn46/uitest-verify:latest 
- 16-Feb-26 06:16:11  INFO  Successfully created latest tag 
- 16-Feb-26 06:16:11  INFO  Image available at: index.docker.io/bn46/uitest-verify:0.17.x 
- 16-Feb-26 06:16:11  INFO   
- 16-Feb-26 06:16:11  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 16-Feb-26 06:16:11  INFO  Individual platform manifests should also match to ensure identical content. 
- 16-Feb-26 06:16:11  INFO  Completed processing injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 to bn46/uitest-verify:0.17.x 
+ 16-Feb-26 09:12:19  INFO  LOGFILE CREATED : vidivi.log 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** Check Images List ************************************************************************************ 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  IMAGES= [['injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91', '0.17.x']] 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  src = "injistackdev2/uitest-verify" digest = "sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91" 
+ 16-Feb-26 09:12:19  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 16-Feb-26 09:12:19  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:injistackdev2/uitest-verify:pull HTTP/1.1" 200 None 
+ 16-Feb-26 09:12:19  DEBUG  Starting new HTTPS connection (1): registry-1.docker.io:443 
+ 16-Feb-26 09:12:19  DEBUG  https://registry-1.docker.io:443 "GET /v2/injistackdev2/uitest-verify/manifests/sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 HTTP/1.1" 200 743 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 16-Feb-26 09:12:19  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 16-Feb-26 09:12:19  DEBUG  https://hub.docker.com:443 "GET /v2/users/bn46 HTTP/1.1" 200 None 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  [ bn46/uitest-verify ]  
+ 16-Feb-26 09:12:19  INFO  Destination Image = "bn46/uitest-verify" Destination Image tag = "0.17.x" IMAGE_ID : sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 16-Feb-26 09:12:19  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 16-Feb-26 09:12:19  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 16-Feb-26 09:12:19  DEBUG  Found 'auths' section 
+ 16-Feb-26 09:12:19  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='bn46') 
+ 16-Feb-26 09:12:19  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 16-Feb-26 09:12:19  DEBUG  Looking for auth entry for 'docker.io' 
+ 16-Feb-26 09:12:19  DEBUG  Found 'https://index.docker.io/v1/' 
+ 16-Feb-26 09:12:19  INFO  Using 3 parallel workers for image transfers 
+ 16-Feb-26 09:12:19  INFO   
+ 16-Feb-26 09:12:19  INFO  ********** [ bn46/uitest-verify:0.17.x ] **************************************************** 
+ 16-Feb-26 09:12:19  INFO  Transferring image using crane... 
+ 16-Feb-26 09:12:19  INFO  Source uses digest reference: injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:19  INFO  Analyzing source image manifest... 
+ 16-Feb-26 09:12:20  INFO  Source is MULTI-ARCH image 
+ 16-Feb-26 09:12:20  INFO  Source Index Digest (Manifest List): sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:20  INFO  Source has 2 platform(s): 
+ 16-Feb-26 09:12:20  INFO    - linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b 
+ 16-Feb-26 09:12:20  INFO    - linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf 
+ 16-Feb-26 09:12:20  INFO  Using secure connection for HTTPS registry 
+ 16-Feb-26 09:12:20  INFO  Executing: crane copy injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 index.docker.io/bn46/uitest-verify:0.17.x 
+ 16-Feb-26 09:12:20  INFO  Successfully transferred image with crane 
+ 16-Feb-26 09:12:20  INFO   
+ 16-Feb-26 09:12:20  INFO  Analyzing destination image manifest... 
+ 16-Feb-26 09:12:20  INFO  Destination is MULTI-ARCH image 
+ 16-Feb-26 09:12:20  INFO  Destination Index Digest (Manifest List): sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:20  INFO  Destination has 2 platform(s): 
+ 16-Feb-26 09:12:20  INFO    - linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b 
+ 16-Feb-26 09:12:20  INFO    - linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf 
+ 16-Feb-26 09:12:20  INFO   
+ 16-Feb-26 09:12:20  INFO  === DIGEST VERIFICATION === 
+ 16-Feb-26 09:12:20  INFO  Comparing Index Digests (Manifest Lists): 
+ 16-Feb-26 09:12:20  INFO    Source:      sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:20  INFO    Destination: sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 
+ 16-Feb-26 09:12:20  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 16-Feb-26 09:12:20  INFO   
+ 16-Feb-26 09:12:20  INFO  Comparing Platform Manifests: 
+ 16-Feb-26 09:12:20  INFO    ✓ linux/amd64: sha256:d02ad2a68c770dbf89b949e261b525f1df1106961b53271d236231eb28e5438b (MATCH) 
+ 16-Feb-26 09:12:20  INFO    ✓ linux/arm64: sha256:fac3ac86bc067f7f96639b7bb2f42d046a362c59478ac7c61acf9db8470598bf (MATCH) 
+ 16-Feb-26 09:12:20  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 16-Feb-26 09:12:20  INFO  Creating latest tag: crane copy injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 index.docker.io/bn46/uitest-verify:latest 
+ 16-Feb-26 09:12:21  INFO  Successfully created latest tag 
+ 16-Feb-26 09:12:21  INFO  Image available at: index.docker.io/bn46/uitest-verify:0.17.x 
+ 16-Feb-26 09:12:21  INFO   
+ 16-Feb-26 09:12:21  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 16-Feb-26 09:12:21  INFO  Individual platform manifests should also match to ensure identical content. 
+ 16-Feb-26 09:12:21  INFO  Completed processing injistackdev2/uitest-verify@sha256:b14db85eff43f53a842e8dff00dbf39d1eb28ddeda86f7117b0f2cd3a915af91 to bn46/uitest-verify:0.17.x 
