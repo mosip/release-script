@@ -59,6 +59,19 @@ jobs:
             # Use dynamic naming based on organization
             ORG="$DESTINATION_ORGANIZATION"
             
+            # Validate DESTINATION_ORGANIZATION before normalization
+            if [ -z "$ORG" ]; then
+              printf '❌ ERROR: DESTINATION_ORGANIZATION is empty or not provided\n' >&2
+              exit 1
+            fi
+            
+            # Check for invalid characters (only letters, numbers, and hyphens are allowed)
+            if ! printf '%s' "$ORG" | grep -qE '^[a-zA-Z0-9-]+$'; then
+              printf '❌ ERROR: Invalid organization name: "%s"\n' "$ORG" >&2
+              printf 'Organization name must contain only letters, numbers, and hyphens (no dots, spaces, or other special characters)\n' >&2
+              exit 1
+            fi
+            
             # Convert organization name to valid secret name (replace hyphens, then uppercase)
             # GitHub secret names can only contain [A-Z0-9_]
             ORG_NORMALIZED=$(printf '%s' "$ORG" | tr '-' '_' | tr '[:lower:]' '[:upper:]')
