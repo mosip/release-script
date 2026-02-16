@@ -8,6 +8,11 @@ on:
         required: true
         default: ''
         type: string
+      SECRET_NAME:
+        description: 'Custom secret name (optional - defaults to <ORG>_DOCKER_TOKEN)'
+        required: false
+        default: ''
+        type: string
       DESTINATION_ORGANIZATION:
         description: 'provide docker hub destination org'
         required: true
@@ -43,15 +48,25 @@ jobs:
         id: ORG_TOKEN
         env:
           DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
+          CUSTOM_SECRET_NAME: ${{ inputs.SECRET_NAME }}
         run: |
-          ORG="$DESTINATION_ORGANIZATION"
-          
-          # Convert organization name to valid secret name (replace hyphens, then uppercase)
-          # GitHub secret names can only contain [A-Z0-9_]
-          ORG_NORMALIZED=$(printf '%s' "$ORG" | tr '-' '_' | tr '[:lower:]' '[:upper:]')
-          
-          # Dynamically construct secret name based on organization
-          TOKEN_SECRET="${ORG_NORMALIZED}_DOCKER_TOKEN"
+          # Check if custom secret name is provided
+          if [ -n "$CUSTOM_SECRET_NAME" ]; then
+            # Use custom secret name
+            TOKEN_SECRET="$CUSTOM_SECRET_NAME"
+            printf 'Using custom secret name: %s\n' "$TOKEN_SECRET"
+          else
+            # Use dynamic naming based on organization
+            ORG="$DESTINATION_ORGANIZATION"
+            
+            # Convert organization name to valid secret name (replace hyphens, then uppercase)
+            # GitHub secret names can only contain [A-Z0-9_]
+            ORG_NORMALIZED=$(printf '%s' "$ORG" | tr '-' '_' | tr '[:lower:]' '[:upper:]')
+            
+            # Dynamically construct secret name based on organization
+            TOKEN_SECRET="${ORG_NORMALIZED}_DOCKER_TOKEN"
+            printf 'Using dynamic secret name: %s\n' "$TOKEN_SECRET"
+          fi
           
           printf 'TOKEN=%s\n' "$TOKEN_SECRET" >> "$GITHUB_OUTPUT"
       
