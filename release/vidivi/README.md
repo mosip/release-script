@@ -192,29 +192,28 @@ Execute the [Manual workflow to transfer images](https://github.com/mosip/releas
 | Input | Description | Required | Default | Example |
 |-------|-------------|----------|---------|---------|
 | `USERNAME` | Registry username | Yes | - | `robot$mosipdev+release-bot` (Harbor)<br>`myusername` (Docker Hub) |
+| `SECRET_NAME` | Select the GitHub secret name for Docker registry token (dropdown) | Yes | `MOSIPDEV2_DOCKER_TOKEN` | `MOSIPID_DOCKER_TOKEN`, `custom` |
+| `CUSTOM_SECRET_NAME` | Custom secret name (only required if `SECRET_NAME` is set to `custom`) | No | - | `MY_ORG_DOCKER_TOKEN` |
 | `DESTINATION_ORGANIZATION` | Destination org/project | Yes | - | `mosipid`, `mosipqa`, `myproject` |
 | `REGISTRY_URL` | Destination registry URL | Yes | `https://index.docker.io/v1/` | `https://harbor.example.com` |
 | `REGISTRY_TYPE` | Registry type | Yes | `dockerhub` | `dockerhub`, `harbor`, `other` |
 | `ENABLE_WIREGUARD` | Enable VPN for private networks | No | `false` | `true` or `false` |
 
+**`SECRET_NAME` Options:**
+
+| Option | Description |
+|---|---|
+| `MOSIPDEV2_DOCKER_TOKEN` | Token for `mosipdev2` organization |
+| `MOSIPQA_DOCKER_TOKEN` | Token for `mosipqa` organization |
+| `MOSIPID_DOCKER_TOKEN` | Token for `mosipid` organization |
+| `MOSIPINT_DOCKER_TOKEN` | Token for `mosipint` organization |
+| `INJISTACK_DOCKER_TOKEN` | Token for `injistack` organization |
+| `custom` | Enter your own secret name in `CUSTOM_SECRET_NAME` field |
+
 ### Workflow Secrets
 
-Configure these GitHub secrets dynamically based on your destination organization:
-
-**Secret Naming Convention:**
-- Token: `<ORGANIZATION_NAME>_DOCKER_TOKEN`
-- Organization names are normalized: hyphens converted to underscores, then uppercased
-- GitHub secret names can only contain `[A-Z0-9_]`
-
-**Examples:**
-  - `mosipqa` → `MOSIPQA_DOCKER_TOKEN`
-  - `mosipdev` → `MOSIPDEV_DOCKER_TOKEN`
-  - `acmecorp` → `ACMECORP_DOCKER_TOKEN`
-  - `my-org` → `MY_ORG_DOCKER_TOKEN` (hyphen → underscore)
-  - `test-dev-env` → `TEST_DEV_ENV_DOCKER_TOKEN` (all hyphens → underscores)
-
 **Required Secrets:**
-1. **`<ORG>_DOCKER_TOKEN`**: Registry authentication token for the specific organization
+1. **`<SECRET_NAME>`**: Registry authentication token — select from predefined options or provide a custom name
    - Docker Hub: Personal Access Token or Account Password
    - Harbor: Robot account token
    - Other registries: Appropriate authentication token
@@ -223,18 +222,38 @@ Configure these GitHub secrets dynamically based on your destination organizatio
 
 3. **`WIREGUARD_CONFIG`**: (Optional) WireGuard VPN configuration for private registries
 
+**Custom SECRET_NAME Validation:**
+
+When `SECRET_NAME` is set to `custom`, the `CUSTOM_SECRET_NAME` field is **required** and validated:
+- Must start with a letter or underscore
+- Can only contain letters, numbers, and underscores (`[A-Za-z0-9_]`)
+- No spaces, hyphens, or special characters
+
+| `CUSTOM_SECRET_NAME` | Valid? |
+|---|---|
+| `MY_ORG_DOCKER_TOKEN` | ✅ |
+| `_PRIVATE_TOKEN` | ✅ |
+| `my-org-token` | ❌ Hyphens not allowed |
+| `MY SECRET` | ❌ Spaces not allowed |
+| *(empty)* | ❌ Required when `custom` is selected |
+
 **How to Add Secrets:**
 1. Go to GitHub repository → Settings → Secrets and variables → Actions
 2. Click "New repository secret"
-3. Add secrets following the naming convention above
-4. For organization `myorg`, create: `MYORG_DOCKER_TOKEN`
-5. For organization `my-org`, create: `MY_ORG_DOCKER_TOKEN` (hyphens become underscores)
+3. Create the secret with the exact name you will provide as `SECRET_NAME` input
+4. Set the value to your Docker registry token/password
+
+**Protected Organizations:**
+
+Certain destination organizations (e.g., `mosipid`) are protected in the `mosip/kattu` reusable workflow. Transfers to protected organizations require **admin** access on the calling repository. This prevents accidental overwrites of production images by non-admin users.
+
+> **Note:** This protection is enforced in the `mosip/kattu` reusable workflow, so it cannot be bypassed by modifying the caller workflow.
 
 **Security Benefits:**
 - Tokens are never exposed in workflow logs
 - Each organization has isolated credentials
 - No hardcoded credentials in workflow files
-- Automatic secret selection based on destination organization
+- Protected organizations require admin access for transfers
 
 ### Running the Workflow
 
@@ -244,19 +263,20 @@ Configure these GitHub secrets dynamically based on your destination organizatio
 4. Fill in the required inputs:
    ```
    USERNAME: robot$mosipdev+release-bot
+   SECRET_NAME: MOSIPID_DOCKER_TOKEN    (select from dropdown)
+   CUSTOM_SECRET_NAME:                  (leave empty unless SECRET_NAME is "custom")
    DESTINATION_ORGANIZATION: mosipid
    REGISTRY_URL: https://harbor.mosip.net
    REGISTRY_TYPE: harbor
    ENABLE_WIREGUARD: true (if registry is on private network)
    ```
-5. Click "Run workflow"
-
-**Note:** The workflow automatically selects the correct token secret based on the `DESTINATION_ORGANIZATION` input:
-- Organization `mosipqa` uses secret `MOSIPQA_DOCKER_TOKEN`
-- Organization `mosipdev` uses secret `MOSIPDEV_DOCKER_TOKEN`
-- Organization `acmecorp` uses secret `ACMECORP_DOCKER_TOKEN`
-- Organization `my-org` uses secret `MY_ORG_DOCKER_TOKEN` (hyphens converted to underscores)
-- Organization names are normalized: hyphens → underscores, then uppercased
+5. If using `custom` for `SECRET_NAME`, enter the secret name in `CUSTOM_SECRET_NAME`:
+   ```
+   SECRET_NAME: custom
+   CUSTOM_SECRET_NAME: MY_ORG_DOCKER_TOKEN
+   ```
+6. Ensure the selected/custom secret is configured under **Settings → Secrets and variables → Actions**
+7. Click "Run workflow"
 
 ### Workflow Features
 

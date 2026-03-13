@@ -9,7 +9,19 @@ on:
         default: ''
         type: string
       SECRET_NAME:
-        description: 'Custom secret name (optional - defaults to <ORG>_DOCKER_TOKEN)'
+        description: 'Select the GitHub secret name for Docker registry token'
+        required: true
+        default: 'MOSIPDEV2_DOCKER_TOKEN'
+        type: choice
+        options:
+          - MOSIPDEV2_DOCKER_TOKEN
+          - MOSIPQA_DOCKER_TOKEN
+          - MOSIPID_DOCKER_TOKEN
+          - MOSIPINT_DOCKER_TOKEN
+          - INJISTACK_DOCKER_TOKEN
+          - custom
+      CUSTOM_SECRET_NAME:
+        description: 'If SECRET_NAME is "custom", enter the GitHub secret name here'
         required: false
         default: ''
         type: string
@@ -44,41 +56,36 @@ jobs:
     outputs:
       TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
     steps:
-      - name: Set organization secrets dynamically
+      - name: Resolve secret name
         id: ORG_TOKEN
         env:
-          DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
-          CUSTOM_SECRET_NAME: ${{ inputs.SECRET_NAME }}
+          SELECTED_SECRET: ${{ inputs.SECRET_NAME }}
+          CUSTOM_SECRET: ${{ inputs.CUSTOM_SECRET_NAME }}
         run: |
-          # Check if custom secret name is provided
-          if [ -n "$CUSTOM_SECRET_NAME" ]; then
-            # Use custom secret name
-            TOKEN_SECRET="$CUSTOM_SECRET_NAME"
+          if [ "$SELECTED_SECRET" = "custom" ]; then
+            # User selected custom — CUSTOM_SECRET_NAME is required
+            if [ -z "$CUSTOM_SECRET" ]; then
+              printf '❌ ERROR: CUSTOM_SECRET_NAME is required when SECRET_NAME is set to "custom"\n' >&2
+              printf 'Please provide the GitHub secret name in the CUSTOM_SECRET_NAME field\n' >&2
+              exit 1
+            fi
+            
+            # Validate custom secret name format (GitHub only allows [A-Z0-9_], must start with [A-Z_])
+            if ! printf '%s' "$CUSTOM_SECRET" | grep -qE '^[A-Za-z_][A-Za-z0-9_]*$'; then
+              printf '❌ ERROR: Invalid secret name: "%s"\n' "$CUSTOM_SECRET" >&2
+              printf 'GitHub secret names must:\n' >&2
+              printf '  - Start with a letter or underscore\n' >&2
+              printf '  - Contain only letters, numbers, and underscores\n' >&2
+              printf '  - No spaces, hyphens, or special characters\n' >&2
+              printf 'Example: MY_ORG_DOCKER_TOKEN\n' >&2
+              exit 1
+            fi
+            
+            TOKEN_SECRET="$CUSTOM_SECRET"
             printf 'Using custom secret name: %s\n' "$TOKEN_SECRET"
           else
-            # Use dynamic naming based on organization
-            ORG="$DESTINATION_ORGANIZATION"
-            
-            # Validate DESTINATION_ORGANIZATION before normalization
-            if [ -z "$ORG" ]; then
-              printf '❌ ERROR: DESTINATION_ORGANIZATION is empty or not provided\n' >&2
-              exit 1
-            fi
-            
-            # Check for invalid characters (only letters, numbers, and hyphens are allowed)
-            if ! printf '%s' "$ORG" | grep -qE '^[a-zA-Z0-9-]+$'; then
-              printf '❌ ERROR: Invalid organization name: "%s"\n' "$ORG" >&2
-              printf 'Organization name must contain only letters, numbers, and hyphens (no dots, spaces, or other special characters)\n' >&2
-              exit 1
-            fi
-            
-            # Convert organization name to valid secret name (replace hyphens, then uppercase)
-            # GitHub secret names can only contain [A-Z0-9_]
-            ORG_NORMALIZED=$(printf '%s' "$ORG" | tr '-' '_' | tr '[:lower:]' '[:upper:]')
-            
-            # Dynamically construct secret name based on organization
-            TOKEN_SECRET="${ORG_NORMALIZED}_DOCKER_TOKEN"
-            printf 'Using dynamic secret name: %s\n' "$TOKEN_SECRET"
+            TOKEN_SECRET="$SELECTED_SECRET"
+            printf 'Using predefined secret name: %s\n' "$TOKEN_SECRET"
           fi
           
           printf 'TOKEN=%s\n' "$TOKEN_SECRET" >> "$GITHUB_OUTPUT"
