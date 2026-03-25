@@ -1,80 +1,119 @@
- 12-Dec-25 13:27:10  INFO  LOGFILE CREATED : vidivi.log 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  ******************** Check Images List ************************************************************************************ 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  IMAGES= [['mosipdev/partner-onboarder:release-1.3.x-beta.2', '1.3.x-beta.2']] 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  ******************** Check existence of Source Images ******************************************************************* 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  src = "mosipdev/partner-onboarder" tag = "release-1.3.x-beta.2" 
- 12-Dec-25 13:27:10  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
- 12-Dec-25 13:27:10  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:mosipdev/partner-onboarder:pull HTTP/1.1" 200 None 
- 12-Dec-25 13:27:10  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
- 12-Dec-25 13:27:10  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/mosipdev/partner-onboarder/tags/release-1.3.x-beta.2 HTTP/1.1" 200 None 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
- 12-Dec-25 13:27:10  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
- 12-Dec-25 13:27:10  DEBUG  https://hub.docker.com:443 "GET /v2/users/mosipqa HTTP/1.1" 308 0 
- 12-Dec-25 13:27:10  DEBUG  https://hub.docker.com:443 "GET /v2/orgs/mosipqa HTTP/1.1" 200 None 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  ******************** Check existence of Destination Images *************************************************************** 
- 12-Dec-25 13:27:10  INFO   
- 12-Dec-25 13:27:10  INFO  [ mosipqa/partner-onboarder ]  
- 12-Dec-25 13:27:11  WARNING  Crane digest failed for index.docker.io/mosipqa/partner-onboarder:1.3.x-beta.2: 2025/12/12 13:27:10 HEAD request failed, falling back on GET: HEAD https://index.docker.io/v2/mosipqa/partner-onboarder/manifests/1.3.x-beta.2: unexpected status code 404 Not Found (HEAD responses have no body, use GET for details)
-Error: GET https://index.docker.io/v2/mosipqa/partner-onboarder/manifests/1.3.x-beta.2: MANIFEST_UNKNOWN: manifest unknown; unknown tag=1.3.x-beta.2
- 
- 12-Dec-25 13:27:11  INFO  Destination Image = "mosipqa/partner-onboarder" Destination Image tag = "1.3.x-beta.2" IMAGE_ID :  
- 12-Dec-25 13:27:11  INFO  Destination image mosipqa/partner-onboarder:1.3.x-beta.2 does not exist 
- 12-Dec-25 13:27:11  INFO   
- 12-Dec-25 13:27:11  INFO  ******************** HASH Operation Results ********************************************************************** 
- 12-Dec-25 13:27:11  INFO   
- 12-Dec-25 13:27:11  INFO  Below Destination Images doesn't exists; CONTINUE;
-	[['mosipqa/partner-onboarder:1.3.x-beta.2']] 
- 12-Dec-25 13:27:11  INFO   
- 12-Dec-25 13:27:11  INFO  ******************** Start Image Transfer operation *********************************************************************** 
- 12-Dec-25 13:27:11  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
- 12-Dec-25 13:27:11  DEBUG  Found file at path: /home/runner/.docker/config.json 
- 12-Dec-25 13:27:11  DEBUG  Found 'auths' section 
- 12-Dec-25 13:27:11  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='gsasikumar') 
- 12-Dec-25 13:27:11  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
- 12-Dec-25 13:27:11  DEBUG  Looking for auth entry for 'docker.io' 
- 12-Dec-25 13:27:11  DEBUG  Found 'https://index.docker.io/v1/' 
- 12-Dec-25 13:27:11  INFO  Using 3 parallel workers for image transfers 
- 12-Dec-25 13:27:11  INFO   
- 12-Dec-25 13:27:11  INFO  ********** [ mosipqa/partner-onboarder:1.3.x-beta.2 ] **************************************************** 
- 12-Dec-25 13:27:11  INFO  Transferring image using crane... 
- 12-Dec-25 13:27:11  INFO  Source uses tag reference: mosipdev/partner-onboarder:release-1.3.x-beta.2 
- 12-Dec-25 13:27:11  INFO  Analyzing source image manifest... 
- 12-Dec-25 13:27:11  INFO  Source is MULTI-ARCH image 
- 12-Dec-25 13:27:11  INFO  Source Index Digest (Manifest List): sha256:8de6d5f804e74b5f6ab2e92dc3fa848511f28007237e387f4535eab6aae03c44 
- 12-Dec-25 13:27:11  INFO  Source has 2 platform(s): 
- 12-Dec-25 13:27:11  INFO    - linux/amd64: sha256:f6ddf93b21f422bbf13ddabeae237ecf576f0c79fd7e7aadb7650f72bf885d11 
- 12-Dec-25 13:27:11  INFO    - linux/arm64: sha256:d86a01d00191bcb4999afcb39e04866b50b505919296f4ec752391cfda764108 
- 12-Dec-25 13:27:11  INFO  Using secure connection for HTTPS registry 
- 12-Dec-25 13:27:11  INFO  Executing: crane copy mosipdev/partner-onboarder:release-1.3.x-beta.2 index.docker.io/mosipqa/partner-onboarder:1.3.x-beta.2 
- 12-Dec-25 13:27:15  INFO  Successfully transferred image with crane 
- 12-Dec-25 13:27:15  INFO   
- 12-Dec-25 13:27:15  INFO  Analyzing destination image manifest... 
- 12-Dec-25 13:27:15  INFO  Destination is MULTI-ARCH image 
- 12-Dec-25 13:27:15  INFO  Destination Index Digest (Manifest List): sha256:8de6d5f804e74b5f6ab2e92dc3fa848511f28007237e387f4535eab6aae03c44 
- 12-Dec-25 13:27:15  INFO  Destination has 2 platform(s): 
- 12-Dec-25 13:27:15  INFO    - linux/amd64: sha256:f6ddf93b21f422bbf13ddabeae237ecf576f0c79fd7e7aadb7650f72bf885d11 
- 12-Dec-25 13:27:15  INFO    - linux/arm64: sha256:d86a01d00191bcb4999afcb39e04866b50b505919296f4ec752391cfda764108 
- 12-Dec-25 13:27:15  INFO   
- 12-Dec-25 13:27:15  INFO  === DIGEST VERIFICATION === 
- 12-Dec-25 13:27:15  INFO  Comparing Index Digests (Manifest Lists): 
- 12-Dec-25 13:27:15  INFO    Source:      sha256:8de6d5f804e74b5f6ab2e92dc3fa848511f28007237e387f4535eab6aae03c44 
- 12-Dec-25 13:27:15  INFO    Destination: sha256:8de6d5f804e74b5f6ab2e92dc3fa848511f28007237e387f4535eab6aae03c44 
- 12-Dec-25 13:27:15  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
- 12-Dec-25 13:27:15  INFO   
- 12-Dec-25 13:27:15  INFO  Comparing Platform Manifests: 
- 12-Dec-25 13:27:15  INFO    ✓ linux/amd64: sha256:f6ddf93b21f422bbf13ddabeae237ecf576f0c79fd7e7aadb7650f72bf885d11 (MATCH) 
- 12-Dec-25 13:27:15  INFO    ✓ linux/arm64: sha256:d86a01d00191bcb4999afcb39e04866b50b505919296f4ec752391cfda764108 (MATCH) 
- 12-Dec-25 13:27:15  INFO  ✓ All 2 platform manifest(s) match perfectly! 
- 12-Dec-25 13:27:15  INFO  Creating latest tag: crane copy mosipdev/partner-onboarder:release-1.3.x-beta.2 index.docker.io/mosipqa/partner-onboarder:latest 
- 12-Dec-25 13:27:17  INFO  Successfully created latest tag 
- 12-Dec-25 13:27:17  INFO  Image available at: index.docker.io/mosipqa/partner-onboarder:1.3.x-beta.2 
- 12-Dec-25 13:27:17  INFO   
- 12-Dec-25 13:27:17  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
- 12-Dec-25 13:27:17  INFO  Individual platform manifests should also match to ensure identical content. 
- 12-Dec-25 13:27:17  INFO  Completed processing mosipdev/partner-onboarder:release-1.3.x-beta.2 to mosipqa/partner-onboarder:1.3.x-beta.2 
+ 13-Mar-26 10:12:12  INFO  LOGFILE CREATED : vidivi.log 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  ******************** Check Images List ************************************************************************************ 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  IMAGES= [['injistackdev2/inji-web:release-0.16.x', '0.16.x'], ['injistackdev2/mimoto:release-0.21.x', '0.21.x']] 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  ******************** Check existence of Source Images ******************************************************************* 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  src = "injistackdev2/inji-web" tag = "release-0.16.x" 
+ 13-Mar-26 10:12:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Mar-26 10:12:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:injistackdev2/inji-web:pull HTTP/1.1" 200 None 
+ 13-Mar-26 10:12:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Mar-26 10:12:12  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/injistackdev2/inji-web/tags/release-0.16.x HTTP/1.1" 200 None 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  src = "injistackdev2/mimoto" tag = "release-0.21.x" 
+ 13-Mar-26 10:12:12  DEBUG  Starting new HTTPS connection (1): auth.docker.io:443 
+ 13-Mar-26 10:12:12  DEBUG  https://auth.docker.io:443 "GET /token?service=registry.docker.io&scope=repository:injistackdev2/mimoto:pull HTTP/1.1" 200 None 
+ 13-Mar-26 10:12:12  DEBUG  Starting new HTTPS connection (1): registry.hub.docker.com:443 
+ 13-Mar-26 10:12:12  DEBUG  https://registry.hub.docker.com:443 "GET /v2/repositories/injistackdev2/mimoto/tags/release-0.21.x HTTP/1.1" 200 None 
+ 13-Mar-26 10:12:12  INFO   
+ 13-Mar-26 10:12:12  INFO  ******************** Check existence of Destination Docker Account *************************************************************** 
+ 13-Mar-26 10:12:12  DEBUG  Starting new HTTPS connection (1): hub.docker.com:443 
+ 13-Mar-26 10:12:13  DEBUG  https://hub.docker.com:443 "GET /v2/users/bn46 HTTP/1.1" 200 274 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  ******************** Check existence of Destination Images *************************************************************** 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  [ bn46/inji-web ]  
+ 13-Mar-26 10:12:13  INFO  Destination Image = "bn46/inji-web" Destination Image tag = "0.16.x" IMAGE_ID : sha256:862abbee3278c4417b701811954825a3cc635ee871d8041296b9642839867df2 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  [ bn46/mimoto ]  
+ 13-Mar-26 10:12:13  INFO  Destination Image = "bn46/mimoto" Destination Image tag = "0.21.x" IMAGE_ID : sha256:aaace9caa29bd331811d786669e585769931a24e64f04ed19496e5a8dffe6ec0 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  ******************** HASH Operation Results ********************************************************************** 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  ******************** Start Image Transfer operation *********************************************************************** 
+ 13-Mar-26 10:12:13  DEBUG  Trying paths: ['/home/runner/.docker/config.json', '/home/runner/.dockercfg'] 
+ 13-Mar-26 10:12:13  DEBUG  Found file at path: /home/runner/.docker/config.json 
+ 13-Mar-26 10:12:13  DEBUG  Found 'auths' section 
+ 13-Mar-26 10:12:13  DEBUG  Found entry (registry='https://index.docker.io/v1/', username='bn46') 
+ 13-Mar-26 10:12:13  DEBUG  http://localhost:None "GET /version HTTP/1.1" 200 823 
+ 13-Mar-26 10:12:13  DEBUG  Looking for auth entry for 'docker.io' 
+ 13-Mar-26 10:12:13  DEBUG  Found 'https://index.docker.io/v1/' 
+ 13-Mar-26 10:12:13  INFO  Using 3 parallel workers for image transfers 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  ********** [ bn46/inji-web:0.16.x ] **************************************************** 
+ 13-Mar-26 10:12:13  INFO  Transferring image using crane... 
+ 13-Mar-26 10:12:13  INFO   
+ 13-Mar-26 10:12:13  INFO  ********** [ bn46/mimoto:0.21.x ] **************************************************** 
+ 13-Mar-26 10:12:13  INFO  Transferring image using crane... 
+ 13-Mar-26 10:12:13  INFO  Source uses tag reference: injistackdev2/inji-web:release-0.16.x 
+ 13-Mar-26 10:12:13  INFO  Analyzing source image manifest... 
+ 13-Mar-26 10:12:13  INFO  Source uses tag reference: injistackdev2/mimoto:release-0.21.x 
+ 13-Mar-26 10:12:13  INFO  Analyzing source image manifest... 
+ 13-Mar-26 10:12:14  INFO  Source is MULTI-ARCH image 
+ 13-Mar-26 10:12:14  INFO  Source Index Digest (Manifest List): sha256:9d8495ac9df7d01b5a95148d0b6080c2f7b811c81721d0f8a007c015aaf62286 
+ 13-Mar-26 10:12:14  INFO  Source has 2 platform(s): 
+ 13-Mar-26 10:12:14  INFO    - linux/amd64: sha256:b4c3d9bf071b3fcf107b9b97753f53b67dedcbb9d0234b787321cb02b8e77de3 
+ 13-Mar-26 10:12:14  INFO    - linux/arm64: sha256:3a2c7b9c763f08fe1816295e4df3cb6e479808602ec097c97fe619c27f4bcf9b 
+ 13-Mar-26 10:12:14  INFO  Using secure connection for HTTPS registry 
+ 13-Mar-26 10:12:14  INFO  Executing: crane copy injistackdev2/inji-web:release-0.16.x index.docker.io/bn46/inji-web:0.16.x 
+ 13-Mar-26 10:12:14  INFO  Source is MULTI-ARCH image 
+ 13-Mar-26 10:12:14  INFO  Source Index Digest (Manifest List): sha256:5d4c3e0113a5c8ae4490095a80c97e01841059753ced9bee5970d649ef6e0faf 
+ 13-Mar-26 10:12:14  INFO  Source has 2 platform(s): 
+ 13-Mar-26 10:12:14  INFO    - linux/amd64: sha256:aaf5fa575792bbce3664518ce0685f8697f663009303d378abca192503984264 
+ 13-Mar-26 10:12:14  INFO    - linux/arm64: sha256:a45307ddf05e51464c28297024768ec305d9407a1a6435ca8b9324a8f7b61e82 
+ 13-Mar-26 10:12:14  INFO  Using secure connection for HTTPS registry 
+ 13-Mar-26 10:12:14  INFO  Executing: crane copy injistackdev2/mimoto:release-0.21.x index.docker.io/bn46/mimoto:0.21.x 
+ 13-Mar-26 10:12:17  INFO  Successfully transferred image with crane 
+ 13-Mar-26 10:12:17  INFO   
+ 13-Mar-26 10:12:17  INFO  Analyzing destination image manifest... 
+ 13-Mar-26 10:12:18  INFO  Successfully transferred image with crane 
+ 13-Mar-26 10:12:18  INFO   
+ 13-Mar-26 10:12:18  INFO  Analyzing destination image manifest... 
+ 13-Mar-26 10:12:18  INFO  Destination is MULTI-ARCH image 
+ 13-Mar-26 10:12:18  INFO  Destination Index Digest (Manifest List): sha256:5d4c3e0113a5c8ae4490095a80c97e01841059753ced9bee5970d649ef6e0faf 
+ 13-Mar-26 10:12:18  INFO  Destination has 2 platform(s): 
+ 13-Mar-26 10:12:18  INFO    - linux/amd64: sha256:aaf5fa575792bbce3664518ce0685f8697f663009303d378abca192503984264 
+ 13-Mar-26 10:12:18  INFO    - linux/arm64: sha256:a45307ddf05e51464c28297024768ec305d9407a1a6435ca8b9324a8f7b61e82 
+ 13-Mar-26 10:12:18  INFO   
+ 13-Mar-26 10:12:18  INFO  === DIGEST VERIFICATION === 
+ 13-Mar-26 10:12:18  INFO  Comparing Index Digests (Manifest Lists): 
+ 13-Mar-26 10:12:18  INFO    Source:      sha256:5d4c3e0113a5c8ae4490095a80c97e01841059753ced9bee5970d649ef6e0faf 
+ 13-Mar-26 10:12:18  INFO    Destination: sha256:5d4c3e0113a5c8ae4490095a80c97e01841059753ced9bee5970d649ef6e0faf 
+ 13-Mar-26 10:12:18  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 13-Mar-26 10:12:18  INFO   
+ 13-Mar-26 10:12:18  INFO  Comparing Platform Manifests: 
+ 13-Mar-26 10:12:18  INFO    ✓ linux/amd64: sha256:aaf5fa575792bbce3664518ce0685f8697f663009303d378abca192503984264 (MATCH) 
+ 13-Mar-26 10:12:18  INFO    ✓ linux/arm64: sha256:a45307ddf05e51464c28297024768ec305d9407a1a6435ca8b9324a8f7b61e82 (MATCH) 
+ 13-Mar-26 10:12:18  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 13-Mar-26 10:12:18  INFO  Creating latest tag: crane copy injistackdev2/mimoto:release-0.21.x index.docker.io/bn46/mimoto:latest 
+ 13-Mar-26 10:12:18  INFO  Destination is MULTI-ARCH image 
+ 13-Mar-26 10:12:18  INFO  Destination Index Digest (Manifest List): sha256:9d8495ac9df7d01b5a95148d0b6080c2f7b811c81721d0f8a007c015aaf62286 
+ 13-Mar-26 10:12:18  INFO  Destination has 2 platform(s): 
+ 13-Mar-26 10:12:18  INFO    - linux/amd64: sha256:b4c3d9bf071b3fcf107b9b97753f53b67dedcbb9d0234b787321cb02b8e77de3 
+ 13-Mar-26 10:12:18  INFO    - linux/arm64: sha256:3a2c7b9c763f08fe1816295e4df3cb6e479808602ec097c97fe619c27f4bcf9b 
+ 13-Mar-26 10:12:18  INFO   
+ 13-Mar-26 10:12:18  INFO  === DIGEST VERIFICATION === 
+ 13-Mar-26 10:12:18  INFO  Comparing Index Digests (Manifest Lists): 
+ 13-Mar-26 10:12:18  INFO    Source:      sha256:9d8495ac9df7d01b5a95148d0b6080c2f7b811c81721d0f8a007c015aaf62286 
+ 13-Mar-26 10:12:18  INFO    Destination: sha256:9d8495ac9df7d01b5a95148d0b6080c2f7b811c81721d0f8a007c015aaf62286 
+ 13-Mar-26 10:12:18  INFO  ✓ Index Digest MATCH - Multi-arch structure preserved perfectly! 
+ 13-Mar-26 10:12:18  INFO   
+ 13-Mar-26 10:12:18  INFO  Comparing Platform Manifests: 
+ 13-Mar-26 10:12:18  INFO    ✓ linux/amd64: sha256:b4c3d9bf071b3fcf107b9b97753f53b67dedcbb9d0234b787321cb02b8e77de3 (MATCH) 
+ 13-Mar-26 10:12:18  INFO    ✓ linux/arm64: sha256:3a2c7b9c763f08fe1816295e4df3cb6e479808602ec097c97fe619c27f4bcf9b (MATCH) 
+ 13-Mar-26 10:12:18  INFO  ✓ All 2 platform manifest(s) match perfectly! 
+ 13-Mar-26 10:12:18  INFO  Creating latest tag: crane copy injistackdev2/inji-web:release-0.16.x index.docker.io/bn46/inji-web:latest 
+ 13-Mar-26 10:12:20  INFO  Successfully created latest tag 
+ 13-Mar-26 10:12:20  INFO  Image available at: index.docker.io/bn46/mimoto:0.21.x 
+ 13-Mar-26 10:12:20  INFO   
+ 13-Mar-26 10:12:20  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 13-Mar-26 10:12:20  INFO  Individual platform manifests should also match to ensure identical content. 
+ 13-Mar-26 10:12:21  INFO  Successfully created latest tag 
+ 13-Mar-26 10:12:21  INFO  Image available at: index.docker.io/bn46/inji-web:0.16.x 
+ 13-Mar-26 10:12:21  INFO   
+ 13-Mar-26 10:12:21  INFO  NOTE: For multi-arch images, the Index Digest (manifest list) is what matters most. 
+ 13-Mar-26 10:12:21  INFO  Individual platform manifests should also match to ensure identical content. 
+ 13-Mar-26 10:12:21  INFO  Completed processing injistackdev2/inji-web:release-0.16.x to bn46/inji-web:0.16.x 
+ 13-Mar-26 10:12:21  INFO  Completed processing injistackdev2/mimoto:release-0.21.x to bn46/mimoto:0.21.x 

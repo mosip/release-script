@@ -8,8 +8,20 @@ on:
         required: true
         default: ''
         type: string
-      TOKEN:
-        description: 'provide docker hub token'
+      SECRET_NAME:
+        description: 'Select the GitHub secret name for Docker registry token'
+        required: true
+        default: 'MOSIPDEV2_DOCKER_TOKEN'
+        type: choice
+        options:
+          - MOSIPDEV2_DOCKER_TOKEN
+          - MOSIPQA_DOCKER_TOKEN
+          - MOSIPID_DOCKER_TOKEN
+          - MOSIPINT_DOCKER_TOKEN
+          - INJISTACK_DOCKER_TOKEN
+          - custom
+      CUSTOM_SECRET_NAME:
+        description: 'If SECRET_NAME is "custom", enter the GitHub secret name here'
         required: false
         default: ''
         type: string
@@ -43,27 +55,61 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
-      USERNAME: ${{ steps.ORG_TOKEN.outputs.USERNAME }}
     steps:
-      - name: Check if input TOKEN is empty
-        if: ${{  inputs.TOKEN == ''  }}
+      - name: Resolve secret name
         id: ORG_TOKEN
+        env:
+          SELECTED_SECRET: ${{ inputs.SECRET_NAME }}
+          CUSTOM_SECRET: ${{ inputs.CUSTOM_SECRET_NAME }}
         run: |
-          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipqa ]]; then
-            echo "TOKEN=QA_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
-            echo "USERNAME=DOCKER_USERNAME" >> $GITHUB_OUTPUT
+          if [ "$SELECTED_SECRET" = "custom" ]; then
+            # User selected custom — CUSTOM_SECRET_NAME is required
+            if [ -z "$CUSTOM_SECRET" ]; then
+              printf '❌ ERROR: CUSTOM_SECRET_NAME is required when SECRET_NAME is set to "custom"\n' >&2
+              printf 'Please provide the GitHub secret name in the CUSTOM_SECRET_NAME field\n' >&2
+              exit 1
+            fi
+            
+            # Validate custom secret name format (GitHub only allows [A-Z0-9_], must start with [A-Z_])
+            if ! printf '%s' "$CUSTOM_SECRET" | grep -qE '^[A-Za-z_][A-Za-z0-9_]*$'; then
+              printf '❌ ERROR: Invalid secret name: "%s"\n' "$CUSTOM_SECRET" >&2
+              printf 'GitHub secret names must:\n' >&2
+              printf '  - Start with a letter or underscore\n' >&2
+              printf '  - Contain only letters, numbers, and underscores\n' >&2
+              printf '  - No spaces, hyphens, or special characters\n' >&2
+              printf 'Example: MY_ORG_DOCKER_TOKEN\n' >&2
+              exit 1
+            fi
+            
+            TOKEN_SECRET="$CUSTOM_SECRET"
+            printf 'Using custom secret name: %s\n' "$TOKEN_SECRET"
+          else
+            TOKEN_SECRET="$SELECTED_SECRET"
+            printf 'Using predefined secret name: %s\n' "$TOKEN_SECRET"
           fi
-          if [[ ${{ inputs.DESTINATION_ORGANIZATION }} == mosipint ]]; then
-            echo "TOKEN=INT_NAMESPACE_DOCKER_HUB" >> $GITHUB_OUTPUT
-            echo "USERNAME=DOCKER_USERNAME" >> $GITHUB_OUTPUT
-          fi
-      - name: Print Secret Name
+          
+          printf 'TOKEN=%s\n' "$TOKEN_SECRET" >> "$GITHUB_OUTPUT"
+      
+      - name: Validate secret configuration
+        env:
+          TOKEN_EXISTS: ${{ secrets[steps.ORG_TOKEN.outputs.TOKEN] != '' }}
+          SECRET_NAME: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
+          DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
         run: |
-          echo "ORGANIZATION NAME :  ${{ inputs.DESTINATION_ORGANIZATION }} "
-          echo "SECRET NAME : ${{ steps.ORG_TOKEN.outputs.TOKEN }}"
-          echo "USERNAME : ${{ steps.ORG_TOKEN.outputs.USERNAME }}"
-          echo "REGISTRY URL : ${{ inputs.REGISTRY_URL }}"
-
+          if [ "$TOKEN_EXISTS" != "true" ]; then
+            printf '❌ ERROR: Secret '\''%s'\'' is not configured or is empty\n' "$SECRET_NAME"
+            printf '\n'
+            printf 'Please configure the following secret in GitHub repository settings:\n'
+            printf '  Secret name: %s\n' "$SECRET_NAME"
+            printf '  Path: Settings → Secrets and variables → Actions → New repository secret\n'
+            printf '\n'
+            printf 'For organization '\''%s'\'', you need:\n' "$DESTINATION_ORGANIZATION"
+            printf '  - Secret: %s\n' "$SECRET_NAME"
+            printf '  - Value: Your Docker registry token/password\n'
+            exit 1
+          fi
+          
+          printf '✅ Secret '\''%s'\'' is configured\n' "$SECRET_NAME"
   Image-transfer:
     needs: chk_token
     uses: mosip/kattu/.github/workflows/image-transfer.yml@master
@@ -74,6 +120,6 @@ jobs:
       ENABLE_WIREGUARD: ${{ inputs.ENABLE_WIREGUARD }}
       USERNAME: ${{ inputs.USERNAME }}
     secrets:
-      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] || inputs.TOKEN }}"
+      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] }}"
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
       WIREGUARD_CONFIG: ${{ secrets.WIREGUARD_CONFIG }}
