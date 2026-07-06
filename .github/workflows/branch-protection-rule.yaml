@@ -1,0 +1,102 @@
+name: Apply Branch Protection Rules
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "single = one repo | bulk = all repos in branch-protection.txt"
+        required: true
+        type: choice
+        options:
+          - single
+          - bulk
+        default: single
+
+      target_repo:
+        description: "[single mode] Repo to protect e.g. mosip/<repo-name>"
+        required: false
+        type: string
+        default: ""
+
+      branch_pattern:
+        description: "[single mode] Branch to protect e.g. release-1.2.x"
+        required: false
+        type: string
+        default: ""
+
+      rules:
+        description: "Choose which branch protection rules to apply"
+        required: true
+        type: choice
+        options:
+          - default
+          - custom
+        default: default
+
+jobs:
+  resolve-config:
+    name: "Resolve config repo details"
+    runs-on: ubuntu-latest
+    outputs:
+      config_repo:     ${{ steps.info.outputs.config_repo }}
+      config_repo_ref: ${{ steps.info.outputs.config_repo_ref }}
+    steps:
+      - name: Capture repo and branch
+        id: info
+        run: |
+          echo "config_repo=${{ github.repository }}"   >> $GITHUB_OUTPUT
+          echo "config_repo_ref=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+
+  single-repo:
+    name: "Single -> ${{ inputs.target_repo }} @ ${{ inputs.branch_pattern }}"
+    needs: resolve-config
+    if: inputs.mode == 'single' && inputs.target_repo != '' && inputs.branch_pattern != ''
+    uses: mosip/kattu/.github/workflows/branch-protection-rule.yaml@master-MOSIP-30370-branching-rule
+    with:
+      target_repo:      ${{ inputs.target_repo }}
+      branch_pattern:   ${{ inputs.branch_pattern }}
+      use_custom_rules: ${{ inputs.rules == 'custom' }}
+      config_repo:      ${{ needs.resolve-config.outputs.config_repo }}
+      config_repo_ref:  ${{ needs.resolve-config.outputs.config_repo_ref }}
+    secrets:
+      ACTION_PAT:   ${{ secrets.ACTION_PAT }}
+      ALLOWED_TEAM: ${{ secrets.ALLOWED_TEAM }}
+
+  prepare-matrix:
+    name: "Parse branch-protection.txt"
+    needs: resolve-config
+    if: inputs.mode == 'bulk'
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.parse.outputs.matrix }}
+    steps:
+      - name: Checkout release-script repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.resolve-config.outputs.config_repo }}
+          ref:        ${{ needs.resolve-config.outputs.config_repo_ref }}
+          token:      ${{ secrets.ACTION_PAT }}
+
+      - name: Parse branch-protection.txt
+        id: parse
+        run: |
+          echo "aW1wb3J0IGpzb24sIHN5cywgb3MKCmZpbGVwYXRoID0gInJlbGVhc2UvYnJhbmNoaW5nLXJ1bGUvYnJhbmNoLXByb3RlY3Rpb24udHh0IgoKaWYgbm90IG9zLnBhdGguZXhpc3RzKGZpbGVwYXRoKToKICAgIHByaW50KCI6OmVycm9yOjoiICsgZmlsZXBhdGggKyAiIG5vdCBmb3VuZCEiKQogICAgc3lzLmV4aXQoMSkKCmVudHJpZXMgPSBbXQpjdXJyZW50X3JlcG8gPSBOb25lCmN1cnJlbnRfYnJhbmNoID0gTm9uZQoKd2l0aCBvcGVuKGZpbGVwYXRoKSBhcyBmOgogICAgZm9yIGxpbmUgaW4gZjoKICAgICAgICBzdHJpcHBlZCA9IGxpbmUuc3RyaXAoKQogICAgICAgIGlmIHN0cmlwcGVkLnN0YXJ0c3dpdGgoIi0gcmVwbzoiKToKICAgICAgICAgICAgaWYgY3VycmVudF9yZXBvIGFuZCBjdXJyZW50X2JyYW5jaDoKICAgICAgICAgICAgICAgIGVudHJpZXMuYXBwZW5kKHsidGFyZ2V0X3JlcG8iOiBjdXJyZW50X3JlcG8sICJicmFuY2hfcGF0dGVybiI6IGN1cnJlbnRfYnJhbmNofSkKICAgICAgICAgICAgY3VycmVudF9yZXBvID0gc3RyaXBwZWQuc3BsaXQoIi0gcmVwbzoiKVsxXS5zdHJpcCgpCiAgICAgICAgICAgIGN1cnJlbnRfYnJhbmNoID0gTm9uZQogICAgICAgIGVsaWYgc3RyaXBwZWQuc3RhcnRzd2l0aCgiYnJhbmNoOiIpOgogICAgICAgICAgICBjdXJyZW50X2JyYW5jaCA9IHN0cmlwcGVkLnNwbGl0KCJicmFuY2g6IilbMV0uc3RyaXAoKQoKaWYgY3VycmVudF9yZXBvIGFuZCBjdXJyZW50X2JyYW5jaDoKICAgIGVudHJpZXMuYXBwZW5kKHsidGFyZ2V0X3JlcG8iOiBjdXJyZW50X3JlcG8sICJicmFuY2hfcGF0dGVybiI6IGN1cnJlbnRfYnJhbmNofSkKCmlmIG5vdCBlbnRyaWVzOgogICAgcHJpbnQoIjo6ZXJyb3I6Ok5vIHZhbGlkIGVudHJpZXMgZm91bmQgaW4gYnJhbmNoLXByb3RlY3Rpb24udHh0ISIpCiAgICBzeXMuZXhpdCgxKQoKcHJpbnQoIkZvdW5kICIgKyBzdHIobGVuKGVudHJpZXMpKSArICIgcmVwbyhzKSB0byBwcm90ZWN0OiIpCmZvciBlIGluIGVudHJpZXM6CiAgICBwcmludCgiICAiICsgZVsidGFyZ2V0X3JlcG8iXSArICIgIC0+ICAiICsgZVsiYnJhbmNoX3BhdHRlcm4iXSkKCndpdGggb3BlbigiL3RtcC9tYXRyaXguanNvbiIsICJ3IikgYXMgZjoKICAgIGYud3JpdGUoanNvbi5kdW1wcyh7ImluY2x1ZGUiOiBlbnRyaWVzfSkpCg==" | base64 -d > /tmp/parse_repos.py
+          python3 /tmp/parse_repos.py
+          echo "matrix=$(cat /tmp/matrix.json)" >> $GITHUB_OUTPUT
+
+  bulk-apply:
+    name: "Bulk -> ${{ matrix.target_repo }} @ ${{ matrix.branch_pattern }}"
+    needs: [resolve-config, prepare-matrix]
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    uses: mosip/kattu/.github/workflows/branch-protection-rule.yaml@master
+    with:
+      target_repo:      ${{ matrix.target_repo }}
+      branch_pattern:   ${{ matrix.branch_pattern }}
+      use_custom_rules: ${{ inputs.rules == 'custom' }}
+      config_repo:      ${{ needs.resolve-config.outputs.config_repo }}
+      config_repo_ref:  ${{ needs.resolve-config.outputs.config_repo_ref }}
+    secrets:
+      ACTION_PAT:   ${{ secrets.ACTION_PAT }}
+      ALLOWED_TEAM: ${{ secrets.ALLOWED_TEAM }}

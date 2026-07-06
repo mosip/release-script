@@ -1,0 +1,44 @@
+# ============================================================
+# FILE: branching-rule/branch-protection-rules.yaml
+#
+# Edit this file to define your own branch protection rules.
+# Trigger the workflow with "Use custom rules file" = true
+# to apply these instead of the default hardcoded rules.
+#
+# DEFAULT values below match the standard hardcoded defaults
+# in the workflow — change only what you need.
+# ============================================================
+
+rules:
+
+  # ── Pull Request Reviews ───────────────────────────────────
+  required_approving_review_count: 2       # Number of approvals required (0–6)
+  dismiss_stale_reviews: false             # Dismiss approvals when new commits are pushed
+  require_code_owner_reviews: false        # Require review from a CODEOWNER
+  require_last_push_approval: false        # Last pusher cannot approve their own PR
+
+  # ── Status Checks ─────────────────────────────────────────
+  require_status_checks: false             # Require CI checks to pass before merging
+  strict_status_checks: false              # Branch must be up-to-date before merging
+  status_check_contexts: ""               # Comma-separated check names e.g. "build,test,lint"
+  # Leave empty if require_status_checks is false
+
+  # ── Conversation & History ─────────────────────────────────
+  required_conversation_resolution: true  # All comments must be resolved before merging
+  required_linear_history: false          # Prevent merge commits (require squash or rebase)
+
+  # ── Admin & Bypass ────────────────────────────────────────
+  enforce_admins: true                    # Apply rules to admins too (no bypassing)
+
+  # ── Push & Deletion ───────────────────────────────────────
+  allow_force_pushes: false               # Allow force pushes to the branch
+  allow_deletions: false                  # Allow the branch to be deleted
+
+  # ── Push Restrictions ─────────────────────────────────────
+  # Comma-separated GitHub usernames allowed to push.
+  # Must already be collaborators on the repo.
+  push_users: "gsasikumar,vishwa-vyom,ckm007"
+
+  # Comma-separated team slugs allowed to push.
+  # Leave empty if no team restriction needed.
+  push_teams: ""
