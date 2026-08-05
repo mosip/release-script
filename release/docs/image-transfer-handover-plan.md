@@ -153,6 +153,8 @@ For each environment (`transfer-dev2`, `transfer-qa`, `transfer-prod`):
 - **Wait timer** (optional for QA/prod): short delay so Slack notice can be seen before run proceeds.
 - **Secrets scoped to Environment** — move Docker tokens from repo secrets to Environment secrets so only that workflow environment can use them.
 
+**Full explanation and UI/YAML steps:** [GitHub Environments for Image Transfer](./github-environments-image-transfer.md).
+
 ### 5. Registry credentials (strongest technical gate)
 
 | Destination | Credential type | Scope | Who holds it |
