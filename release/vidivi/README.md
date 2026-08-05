@@ -4,6 +4,8 @@
 
 ## Overview
 
+For handing stage transfers (`mosipdev` → `mosipdev2`, `mosipdev2` → `mosipqa`) from DevOps to Dev/QA with access control, approvals, and monitoring, see **[Image Transfer Handover Plan](../docs/image-transfer-handover-plan.md)**.
+
 In MOSIP, we maintain several Docker Hub organizations with specific purposes:
 
 * **`mosipid`**: Contains officially released Docker images for the Open Source Community
