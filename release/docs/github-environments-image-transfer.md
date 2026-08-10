@@ -366,6 +366,7 @@ Start with **Recommended** for `transfer-dev2` and `transfer-qa`; keep prod on `
 ## Related docs
 
 - [Image Transfer Handover Plan](./image-transfer-handover-plan.md)
+- [Test approval on WireGuard onboard/offboard (recommended first)](./wg-lifecycle-approval-test.md)
 - [Vidivi README](../vidivi/README.md)
 - GitHub docs: [Managing environments](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments)
 - GitHub docs: [Reviewing deployments](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/review-deployments)
