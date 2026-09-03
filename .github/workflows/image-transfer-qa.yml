@@ -1,0 +1,49 @@
+name: Transfer images to mosipqa
+
+# Stage-scoped transfer: destination is fixed to mosipqa.
+# Requires GitHub Environment "transfer-qa" with required reviewers
+# and Environment secret MOSIPQA_DOCKER_TOKEN.
+# See: release/docs/github-environments-image-transfer.md
+
+on:
+  workflow_dispatch:
+    inputs:
+      USERNAME:
+        description: 'Registry username (Docker Hub user or Harbor robot)'
+        required: true
+        default: ''
+        type: string
+      REGISTRY_URL:
+        description: 'Destination registry URL'
+        required: true
+        default: 'https://index.docker.io/v1/'
+        type: string
+      REGISTRY_TYPE:
+        description: 'Destination registry type'
+        required: true
+        default: 'dockerhub'
+        type: choice
+        options:
+          - dockerhub
+          - harbor
+          - other
+      ENABLE_WIREGUARD:
+        description: 'Enable WireGuard VPN (required for private Harbor networks)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  Image-transfer:
+    environment: transfer-qa
+    uses: mosip/kattu/.github/workflows/image-transfer.yml@master
+    with:
+      DESTINATION_ORGANIZATION: mosipqa
+      REGISTRY_URL: ${{ inputs.REGISTRY_URL }}
+      REGISTRY_TYPE: ${{ inputs.REGISTRY_TYPE }}
+      ENABLE_WIREGUARD: ${{ inputs.ENABLE_WIREGUARD }}
+      USERNAME: ${{ inputs.USERNAME }}
+    secrets:
+      TOKEN: ${{ secrets.MOSIPQA_DOCKER_TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
+      WIREGUARD_CONFIG: ${{ secrets.WIREGUARD_CONFIG }}
