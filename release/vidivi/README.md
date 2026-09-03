@@ -4,6 +4,8 @@
 
 ## Overview
 
+For a step-by-step **Knowledge Transfer** on the current process (with scenario examples from merged PRs), see **[Image Transfer KT](../docs/image-transfer-kt.md)**.
+
 For handing stage transfers (`mosipdev` → `mosipdev2`, `mosipdev2` → `mosipqa`) from DevOps to Dev/QA with access control, approvals, and monitoring, see **[Image Transfer Handover Plan](../docs/image-transfer-handover-plan.md)** and **[GitHub Environments setup (full steps)](../docs/github-environments-image-transfer.md)**.
 
 In MOSIP, we maintain several Docker Hub organizations with specific purposes:
