@@ -126,23 +126,24 @@ Implement all layers. No single control is enough.
 | CODEOWNERS | `/release/vidivi/images-dev2.txt` → Dev leads; `/release/vidivi/images-qa.txt` → QA leads |
 | Admin list | Keep `mosipid` admin-only protection in `mosip/kattu` |
 
-### 3. Split workflows by stage (recommended)
+### 3. One approval-based workflow (recommended — not multiple YAMLs)
 
-Replace “one mega-workflow anyone can aim at any org” with stage-scoped workflows:
+Keep a **single** `image-transfer.yml`. Operator selects `TRANSFER_TARGET` (GitHub Environment name). The workflow:
 
-| Workflow | Destination fixed to | Secret | Environment |
-|---|---|---|---|
-| `image-transfer-dev2.yml` | `mosipdev2` only | `MOSIPDEV2_DOCKER_TOKEN` | `transfer-dev2` |
-| `image-transfer-qa.yml` | `mosipqa` only | `MOSIPQA_DOCKER_TOKEN` | `transfer-qa` |
-| `image-transfer-prod.yml` | `mosipid` / `mosipint` | `MOSIPID_*` / `MOSIPINT_*` | `transfer-prod` (admins + required reviewers) |
+- Sets `environment: ${{ inputs.TRANSFER_TARGET }}` (Approve / Reject gate)
+- **Derives** destination org from that target (no free-typed org)
+- Uses Environment secret `DOCKER_TOKEN` (same name, different value per Environment)
 
-Benefits:
+| `TRANSFER_TARGET` | Destination | Who approves |
+|---|---|---|
+| `transfer-dev2` | `mosipdev2` | Dev approvers |
+| `transfer-qa` | `mosipqa` | QA approvers |
+| `transfer-mosipint` / `transfer-mosipid` | `mosipint` / `mosipid` | Release / admins |
+| Inji targets | `injistack*` | Inji / Release as configured |
 
-- Operators cannot “accidentally” select `MOSIPID_DOCKER_TOKEN`.
-- Environment **required reviewers** gate the run.
-- Audit logs clearly show which stage workflow ran.
+Full change list: [Approval-based single workflow](./image-transfer-approval-single-workflow.md).
 
-Keep the existing generic workflow for DevOps break-glass only, or remove it after migration.
+Multiple YAML files per hop are **optional UX only**, not required for security.
 
 ### 4. GitHub Environments (approval gates)
 
@@ -273,12 +274,11 @@ Unchanged ownership: Release/DevOps only, admin-protected org, Security signing 
 
 ### Phase 2 — Technical gates (recommended core)
 
-- Split workflows: `dev2`, `qa`, `prod`.
-- Create GitHub Environments with required reviewers + environment-scoped secrets.
-- Move tokens off shared repo-secret usage where possible.
-- Restrict Environment access to Operator GitHub teams.
-- Tighten `kattu` allowlists (source org + destination org).
-- Keep generic workflow admin-only or retire it.
+- Update single `image-transfer.yml` with `TRANSFER_TARGET` + Environment approval (see [single-workflow guide](./image-transfer-approval-single-workflow.md)).
+- Create GitHub Environments with required reviewers + Environment secret `DOCKER_TOKEN` each.
+- Restrict who can approve per Environment (Dev vs QA vs Release).
+- Remove old free-form repo Docker tokens after Environments work.
+- Keep `kattu` allowlists / admin protection for `mosipid`.
 
 ### Phase 3 — Observability & hygiene
 

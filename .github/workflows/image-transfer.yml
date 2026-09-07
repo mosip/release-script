@@ -1,42 +1,40 @@
 name: Manual workflow to transfer images
 
+# Single approval-based transfer workflow.
+# Operator picks TRANSFER_TARGET → job waits on that GitHub Environment →
+# after Approve, destination org is derived and DOCKER_TOKEN (Environment secret) is used.
+#
+# Setup: release/docs/github-environments-image-transfer.md
+#        release/docs/image-transfer-approval-single-workflow.md
+
 on:
   workflow_dispatch:
     inputs:
-      USERNAME:
-        description: 'provide docker hub username'
+      TRANSFER_TARGET:
+        description: 'Stage gate (GitHub Environment). Destination org is derived from this — do not pick freely.'
         required: true
-        default: ''
-        type: string
-      SECRET_NAME:
-        description: 'Select the GitHub secret name for Docker registry token'
-        required: true
-        default: 'MOSIPDEV2_DOCKER_TOKEN'
         type: choice
+        default: 'transfer-dev2'
         options:
-          - MOSIPDEV2_DOCKER_TOKEN
-          - MOSIPQA_DOCKER_TOKEN
-          - MOSIPID_DOCKER_TOKEN
-          - MOSIPINT_DOCKER_TOKEN
-          - INJISTACK_DOCKER_TOKEN
-          - custom
-      CUSTOM_SECRET_NAME:
-        description: 'If SECRET_NAME is "custom", enter the GitHub secret name here'
-        required: false
-        default: ''
-        type: string
-      DESTINATION_ORGANIZATION:
-        description: 'provide docker hub destination org'
+          - transfer-dev2
+          - transfer-qa
+          - transfer-mosipint
+          - transfer-mosipid
+          - transfer-injistack-dev2
+          - transfer-injistack-qa
+          - transfer-injistack
+      USERNAME:
+        description: 'Registry username (Docker Hub user or Harbor robot)'
         required: true
         default: ''
         type: string
       REGISTRY_URL:
-        description: 'provide destination registry URL (http://harbor.example.com or https://registry.example.com)'
+        description: 'Destination registry URL'
         required: true
         default: 'https://index.docker.io/v1/'
         type: string
       REGISTRY_TYPE:
-        description: 'Select destination registry type'
+        description: 'Destination registry type'
         required: true
         default: 'dockerhub'
         type: choice
@@ -51,75 +49,62 @@ on:
         type: boolean
 
 jobs:
-  chk_token:
+  # Maps the selected gate → fixed destination org (no free-typed org).
+  resolve-target:
     runs-on: ubuntu-latest
     outputs:
-      TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
+      DESTINATION_ORGANIZATION: ${{ steps.map.outputs.DESTINATION_ORGANIZATION }}
+      TRANSFER_TARGET: ${{ inputs.TRANSFER_TARGET }}
     steps:
-      - name: Resolve secret name
-        id: ORG_TOKEN
+      - name: Map TRANSFER_TARGET to destination organization
+        id: map
         env:
-          SELECTED_SECRET: ${{ inputs.SECRET_NAME }}
-          CUSTOM_SECRET: ${{ inputs.CUSTOM_SECRET_NAME }}
+          TARGET: ${{ inputs.TRANSFER_TARGET }}
         run: |
-          if [ "$SELECTED_SECRET" = "custom" ]; then
-            # User selected custom — CUSTOM_SECRET_NAME is required
-            if [ -z "$CUSTOM_SECRET" ]; then
-              printf '❌ ERROR: CUSTOM_SECRET_NAME is required when SECRET_NAME is set to "custom"\n' >&2
-              printf 'Please provide the GitHub secret name in the CUSTOM_SECRET_NAME field\n' >&2
+          case "$TARGET" in
+            transfer-dev2)
+              DEST="mosipdev2"
+              ;;
+            transfer-qa)
+              DEST="mosipqa"
+              ;;
+            transfer-mosipint)
+              DEST="mosipint"
+              ;;
+            transfer-mosipid)
+              DEST="mosipid"
+              ;;
+            transfer-injistack-dev2)
+              DEST="injistackdev2"
+              ;;
+            transfer-injistack-qa)
+              DEST="injistackqa"
+              ;;
+            transfer-injistack)
+              DEST="injistack"
+              ;;
+            *)
+              printf '❌ Unknown TRANSFER_TARGET: %s\n' "$TARGET" >&2
               exit 1
-            fi
-            
-            # Validate custom secret name format (GitHub only allows [A-Z0-9_], must start with [A-Z_])
-            if ! printf '%s' "$CUSTOM_SECRET" | grep -qE '^[A-Za-z_][A-Za-z0-9_]*$'; then
-              printf '❌ ERROR: Invalid secret name: "%s"\n' "$CUSTOM_SECRET" >&2
-              printf 'GitHub secret names must:\n' >&2
-              printf '  - Start with a letter or underscore\n' >&2
-              printf '  - Contain only letters, numbers, and underscores\n' >&2
-              printf '  - No spaces, hyphens, or special characters\n' >&2
-              printf 'Example: MY_ORG_DOCKER_TOKEN\n' >&2
-              exit 1
-            fi
-            
-            TOKEN_SECRET="$CUSTOM_SECRET"
-            printf 'Using custom secret name: %s\n' "$TOKEN_SECRET"
-          else
-            TOKEN_SECRET="$SELECTED_SECRET"
-            printf 'Using predefined secret name: %s\n' "$TOKEN_SECRET"
-          fi
-          
-          printf 'TOKEN=%s\n' "$TOKEN_SECRET" >> "$GITHUB_OUTPUT"
-      
-      - name: Validate secret configuration
-        env:
-          TOKEN_EXISTS: ${{ secrets[steps.ORG_TOKEN.outputs.TOKEN] != '' }}
-          SECRET_NAME: ${{ steps.ORG_TOKEN.outputs.TOKEN }}
-          DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
-        run: |
-          if [ "$TOKEN_EXISTS" != "true" ]; then
-            printf '❌ ERROR: Secret '\''%s'\'' is not configured or is empty\n' "$SECRET_NAME"
-            printf '\n'
-            printf 'Please configure the following secret in GitHub repository settings:\n'
-            printf '  Secret name: %s\n' "$SECRET_NAME"
-            printf '  Path: Settings → Secrets and variables → Actions → New repository secret\n'
-            printf '\n'
-            printf 'For organization '\''%s'\'', you need:\n' "$DESTINATION_ORGANIZATION"
-            printf '  - Secret: %s\n' "$SECRET_NAME"
-            printf '  - Value: Your Docker registry token/password\n'
-            exit 1
-          fi
-          
-          printf '✅ Secret '\''%s'\'' is configured\n' "$SECRET_NAME"
+              ;;
+          esac
+          printf 'TRANSFER_TARGET=%s\n' "$TARGET"
+          printf 'DESTINATION_ORGANIZATION=%s\n' "$DEST"
+          printf 'DESTINATION_ORGANIZATION=%s\n' "$DEST" >> "$GITHUB_OUTPUT"
+
+  # Waits for Environment required reviewers, then unlocks Environment secret DOCKER_TOKEN.
   Image-transfer:
-    needs: chk_token
+    needs: resolve-target
+    environment: ${{ inputs.TRANSFER_TARGET }}
     uses: mosip/kattu/.github/workflows/image-transfer.yml@master
     with:
-      DESTINATION_ORGANIZATION: ${{ inputs.DESTINATION_ORGANIZATION }}
+      DESTINATION_ORGANIZATION: ${{ needs.resolve-target.outputs.DESTINATION_ORGANIZATION }}
       REGISTRY_URL: ${{ inputs.REGISTRY_URL }}
       REGISTRY_TYPE: ${{ inputs.REGISTRY_TYPE }}
       ENABLE_WIREGUARD: ${{ inputs.ENABLE_WIREGUARD }}
       USERNAME: ${{ inputs.USERNAME }}
     secrets:
-      TOKEN: "${{ secrets[needs.chk_token.outputs.TOKEN] }}"
+      # Same secret NAME on every Environment; VALUE differs per Environment.
+      TOKEN: ${{ secrets.DOCKER_TOKEN }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
       WIREGUARD_CONFIG: ${{ secrets.WIREGUARD_CONFIG }}

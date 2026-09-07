@@ -27,7 +27,7 @@ Today, anyone who can run the manual image-transfer workflow can aim it at any o
 | Click **Run workflow** → job starts immediately | Click **Run workflow** → job waits for Approver |
 | Repo secrets readable by any write-access workflow | Docker push token locked in Environment; released only after approval |
 | Weak audit of “who allowed this” | Approver name stored on the deployment |
-| One workflow can target any destination | Stage workflow + fixed Environment = fixed destination |
+| One workflow can target any destination freely | One workflow + `TRANSFER_TARGET` Environment = fixed destination per gate |
 
 ```
 Operator clicks "Run workflow"
@@ -63,13 +63,21 @@ Deployment history + Actions log = audit trail
 
 ## Target setup for MOSIP image transfer
 
-| Environment name | Used by workflow | Required reviewers | Environment secret(s) | Fixed destination org |
-|---|---|---|---|---|
-| `transfer-dev2` | `image-transfer-dev2.yml` | Dev Approver team | `MOSIPDEV2_DOCKER_TOKEN` | `mosipdev2` |
-| `transfer-qa` | `image-transfer-qa.yml` | QA Approver team | `MOSIPQA_DOCKER_TOKEN` | `mosipqa` |
-| `transfer-prod` | `image-transfer-prod.yml` | Release admins | `MOSIPID_DOCKER_TOKEN`, `MOSIPINT_DOCKER_TOKEN` | `mosipid` / `mosipint` |
+**Preferred model: one workflow** (`.github/workflows/image-transfer.yml`) + several Environments.  
+See [Approval-based single workflow](./image-transfer-approval-single-workflow.md).
 
-Repo-level secrets that can stay shared (not stage-specific): `SLACK_WEBHOOK_DEVOPS`, `WIREGUARD_CONFIG`.
+| Environment name (`TRANSFER_TARGET`) | Required reviewers | Environment secret | Fixed destination org |
+|---|---|---|---|
+| `transfer-dev2` | Dev Approver team | `DOCKER_TOKEN` | `mosipdev2` |
+| `transfer-qa` | QA Approver team | `DOCKER_TOKEN` | `mosipqa` |
+| `transfer-mosipint` | Release / DevOps | `DOCKER_TOKEN` | `mosipint` |
+| `transfer-mosipid` | Release admins | `DOCKER_TOKEN` | `mosipid` |
+| `transfer-injistack-dev2` | Inji/Dev approvers | `DOCKER_TOKEN` | `injistackdev2` |
+| `transfer-injistack-qa` | Inji/QA approvers | `DOCKER_TOKEN` | `injistackqa` |
+| `transfer-injistack` | Release | `DOCKER_TOKEN` | `injistack` |
+
+Use the **same secret name** `DOCKER_TOKEN` on every Environment; only the token **value** changes.  
+Repo-level secrets that can stay shared: `SLACK_WEBHOOK_DEVOPS`, `WIREGUARD_CONFIG`.
 
 ---
 
@@ -159,89 +167,18 @@ Until you remove repo copies, a workflow **without** an Environment can still us
 
 ---
 
-### Phase C — Add stage workflows (code)
+### Phase C — Use the single approval workflow (code)
 
-Add separate workflows so destination cannot be mistyped.
+Keep **one** file: `.github/workflows/image-transfer.yml` with:
 
-#### Example: Dev2 workflow
+- Input `TRANSFER_TARGET` (choice = Environment name)
+- Job `environment: ${{ inputs.TRANSFER_TARGET }}`
+- Destination org **mapped** from target (not free text)
+- `TOKEN: ${{ secrets.DOCKER_TOKEN }}` (Environment secret)
 
-File: `.github/workflows/image-transfer-dev2.yml`
+Full detail: [image-transfer-approval-single-workflow.md](./image-transfer-approval-single-workflow.md).
 
-```yaml
-name: Transfer images to mosipdev2
-
-on:
-  workflow_dispatch:
-    inputs:
-      USERNAME:
-        description: 'Registry username (Docker Hub user or Harbor robot)'
-        required: true
-        type: string
-      REGISTRY_URL:
-        description: 'Destination registry URL'
-        required: true
-        default: 'https://index.docker.io/v1/'
-        type: string
-      REGISTRY_TYPE:
-        description: 'Destination registry type'
-        required: true
-        default: 'dockerhub'
-        type: choice
-        options:
-          - dockerhub
-          - harbor
-          - other
-      ENABLE_WIREGUARD:
-        description: 'Enable WireGuard VPN for private Harbor'
-        required: false
-        default: false
-        type: boolean
-
-jobs:
-  # Gate: waits for Environment approval; unlocks Environment secrets
-  Image-transfer:
-    environment: transfer-dev2
-    uses: mosip/kattu/.github/workflows/image-transfer.yml@master
-    with:
-      DESTINATION_ORGANIZATION: mosipdev2   # FIXED — operators cannot change this
-      REGISTRY_URL: ${{ inputs.REGISTRY_URL }}
-      REGISTRY_TYPE: ${{ inputs.REGISTRY_TYPE }}
-      ENABLE_WIREGUARD: ${{ inputs.ENABLE_WIREGUARD }}
-      USERNAME: ${{ inputs.USERNAME }}
-    secrets:
-      # From Environment secret (available only after approval)
-      TOKEN: ${{ secrets.MOSIPDEV2_DOCKER_TOKEN }}
-      # From repository secrets
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEVOPS }}
-      WIREGUARD_CONFIG: ${{ secrets.WIREGUARD_CONFIG }}
-```
-
-#### Example: QA workflow
-
-File: `.github/workflows/image-transfer-qa.yml`
-
-Same shape, but:
-
-- `environment: transfer-qa`
-- `DESTINATION_ORGANIZATION: mosipqa`
-- `TOKEN: ${{ secrets.MOSIPQA_DOCKER_TOKEN }}`
-
-#### Example: Prod workflow (DevOps only)
-
-- `environment: transfer-prod`
-- Input choice limited to `mosipid` / `mosipint` only
-- Tokens from prod Environment secrets
-- Optionally restrict who can see/run it via repo permissions + admin-only kattu protection
-
-#### What to do with the old generic workflow
-
-| Option | Recommendation |
-|---|---|
-| A. Restrict to admins / leave as break-glass | Short term OK |
-| B. Delete after stage workflows are proven | Preferred long term |
-| C. Point it at `transfer-prod` only | If you still need one flexible entry for Release |
-
-Do **not** leave the old workflow able to read Dev2/QA tokens from repository secrets.
+Multiple per-hop YAML files are **not required**.
 
 ---
 
