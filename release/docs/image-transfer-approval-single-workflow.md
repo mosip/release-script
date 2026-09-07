@@ -112,7 +112,42 @@ To add a new hop later: add a choice option + one `case` arm + create the matchi
 |---|---|---|
 | Operator (PR + Run workflow) | **Write** | — |
 | Approver (Approve deployment) | **Read** minimum | Listed on that Environment’s required reviewers |
-| Admin (create Environments / secrets) | **Admin** | — |
+| Merger / Release lead | **Write** or **Maintain** | Allowed to merge by branch protection / CODEOWNERS |
+| Admin (Environments / secrets) | **Admin** | — |
+
+### Does Write also allow merging PRs?
+
+**Only if the branch is unprotected.** Write includes the *capability* to merge, but **branch protection / rulesets** can block it.
+
+Give operators **Write** so they can:
+
+- Push a feature branch  
+- Open a PR  
+- Run `workflow_dispatch`
+
+Then lock merges with protection on `release-1.2.0.1` (and other release branches):
+
+| Setting | Purpose |
+|---|---|
+| Require a pull request before merging | No direct pushes to the release branch |
+| Require approvals (1+) | Someone else must approve the PR |
+| Require review from Code Owners | e.g. DevOps / leads own `release/vidivi/images.txt` |
+| Do not allow bypassing the above settings | Admins cannot casually skip (or limit bypass actors) |
+| Restrict who can push to matching branches | Only named Release/DevOps users if you want a hard merge gate |
+| (Optional) Require conversation resolution | Forces comment cleanup before merge |
+
+With that:
+
+| Action | Operator (Write) | Approver (Read + env reviewer) | Release lead / CODEOWNER |
+|---|---|---|---|
+| Open PR / update `images.txt` | Yes | Optional | Yes |
+| Run transfer workflow | Yes | No (Read cannot `workflow_dispatch`) | Yes |
+| Approve Environment wait | No (unless also listed; block with prevent self-review) | Yes | If listed |
+| Merge PR | **No** (blocked until required reviews) | Can approve PR if Write/CODEOWNER | **Yes** after review |
+
+So: **Write ≠ automatic merge rights** once branch protection is on. That is the standard GitHub pattern worldwide.
+
+**Practical setup:** Operators team = Write; Approvers for Environment = Read (or Write if they also review PRs); CODEOWNERS / “restrict who can merge” = Release/DevOps leads only.
 
 ---
 
