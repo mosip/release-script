@@ -6,7 +6,7 @@
 
 For a step-by-step **Knowledge Transfer** on the current process (with scenario examples from merged PRs), see **[Image Transfer KT](../docs/image-transfer-kt.md)**.
 
-For approval-based transfer in **one** workflow (not multiple YAMLs), see **[Approval-based single workflow](../docs/image-transfer-approval-single-workflow.md)**. Related: **[Handover Plan](../docs/image-transfer-handover-plan.md)** · **[GitHub Environments](../docs/github-environments-image-transfer.md)**.
+For approval-based transfer in **one** workflow (not multiple YAMLs), see **[Approval-based single workflow](../docs/image-transfer-approval-single-workflow.md)**. To go live, follow the **[Cutover checklist](../docs/image-transfer-cutover-checklist.md)**. Related: **[Handover Plan](../docs/image-transfer-handover-plan.md)** · **[GitHub Environments](../docs/github-environments-image-transfer.md)**.
 
 In MOSIP, we maintain several Docker Hub organizations with specific purposes:
 

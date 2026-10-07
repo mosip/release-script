@@ -166,6 +166,7 @@ So: **Write ≠ automatic merge rights** once branch protection is on. That is t
 
 ## Related docs
 
+- [**Cutover checklist (start here to go live)**](./image-transfer-cutover-checklist.md)
 - [Image Transfer KT (as-is process)](./image-transfer-kt.md)
 - [Handover plan](./image-transfer-handover-plan.md)
 - [GitHub Environments deep dive](./github-environments-image-transfer.md)
