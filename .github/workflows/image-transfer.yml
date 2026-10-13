@@ -1,8 +1,8 @@
 name: Manual workflow to transfer images
 
-# Production workflow (unchanged behavior).
-# Optional approval variant: image-transfer-with-approval.yml
-# Docs: release/docs/image-transfer-kt.md
+# Approval: job "approve" waits on GitHub Environment named = DESTINATION_ORGANIZATION
+# (e.g. mosipdev2, mosipqa). Create those Environments with required reviewers.
+# Existing SECRET_NAME / MOSIP*_DOCKER_TOKEN repo secrets are unchanged.
 
 permissions:
   contents: read
@@ -33,7 +33,7 @@ on:
         default: ''
         type: string
       DESTINATION_ORGANIZATION:
-        description: 'provide docker hub destination org'
+        description: 'provide docker hub destination org (must match a GitHub Environment name)'
         required: true
         default: ''
         type: string
@@ -58,7 +58,19 @@ on:
         type: boolean
 
 jobs:
+  # Must be a normal job — `environment` is not allowed on a `uses:` reusable-workflow job.
+  approve:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.DESTINATION_ORGANIZATION }}
+    steps:
+      - name: Wait for Environment approval
+        env:
+          DEST: ${{ inputs.DESTINATION_ORGANIZATION }}
+        run: |
+          printf 'Approved image transfer to destination organization: %s\n' "$DEST"
+
   chk_token:
+    needs: approve
     runs-on: ubuntu-latest
     outputs:
       TOKEN: ${{ steps.ORG_TOKEN.outputs.TOKEN }}

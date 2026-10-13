@@ -4,10 +4,6 @@
 
 ## Overview
 
-For a step-by-step **Knowledge Transfer** on the current process (with scenario examples from merged PRs), see **[Image Transfer KT](../docs/image-transfer-kt.md)**.
-
-Optional approval-based cutover (separate workflow; does **not** change production until you switch): **[Approval workflow](../docs/image-transfer-approval-single-workflow.md)** · **[Cutover checklist](../docs/image-transfer-cutover-checklist.md)** · **[Sandbox test](../docs/image-transfer-sandbox-test.md)**.
-
 In MOSIP, we maintain several Docker Hub organizations with specific purposes:
 
 * **`mosipid`**: Contains officially released Docker images for the Open Source Community
@@ -188,9 +184,6 @@ Executing: crane copy mosipdev/kernel-auth-service:1.2.0.1 registry.example.com/
 ```
 
 ## GitHub Actions Workflow
-
-> **Production today:** this section describes the current `image-transfer.yml` (SECRET_NAME + DESTINATION_ORGANIZATION).  
-> **Optional approval cutover:** use `image-transfer-with-approval.yml` only after Environments exist — see [approval single-workflow guide](../docs/image-transfer-approval-single-workflow.md).
 
 ### Workflow Inputs
 
